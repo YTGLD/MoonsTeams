@@ -1,0 +1,194 @@
+{
+  "itemGroup.tabmoonstone": "Moon Stone",
+  "item.moonstone.ectoplasmball": "ectoplasm ball",
+  "item.moonstone.ectoplasmcloub": "ectoplasm cloub",
+  "item.moonstone.ectoplasmcube": "ectoplasm cube",
+  "item.moonstone.ectoplasmslate": "ectoplasm slate",
+  "item.moonstone.ectoplasmhorseshoe": "ectoplasm horseshoe",
+  "item.moonstone.ectoplasmbadge": "ectoplasm badge",
+  "item.moonstone.ectoplasmapple": "ectoplasm apple",
+  "item.moonstone.ectoplasmstone": "ectoplasm stone",
+  "item.moonstone.ectoplasmprism": "ectoplasm prism",
+  "item.moonstone.ectoplasmfood": "ectoplasm food",
+  "item.moonstone.ectoplasmcharm": "ectoplasm charm",
+  "item.moonstone.ectoplasmcharmstone": "ectoplasm charm stone",
+  "item.moonstone.ectoplasmshild": "ectoplasm shild",
+  "item.moonstone.ectoplasmbattery": "ectoplasm battery",
+
+  "item.moonstone.badgeofthedead": "badge of the dead",
+  "item.moonstone.battery": "battery",
+  "item.moonstone.biggreedcrystal": "big greed crystal",
+  "item.moonstone.bigwarcrystal": "big war crystal",
+  "item.moonstone.blackeorb": "black orb",
+  "item.moonstone.blueamout": "blue amout",
+  "item.moonstone.greedamout": "greed amout",
+  "item.moonstone.greedcrystal": "greed crystal",
+  "item.moonstone.redamout": "red amout",
+  "item.moonstone.warcrystal": "war crystal",
+  "item.moonstone.whiteorb": "whit orb",
+  "item.moonstone.mbattery": "Morris's battery",
+  "item.moonstone.mblock": "Morris's cube",
+  "item.moonstone.mbottle": "Morris's drug",
+  "item.moonstone.mbox": "Morris's box",
+  "item.moonstone.meye": "Morris's eye",
+  "item.moonstone.mkidney": "Morris's kidney stone",
+  "item.moonstone.morb": "Morris's coral",
+  "item.moonstone.mring": "Morris's ring",
+  "item.moonstone.mshell": "Morris's conch",
+
+  "item.moonstone.nightmareanchor": "nightmare anchors",
+  "item.moonstone.nightmarecharm": "nightmare amulet",
+  "item.moonstone.nightmareeye": "nightmare eye",
+  "item.moonstone.nightmaremoai": "nightmare stone ball",
+  "item.moonstone.nightmarerotten": "nightmare rotten Heart",
+  "item.moonstone.nightmarestone": "nightmare stone",
+  "item.moonstone.nightmaretreasure": "nightmare treasure",
+  "item.moonstone.nightmarewater": "nightmare chalice",
+
+  "item.ectoplasmapple.tool.string": "Injury causes surrounding creatures to take 2% of their maximum life value in damage",
+  "item.ectoplasmhorseshoe.tool.string": "Reduces damage from falls by 90%",
+  "item.ectoplasmshild.tool.string": "continued Resistance up",
+  "item.ectoplasmshild.tool.string.2": "Reduces damage from explosions by 30%",
+  "item.ectoplasmshild.tool.string.3": "Every fifth hit of damage will immunize you from the next attack",
+
+
+  "item.mbattery.tool.string": "Zombies are afraid of you！！！",
+  "item.mbattery.tool.string.1": "Attacking zombies deals an additional 50% more damage",
+  "item.mbattery.tool.string.2": "+2 Fortune",
+  "item.mbattery.tool.string.3": "+2 Looting",
+
+  "item.mblock.tool.string": "+1 Fortune",
+  "item.mblock.tool.string.1": "+1 Looting",
+
+  "item.mbottle.tool.string": "When you're in Weakness：",
+  "item.mbottle.tool.string.1": "+2 Looting",
+  "item.mbottle.tool.string.2": "When you're in Mining Fatigue",
+  "item.mbottle.tool.string.3": "+2 Fortune",
+
+
+  "item.meye.tool.string": "Make undead creatures in a 10 square radius glow.",
+
+
+  "item.mkidney.tool.string": "Probability of not taking this damage when injured",
+  "item.mkidney.tool.string.1": "First 100%, second 50%, third 25%.",
+  "item.mkidney.tool.string.2": "And so on",
+  "item.mkidney.tool.string.3": "If immunity to damage fails, you take an additional 33% of your maximum life damage",
+  "item.mkidney.tool.string.4": "At the same time this item will go on a 10 second cooldown",
+
+
+  "item.morb.tool.string": "+1 Experience drop",
+  "item.morb.tool.string.1": "+50% Extra experience drops",
+
+
+  "item.mring.tool.string": "+100% Knockback distance",
+  "item.mring.tool.string.1": "+40% Healing capacity",
+
+  "item.mshell.tool.string": "-25% Damage from undead creatures",
+  "item.mshell.tool.string.1": "-10% Damage",
+
+
+  "item.moonstone.magiceye": "magiceye",
+  "item.moonstone.magicstone": "magicstone",
+  "item.moonstone.nanocube": "nanocube",
+  "item.moonstone.nanorobot": "nanorobot",
+  "item.moonstone.thedoomstone": "thedoomstone",
+  "item.moonstone.thefruit": "thefruit",
+
+  "item.nightmareanchor.tool.string": "佩戴它并死亡",
+  "item.nightmareanchor.tool.string.1": "可记录这一次的死亡地点",
+  "item.nightmareanchor.tool.string.2": "右键传送到上个记录点",
+  "item.nightmareanchor.tool.string.3": "但你必须在同一维度内",
+  "item.nightmareanchor.tool.string.4": "佩戴时:",
+  "item.nightmareanchor.tool.string.5": "减少5％来自深渊的诅咒",
+  "item.nightmareanchor.tool.string.6": "唯有承受深渊之恐的人",
+  "item.nightmareanchor.tool.string.7": "才有资格使用此道具",
+
+
+  "item.nightmarecharm.tool.string": "减少15％来自深渊之眼的诅咒",
+  "item.nightmarecharm.tool.string.1": "加法计算",
+  "item.nightmarecharm.tool.string.2": "+1饰品槽位",
+  "item.nightmarecharm.tool.string.3": "唯有承受深渊之恐的人",
+  "item.nightmarecharm.tool.string.4": "才有资格使用此道具",
+
+
+  "item.nightmareeye.tool.string": "受到伤害增加33％",
+  "item.nightmareeye.tool.string.1": "造成伤害降低25％",
+
+
+  "item.nightmaremoai.tool.string": "+2 附魔产物的附魔等级",
+  "item.nightmaremoai.tool.string.1": "唯有承受深渊之恐的人",
+  "item.nightmaremoai.tool.string.2": "才有资格使用此道具",
+
+
+  "item.nightmarerotten.tool.string": "+22％ 所有属性",
+  "item.nightmarerotten.tool.string.1": "但是每增加1种属性",
+  "item.nightmarerotten.tool.string.2": "来自深渊的诅咒都会增加1.1％",
+  "item.nightmarerotten.tool.string.3": "唯有承受深渊之恐的人",
+  "item.nightmarerotten.tool.string.4": "才有资格使用此道具",
+
+
+  "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
+  "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
+  "item.nightmarestone.tool.string.2": "+7％生命回复、击退抗性",
+  "item.nightmarestone.tool.string.3": "+10％挖掘速度、经验掉落",
+  "item.nightmarestone.tool.string.4": "伤害、移速、护甲",
+  "item.nightmarestone.tool.string.5": "生命回复、击退抗性",
+  "item.nightmarestone.tool.string.6": "挖掘速度、经验掉落",
+  "item.nightmarestone.tool.string.7": "你身上的任何负面效果时长翻倍",
+  "item.nightmarestone.tool.string.8": "受到任何来源的伤害都会获得一个随机负面效果",
+  "item.nightmarestone.tool.string.9": "唯有承受深渊之恐的人",
+  "item.nightmarestone.tool.string.10": "才有资格使用此道具",
+
+
+
+  "item.nightmaretreasure.tool.string": "你造成的伤害降低50％",
+  "item.nightmaretreasure.tool.string.1": "击杀获得的战利品有1/3的概率获取三倍",
+  "item.nightmaretreasure.tool.string.2": "每增加1的幸运，都会提高3％的概率",
+  "item.nightmaretreasure.tool.string.3": "不超过66％",
+  "item.nightmaretreasure.tool.string.4": "唯有承受深渊之恐的人",
+  "item.nightmaretreasure.tool.string.5": "才有资格使用此道具",
+
+
+  "item.nightmarewater.tool.string": "腐朽…虚弱……",
+  "item.nightmarewater.tool.string.1": "深渊…永恒……",
+
+
+  "item.magiceye.tool.string": "",
+  "item.magiceye.tool.string.1": "",
+
+  "item.nanocube.tool.string": "",
+  "item.nanocube.tool.string.1": "",
+
+  "item.nanorobot.tool.string": "",
+  "item.nanorobot.tool.string.1": "",
+
+  "item.thedoomstone.tool.string": "",
+  "item.thedoomstone.tool.string.1": "",
+  "item.thedoomstone.tool.string.2": "",
+
+
+  "item.thefruit.tool.string": "",
+  "item.thefruit.tool.string.1": "",
+  "item.thefruit.tool.string.2": "",
+
+  "item.badgeofthedead.tool.string": "",
+
+  "item.biggreedcrystal.tool.string": "",
+
+  "item.greedcrystal.tool.string": "",
+
+  "item.blueamout.tool.string": "",
+  "item.blueamout.tool.string.1": "",
+
+  "item.greedamout.tool.string": "",
+  "item.greedamout.tool.string.1": "",
+
+
+  "item.redamout.tool.string": "",
+  "item.redamout.tool.string.1": ""
+
+
+
+
+
+}

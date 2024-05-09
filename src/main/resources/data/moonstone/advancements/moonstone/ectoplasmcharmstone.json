@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmstone",
+  "criteria": {
+    "ectoplasmcharmstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:ectoplasmcharmstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "纯洁之人才可获得的宝物"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:ectoplasmcharmstone"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "纯洁的灵质"
+    }
+  },
+  "requirements": [
+    [
+      "ectoplasmcharmstone"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

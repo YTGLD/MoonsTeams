@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/root",
+  "criteria": {
+    "ectoplasmstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:ectoplasmstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "灵质的开端"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:ectoplasmstone"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "欢迎游玩月之石"
+    }
+  },
+  "requirements": [
+    [
+      "ectoplasmstone"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

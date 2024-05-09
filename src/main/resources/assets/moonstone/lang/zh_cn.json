@@ -1,0 +1,200 @@
+{
+  "itemGroup.tabmoonstone": "月之石",
+  "item.moonstone.ectoplasmball": "灵质球",
+  "item.moonstone.ectoplasmcloub": "灵质 云",
+  "item.moonstone.ectoplasmcube": "灵质 立方",
+  "item.moonstone.ectoplasmslate": "灵质 石板",
+  "item.moonstone.ectoplasmhorseshoe": "灵质 马蹄",
+  "item.moonstone.ectoplasmbadge": "灵质 徽章",
+  "item.moonstone.ectoplasmapple": "灵质 果",
+  "item.moonstone.ectoplasmstone": "灵质 石头",
+  "item.moonstone.ectoplasmprism": "灵质 棱镜",
+  "item.moonstone.ectoplasmfood": "灵质 食物",
+  "item.moonstone.ectoplasmcharm": "灵质 护符",
+  "item.moonstone.ectoplasmcharmstone": "灵质 石头护符",
+  "item.moonstone.ectoplasmshild": "灵质 盾牌",
+  "item.moonstone.ectoplasmbattery": "灵质 电池",
+
+
+  "item.moonstone.badgeofthedead": "亡灵徽章",
+  "item.moonstone.battery": "电池",
+  "item.moonstone.biggreedcrystal": "大贪婪水晶",
+  "item.moonstone.bigwarcrystal": "大战争水晶",
+  "item.moonstone.blackeorb": "黑魔球",
+  "item.moonstone.blueamout": "蓝色符石",
+  "item.moonstone.greedamout": "绿色符石",
+  "item.moonstone.greedcrystal": "贪婪水晶",
+  "item.moonstone.redamout": "红色符石",
+  "item.moonstone.warcrystal": "战争水晶",
+  "item.moonstone.whiteorb": "白魔球",
+
+  "item.moonstone.mbattery": "莫里斯电池",
+  "item.moonstone.mblock": "莫里斯方块",
+  "item.moonstone.mbottle": "莫里斯药品",
+  "item.moonstone.mbox": "莫里斯盒子",
+  "item.moonstone.meye": "莫里斯眼睛",
+  "item.moonstone.mkidney": "莫里斯肾结石",
+  "item.moonstone.morb": "莫里斯珍珠",
+  "item.moonstone.mring": "莫里斯戒指",
+  "item.moonstone.mshell": "莫里斯贝壳",
+
+
+
+
+  "item.ectoplasmapple.tool.string": "受伤会使周围生物受到2%最大生命值的伤害",
+  "item.ectoplasmhorseshoe.tool.string": "减少90%来自摔落的伤害",
+  "item.ectoplasmshild.tool.string": "持续的抗性提升",
+  "item.ectoplasmshild.tool.string.2": "减少30%来自爆炸的伤害",
+  "item.ectoplasmshild.tool.string.3": "每受到5次伤害，都将免疫下一次的攻击",
+
+
+
+  "item.mbattery.tool.string": "僵尸害怕你",
+  "item.mbattery.tool.string.1": "对僵尸的伤害提高50%",
+  "item.mbattery.tool.string.2": "+2 时运",
+  "item.mbattery.tool.string.3": "+2 抢夺",
+
+  "item.mblock.tool.string": "+1 时运",
+  "item.mblock.tool.string.1": "+1 抢夺",
+
+  "item.mbottle.tool.string": "存在虚弱时：",
+  "item.mbottle.tool.string.1": "+2 抢夺",
+  "item.mbottle.tool.string.2": "存在挖掘疲劳时",
+  "item.mbottle.tool.string.3": "+2 时运",
+
+
+
+  "item.meye.tool.string": "使半径10格内的亡灵生物发光",
+
+
+  "item.mkidney.tool.string": "受伤时有概率免除伤害",
+  "item.mkidney.tool.string.1": "第一次百分百，第二次百分之五十，第三次百分之二十五",
+  "item.mkidney.tool.string.2": "以此类推",
+  "item.mkidney.tool.string.3": "免除失败你将额外受到最大生命33%的伤害",
+  "item.mkidney.tool.string.4": "同时此物品将进入10秒的冷却",
+
+
+  "item.morb.tool.string": "+1 经验掉落",
+  "item.morb.tool.string.1": "+50% 额外经验掉落",
+
+  "item.mring.tool.string": "+100% 被击退距离",
+  "item.mring.tool.string.1": "+40% 治疗",
+
+
+  "item.mshell.tool.string": "-25% 来自亡灵生物的伤害",
+  "item.mshell.tool.string.1": "-10% 造成的伤害",
+
+
+  "item.moonstone.nightmareanchor": "深渊 锚头",
+  "item.moonstone.nightmarecharm": "深渊 护符",
+  "item.moonstone.nightmareeye": "深渊 眼睛",
+  "item.moonstone.nightmaremoai": "深渊 石球",
+  "item.moonstone.nightmarerotten": "深渊 万腐",
+  "item.moonstone.nightmarestone": "深渊 石",
+  "item.moonstone.nightmaretreasure": "深渊 财宝",
+  "item.moonstone.nightmarewater": "深渊 圣杯",
+
+
+  "item.moonstone.magiceye": "机械眼",
+  "item.moonstone.magicstone": "石头",
+  "item.moonstone.nanocube": "纳米立方",
+  "item.moonstone.nanorobot": "纳米机器人",
+  "item.moonstone.thedoomstone": "末日石",
+  "item.moonstone.thefruit": "远古果实",
+
+
+  "item.nightmareanchor.tool.string": "佩戴它并死亡",
+  "item.nightmareanchor.tool.string.1": "可记录这一次的死亡地点",
+  "item.nightmareanchor.tool.string.2": "右键传送到上个记录点",
+  "item.nightmareanchor.tool.string.3": "但你必须在同一维度内",
+  "item.nightmareanchor.tool.string.4": "佩戴时:",
+  "item.nightmareanchor.tool.string.5": "减少5％来自深渊的诅咒",
+  "item.nightmareanchor.tool.string.6": "唯有承受深渊之恐的人",
+  "item.nightmareanchor.tool.string.7": "才有资格使用此道具",
+
+
+  "item.nightmarecharm.tool.string": "减少15％来自深渊之眼的诅咒",
+  "item.nightmarecharm.tool.string.1": "加法计算",
+  "item.nightmarecharm.tool.string.2": "+1饰品槽位",
+  "item.nightmarecharm.tool.string.3": "唯有承受深渊之恐的人",
+  "item.nightmarecharm.tool.string.4": "才有资格使用此道具",
+
+
+  "item.nightmareeye.tool.string": "受到伤害增加33％",
+  "item.nightmareeye.tool.string.1": "造成伤害降低25％",
+
+
+  "item.nightmaremoai.tool.string": "+2 附魔产物的附魔等级",
+  "item.nightmaremoai.tool.string.1": "唯有承受深渊之恐的人",
+  "item.nightmaremoai.tool.string.2": "才有资格使用此道具",
+
+
+  "item.nightmarerotten.tool.string": "+22％ 所有属性",
+  "item.nightmarerotten.tool.string.1": "但是每增加1种属性",
+  "item.nightmarerotten.tool.string.2": "来自深渊的诅咒都会增加1.1％",
+  "item.nightmarerotten.tool.string.3": "唯有承受深渊之恐的人",
+  "item.nightmarerotten.tool.string.4": "才有资格使用此道具",
+
+
+  "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
+  "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
+  "item.nightmarestone.tool.string.2": "+7％生命回复、击退抗性",
+  "item.nightmarestone.tool.string.3": "+10％挖掘速度、经验掉落",
+  "item.nightmarestone.tool.string.4": "伤害、移速、护甲",
+  "item.nightmarestone.tool.string.5": "生命回复、击退抗性",
+  "item.nightmarestone.tool.string.6": "挖掘速度、经验掉落",
+  "item.nightmarestone.tool.string.7": "你身上的任何负面效果时长翻倍",
+  "item.nightmarestone.tool.string.8": "受到任何来源的伤害都会获得一个随机负面效果",
+  "item.nightmarestone.tool.string.9": "唯有承受深渊之恐的人",
+  "item.nightmarestone.tool.string.10": "才有资格使用此道具",
+
+
+
+  "item.nightmaretreasure.tool.string": "你造成的伤害降低50％",
+  "item.nightmaretreasure.tool.string.1": "击杀获得的战利品有1/3的概率获取三倍",
+  "item.nightmaretreasure.tool.string.2": "每增加1的幸运，都会提高3％的概率",
+  "item.nightmaretreasure.tool.string.3": "不超过66％",
+  "item.nightmaretreasure.tool.string.4": "唯有承受深渊之恐的人",
+  "item.nightmaretreasure.tool.string.5": "才有资格使用此道具",
+
+
+  "item.nightmarewater.tool.string": "腐朽…虚弱……",
+  "item.nightmarewater.tool.string.1": "深渊…永恒……",
+
+  "item.magiceye.tool.string": "",
+  "item.magiceye.tool.string.1": "",
+
+  "item.nanocube.tool.string": "",
+  "item.nanocube.tool.string.1": "",
+
+  "item.nanorobot.tool.string": "",
+  "item.nanorobot.tool.string.1": "",
+
+  "item.thedoomstone.tool.string": "",
+  "item.thedoomstone.tool.string.1": "",
+  "item.thedoomstone.tool.string.2": "",
+
+
+  "item.thefruit.tool.string": "",
+  "item.thefruit.tool.string.1": "",
+  "item.thefruit.tool.string.2": "",
+
+  "item.badgeofthedead.tool.string": "",
+
+  "item.biggreedcrystal.tool.string": "",
+
+  "item.greedcrystal.tool.string": "",
+
+  "item.blueamout.tool.string": "",
+  "item.blueamout.tool.string.1": "",
+
+  "item.greedamout.tool.string": "",
+  "item.greedamout.tool.string.1": "",
+
+
+  "item.redamout.tool.string": "",
+  "item.redamout.tool.string.1": ""
+
+
+}
+

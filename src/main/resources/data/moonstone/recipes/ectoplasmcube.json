@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:ectoplasmball"
+    },
+    {
+      "item": "moonstone:ectoplasmball"
+    },
+    {
+      "item": "moonstone:ectoplasmball"
+    },
+    {
+      "item": "moonstone:ectoplasmball"
+    },
+    {
+      "item": "moonstone:ectoplasmcloub"
+    },
+    {
+      "item": "moonstone:ectoplasmcloub"
+    },
+    {
+      "item": "moonstone:ectoplasmcloub"
+    },
+    {
+      "item": "moonstone:ectoplasmcloub"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "moonstone:ectoplasmcube",
+    "count": 1
+  }
+}

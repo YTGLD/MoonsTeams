@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmcube",
+  "criteria": {
+    "ectoplasmapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:ectoplasmapple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "打在你身，痛在我心"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:ectoplasmapple"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "灵魂的震动"
+    }
+  },
+  "requirements": [
+    [
+      "ectoplasmapple"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

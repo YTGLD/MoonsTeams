@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:ectoplasmapple",
+    "moonstone:ectoplasmbattery",
+    "moonstone:ectoplasmhorseshoe",
+
+    "moonstone:mbattery",
+    "moonstone:mblock",
+    "moonstone:mshell",
+    "moonstone:battery",
+    "moonstone:nanorobot"
+  ]
+}

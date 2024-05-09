@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+
+    "moonstone:nightmareanchor",
+    "moonstone:nightmarecharm",
+    "moonstone:nightmareeye",
+    "moonstone:nightmaremoai",
+    "moonstone:nightmarerotten",
+    "moonstone:nightmarestone",
+    "moonstone:nightmaretreasure",
+    "moonstone:nightmarewater",
+
+    "moonstone:biggreedcrystal",
+    "moonstone:bigwarcrystal",
+    "moonstone:greedcrystal",
+    "moonstone:warcrystal",
+    "moonstone:blackeorb",
+    "moonstone:whiteorb"
+
+  ]
+}
