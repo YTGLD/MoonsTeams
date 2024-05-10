@@ -1,7 +1,6 @@
 package com.moonstone.moonstonemod.Item.NaNoDoom;
 
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.Item.Doom;
+import com.moonstone.moonstonemod.Item.MoonStoneItem.Doom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
@@ -11,18 +10,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.LivingKnockBackEvent;
 import org.jetbrains.annotations.NotNull;
-import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
-import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.List;
-import java.util.Map;
 
 public class magicstone extends Doom {
     public final String magic = "Magic";

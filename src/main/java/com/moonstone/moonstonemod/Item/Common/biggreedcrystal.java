@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.Item.Common;
 
-import com.moonstone.moonstonemod.Item.CommonItem;
+import com.moonstone.moonstonemod.Item.MoonStoneItem.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;

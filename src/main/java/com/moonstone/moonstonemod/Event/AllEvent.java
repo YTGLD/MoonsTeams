@@ -3,16 +3,20 @@ package com.moonstone.moonstonemod.Event;
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.Init.Items;
-import com.moonstone.moonstonemod.Item.IDoom;
-import com.moonstone.moonstonemod.Item.IEctoplasm;
-import com.moonstone.moonstonemod.Item.INightmare;
-import com.moonstone.moonstonemod.Item.MLS;
+import com.moonstone.moonstonemod.Item.MoonStoneItem.*;
+import com.moonstone.moonstonemod.Item.Plague.ALL.dna;
+import com.moonstone.moonstonemod.Item.UnCommon.evilmug;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -20,19 +24,29 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ambient.Bat;
+import net.minecraft.world.entity.animal.MushroomCow;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.event.entity.living.*;
+import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
@@ -42,9 +56,837 @@ import java.util.Map;
 import java.util.Random;
 
 public class AllEvent {
-    private int shield = 1;
-    private int Kidney = 100;
-    private float clientSideAttackTime = 0;
+    public static int shield = 1;
+     public static int Kidney = 100;
+     public static float clientSideAttackTime = 0;
+
+     public static final String cod = "cod";
+     public static final String SALMON = "SALMON";
+     public static final String CHICKEN = "CHICKEN";
+     public static final String BEEF = "BEEF";
+     public static final String RABBIT = "RABBIT";
+     public static final String MUTTON = "MUTTON";
+     public static final String PORKCHOP = "PORKCHOP";
+     public static final String TROPICAL_FISH = "TROPICAL_FISH";
+     public static final String give = "GiveItem";
+     public static final String fungus = "GiveFungus";
+     public static final String virus = "virus";
+    public static float aFloat = 0;
+    public static final String lvl= "germString";
+    public static final String lvlSize= "germStringLvlSize";
+    public static String lvl_parasite = "lvl";
+    public static String sizeLevel = "sizeLevel";
+    public static String blood = "bloodgene";
+    public static String rage = "ragegene";
+    @SubscribeEvent
+    public void aaa(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.fermentation.get())){
+
+                if (player.getCooldowns().isOnCooldown(Items.fermentation.get())){
+                    event.setAmount(event.getAmount() * 0.3f);
+                }else {
+                    event.setAmount(event.getAmount() * 4);
+                    player.getCooldowns().addCooldown(Items.fermentation.get(), 200);
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public  void reanimation(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.reanimation.get())){
+                if (!player.getCooldowns().isOnCooldown(Items.reanimation.get())) {
+                    if (event.getAmount() > player.getHealth()) {
+                        player.heal(player.getMaxHealth() / 2);
+                        player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 4));
+                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1));
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 1));
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_DEATH, SoundSource.NEUTRAL, 0.8F, 0.8F);
+
+                        player.getCooldowns().addCooldown(Items.reanimation.get(), 3000);
+                    }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public  void masticatory(LivingEntityUseItemEvent.Start event) {
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.masticatory.get())){
+                if (event.getItem().getUseAnimation() == UseAnim.EAT){
+                    event.setDuration(event.getDuration() / 2);
+                }
+            }
+        }
+
+    }
+    @SubscribeEvent
+    public void calcification(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.calcification.get())){
+                event.setAmount(event.getAmount() * 0.89f);
+            }
+        }
+
+    }
+    @SubscribeEvent
+    public  void die_KILL(LivingDeathEvent event) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.medicinebox.get())) {
+                                if (stack.getTag() != null) {
+                                    if (event.getEntity() instanceof EnderDragon) {
+                                        if (stack.getTag().getBoolean(blood_eat) &&
+                                                stack.getTag().getBoolean(blood_hurt) &&
+                                                stack.getTag().getBoolean(blood_jump) &&
+                                                stack.getTag().getBoolean(blood_spawn) &&
+                                                stack.getTag().getBoolean(blood_enchant)) {
+                                            player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.catalyzer.get()));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    public static String jump_size = "jump_size";
+    public static String hurt_size ="hurt_size";
+    public static String apple = "apple";
+
+    public static String spawn= "spawn";
+    public static String enchant= "enchant";
+
+
+    public static int do_hurt;
+    public static int do_apple;
+    public static int do_jump;
+
+
+
+
+    public static final String blood_hurt = "blood_hurt";
+    public static  final String blood_jump = "blood_jump";
+    public static  final String blood_eat = "blood_eat";
+    public static  final String blood_spawn = "blood_spawn";
+    public static  final String blood_enchant = "blood_enchant";
+
+    @SubscribeEvent
+    public  void die(PlayerEvent.PlayerRespawnEvent event) {
+        Player player = event.getEntity();
+        CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+            Map<String, ICurioStacksHandler> curios = handler.getCurios();
+            for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                ICurioStacksHandler stacksHandler = entry.getValue();
+                IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                    ItemStack stack = stackHandler.getStackInSlot(i);
+                    if (!stack.isEmpty()) {
+                        if (stack.is(Items.medicinebox.get())) {
+                            if (stack.getTag() != null && !stack.getTag().getBoolean(spawn)) {
+                                if (Handler.hascurio(player, Items.medicinebox.get())) {
+                                    player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.reanimation.get()));
+                                    stack.getTag().putBoolean(spawn, true);
+                                    stack.getTag().putBoolean(blood_spawn, true);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    }
+    @SubscribeEvent
+    public  void apple(LivingEntityUseItemEvent.Finish event) {
+        LivingEntity livingEntity = event.getEntity();
+        if (livingEntity instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.medicinebox.get())) {
+                                ItemStack a = event.getItem();
+                                if (a.is(net.minecraft.world.item.Items.GOLDEN_APPLE)){
+
+                                    if (stack.getTag()!= null&&stack.getTag().getInt(apple)< 9){
+                                        stack.getTag().putInt(apple,stack.getTag().getInt(apple)+1);
+                                    }
+                                    if (stack.getTag()!= null&&stack.getTag().getInt(apple)== 8){
+                                        player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.masticatory.get()));
+                                        stack.getTag().putBoolean(blood_eat, true);
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    @SubscribeEvent
+    public  void medicinebox(LivingHurtEvent event) {
+
+
+        LivingEntity livingEntity = event.getEntity();
+        if (livingEntity instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.medicinebox.get())) {
+
+                                if (stack.getTag()!= null&&stack.getTag().getInt(hurt_size)< 351){
+                                    stack.getTag().putInt(hurt_size,stack.getTag().getInt(hurt_size)+1);
+                                }
+                                if (stack.getTag()!= null&&stack.getTag().getInt(hurt_size)== 350){
+                                    player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.calcification.get()));
+                                    stack.getTag().putBoolean(blood_hurt, true);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public  void medicinebox(LivingEvent.LivingJumpEvent event) {
+
+
+        LivingEntity livingEntity = event.getEntity();
+        if (livingEntity instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.medicinebox.get())) {
+
+                                if (stack.getTag()!= null&&stack.getTag().getInt(jump_size)< 501){
+                                    stack.getTag().putInt(jump_size,stack.getTag().getInt(jump_size)+1);
+
+                                }
+                                if (stack.getTag()!= null&&stack.getTag().getInt(jump_size)== 500){
+                                    player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.quadriceps.get()));
+                                    stack.getTag().putBoolean(blood_jump, true);
+
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public  void medicinebox(LivingEntityUseItemEvent.Finish event) {
+
+        LivingEntity livingEntity = event.getEntity();
+        if (livingEntity instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.medicinebox.get())) {
+                                ItemStack a = event.getItem();
+                                if (a.is(net.minecraft.world.item.Items.ENCHANTED_GOLDEN_APPLE)) {
+
+                                    if (stack.getTag() != null && !stack.getTag().getBoolean(enchant)) {
+                                        player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.polyphagia.get()));
+                                        stack.getTag().putBoolean(enchant, true);
+                                        stack.getTag().putBoolean(blood_enchant, true);
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public  void hurt(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.ragegene.get())) {
+                                if (player.getAttackStrengthScale(1) == 1) {
+                                    if (stack.getTag() != null && stack.getTag().getInt(rage) < 100) {
+                                        stack.getTag().putFloat(rage, stack.getTag().getInt(rage) + 5);
+                                    }
+                                    event.setAmount(event.getAmount() * (1 + ((float) stack.getTag().getInt(rage) / 100)));
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        if (event.getEntity() instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.ragegene.get())) {
+                                if (stack.getTag()!= null){
+                                    stack.getTag().putFloat(rage,0);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public void bloodgene(LivingHurtEvent event) {
+        LivingEntity livingEntity = event.getEntity();
+        if (livingEntity instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.bloodgene.get())) {
+                                event.setAmount(event.getAmount()* 1.1f);
+                                if (stack.getTag()!= null&&stack.getTag().getInt(blood)< 150){
+                                    stack.getTag().putFloat(blood,stack.getTag().getInt(blood)+5);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public void bloodgene(LivingHealEvent event) {
+        LivingEntity livingEntity = event.getEntity();
+        if (livingEntity instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.is(Items.bloodgene.get())) {
+                                if (stack.getTag()!= null&&stack.getTag().getInt(blood)> 0){
+                                    stack.getTag().putFloat(blood,stack.getTag().getInt(blood) -  1);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public void batgene(LivingHurtEvent event){
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.batgene.get())){
+                Vec3 playerPos = player.position().add(0, 0.75, 0);
+                int range = 24;
+                List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                int integers = 0;
+                for (LivingEntity living : entities) {
+                    if (living instanceof Bat){
+                        integers++;
+                    }
+                }
+                float integer = integers;
+                integer /= 10;
+                event.setAmount((event.getAmount() - event.getAmount() / 10) * (1 + integer));
+
+            }
+        }
+    }
+    @SubscribeEvent
+    public  void virus(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.virus.get())) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.getItem() instanceof com.moonstone.moonstonemod.Item.Plague.ALL.virus) {
+                                if (stack.getTag() != null) {
+                                    String name = event.getEntity().getEncodeId();
+                                    if (name != null) {
+                                        int size = stack.getTag().getInt(name);
+                                        float Do = (float) size / 400;
+                                        event.setAmount(event.getAmount() * (1 + Do));
+
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                });
+            }
+
+        }
+    }
+    @SubscribeEvent
+    public  void virus(LivingDeathEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.virus.get())) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.is(Items.virus.get())) {
+                                if (stack.getTag() != null) {
+                                    String name = event.getEntity().getEncodeId();
+                                    if (name != null) {
+                                        if (stack.getTag().getInt(name) < 400) {
+                                            stack.getTag().putInt(name, stack.getTag().getInt(name) + 1);
+
+                                            if (!player.level().isClientSide) {
+                                                player.displayClientMessage(Component.translatable("你采集了 " + name + " 的DNA!!!").withStyle(ChatFormatting.RED), true);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                });
+            }
+
+        }
+
+    }
+    @SubscribeEvent
+    public  void parasite(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        NonNullList<Boolean> renderStates = stacksHandler.getRenders();
+                        String identifier = entry.getKey();
+                        if (stack.is(Items.parasite.get())) {
+                            if (Handler.hascurio(player, Items.parasite.get())) {
+                                if (event.getAmount() >player.getHealth()){
+
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        if (event.getSource().getEntity() instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        NonNullList<Boolean> renderStates = stacksHandler.getRenders();
+                        String identifier = entry.getKey();
+                        SlotContext slotContext = new SlotContext(identifier, player, i, false,
+                                renderStates.size() > i && renderStates.get(i));
+                        if (stack.is(Items.parasite.get())) {
+                            if (Handler.hascurio(player, Items.parasite.get())) {
+                                if (event.getAmount() >player.getHealth()){
+                                    if (stack.getOrCreateTag().getInt(sizeLevel) > 900){
+                                        if (player.getFoodData().getFoodLevel() > player.getFoodData().getFoodLevel() * 0.6){
+                                            event.setAmount(event.getAmount() * 1.4f);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public  void parasite(LivingEntityUseItemEvent.Finish event) {
+        if (event.getEntity() instanceof Player player){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        NonNullList<Boolean> renderStates = stacksHandler.getRenders();
+                        String identifier = entry.getKey();
+                        SlotContext slotContext = new SlotContext(identifier, player, i, false,
+                                renderStates.size() > i && renderStates.get(i));
+                        if (stack.is(Items.parasite.get())) {
+                            if (Handler.hascurio(player, Items.parasite.get())) {
+                                if (Handler.hascurio(player, Items.parasite.get())) {
+                                    if (event.getItem().getUseAnimation() == UseAnim.EAT) {
+                                        if (event.getItem().getFoodProperties(player) != null) {
+                                            int siz = (int) (event.getItem().getFoodProperties(player).getNutrition() + event.getItem().getFoodProperties(player).getSaturationModifier());
+                                            if (stack.getOrCreateTag().getInt(lvl_parasite) <= 1) {
+                                                siz /= 2;
+                                                stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
+
+                                                if (player.getFoodData().getFoodLevel() < 19) {
+                                                    player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - 1);
+                                                }
+                                            }
+                                            if (stack.getOrCreateTag().getInt(lvl_parasite) <= 2 && stack.getOrCreateTag().getInt(lvl_parasite) > 1) {
+                                                siz /= 3;
+                                                stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
+                                                if (player.getFoodData().getFoodLevel() < 19) {
+                                                    player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() - 1);
+                                                }
+                                            }
+                                            if (stack.getOrCreateTag().getInt(lvl_parasite) <= 3 && stack.getOrCreateTag().getInt(lvl_parasite) > 2) {
+                                                siz /= 4;
+                                                stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
+                                                if (player.getFoodData().getFoodLevel() < 19) {
+                                                    player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - 1);
+                                                    player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() - 1);
+                                                }
+                                            }
+                                            if (!player.level().isClientSide) {
+                                                player.displayClientMessage(Component.translatable("寄生虫增长了"+(siz)+"克").withStyle(ChatFormatting.RED), true);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public  void germ(BlockEvent.BreakEvent event) {
+
+        Player player = event.getPlayer();
+        if (Handler.hascurio(player, Items.germ.get())) {
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        {
+                            if (stack.getTag() != null) {
+
+                                int s = 250;
+                                stack.getTag().putInt(lvlSize,  stack.getTag().getInt(lvlSize)+1);
+                                if (stack.getTag().getInt(lvlSize) > s && stack.getTag().getInt(lvlSize) < s*2){
+                                    if (stack.getTag().getInt(lvl)!= 1) {
+                                        stack.getTag().putInt(lvl, 1);
+                                    }
+                                }
+                                if (stack.getTag().getInt(lvlSize) >  s*2 && stack.getTag().getInt(lvlSize) <  s*3){
+                                    if (stack.getTag().getInt(lvl)!= 2) {
+                                        stack.getTag().putInt(lvl, 2);
+                                    }
+                                }
+                                if (stack.getTag().getInt(lvlSize) >  s*3){
+                                    if (stack.getTag().getInt(lvl)!= 3) {
+                                        stack.getTag().putInt(lvl, 3);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+
+    }
+    @SubscribeEvent
+    public  void fungus(LivingHealEvent event){
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.fungus.get())){
+                Vec3 playerPos = player.position().add(0, 0.75, 0);
+                int range = 10;
+                List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                int integers = 0;
+                for (LivingEntity living : entities) {
+                    if (living.isAlliedTo(player)){
+                        if (!living.is(player)) {
+                            integers++;
+                        }
+                    }
+                }
+                float integer = integers;
+                integer /= 10;
+                integer *= 2.5f;
+                if (integer > 1.5f){
+                    integer = 1.5f;
+                }
+                aFloat = integer;
+                event.setAmount(event.getAmount() *(1+integer));
+
+            }
+        }
+    }
+    @SubscribeEvent
+    public  void fungus(LivingDeathEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.fungus.get())){
+                LivingEntity living =event.getEntity();
+                BlockState state = living.level().getBlockState(new BlockPos(living.getBlockX(), living.getBlockY() - 1, living.getBlockZ()));
+                if (state.is(Blocks.GRASS_BLOCK)) {
+                    living.level().setBlock(new BlockPos(living.getBlockX(), living.getBlockY() - 1, living.getBlockZ()), Blocks.MYCELIUM.defaultBlockState(), 3);
+                }
+                BlockState MYC = living.level().getBlockState(new BlockPos(living.getBlockX(), living.getBlockY(), living.getBlockZ()));
+
+
+                if (!player.getCooldowns().isOnCooldown(Items.fungus.get())) {
+                    player.getCooldowns().addCooldown(Items.fungus.get(),200);
+                }
+
+                if (MYC.is(Blocks.AIR)) {
+                    if (living.level().getBlockState(new BlockPos(living.getBlockX(), living.getBlockY()-1, living.getBlockZ())).is(Blocks.MYCELIUM)) {
+                        if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                            living.level().setBlock(new BlockPos(living.getBlockX(), living.getBlockY(), living.getBlockZ()), Blocks.RED_MUSHROOM.defaultBlockState(), 3);
+                        } else {
+                            living.level().setBlock(new BlockPos(living.getBlockX(), living.getBlockY(), living.getBlockZ()), Blocks.BROWN_MUSHROOM.defaultBlockState(), 3);
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    @SubscribeEvent
+    public void dna(LivingDeathEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,  Items.dna.get())) {
+                if (event.getEntity() instanceof MushroomCow) {
+                    CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                        Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                        for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                            ICurioStacksHandler stacksHandler = entry.getValue();
+                            IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                            for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                                ItemStack stack = stackHandler.getStackInSlot(i);
+                                if (stack.getItem() instanceof dna) {
+                                    if (player.hasEffect(MobEffects.WEAKNESS)) {
+                                        if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
+                                            if (stack.getTag() != null && !stack.getTag().getBoolean(fungus)) {
+                                                player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.fungus.get()));
+                                                stack.getTag().putBoolean(fungus, true);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void LivingEntityUseItemEvent(LivingEntityUseItemEvent.Finish event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.dna.get())&&!Handler.hascurio(player, com.moonstone.moonstonemod.Init.Items.parasite.get())) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            {
+                                if (stack.getOrCreateTag().getBoolean(cod)&&
+                                        stack.getOrCreateTag().getBoolean(SALMON)&&
+                                        stack.getOrCreateTag().getBoolean(CHICKEN)&&
+                                        stack.getOrCreateTag().getBoolean(BEEF)&&
+                                        stack.getOrCreateTag().getBoolean(RABBIT)&&
+                                        stack.getOrCreateTag().getBoolean(MUTTON)&&
+                                        stack.getOrCreateTag().getBoolean(PORKCHOP)&&
+                                        stack.getOrCreateTag().getBoolean(TROPICAL_FISH))
+                                {
+                                    if (!stack.getOrCreateTag().getBoolean(give)){
+                                        player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.parasite.get()));
+                                        stack.getOrCreateTag().putBoolean(give, true);
+                                    }
+                                }
+                                if (stack.getOrCreateTag().getBoolean(give)){
+                                    return;
+                                }
+                                if (event.getItem().is(net.minecraft.world.item.Items.COD)){
+                                    stack.getOrCreateTag().putBoolean(cod, true);
+                                }
+
+                                if (event.getItem().is(net.minecraft.world.item.Items.SALMON)){
+                                    stack.getOrCreateTag().putBoolean(SALMON, true);
+                                }
+                                if (event.getItem().is(net.minecraft.world.item.Items.CHICKEN)){
+                                    stack.getOrCreateTag().putBoolean(CHICKEN, true);
+                                }
+                                if (event.getItem().is(net.minecraft.world.item.Items.BEEF)){
+                                    stack.getOrCreateTag().putBoolean(BEEF, true);
+                                }
+                                if (event.getItem().is(net.minecraft.world.item.Items.RABBIT)){
+                                    stack.getOrCreateTag().putBoolean(RABBIT, true);
+                                }
+                                if (event.getItem().is(net.minecraft.world.item.Items.MUTTON)){
+                                    stack.getOrCreateTag().putBoolean(MUTTON, true);
+                                }
+
+                                if (event.getItem().is(net.minecraft.world.item.Items.PORKCHOP)){
+                                    stack.getOrCreateTag().putBoolean(PORKCHOP, true);
+                                }
+                                if (event.getItem().is(net.minecraft.world.item.Items.TROPICAL_FISH)){
+                                    stack.getOrCreateTag().putBoolean(TROPICAL_FISH, true);
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
+    @SubscribeEvent
+    public  void LivingHurtEvent_DNA(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player){
+            if (event.getSource()!= null && event.getSource().getEntity() instanceof WitherSkeleton witherSkeleton){
+                if (Handler.hascurio(player, Items.dna.get())){
+                    CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                        Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                        for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                            ICurioStacksHandler stacksHandler = entry.getValue();
+                            IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                            for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                                ItemStack stack = stackHandler.getStackInSlot(i);
+                                if (stack.getItem() instanceof dna) {
+                                    if (player.hasEffect(MobEffects.WEAKNESS)) {
+                                        if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
+                                            if (stack.getTag() != null && stack.getTag().getString(virus).isEmpty()) {
+                                                player.addItem(new ItemStack(com.moonstone.moonstonemod.Init.Items.virus.get()));
+                                                stack.getTag().putString(virus,virus);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void evilmug(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            ItemStack stack = player.getItemInHand(InteractionHand.OFF_HAND);
+            if (stack.is(Items.evilmug.get())){
+                if (stack.getOrCreateTag().getInt(evilmug.blood)<100){
+                    int s = (int) event.getAmount();
+                    if (s > 100){
+                        s = 100;
+                    }
+                    if (stack.getTag() != null) {
+                        stack.getTag().putInt(evilmug.blood,stack.getTag().getInt(evilmug.blood) + s);
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public   void evilcandle(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.evilcandle.get())){
+                if (event.getSource().is(DamageTypes.IN_FIRE)&&event.getSource().is(DamageTypes.ON_FIRE)&&event.getSource().is(DamageTypes.LAVA)){
+                    event.setAmount(event.getAmount() * 0.2f);
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void soulbattery(CriticalHitEvent event) {
+        if (Handler.hascurio(event.getEntity(), Items.soulbattery.get())){
+            event.setDamageModifier(event.getDamageModifier() * 1.25f);
+        }
+    }
+    @SubscribeEvent
+    public  void PlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
+        if (event.getEntity() != null) {
+            Player player = event.getEntity();
+            if (!player.getTags().contains("welcome_to_moonstone")) {
+                int a = Mth.nextInt(RandomSource.create(), 1, 2);
+                if (a == 1) {
+                    player.addItem(Items.ectoplasmstone.get().getDefaultInstance());
+                }
+                if (a == 2) {
+                    player.addItem(Items.twistedstone.get().getDefaultInstance());
+                }
+                player.addItem(Items.apple.get().getDefaultInstance());
+                player.addTag("welcome_to_moonstone");
+            }
+        }
+
+    }
     @SubscribeEvent
     public void KnockBack_nightmarestone(LivingKnockBackEvent  event) {
         if (event.getEntity() instanceof Player player){
@@ -445,6 +1287,10 @@ public class AllEvent {
         if (stack.getItem() instanceof IDoom) {
             tooltipEvent.setBorderStart(0xFF83DEFC);
             tooltipEvent.setBorderEnd(0xFF0296FE);
+        }
+        if (stack.getItem() instanceof Iplague) {
+            tooltipEvent.setBorderStart(0xFF800000);
+            tooltipEvent.setBorderStart(0xFF800000);
         }
     }
 

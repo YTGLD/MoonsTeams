@@ -158,43 +158,178 @@
   "item.nightmaretreasure.tool.string.5": "才有资格使用此道具",
 
 
+  "item.moonstone.diemug": "死亡酒桶",
+  "item.moonstone.evilcandle": "邪恶蜡烛",
+  "item.moonstone.evilmug": "邪恶酒桶",
+  "item.moonstone.obsidianring": "黑曜石戒指",
+
+
   "item.nightmarewater.tool.string": "腐朽…虚弱……",
   "item.nightmarewater.tool.string.1": "深渊…永恒……",
 
-  "item.magiceye.tool.string": "",
-  "item.magiceye.tool.string.1": "",
+  "item.moonstone.soulbattery": "灵魂 电池",
+  "item.moonstone.soulcube": "灵魂 立方",
 
-  "item.nanocube.tool.string": "",
-  "item.nanocube.tool.string.1": "",
+  "item.magiceye.tool.string": "在你攻击生物的半径四格内的所有生物",
+  "item.magiceye.tool.string.1": "将受到50％的范围伤害",
 
-  "item.nanorobot.tool.string": "",
-  "item.nanorobot.tool.string.1": "",
+  "item.nanocube.tool.string": "每隔45秒修复自身盔甲30点耐久值",
+  "item.nanocube.tool.string.1": "佩戴电池后冷却减少15秒",
 
-  "item.thedoomstone.tool.string": "",
-  "item.thedoomstone.tool.string.1": "",
-  "item.thedoomstone.tool.string.2": "",
+  "item.nanorobot.tool.string": "每隔30秒修复主手手持物品30点耐久",
+  "item.nanorobot.tool.string.1": "佩戴电池后冷却减少15秒",
 
-
-  "item.thefruit.tool.string": "",
-  "item.thefruit.tool.string.1": "",
-  "item.thefruit.tool.string.2": "",
-
-  "item.badgeofthedead.tool.string": "",
-
-  "item.biggreedcrystal.tool.string": "",
-
-  "item.greedcrystal.tool.string": "",
-
-  "item.blueamout.tool.string": "",
-  "item.blueamout.tool.string.1": "",
-
-  "item.greedamout.tool.string": "",
-  "item.greedamout.tool.string.1": "",
+  "item.thedoomstone.tool.string": "你的攻击将施加黑暗效果",
+  "item.thedoomstone.tool.string.1": "将以攻击生物为中心，对存在黑暗效果的生物造成音爆攻击",
+  "item.thedoomstone.tool.string.2": "被波及的生物将持续受到负面效果的影响",
 
 
-  "item.redamout.tool.string": "",
-  "item.redamout.tool.string.1": ""
+  "item.thefruit.tool.string": "食用后：",
+  "item.thefruit.tool.string.1": "免疫发光效果",
+  "item.thefruit.tool.string.2": "监守者感觉你很亲近！",
 
+  "item.badgeofthedead.tool.string": "对亡灵生物的伤害提高25％",
+
+  "item.biggreedcrystal.tool.string": "+2 时运",
+
+  "item.greedcrystal.tool.string": "+1 时运",
+
+  "item.blueamout.tool.string": "攻击时有概率削弱敌人",
+  "item.blueamout.tool.string.1": "受伤时有概率获得抗性提升II效果",
+
+  "item.greedamout.tool.string": "攻击时有概率吸取生命",
+  "item.greedamout.tool.string.1": "受伤时有概率获得伤害吸收效果",
+
+
+  "item.redamout.tool.string": "攻击时有概率击飞敌人",
+  "item.redamout.tool.string.1": "获得力量II的效果",
+
+  "item.soulbattery.tool.string.1": "+25％ 暴击伤害",
+
+
+  "item.fungus.tool.string": "",
+  "item.fungus.tool.string.1": "",
+  "item.fungus.tool.string.2": "",
+  "item.fungus.tool.string.3": "",
+  "item.fungus.tool.string.4": "",
+  "item.fungus.tool.string.5": "",
+  "item.fungus.tool.string.6": "",
+  "item.fungus.tool.string.7": "",
+
+  "item.germ.tool.string": "",
+  "item.germ.tool.string.1": "",
+
+  "item.parasite.tool.string": "",
+  "item.parasite.tool.string.1": "",
+  "item.parasite.tool.string.2": "",
+  "item.parasite.tool.string.3": "",
+  "item.parasite.tool.string.4": "",
+  "item.parasite.tool.string.5": "",
+
+  "item.virus.tool.string": "",
+  "item.virus.tool.string.1": "",
+  "item.virus.tool.string.2": "",
+
+  "item.botton.tool.string": "",
+  "item.botton.tool.string.1": "",
+  "item.botton.tool.string.2": "",
+
+  "item.catalyzer.tool.string": "",
+
+  "item.batskill.tool.string": "",
+  "item.batskill.tool.string.1": "",
+  "item.batskill.tool.string.2": "",
+  "item.batskill.tool.string.3": "",
+  "item.batskill.tool.string.4": "",
+  "item.batskill.tool.string.5": "",
+
+  "item.batgene.tool.string": "",
+  "item.batgene.tool.string.1": "",
+  "item.batgene.tool.string.2": "",
+
+  "item.flygene.tool.string": "",
+  "item.flygene.tool.string.1": "",
+
+
+  "item.ragegene.tool.string": "",
+  "item.ragegene.tool.string.1": "",
+  "item.ragegene.tool.string.2": "",
+  "item.ragegene.tool.string.3": "",
+
+
+  "item.sleepgene.tool.string": "",
+  "item.sleepgene.tool.string.1": "",
+
+  "item.medicinebox.tool.string": "",
+  "item.medicinebox.tool.string.1": "",
+  "item.medicinebox.tool.string.2": "",
+  "item.medicinebox.tool.string.3": "",
+  "item.medicinebox.tool.string.4": "",
+  "item.medicinebox.tool.string.5": "",
+  "item.medicinebox.tool.string.6": "",
+
+
+  "item.calcification.tool.string": "",
+  "item.calcification.tool.string.1": "",
+
+
+  "item.masticatory.tool.string": "",
+  "item.masticatory.tool.string.1": "",
+
+  "item.quadriceps.tool.string": "",
+  "item.quadriceps.tool.string.1": "",
+  "item.quadriceps.tool.string.2": "",
+
+  "item.reanimation.tool.string": "",
+  "item.reanimation.tool.string.1": "",
+  "item.reanimation.tool.string.2": "",
+  "item.reanimation.tool.string.3": "",
+
+  "item.autolytic.tool.string": "",
+
+  "item.fermentation.tool.string": "",
+  "item.fermentation.tool.string.1": "",
+  "item.fermentation.tool.string.2": "",
+  "item.fermentation.tool.string.3": "",
+
+  "item.putrefactive.tool.string": "",
+
+
+  "item.regenerative.tool.string": "",
+  "item.regenerative.tool.string.1": "",
+
+  "item.bloodvirus.tool.string": "",
+  "item.bloodvirus.tool.string.1": "",
+  "item.bloodvirus.tool.string.2": "",
+  "item.bloodvirus.tool.string.3": "",
+  "item.bloodvirus.tool.string.4": "",
+  "item.bloodvirus.tool.string.5": "",
+  "item.bloodvirus.tool.string.6": "",
+  "item.bloodvirus.tool.string.7": "",
+  "item.bloodvirus.tool.string.8": "",
+  "item.bloodvirus.tool.string.9": "",
+  "item.bloodvirus.tool.string.10": "",
+  "item.bloodvirus.tool.string.11": "",
+  "item.bloodvirus.tool.string.12": "",
+
+  "item.necora.tool.string": "",
+  "item.necora.tool.string.1": "",
+  "item.necora.tool.string.2": "",
+  "item.necora.tool.string.3": "",
+  "item.necora.tool.string.4": "",
+  "item.necora.tool.string.5": "",
+  "item.necora.tool.string.6": "",
+  "item.necora.tool.string.7": "",
+  "item.necora.tool.string.8": "",
+  "item.necora.tool.string.9": "",
+  "item.necora.tool.string.10": "",
+  "item.necora.tool.string.11": "",
+  "item.necora.tool.string.12": "",
+  "item.necora.tool.string.13": "",
+  "item.necora.tool.string.14": "",
+  "item.necora.tool.string.15": ""
 
 }
+
+
 

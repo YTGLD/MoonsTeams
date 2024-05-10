@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.Item.Ectoplasm;
 
-import com.moonstone.moonstonemod.Item.ectoplasm;
+import com.moonstone.moonstonemod.Item.MoonStoneItem.ectoplasm;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;

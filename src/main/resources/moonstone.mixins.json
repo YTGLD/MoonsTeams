@@ -6,6 +6,7 @@
   "refmap": "moonstone.refmap.json",
   "mixins": [
     "EnchantmentMenuMixin",
+    "LivingEntityMixin",
     "WardenMixin"
   ],
   "client": [

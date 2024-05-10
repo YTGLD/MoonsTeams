@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.Item.NaNoDoom;
 
-import com.moonstone.moonstonemod.Item.IDoom;
+import com.moonstone.moonstonemod.Item.MoonStoneItem.IDoom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;

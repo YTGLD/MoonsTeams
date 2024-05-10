@@ -18,4 +18,18 @@ public class Anvil {
             }
         }
     }
+    @SubscribeEvent
+    public void medicinebox(AnvilUpdateEvent event) {
+        ItemStack you = event.getRight();
+        ItemStack zuo = event.getLeft().copy();
+        if (!zuo.isEmpty()) {
+            if (you != null) {
+                if (zuo.is(Items.CHEST) && you.is(com.moonstone.moonstonemod.Init.Items.ectoplasmcube.get())) {
+                    event.setCost(1);
+                    event.setMaterialCost(1);
+                    event.setOutput(com.moonstone.moonstonemod.Init.Items.medicinebox.get().asItem().getDefaultInstance());
+                }
+            }
+        }
+    }
 }

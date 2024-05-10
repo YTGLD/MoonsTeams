@@ -17,6 +17,8 @@ public class Tab {
             .icon(()->new ItemStack(Items.ectoplasmball.get()))
             .title(Component.translatable("itemGroup.tabmoonstone"))
             .displayItems((a,b)->{
+                b.accept(new ItemStack(Items.ectoplasmstone.get()));
+                b.accept(new ItemStack(Items.twistedstone.get()));
                 b.accept(new ItemStack(Items.badgeofthedead.get()));
                 b.accept(new ItemStack(Items.battery.get()));
                 b.accept(new ItemStack(Items.biggreedcrystal.get()));
@@ -64,6 +66,54 @@ public class Tab {
                 b.accept(new ItemStack(Items.nanorobot.get()));
                 b.accept(new ItemStack(Items.thedoomstone.get()));
                 b.accept(new ItemStack(Items.thefruit.get()));
+                b.accept(new ItemStack(Items.soulbattery.get()));
+                b.accept(new ItemStack(Items.soulcube.get()));
+                b.accept(new ItemStack(Items.diemug.get()));
+                b.accept(new ItemStack(Items.evilcandle.get()));
+                b.accept(new ItemStack(Items.evilmug.get()));
+                b.accept(new ItemStack(Items.obsidianring.get()));
+
+                b.accept(new ItemStack(Items.dna.get()));
+                b.accept(new ItemStack(Items.fungus.get()));
+                b.accept(new ItemStack(Items.germ.get()));
+                b.accept(new ItemStack(Items.parasite.get()));
+                b.accept(new ItemStack(Items.virus.get()));
+
+                b.accept(new ItemStack(Items.botton.get()));
+                b.accept(new ItemStack(Items.catalyzer.get()));
+
+
+                b.accept(new ItemStack(Items.batskill.get()));
+
+
+                b.accept(new ItemStack(Items.batgene.get()));
+                b.accept(new ItemStack(Items.bloodgene.get()));
+                b.accept(new ItemStack(Items.flygene.get()));
+                b.accept(new ItemStack(Items.heathgene.get()));
+                b.accept(new ItemStack(Items.ragegene.get()));
+                b.accept(new ItemStack(Items.sleepgene.get()));
+
+
+                b.accept(new ItemStack(Items.apple.get()));
+                b.accept(new ItemStack(Items.medicinebox.get()));
+
+
+                b.accept(new ItemStack(Items.calcification.get()));
+                b.accept(new ItemStack(Items.masticatory.get()));
+                b.accept(new ItemStack(Items.polyphagia.get()));
+                b.accept(new ItemStack(Items.quadriceps.get()));
+                b.accept(new ItemStack(Items.reanimation.get()));
+
+
+                b.accept(new ItemStack(Items.ambush.get()));
+                b.accept(new ItemStack(Items.atpoverdose.get()));
+                b.accept(new ItemStack(Items.autolytic.get()));
+                b.accept(new ItemStack(Items.fermentation.get()));
+                b.accept(new ItemStack(Items.putrefactive.get()));
+                b.accept(new ItemStack(Items.regenerative.get()));
+
+                b.accept(new ItemStack(Items.bloodvirus.get()));
+                b.accept(new ItemStack(Items.necora.get()));
 
             })
             .build());

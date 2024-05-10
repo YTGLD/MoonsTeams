@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.Item.Common;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Item.CommonItem;
+import com.moonstone.moonstonemod.Item.MoonStoneItem.CommonItem;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;

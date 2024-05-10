@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.Item.Nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Item.nightmare;
+import com.moonstone.moonstonemod.Item.MoonStoneItem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

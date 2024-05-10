@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "moonstone:nanocube"
+    "moonstone:nanocube",
+
+    "moonstone:botton",
+    "moonstone:medicinebox"
+
   ]
 }

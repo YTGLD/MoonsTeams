@@ -87,108 +87,238 @@
   "item.mshell.tool.string.1": "-10% Damage",
 
 
-  "item.moonstone.magiceye": "magiceye",
-  "item.moonstone.magicstone": "magicstone",
-  "item.moonstone.nanocube": "nanocube",
-  "item.moonstone.nanorobot": "nanorobot",
-  "item.moonstone.thedoomstone": "thedoomstone",
-  "item.moonstone.thefruit": "thefruit",
+  "item.moonstone.magiceye": "The Magical Mechanical Eye",
+  "item.moonstone.magicstone": "The Magical Mechanical Stone",
+  "item.moonstone.nanocube": "Nano-cube",
+  "item.moonstone.nanorobot": "Nano-robot",
+  "item.moonstone.thedoomstone": "Ancient core stone",
+  "item.moonstone.thefruit": "Paleo-fruit",
 
-  "item.nightmareanchor.tool.string": "佩戴它并死亡",
-  "item.nightmareanchor.tool.string.1": "可记录这一次的死亡地点",
-  "item.nightmareanchor.tool.string.2": "右键传送到上个记录点",
-  "item.nightmareanchor.tool.string.3": "但你必须在同一维度内",
-  "item.nightmareanchor.tool.string.4": "佩戴时:",
-  "item.nightmareanchor.tool.string.5": "减少5％来自深渊的诅咒",
-  "item.nightmareanchor.tool.string.6": "唯有承受深渊之恐的人",
-  "item.nightmareanchor.tool.string.7": "才有资格使用此道具",
-
-
-  "item.nightmarecharm.tool.string": "减少15％来自深渊之眼的诅咒",
-  "item.nightmarecharm.tool.string.1": "加法计算",
-  "item.nightmarecharm.tool.string.2": "+1饰品槽位",
-  "item.nightmarecharm.tool.string.3": "唯有承受深渊之恐的人",
-  "item.nightmarecharm.tool.string.4": "才有资格使用此道具",
+  "item.nightmareanchor.tool.string": "Died while wearing it.",
+  "item.nightmareanchor.tool.string.1": "Record the location of this death.",
+  "item.nightmareanchor.tool.string.2": "Right click to teleport to the previous record point",
+  "item.nightmareanchor.tool.string.3": "But you have to be in the same dimension",
+  "item.nightmareanchor.tool.string.4": "while wearing:",
+  "item.nightmareanchor.tool.string.5": "Reduces curse from the Nightmare by 5%",
+  "item.nightmareanchor.tool.string.6": "Only those who bear the fear of the Nightmare",
+  "item.nightmareanchor.tool.string.7": "To be eligible to use this prop",
 
 
-  "item.nightmareeye.tool.string": "受到伤害增加33％",
-  "item.nightmareeye.tool.string.1": "造成伤害降低25％",
+  "item.nightmarecharm.tool.string": "Reduces curses from Nightmare-eye by 15%",
+  "item.nightmarecharm.tool.string.1": "*overlay calculation",
+  "item.nightmarecharm.tool.string.2": "+1 curios slot",
+  "item.nightmarecharm.tool.string.3": "Only those who bear the fear of the Nightmare",
+  "item.nightmarecharm.tool.string.4": "To be eligible to use this prop",
 
 
-  "item.nightmaremoai.tool.string": "+2 附魔产物的附魔等级",
-  "item.nightmaremoai.tool.string.1": "唯有承受深渊之恐的人",
-  "item.nightmaremoai.tool.string.2": "才有资格使用此道具",
+  "item.nightmareeye.tool.string": "Increase damage taken by 33%",
+  "item.nightmareeye.tool.string.1": "Reduce damage dealt by 25%",
 
 
-  "item.nightmarerotten.tool.string": "+22％ 所有属性",
-  "item.nightmarerotten.tool.string.1": "但是每增加1种属性",
-  "item.nightmarerotten.tool.string.2": "来自深渊的诅咒都会增加1.1％",
-  "item.nightmarerotten.tool.string.3": "唯有承受深渊之恐的人",
-  "item.nightmarerotten.tool.string.4": "才有资格使用此道具",
+  "item.nightmaremoai.tool.string": "+2 Enchantment level of the enchanted product",
+  "item.nightmaremoai.tool.string.1": "Only those who bear the fear of the Nightmare",
+  "item.nightmaremoai.tool.string.2": "To be eligible to use this prop",
 
 
-  "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
-  "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
-  "item.nightmarestone.tool.string.2": "+7％生命回复、击退抗性",
-  "item.nightmarestone.tool.string.3": "+10％挖掘速度、经验掉落",
-  "item.nightmarestone.tool.string.4": "伤害、移速、护甲",
-  "item.nightmarestone.tool.string.5": "生命回复、击退抗性",
-  "item.nightmarestone.tool.string.6": "挖掘速度、经验掉落",
-  "item.nightmarestone.tool.string.7": "你身上的任何负面效果时长翻倍",
-  "item.nightmarestone.tool.string.8": "受到任何来源的伤害都会获得一个随机负面效果",
-  "item.nightmarestone.tool.string.9": "唯有承受深渊之恐的人",
-  "item.nightmarestone.tool.string.10": "才有资格使用此道具",
+  "item.nightmarerotten.tool.string": "+22％ All Attributes",
+  "item.nightmarerotten.tool.string.1": "But for every additional 1 attribute",
+  "item.nightmarerotten.tool.string.2": "Curses from the Nightmare will increase by 1.1%",
+  "item.nightmarerotten.tool.string.3": "Only those who bear the fear of the Nightmare",
+  "item.nightmarerotten.tool.string.4": "To be eligible to use this prop",
 
 
-
-  "item.nightmaretreasure.tool.string": "你造成的伤害降低50％",
-  "item.nightmaretreasure.tool.string.1": "击杀获得的战利品有1/3的概率获取三倍",
-  "item.nightmaretreasure.tool.string.2": "每增加1的幸运，都会提高3％的概率",
-  "item.nightmaretreasure.tool.string.3": "不超过66％",
-  "item.nightmaretreasure.tool.string.4": "唯有承受深渊之恐的人",
-  "item.nightmaretreasure.tool.string.5": "才有资格使用此道具",
-
-
-  "item.nightmarewater.tool.string": "腐朽…虚弱……",
-  "item.nightmarewater.tool.string.1": "深渊…永恒……",
-
-
-  "item.magiceye.tool.string": "",
-  "item.magiceye.tool.string.1": "",
-
-  "item.nanocube.tool.string": "",
-  "item.nanocube.tool.string.1": "",
-
-  "item.nanorobot.tool.string": "",
-  "item.nanorobot.tool.string.1": "",
-
-  "item.thedoomstone.tool.string": "",
-  "item.thedoomstone.tool.string.1": "",
-  "item.thedoomstone.tool.string.2": "",
-
-
-  "item.thefruit.tool.string": "",
-  "item.thefruit.tool.string.1": "",
-  "item.thefruit.tool.string.2": "",
-
-  "item.badgeofthedead.tool.string": "",
-
-  "item.biggreedcrystal.tool.string": "",
-
-  "item.greedcrystal.tool.string": "",
-
-  "item.blueamout.tool.string": "",
-  "item.blueamout.tool.string.1": "",
-
-  "item.greedamout.tool.string": "",
-  "item.greedamout.tool.string.1": "",
-
-
-  "item.redamout.tool.string": "",
-  "item.redamout.tool.string.1": ""
+  "item.nightmarestone.tool.string": "For each debuff that exists on you:",
+  "item.nightmarestone.tool.string.1": "+4％ Damage, Speed, Armor",
+  "item.nightmarestone.tool.string.2": "+7％ Regeneration, Knockback Resistance",
+  "item.nightmarestone.tool.string.3": "+10％Breaking speed、Experience Drops",
+  "item.nightmarestone.tool.string.4": " Damage, Speed, Armor",
+  "item.nightmarestone.tool.string.5": " Life Restoration, Knockback Resistance",
+  "item.nightmarestone.tool.string.6": " Breaking speed、Experience Drops",
+  "item.nightmarestone.tool.string.7": "Double the duration of any debuffs on you",
+  "item.nightmarestone.tool.string.8": "Taking damage from any source gains a random debuff",
+  "item.nightmarestone.tool.string.9": "Only those who bear the fear of the Nightmare",
+  "item.nightmarestone.tool.string.10": "To be eligible to use this prop",
 
 
 
+  "item.nightmaretreasure.tool.string": "Reduces damage dealt by 50%",
+  "item.nightmaretreasure.tool.string.1": "Loot gained from kills has a 33% chance of getting triple",
+  "item.nightmaretreasure.tool.string.2": "Each increase of 1 in luck increases the probability by 3%",
+  "item.nightmaretreasure.tool.string.3": "Maximum 66%",
+  "item.nightmaretreasure.tool.string.4": "Only those who bear the fear of the Nightmare",
+  "item.nightmaretreasure.tool.string.5": "To be eligible to use this prop",
+
+
+  "item.moonstone.diemug": "Death Cask",
+  "item.moonstone.evilcandle": "Evil Candle",
+  "item.moonstone.evilmug": "Evil Cask",
+  "item.moonstone.obsidianring": "Obsidian Ring",
+
+  "item.nightmarewater.tool.string": "Defeat...Frailty ......",
+  "item.nightmarewater.tool.string.1": "Nightmare…Eternity……",
+
+  "item.moonstone.soulbattery": "Soul-battery",
+  "item.moonstone.soulcube": "Soul-cube",
+
+
+  "item.magiceye.tool.string": "The Magical Mechanical Eye",
+  "item.magiceye.tool.string.1": "Will take 50% ranged damage",
+
+  "item.nanocube.tool.string": "Repair 30 durability points of your armor every 45 seconds.",
+  "item.nanocube.tool.string.1": "*cooldown reduced by 15 seconds when wearing batteries",
+
+  "item.nanorobot.tool.string": "Restore 30 durability points to main handheld items every 30 seconds",
+  "item.nanorobot.tool.string.1": "*cooldown reduced by 15 seconds when wearing batteries",
+
+  "item.thedoomstone.tool.string": "Your attacks will have a Blindness debuff.",
+  "item.thedoomstone.tool.string.1": "Will center on the attacking creature and inflict a sonic boom attack on creatures with the blindness debuff present",
+  "item.thedoomstone.tool.string.2": "Creatures attacked by Sonic Boom will continue to be affected by negative effects",
+
+
+  "item.thefruit.tool.string": "After eating:",
+  "item.thefruit.tool.string.1": "Not subject to luminous effects",
+  "item.thefruit.tool.string.2": "The Warden feels close to you!",
+
+  "item.badgeofthedead.tool.string": "25% more damage against undead creatures",
+
+  "item.biggreedcrystal.tool.string": "+2 Fortune",
+
+  "item.greedcrystal.tool.string": "+1 Fortune",
+
+  "item.blueamout.tool.string": "Attacks have a chance to weaken enemies",
+  "item.blueamout.tool.string.1": "Probability of getting Resistance II when injured",
+
+  "item.greedamout.tool.string": "Attacks have a chance to draw life",
+  "item.greedamout.tool.string.1": "Probability of getting Absorption when injured",
+
+
+  "item.redamout.tool.string": "Attacks have a chance to send enemies flying",
+  "item.redamout.tool.string.1": "Probability of getting Strength II when injured",
+
+  "item.soulbattery.tool.string.1": "+25％ Critical attack damage",
+
+  "item.fungus.tool.string": "",
+  "item.fungus.tool.string.1": "",
+  "item.fungus.tool.string.2": "",
+  "item.fungus.tool.string.3": "",
+  "item.fungus.tool.string.4": "",
+  "item.fungus.tool.string.5": "",
+  "item.fungus.tool.string.6": "",
+  "item.fungus.tool.string.7": "",
+
+  "item.germ.tool.string": "",
+  "item.germ.tool.string.1": "",
+
+  "item.parasite.tool.string": "",
+  "item.parasite.tool.string.1": "",
+  "item.parasite.tool.string.2": "",
+  "item.parasite.tool.string.3": "",
+  "item.parasite.tool.string.4": "",
+  "item.parasite.tool.string.5": "",
+
+  "item.virus.tool.string": "",
+  "item.virus.tool.string.1": "",
+  "item.virus.tool.string.2": "",
+
+  "item.botton.tool.string": "",
+  "item.botton.tool.string.1": "",
+  "item.botton.tool.string.2": "",
+
+  "item.catalyzer.tool.string": "",
+
+  "item.batskill.tool.string": "",
+  "item.batskill.tool.string.1": "",
+  "item.batskill.tool.string.2": "",
+  "item.batskill.tool.string.3": "",
+  "item.batskill.tool.string.4": "",
+  "item.batskill.tool.string.5": "",
+
+  "item.batgene.tool.string": "",
+  "item.batgene.tool.string.1": "",
+  "item.batgene.tool.string.2": "",
+
+  "item.flygene.tool.string": "",
+  "item.flygene.tool.string.1": "",
+
+
+  "item.ragegene.tool.string": "",
+  "item.ragegene.tool.string.1": "",
+  "item.ragegene.tool.string.2": "",
+  "item.ragegene.tool.string.3": "",
+
+
+  "item.sleepgene.tool.string": "",
+  "item.sleepgene.tool.string.1": "",
+
+  "item.medicinebox.tool.string": "",
+  "item.medicinebox.tool.string.1": "",
+  "item.medicinebox.tool.string.2": "",
+  "item.medicinebox.tool.string.3": "",
+  "item.medicinebox.tool.string.4": "",
+  "item.medicinebox.tool.string.5": "",
+  "item.medicinebox.tool.string.6": "",
+
+
+  "item.calcification.tool.string": "",
+  "item.calcification.tool.string.1": "",
+
+
+  "item.masticatory.tool.string": "",
+  "item.masticatory.tool.string.1": "",
+
+  "item.quadriceps.tool.string": "",
+  "item.quadriceps.tool.string.1": "",
+  "item.quadriceps.tool.string.2": "",
+
+  "item.reanimation.tool.string": "",
+  "item.reanimation.tool.string.1": "",
+  "item.reanimation.tool.string.2": "",
+  "item.reanimation.tool.string.3": "",
+
+  "item.autolytic.tool.string": "",
+
+  "item.fermentation.tool.string": "",
+  "item.fermentation.tool.string.1": "",
+  "item.fermentation.tool.string.2": "",
+  "item.fermentation.tool.string.3": "",
+
+  "item.putrefactive.tool.string": "",
+
+
+  "item.regenerative.tool.string": "",
+  "item.regenerative.tool.string.1": "",
+
+  "item.bloodvirus.tool.string": "",
+  "item.bloodvirus.tool.string.1": "",
+  "item.bloodvirus.tool.string.2": "",
+  "item.bloodvirus.tool.string.3": "",
+  "item.bloodvirus.tool.string.4": "",
+  "item.bloodvirus.tool.string.5": "",
+  "item.bloodvirus.tool.string.6": "",
+  "item.bloodvirus.tool.string.7": "",
+  "item.bloodvirus.tool.string.8": "",
+  "item.bloodvirus.tool.string.9": "",
+  "item.bloodvirus.tool.string.10": "",
+  "item.bloodvirus.tool.string.11": "",
+  "item.bloodvirus.tool.string.12": "",
+
+  "item.necora.tool.string": "",
+  "item.necora.tool.string.1": "",
+  "item.necora.tool.string.2": "",
+  "item.necora.tool.string.3": "",
+  "item.necora.tool.string.4": "",
+  "item.necora.tool.string.5": "",
+  "item.necora.tool.string.6": "",
+  "item.necora.tool.string.7": "",
+  "item.necora.tool.string.8": "",
+  "item.necora.tool.string.9": "",
+  "item.necora.tool.string.10": "",
+  "item.necora.tool.string.11": "",
+  "item.necora.tool.string.12": "",
+  "item.necora.tool.string.13": "",
+  "item.necora.tool.string.14": "",
+  "item.necora.tool.string.15": ""
 
 
 }
+

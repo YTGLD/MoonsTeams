@@ -16,7 +16,10 @@
     "moonstone:greedcrystal",
     "moonstone:warcrystal",
     "moonstone:blackeorb",
-    "moonstone:whiteorb"
+    "moonstone:whiteorb",
+
+    "moonstone:bloodvirus",
+    "moonstone:necora"
 
   ]
 }

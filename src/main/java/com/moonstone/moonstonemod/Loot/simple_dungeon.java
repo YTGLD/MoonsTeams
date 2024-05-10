@@ -74,6 +74,13 @@ public class simple_dungeon extends LootModifier {
         if (p == 15){generatedLoot.add(new ItemStack(Items.warcrystal.get()));}
         if (p == 16){generatedLoot.add(new ItemStack(Items.whiteorb.get()));}
 
+        if (p == 17){generatedLoot.add(new ItemStack(Items.soulbattery.get()));}
+        if (p == 18){generatedLoot.add(new ItemStack(Items.soulcube.get()));}
+        if (p == 19){generatedLoot.add(new ItemStack(Items.diemug.get()));}
+        if (p == 20){generatedLoot.add(new ItemStack(Items.evilcandle.get()));}
+        if (p == 21){generatedLoot.add(new ItemStack(Items.evilmug.get()));}
+        if (p == 22){generatedLoot.add(new ItemStack(Items.obsidianring.get()));}
+
         return generatedLoot;
     }
 

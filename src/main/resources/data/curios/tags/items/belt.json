@@ -9,6 +9,10 @@
     "moonstone:mblock",
     "moonstone:mshell",
     "moonstone:battery",
-    "moonstone:nanorobot"
+    "moonstone:nanorobot",
+
+    "moonstone:soulbattery",
+    "moonstone:soulcube"
+
   ]
 }

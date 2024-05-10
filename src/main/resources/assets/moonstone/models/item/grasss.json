@@ -1,0 +1,59 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "moonstone:item/grass",
+		"particle": "moonstone:item/grass"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 8],
+			"to": [16, 16, 8],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 16, 0], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [8, 0, 0],
+			"to": [8, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 0], "rotation": 270, "texture": "#missing"},
+				"down": {"uv": [0, 0, 16, 0], "rotation": 90, "texture": "#missing"}
+			}
+		},
+		{
+			"from": [0, 0, 3],
+			"to": [0, 8, 19],
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"west": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 0], "rotation": 270, "texture": "#missing"},
+				"down": {"uv": [0, 0, 16, 0], "rotation": 90, "texture": "#missing"}
+			}
+		},
+		{
+			"from": [-7, 0, 12],
+			"to": [9, 8, 12],
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 16, 0], "rotation": 180, "texture": "#missing"},
+				"down": {"uv": [0, 0, 16, 0], "rotation": 180, "texture": "#missing"}
+			}
+		}
+	]
+}

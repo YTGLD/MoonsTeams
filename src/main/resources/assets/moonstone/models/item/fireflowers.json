@@ -1,0 +1,33 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "moonstone:item/firetop",
+		"particle": "moonstone:item/firetop"
+	},
+	"elements": [
+		{
+			"from": [-1, -1, 8],
+			"to": [15, 15, 8],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 16, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 16, 0], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [7, -1, 0],
+			"to": [7, 15, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 0], "rotation": 270, "texture": "#missing"},
+				"down": {"uv": [0, 0, 16, 0], "rotation": 90, "texture": "#missing"}
+			}
+		}
+	]
+}

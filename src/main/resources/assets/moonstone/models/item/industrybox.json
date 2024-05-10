@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "moonstone:block/irradiated_dawn",
+    "up": "moonstone:block/irradiated_top",
+    "north": "moonstone:block/irradiated_c",
+    "east": "moonstone:block/irradiated_c",
+    "south": "moonstone:block/irradiated_c",
+    "west": "moonstone:block/irradiated_c",
+    "particle": "moonstone:block/irradiated_dawn"
+  },
+  "render_type": "solid"
+}

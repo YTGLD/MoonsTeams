@@ -2,6 +2,18 @@ package com.moonstone.moonstonemod.Init;
 
 import com.moonstone.moonstonemod.Item.Common.*;
 import com.moonstone.moonstonemod.Item.Ectoplasm.*;
+import com.moonstone.moonstonemod.Item.Amout.*;
+import com.moonstone.moonstonemod.Item.Soul.*;
+import com.moonstone.moonstonemod.Item.UnCommon.*;
+import com.moonstone.moonstonemod.Item.Plague.ALL.*;
+import com.moonstone.moonstonemod.Item.Plague.BloodVirus.ex.*;
+import com.moonstone.moonstonemod.Item.Plague.medicine.med.*;
+import com.moonstone.moonstonemod.Item.Plague.BloodVirus.Skill.*;
+import com.moonstone.moonstonemod.Item.Plague.BloodVirus.*;
+import com.moonstone.moonstonemod.Item.Plague.medicine.extend.*;
+import com.moonstone.moonstonemod.Item.Plague.medicine.TheNecora.*;
+import com.moonstone.moonstonemod.Item.Plague.*;
+
 import com.moonstone.moonstonemod.Item.Maulice.*;
 import com.moonstone.moonstonemod.Item.NaNoDoom.magiceye;
 import com.moonstone.moonstonemod.Item.NaNoDoom.magicstone;
@@ -70,6 +82,59 @@ public class Items {
     public static final RegistryObject<Item>  nanorobot =REGISTRY.register("nanorobot", nanorobot::new);
     public static final RegistryObject<Item>  thedoomstone =REGISTRY.register("thedoomstone", thedoomstone::new);
     public static final RegistryObject<Item>  thefruit =REGISTRY.register("thefruit", thefruit::new);
+    public static final RegistryObject<Item>  ectoplasmstone =REGISTRY.register("ectoplasmstone", ectoplasmstone::new);
+    public static final RegistryObject<Item>  twistedstone =REGISTRY.register("twistedstone", twistedstone::new);
+
+    public static final RegistryObject<Item>  soulbattery =REGISTRY.register("soulbattery", soulbattery::new);
+    public static final RegistryObject<Item>  soulcube =REGISTRY.register("soulcube", soulcube::new);
+
+    public static final RegistryObject<Item>  diemug =REGISTRY.register("diemug", diemug::new);
+    public static final RegistryObject<Item>  evilcandle =REGISTRY.register("evilcandle",evilcandle::new);
+    public static final RegistryObject<Item>  evilmug =REGISTRY.register("evilmug", evilmug::new);
+    public static final RegistryObject<Item>  obsidianring =REGISTRY.register("obsidianring", obsidianring::new);
+
+
+    public static final RegistryObject<Item>  dna =REGISTRY.register("dna",dna::new);
+    public static final RegistryObject<Item>  fungus =REGISTRY.register("fungus",fungus::new);
+    public static final RegistryObject<Item>  germ =REGISTRY.register("germ",germ::new);
+    public static final RegistryObject<Item>  parasite =REGISTRY.register("parasite",parasite::new);
+    public static final RegistryObject<Item>  virus =REGISTRY.register("virus",virus::new);
+    public static final RegistryObject<Item>  botton =REGISTRY.register("botton",botton::new);
+    public static final RegistryObject<Item>  catalyzer =REGISTRY.register("catalyzer",catalyzer::new);
+
+
+    public static final RegistryObject<Item>  calcification =REGISTRY.register("calcification",calcification::new);
+    public static final RegistryObject<Item>  masticatory =REGISTRY.register("masticatory",masticatory::new);
+    public static final RegistryObject<Item>  polyphagia =REGISTRY.register("polyphagia",polyphagia::new);
+    public static final RegistryObject<Item>  quadriceps =REGISTRY.register("quadriceps",quadriceps::new);
+    public static final RegistryObject<Item>  reanimation =REGISTRY.register("reanimation",reanimation::new);
+    public static final RegistryObject<Item>  batskill =REGISTRY.register("batskill",batskill::new);
+
+
+
+
+    public static final RegistryObject<Item> batgene =REGISTRY.register("batgene",batgene::new);
+    public static final RegistryObject<Item> bloodgene =REGISTRY.register("bloodgene",bloodgene::new);
+    public static final RegistryObject<Item> flygene =REGISTRY.register("flygene",flygene::new);
+    public static final RegistryObject<Item> heathgene =REGISTRY.register("heathgene",heathgene::new);
+    public static final RegistryObject<Item> ragegene =REGISTRY.register("ragegene",ragegene::new);
+    public static final RegistryObject<Item> sleepgene =REGISTRY.register("sleepgene",sleepgene::new);
+    public static final RegistryObject<Item> medicinebox =REGISTRY.register("medicinebox",medicinebox::new);
+    public static final RegistryObject<Item> apple =REGISTRY.register("apple",apple::new);
+
+
+
+
+    public static final RegistryObject<Item> ambush =REGISTRY.register("ambush",ambush::new);
+    public static final RegistryObject<Item> atpoverdose =REGISTRY.register("atpoverdose",atpoverdose::new);
+    public static final RegistryObject<Item> autolytic =REGISTRY.register("autolytic",autolytic::new);
+    public static final RegistryObject<Item> fermentation =REGISTRY.register("fermentation",fermentation::new);
+    public static final RegistryObject<Item> putrefactive =REGISTRY.register("putrefactive",putrefactive::new);
+    public static final RegistryObject<Item> regenerative =REGISTRY.register("regenerative",regenerative::new);
+
+
+    public static final RegistryObject<Item> bloodvirus =REGISTRY.register("bloodvirus",bloodvirus::new);
+    public static final RegistryObject<Item> necora =REGISTRY.register("necora",necora::new);
 
 
 }
