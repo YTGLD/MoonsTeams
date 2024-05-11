@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:calcification"
+    },
+    {
+      "item": "moonstone:reanimation"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:whiteorb"
+    },
+    {
+      "item": "moonstone:blackeorb"
+    }
+  ],
+  "result": {
+    "item": "moonstone:necoraeye",
+    "count": 1
+  }
+}

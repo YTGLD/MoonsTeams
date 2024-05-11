@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "BCD",
+    "AAA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "moonstone:ectoplasmball"
+    },
+    "B":
+    {
+      "item": "moonstone:nanocube"
+    },
+    "C":
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    "D":
+    {
+      "item": "moonstone:mkidney"
+    }
+
+  },
+  "result":
+  {
+    "item": "moonstone:ragecharm",
+    "count": 1
+  }
+}

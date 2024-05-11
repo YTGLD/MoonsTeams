@@ -195,130 +195,214 @@
   "item.redamout.tool.string": "Attacks have a chance to send enemies flying",
   "item.redamout.tool.string.1": "Probability of getting Strength II when injured",
 
-  "item.soulbattery.tool.string.1": "+25％ Critical attack damage",
+  "curios.identifier.medicine": "medicine",
+  "curios.identifier.necora": "DNA",
 
-  "item.fungus.tool.string": "",
-  "item.fungus.tool.string.1": "",
-  "item.fungus.tool.string.2": "",
-  "item.fungus.tool.string.3": "",
-  "item.fungus.tool.string.4": "",
-  "item.fungus.tool.string.5": "",
-  "item.fungus.tool.string.6": "",
-  "item.fungus.tool.string.7": "",
+  "item.moonstone.germ": "germ",
+  "item.moonstone.fungus": "fungus",
+  "item.moonstone.parasite": "parasite",
+  "item.moonstone.virus": "virus",
 
-  "item.germ.tool.string": "",
-  "item.germ.tool.string.1": "",
-
-  "item.parasite.tool.string": "",
-  "item.parasite.tool.string.1": "",
-  "item.parasite.tool.string.2": "",
-  "item.parasite.tool.string.3": "",
-  "item.parasite.tool.string.4": "",
-  "item.parasite.tool.string.5": "",
-
-  "item.virus.tool.string": "",
-  "item.virus.tool.string.1": "",
-  "item.virus.tool.string.2": "",
-
-  "item.botton.tool.string": "",
-  "item.botton.tool.string.1": "",
-  "item.botton.tool.string.2": "",
-
-  "item.catalyzer.tool.string": "",
-
-  "item.batskill.tool.string": "",
-  "item.batskill.tool.string.1": "",
-  "item.batskill.tool.string.2": "",
-  "item.batskill.tool.string.3": "",
-  "item.batskill.tool.string.4": "",
-  "item.batskill.tool.string.5": "",
-
-  "item.batgene.tool.string": "",
-  "item.batgene.tool.string.1": "",
-  "item.batgene.tool.string.2": "",
-
-  "item.flygene.tool.string": "",
-  "item.flygene.tool.string.1": "",
+  "item.fungus.tool.string": "Gain a life Restoration bonus based on the number of pets around you",
+  "item.fungus.tool.string.1": "Each pet boosts this bonus by 25%",
+  "item.fungus.tool.string.2": "Maximum 150%",
+  "item.fungus.tool.string.3": "Convert the Grass cubes under your feet",
+  "item.fungus.tool.string.4": "Gain life restoration on Mycelium cubes",
+  "item.fungus.tool.string.5": "Unaffected by effects including Wither, Weakness, Slowness, Poison generation",
+  "item.fungus.tool.string.6": "You burn in the sun, even if you wear a hat.",
+  "item.fungus.tool.string.7": "*Find a cold place to stay, you mushroom!",
 
 
-  "item.ragegene.tool.string": "",
-  "item.ragegene.tool.string.1": "",
-  "item.ragegene.tool.string.2": "",
-  "item.ragegene.tool.string.3": "",
+  "item.germ.tool.string": "Increases the adaptation value of Germ when digging cubes:",
+  "item.germ.tool.string.1": "Additional attributes can be gained from Germ for every 250 points of adaptation value",
 
 
-  "item.sleepgene.tool.string": "",
-  "item.sleepgene.tool.string.1": "",
+  "item.parasite.tool.string": "Elevated Parasite activity based on the nutritional value of the food",
+  "item.parasite.tool.string.1": "The more active the Parasite, the stronger your attributes.",
+  "item.parasite.tool.string.2": "The higher the Parasite activity, the less activity can be increased",
+  "item.parasite.tool.string.3": "As the Parasites become more active, it will become increasingly difficult for you to get enough to eat",
+  "item.parasite.tool.string.4": "In moments of necessity, parasites will sacrifice activity to preserve their host!",
+  "item.parasite.tool.string.5": "You become weak when your Hunger Value is less than 50%.",
 
-  "item.medicinebox.tool.string": "",
-  "item.medicinebox.tool.string.1": "",
-  "item.medicinebox.tool.string.2": "",
-  "item.medicinebox.tool.string.3": "",
-  "item.medicinebox.tool.string.4": "",
+
+  "item.virus.tool.string": "Killing creatures to take their DNA!",
+  "item.virus.tool.string.1": "Every 10 points of DNA taken deals an additional 2.5% damage to this type of creature.",
+  "item.virus.tool.string.2": "Maximum 50%",
+
+
+  "item.botton.tool.string": "*If you find some unspecified gene...",
+  "item.botton.tool.string.1": "*That way I can build you a whole new body.",
+  "item.botton.tool.string.2": "Wearing this item and opening loot boxes in Mordor may reveal some genomes",
+
+
+  "item.catalyzer.tool.string": "Right-click to use to infect some special items",
+
+
+  "item.batskill.tool.string": "Attacks have a 15% chance of summoning 3 bats",
+  "item.batskill.tool.string.1": "And within a radius of 12 squares",
+  "item.batskill.tool.string.2": "For each bat present, your damage is reduced by 5%.",
+  "item.batskill.tool.string.3": "Maximum 80%",
+  "item.batskill.tool.string.4": "Surrounding bats lose 10% of their life every 1 second.",
+  "item.batskill.tool.string.5": "Can be implanted in Bloodvirus",
+
+
+  "item.batgene.tool.string": "Bats in your vicinity take 60% less damage",
+  "item.batgene.tool.string.1": "For each bat present, you deal 10% more damage.",
+  "item.batgene.tool.string.2": "10% Damage reduction",
+
+
+  "item.flygene.tool.string": "13% increase in speed while flying",
+  "item.flygene.tool.string.1": "When gliding, use the arrow keys to accelerate or decelerate in the air.",
+
+
+  "item.ragegene.tool.string": "When your Attack Stamina Bar is at 100 percent",
+  "item.ragegene.tool.string.1": "Increases damage by 5% with each attack",
+  "item.ragegene.tool.string.2": "Maximum 100%",
+  "item.ragegene.tool.string.3": "Recalculated after taking damage",
+
+
+  "item.sleepgene.tool.string": "Doesn't get negative effects during the day",
+  "item.sleepgene.tool.string.1": "Can't get gain effects at night",
+
+
+  "item.medicinebox.tool.string": "If you find some good pills…",
+  "item.medicinebox.tool.string.1": "*That way I can build you a whole new body.",
+  "item.medicinebox.tool.string.2": "Wearing this item allows you to obtain pills in certain ways",
+  "item.medicinebox.tool.string.3": "You can choose to fuse the found pills or just wear the",
+  "item.medicinebox.tool.string.4": "This item must be worn in order to discover the pill!",
   "item.medicinebox.tool.string.5": "",
   "item.medicinebox.tool.string.6": "",
 
 
-  "item.calcification.tool.string": "",
-  "item.calcification.tool.string.1": "",
+  "item.calcification.tool.string": "*Calcifies the experimenter's skin and enhances the experimenter's ability to fight",
+  "item.calcification.tool.string.1": "Increases damage resistance by 11",
 
 
-  "item.masticatory.tool.string": "",
-  "item.masticatory.tool.string.1": "",
-
-  "item.quadriceps.tool.string": "",
-  "item.quadriceps.tool.string.1": "",
-  "item.quadriceps.tool.string.2": "",
-
-  "item.reanimation.tool.string": "",
-  "item.reanimation.tool.string.1": "",
-  "item.reanimation.tool.string.2": "",
-  "item.reanimation.tool.string.3": "",
-
-  "item.autolytic.tool.string": "",
-
-  "item.fermentation.tool.string": "",
-  "item.fermentation.tool.string.1": "",
-  "item.fermentation.tool.string.2": "",
-  "item.fermentation.tool.string.3": "",
-
-  "item.putrefactive.tool.string": "",
+  "item.masticatory.tool.string": "*Strengthening of the experimenter's occlusal muscles to the point of enhancing the experimenter's chewing ability",
+  "item.masticatory.tool.string.1": "50% reduction in eating time",
 
 
-  "item.regenerative.tool.string": "",
-  "item.regenerative.tool.string.1": "",
-
-  "item.bloodvirus.tool.string": "",
-  "item.bloodvirus.tool.string.1": "",
-  "item.bloodvirus.tool.string.2": "",
-  "item.bloodvirus.tool.string.3": "",
-  "item.bloodvirus.tool.string.4": "",
-  "item.bloodvirus.tool.string.5": "",
-  "item.bloodvirus.tool.string.6": "",
-  "item.bloodvirus.tool.string.7": "",
-  "item.bloodvirus.tool.string.8": "",
-  "item.bloodvirus.tool.string.9": "",
-  "item.bloodvirus.tool.string.10": "",
-  "item.bloodvirus.tool.string.11": "",
-  "item.bloodvirus.tool.string.12": "",
-
-  "item.necora.tool.string": "",
-  "item.necora.tool.string.1": "",
-  "item.necora.tool.string.2": "",
-  "item.necora.tool.string.3": "",
-  "item.necora.tool.string.4": "",
-  "item.necora.tool.string.5": "",
-  "item.necora.tool.string.6": "",
-  "item.necora.tool.string.7": "",
-  "item.necora.tool.string.8": "",
-  "item.necora.tool.string.9": "",
-  "item.necora.tool.string.10": "",
-  "item.necora.tool.string.11": "",
-  "item.necora.tool.string.12": "",
-  "item.necora.tool.string.13": "",
-  "item.necora.tool.string.14": "",
-  "item.necora.tool.string.15": ""
+  "item.quadriceps.tool.string": "*Strengthening of the experimenter's quadriceps muscles to the point of enhancing the experimenter's locomotor ability",
+  "item.quadriceps.tool.string.1": "Increases movement speed by 20%",
+  "item.quadriceps.tool.string.2": "Increases jump height by 50%",
 
 
+  "item.reanimation.tool.string": "*Activate the experimenter's cells to the point of enhancing the experimenter's ability to regenerate cells",
+  "item.reanimation.tool.string.1": "Simultaneous restoration of basic functions of vital organs",
+  "item.reanimation.tool.string.2": "Resurrect！",
+  "item.reanimation.tool.string.3": "300 seconds cooldown",
+
+
+  "item.autolytic.tool.string": "Suppresses the swimming speed reduction effect from the Necora virus",
+
+
+  "item.fermentation.tool.string": "10 seconds cooldown",
+  "item.fermentation.tool.string.1": "During cooldown, damage is reduced by 70%",
+  "item.fermentation.tool.string.2": "Increases damage by 300% after cooldown",
+  "item.fermentation.tool.string.3": "*Pathogens still retain their hunting instincts, which allows them to wait patiently and deliver the killing blow!",
+
+
+  "item.putrefactive.tool.string": "Increases the effect caused by carrion",
+
+
+  "item.regenerative.tool.string": "Restores 1 life point every 5 seconds",
+  "item.regenerative.tool.string.1": "*The cells of pathogens are more vibrant than in the past",
+
+
+  "item.bloodvirus.tool.string": "Increases damage against non-undead creatures by 25",
+  "item.bloodvirus.tool.string.1": "Increase speed at night by 17%",
+  "item.bloodvirus.tool.string.2": "When gliding, you can use the forward button to sprint",
+  "item.bloodvirus.tool.string.3": "In the dark, you'll get Night vision",
+  "item.bloodvirus.tool.string.4": "Increases life steal by 10%",
+  "item.bloodvirus.tool.string.5": "*feed on souls",
+  "item.bloodvirus.tool.string.6": "Reduces life restoration effects from any source by 30%",
+  "item.bloodvirus.tool.string.7": "You will burn in the sun and become extremely weak!",
+  "item.bloodvirus.tool.string.8": "Increases knockback distance by 100%",
+  "item.bloodvirus.tool.string.9": "Reduces life cap by 25%",
+  "item.bloodvirus.tool.string.10": "You can only eat meat.",
+  "item.bloodvirus.tool.string.11": "*Mutagenic parasites with sensory abilities which stimulate bloodlust in their hosts!",
+  "item.bloodvirus.tool.string.12": "It can also be implanted:",
+
+
+  "item.necora.tool.string": "5 curses that come with zombification:",
+  "item.necora.tool.string.1": "*You are terrified of the water; swimming speed is drastically reduced",
+  "item.necora.tool.string.2": "*You'll burn in the sun; maybe wearing something on your head will solve the problem for a while",
+  "item.necora.tool.string.3": "*Your body gradually reeks of rot; Human Villagers fear you, and Iron golems see you as an enemy.",
+  "item.necora.tool.string.4": "*Ability to recognize one's own kind; damage dealt to undead reduced by 20 percent",
+  "item.necora.tool.string.5": "*Once the virus is implanted, there will be no turning back!",
+  "item.necora.tool.string.6": "5 enhancements from zombification:",
+  "item.necora.tool.string.7": "*Your body is harder; damage increased by 3 points, armor value increased by 4 points",
+  "item.necora.tool.string.8": "*Difficult to be affected by the elements; 70% less magical damage taken",
+  "item.necora.tool.string.9": "*Any creature will be torn to carrion by you, eat them and you will gain additional effects!",
+  "item.necora.tool.string.10": "*You are considered a lord by your own kind; reduces damage dealt to you by undead creatures by 50%",
+  "item.necora.tool.string.11": "*Significant increase in cellular activity; 50% increase in life recovery",
+  "item.necora.tool.string.12": "The pathogen has not been classified",
+  "item.necora.tool.string.13": "and early medical reports indicate that it has",
+  "item.necora.tool.string.14": "Strong regeneration and an unending need to eat",
+  "item.necora.tool.string.15": "But much of its genetic structure remains an unsolved mystery...",
+
+
+
+  "item.moonstone.necora": "necora",
+  "item.moonstone.atpoverdose": "atpoverdose",
+  "item.moonstone.autolytic": "autolytic",
+  "item.moonstone.putrefactive": "putrefactive",
+  "item.moonstone.apple": "apple",
+  "item.moonstone.ambush": "ambush",
+  "item.moonstone.fermentation": "fermentation",
+  "item.moonstone.dna": "dna",
+  "item.moonstone.botton": "botton",
+  "item.moonstone.catalyzer": "catalyzer",
+
+  "item.moonstone.batskill": "batskill",
+
+
+  "item.moonstone.batgene": "batgene",
+  "item.moonstone.bloodgene": "bloodgene",
+  "item.moonstone.flygene": "flygene",
+  "item.moonstone.heathgene": "heathgene",
+  "item.moonstone.ragegene": "ragegene",
+  "item.moonstone.sleepgene": "sleepgene",
+  "item.soulbattery.tool.string": "+25％ Critical Damage",
+
+  "item.moonstone.calcification": "calcification",
+  "item.moonstone.masticatory": "masticatory",
+  "item.moonstone.polyphagia": "polyphagia",
+  "item.moonstone.quadriceps": "quadriceps",
+  "item.moonstone.reanimation": "reanimation",
+  "item.moonstone.regenerative": "regenerative",
+  "item.moonstone.twistedstone": "twisted stone",
+
+  "item.blackeorb.tool.string": "+ Wither orb Modifiers",
+
+  "item.moonstone.medicinebox": "medicine box",
+  "item.moonstone.maxamout": "max amout",
+  "item.moonstone.bloodvirus": "blood virus",
+
+  "item.diemug.tool.string": "Right click on this Holy Grail with the potion",
+  "item.diemug.tool.string.1": "ou can store the effect of the potion (there can be 8 types)",
+  "item.diemug.tool.string.2": "Obtain all medicinal effects after drinking",
+
+
+
+  "item.evilcandle.tool.string": "Lava Walker",
+  "item.evilcandle.tool.string.1": "Resists 80% lava damage",
+  "item.evilcandle.tool.string.2": "Quickly extinguish the flames on your body",
+
+
+  "item.evilmug.tool.string": "Empty",
+  "item.evilmug.tool.string.1": "Replenish the fresh blood in the barrel (secondary hand) from the damage caused during the attack",
+  "item.evilmug.tool.string.2": "And you can extract your own blood",
+  "item.evilmug.tool.string.3": "Drink！",
+
+  "item.maxamout.tool.string": "Attacks weaken enemies",
+  "item.maxamout.tool.string.1": "Reduce damage taken by 15%",
+  "item.maxamout.tool.string.2": "There is a probability of obtaining damage absorption when injured",
+  "item.maxamout.tool.string.3": "Increase Vampire by 10%",
+  "item.maxamout.tool.string.4": "There is a probability that during an attack, the enemy will be knocked away and slowed down.",
+  "item.maxamout.tool.string.5": "And obtain the power effect",
+  "item.maxamout.tool.string.6": "After taking damage, 20% will be returned to the attacker.",
+  "item.maxamout.tool.string.7": "Immune mining fatigue effect",
+  "item.maxamout.tool.string.8": "Increase swimming speed by 75%"
 }
 

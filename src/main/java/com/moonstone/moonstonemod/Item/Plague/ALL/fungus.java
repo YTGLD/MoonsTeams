@@ -59,18 +59,18 @@ public class fungus extends plague implements ICurioItem {
         super.appendHoverText(stack, level, tooltip, flags);
 
         if (Screen.hasShiftDown()) {
-            tooltip.add(Component.translatable("item.fungus.toll.string").withStyle(ChatFormatting.RED));
-            tooltip.add(Component.translatable("item.fungus.toll.string.1").withStyle(ChatFormatting.RED));
-            tooltip.add(Component.translatable("item.fungus.toll.string.2").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string.1").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string.2").withStyle(ChatFormatting.RED));
             tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("item.fungus.toll.string.3").withStyle(ChatFormatting.RED));
-            tooltip.add(Component.translatable("item.fungus.toll.string.4").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string.3").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string.4").withStyle(ChatFormatting.RED));
             tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("item.fungus.toll.string.5").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string.5").withStyle(ChatFormatting.RED));
             tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("item.fungus.toll.string.6").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string.6").withStyle(ChatFormatting.RED));
             tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("item.fungus.toll.string.7").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.fungus.tool.string.7").withStyle(ChatFormatting.RED));
              } else {
             tooltip.add(Component.translatable("Shift").withStyle(ChatFormatting.DARK_RED));
         }

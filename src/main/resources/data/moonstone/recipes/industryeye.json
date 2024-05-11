@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:blessingseye"
+    },
+    {
+      "item": "moonstone:doomstone"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  ],
+  "result": {
+    "item": "moonstone:industryeye",
+    "count": 1
+  }
+}

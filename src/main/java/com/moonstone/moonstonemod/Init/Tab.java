@@ -17,6 +17,8 @@ public class Tab {
             .icon(()->new ItemStack(Items.ectoplasmball.get()))
             .title(Component.translatable("itemGroup.tabmoonstone"))
             .displayItems((a,b)->{
+                b.accept(new ItemStack(Items.maxamout.get()));
+
                 b.accept(new ItemStack(Items.ectoplasmstone.get()));
                 b.accept(new ItemStack(Items.twistedstone.get()));
                 b.accept(new ItemStack(Items.badgeofthedead.get()));
@@ -26,8 +28,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.blackeorb.get()));
                 b.accept(new ItemStack(Items.blueamout.get()));
                 b.accept(new ItemStack(Items.greedamout.get()));
-                b.accept(new ItemStack(Items.greedcrystal.get()));
                 b.accept(new ItemStack(Items.redamout.get()));
+                b.accept(new ItemStack(Items.greedcrystal.get()));
                 b.accept(new ItemStack(Items.warcrystal.get()));
                 b.accept(new ItemStack(Items.whiteorb.get()));
 

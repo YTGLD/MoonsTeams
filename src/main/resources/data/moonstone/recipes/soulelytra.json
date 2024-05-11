@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AEA",
+    "DBD",
+    "FCF"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "enigmaticlegacy:enchanter_pearl"
+    },
+    "B":
+    {
+      "item": "enigmaticlegacy:etherium_chestplate"
+    },
+    "C":
+    {
+      "item": "enigmaticlegacy:twisted_heart"
+    },
+    "D":
+    {
+      "item": "minecraft:elytra"
+    },
+    "E":
+    {
+      "item": "enigmaticlegacy:eye_of_nebula"
+    },
+    "F":
+    {
+      "item": "enigmaticlegacy:evil_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:soulelytra",
+    "count": 1
+  }
+}

@@ -1,17 +1,61 @@
 package com.moonstone.moonstonemod.Event;
 
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.Init.Items;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class LootEvent {
     @SubscribeEvent
+    public void max_charm(LivingDropsEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.redamout.get())
+                    &&Handler.hascurio(player, Items.blueamout.get())
+                    &&Handler.hascurio(player, Items.greedamout.get()))
+            {
+                if (event.getEntity() instanceof ElderGuardian elderGuardian){
+                    event.getDrops().add(new ItemEntity(elderGuardian.level(), elderGuardian.getX(), elderGuardian.getY() ,elderGuardian.getZ(),
+                            new ItemStack(Items.maxamout.get())));
+                }
+            }
+        }
+    }
+    @SubscribeEvent
     public void LivingKnockBackEvent(LivingDropsEvent event) {
+
+        int a = Mth.nextInt(RandomSource.create(), 1, 20);
+        if (event.getEntity() instanceof Zombie  ||
+                event.getEntity() instanceof Spider  ||
+                event.getEntity() instanceof Creeper  ||
+                event.getEntity() instanceof WitherSkeleton  ||
+                event.getEntity() instanceof Skeleton )
+        {
+            if (a == 1){
+                event.getDrops().add(new ItemEntity(event.getEntity().level(),event.getEntity().getX(),event.getEntity().getY(),event.getEntity().getZ(),
+                        new ItemStack(Items.ectoplasmball.get())));
+            }
+            if (a== 2){
+                event.getDrops().add(new ItemEntity(event.getEntity().level(),event.getEntity().getX(),event.getEntity().getY(),event.getEntity().getZ(),
+                        new ItemStack(Items.ectoplasmcloub.get())));
+            }
+        }
+
+        if (event.getEntity() instanceof WitherBoss  ||
+                event.getEntity() instanceof EnderDragon)
+        {
+            event.getDrops().add(new ItemEntity(event.getEntity().level(),event.getEntity().getX(),event.getEntity().getY(),event.getEntity().getZ(),
+                    new ItemStack(Items.ectoplasmcube.get())));
+        }
+
+
         int s = Mth.nextInt(RandomSource.create(), 1, 100);
         if (event.getEntity() instanceof Zombie zombie){
             if (s == 1){

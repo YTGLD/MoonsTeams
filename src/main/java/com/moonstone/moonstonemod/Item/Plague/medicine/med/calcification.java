@@ -17,9 +17,7 @@ public class calcification extends medIC {
         super.appendHoverText(stack, level, tooltip, flags);
         if (Screen.hasShiftDown()) {
             tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("·item.calcification.tool.string").withStyle(ChatFormatting.RED));
-            tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("·item.calcification.tool.string.1").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("+ 11% resistance").withStyle(ChatFormatting.RED));
         } else {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("SHIFT").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));

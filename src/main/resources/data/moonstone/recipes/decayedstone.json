@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABC",
+    "BDB",
+    "CEA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    "B":
+    {
+      "item": "minecraft:crying_obsidian"
+    },
+    "C":
+    {
+      "item": "minecraft:end_crystal"
+    },
+    "D":
+    {
+      "item": "minecraft:nether_star"
+    },
+    "E":
+    {
+      "item": "moonstone:ectoplasmprism"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:decayedstone",
+    "count": 1
+  }
+}

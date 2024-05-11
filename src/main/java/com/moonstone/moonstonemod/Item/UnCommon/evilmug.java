@@ -52,7 +52,7 @@ public class evilmug extends Item {
             tooltip.add(Component.translatable("item.evilmug.tool.string.2").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.ITALIC));
 
         }else {
-            tooltip.add(Component.translatable("item.diemug.tool.string.3").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.ITALIC));
+            tooltip.add(Component.translatable("item.evilmug.tool.string.3").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.ITALIC));
         }
         tooltip.add(Component.translatable("Blood : "+ stack.getOrCreateTag().getInt(blood)).withStyle(ChatFormatting.RED).withStyle(ChatFormatting.ITALIC));
 

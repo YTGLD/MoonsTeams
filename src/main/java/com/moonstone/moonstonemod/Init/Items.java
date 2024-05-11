@@ -1,27 +1,30 @@
 package com.moonstone.moonstonemod.Init;
 
+import com.moonstone.moonstonemod.Item.Amout.ectoplasmstone;
+import com.moonstone.moonstonemod.Item.Amout.twistedstone;
 import com.moonstone.moonstonemod.Item.Common.*;
 import com.moonstone.moonstonemod.Item.Ectoplasm.*;
-import com.moonstone.moonstonemod.Item.Amout.*;
-import com.moonstone.moonstonemod.Item.Soul.*;
-import com.moonstone.moonstonemod.Item.UnCommon.*;
-import com.moonstone.moonstonemod.Item.Plague.ALL.*;
-import com.moonstone.moonstonemod.Item.Plague.BloodVirus.ex.*;
-import com.moonstone.moonstonemod.Item.Plague.medicine.med.*;
-import com.moonstone.moonstonemod.Item.Plague.BloodVirus.Skill.*;
-import com.moonstone.moonstonemod.Item.Plague.BloodVirus.*;
-import com.moonstone.moonstonemod.Item.Plague.medicine.extend.*;
-import com.moonstone.moonstonemod.Item.Plague.medicine.TheNecora.*;
-import com.moonstone.moonstonemod.Item.Plague.*;
-
 import com.moonstone.moonstonemod.Item.Maulice.*;
-import com.moonstone.moonstonemod.Item.NaNoDoom.magiceye;
-import com.moonstone.moonstonemod.Item.NaNoDoom.magicstone;
-import com.moonstone.moonstonemod.Item.NaNoDoom.nanocube;
-import com.moonstone.moonstonemod.Item.NaNoDoom.nanorobot;
-import com.moonstone.moonstonemod.Item.NaNoDoom.thedoomstone;
-import com.moonstone.moonstonemod.Item.NaNoDoom.thefruit;
+import com.moonstone.moonstonemod.Item.MaxItem.maxamout;
+import com.moonstone.moonstonemod.Item.NaNoDoom.*;
 import com.moonstone.moonstonemod.Item.Nightmare.*;
+import com.moonstone.moonstonemod.Item.Plague.ALL.*;
+import com.moonstone.moonstonemod.Item.Plague.BloodVirus.Skill.batskill;
+import com.moonstone.moonstonemod.Item.Plague.BloodVirus.*;
+import com.moonstone.moonstonemod.Item.Plague.BloodVirus.ex.botton;
+import com.moonstone.moonstonemod.Item.Plague.BloodVirus.ex.catalyzer;
+import com.moonstone.moonstonemod.Item.Plague.bloodvirus;
+import com.moonstone.moonstonemod.Item.Plague.medicine.TheNecora.*;
+import com.moonstone.moonstonemod.Item.Plague.medicine.extend.apple;
+import com.moonstone.moonstonemod.Item.Plague.medicine.extend.medicinebox;
+import com.moonstone.moonstonemod.Item.Plague.medicine.med.*;
+import com.moonstone.moonstonemod.Item.Plague.necora;
+import com.moonstone.moonstonemod.Item.Soul.soulbattery;
+import com.moonstone.moonstonemod.Item.Soul.soulcube;
+import com.moonstone.moonstonemod.Item.UnCommon.diemug;
+import com.moonstone.moonstonemod.Item.UnCommon.evilcandle;
+import com.moonstone.moonstonemod.Item.UnCommon.evilmug;
+import com.moonstone.moonstonemod.Item.UnCommon.obsidianring;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -135,6 +138,7 @@ public class Items {
 
     public static final RegistryObject<Item> bloodvirus =REGISTRY.register("bloodvirus",bloodvirus::new);
     public static final RegistryObject<Item> necora =REGISTRY.register("necora",necora::new);
+    public static final RegistryObject<Item> maxamout =REGISTRY.register("maxamout",maxamout::new);
 
 
 }

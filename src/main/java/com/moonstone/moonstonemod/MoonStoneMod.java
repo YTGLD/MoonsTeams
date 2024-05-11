@@ -8,10 +8,10 @@ import com.moonstone.moonstonemod.Init.Items;
 import com.moonstone.moonstonemod.Init.Tab;
 import com.moonstone.moonstonemod.Loot.abandoned_mineshaft;
 import com.moonstone.moonstonemod.Loot.ancient_city;
+import com.moonstone.moonstonemod.Loot.end_city;
 import com.moonstone.moonstonemod.Loot.simple_dungeon;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -52,6 +52,7 @@ public class MoonStoneMod {
                 helper.register(new ResourceLocation(MODID, "abandoned_mineshaft"), abandoned_mineshaft.CODEC);
                 helper.register(new ResourceLocation(MODID, "ancient_city"), ancient_city.CODEC);
                 helper.register(new ResourceLocation(MODID, "simple_dungeon"), simple_dungeon.CODEC);
+                helper.register(new ResourceLocation(MODID, "end_city"), end_city.CODEC);
             });
         }
     }

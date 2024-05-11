@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "alexscaves:uranium_shard"
+    },
+    {
+      "item": "alexscaves:uranium_shard"
+    },
+    {
+      "item": "alexscaves:uranium_shard"
+    },
+    {
+      "item": "alexscaves:uranium_shard"
+    },
+    {
+      "item": "alexscaves:uranium_shard"
+    },
+    {
+      "item": "moonstone:irradiatedorb"
+    }
+  ],
+  "result": {
+    "item": "moonstone:industrybox",
+    "count": 1
+  }
+}

@@ -2,7 +2,6 @@ package com.moonstone.moonstonemod.Item.Plague.ALL;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.Item.MoonStoneItem.plague;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.ChatFormatting;
@@ -16,16 +15,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.level.BlockEvent;
-import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
-import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 public class germ extends plague implements ICurioItem {

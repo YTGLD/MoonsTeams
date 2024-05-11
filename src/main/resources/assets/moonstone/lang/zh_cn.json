@@ -8,6 +8,8 @@
   "item.moonstone.ectoplasmbadge": "灵质 徽章",
   "item.moonstone.ectoplasmapple": "灵质 果",
   "item.moonstone.ectoplasmstone": "灵质 石头",
+  "item.moonstone.twistedstone": "扭曲 石头",
+
   "item.moonstone.ectoplasmprism": "灵质 棱镜",
   "item.moonstone.ectoplasmfood": "灵质 食物",
   "item.moonstone.ectoplasmcharm": "灵质 护符",
@@ -41,7 +43,7 @@
 
 
 
-  "item.ectoplasmapple.tool.string": "受伤会使周围生物受到2%最大生命值的伤害",
+  "item.ectoplasmapple.tool.string": "受到攻击会使周围生物受到2%最大生命值的伤害",
   "item.ectoplasmhorseshoe.tool.string": "减少90%来自摔落的伤害",
   "item.ectoplasmshild.tool.string": "持续的抗性提升",
   "item.ectoplasmshild.tool.string.2": "减少30%来自爆炸的伤害",
@@ -135,6 +137,8 @@
   "item.nightmarerotten.tool.string.3": "唯有承受深渊之恐的人",
   "item.nightmarerotten.tool.string.4": "才有资格使用此道具",
 
+  "curios.identifier.medicine": "药物",
+  "curios.identifier.necora": "DNA",
 
   "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
   "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
@@ -202,133 +206,211 @@
 
 
   "item.redamout.tool.string": "攻击时有概率击飞敌人",
-  "item.redamout.tool.string.1": "获得力量II的效果",
-
-  "item.soulbattery.tool.string.1": "+25％ 暴击伤害",
+  "item.redamout.tool.string.1": "然后暂时获得力量II的效果",
 
 
-  "item.fungus.tool.string": "",
-  "item.fungus.tool.string.1": "",
-  "item.fungus.tool.string.2": "",
-  "item.fungus.tool.string.3": "",
-  "item.fungus.tool.string.4": "",
-  "item.fungus.tool.string.5": "",
-  "item.fungus.tool.string.6": "",
-  "item.fungus.tool.string.7": "",
 
-  "item.germ.tool.string": "",
-  "item.germ.tool.string.1": "",
+  "item.fungus.tool.string": "根据周围宠物的数量获得生命恢复加成",
+  "item.fungus.tool.string.1": "每个生物可提升该加成25％",
+  "item.fungus.tool.string.2": "最高不超过150％",
+  "item.fungus.tool.string.3": "转换脚下的草方块",
+  "item.fungus.tool.string.4": "在菌丝方块上获得生命恢复效果",
+  "item.fungus.tool.string.5": "免疫凋零、虚弱、缓慢、中毒",
+  "item.fungus.tool.string.6": "在阳光下你会燃烧，哪怕你戴着帽子",
+  "item.fungus.tool.string.7": "*或许你该找个阴湿的地方呆着",
 
-  "item.parasite.tool.string": "",
-  "item.parasite.tool.string.1": "",
-  "item.parasite.tool.string.2": "",
-  "item.parasite.tool.string.3": "",
-  "item.parasite.tool.string.4": "",
-  "item.parasite.tool.string.5": "",
-
-  "item.virus.tool.string": "",
-  "item.virus.tool.string.1": "",
-  "item.virus.tool.string.2": "",
-
-  "item.botton.tool.string": "",
-  "item.botton.tool.string.1": "",
-  "item.botton.tool.string.2": "",
-
-  "item.catalyzer.tool.string": "",
-
-  "item.batskill.tool.string": "",
-  "item.batskill.tool.string.1": "",
-  "item.batskill.tool.string.2": "",
-  "item.batskill.tool.string.3": "",
-  "item.batskill.tool.string.4": "",
-  "item.batskill.tool.string.5": "",
-
-  "item.batgene.tool.string": "",
-  "item.batgene.tool.string.1": "",
-  "item.batgene.tool.string.2": "",
-
-  "item.flygene.tool.string": "",
-  "item.flygene.tool.string.1": "",
+  "item.moonstone.germ": "细菌",
+  "item.moonstone.fungus": "真菌",
+  "item.moonstone.parasite": "寄生虫",
+  "item.moonstone.virus": "病毒",
 
 
-  "item.ragegene.tool.string": "",
-  "item.ragegene.tool.string.1": "",
-  "item.ragegene.tool.string.2": "",
-  "item.ragegene.tool.string.3": "",
+  "item.germ.tool.string": "挖掘方块时增加细菌的适应值：",
+  "item.germ.tool.string.1": "每250点适应值都可以从细菌上获取额外属性",
+
+  "item.blackeorb.tool.string": "增加白魔球的属性",
+
+  "item.parasite.tool.string": "根据食物的营养价值增加寄生虫的活性",
+  "item.parasite.tool.string.1": "寄生虫活性越高，你的属性越强",
+  "item.parasite.tool.string.2": "寄生虫活性越高，可增加的活性也会变少",
+  "item.parasite.tool.string.3": "随着寄生虫活性的提高，你将越来越难以饱腹",
+  "item.parasite.tool.string.4": "在必要时刻，寄生虫会牺牲活性来保全他们的宿主！",
+  "item.parasite.tool.string.5": "饥饿值少于50％时，你将变得虚弱",
 
 
-  "item.sleepgene.tool.string": "",
-  "item.sleepgene.tool.string.1": "",
+  "item.virus.tool.string": "杀死生物夺取它们的DNA！",
+  "item.virus.tool.string.1": "每夺取10点DNA都会对此类型生物额外造成2.5％伤害",
+  "item.virus.tool.string.2": "最多不超过50％",
 
-  "item.medicinebox.tool.string": "",
-  "item.medicinebox.tool.string.1": "",
-  "item.medicinebox.tool.string.2": "",
-  "item.medicinebox.tool.string.3": "",
-  "item.medicinebox.tool.string.4": "",
+
+  "item.botton.tool.string": "*如果你找到一些不详的基因…",
+  "item.botton.tool.string.1": "*或许我可以给你打造一个全新的身体…",
+  "item.botton.tool.string.2": "佩戴此物品，在末地中开启战利品箱可能会发现一些基因体",
+
+
+  "item.catalyzer.tool.string": "右键使用可感染一些特殊物品",
+
+
+  "item.batskill.tool.string": "攻击有15％的概率召唤3只蝙蝠",
+  "item.batskill.tool.string.1": "并且在半径12格内",
+  "item.batskill.tool.string.2": "每存在一只蝙蝠、你受到的伤害减少5％",
+  "item.batskill.tool.string.3": "最多不超过80％",
+  "item.batskill.tool.string.4": "周围的蝙蝠每过1秒减少10％的生命值",
+  "item.batskill.tool.string.5": "可植入暗影瘟疫之内",
+
+
+  "item.batgene.tool.string": "你附近的蝙蝠受到的伤害减少60％",
+  "item.batgene.tool.string.1": "每存在一只蝙蝠、你造成的伤害增加10％",
+  "item.batgene.tool.string.2": "减少10％伤害",
+
+
+  "item.flygene.tool.string": "飞行速度增加13％",
+  "item.flygene.tool.string.1": "滑翔时，在空中以方向键可以实现加速或减速",
+
+
+  "item.ragegene.tool.string": "当你的攻击蓄力条为100％时",
+  "item.ragegene.tool.string.1": "每次攻击都会增加5％的伤害",
+  "item.ragegene.tool.string.2": "最多不超过100％",
+  "item.ragegene.tool.string.3": "受到伤害后重新计算",
+
+
+  "item.sleepgene.tool.string": "白天不会获得负面效果",
+  "item.sleepgene.tool.string.1": "夜晚无法获得增益效果",
+
+
+  "item.medicinebox.tool.string": "如果你找到一些好的药物…",
+  "item.medicinebox.tool.string.1": "或许我可以给你打造一个全新的身体…",
+  "item.medicinebox.tool.string.2": "佩戴此物品，可以通过一些方式获取药物",
+  "item.medicinebox.tool.string.3": "你可以选择将发现的药物融合或直接佩戴",
+  "item.medicinebox.tool.string.4": "*必须佩戴此物品才能发现药物！",
   "item.medicinebox.tool.string.5": "",
   "item.medicinebox.tool.string.6": "",
 
 
-  "item.calcification.tool.string": "",
-  "item.calcification.tool.string.1": "",
+  "item.calcification.tool.string": "*使实验者的皮肤钙化，增强实验者的战斗能力",
+  "item.calcification.tool.string.1": "增加11％伤害抵抗",
 
 
-  "item.masticatory.tool.string": "",
-  "item.masticatory.tool.string.1": "",
-
-  "item.quadriceps.tool.string": "",
-  "item.quadriceps.tool.string.1": "",
-  "item.quadriceps.tool.string.2": "",
-
-  "item.reanimation.tool.string": "",
-  "item.reanimation.tool.string.1": "",
-  "item.reanimation.tool.string.2": "",
-  "item.reanimation.tool.string.3": "",
-
-  "item.autolytic.tool.string": "",
-
-  "item.fermentation.tool.string": "",
-  "item.fermentation.tool.string.1": "",
-  "item.fermentation.tool.string.2": "",
-  "item.fermentation.tool.string.3": "",
-
-  "item.putrefactive.tool.string": "",
+  "item.masticatory.tool.string": "*使实验者咬合肌强化，增强实验者的咀嚼能力",
+  "item.masticatory.tool.string.1": "减少50％进食时长",
 
 
-  "item.regenerative.tool.string": "",
-  "item.regenerative.tool.string.1": "",
+  "item.quadriceps.tool.string": "*使实验者四头肌强化，增强实验者的运动能力",
+  "item.quadriceps.tool.string.1": "增加20％移动速度",
+  "item.quadriceps.tool.string.2": "增加50％跳跃高度",
 
-  "item.bloodvirus.tool.string": "",
-  "item.bloodvirus.tool.string.1": "",
-  "item.bloodvirus.tool.string.2": "",
-  "item.bloodvirus.tool.string.3": "",
-  "item.bloodvirus.tool.string.4": "",
-  "item.bloodvirus.tool.string.5": "",
-  "item.bloodvirus.tool.string.6": "",
-  "item.bloodvirus.tool.string.7": "",
-  "item.bloodvirus.tool.string.8": "",
-  "item.bloodvirus.tool.string.9": "",
-  "item.bloodvirus.tool.string.10": "",
-  "item.bloodvirus.tool.string.11": "",
-  "item.bloodvirus.tool.string.12": "",
 
-  "item.necora.tool.string": "",
-  "item.necora.tool.string.1": "",
-  "item.necora.tool.string.2": "",
-  "item.necora.tool.string.3": "",
-  "item.necora.tool.string.4": "",
-  "item.necora.tool.string.5": "",
-  "item.necora.tool.string.6": "",
-  "item.necora.tool.string.7": "",
-  "item.necora.tool.string.8": "",
-  "item.necora.tool.string.9": "",
-  "item.necora.tool.string.10": "",
-  "item.necora.tool.string.11": "",
-  "item.necora.tool.string.12": "",
-  "item.necora.tool.string.13": "",
-  "item.necora.tool.string.14": "",
-  "item.necora.tool.string.15": ""
+  "item.reanimation.tool.string": "*使实验者细胞强化，增强实验者的细胞重生能力",
+  "item.reanimation.tool.string.1": "同时恢复重要器官的低等功能",
+  "item.reanimation.tool.string.2": "复活",
+  "item.reanimation.tool.string.3": "300秒冷却",
 
+
+  "item.autolytic.tool.string": "抑制Necora病毒带来的游泳速度减少效果",
+
+
+  "item.fermentation.tool.string": "10秒冷却",
+  "item.fermentation.tool.string.1": "冷却期间，伤害降低70％",
+  "item.fermentation.tool.string.2": "冷却结束后，伤害提升300％",
+  "item.fermentation.tool.string.3": "*病原体依然保有狩猎的本能，这使它们能耐心等待，并给予致命一击！",
+
+
+  "item.putrefactive.tool.string": "增加腐肉的效果",
+
+
+  "item.regenerative.tool.string": "每5秒恢复一点生命值",
+  "item.regenerative.tool.string.1": "*病原体的细胞比过去更加鲜活",
+
+
+  "item.bloodvirus.tool.string": "增加25％对非亡灵生物的伤害",
+  "item.bloodvirus.tool.string.1": "增加17％在夜晚的速度",
+  "item.bloodvirus.tool.string.2": "滑翔时，可以单击前进键来冲刺",
+  "item.bloodvirus.tool.string.3": "在黑暗中，你将获得夜视",
+  "item.bloodvirus.tool.string.4": "增加10％的生命偷取",
+  "item.bloodvirus.tool.string.5": "*以灵魂为食粮",
+  "item.bloodvirus.tool.string.6": "减少30％任何来源的生命恢复效果",
+  "item.bloodvirus.tool.string.7": "阳光下你将燃烧，且变得极度弱小！",
+  "item.bloodvirus.tool.string.8": "增加100％被击退距离",
+  "item.bloodvirus.tool.string.9": "减少25％生命上限",
+  "item.bloodvirus.tool.string.10": "你只能吃肉",
+  "item.bloodvirus.tool.string.11": "*感知型诱变寄生体，激发宿主嗜血欲望！",
+  "item.bloodvirus.tool.string.12": "还可以植入：",
+
+
+  "item.necora.tool.string": "丧尸化带来的5条诅咒：",
+  "item.necora.tool.string.1": "*你对水感到恐惧；游泳速度大幅降低",
+  "item.necora.tool.string.2": "*阳光下你将燃烧；或许戴点什么在头上能暂时解决这个麻烦",
+  "item.necora.tool.string.3": "*你的身躯逐渐散发腐臭；人类村民惧怕你，铁傀儡视你为敌人",
+  "item.necora.tool.string.4": "*能够辨别同类；对亡灵造成的伤害减少20％",
+  "item.necora.tool.string.5": "*一旦植入该病毒，将没有回头路！",
+  "item.necora.tool.string.6": "丧尸化带来的5条强化：",
+  "item.necora.tool.string.7": "*你的身躯更加坚硬了；伤害增加3点、护甲值增加4点",
+  "item.necora.tool.string.8": "*难以被元素影响；受到的魔法伤害减少70％",
+  "item.necora.tool.string.9": "*任何生物都将被你撕碎成腐肉，吃下它们，你会获得额外的效果！",
+  "item.necora.tool.string.10": "*你被同类视为领主；亡灵生物对你造成的伤害减少50％",
+  "item.necora.tool.string.11": "*细胞活性大大提高；提高50％生命恢复",
+  "item.necora.tool.string.12": "该病原体尚未被归类",
+  "item.necora.tool.string.13": "且早期医学报告中，表明它具有",
+  "item.necora.tool.string.14": "强大的再生能力和无休止的进食需求",
+  "item.necora.tool.string.15": "但是它的大部分基因结构仍然是未解之谜",
+
+
+
+
+  "item.moonstone.necora": "Necora病毒",
+  "item.moonstone.atpoverdose": "ATP 过量",
+  "item.moonstone.autolytic": "自溶性抑制",
+  "item.moonstone.putrefactive": "腐败抗性",
+  "item.moonstone.apple": "怪异的瘟疫苹果",
+  "item.moonstone.ambush": "漂流发酵",
+  "item.moonstone.fermentation": "埋伏性狩猎",
+  "item.moonstone.regenerative": "再生活性化",
+  "item.moonstone.catalyzer": "暗影基因",
+  "item.moonstone.bloodvirus": "暗影瘟疫",
+  "item.moonstone.botton": "铁罐子",
+  "item.moonstone.bloodgene": "自适应强化基因",
+  "item.moonstone.ragegene": "自修正强化基因",
+  "item.moonstone.flygene": "夜行蝠突变基因",
+  "item.moonstone.heathgene": "生命强化基因",
+  "item.moonstone.sleepgene": "适应性休眠基因",
+  "item.moonstone.batgene": "夜行蝙蝠基因",
+  "item.moonstone.batskill": "基因片段",
+
+  "item.moonstone.medicinebox": "医药箱",
+  "item.moonstone.polyphagia": "药物 - 食欲亢进",
+  "item.moonstone.quadriceps": "药物 - 四头肌强化",
+  "item.moonstone.masticatory": "药物 - 咬合肌强化",
+  "item.moonstone.calcification": "药物 - 皮肤质钙化",
+  "item.moonstone.reanimation": "药物 - 细胞重生",
+
+  "item.diemug.tool.string": "使用药水右键此圣杯",
+  "item.diemug.tool.string.1": "即可储存药水效果(可存在8种)",
+  "item.diemug.tool.string.2": "饮用后获得所有药水效果",
+
+
+
+  "item.evilcandle.tool.string": "熔岩行者",
+  "item.evilcandle.tool.string.1": "抵挡80%熔岩伤害",
+  "item.evilcandle.tool.string.2": "快速熄灭你身上火焰",
+
+
+  "item.evilmug.tool.string": "空的",
+  "item.evilmug.tool.string.1": "由攻击时造成的伤害来补充酒桶内的鲜血（副手）",
+  "item.evilmug.tool.string.2": "并且可以提取你自己的血",
+  "item.evilmug.tool.string.3": "喝！",
+
+  "item.soulbattery.tool.string": "+25％ 暴击伤害",
+  "item.moonstone.maxamout": "原始纹章",
+
+  "item.maxamout.tool.string": "攻击会削弱敌人",
+  "item.maxamout.tool.string.1": "减少15%受到伤害",
+  "item.maxamout.tool.string.2": "受伤时有概率获得伤害吸收效果",
+  "item.maxamout.tool.string.3": "增加10%吸血",
+  "item.maxamout.tool.string.4": "攻击时有概率击飞敌人并让其减速",
+  "item.maxamout.tool.string.5": "并获得力量效果",
+  "item.maxamout.tool.string.6": "受到伤害后将返还20%给进攻者",
+  "item.maxamout.tool.string.7": "免疫挖掘疲劳效果",
+  "item.maxamout.tool.string.8": "增加75%游泳速度"
 }
 
 

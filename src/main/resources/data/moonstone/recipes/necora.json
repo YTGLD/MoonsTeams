@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:calcification"
+    },
+    {
+      "item": "moonstone:masticatory"
+    },
+    {
+      "item": "moonstone:polyphagia"
+    },
+    {
+      "item": "moonstone:quadriceps"
+    },
+    {
+      "item": "moonstone:reanimation"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  ],
+  "result": {
+    "item": "moonstone:necora",
+    "count": 1
+  }
+}

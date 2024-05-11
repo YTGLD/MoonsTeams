@@ -1,6 +1,5 @@
 package com.moonstone.moonstonemod.Item.Plague.BloodVirus;
 
-import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.Item.Plague.BloodVirus.ex.BloodViru;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -15,8 +14,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;

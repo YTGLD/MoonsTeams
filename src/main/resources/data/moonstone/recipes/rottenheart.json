@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BCB",
+    "DAD",
+    "EFE"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "enigmaticlegacy:guardian_heart"
+    },
+    "B":
+    {
+      "item": "enigmaticlegacy:evil_essence"
+    },
+    "C":
+    {
+      "item": "enigmaticlegacy:abyssal_heart"
+    },
+    "D":
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    "E":
+    {
+      "item": "enigmaticlegacy:evil_ingot"
+    },
+    "F":
+    {
+      "item": "enigmaticlegacy:void_pearl"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:rottenheart",
+    "count": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ACA",
+    "DBD",
+    "ACA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:obsidian"
+    },
+    "B":
+    {
+      "item": "moonstone:mblock"
+    },
+    "C":
+    {
+      "item": "moonstone:greedcrystal"
+    },
+    "D":
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:mbattery",
+    "count": 1
+  }
+}

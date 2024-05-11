@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EDA",
+    "D C",
+    "ACB"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:obsidian"
+    },
+    "B":
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    "C":
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    "D":
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    "E":
+    {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:twistedring",
+    "count": 1
+  }
+}

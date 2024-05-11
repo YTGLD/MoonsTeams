@@ -8,7 +8,6 @@ import com.moonstone.moonstonemod.Item.Plague.ALL.dna;
 import com.moonstone.moonstonemod.Item.UnCommon.evilmug;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -28,11 +27,13 @@ import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
@@ -46,7 +47,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
@@ -78,6 +78,102 @@ public class AllEvent {
     public static String sizeLevel = "sizeLevel";
     public static String blood = "bloodgene";
     public static String rage = "ragegene";
+    @SubscribeEvent
+    public void blueamout(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.blueamout.get())) {
+                if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
+                    event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.BLUE_WOOL.defaultBlockState()));
+                }
+            }
+        }
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.blueamout.get())) {
+                if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
+                    event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.BLUE_WOOL.defaultBlockState()));
+                }
+            }
+        }
+
+    }
+    @SubscribeEvent
+    public void redamout(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.redamout.get())) {
+                if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
+                    event.getEntity().knockback(2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
+                    event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.RED_WOOL.defaultBlockState()));
+
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void greedamout(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.greedamout.get())) {
+                if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 0));
+                    event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.GREEN_WOOL.defaultBlockState()));
+
+                }
+            }
+        }
+        if (event.getSource().getDirectEntity() instanceof Player player){
+            if (Handler.hascurio(player,Items.greedamout.get())) {
+                if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
+                    event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.GREEN_WOOL.defaultBlockState()));
+
+                    player.heal(4);
+                }
+            }
+        }
+
+    }
+
+    @SubscribeEvent
+    public void maxamout(LivingHurtEvent event) {
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.maxamout.get())) {
+
+                if (event.getSource().getEntity() != null) {
+                    if (event.getSource().getEntity() instanceof LivingEntity living) {
+                        if (!(living instanceof Guardian)) {
+                            if (event.getSource().getEntity() != null) {
+                                living.hurt(living.damageSources().playerAttack(player), event.getAmount() / 5);
+                                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.THORNS_HIT, SoundSource.NEUTRAL, 1F, 1F);
+
+                            }
+                        }
+                    }
+                }
+
+                event.setAmount(event.getAmount() * 0.85f);
+                if (Mth.nextInt(RandomSource.create(),1, 5) == 1){
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 20, 2));
+                }
+            }
+        }
+        if (event.getSource().getDirectEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.maxamout.get())) {
+                event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0));
+                player.heal(event.getAmount() / 10);
+
+                if (Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
+                    event.getEntity().knockback(2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
+                    event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.YELLOW_WOOL.defaultBlockState()));
+
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
+
+                }
+            }
+        }
+    }
+
     @SubscribeEvent
     public void aaa(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player){
@@ -166,14 +262,6 @@ public class AllEvent {
 
     public static String spawn= "spawn";
     public static String enchant= "enchant";
-
-
-    public static int do_hurt;
-    public static int do_apple;
-    public static int do_jump;
-
-
-
 
     public static final String blood_hurt = "blood_hurt";
     public static  final String blood_jump = "blood_jump";
@@ -510,27 +598,6 @@ public class AllEvent {
     }
     @SubscribeEvent
     public  void parasite(LivingHurtEvent event) {
-        if (event.getEntity() instanceof Player player){
-            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
-                Map<String, ICurioStacksHandler> curios = handler.getCurios();
-                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                    ICurioStacksHandler stacksHandler = entry.getValue();
-                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                        ItemStack stack = stackHandler.getStackInSlot(i);
-                        NonNullList<Boolean> renderStates = stacksHandler.getRenders();
-                        String identifier = entry.getKey();
-                        if (stack.is(Items.parasite.get())) {
-                            if (Handler.hascurio(player, Items.parasite.get())) {
-                                if (event.getAmount() >player.getHealth()){
-
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
         if (event.getSource().getEntity() instanceof Player player){
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                 Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -539,10 +606,6 @@ public class AllEvent {
                     IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
-                        NonNullList<Boolean> renderStates = stacksHandler.getRenders();
-                        String identifier = entry.getKey();
-                        SlotContext slotContext = new SlotContext(identifier, player, i, false,
-                                renderStates.size() > i && renderStates.get(i));
                         if (stack.is(Items.parasite.get())) {
                             if (Handler.hascurio(player, Items.parasite.get())) {
                                 if (event.getAmount() >player.getHealth()){
@@ -569,10 +632,6 @@ public class AllEvent {
                     IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
-                        NonNullList<Boolean> renderStates = stacksHandler.getRenders();
-                        String identifier = entry.getKey();
-                        SlotContext slotContext = new SlotContext(identifier, player, i, false,
-                                renderStates.size() > i && renderStates.get(i));
                         if (stack.is(Items.parasite.get())) {
                             if (Handler.hascurio(player, Items.parasite.get())) {
                                 if (Handler.hascurio(player, Items.parasite.get())) {
@@ -809,7 +868,7 @@ public class AllEvent {
     @SubscribeEvent
     public  void LivingHurtEvent_DNA(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player){
-            if (event.getSource()!= null && event.getSource().getEntity() instanceof WitherSkeleton witherSkeleton){
+            if (event.getSource()!= null && event.getSource().getEntity() instanceof WitherSkeleton){
                 if (Handler.hascurio(player, Items.dna.get())){
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -1067,8 +1126,8 @@ public class AllEvent {
                     if (livingentity.hasEffect(MobEffects.DARKNESS )) {
                         if (!livingentity.is(player)) {
                             {
-                                if (this.clientSideAttackTime < 80) {
-                                    ++this.clientSideAttackTime;
+                                if (clientSideAttackTime < 80) {
+                                    ++clientSideAttackTime;
                                 }
                                 double d5 = this.getAttackAnimationScale(0.0F);
                                 double d0 = livingentity.getX() - event.getEntity().getX();
@@ -1142,22 +1201,6 @@ public class AllEvent {
                     event.setAmount(event.getAmount() * 1.5f);
                 }
             }
-            if (Handler.hascurio(player, Items.mkidney.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.mkidney.get())) {
-                    if (Mth.nextInt(RandomSource.create(), 0, 100) < Kidney) {
-                        Kidney /= 2;
-                        event.setAmount(0);
-                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HURT, SoundSource.NEUTRAL, 1, 1);
-                    } else {
-                        Kidney = 100;
-
-                        event.setAmount(event.getAmount() + player.getMaxHealth() / 3);
-                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_DEATH, SoundSource.NEUTRAL, 1, 1);
-                        player.getCooldowns().addCooldown(Items.mkidney.get(), 200);
-                    }
-                }
-            }
-
             if (Handler.hascurio(player, Items.magicstone.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -1180,26 +1223,43 @@ public class AllEvent {
                 });
             }
         }
-        /**
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         *
-         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.mkidney.get())) {
+                if (!player.getCooldowns().isOnCooldown(Items.mkidney.get())) {
+                    if (Mth.nextInt(RandomSource.create(), 0, 100) < Kidney) {
+                        Kidney /= 2;
+                        event.setAmount(0);
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HURT, SoundSource.NEUTRAL, 1, 1);
+                    } else {
+                        Kidney = 100;
+
+                        event.setAmount(event.getAmount() + player.getMaxHealth() / 3);
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_DEATH, SoundSource.NEUTRAL, 1, 1);
+                        player.getCooldowns().addCooldown(Items.mkidney.get(), 200);
+                    }
+                }
+            }
+
+
+
             if (Handler.hascurio(player,Items.magicstone.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -1310,7 +1370,7 @@ public class AllEvent {
         return size;
     }
     public float getAttackAnimationScale(float p_32813_) {
-        return (this.clientSideAttackTime + p_32813_) / (float)80;
+        return (clientSideAttackTime + p_32813_) / (float)80;
     }
 }
 

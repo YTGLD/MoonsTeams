@@ -40,7 +40,7 @@ public class nightmarecharm extends nightmare {
             tooltip.add(Component.translatable("· [SHIFT]").withStyle(ChatFormatting.DARK_RED));
         }
         tooltip.add(Component.translatable(""));
-        tooltip.add(Component.translatable("· item.nightmarecharm.tool.string.3").withStyle(ChatFormatting.DARK_RED));
-        tooltip.add(Component.translatable("· item.nightmarecharm.tool.string.4").withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.translatable("item.nightmareanchor.tool.string.6").withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.translatable("item.nightmareanchor.tool.string.7").withStyle(ChatFormatting.DARK_RED));
     }
 }

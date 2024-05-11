@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DAD",
+    "DBD",
+    "ACA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    "B":
+    {
+      "item": "moonstone:diamondhorseshoe"
+    },
+    "C":
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    "D":
+    {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:superhorseshoe",
+    "count": 1
+  }
+}
