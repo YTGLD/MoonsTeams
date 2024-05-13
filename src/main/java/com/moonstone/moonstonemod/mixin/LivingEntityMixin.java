@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.mixin;
 
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.Init.Items;
+import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.material.FluidState;

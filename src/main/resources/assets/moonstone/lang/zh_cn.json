@@ -123,7 +123,7 @@
 
 
   "item.nightmareeye.tool.string": "受到伤害增加33％",
-  "item.nightmareeye.tool.string.1": "造成伤害降低25％",
+  "item.nightmareeye.tool.string.1": "你大部分属性都会降低25%",
 
 
   "item.nightmaremoai.tool.string": "+2 附魔产物的附魔等级",
@@ -410,7 +410,16 @@
   "item.maxamout.tool.string.5": "并获得力量效果",
   "item.maxamout.tool.string.6": "受到伤害后将返还20%给进攻者",
   "item.maxamout.tool.string.7": "免疫挖掘疲劳效果",
-  "item.maxamout.tool.string.8": "增加75%游泳速度"
+  "item.maxamout.tool.string.8": "增加75%游泳速度",
+
+  "allevent.moonstone.virus": "已采集DNA : ",
+
+
+  "item.bloodgene.tool.string": "基础伤害，攻速降低50%",
+  "item.bloodgene.tool.string.1": "每次受到伤害都会获得提升",
+  "item.bloodgene.tool.string.2": "最大是原来的200%",
+  "item.bloodgene.tool.string.3": "增加10%受到伤害",
+  "item.ambush.tool.string": "可以行走在液体表面"
 }
 
 

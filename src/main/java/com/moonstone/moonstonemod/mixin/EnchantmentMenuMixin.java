@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.mixin;
 
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.Init.Items;
+import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;

@@ -112,7 +112,7 @@
 
 
   "item.nightmareeye.tool.string": "Increase damage taken by 33%",
-  "item.nightmareeye.tool.string.1": "Reduce damage dealt by 25%",
+  "item.nightmareeye.tool.string.1": "Most of your attributes will be reduced by 25%",
 
 
   "item.nightmaremoai.tool.string": "+2 Enchantment level of the enchanted product",
@@ -403,6 +403,14 @@
   "item.maxamout.tool.string.5": "And obtain the power effect",
   "item.maxamout.tool.string.6": "After taking damage, 20% will be returned to the attacker.",
   "item.maxamout.tool.string.7": "Immune mining fatigue effect",
-  "item.maxamout.tool.string.8": "Increase swimming speed by 75%"
+  "item.maxamout.tool.string.8": "Increase swimming speed by 75%",
+
+  "allevent.moonstone.virus": "DNA has been collected : ",
+
+  "item.bloodgene.tool.string": "Basic damage, reduced attack speed by 50% ",
+  "item.bloodgene.tool.string.1": "Every time you take damage, you will receive an improvement",
+  "item.bloodgene.tool.string.2": "The maximum is 200% of the original",
+  "item.bloodgene.tool.string.3": "Increase damage taken by 10%",
+  "item.ambush.tool.string": "Can walk on liquid surfaces"
 }
 

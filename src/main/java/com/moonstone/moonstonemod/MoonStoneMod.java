@@ -1,15 +1,15 @@
 package com.moonstone.moonstonemod;
 
 import com.mojang.logging.LogUtils;
-import com.moonstone.moonstonemod.Event.AllEvent;
-import com.moonstone.moonstonemod.Event.Anvil;
-import com.moonstone.moonstonemod.Event.LootEvent;
-import com.moonstone.moonstonemod.Init.Items;
-import com.moonstone.moonstonemod.Init.Tab;
-import com.moonstone.moonstonemod.Loot.abandoned_mineshaft;
-import com.moonstone.moonstonemod.Loot.ancient_city;
-import com.moonstone.moonstonemod.Loot.end_city;
-import com.moonstone.moonstonemod.Loot.simple_dungeon;
+import com.moonstone.moonstonemod.event.AllEvent;
+import com.moonstone.moonstonemod.event.Anvil;
+import com.moonstone.moonstonemod.event.LootEvent;
+import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.Tab;
+import com.moonstone.moonstonemod.loot.abandoned_mineshaft;
+import com.moonstone.moonstonemod.loot.ancient_city;
+import com.moonstone.moonstonemod.loot.end_city;
+import com.moonstone.moonstonemod.loot.simple_dungeon;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;

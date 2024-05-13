@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.mixin;
 
-import com.moonstone.moonstonemod.Item.NaNoDoom.thefruit;
+import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.warden.Warden;
