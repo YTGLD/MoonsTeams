@@ -1,5 +1,7 @@
 package com.moonstone.moonstonemod.mixin;
 
+import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,8 +22,10 @@ public abstract class WardenMixin {
         Warden mob = (Warden) (Object) this;
         Entity living = p_219386_;
         if (living instanceof Player player) {
-            if (player.getPersistentData().getBoolean(thefruit.thefruit)){
-                cir.setReturnValue(false);
+            if (!Handler.hascurio(player, Items.nightmareeye.get())) {
+                if (player.getPersistentData().getBoolean(thefruit.thefruit)) {
+                    cir.setReturnValue(false);
+                }
             }
         }
     }

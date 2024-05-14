@@ -1,8 +1,6 @@
-package com.moonstone.moonstonemod.item.moonstoneitem.extend;
+package com.moonstone.moonstonemod.moonstoneitem;
 
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.item.moonstoneitem.Iplague;
-import net.minecraft.ChatFormatting;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -13,18 +11,16 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class medIC extends Item implements Iplague, ICurioItem {
-    public medIC() {
-        super(new Properties().stacksTo(1).rarity(Rarity.create("asdasda", ChatFormatting.RED)));
+public class UnCommonItem extends Item implements ICurioItem {
+    public UnCommonItem() {
+        super(new Properties().stacksTo(1).rarity(Rarity.RARE));
     }
-
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             return !Handler.hascurio(player, stack.getItem());
         }
         return true;
-
     }
 
     @NotNull
@@ -33,3 +29,4 @@ public class medIC extends Item implements Iplague, ICurioItem {
         return ICurio.DropRule.ALWAYS_KEEP;
     }
 }
+

@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.item.moonstoneitem;
+package com.moonstone.moonstonemod.moonstoneitem;
 
 import com.moonstone.moonstonemod.Handler;
 import net.minecraft.world.damagesource.DamageSource;
@@ -11,9 +11,9 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class UnCommonItem extends Item implements ICurioItem {
-    public UnCommonItem() {
-        super(new Properties().stacksTo(1).rarity(Rarity.RARE));
+public class CommonItem extends Item implements ICurioItem {
+    public CommonItem() {
+        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
@@ -29,4 +29,3 @@ public class UnCommonItem extends Item implements ICurioItem {
         return ICurio.DropRule.ALWAYS_KEEP;
     }
 }
-

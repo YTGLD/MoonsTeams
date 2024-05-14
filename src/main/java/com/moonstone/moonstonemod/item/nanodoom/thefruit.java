@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
-import com.moonstone.moonstonemod.item.moonstoneitem.IDoom;
+import com.moonstone.moonstonemod.moonstoneitem.IDoom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -50,6 +50,9 @@ public class thefruit extends Item implements IDoom {
         tooltip.add(Component.translatable("item.thefruit.tool.string").withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.translatable("item.thefruit.tool.string.1").withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.translatable("item.thefruit.tool.string.2").withStyle(ChatFormatting.GOLD));
+        tooltip.add(Component.translatable(""));
+
+        tooltip.add(Component.translatable("item.thefruit.tool.string.3").withStyle(ChatFormatting.DARK_RED));
 
     }
 }

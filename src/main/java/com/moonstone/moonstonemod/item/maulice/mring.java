@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.item.maulice;
 
-import com.moonstone.moonstonemod.item.moonstoneitem.MLS;
+import com.moonstone.moonstonemod.moonstoneitem.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;

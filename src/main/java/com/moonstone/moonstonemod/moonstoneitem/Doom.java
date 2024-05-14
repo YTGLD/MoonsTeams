@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.item.moonstoneitem;
+package com.moonstone.moonstonemod.moonstoneitem;
 
 import com.moonstone.moonstonemod.Handler;
 import net.minecraft.ChatFormatting;
@@ -12,9 +12,9 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class plague extends Item implements ICurioItem, Iplague {
-    public plague() {
-        super(new Properties().stacksTo(1).rarity(Rarity.create("plague", ChatFormatting.RED)));
+public class Doom extends Item implements ICurioItem ,IDoom{
+    public Doom() {
+        super(new Properties().stacksTo(1).rarity(Rarity.create("doom", ChatFormatting.AQUA)));
     }
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
@@ -29,4 +29,3 @@ public class plague extends Item implements ICurioItem, Iplague {
         return ICurio.DropRule.ALWAYS_KEEP;
     }
 }
-

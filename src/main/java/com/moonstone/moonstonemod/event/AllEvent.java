@@ -1,14 +1,15 @@
 package com.moonstone.moonstonemod.event;
 
 import com.google.common.collect.Lists;
+import com.mojang.datafixers.optics.Wander;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.item.moonstoneitem.*;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
 import com.moonstone.moonstonemod.item.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.uncommon.plague;
+import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -18,7 +19,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.BossEvent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
@@ -32,11 +32,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
-import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
@@ -100,7 +100,7 @@ public class AllEvent {
                             if (!stack.isEmpty()){
                                 if (stack.getTag() != null) {
                                     if (stack.is(Items.plague.get())) {
-                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu)+20));
+                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu)+0.1));
 
                                         if (!stack.getTag().getBoolean(plague.YanJIuBoolean)){
                                             player.displayClientMessage(Component.translatable(""+(stack.getOrCreateTag().getFloat(plague.YanJIu))).append("%").withStyle(ChatFormatting.RED), true);
@@ -119,6 +119,7 @@ public class AllEvent {
         }
 
     }
+
     @SubscribeEvent
     public void plagueLivingHurtEvent(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player){

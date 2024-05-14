@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.item.moonstoneitem.nightmare;
+import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

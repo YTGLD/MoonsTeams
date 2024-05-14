@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.item.moonstoneitem.extend;
+package com.moonstone.moonstonemod.moonstoneitem.extend;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;

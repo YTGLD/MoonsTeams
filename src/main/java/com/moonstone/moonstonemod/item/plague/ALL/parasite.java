@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.item.plague.ALL;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.item.moonstoneitem.plague;
+import com.moonstone.moonstonemod.moonstoneitem.plague;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

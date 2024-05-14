@@ -1,7 +1,6 @@
-package com.moonstone.moonstonemod.item.moonstoneitem.extend;
+package com.moonstone.moonstonemod.moonstoneitem;
 
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.item.moonstoneitem.Iplague;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
@@ -13,18 +12,16 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class TheNecoraIC extends Item  implements Iplague, ICurioItem {
-    public TheNecoraIC() {
-        super(new Properties().stacksTo(1).rarity(Rarity.create("TheNecoraIC", ChatFormatting.RED)));
+public class nightmare extends Item implements ICurioItem ,INightmare{
+    public nightmare() {
+        super(new Properties().stacksTo(1).rarity(Rarity.create("nightmare", ChatFormatting.RED)));
     }
-
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             return !Handler.hascurio(player, stack.getItem());
         }
         return true;
-
     }
 
     @NotNull
@@ -33,3 +30,4 @@ public class TheNecoraIC extends Item  implements Iplague, ICurioItem {
         return ICurio.DropRule.ALWAYS_KEEP;
     }
 }
+

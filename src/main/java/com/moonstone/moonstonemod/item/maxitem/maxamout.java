@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.item.maxitem;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.item.moonstoneitem.UnCommonItem;
+import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.item.nanodoom;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.item.moonstoneitem.Doom;
+import com.moonstone.moonstonemod.moonstoneitem.Doom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;

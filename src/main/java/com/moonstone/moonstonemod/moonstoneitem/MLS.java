@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.item.moonstoneitem;
+package com.moonstone.moonstonemod.moonstoneitem;
 
 import com.moonstone.moonstonemod.Handler;
 import net.minecraft.ChatFormatting;

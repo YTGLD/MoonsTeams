@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.item.plague.ALL;
 
-import com.moonstone.moonstonemod.item.moonstoneitem.Iplague;
-import com.moonstone.moonstonemod.item.moonstoneitem.plague;
+import com.moonstone.moonstonemod.moonstoneitem.Iplague;
+import com.moonstone.moonstonemod.moonstoneitem.plague;
 import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;

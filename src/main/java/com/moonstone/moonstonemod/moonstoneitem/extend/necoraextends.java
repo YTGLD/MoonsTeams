@@ -1,7 +1,7 @@
-package com.moonstone.moonstonemod.item.moonstoneitem.extend;
+package com.moonstone.moonstonemod.moonstoneitem.extend;
 
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.item.moonstoneitem.Iplague;
+import com.moonstone.moonstonemod.moonstoneitem.Iplague;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

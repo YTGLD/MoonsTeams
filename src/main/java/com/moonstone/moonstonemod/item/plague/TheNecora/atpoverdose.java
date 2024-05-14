@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.item.plague.TheNecora;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.item.moonstoneitem.extend.TheNecoraIC;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

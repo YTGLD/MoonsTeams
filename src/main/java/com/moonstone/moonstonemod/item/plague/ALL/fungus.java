@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.item.plague.ALL;
 
 import com.moonstone.moonstonemod.event.AllEvent;
-import com.moonstone.moonstonemod.item.moonstoneitem.plague;
+import com.moonstone.moonstonemod.moonstoneitem.plague;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
