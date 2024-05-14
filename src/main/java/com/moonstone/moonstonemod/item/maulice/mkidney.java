@@ -18,6 +18,11 @@ import java.util.UUID;
 
 public class mkidney extends MLS {
     @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        stack.getOrCreateTag().putBoolean("mkidney",true);
+    }
+
+    @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
 

@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.item.plague.medicine.med;
 
-import com.moonstone.moonstonemod.item.plague.medicine.extend.medIC;
+import com.moonstone.moonstonemod.item.moonstoneitem.extend.medIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;

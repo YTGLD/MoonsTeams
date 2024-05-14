@@ -33,17 +33,16 @@ public class ancient_city extends LootModifier {
     @NotNull
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         int p = Mth.nextInt(RandomSource.create(), 1, 50);
+        int S = Mth.nextInt(RandomSource.create(), 1, 30);
         if (context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Player player){
             if (Handler.hascurio(player ,Items.nightmareeye.get())){
-                if (p == 6){
-                    generatedLoot.add(new ItemStack(Items.nightmareanchor.get()));
-                }
-                if (p == 7){
-                    generatedLoot.add(new ItemStack(Items.nightmarecharm.get()));
-                }
-                if (p == 8){
-                    generatedLoot.add(new ItemStack(Items.nightmaremoai.get()));
-                }
+                if (S == 1){generatedLoot.add(new ItemStack(Items.nightmaremoai.get()));}
+                if (S == 2){generatedLoot.add(new ItemStack(Items.nightmarewater.get()));}
+                if (S == 3){generatedLoot.add(new ItemStack(Items.nightmarestone.get()));}
+                if (S == 4){generatedLoot.add(new ItemStack(Items.nightmareanchor.get()));}
+                if (S == 5){generatedLoot.add(new ItemStack(Items.nightmaretreasure.get()));}
+                if (S == 6){generatedLoot.add(new ItemStack(Items.nightmarecharm.get()));}
+                if (S == 7){generatedLoot.add(new ItemStack(Items.nightmarerotten.get()));}
             }
         }
 
@@ -81,6 +80,7 @@ public class ancient_city extends LootModifier {
         if (p == 20){generatedLoot.add(new ItemStack(Items.nanorobot.get()));}
         if (p == 21){generatedLoot.add(new ItemStack(Items.thedoomstone.get()));}
         if (p == 22){generatedLoot.add(new ItemStack(Items.thefruit.get()));}
+        if (p == 23){generatedLoot.add(new ItemStack(Items.flyeye.get()));}
 
 
         return generatedLoot;

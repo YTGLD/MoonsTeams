@@ -4,7 +4,9 @@ import com.mojang.logging.LogUtils;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.event.Anvil;
 import com.moonstone.moonstonemod.event.LootEvent;
+import com.moonstone.moonstonemod.event.Village;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.init.Tab;
 import com.moonstone.moonstonemod.loot.abandoned_mineshaft;
 import com.moonstone.moonstonemod.loot.ancient_city;
@@ -12,6 +14,7 @@ import com.moonstone.moonstonemod.loot.end_city;
 import com.moonstone.moonstonemod.loot.simple_dungeon;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,14 +30,15 @@ import org.slf4j.Logger;
 public class MoonStoneMod {
     public static final String MODID = "moonstone";
     public static final Logger LOGGER = LogUtils.getLogger();
-
     public MoonStoneMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new AllEvent());
         MinecraftForge.EVENT_BUS.register(new LootEvent());
         MinecraftForge.EVENT_BUS.register(new Anvil());
+        MinecraftForge.EVENT_BUS.register(new Village());
 
+        Particles.PARTICLE_TYPES.register(modEventBus);
         Items.REGISTRY.register(modEventBus);
         Tab.TABS.register(modEventBus);
 
@@ -46,6 +50,10 @@ public class MoonStoneMod {
             bus = Mod.EventBusSubscriber.Bus.MOD
     )
     public static class Client {
+        @SubscribeEvent
+        public static void registerFactories(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(Particles.gold.get(), com.moonstone.moonstonemod.Particle.red.Provider::new);
+        }
         @SubscribeEvent
         public static void loot(RegisterEvent event) {
             event.register(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, helper -> {

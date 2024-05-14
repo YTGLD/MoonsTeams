@@ -113,6 +113,7 @@
 
   "item.nightmareeye.tool.string": "Increase damage taken by 33%",
   "item.nightmareeye.tool.string.1": "Most of your attributes will be reduced by 25%",
+  "item.nightmareeye.tool.string.2": "Can Un equip plague",
 
 
   "item.nightmaremoai.tool.string": "+2 Enchantment level of the enchanted product",
@@ -120,7 +121,7 @@
   "item.nightmaremoai.tool.string.2": "To be eligible to use this prop",
 
 
-  "item.nightmarerotten.tool.string": "+22％ All Attributes",
+  "item.nightmarerotten.tool.string": "+33％ All Attributes",
   "item.nightmarerotten.tool.string.1": "But for every additional 1 attribute",
   "item.nightmarerotten.tool.string.2": "Curses from the Nightmare will increase by 1.1%",
   "item.nightmarerotten.tool.string.3": "Only those who bear the fear of the Nightmare",
@@ -411,6 +412,40 @@
   "item.bloodgene.tool.string.1": "Every time you take damage, you will receive an improvement",
   "item.bloodgene.tool.string.2": "The maximum is 200% of the original",
   "item.bloodgene.tool.string.3": "Increase damage taken by 10%",
-  "item.ambush.tool.string": "Can walk on liquid surfaces"
+  "item.ambush.tool.string": "Can walk on liquid surfaces",
+
+  "item.fortunecrystal.tool.string": "+3 fortune",
+  "item.moonstone.fortunecrystal": "fortune crystal",
+  "item.moonstone.mayhemcrystal": "mayhem crystal",
+
+  "item.moonstone.flyeye": "fly eye",
+  "item.flyeye.tool.string": "+300% repelled",
+  "item.flyeye.tool.string.1": "+25% Invincible Frame",
+  "item.flyeye.tool.string.2": "Cause damage to surrounding creatures during invincibility",
+
+  "item.moonstone.plague": "plague",
+  "item.plague.tool.string": "Research progress",
+  "item.plague.tool.string.un": "use nightmare eye Can Un equip plague",
+
+  "item.plague.tool.string.1": "Virus progress",
+  "item.plague.tool.string.2": "Reverse research progress",
+
+  "item.plague.tool.string.3": "Kill creatures to obtain points",
+  "item.plague.tool.string.4": "You must study the points to 100%",
+  "item.plague.tool.string.5": "The number of points affects the attributes, and it is best to complete it within the specified time",
+  "item.plague.tool.string.6": "Can you dominate the world?",
+
+  "item.plague.tool.string.8": "+50% MAX_HEALTH",
+  "item.plague.tool.string.9": "+25% MOVEMENT_SPEED",
+  "item.plague.tool.string.10": "+66% ARMOR",
+  "item.plague.tool.string.11": "+90% KNOCKBACK_RESISTANCE",
+  "item.plague.tool.string.12": "+70% ATTACK_SPEED",
+  "item.plague.tool.string.13": "+70% ATTACK_DAMAGE",
+  "item.plague.tool.string.14": "+70% SWIM_SPEED",
+
+  "item.plague.tool.string.15": "+100% MOB DAMAGE",
+  "item.plague.tool.string.16": "+150% BOSS DAMAGE",
+  "item.plague.tool.string.17": "+300% HEAL",
+  "item.plague.tool.string.18": "+170% DIG SPEED"
 }
 

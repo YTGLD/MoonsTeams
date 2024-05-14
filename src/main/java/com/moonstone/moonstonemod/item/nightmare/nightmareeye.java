@@ -73,6 +73,7 @@ public class nightmareeye extends nightmare {
         tooltip.add(Component.translatable("item.nightmareeye.tool.string").withStyle(ChatFormatting.DARK_RED));
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("item.nightmareeye.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.translatable("item.nightmareeye.tool.string.2").withStyle(ChatFormatting.DARK_RED));
 
 
     }

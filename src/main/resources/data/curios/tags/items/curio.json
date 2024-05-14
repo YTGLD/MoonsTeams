@@ -24,6 +24,11 @@
     "moonstone:ectoplasmstone",
     "moonstone:twistedstone",
 
-    "moonstone:maxamout"
+    "moonstone:maxamout",
+
+    "moonstone:fortunecrystal",
+    "moonstone:mayhemcrystal",
+    "moonstone:plague"
+
   ]
 }

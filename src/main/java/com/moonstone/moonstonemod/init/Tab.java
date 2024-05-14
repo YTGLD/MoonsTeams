@@ -17,7 +17,10 @@ public class Tab {
             .icon(()->new ItemStack(Items.ectoplasmball.get()))
             .title(Component.translatable("itemGroup.tabmoonstone"))
             .displayItems((a,b)->{
+                b.accept(new ItemStack(Items.plague.get()));
                 b.accept(new ItemStack(Items.maxamout.get()));
+                b.accept(new ItemStack(Items.fortunecrystal.get()));
+                b.accept(new ItemStack(Items.mayhemcrystal.get()));
 
                 b.accept(new ItemStack(Items.ectoplasmstone.get()));
                 b.accept(new ItemStack(Items.twistedstone.get()));
@@ -32,6 +35,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.greedcrystal.get()));
                 b.accept(new ItemStack(Items.warcrystal.get()));
                 b.accept(new ItemStack(Items.whiteorb.get()));
+                b.accept(new ItemStack(Items.flyeye.get()));
 
                 b.accept(new ItemStack(Items.ectoplasmball.get()));
                 b.accept(new ItemStack(Items.ectoplasmapple.get()));

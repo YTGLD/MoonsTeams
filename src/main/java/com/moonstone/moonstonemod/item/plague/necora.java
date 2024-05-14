@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.catalyzer;
-import com.moonstone.moonstonemod.item.plague.medicine.extend.TheNecoraIC;
+import com.moonstone.moonstonemod.item.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;

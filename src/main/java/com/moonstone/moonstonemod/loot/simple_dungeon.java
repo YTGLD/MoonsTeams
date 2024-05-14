@@ -33,7 +33,18 @@ public class simple_dungeon extends LootModifier {
     @NotNull
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         int p = Mth.nextInt(RandomSource.create(), 1, 50);
+        int s = Mth.nextInt(RandomSource.create(), 1, 30);
         if (context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Player player){
+            if (Handler.hascurio(player ,Items.necora.get())){
+                if (s == 1){generatedLoot.add(new ItemStack(Items.ambush.get()));}
+                if (s == 2){generatedLoot.add(new ItemStack(Items.atpoverdose.get()));}
+                if (s == 3){generatedLoot.add(new ItemStack(Items.autolytic.get()));}
+                if (s == 4){generatedLoot.add(new ItemStack(Items.fermentation.get()));}
+                if (s == 5){generatedLoot.add(new ItemStack(Items.putrefactive.get()));}
+                if (s == 6){generatedLoot.add(new ItemStack(Items.regenerative.get()));}
+
+            }
+
             if (Handler.hascurio(player ,Items.nightmareeye.get())){
                 if (p == 6){
                     generatedLoot.add(new ItemStack(Items.nightmareanchor.get()));

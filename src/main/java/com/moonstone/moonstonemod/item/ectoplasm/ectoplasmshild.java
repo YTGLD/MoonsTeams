@@ -17,6 +17,7 @@ public class ectoplasmshild extends ectoplasm {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 0, false, false));
+        stack.getOrCreateTag().putBoolean("ectoplasm",true);
     }
 
 

@@ -1,11 +1,16 @@
 package com.moonstone.moonstonemod.init;
 
+import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
 import com.moonstone.moonstonemod.item.common.*;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
 import com.moonstone.moonstonemod.item.maulice.*;
+import com.moonstone.moonstonemod.item.maxitem.fortunecrystal;
 import com.moonstone.moonstonemod.item.maxitem.maxamout;
+import com.moonstone.moonstonemod.item.maxitem.mayhemcrystal;
+import com.moonstone.moonstonemod.item.moonstoneitem.extend.apple;
+import com.moonstone.moonstonemod.item.moonstoneitem.extend.medicinebox;
 import com.moonstone.moonstonemod.item.nanodoom.*;
 import com.moonstone.moonstonemod.item.nightmare.*;
 import com.moonstone.moonstonemod.item.plague.ALL.*;
@@ -13,10 +18,9 @@ import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.*;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.botton;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.catalyzer;
+import com.moonstone.moonstonemod.item.plague.TheNecora.autolytic;
 import com.moonstone.moonstonemod.item.plague.bloodvirus;
-import com.moonstone.moonstonemod.item.plague.medicine.TheNecora.*;
-import com.moonstone.moonstonemod.item.plague.medicine.extend.apple;
-import com.moonstone.moonstonemod.item.plague.medicine.extend.medicinebox;
+import com.moonstone.moonstonemod.item.uncommon.*;
 import com.moonstone.moonstonemod.item.plague.medicine.med.*;
 import com.moonstone.moonstonemod.item.plague.necora;
 import com.moonstone.moonstonemod.item.soul.soulbattery;
@@ -25,7 +29,6 @@ import com.moonstone.moonstonemod.item.uncommon.diemug;
 import com.moonstone.moonstonemod.item.uncommon.evilcandle;
 import com.moonstone.moonstonemod.item.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.uncommon.obsidianring;
-import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -128,17 +131,22 @@ public class Items {
 
 
 
-    public static final RegistryObject<Item> ambush =REGISTRY.register("ambush",ambush::new);
-    public static final RegistryObject<Item> atpoverdose =REGISTRY.register("atpoverdose",atpoverdose::new);
+    public static final RegistryObject<Item> ambush =REGISTRY.register("ambush", com.moonstone.moonstonemod.item.plague.TheNecora.ambush::new);
+    public static final RegistryObject<Item> atpoverdose =REGISTRY.register("atpoverdose", com.moonstone.moonstonemod.item.plague.TheNecora.atpoverdose::new);
     public static final RegistryObject<Item> autolytic =REGISTRY.register("autolytic",autolytic::new);
-    public static final RegistryObject<Item> fermentation =REGISTRY.register("fermentation",fermentation::new);
-    public static final RegistryObject<Item> putrefactive =REGISTRY.register("putrefactive",putrefactive::new);
-    public static final RegistryObject<Item> regenerative =REGISTRY.register("regenerative",regenerative::new);
+    public static final RegistryObject<Item> fermentation =REGISTRY.register("fermentation", com.moonstone.moonstonemod.item.plague.TheNecora.fermentation::new);
+    public static final RegistryObject<Item> putrefactive =REGISTRY.register("putrefactive", com.moonstone.moonstonemod.item.plague.TheNecora.putrefactive::new);
+    public static final RegistryObject<Item> regenerative =REGISTRY.register("regenerative", com.moonstone.moonstonemod.item.plague.TheNecora.regenerative::new);
 
 
     public static final RegistryObject<Item> bloodvirus =REGISTRY.register("bloodvirus",bloodvirus::new);
     public static final RegistryObject<Item> necora =REGISTRY.register("necora",necora::new);
     public static final RegistryObject<Item> maxamout =REGISTRY.register("maxamout",maxamout::new);
 
+    public static final RegistryObject<Item> mayhemcrystal =REGISTRY.register("mayhemcrystal",mayhemcrystal::new);
+    public static final RegistryObject<Item> fortunecrystal =REGISTRY.register("fortunecrystal",fortunecrystal::new);
+
+    public static final RegistryObject<Item> flyeye =REGISTRY.register("flyeye", flyeye::new);
+    public static final RegistryObject<Item> plague =REGISTRY.register("plague", plague::new);
 
 }

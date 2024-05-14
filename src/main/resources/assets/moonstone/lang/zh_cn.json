@@ -124,6 +124,7 @@
 
   "item.nightmareeye.tool.string": "受到伤害增加33％",
   "item.nightmareeye.tool.string.1": "你大部分属性都会降低25%",
+  "item.nightmareeye.tool.string.2": "可以取下亚特格拉德病毒",
 
 
   "item.nightmaremoai.tool.string": "+2 附魔产物的附魔等级",
@@ -131,7 +132,7 @@
   "item.nightmaremoai.tool.string.2": "才有资格使用此道具",
 
 
-  "item.nightmarerotten.tool.string": "+22％ 所有属性",
+  "item.nightmarerotten.tool.string": "+33％ 所有属性",
   "item.nightmarerotten.tool.string.1": "但是每增加1种属性",
   "item.nightmarerotten.tool.string.2": "来自深渊的诅咒都会增加1.1％",
   "item.nightmarerotten.tool.string.3": "唯有承受深渊之恐的人",
@@ -419,7 +420,42 @@
   "item.bloodgene.tool.string.1": "每次受到伤害都会获得提升",
   "item.bloodgene.tool.string.2": "最大是原来的200%",
   "item.bloodgene.tool.string.3": "增加10%受到伤害",
-  "item.ambush.tool.string": "可以行走在液体表面"
+  "item.ambush.tool.string": "可以行走在液体表面",
+
+
+  "item.moonstone.flyeye": "飞翔的眼睛",
+  "item.flyeye.tool.string": "+300% 被击退",
+  "item.flyeye.tool.string.1": "+25% 无敌帧",
+  "item.flyeye.tool.string.2": "无敌期间对周围生物造成伤害",
+
+
+
+  "item.moonstone.plague": "亚特格拉德病毒",
+  "item.plague.tool.string": "研究点数",
+  "item.plague.tool.string.1": "病毒点数",
+  "item.plague.tool.string.2": "反研究点数",
+
+  "item.plague.tool.string.3": "杀死生物获得点数",
+  "item.plague.tool.string.4": "你必须把点数研究到100%",
+  "item.plague.tool.string.5": "点数影响属性，并且最好在规定时间内完成........",
+  "item.plague.tool.string.6": "你真的能主宰世界吗？",
+  "item.plague.tool.string.un": "使用 深渊之眼 取下",
+
+
+
+  "item.plague.tool.string.8": "+50% 生命",
+  "item.plague.tool.string.9": "+25% 速度",
+  "item.plague.tool.string.10": "+66% 护甲",
+  "item.plague.tool.string.11": "+90% 击退抗性",
+  "item.plague.tool.string.12": "+70% 攻速",
+  "item.plague.tool.string.13": "+70% 伤害",
+  "item.plague.tool.string.14": "+70% 水下速度",
+
+  "item.plague.tool.string.15": "+100% 对怪物伤害",
+  "item.plague.tool.string.16": "+150% 最大生命值大于10倍你最大生命值的生物",
+  "item.plague.tool.string.17": "+300% 治疗",
+  "item.plague.tool.string.18": "+170% 挖掘速度"
+
 }
 
 

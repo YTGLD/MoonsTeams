@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.item.plague.medicine.extend;
+package com.moonstone.moonstonemod.item.moonstoneitem.extend;
 
 import com.moonstone.moonstonemod.item.moonstoneitem.Iplague;
 import net.minecraft.ChatFormatting;

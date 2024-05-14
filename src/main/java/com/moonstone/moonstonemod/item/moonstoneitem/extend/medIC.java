@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.item.plague.medicine.extend;
+package com.moonstone.moonstonemod.item.moonstoneitem.extend;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.item.moonstoneitem.Iplague;
@@ -13,9 +13,9 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class TheNecoraIC extends Item  implements Iplague, ICurioItem {
-    public TheNecoraIC() {
-        super(new Properties().stacksTo(1).rarity(Rarity.create("TheNecoraIC", ChatFormatting.RED)));
+public class medIC extends Item implements Iplague, ICurioItem {
+    public medIC() {
+        super(new Properties().stacksTo(1).rarity(Rarity.create("asdasda", ChatFormatting.RED)));
     }
 
     @Override
