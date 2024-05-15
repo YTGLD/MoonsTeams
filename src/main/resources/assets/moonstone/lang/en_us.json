@@ -447,6 +447,11 @@
   "item.plague.tool.string.15": "+100% MOB DAMAGE",
   "item.plague.tool.string.16": "+150% BOSS DAMAGE",
   "item.plague.tool.string.17": "+300% HEAL",
-  "item.plague.tool.string.18": "+170% DIG SPEED"
+  "item.plague.tool.string.18": "+170% DIG SPEED",
+
+
+
+  "item.moonstone.doomeye": "doom eye",
+  "item.doomeye.tool.string": "Summon 7 flying swords to attack enemies when injured"
 }
 

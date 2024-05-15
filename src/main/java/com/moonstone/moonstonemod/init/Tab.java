@@ -72,6 +72,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.nanorobot.get()));
                 b.accept(new ItemStack(Items.thedoomstone.get()));
                 b.accept(new ItemStack(Items.thefruit.get()));
+                b.accept(new ItemStack(Items.doomeye.get()));
+
                 b.accept(new ItemStack(Items.soulbattery.get()));
                 b.accept(new ItemStack(Items.soulcube.get()));
                 b.accept(new ItemStack(Items.diemug.get()));

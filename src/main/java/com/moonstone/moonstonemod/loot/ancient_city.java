@@ -81,6 +81,7 @@ public class ancient_city extends LootModifier {
         if (p == 21){generatedLoot.add(new ItemStack(Items.thedoomstone.get()));}
         if (p == 22){generatedLoot.add(new ItemStack(Items.thefruit.get()));}
         if (p == 23){generatedLoot.add(new ItemStack(Items.flyeye.get()));}
+        if (p == 24){generatedLoot.add(new ItemStack(Items.doomeye.get()));}
 
 
         return generatedLoot;

@@ -148,5 +148,6 @@ public class Items {
 
     public static final RegistryObject<Item> flyeye =REGISTRY.register("flyeye", flyeye::new);
     public static final RegistryObject<Item> plague =REGISTRY.register("plague", plague::new);
+    public static final RegistryObject<Item> doomeye =REGISTRY.register("doomeye", doomeye::new);
 
 }

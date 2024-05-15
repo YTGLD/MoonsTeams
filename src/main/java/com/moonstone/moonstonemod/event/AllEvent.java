@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.datafixers.optics.Wander;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
@@ -45,6 +46,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.scores.PlayerTeam;
+import net.minecraft.world.scores.Team;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderTooltipEvent;
@@ -86,6 +89,72 @@ public class AllEvent {
     public static String blood = "bloodgene";
     public static String rage = "ragegene";
     public static String FlyEye = "FlyNecoraorb";
+    public static String FlySword = "FlySword";
+
+    @SubscribeEvent
+    public void doomeyeLLivingTickEvent(LivingEvent.LivingTickEvent event){
+        if (event.getEntity() instanceof LivingEntity) {
+            LivingEntity livingEntity = event.getEntity();
+            Vec3 position = livingEntity.position();
+            int is = 16;
+            List<ItemEntity> items = livingEntity.level().getEntitiesOfClass(ItemEntity.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
+            for (ItemEntity item : items) {
+                if (!Handler.hascurio(livingEntity, Items.doomeye.get())) {
+                    if (item.isAlive()) {
+                        if (item.getAge() > 20) {
+                            if (item.getTags().contains(FlySword)) {
+                                if (item.level() instanceof ServerLevel serverLevel){
+                                    serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY() , item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
+                                }
+                                Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
+                                if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
+                                    motion = motion.normalize();
+                                }
+                                item.setDeltaMovement(motion.scale(0.5));
+                            }
+                        }
+                    }
+                }
+            }
+
+            Vec3 playerPos = livingEntity.position();
+            float range = 0.785f;
+            List<ItemEntity> entities = livingEntity.level().getEntitiesOfClass(ItemEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+            for (ItemEntity living : entities) {
+                if (living.getTags().contains(FlySword)) {
+                    if (living.isAlive()) {
+                        if (living.getAge() > 20) {
+                            if (!Handler.hascurio(livingEntity, Items.doomeye.get())) {
+                                livingEntity.invulnerableTime = 0;
+                                livingEntity.hurt(living.damageSources().magic(), 4);
+                                living.discard();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void doomeyeLivingKnockBackEvent(LivingKnockBackEvent event){
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player,Items.doomeye.get())){
+                if (!player.getCooldowns().isOnCooldown(Items.doomeye.get())){
+                    for (int i = 0 ;i < 7 ;i++){
+                        float s  = (float) Math.sin(i);
+                        ItemEntity item = new ItemEntity(player.level(),player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+1+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s),new ItemStack(net.minecraft.world.item.Items.IRON_SWORD));
+                        item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
+                        item.setNeverPickUp();
+                        item.setNoGravity(true);
+                        item.setGlowingTag(true);
+                        item.addTag(FlySword);
+                        player.level().addFreshEntity(item);
+                        player.getCooldowns().addCooldown(Items.doomeye.get(), 40);
+                    }
+                }
+            }
+        }
+    }
     @SubscribeEvent
     public void LivingDeathEvent(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player){

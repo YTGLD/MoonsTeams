@@ -53,6 +53,7 @@ public class MoonStoneMod {
         @SubscribeEvent
         public static void registerFactories(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(Particles.gold.get(), com.moonstone.moonstonemod.Particle.red.Provider::new);
+            event.registerSpriteSet(Particles.blue.get(), com.moonstone.moonstonemod.Particle.blue.Provider::new);
         }
         @SubscribeEvent
         public static void loot(RegisterEvent event) {
