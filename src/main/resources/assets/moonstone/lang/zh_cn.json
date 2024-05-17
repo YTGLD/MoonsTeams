@@ -471,7 +471,8 @@
   "item.doomswoud.tool.string.1": "每增加20%的速度增加1把飞剑",
   "item.doomswoud.tool.string.2": "杀死生物立即召唤4把飞剑",
 
-  "item.moonstone.wind": "疾风骤雨"
+  "item.moonstone.wind": "疾风",
+  "item.wind.tool.string": "连续奔跑增加速度"
 }
 
 

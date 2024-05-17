@@ -75,6 +75,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.thefruit.get()));
                 b.accept(new ItemStack(Items.doomeye.get()));
                 b.accept(new ItemStack(Items.doomswoud.get()));
+                b.accept(new ItemStack(Items.wind.get()));
 
                 b.accept(new ItemStack(Items.soulbattery.get()));
                 b.accept(new ItemStack(Items.soulcube.get()));
