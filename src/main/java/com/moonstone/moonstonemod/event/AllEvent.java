@@ -1,8 +1,10 @@
 package com.moonstone.moonstonemod.event;
 
 import com.google.common.collect.Lists;
-import com.mojang.datafixers.optics.Wander;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.entity.flysword;
+import com.moonstone.moonstonemod.entity.suddenrain;
+import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
@@ -37,7 +39,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
@@ -46,8 +47,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.scores.PlayerTeam;
-import net.minecraft.world.scores.Team;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderTooltipEvent;
@@ -92,19 +91,95 @@ public class AllEvent {
     public static String FlySword = "FlySword";
 
     @SubscribeEvent
+    public void suddenrainLLivingHurtEvent(LivingHurtEvent event){
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,Items.doomswoud.get())){
+                if (!player.getCooldowns().isOnCooldown(Items.doomswoud.get())){
+                    float speed = player.getSpeed();
+                    speed/=0.1f;
+                    int a = (int) (speed - 1) * 5;
+                    a += 2;
+                    for (int i = 0;i<a;i++) {
+                        float s  = (float) Math.sin(i);
+                        if (s <= 0){
+                            s = 0.12f;
+                        }
+                        suddenrain item = new suddenrain(EntityTs.suddenrain.get(),player.level());
+                        item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
+                        item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
+                        player.level().addFreshEntity(item);
+                        player.getCooldowns().addCooldown(Items.doomswoud.get(), 20);
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void suddenrainLivingDeathEvent(LivingDeathEvent event){
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,Items.doomswoud.get())) {
+                for (int i = 0; i < 4; i++) {
+                    float s = (float) Math.sin(i);
+                    if (s <= 0) {
+                        s = 0.12f;
+                    }
+                    suddenrain item = new suddenrain(EntityTs.suddenrain.get(), player.level());
+                    item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
+                    item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f), s / 1.5f, Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f));
+                    player.level().addFreshEntity(item);
+                    player.getCooldowns().addCooldown(Items.doomswoud.get(), 50);
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void suddenrainLivingTickEvent(LivingEvent.LivingTickEvent event){
+        if (event.getEntity() instanceof LivingEntity) {
+            LivingEntity livingEntity = event.getEntity();
+            Vec3 position = livingEntity.position().add(0,0.75,0);
+            int is = 16;
+            List<suddenrain> items = livingEntity.level().getEntitiesOfClass(suddenrain.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
+            for (suddenrain item : items) {
+                if (!Handler.hascurio(livingEntity,Items.doomswoud.get())) {
+                    if (item.isAlive()) {
+                        if (item.level() instanceof ServerLevel serverLevel) {
+                            serverLevel.sendParticles(Particles.popr.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
+                        }
+                        Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
+                        if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
+                            motion = motion.normalize();
+                        }
+                        if (item.age > 30) {
+                            item.setDeltaMovement(motion.scale(1));
+                        } else {
+                            item.setDeltaMovement(motion.scale(-0.25));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
     public void doomeyeLLivingTickEvent(LivingEvent.LivingTickEvent event){
         if (event.getEntity() instanceof LivingEntity) {
             LivingEntity livingEntity = event.getEntity();
             Vec3 position = livingEntity.position();
             int is = 16;
-            List<ItemEntity> items = livingEntity.level().getEntitiesOfClass(ItemEntity.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
-            for (ItemEntity item : items) {
-                if (!Handler.hascurio(livingEntity, Items.doomeye.get())) {
+            List<flysword> items = livingEntity.level().getEntitiesOfClass(flysword.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
+            for (flysword item : items) {
+                if (!Handler.hascurio(livingEntity,Items.doomeye.get())) {
                     if (item.isAlive()) {
-                        if (item.getAge() > 20) {
+
+                        if (item.age > 20) {
+                            if (item.level() instanceof ServerLevel serverLevel) {
+                                serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
+                            }
                             if (item.getTags().contains(FlySword)) {
-                                if (item.level() instanceof ServerLevel serverLevel){
-                                    serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY() , item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
+                                if (item.level() instanceof ServerLevel serverLevel) {
+                                    serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
                                 }
                                 Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
                                 if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
@@ -116,24 +191,8 @@ public class AllEvent {
                     }
                 }
             }
-
-            Vec3 playerPos = livingEntity.position();
-            float range = 0.785f;
-            List<ItemEntity> entities = livingEntity.level().getEntitiesOfClass(ItemEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-            for (ItemEntity living : entities) {
-                if (living.getTags().contains(FlySword)) {
-                    if (living.isAlive()) {
-                        if (living.getAge() > 20) {
-                            if (!Handler.hascurio(livingEntity, Items.doomeye.get())) {
-                                livingEntity.invulnerableTime = 0;
-                                livingEntity.hurt(living.damageSources().magic(), 4);
-                                living.discard();
-                            }
-                        }
-                    }
-                }
-            }
         }
+
     }
     @SubscribeEvent
     public void doomeyeLivingKnockBackEvent(LivingKnockBackEvent event){
@@ -142,11 +201,13 @@ public class AllEvent {
                 if (!player.getCooldowns().isOnCooldown(Items.doomeye.get())){
                     for (int i = 0 ;i < 7 ;i++){
                         float s  = (float) Math.sin(i);
-                        ItemEntity item = new ItemEntity(player.level(),player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+1+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s),new ItemStack(net.minecraft.world.item.Items.IRON_SWORD));
+                        if (s <= 0){
+                            s = 0.12f;
+                        }
+                        flysword item = new flysword(EntityTs.flysword.get(),player.level());
+                        item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
                         item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
-                        item.setNeverPickUp();
                         item.setNoGravity(true);
-                        item.setGlowingTag(true);
                         item.addTag(FlySword);
                         player.level().addFreshEntity(item);
                         player.getCooldowns().addCooldown(Items.doomeye.get(), 40);
@@ -1886,7 +1947,6 @@ public class AllEvent {
             tooltipEvent.setBorderStart(0xFF800000);
         }
     }
-
     public static float EffectInstance(Player player) {
         float size = 0;
         List<Integer> Int = Lists.newArrayList();

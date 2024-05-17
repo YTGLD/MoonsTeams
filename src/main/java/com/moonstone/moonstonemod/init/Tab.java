@@ -17,6 +17,7 @@ public class Tab {
             .icon(()->new ItemStack(Items.ectoplasmball.get()))
             .title(Component.translatable("itemGroup.tabmoonstone"))
             .displayItems((a,b)->{
+                b.accept(new ItemStack(Items.book.get()));
                 b.accept(new ItemStack(Items.plague.get()));
                 b.accept(new ItemStack(Items.maxamout.get()));
                 b.accept(new ItemStack(Items.fortunecrystal.get()));
@@ -73,6 +74,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.thedoomstone.get()));
                 b.accept(new ItemStack(Items.thefruit.get()));
                 b.accept(new ItemStack(Items.doomeye.get()));
+                b.accept(new ItemStack(Items.doomswoud.get()));
 
                 b.accept(new ItemStack(Items.soulbattery.get()));
                 b.accept(new ItemStack(Items.soulcube.get()));

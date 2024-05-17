@@ -278,21 +278,26 @@
 
   "item.calcification.tool.string": "*Calcifies the experimenter's skin and enhances the experimenter's ability to fight",
   "item.calcification.tool.string.1": "Increases damage resistance by 11",
+  "item.calcification.tool.string.2": "Suffer 350 damage attempts",
 
 
   "item.masticatory.tool.string": "*Strengthening of the experimenter's occlusal muscles to the point of enhancing the experimenter's chewing ability",
   "item.masticatory.tool.string.1": "50% reduction in eating time",
+  "item.masticatory.tool.string.2": "eat 8 gold apple",
+  "item.polyphagia.tool.string": "eat enchanted gold apple",
 
 
   "item.quadriceps.tool.string": "*Strengthening of the experimenter's quadriceps muscles to the point of enhancing the experimenter's locomotor ability",
   "item.quadriceps.tool.string.1": "Increases movement speed by 20%",
   "item.quadriceps.tool.string.2": "Increases jump height by 50%",
+  "item.quadriceps.tool.string.3": "jump 500",
 
 
   "item.reanimation.tool.string": "*Activate the experimenter's cells to the point of enhancing the experimenter's ability to regenerate cells",
   "item.reanimation.tool.string.1": "Simultaneous restoration of basic functions of vital organs",
   "item.reanimation.tool.string.2": "Resurrect！",
   "item.reanimation.tool.string.3": "300 seconds cooldown",
+  "item.reanimation.tool.string.4": "die",
 
 
   "item.autolytic.tool.string": "Suppresses the swimming speed reduction effect from the Necora virus",
@@ -449,9 +454,19 @@
   "item.plague.tool.string.17": "+300% HEAL",
   "item.plague.tool.string.18": "+170% DIG SPEED",
 
+  "item.moonstone.soulbook": "a book",
 
 
-  "item.moonstone.doomeye": "doom eye",
-  "item.doomeye.tool.string": "Summon 7 flying swords to attack enemies when injured"
+  "item.moonstone.doomeye": "eye of 7 sword",
+  "item.doomeye.tool.string": "Summon 7 flying swords to attack enemies when injured",
+
+
+  "item.moonstone.doomswoud": "rain sword",
+  "item.doomswoud.tool.string": "Hitting creatures causes 2 flying swords",
+  "item.doomswoud.tool.string.1": "Add 1 flying sword for every 20% increase in speed",
+  "item.doomswoud.tool.string.2": "Kill the creature and immediately summon 4 flying swords",
+
+  "item.moonstone.wind": "strong wind and swift rain"
+
 }
 

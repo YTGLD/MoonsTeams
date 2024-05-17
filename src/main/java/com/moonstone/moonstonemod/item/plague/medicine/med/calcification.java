@@ -25,6 +25,7 @@ public class calcification extends medIC {
 
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable(String.valueOf(medicinebox.do_hurt)).withStyle(ChatFormatting.RED));
+        tooltip.add(Component.translatable("item.calcification.tool.string.2").withStyle(ChatFormatting.RED));
 
     }
 

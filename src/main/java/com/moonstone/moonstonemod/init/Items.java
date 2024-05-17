@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.init;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.book;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
 import com.moonstone.moonstonemod.item.common.*;
@@ -149,5 +150,8 @@ public class Items {
     public static final RegistryObject<Item> flyeye =REGISTRY.register("flyeye", flyeye::new);
     public static final RegistryObject<Item> plague =REGISTRY.register("plague", plague::new);
     public static final RegistryObject<Item> doomeye =REGISTRY.register("doomeye", doomeye::new);
+
+    public static final RegistryObject<Item> doomswoud =REGISTRY.register("doomswoud", doomswoud::new);
+    public static final RegistryObject<Item> book =REGISTRY.register("soulbook", book::new);
 
 }

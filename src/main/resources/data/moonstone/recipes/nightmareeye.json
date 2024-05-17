@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    }
+  ],
+  "result": {
+    "item": "moonstone:nightmareeye",
+    "count": 1
+  }
+}

@@ -15,11 +15,11 @@ public class Village {
             event.getTrades().get(1).add(new BasicItemListing(1, Items.ectoplasmball.get().getDefaultInstance(),32, 4,1));
         }
         if (event.getType() == VillagerProfession.WEAPONSMITH){
-            event.getTrades().get(1).add(new BasicItemListing(48, Items.mayhemcrystal.get().getDefaultInstance(),1, 4,1));
+            event.getTrades().get(3).add(new BasicItemListing(48, Items.mayhemcrystal.get().getDefaultInstance(),1, 4,1));
 
         }
         if (event.getType() == VillagerProfession.TOOLSMITH){
-             event.getTrades().get(1).add(new BasicItemListing(48, Items.fortunecrystal.get().getDefaultInstance(),1, 4,1));
+             event.getTrades().get(3).add(new BasicItemListing(48, Items.fortunecrystal.get().getDefaultInstance(),1, 4,1));
 
         }
     }

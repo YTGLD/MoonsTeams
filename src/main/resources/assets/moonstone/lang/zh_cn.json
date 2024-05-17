@@ -457,8 +457,21 @@
   "item.plague.tool.string.18": "+170% 挖掘速度",
   "item.thefruit.tool.string.3": "深渊之眼将克服这些效果",
 
-  "item.moonstone.doomeye": "七剑修罗之眼",
-  "item.doomeye.tool.string": "受伤召唤7把飞剑攻击敌人"
+  "item.moonstone.doomeye": "七剑修罗之心",
+  "item.doomeye.tool.string": "受伤召唤7把飞剑攻击敌人",
+
+  "item.moonstone.soulbook": "一本书",
+  "item.masticatory.tool.string.2": "吃8个金苹果",
+  "item.calcification.tool.string.2": "受到350次伤害",
+  "item.quadriceps.tool.string.3": "跳 500 次",
+  "item.reanimation.tool.string.4": "死掉",
+
+  "item.moonstone.doomswoud": "骤雨",
+  "item.doomswoud.tool.string": "击中生物造成2把飞剑",
+  "item.doomswoud.tool.string.1": "每增加20%的速度增加1把飞剑",
+  "item.doomswoud.tool.string.2": "杀死生物立即召唤4把飞剑",
+
+  "item.moonstone.wind": "疾风骤雨"
 }
 
 

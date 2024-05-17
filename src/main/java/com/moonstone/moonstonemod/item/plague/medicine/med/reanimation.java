@@ -24,6 +24,8 @@ public class reanimation extends medIC {
         } else {
             tooltip.add(Component.translatable("SHIFT").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
         }
+
+        tooltip.add(Component.translatable("item.reanimation.tool.string.4").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
         tooltip.add(Component.translatable(""));
     }
 

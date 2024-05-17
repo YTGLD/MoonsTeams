@@ -1,21 +1,16 @@
-package com.moonstone.moonstonemod.Particle;
+package com.moonstone.moonstonemod.particle;
 
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
-import org.joml.Quaternionf;
-import org.joml.Vector3f;
 
-public class red extends TextureSheetParticle {
-    public red(ClientLevel level, double x, double y, double z, float movementX, float movementY, float movementZ) {
+public class popr  extends TextureSheetParticle {
+    public popr(ClientLevel level, double x, double y, double z, float movementX, float movementY, float movementZ) {
 
 
         super(level, x, y, z, movementX, movementY, movementZ);
@@ -55,7 +50,7 @@ public class red extends TextureSheetParticle {
 
 
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            red particle = new red(level, x, y, z, 0, 0, 0);
+            popr particle = new popr(level, x, y, z, 0, 0, 0);
             particle.pickSprite(this.sprite);
             return particle;
         }
@@ -64,3 +59,4 @@ public class red extends TextureSheetParticle {
         }
     }
 }
+

@@ -27,6 +27,7 @@ public class masticatory extends medIC {
 
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable(""+ medicinebox.do_apple).withStyle(ChatFormatting.RED));
+        tooltip.add(Component.translatable("item.masticatory.tool.string.2").withStyle(ChatFormatting.RED));
 
     }
 
