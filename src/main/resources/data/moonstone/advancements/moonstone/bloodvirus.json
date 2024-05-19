@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/catalyzer",
+  "criteria": {
+    "bloodvirus": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:bloodvirus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.bloodvirus.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:bloodvirus"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.bloodvirus.hand"
+    }
+  },
+  "requirements": [
+    [
+      "bloodvirus"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

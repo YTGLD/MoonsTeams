@@ -42,7 +42,6 @@ public class simple_dungeon extends LootModifier {
                 if (s == 4){generatedLoot.add(new ItemStack(Items.fermentation.get()));}
                 if (s == 5){generatedLoot.add(new ItemStack(Items.putrefactive.get()));}
                 if (s == 6){generatedLoot.add(new ItemStack(Items.regenerative.get()));}
-
             }
 
             if (Handler.hascurio(player ,Items.nightmareeye.get())){

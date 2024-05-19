@@ -32,6 +32,7 @@ public class flysword extends ThrowableItemProjectile {
     @Override
     public void tick() {
         super.tick();
+        this.setNoGravity(true);
         age++;
         if (age > 100) {
             this.discard();

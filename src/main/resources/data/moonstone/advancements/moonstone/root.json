@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "root": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:battery"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/cracked_deepslate_tiles.png",
+    "description": {
+      "text": "MoonStone"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:battery"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "MoonStone"
+    }
+  },
+  "requirements": [
+    [
+      "root"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

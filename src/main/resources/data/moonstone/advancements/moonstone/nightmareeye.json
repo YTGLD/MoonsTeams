@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmcube",
+  "criteria": {
+    "nightmareeye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmareeye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmareeye.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmareeye"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.nightmareeye.hand"
+    }
+  },
+  "requirements": [
+    [
+      "nightmareeye"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

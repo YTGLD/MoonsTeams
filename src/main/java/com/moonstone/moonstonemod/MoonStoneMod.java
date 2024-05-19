@@ -4,11 +4,9 @@ import com.mojang.logging.LogUtils;
 import com.moonstone.moonstonemod.entity.SwordRenderer;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.event.LootEvent;
+import com.moonstone.moonstonemod.event.SwordEvent;
 import com.moonstone.moonstonemod.event.Village;
-import com.moonstone.moonstonemod.init.EntityTs;
-import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.init.Particles;
-import com.moonstone.moonstonemod.init.Tab;
+import com.moonstone.moonstonemod.init.*;
 import com.moonstone.moonstonemod.loot.abandoned_mineshaft;
 import com.moonstone.moonstonemod.loot.ancient_city;
 import com.moonstone.moonstonemod.loot.end_city;
@@ -38,6 +36,10 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new AllEvent());
         MinecraftForge.EVENT_BUS.register(new LootEvent());
         MinecraftForge.EVENT_BUS.register(new Village());
+        MinecraftForge.EVENT_BUS.register(new SwordEvent());
+
+        LootReg.REGISTRY.register(modEventBus);
+
         EntityTs.REGISTRY.register(modEventBus);
 
         Particles.PARTICLE_TYPES.register(modEventBus);
@@ -63,15 +65,6 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.flysword.get(), SwordRenderer::new);
             event.registerEntityRenderer(EntityTs.suddenrain.get(), SwordRenderer::new);
 
-        }
-        @SubscribeEvent
-        public static void loot(RegisterEvent event) {
-            event.register(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, helper -> {
-                helper.register(new ResourceLocation(MODID, "abandoned_mineshaft"), abandoned_mineshaft.CODEC);
-                helper.register(new ResourceLocation(MODID, "ancient_city"), ancient_city.CODEC);
-                helper.register(new ResourceLocation(MODID, "simple_dungeon"), simple_dungeon.CODEC);
-                helper.register(new ResourceLocation(MODID, "end_city"), end_city.CODEC);
-            });
         }
     }
 

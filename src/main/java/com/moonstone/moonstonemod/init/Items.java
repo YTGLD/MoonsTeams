@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.book;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
+import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.common.*;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
 import com.moonstone.moonstonemod.item.maulice.*;
@@ -40,11 +41,8 @@ public class Items {
     public static final RegistryObject<Item> ectoplasmapple  =REGISTRY.register("ectoplasmapple", ectoplasmapple::new);
     public static final RegistryObject<Item> ectoplasmball  =REGISTRY.register("ectoplasmball", ectoplasmball::new);
     public static final RegistryObject<Item> ectoplasmbattery  =REGISTRY.register("ectoplasmbattery", ectoplasmbattery::new);
-    public static final RegistryObject<Item> ectoplasmcharm  =REGISTRY.register("ectoplasmcharm", ectoplasmcharm::new);
-    public static final RegistryObject<Item> ectoplasmcharmstone  =REGISTRY.register("ectoplasmcharmstone", ectoplasmcharmstone::new);
     public static final RegistryObject<Item> ectoplasmcloub  =REGISTRY.register("ectoplasmcloub", ectoplasmcloub::new);
     public static final RegistryObject<Item> ectoplasmcube  =REGISTRY.register("ectoplasmcube", ectoplasmcube::new);
-    public static final RegistryObject<Item> ectoplasmfood  =REGISTRY.register("ectoplasmfood", ectoplasmfood::new);
     public static final RegistryObject<Item> ectoplasmhorseshoe  =REGISTRY.register("ectoplasmhorseshoe", ectoplasmhorseshoe::new);
     public static final RegistryObject<Item> ectoplasmprism  =REGISTRY.register("ectoplasmprism", ectoplasmprism::new);
     public static final RegistryObject<Item> ectoplasmshild  =REGISTRY.register("ectoplasmshild", ectoplasmshild::new);
@@ -154,5 +152,6 @@ public class Items {
     public static final RegistryObject<Item> doomswoud =REGISTRY.register("doomswoud", doomswoud::new);
     public static final RegistryObject<Item> book =REGISTRY.register("soulbook", book::new);
     public static final RegistryObject<Item> wind =REGISTRY.register("wind", wind::new);
+    public static final RegistryObject<Item> wind_and_rain =REGISTRY.register("wind_and_rain", wind_and_rain::new);
 
 }

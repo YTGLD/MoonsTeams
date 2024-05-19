@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/medicinebox",
+  "criteria": {
+    "necora": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:necora"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.necora.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:necora"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.necora.hand"
+    }
+  },
+  "requirements": [
+    [
+      "necora"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

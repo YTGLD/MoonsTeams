@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/root",
+  "criteria": {
+    "twistedstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:twistedstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.twistedstone.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:twistedstone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.twistedstone.hand"
+    }
+  },
+  "requirements": [
+    [
+      "twistedstone"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

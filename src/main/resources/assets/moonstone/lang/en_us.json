@@ -467,6 +467,80 @@
   "item.doomswoud.tool.string.2": "Kill the creature and immediately summon 4 flying swords",
 
   "item.moonstone.wind": "strong wind and swift rain",
-  "item.wind.tool.string": "Continuous running increases speed"
+  "item.wind.tool.string": "Continuous running increases speed",
+
+  "item.moonstone.wind_and_rain": "wind and rain",
+  "item.wind_and_rain.tool.string": "Drag this item and right-click on sword weapons to enchant souls",
+  "item.wind_and_rain.tool.string.1": "Afterwards, use the soul possessed weapon and long press the right button to summon the flying sword",
+  "item.wind_and_rain.tool.string.2": "But each summon has a 1.5% chance of entering an 8-second cooldown",
+  "item.wind_and_rain.tool.string.3": "And it will consume durability",
+  "item.wind_and_rain.tool.string.4": "ou must possess both the Heart of Seven Swords and the Rain to use it properly",
+
+
+  "advancements.tooltip.ectoplasmstone.hand": "ectoplasm",
+  "advancements.tooltip.ectoplasmstone.text": "Obtain the stone at the beginning of the game",
+
+  "advancements.tooltip.twistedstone.hand": "twisted",
+  "advancements.tooltip.twistedstone.text": "Obtain the stone at the beginning of the game\"",
+
+
+  "advancements.tooltip.ectoplasmball.hand": "ectoplasm ball",
+  "advancements.tooltip.ectoplasmball.text": "KILL SOME MOB",
+
+
+  "advancements.tooltip.ectoplasmcloub.hand": "ectoplasm cloub",
+  "advancements.tooltip.ectoplasmcloub.text": "The die of monsters",
+
+
+  "advancements.tooltip.ectoplasmprism.hand": "ectoplasm prism",
+  "advancements.tooltip.ectoplasmprism.text": "A prism formed by the accumulation of corpses in the mountains",
+
+
+  "advancements.tooltip.ectoplasmcube.hand": "ectoplasm cube",
+  "advancements.tooltip.ectoplasmcube.text": "A cube formed by the accumulation of corpses",
+
+
+  "advancements.tooltip.maxamout.hand": "max amout",
+  "advancements.tooltip.maxamout.text": "Kill the Ancient Guardians while possessing red, blue, and green stones",
+
+  "advancements.tooltip.wind_and_rain.hand": "wind and rain",
+  "advancements.tooltip.wind_and_rain.text": "Open the box of the ancient city while possessing the Heart of the Seven Swords Shura and a sudden rain!",
+
+
+
+  "advancements.tooltip.nightmareeye.hand": "nightmare eye",
+  "advancements.tooltip.nightmareeye.text": "Open dungeons, mines, and ancient city boxes while wearing the Eye of the Abyss to obtain future items...",
+
+
+
+  "advancements.tooltip.medicinebox.hand": " medicine box",
+  "advancements.tooltip.medicinebox.text": "Complete some boring tasks while wearing this item",
+
+  "advancements.tooltip.calcification.hand": "calcification",
+  "advancements.tooltip.calcification.text": "Suffer 350 damage attempts",
+
+  "advancements.tooltip.masticatory.hand": "masticatory",
+  "advancements.tooltip.masticatory.text": "eat 8 gold apple",
+
+  "advancements.tooltip.polyphagia.hand": "masticatory",
+  "advancements.tooltip.polyphagia.text": "eat enchanted gold apple",
+
+  "advancements.tooltip.quadriceps.hand": "quadriceps",
+  "advancements.tooltip.quadriceps.text": "jump:500",
+
+  "advancements.tooltip.reanimation.hand": "reanimation",
+  "advancements.tooltip.reanimation.text": "die",
+
+  "advancements.tooltip.necora.hand": "necora",
+  "advancements.tooltip.necora.text": "Open the dungeon box while wearing this item",
+
+  "advancements.tooltip.botton.hand": "botton",
+  "advancements.tooltip.botton.text": "Use Shadow Plague Right Click Medicine Box",
+
+  "advancements.tooltip.catalyzer.hand": "catalyzer",
+  "advancements.tooltip.catalyzer.text": "Kill the Last Shadow Dragon after completing all the tasks of the medicine box",
+
+  "advancements.tooltip.bloodvirus.hand": "blood virus",
+  "advancements.tooltip.bloodvirus.text": "Use Shadow Plague Right Click necora"
 }
 

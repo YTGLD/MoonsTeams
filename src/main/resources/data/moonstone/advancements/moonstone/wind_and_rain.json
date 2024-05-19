@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmprism",
+  "criteria": {
+    "wind_and_rain": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:wind_and_rain"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.wind_and_rain.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:wind_and_rain"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.wind_and_rain.hand"
+    }
+  },
+  "requirements": [
+    [
+      "wind_and_rain"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

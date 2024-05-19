@@ -7,6 +7,7 @@ import com.moonstone.moonstonemod.entity.suddenrain;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.Particles;
+import com.moonstone.moonstonemod.item.Perhaps;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
@@ -89,7 +90,19 @@ public class AllEvent {
     public static String rage = "ragegene";
     public static String FlyEye = "FlyNecoraorb";
     public static String FlySword = "FlySword";
-
+    @SubscribeEvent
+    public void evil(LivingHurtEvent event){
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.evilcandle.get())){
+                if (event.getSource().is(DamageTypes.IN_FIRE)||
+                        event.getSource().is(DamageTypes.ON_FIRE)||
+                        event.getSource().is(DamageTypes.LAVA))
+                {
+                    event.setAmount(event.getAmount() * 0.2f);
+                }
+            }
+        }
+    }
     @SubscribeEvent
     public void suddenrainLLivingHurtEvent(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player player){
@@ -1938,7 +1951,7 @@ public class AllEvent {
             tooltipEvent.setBorderStart(0xFF800000);
             tooltipEvent.setBorderEnd(0xFF800080);
         }
-        if (stack.getItem() instanceof IDoom) {
+        if (stack.getItem() instanceof IDoom||stack.getItem() instanceof Perhaps) {
             tooltipEvent.setBorderStart(0xFF83DEFC);
             tooltipEvent.setBorderEnd(0xFF0296FE);
         }

@@ -34,7 +34,11 @@ public class ancient_city extends LootModifier {
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         int p = Mth.nextInt(RandomSource.create(), 1, 50);
         int S = Mth.nextInt(RandomSource.create(), 1, 30);
+        int W = Mth.nextInt(RandomSource.create(), 1, 20);
         if (context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Player player){
+            if (Handler.hascurio(player ,Items.doomswoud.get())&&Handler.hascurio(player ,Items.doomeye.get())){
+                if (W == 1){generatedLoot.add(new ItemStack(Items.wind_and_rain.get()));}
+            }
             if (Handler.hascurio(player ,Items.nightmareeye.get())){
                 if (S == 1){generatedLoot.add(new ItemStack(Items.nightmaremoai.get()));}
                 if (S == 2){generatedLoot.add(new ItemStack(Items.nightmarewater.get()));}

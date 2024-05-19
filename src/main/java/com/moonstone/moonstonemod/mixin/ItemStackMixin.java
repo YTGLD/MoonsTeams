@@ -1,25 +1,31 @@
 package com.moonstone.moonstonemod.mixin;
 
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.init.Items;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
+import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.UseAnim;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import javax.annotation.Nullable;
-
 @Mixin(ItemStack.class)
-public abstract class ItemStackMixin {
+public class ItemStackMixin {
+    @Inject(at = @At("HEAD"), method = "getUseDuration", cancellable = true)
+    public void moonstone$getUseDuration(CallbackInfoReturnable<Integer> cir) {
+        ItemStack stack = (ItemStack) (Object) this;
+        if (stack.getTag()!=null){
+            if (stack.getTag().getBoolean(wind_and_rain.wind)){
+                cir.setReturnValue(72000);
+            }
+        }
+    }
+    @Inject(at = @At("HEAD"), method = "getUseAnimation", cancellable = true)
+    public void moon$getUseAnimation(CallbackInfoReturnable<UseAnim> cir) {
+        ItemStack stack = (ItemStack) (Object) this;
+        if (stack.getTag()!=null){
+            if (stack.getTag().getBoolean(wind_and_rain.wind)){
+                cir.setReturnValue(UseAnim.BOW);
+            }
+        }
+    }
 }

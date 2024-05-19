@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/medicinebox",
+  "criteria": {
+    "catalyzer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:catalyzer"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.catalyzer.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:catalyzer"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.catalyzer.hand"
+    }
+  },
+  "requirements": [
+    [
+      "catalyzer"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

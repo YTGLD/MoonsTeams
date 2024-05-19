@@ -1,21 +1,21 @@
 {
   "itemGroup.tabmoonstone": "月之石",
   "item.moonstone.ectoplasmball": "灵质球",
-  "item.moonstone.ectoplasmcloub": "灵质 云",
-  "item.moonstone.ectoplasmcube": "灵质 立方",
-  "item.moonstone.ectoplasmslate": "灵质 石板",
-  "item.moonstone.ectoplasmhorseshoe": "灵质 马蹄",
-  "item.moonstone.ectoplasmbadge": "灵质 徽章",
-  "item.moonstone.ectoplasmapple": "灵质 果",
-  "item.moonstone.ectoplasmstone": "灵质 石头",
-  "item.moonstone.twistedstone": "扭曲 石头",
+  "item.moonstone.ectoplasmcloub": "灵质云",
+  "item.moonstone.ectoplasmcube": "灵质立方",
+  "item.moonstone.ectoplasmslate": "灵质石板",
+  "item.moonstone.ectoplasmhorseshoe": "灵质马蹄",
+  "item.moonstone.ectoplasmbadge": "灵质徽章",
+  "item.moonstone.ectoplasmapple": "灵质果",
+  "item.moonstone.ectoplasmstone": "灵质石头",
+  "item.moonstone.twistedstone": "扭曲石头",
 
-  "item.moonstone.ectoplasmprism": "灵质 棱镜",
-  "item.moonstone.ectoplasmfood": "灵质 食物",
-  "item.moonstone.ectoplasmcharm": "灵质 护符",
-  "item.moonstone.ectoplasmcharmstone": "灵质 石头护符",
-  "item.moonstone.ectoplasmshild": "灵质 盾牌",
-  "item.moonstone.ectoplasmbattery": "灵质 电池",
+  "item.moonstone.ectoplasmprism": "灵质棱镜",
+  "item.moonstone.ectoplasmfood": "灵质食物",
+  "item.moonstone.ectoplasmcharm": "灵质护符",
+  "item.moonstone.ectoplasmcharmstone": "灵质石头护符",
+  "item.moonstone.ectoplasmshild": "灵质盾牌",
+  "item.moonstone.ectoplasmbattery": "灵质电池",
 
 
   "item.moonstone.badgeofthedead": "亡灵徽章",
@@ -87,22 +87,22 @@
   "item.mshell.tool.string.1": "-10% 造成的伤害",
 
 
-  "item.moonstone.nightmareanchor": "深渊 锚头",
-  "item.moonstone.nightmarecharm": "深渊 护符",
-  "item.moonstone.nightmareeye": "深渊 眼睛",
-  "item.moonstone.nightmaremoai": "深渊 石球",
-  "item.moonstone.nightmarerotten": "深渊 万腐",
-  "item.moonstone.nightmarestone": "深渊 石",
-  "item.moonstone.nightmaretreasure": "深渊 财宝",
-  "item.moonstone.nightmarewater": "深渊 圣杯",
+  "item.moonstone.nightmareanchor": "虚伪锚",
+  "item.moonstone.nightmarecharm": "深渊护符",
+  "item.moonstone.nightmareeye": "深渊之眼",
+  "item.moonstone.nightmaremoai": "深渊石球",
+  "item.moonstone.nightmarerotten": "万腐之心",
+  "item.moonstone.nightmarestone": "深渊方尖碑",
+  "item.moonstone.nightmaretreasure": "魔鬼的财宝",
+  "item.moonstone.nightmarewater": "卑微之酿",
 
 
   "item.moonstone.magiceye": "机械眼",
-  "item.moonstone.magicstone": "石头",
+  "item.moonstone.magicstone": "神奇石头",
   "item.moonstone.nanocube": "纳米立方",
   "item.moonstone.nanorobot": "纳米机器人",
-  "item.moonstone.thedoomstone": "末日石",
-  "item.moonstone.thefruit": "远古果实",
+  "item.moonstone.thedoomstone": "末日之石",
+  "item.moonstone.thefruit": "上古果实",
 
 
   "item.nightmareanchor.tool.string": "佩戴它并死亡",
@@ -172,8 +172,8 @@
   "item.nightmarewater.tool.string": "腐朽…虚弱……",
   "item.nightmarewater.tool.string.1": "深渊…永恒……",
 
-  "item.moonstone.soulbattery": "灵魂 电池",
-  "item.moonstone.soulcube": "灵魂 立方",
+  "item.moonstone.soulbattery": "灵魂电池",
+  "item.moonstone.soulcube": "灵魂立方",
 
   "item.magiceye.tool.string": "在你攻击生物的半径四格内的所有生物",
   "item.magiceye.tool.string.1": "将受到50％的范围伤害",
@@ -472,7 +472,80 @@
   "item.doomswoud.tool.string.2": "杀死生物立即召唤4把飞剑",
 
   "item.moonstone.wind": "疾风",
-  "item.wind.tool.string": "连续奔跑增加速度"
+  "item.wind.tool.string": "连续奔跑增加速度",
+
+  "item.moonstone.wind_and_rain": "疾风骤雨",
+  "item.wind_and_rain.tool.string": "拖动此物品右键剑类武器来进行附魂",
+  "item.wind_and_rain.tool.string.1": "之后使用附魂的武器长按右键召唤飞剑",
+  "item.wind_and_rain.tool.string.2": "但每次召唤都会有2%的概率进入8秒的冷却",
+  "item.wind_and_rain.tool.string.3": "连续召唤会消耗耐久",
+  "item.wind_and_rain.tool.string.4": "必须同时拥有 七剑修罗之心 和 骤雨 来正常使用",
+
+
+
+  "advancements.tooltip.ectoplasmstone.hand": "灵质！",
+  "advancements.tooltip.ectoplasmstone.text": "获得开局的灵质石头",
+
+
+  "advancements.tooltip.twistedstone.hand": "扭曲。。。",
+  "advancements.tooltip.twistedstone.text": "获得开局的扭曲石头",
+
+
+  "advancements.tooltip.ectoplasmball.hand": "灵质球",
+  "advancements.tooltip.ectoplasmball.text": "杀死怪物",
+
+
+  "advancements.tooltip.ectoplasmcloub.hand": "灵质云",
+  "advancements.tooltip.ectoplasmcloub.text": "怪物的末日",
+
+
+  "advancements.tooltip.ectoplasmprism.hand": "灵质棱镜",
+  "advancements.tooltip.ectoplasmprism.text": "成山的尸体堆积成的棱镜",
+
+
+  "advancements.tooltip.ectoplasmcube.hand": "灵质立方",
+  "advancements.tooltip.ectoplasmcube.text": "用尸体堆积成的棱镜",
+
+
+  "advancements.tooltip.maxamout.hand": "原始纹章",
+  "advancements.tooltip.maxamout.text": "在拥有红色，蓝色，绿色符石的情况下杀死远古守卫者!",
+
+  "advancements.tooltip.wind_and_rain.hand": "疾风骤雨",
+  "advancements.tooltip.wind_and_rain.text": "在拥有七剑修罗之心和骤雨的情况下开取远古城市的箱子！",
+
+  "advancements.tooltip.nightmareeye.hand": "深渊之眼",
+  "advancements.tooltip.nightmareeye.text": "佩戴深渊之眼的情况下开取地牢，矿井，远古城市的箱子来获取之后的物品.....",
+
+  "advancements.tooltip.medicinebox.hand": " 医药箱",
+  "advancements.tooltip.medicinebox.text": "佩戴此物品的情况下完成一些无聊的任务",
+
+  "advancements.tooltip.calcification.hand": "皮肤质钙化",
+  "advancements.tooltip.calcification.text": "受到350次伤害",
+
+  "advancements.tooltip.masticatory.hand": "咬合肌强化",
+  "advancements.tooltip.masticatory.text": "吃8金苹果",
+
+
+  "advancements.tooltip.polyphagia.hand": "食欲亢进",
+  "advancements.tooltip.polyphagia.text": "吃附魔金苹果",
+
+  "advancements.tooltip.quadriceps.hand": "四头肌强化",
+  "advancements.tooltip.quadriceps.text": "跳跃500次",
+
+  "advancements.tooltip.reanimation.hand": "细胞重生",
+  "advancements.tooltip.reanimation.text": "死掉",
+
+  "advancements.tooltip.necora.hand": "僵尸病毒",
+  "advancements.tooltip.necora.text": "在佩戴此物品的情况下开取地牢箱子",
+
+  "advancements.tooltip.botton.hand": "铁罐子",
+  "advancements.tooltip.botton.text": "使用暗影基因右键医药箱",
+
+  "advancements.tooltip.catalyzer.hand": "暗影基因",
+  "advancements.tooltip.catalyzer.text": "在完成所有医药箱的任务后杀死末影龙",
+
+  "advancements.tooltip.bloodvirus.hand": "暗影瘟疫",
+  "advancements.tooltip.bloodvirus.text": "使用暗影基因右键necora病毒,之后在开取末地的箱子获取之后的物品"
 }
 
 

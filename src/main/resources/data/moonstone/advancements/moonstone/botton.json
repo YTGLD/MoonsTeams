@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/catalyzer",
+  "criteria": {
+    "botton": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:botton"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.botton.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:botton"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.botton.hand"
+    }
+  },
+  "requirements": [
+    [
+      "botton"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

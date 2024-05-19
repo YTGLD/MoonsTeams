@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.loot;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,9 +27,10 @@ public class abandoned_mineshaft extends LootModifier {
         CODEC = RecordCodecBuilder.create(inst -> codecStart(inst).apply(inst, abandoned_mineshaft::new));
     }
 
-    protected abandoned_mineshaft(LootItemCondition[] conditionsIn) {
+    public abandoned_mineshaft(LootItemCondition[] conditionsIn) {
         super(conditionsIn);
     }
+
 
     @Nonnull
     @NotNull

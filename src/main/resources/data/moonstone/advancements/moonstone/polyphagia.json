@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/medicinebox",
+  "criteria": {
+    "polyphagia": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:polyphagia"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.polyphagia.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:polyphagia"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.polyphagia.hand"
+    }
+  },
+  "requirements": [
+    [
+      "polyphagia"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

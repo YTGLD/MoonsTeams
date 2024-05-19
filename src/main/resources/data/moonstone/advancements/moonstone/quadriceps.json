@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/medicinebox",
+  "criteria": {
+    "quadriceps": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:quadriceps"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.quadriceps.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:quadriceps"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.quadriceps.hand"
+    }
+  },
+  "requirements": [
+    [
+      "quadriceps"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

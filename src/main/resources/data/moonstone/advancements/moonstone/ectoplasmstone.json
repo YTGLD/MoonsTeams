@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/root",
+  "criteria": {
+    "ectoplasmstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:ectoplasmstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.ectoplasmstone.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:ectoplasmstone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.ectoplasmstone.hand"
+    }
+  },
+  "requirements": [
+    [
+      "ectoplasmstone"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
