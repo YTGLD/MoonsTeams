@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmprism",
+  "criteria": {
+    "ectoplasmstar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:ectoplasmstar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.ectoplasmstar.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:ectoplasmstar"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.ectoplasmstar.hand"
+    }
+  },
+  "requirements": [
+    [
+      "ectoplasmstar"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

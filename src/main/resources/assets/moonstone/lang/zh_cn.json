@@ -545,7 +545,13 @@
   "advancements.tooltip.catalyzer.text": "在完成所有医药箱的任务后杀死末影龙",
 
   "advancements.tooltip.bloodvirus.hand": "暗影瘟疫",
-  "advancements.tooltip.bloodvirus.text": "使用暗影基因右键necora病毒,之后在开取末地的箱子获取之后的物品"
+  "advancements.tooltip.bloodvirus.text": "使用暗影基因右键necora病毒,之后在开取末地的箱子获取之后的物品",
+
+  "item.moonstone.ectoplasmstar":"灵质幸运星",
+  "item.ectoplasmstar.tool.string": "每1点幸运增加1%的攻速和0.5%的伤害",
+  "item.ectoplasmstar.tool.string.1": "+20 幸运",
+  "advancements.tooltip.ectoplasmstar.hand": "灵质幸运星",
+  "advancements.tooltip.ectoplasmstar.text": "神话直呼内行"
 }
 
 

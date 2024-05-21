@@ -541,6 +541,13 @@
   "advancements.tooltip.catalyzer.text": "Kill the Last Shadow Dragon after completing all the tasks of the medicine box",
 
   "advancements.tooltip.bloodvirus.hand": "blood virus",
-  "advancements.tooltip.bloodvirus.text": "Use Shadow Plague Right Click necora"
+  "advancements.tooltip.bloodvirus.text": "Use Shadow Plague Right Click necora",
+
+
+  "item.moonstone.ectoplasmstar": "ectoplasm star",
+  "item.ectoplasmstar.tool.string": "Every 1 point of luck increases attack speed by 1% and damage by 0.5%",
+  "item.ectoplasmstar.tool.string.1": "+20 Lucky",
+  "advancements.tooltip.ectoplasmstar.hand": "ectoplasm star",
+  "advancements.tooltip.ectoplasmstar.text": "do not eat"
 }
 

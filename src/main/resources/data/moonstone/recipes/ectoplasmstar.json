@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "moonstone:ectoplasmstar",
+    "count": 1
+  }
+}

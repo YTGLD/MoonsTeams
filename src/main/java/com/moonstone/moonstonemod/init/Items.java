@@ -153,5 +153,6 @@ public class Items {
     public static final RegistryObject<Item> book =REGISTRY.register("soulbook", book::new);
     public static final RegistryObject<Item> wind =REGISTRY.register("wind", wind::new);
     public static final RegistryObject<Item> wind_and_rain =REGISTRY.register("wind_and_rain", wind_and_rain::new);
+    public static final RegistryObject<Item> ectoplasmstar =REGISTRY.register("ectoplasmstar", ectoplasmstar::new);
 
 }

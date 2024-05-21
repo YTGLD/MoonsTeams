@@ -18,6 +18,8 @@ import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
+import java.security.cert.PKIXReason;
+
 public class DungeonLoot extends LootModifier {
     public static final Codec<DungeonLoot> CODEC= RecordCodecBuilder.create((inst) -> codecStart(inst)
             .apply(inst, DungeonLoot::new));
@@ -30,18 +32,23 @@ public class DungeonLoot extends LootModifier {
         ResourceLocation s = context.getQueriedLootTableId();
         String idSting = String.valueOf(s);
         Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
-        int W = Mth.nextInt(RandomSource.create(), 1, 17);
+        int W = Mth.nextInt(RandomSource.create(), 1, 25);
         int p = Mth.nextInt(RandomSource.create(), 1, 50);
-        int N = Mth.nextInt(RandomSource.create(), 1, 24);
-        int a = Mth.nextInt(RandomSource.create(), 1, 20);
-        int ne = Mth.nextInt(RandomSource.create(), 1, 20);
-        int T = Mth.nextInt(RandomSource.create(), 1, 20);
+        int N = Mth.nextInt(RandomSource.create(), 1, 45);
+        int a = Mth.nextInt(RandomSource.create(), 1, 25);
+        int ne = Mth.nextInt(RandomSource.create(), 1, 35);
+        int T = Mth.nextInt(RandomSource.create(), 1, 30);
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){
-                if (T == 1) {
-                    generatedLoot.add(new ItemStack(Items.wind_and_rain.get()));
+                if (entity instanceof Player player) {
+                    if (Handler.hascurio(player, Items.doomswoud.get()) && Handler.hascurio(player, Items.doomeye.get())) {
+                        if (T == 1) {
+                            generatedLoot.add(new ItemStack(Items.wind_and_rain.get()));
+                        }
+                    }
                 }
+
                 if (T == 3) {
                     generatedLoot.add(new ItemStack(Items.plague.get()));
                 }
