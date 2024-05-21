@@ -1,9 +1,0 @@
-{
-  "conditions": [
-    {
-      "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:chests/ancient_city"
-    }
-  ],
-  "type": "moonstone:ancient_city"
-}

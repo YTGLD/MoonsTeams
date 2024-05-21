@@ -7,11 +7,6 @@ import com.moonstone.moonstonemod.event.LootEvent;
 import com.moonstone.moonstonemod.event.SwordEvent;
 import com.moonstone.moonstonemod.event.Village;
 import com.moonstone.moonstonemod.init.*;
-import com.moonstone.moonstonemod.loot.abandoned_mineshaft;
-import com.moonstone.moonstonemod.loot.ancient_city;
-import com.moonstone.moonstonemod.loot.end_city;
-import com.moonstone.moonstonemod.loot.simple_dungeon;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
@@ -22,8 +17,6 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 
 @Mod(MoonStoneMod.MODID)

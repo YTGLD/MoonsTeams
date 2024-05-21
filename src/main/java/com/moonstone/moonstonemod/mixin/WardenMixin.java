@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class WardenMixin {
     @Shadow public abstract void setAttackTarget(LivingEntity p_219460_);
 
+
     @Inject(at = @At("RETURN"), method = "canTargetEntity", cancellable = true)
     public void moonstone$increaseAngerAt(Entity p_219386_, CallbackInfoReturnable<Boolean> cir) {
         Warden mob = (Warden) (Object) this;

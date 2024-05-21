@@ -706,7 +706,7 @@ public class AllEvent {
             if (Handler.hascurio(player, Items.redamout.get())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
-                    event.getEntity().knockback(2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
+                    event.getEntity().knockback(0.2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
                     event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.RED_WOOL.defaultBlockState()));
 
                 }
@@ -766,7 +766,7 @@ public class AllEvent {
 
                 if (Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
-                    event.getEntity().knockback(2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
+                    event.getEntity().knockback(0.2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
                     event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.YELLOW_WOOL.defaultBlockState()));
 
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
