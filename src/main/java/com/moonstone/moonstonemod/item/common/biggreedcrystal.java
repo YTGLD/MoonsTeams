@@ -1,8 +1,11 @@
 package com.moonstone.moonstonemod.item.common;
 
+import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -17,7 +20,19 @@ public class biggreedcrystal extends CommonItem {
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
         return 2;
     }
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.fortunecrystal.get())){
+                return false;
+            }
+            if (Handler.hascurio(player, Items.greedcrystal.get())){
+                return false;
+            }
+        }
 
+        return true;
+    }
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

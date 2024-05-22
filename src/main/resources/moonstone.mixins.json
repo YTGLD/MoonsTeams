@@ -12,7 +12,7 @@
     "WardenMixin"
   ],
   "client": [
-    "clilt.GuiGraphicsMixin"
+
   ],
   "injectors": {
     "defaultRequire": 1

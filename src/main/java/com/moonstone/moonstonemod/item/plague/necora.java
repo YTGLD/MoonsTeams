@@ -64,12 +64,6 @@ public class necora extends TheNecoraIC {
                 3,
                 AttributeModifier.Operation.ADDITION));
 
-        multimap.put(Attributes.ARMOR, new AttributeModifier(
-                UUID.fromString("00000000-0000-300f-95e1-2830b5159532"),
-                "ara",
-                4,
-                AttributeModifier.Operation.ADDITION));
-
 
         return multimap;
     }

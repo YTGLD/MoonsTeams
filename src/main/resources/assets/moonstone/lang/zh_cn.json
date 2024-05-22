@@ -345,7 +345,7 @@
   "item.necora.tool.string.4": "*能够辨别同类；对亡灵造成的伤害减少20％",
   "item.necora.tool.string.5": "*一旦植入该病毒，将没有回头路！",
   "item.necora.tool.string.6": "丧尸化带来的5条强化：",
-  "item.necora.tool.string.7": "*你的身躯更加坚硬了；伤害增加3点、护甲值增加4点",
+  "item.necora.tool.string.7": "*你的身躯更加坚硬了；伤害增加3点、抗性增加10%",
   "item.necora.tool.string.8": "*难以被元素影响；受到的魔法伤害减少70％",
   "item.necora.tool.string.9": "*任何生物都将被你撕碎成腐肉，吃下它们，你会获得额外的效果！",
   "item.necora.tool.string.10": "*你被同类视为领主；亡灵生物对你造成的伤害减少50％",
@@ -452,7 +452,7 @@
   "item.plague.tool.string.14": "+70% 水下速度",
 
   "item.plague.tool.string.15": "+100% 对怪物伤害",
-  "item.plague.tool.string.16": "+150% 最大生命值大于10倍你最大生命值的生物",
+  "item.plague.tool.string.16": "+150% 对高生命值生物的伤害",
   "item.plague.tool.string.17": "+300% 治疗",
   "item.plague.tool.string.18": "+170% 挖掘速度",
   "item.thefruit.tool.string.3": "深渊之眼将克服这些效果",
@@ -551,7 +551,15 @@
   "item.ectoplasmstar.tool.string": "每1点幸运增加1%的攻速和0.5%的伤害",
   "item.ectoplasmstar.tool.string.1": "+20 幸运",
   "advancements.tooltip.ectoplasmstar.hand": "灵质幸运星",
-  "advancements.tooltip.ectoplasmstar.text": "神话直呼内行"
+  "advancements.tooltip.ectoplasmstar.text": "神话直呼内行",
+
+  "item.moonstone.ectoplasmsoul": "没有灵魂的灵质立方",
+  "advancements.tooltip.ectoplasmsoul.hand": "没有灵魂的灵质立方",
+  "advancements.tooltip.ectoplasmsoul.text": "那还叫灵质立方吗",
+
+  "item.moonstone.ectoplasmtree": "灵质树",
+  "advancements.tooltip.ectoplasmtree.hand": "灵质树",
+  "advancements.tooltip.ectoplasmtree.text": "心中的树"
 }
 
 

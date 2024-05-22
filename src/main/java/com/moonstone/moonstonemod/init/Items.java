@@ -154,5 +154,7 @@ public class Items {
     public static final RegistryObject<Item> wind =REGISTRY.register("wind", wind::new);
     public static final RegistryObject<Item> wind_and_rain =REGISTRY.register("wind_and_rain", wind_and_rain::new);
     public static final RegistryObject<Item> ectoplasmstar =REGISTRY.register("ectoplasmstar", ectoplasmstar::new);
+    public static final RegistryObject<Item> ectoplasmsoul =REGISTRY.register("ectoplasmsoul", ectoplasmsoul::new);
+    public static final RegistryObject<Item> ectoplasmtree =REGISTRY.register("ectoplasmtree", ectoplasmtree::new);
 
 }

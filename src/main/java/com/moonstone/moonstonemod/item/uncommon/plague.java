@@ -83,6 +83,7 @@ public class plague extends UnCommonItem {
             float c =  stack.getOrCreateTag().getFloat(plague.CursePlague);
             c = -c;
             c /= 3;
+            c /= 100;
             modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_TOTAL));
             modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_TOTAL));
 

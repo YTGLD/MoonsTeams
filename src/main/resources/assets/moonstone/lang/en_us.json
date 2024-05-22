@@ -548,6 +548,14 @@
   "item.ectoplasmstar.tool.string": "Every 1 point of luck increases attack speed by 1% and damage by 0.5%",
   "item.ectoplasmstar.tool.string.1": "+20 Lucky",
   "advancements.tooltip.ectoplasmstar.hand": "ectoplasm star",
-  "advancements.tooltip.ectoplasmstar.text": "do not eat"
+  "advancements.tooltip.ectoplasmstar.text": "do not eat",
+
+  "item.moonstone.ectoplasmsoul": "ectoplasm soul",
+  "advancements.tooltip.ectoplasmsoul.hand": "ectoplasm soul",
+  "advancements.tooltip.ectoplasmsoul.text": "look",
+
+  "item.moonstone.ectoplasmtree": "ectoplasm tree",
+  "advancements.tooltip.ectoplasmtree.hand": "ectoplasm tree",
+  "advancements.tooltip.ectoplasmtree.text": "Heart Tree"
 }
 

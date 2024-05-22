@@ -18,8 +18,6 @@ import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
-import java.security.cert.PKIXReason;
-
 public class DungeonLoot extends LootModifier {
     public static final Codec<DungeonLoot> CODEC= RecordCodecBuilder.create((inst) -> codecStart(inst)
             .apply(inst, DungeonLoot::new));
@@ -32,12 +30,12 @@ public class DungeonLoot extends LootModifier {
         ResourceLocation s = context.getQueriedLootTableId();
         String idSting = String.valueOf(s);
         Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
-        int W = Mth.nextInt(RandomSource.create(), 1, 25);
+        int W = Mth.nextInt(RandomSource.create(), 1, 30);
         int p = Mth.nextInt(RandomSource.create(), 1, 50);
         int N = Mth.nextInt(RandomSource.create(), 1, 45);
         int a = Mth.nextInt(RandomSource.create(), 1, 25);
         int ne = Mth.nextInt(RandomSource.create(), 1, 35);
-        int T = Mth.nextInt(RandomSource.create(), 1, 30);
+        int T = Mth.nextInt(RandomSource.create(), 1, 33);
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){
@@ -122,12 +120,6 @@ public class DungeonLoot extends LootModifier {
                 }
                 if (p == 7) {
                     generatedLoot.add(new ItemStack(Items.battery.get()));
-                }
-                if (p == 8) {
-                    generatedLoot.add(new ItemStack(Items.biggreedcrystal.get()));
-                }
-                if (p == 9) {
-                    generatedLoot.add(new ItemStack(Items.bigwarcrystal.get()));
                 }
                 if (p == 10) {
                     generatedLoot.add(new ItemStack(Items.blackeorb.get()));

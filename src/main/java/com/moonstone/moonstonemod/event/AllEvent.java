@@ -41,6 +41,7 @@ import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.block.Block;
@@ -53,7 +54,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
+import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -493,6 +496,8 @@ public class AllEvent {
     public void necora(LivingHurtEvent event) {
         if (event.getSource()!= null&&event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.necora.get())) {
+                event.setAmount(event.getAmount() * 0.9f);
+
                 if (event.getEntity() instanceof Mob mob) {
                     if (mob.isInvertedHealAndHarm()){
                         event.setAmount(event.getAmount() * 0.8f);
@@ -517,6 +522,16 @@ public class AllEvent {
     }
 
     @SubscribeEvent
+    public void necora(PlayerInteractEvent.RightClickItem event){
+        Player player = event.getEntity();
+        if (Handler.hascurio(player, Items.necora.get())){
+            if (event.getItemStack().is(net.minecraft.world.item.Items.ROTTEN_FLESH)){
+                player.startUsingItem(event.getHand());
+            }
+        }
+    }
+
+    @SubscribeEvent
     public void necora(LivingEntityUseItemEvent.Finish event) {
         if (event.getEntity() instanceof Player player){
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
@@ -530,12 +545,13 @@ public class AllEvent {
                             if (stack.is(Items.necora.get())){
                                 if (event.getItem().is(net.minecraft.world.item.Items.ROTTEN_FLESH)){
                                     if (!Handler.hascurio(player, Items.putrefactive.get())) {
+                                        player.heal(player.getMaxHealth() / 20);
                                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0));
                                         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0));
                                     }else {
+                                        player.heal(player.getMaxHealth() / 15);
                                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 1));
                                         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 1));
-
                                     }
                                 }
                             }

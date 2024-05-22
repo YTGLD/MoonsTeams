@@ -3,10 +3,13 @@
   "ingredients": [
     {
       "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "minecraft:water_bucket"
     }
   ],
   "result": {
-    "item": "moonstone:ectoplasmslate",
-    "count": 4
+    "item": "moonstone:ectoplasmsoul",
+    "count": 1
   }
 }
