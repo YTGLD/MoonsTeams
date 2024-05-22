@@ -156,5 +156,7 @@ public class Items {
     public static final RegistryObject<Item> ectoplasmstar =REGISTRY.register("ectoplasmstar", ectoplasmstar::new);
     public static final RegistryObject<Item> ectoplasmsoul =REGISTRY.register("ectoplasmsoul", ectoplasmsoul::new);
     public static final RegistryObject<Item> ectoplasmtree =REGISTRY.register("ectoplasmtree", ectoplasmtree::new);
+    public static final RegistryObject<Item> brain =REGISTRY.register("brain", brain::new);
+    public static final RegistryObject<Item> beacon =REGISTRY.register("beacon", beacon::new);
 
 }

@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.nanodoom;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.Doom;
+import com.moonstone.moonstonemod.moonstoneitem.INanoBattery;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -14,16 +15,12 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class nanorobot extends Doom {
+public class nanorobot extends INanoBattery {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-
+        super.curioTick(slotContext,stack);
         if (slotContext.entity() instanceof Player player){
-            int time = 600;
-            if (Handler.hascurio(player, Items.battery.get())){
-                time = 300;
-            }
             ItemStack ss = player.getItemBySlot(EquipmentSlot.MAINHAND);
             if (!ss.isEmpty()) {
                 if (ss.getMaxDamage() != 0) {
@@ -31,7 +28,7 @@ public class nanorobot extends Doom {
 
                         if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
                             ss.setDamageValue(ss.getDamageValue() - 30);
-                            player.getCooldowns().addCooldown(stack.getItem(), time);
+                            player.getCooldowns().addCooldown(stack.getItem(), t);
                         }
                     }
                 }

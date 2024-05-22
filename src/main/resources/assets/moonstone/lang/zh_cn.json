@@ -179,10 +179,10 @@
   "item.magiceye.tool.string.1": "将受到50％的范围伤害",
 
   "item.nanocube.tool.string": "每隔45秒修复自身盔甲30点耐久值",
-  "item.nanocube.tool.string.1": "佩戴电池后冷却减少15秒",
+  "item.nanocube.tool.string.1": "佩戴电池后冷却减少30%",
 
   "item.nanorobot.tool.string": "每隔30秒修复主手手持物品30点耐久",
-  "item.nanorobot.tool.string.1": "佩戴电池后冷却减少15秒",
+  "item.nanorobot.tool.string.1": "佩戴电池后冷却减少30%",
 
   "item.thedoomstone.tool.string": "你的攻击将施加黑暗效果",
   "item.thedoomstone.tool.string.1": "将以攻击生物为中心，对存在黑暗效果的生物造成音爆攻击",
@@ -559,7 +559,19 @@
 
   "item.moonstone.ectoplasmtree": "灵质树",
   "advancements.tooltip.ectoplasmtree.hand": "灵质树",
-  "advancements.tooltip.ectoplasmtree.text": "心中的树"
+  "advancements.tooltip.ectoplasmtree.text": "心中的树",
+
+  "item.moonstone.brain": "恋爱脑",
+  "item.brain.tool.string": "攻击一个生物5次后，第六次造成2.25倍的伤害",
+  "advancements.tooltip.brain.hand": "恋爱脑",
+  "advancements.tooltip.brain.text": "冒心的脑子",
+
+
+  "item.moonstone.beacon": "纳米同步信标",
+  "item.beacon.tool.string": "每30s，清除自身所有药水效果",
+  "item.beacon.tool.string.1": "并把药水效果同步添加给周围5格范围所有生物",
+  "advancements.tooltip.beacon.hand": "纳米同步信标",
+  "advancements.tooltip.beacon.text": "现在，我们真正荣辱与共了。"
 }
 
 

@@ -22,6 +22,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.maxamout.get()));
                 b.accept(new ItemStack(Items.fortunecrystal.get()));
                 b.accept(new ItemStack(Items.mayhemcrystal.get()));
+                b.accept(new ItemStack(Items.brain.get()));
+                b.accept(new ItemStack(Items.beacon.get()));
 
                 b.accept(new ItemStack(Items.ectoplasmstone.get()));
                 b.accept(new ItemStack(Items.twistedstone.get()));

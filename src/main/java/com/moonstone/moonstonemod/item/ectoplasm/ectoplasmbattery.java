@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.ectoplasm;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.moonstoneitem.IBattery;
 import com.moonstone.moonstonemod.moonstoneitem.ectoplasm;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -12,7 +13,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.UUID;
 
-public class ectoplasmbattery extends ectoplasm {
+public class ectoplasmbattery extends ectoplasm implements IBattery {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {

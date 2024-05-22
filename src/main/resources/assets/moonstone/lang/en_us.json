@@ -556,6 +556,19 @@
 
   "item.moonstone.ectoplasmtree": "ectoplasm tree",
   "advancements.tooltip.ectoplasmtree.hand": "ectoplasm tree",
-  "advancements.tooltip.ectoplasmtree.text": "Heart Tree"
+  "advancements.tooltip.ectoplasmtree.text": "Heart Tree",
+
+
+  "item.moonstone.brain": "love brain",
+  "item.brain.tool.string": "The effect is to deal 2.25 times magic damage on the sixth attack after attacking a creature 5 times",
+  "advancements.tooltip.brain.hand": "love brain",
+  "advancements.tooltip.brain.text": "I think you should love me",
+
+
+  "item.moonstone.beacon": "nano beacon",
+  "item.beacon.tool.string": "Every 30 seconds, clear all the effects of your own potion and synchronously add the potion effects to all creatures within the surrounding 5 grid range.",
+  "item.beacon.tool.string.1": "and synchronously add the potion effects to all creatures within the surrounding 5 grid range.",
+  "advancements.tooltip.beacon.hand": "nano beacon",
+  "advancements.tooltip.beacon.text": "Now, we truly share weal and woe."
 }
 

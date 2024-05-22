@@ -8,11 +8,13 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.Perhaps;
+import com.moonstone.moonstonemod.item.nanodoom.nanorobot;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
 import com.moonstone.moonstonemod.item.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.uncommon.plague;
+import com.moonstone.moonstonemod.mixin.ItemMixin;
 import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -28,10 +30,7 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.animal.MushroomCow;
@@ -52,6 +51,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderTooltipEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
@@ -63,10 +63,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class AllEvent {
     private int shield = 1;
@@ -93,6 +90,55 @@ public class AllEvent {
     public static String rage = "ragegene";
     public static String FlyEye = "FlyNecoraorb";
     public static String FlySword = "FlySword";
+    @SubscribeEvent
+    public void BabyEntitySpawnEvent(BabyEntitySpawnEvent event){
+        if (event.getCausedByPlayer()!= null) {
+            Player player = event.getCausedByPlayer();
+            int s = Mth.nextInt(RandomSource.create(), 1, 100);
+            if (!Handler.hascurio(player, Items.brain.get())) {
+                if (s == 1) {
+                    if (event.getChild()!= null)
+                    {
+                        ItemEntity entity =  new ItemEntity(player.level(),
+                                event.getParentA().getX(),
+                                event.getParentA().getY(),
+                                event.getParentA().getZ(),
+                                new ItemStack(Items.brain.get()));
+                        player.level().addFreshEntity(entity);
+                    }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void brainLHurt(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,Items.brain.get())){
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.getTag()!=null){
+                                String name = event.getEntity().getName().getString();
+                                stack.getTag().putInt(name,stack.getTag().getInt(name)+1);
+
+                                if (stack.getTag().getInt(name)>=5){
+                                    event.setAmount(event.getAmount() * 2.25f);
+                                    player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.NEUTRAL, 4.5F, 4.1F);
+                                    stack.getTag().putInt(name,0);
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+    }
+
     @SubscribeEvent
     public void evil(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){

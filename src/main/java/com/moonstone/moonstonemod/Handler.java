@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod;
 
+import com.moonstone.moonstonemod.moonstoneitem.IBattery;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -12,6 +13,12 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Handler {
+    public static boolean isBattery(Item curio){
+        if (curio instanceof IBattery) {
+            return true;
+        }
+        return false;
+    }
     public static boolean hascurio(LivingEntity entity, Item curio) {
 
         if (entity != null) {

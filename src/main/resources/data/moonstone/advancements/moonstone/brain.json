@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmball",
+  "criteria": {
+    "brain": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:brain"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.brain.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:brain"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.brain.hand"
+    }
+  },
+  "requirements": [
+    [
+      "brain"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
