@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.event;
 
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.entity.cell_zombie;
 import com.moonstone.moonstonemod.entity.flysword;
 import com.moonstone.moonstonemod.entity.suddenrain;
 import com.moonstone.moonstonemod.init.EntityTs;
@@ -92,6 +93,57 @@ public class AllEvent {
     public static String rage = "ragegene";
     public static String FlyEye = "FlyNecoraorb";
     public static String FlySword = "FlySword";
+
+    public static final String DamageCell = "DamageCell";
+    @SubscribeEvent
+    public void evil(LivingDeathEvent event){
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.cell.get())){
+                if (  Mth.nextInt(RandomSource.create(),1, 2) ==1 ){
+                    cell_zombie z = new cell_zombie(EntityTs.cell_zombie.get(), player.level());
+                    z.teleportTo(event.getEntity().getX(),event.getEntity().getY(), event.getEntity().getZ());
+                    z.setOwnerUUID(player.getUUID());
+                    if (Handler.hascurio(player,Items.adrenaline.get())){
+                        z.addTag(DamageCell);
+                    }
+                    player.level().addFreshEntity(z);
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void evil_zombie(LivingHurtEvent event){
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.cell.get())){
+                Vec3 playerPos = player.position().add(0, 0.75, 0);
+                int range = 10;
+                List<cell_zombie> entities = player.level().getEntitiesOfClass(cell_zombie.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                for (cell_zombie zombie : entities){
+                    if (zombie.getOwner() == player){
+                        if (!(event.getEntity() instanceof cell_zombie)) {
+                            zombie.setTarget(event.getEntity());
+                        }
+                    }
+                }
+            }
+        }
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.cell.get())){
+                Vec3 playerPos = player.position().add(0, 0.75, 0);
+                int range = 10;
+                List<cell_zombie> entities = player.level().getEntitiesOfClass(cell_zombie.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                for (cell_zombie zombie : entities){
+                    if (zombie.getOwner() == player){
+                        if (!(event.getSource().getEntity() instanceof cell_zombie)) {
+                            if (event.getSource().getEntity() instanceof LivingEntity living) {
+                                zombie.setTarget(living);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     @SubscribeEvent
     public void BabyEntitySpawnEvent(BabyEntitySpawnEvent event){
         if (event.getCausedByPlayer()!= null) {

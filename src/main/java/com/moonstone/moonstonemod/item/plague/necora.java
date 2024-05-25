@@ -22,6 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
@@ -86,6 +87,15 @@ public class necora extends TheNecoraIC {
         if (slotContext.entity() instanceof Player player){
             player.getAttributes().addTransientAttributeModifiers(Head(player,stack));
         }
+    }
+
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> multimap = HashMultimap.create();
+        CuriosApi
+                .addSlotModifier(multimap, "ncrdna", uuid, 2, AttributeModifier.Operation.ADDITION);
+
+        return multimap;
     }
 
     @Override

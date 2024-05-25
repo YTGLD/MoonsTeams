@@ -140,6 +140,8 @@
 
   "curios.identifier.medicine": "药物",
   "curios.identifier.necora": "DNA",
+  "curios.identifier.ncrdna": "基因片段",
+  "curios.identifier.dna": "分段基因组",
 
   "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
   "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
@@ -576,7 +578,14 @@
   "item.moonstone.mhead": "莫里斯头颅",
   "item.mhead.tool.string": "你无法攻击任何生物，并且怪物无法攻击你",
   "advancements.tooltip.mhead.hand": "莫里斯头颅",
-  "advancements.tooltip.mhead.text": "绝对的虚无缥缈与边缘化"
+  "advancements.tooltip.mhead.text": "绝对的虚无缥缈与边缘化",
+
+
+  "item.moonstone.cell": "细胞重生",
+  "item.moonstone.adrenaline": "肾上腺素激增",
+  "item.cell.tool.string": "杀死生物有可能将尸体转化为僵尸",
+  "item.adrenaline.tool.string": "召唤的僵尸继承你的攻击力",
+  "item.adrenaline.tool.string.1": "和移动速度"
 }
 
 

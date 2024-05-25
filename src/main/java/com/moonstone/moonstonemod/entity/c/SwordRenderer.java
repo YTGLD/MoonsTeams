@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.entity;
+package com.moonstone.moonstonemod.entity.c;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 
-public class SwordRenderer<T extends ThrowableItemProjectile> extends EntityRenderer<T> {
+public class SwordRenderer <T extends ThrowableItemProjectile> extends EntityRenderer<T> {
     public SwordRenderer(EntityRendererProvider.Context p_173917_) {
         super(p_173917_);
     }
@@ -25,6 +25,7 @@ public class SwordRenderer<T extends ThrowableItemProjectile> extends EntityRend
         p_113842_.pushPose();
         p_113842_.mulPose(Axis.YP.rotationDegrees(Mth.lerp(p_113841_, p_113839_.yRotO, p_113839_.getYRot()) - 90.0F));
         p_113842_.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(p_113841_, p_113839_.xRotO, p_113839_.getXRot())));
+
         p_113842_.mulPose(Axis.XP.rotationDegrees(45.0F));
         p_113842_.scale(0.05625F, 0.05625F, 0.05625F);
         p_113842_.translate(-4.0F, 0.0F, 0.0F);

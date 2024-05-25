@@ -22,6 +22,7 @@ import java.util.List;
 public abstract class GuiGraphicsMixin {
 
 
+    /*
 
     @Shadow @Final private PoseStack pose;
 
@@ -46,5 +47,5 @@ public abstract class GuiGraphicsMixin {
 
 
     }
-
+    */
 }

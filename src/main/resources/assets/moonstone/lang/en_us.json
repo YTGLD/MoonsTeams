@@ -199,6 +199,8 @@
 
   "curios.identifier.medicine": "medicine",
   "curios.identifier.necora": "DNA",
+  "curios.identifier.ncrdna": "ncr dna",
+  "curios.identifier.dna": "dna",
 
   "item.moonstone.germ": "germ",
   "item.moonstone.fungus": "fungus",
@@ -576,6 +578,12 @@
   "item.mhead.tool.string": "Causing fear towards a wide range of creatures after killing them",
   "item.mhead.tool.string.1": "Target speed increases and recovers after taking your damage",
   "advancements.tooltip.mhead.hand": "m head",
-  "advancements.tooltip.mhead.text": "fear"
+  "advancements.tooltip.mhead.text": "fear",
+
+  "item.moonstone.cell": "cell",
+  "item.moonstone.adrenaline": "adrenaline",
+  "item.cell.tool.string": "Kill creatures to summon zombies",
+  "item.adrenaline.tool.string": "Summoned zombies inherit your attack power",
+  "item.adrenaline.tool.string.1": "And movement speed"
 }
 

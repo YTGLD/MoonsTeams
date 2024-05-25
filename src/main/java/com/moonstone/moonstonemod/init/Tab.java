@@ -96,6 +96,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.germ.get()));
                 b.accept(new ItemStack(Items.parasite.get()));
                 b.accept(new ItemStack(Items.virus.get()));
+                b.accept(new ItemStack(Items.cell.get()));
+                b.accept(new ItemStack(Items.adrenaline.get()));
 
                 b.accept(new ItemStack(Items.botton.get()));
                 b.accept(new ItemStack(Items.catalyzer.get()));
