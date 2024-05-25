@@ -158,5 +158,6 @@ public class Items {
     public static final RegistryObject<Item> ectoplasmtree =REGISTRY.register("ectoplasmtree", ectoplasmtree::new);
     public static final RegistryObject<Item> brain =REGISTRY.register("brain", brain::new);
     public static final RegistryObject<Item> beacon =REGISTRY.register("beacon", beacon::new);
+    public static final RegistryObject<Item> mhead =REGISTRY.register("mhead", mhead::new);
 
 }

@@ -569,6 +569,13 @@
   "item.beacon.tool.string": "Every 30 seconds, clear all the effects of your own potion and synchronously add the potion effects to all creatures within the surrounding 5 grid range.",
   "item.beacon.tool.string.1": "and synchronously add the potion effects to all creatures within the surrounding 5 grid range.",
   "advancements.tooltip.beacon.hand": "nano beacon",
-  "advancements.tooltip.beacon.text": "Now, we truly share weal and woe."
+  "advancements.tooltip.beacon.text": "Now, we truly share weal and woe.",
+
+
+  "item.moonstone.mhead": "m head",
+  "item.mhead.tool.string": "Causing fear towards a wide range of creatures after killing them",
+  "item.mhead.tool.string.1": "Target speed increases and recovers after taking your damage",
+  "advancements.tooltip.mhead.hand": "m head",
+  "advancements.tooltip.mhead.text": "fear"
 }
 

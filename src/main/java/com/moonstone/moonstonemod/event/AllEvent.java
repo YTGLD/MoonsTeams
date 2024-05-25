@@ -32,7 +32,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ambient.Bat;
+import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -138,7 +140,6 @@ public class AllEvent {
         }
 
     }
-
     @SubscribeEvent
     public void evil(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){

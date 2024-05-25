@@ -22,7 +22,6 @@ public class Tab {
                 b.accept(new ItemStack(Items.maxamout.get()));
                 b.accept(new ItemStack(Items.fortunecrystal.get()));
                 b.accept(new ItemStack(Items.mayhemcrystal.get()));
-                b.accept(new ItemStack(Items.brain.get()));
                 b.accept(new ItemStack(Items.beacon.get()));
 
                 b.accept(new ItemStack(Items.ectoplasmstone.get()));
@@ -61,6 +60,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.morb.get()));
                 b.accept(new ItemStack(Items.mring.get()));
                 b.accept(new ItemStack(Items.mshell.get()));
+                b.accept(new ItemStack(Items.brain.get()));
+                b.accept(new ItemStack(Items.mhead.get()));
 
                 b.accept(new ItemStack(Items.nightmareanchor.get()));
                 b.accept(new ItemStack(Items.nightmarecharm.get()));

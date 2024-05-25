@@ -3,7 +3,10 @@ package com.moonstone.moonstonemod.mixin;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
@@ -23,7 +26,15 @@ public abstract class LivingEntityMixin {
     @Shadow public abstract ItemStack getItemInHand(InteractionHand p_21121_);
 
     @Shadow protected abstract void setLivingEntityFlag(int p_21156_, boolean p_21157_);
-
+    @Inject(at = @At("RETURN"), method = "canBeSeenByAnyone", cancellable = true)
+    public void mhead(CallbackInfoReturnable<Boolean> cir) {
+        LivingEntity living = (LivingEntity) (Object) this;
+        if (living instanceof Player player) {
+            if (Handler.hascurio(player, Items.mhead.get())) {
+                cir.setReturnValue(false);
+            }
+        }
+    }
     @Inject(at = @At("RETURN"), method = "canStandOnFluid", cancellable = true)
     public void moonstone$canStandOnFluid(FluidState p_204042_, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity living = (LivingEntity) (Object) this;

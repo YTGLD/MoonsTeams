@@ -2,10 +2,7 @@ package com.moonstone.moonstonemod;
 
 import com.mojang.logging.LogUtils;
 import com.moonstone.moonstonemod.entity.SwordRenderer;
-import com.moonstone.moonstonemod.event.AllEvent;
-import com.moonstone.moonstonemod.event.LootEvent;
-import com.moonstone.moonstonemod.event.SwordEvent;
-import com.moonstone.moonstonemod.event.Village;
+import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;

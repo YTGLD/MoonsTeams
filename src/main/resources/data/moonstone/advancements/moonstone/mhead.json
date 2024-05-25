@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/brain",
+  "criteria": {
+    "mhead": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:mhead"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.mhead.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:mhead"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.mhead.hand"
+    }
+  },
+  "requirements": [
+    [
+      "mhead"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
