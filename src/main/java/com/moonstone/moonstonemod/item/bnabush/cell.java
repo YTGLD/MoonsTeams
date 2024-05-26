@@ -22,7 +22,7 @@ public class cell extends TheNecoraIC {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
 
         CuriosApi
-                .addSlotModifier(linkedHashMultimap, "dna", uuid, 1, AttributeModifier.Operation.ADDITION);
+                .addSlotModifier(linkedHashMultimap, "dna", uuid, 3, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;
     }
     @Override

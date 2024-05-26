@@ -72,6 +72,7 @@ public class necora extends TheNecoraIC {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
+            player.getAttributes().addTransientAttributeModifiers(Head(player,stack));
 
             if (player.getItemBySlot(EquipmentSlot.HEAD).isEmpty() &&
                     (player.level().isDay() &&
@@ -85,7 +86,6 @@ public class necora extends TheNecoraIC {
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
-            player.getAttributes().addTransientAttributeModifiers(Head(player,stack));
         }
     }
 

@@ -142,6 +142,7 @@
   "curios.identifier.necora": "DNA",
   "curios.identifier.ncrdna": "基因片段",
   "curios.identifier.dna": "分段基因组",
+  "curios.modifiers.ncrdna": "佩戴时",
 
   "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
   "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
@@ -357,6 +358,7 @@
   "item.necora.tool.string.14": "强大的再生能力和无休止的进食需求",
   "item.necora.tool.string.15": "但是它的大部分基因结构仍然是未解之谜",
 
+  "item.heathgene.tool.string": "+10 最大生命值",
 
 
 
@@ -570,8 +572,7 @@
 
 
   "item.moonstone.beacon": "灵质信标",
-  "item.beacon.tool.string": "每30s，清除自身所有药水效果",
-  "item.beacon.tool.string.1": "并把药水效果同步添加给周围5格范围所有生物",
+  "item.beacon.tool.string.1": "把药水效果同步添加给攻击目标,并造成范围效果",
   "advancements.tooltip.beacon.hand": "灵质信标",
   "advancements.tooltip.beacon.text": "现在，我们真正荣辱与共了。",
 
@@ -585,7 +586,21 @@
   "item.moonstone.adrenaline": "肾上腺素激增",
   "item.cell.tool.string": "杀死生物有可能将尸体转化为僵尸",
   "item.adrenaline.tool.string": "召唤的僵尸继承你的攻击力",
-  "item.adrenaline.tool.string.1": "和移动速度"
+  "item.adrenaline.tool.string.1": "和移动速度",
+
+
+  "item.fortunecrystal.tool.string": "+3 时运",
+  "item.moonstone.fortunecrystal": "财富水晶",
+  "item.moonstone.mayhemcrystal": "混乱水晶",
+  "item.polyphagia.tool.string": "eat enchanted gold apple",
+  "item.moonstone.dna": "培养皿",
+
+
+  "item.moonstone.cell_mummy": "木乃伊干尸化",
+  "item.cell_mummy.tool.string": "有效降低生成的僵尸其腐化速度",
+
+  "item.moonstone.cell_boom": "自爆",
+  "item.cell_boom.tool.string": "你和和僵尸在死后会产生一次剧烈爆炸"
 }
 
 

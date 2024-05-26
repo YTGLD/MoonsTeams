@@ -1,14 +1,23 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "BAB",
+    " B "
+  ],
+  "key":
+  {
+    "A":
     {
       "item": "moonstone:ectoplasmcube"
     },
+    "B":
     {
-      "item": "minecraft:water_bucket"
+      "item": "minecraft:golden_carrot"
     }
-  ],
-  "result": {
+  },
+  "result":
+  {
     "item": "moonstone:ectoplasmsoul",
     "count": 1
   }

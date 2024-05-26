@@ -35,11 +35,29 @@ public class DungeonLoot extends LootModifier {
         int N = Mth.nextInt(RandomSource.create(), 1, 45);
         int a = Mth.nextInt(RandomSource.create(), 1, 25);
         int ne = Mth.nextInt(RandomSource.create(), 1, 35);
-        int T = Mth.nextInt(RandomSource.create(), 1, 33);
+        int T = Mth.nextInt(RandomSource.create(), 1, 25);
+
+        int cell = Mth.nextInt(RandomSource.create(), 1, 33);
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){
                 if (entity instanceof Player player) {
+
+                    if (Handler.hascurio(player, Items.necora.get())){
+                        if (cell == 1){
+                            generatedLoot.add(new ItemStack(Items.cell.get()));
+                        }
+                        if (cell == 2){
+                            generatedLoot.add(new ItemStack(Items.adrenaline.get()));
+                        }
+                        if (cell == 3){
+                            generatedLoot.add(new ItemStack(Items.cell_mummy.get()));
+                        }
+                        if (cell == 4){
+                            generatedLoot.add(new ItemStack(Items.cell_boom.get()));
+                        }
+                    }
+
                     if (Handler.hascurio(player, Items.doomswoud.get()) && Handler.hascurio(player, Items.doomeye.get())) {
                         if (T == 1) {
                             generatedLoot.add(new ItemStack(Items.wind_and_rain.get()));

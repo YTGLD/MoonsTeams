@@ -24,7 +24,7 @@ public class heathgene extends BloodViru {
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
         if (Screen.hasShiftDown()) {
-            tooltip.add(Component.translatable("+10 Health").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.heathgene.tool.string").withStyle(ChatFormatting.RED));
         } else {
             tooltip.add(Component.translatable("Shift").withStyle(ChatFormatting.DARK_RED));
         }

@@ -201,6 +201,7 @@
   "curios.identifier.necora": "DNA",
   "curios.identifier.ncrdna": "ncr dna",
   "curios.identifier.dna": "dna",
+  "curios.modifiers.ncrdna": "necora",
 
   "item.moonstone.germ": "germ",
   "item.moonstone.fungus": "fungus",
@@ -403,6 +404,7 @@
   "item.evilmug.tool.string.1": "Replenish the fresh blood in the barrel (secondary hand) from the damage caused during the attack",
   "item.evilmug.tool.string.2": "And you can extract your own blood",
   "item.evilmug.tool.string.3": "Drink！",
+  "item.heathgene.tool.string": "+10 heath",
 
   "item.maxamout.tool.string": "Attacks weaken enemies",
   "item.maxamout.tool.string.1": "Reduce damage taken by 15%",
@@ -584,6 +586,13 @@
   "item.moonstone.adrenaline": "adrenaline",
   "item.cell.tool.string": "Kill creatures to summon zombies",
   "item.adrenaline.tool.string": "Summoned zombies inherit your attack power",
-  "item.adrenaline.tool.string.1": "And movement speed"
+  "item.adrenaline.tool.string.1": "And movement speed",
+
+
+  "item.moonstone.cell_mummy": "cell mummy",
+  "item.cell_mummy.tool.string": "Effectively reducing the decay rate of generated zombies",
+
+  "item.moonstone.cell_boom": "cell boom",
+  "item.cell_boom.tool.string": "You and the zombies will experience a violent explosion after death"
 }
 

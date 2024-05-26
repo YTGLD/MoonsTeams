@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "moonstone:adrenaline"
+    "moonstone:adrenaline",
+    "moonstone:cell_boom",
+    "moonstone:cell_mummy"
   ]
 }

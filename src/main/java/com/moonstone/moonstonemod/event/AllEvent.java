@@ -9,6 +9,8 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.Perhaps;
+import com.moonstone.moonstonemod.item.bnabush.cell_boom;
+import com.moonstone.moonstonemod.item.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.nanodoom.nanorobot;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
@@ -46,6 +48,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -95,16 +98,62 @@ public class AllEvent {
     public static String FlySword = "FlySword";
 
     public static final String DamageCell = "DamageCell";
+    public static final  String muMMY = cell_mummy.Mummy;
+    public static final  String boom = cell_boom.cb;
+    @SubscribeEvent
+    public void beacon(LivingHurtEvent event){
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.beacon.get())){
+                Collection<MobEffectInstance> collection  = player.getActiveEffects();
+                if (!collection.isEmpty()) {
+                    if (event.getSource().getEntity() != null) {
+                        AreaEffectCloud areaeffectcloud = new AreaEffectCloud(event.getSource().getEntity().level(), event.getSource().getEntity().getX(), event.getSource().getEntity().getY(), event.getSource().getEntity().getZ());
+                        areaeffectcloud.setRadius(2.5F);
+                        areaeffectcloud.setRadiusOnUse(-0.5F);
+                        areaeffectcloud.setWaitTime(10);
+                        areaeffectcloud.setDuration(areaeffectcloud.getDuration() / 2);
+                        areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
+                        for(MobEffectInstance mobeffectinstance : collection) {
+                            areaeffectcloud.addEffect(new MobEffectInstance(mobeffectinstance));
+                        }
+                        event.getSource().getEntity().level().addFreshEntity(areaeffectcloud);
+                        player.removeAllEffects();
+                    }
+                }
+            }
+        }
+    }@SubscribeEvent
+    public void Boom(LivingHurtEvent event){
+        if ((event.getEntity() instanceof Player player)) {
+            if (Handler.hascurio(player,Items.cell_boom.get())){
+                if (event.getSource().is(DamageTypes.EXPLOSION)){
+                    event.setAmount(0);
+                }
+            }
+        }
+    }
+
     @SubscribeEvent
     public void evil(LivingDeathEvent event){
+        if ((event.getEntity() instanceof Player player)) {
+            if (Handler.hascurio(player,Items.cell_boom.get())){
+                player.level().explode(null,player.getX(),player.getY(),player.getZ(),5.5f,true , Level.ExplosionInteraction.MOB);
+            }
+        }
         if (event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.cell.get())){
-                if (  Mth.nextInt(RandomSource.create(),1, 2) ==1 ){
+                if (Mth.nextInt(RandomSource.create(),1, 2) ==1 ){
                     cell_zombie z = new cell_zombie(EntityTs.cell_zombie.get(), player.level());
                     z.teleportTo(event.getEntity().getX(),event.getEntity().getY(), event.getEntity().getZ());
                     z.setOwnerUUID(player.getUUID());
                     if (Handler.hascurio(player,Items.adrenaline.get())){
                         z.addTag(DamageCell);
+                    }
+                    if (Handler.hascurio(player,Items.cell_mummy.get())){
+                        z.addTag(muMMY);
+                    }
+                    if (Handler.hascurio(player,Items.cell_boom.get())){
+                        z.addTag(boom);
                     }
                     player.level().addFreshEntity(z);
                 }

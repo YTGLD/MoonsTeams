@@ -24,6 +24,7 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,11 +35,18 @@ public class cell_zombie extends TamableAnimal{
         super(c, p_34272_);
     }
 
+    public int time = 0;
     @Override
     public void tick() {
+
         super.tick();
-        if (this.age > 200 ){
-            this.discard();
+        if (!this.getTags().contains(AllEvent.muMMY)) {
+            this.time+=2;
+        }else {
+            this.time++;
+        }
+        if (this.time > 1000){
+            this.kill();
         }
         if (this.getTags().contains(AllEvent.DamageCell)){
             if (this.getOwner()!= null) {
@@ -69,8 +77,15 @@ public class cell_zombie extends TamableAnimal{
         return wolf;
     }
 
+
     @Override
     public void die(@NotNull DamageSource p_21809_) {
+
+        if (this.getTags().contains(AllEvent.boom)){
+            this.level().explode(null, this.getX(), this.getY(), this.getZ(), 5.5f, true, Level.ExplosionInteraction.MOB);
+
+        }
+
     }
 
     @Nullable

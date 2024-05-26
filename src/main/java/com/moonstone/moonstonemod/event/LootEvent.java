@@ -30,7 +30,6 @@ public class LootEvent {
     }
     @SubscribeEvent
     public void LivingKnockBackEvent(LivingDropsEvent event) {
-
         int a = Mth.nextInt(RandomSource.create(), 1, 20);
         if (event.getEntity() instanceof Zombie  ||
                 event.getEntity() instanceof Spider  ||
