@@ -39,6 +39,9 @@ public abstract class LivingEntityMixin {
     public void moonstone$canStandOnFluid(FluidState p_204042_, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
         if (living instanceof Player player) {
+            if (Handler.hascurio(player, Items.ambush.get())){
+                cir.setReturnValue(true);
+            }
             if (Handler.hascurio(player, Items.evilcandle.get())) {
                 if (p_204042_.is(Fluids.LAVA)) {
                     cir.setReturnValue(true);

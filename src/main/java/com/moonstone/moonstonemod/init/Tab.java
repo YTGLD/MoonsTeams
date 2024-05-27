@@ -100,6 +100,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.adrenaline.get()));
                 b.accept(new ItemStack(Items.cell_mummy.get()));
                 b.accept(new ItemStack(Items.cell_boom.get()));
+                b.accept(new ItemStack(Items.cell_calcification.get()));
+                b.accept(new ItemStack(Items.cell_blood.get()));
 
                 b.accept(new ItemStack(Items.botton.get()));
                 b.accept(new ItemStack(Items.catalyzer.get()));

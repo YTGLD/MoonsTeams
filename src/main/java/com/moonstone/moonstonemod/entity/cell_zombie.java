@@ -9,6 +9,9 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -38,7 +41,6 @@ public class cell_zombie extends TamableAnimal{
     public int time = 0;
     @Override
     public void tick() {
-
         super.tick();
         if (!this.getTags().contains(AllEvent.muMMY)) {
             this.time+=2;
@@ -53,8 +55,20 @@ public class cell_zombie extends TamableAnimal{
                 this.getAttributes().addTransientAttributeModifiers(modifierMultimap(this.getOwner()));
             }
         }
+        if (this.getTags().contains(AllEvent.calcification)){
+            if (this.getOwner()!= null) {
+                this.getAttributes().addTransientAttributeModifiers(calcificationMultimap(this.getOwner()));
+            }
+        }
     }
-
+    private Multimap<Attribute, AttributeModifier> calcificationMultimap(LivingEntity livingEntity){
+        Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
+        if (Handler.hascurio(livingEntity, Items.cell.get())&&Handler.hascurio(livingEntity, Items.cell_calcification.get())) {
+            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier((this.uuid), MoonStoneMod.MODID + "DamageCell", livingEntity.getAttributeValue(Attributes.ARMOR) / 2, AttributeModifier.Operation.ADDITION));
+            modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier((this.uuid), MoonStoneMod.MODID + "DamageCell", livingEntity.getAttributeValue(Attributes.MAX_HEALTH) / 2, AttributeModifier.Operation.ADDITION));
+        }
+        return modifierMultimap;
+    }
     private Multimap<Attribute, AttributeModifier> modifierMultimap(LivingEntity livingEntity){
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         if (Handler.hascurio(livingEntity, Items.cell.get())&&Handler.hascurio(livingEntity, Items.adrenaline.get())) {
@@ -122,9 +136,16 @@ public class cell_zombie extends TamableAnimal{
         if (flag) {
             this.doEnchantDamageEffects(this, p_30372_);
         }
-
+        if (this.getTags().contains(AllEvent.cb_blood)){
+            this.heal(this.getMaxHealth()/10);
+            if (this.time>0) {
+                this.time -= 100;
+            }
+            this.level().playSound(null,new BlockPos((int) this.getX(), (int) this.getY(), (int) this.getZ()), SoundEvents.PANDA_EAT, SoundSource.MUSIC,2,2);
+        }
         return flag;
     }
+
 
     public boolean hurt(DamageSource p_30386_, float p_30387_) {
         if (this.isInvulnerableTo(p_30386_)) {

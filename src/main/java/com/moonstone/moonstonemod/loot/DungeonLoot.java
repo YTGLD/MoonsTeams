@@ -56,6 +56,12 @@ public class DungeonLoot extends LootModifier {
                         if (cell == 4){
                             generatedLoot.add(new ItemStack(Items.cell_boom.get()));
                         }
+                        if (cell == 5){
+                            generatedLoot.add(new ItemStack(Items.cell_calcification.get()));
+                        }
+                        if (cell == 6){
+                            generatedLoot.add(new ItemStack(Items.cell_blood.get()));
+                        }
                     }
 
                     if (Handler.hascurio(player, Items.doomswoud.get()) && Handler.hascurio(player, Items.doomeye.get())) {

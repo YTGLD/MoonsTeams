@@ -593,6 +593,12 @@
   "item.cell_mummy.tool.string": "Effectively reducing the decay rate of generated zombies",
 
   "item.moonstone.cell_boom": "cell boom",
-  "item.cell_boom.tool.string": "You and the zombies will experience a violent explosion after death"
+  "item.cell_boom.tool.string": "You and the zombies will experience a violent explosion after death",
+
+  "item.moonstone.cell_calcification": "cell calcification",
+  "item.cell_calcification.tool.string": "Zombies receive 50% armor and health bonus from you",
+
+  "item.moonstone.cell_blood": "cell blood",
+  "item.cell_blood.tool.string": "Zombies gain the ability to suck blood and each attack prolongs their lifespan"
 }
 

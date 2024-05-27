@@ -3,6 +3,8 @@
   "values": [
     "moonstone:adrenaline",
     "moonstone:cell_boom",
-    "moonstone:cell_mummy"
+    "moonstone:cell_mummy",
+    "moonstone:cell_calcification",
+    "moonstone:cell_blood"
   ]
 }

@@ -600,7 +600,13 @@
   "item.cell_mummy.tool.string": "有效降低生成的僵尸其腐化速度",
 
   "item.moonstone.cell_boom": "自爆",
-  "item.cell_boom.tool.string": "你和和僵尸在死后会产生一次剧烈爆炸"
+  "item.cell_boom.tool.string": "你和和僵尸在死后会产生一次剧烈爆炸",
+
+  "item.moonstone.cell_calcification": "皮肤钙质化",
+  "item.cell_calcification.tool.string": "僵尸获得你50%的护甲和生命值加成",
+
+  "item.moonstone.cell_blood": "嗜血性饥渴",
+  "item.cell_blood.tool.string": "僵尸获得吸血能力，并且每次攻击都会延长自身寿命"
 }
 
 

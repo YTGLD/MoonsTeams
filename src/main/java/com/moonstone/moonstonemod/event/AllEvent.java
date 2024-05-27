@@ -9,7 +9,9 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.Perhaps;
+import com.moonstone.moonstonemod.item.bnabush.cell_blood;
 import com.moonstone.moonstonemod.item.bnabush.cell_boom;
+import com.moonstone.moonstonemod.item.bnabush.cell_calcification;
 import com.moonstone.moonstonemod.item.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.nanodoom.nanorobot;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
@@ -100,29 +102,11 @@ public class AllEvent {
     public static final String DamageCell = "DamageCell";
     public static final  String muMMY = cell_mummy.Mummy;
     public static final  String boom = cell_boom.cb;
+    public static final  String calcification = cell_calcification.cc;
+    public static final  String cb_blood = cell_blood.c_blood;
+
+
     @SubscribeEvent
-    public void beacon(LivingHurtEvent event){
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.beacon.get())){
-                Collection<MobEffectInstance> collection  = player.getActiveEffects();
-                if (!collection.isEmpty()) {
-                    if (event.getSource().getEntity() != null) {
-                        AreaEffectCloud areaeffectcloud = new AreaEffectCloud(event.getSource().getEntity().level(), event.getSource().getEntity().getX(), event.getSource().getEntity().getY(), event.getSource().getEntity().getZ());
-                        areaeffectcloud.setRadius(2.5F);
-                        areaeffectcloud.setRadiusOnUse(-0.5F);
-                        areaeffectcloud.setWaitTime(10);
-                        areaeffectcloud.setDuration(areaeffectcloud.getDuration() / 2);
-                        areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
-                        for(MobEffectInstance mobeffectinstance : collection) {
-                            areaeffectcloud.addEffect(new MobEffectInstance(mobeffectinstance));
-                        }
-                        event.getSource().getEntity().level().addFreshEntity(areaeffectcloud);
-                        player.removeAllEffects();
-                    }
-                }
-            }
-        }
-    }@SubscribeEvent
     public void Boom(LivingHurtEvent event){
         if ((event.getEntity() instanceof Player player)) {
             if (Handler.hascurio(player,Items.cell_boom.get())){
@@ -154,6 +138,12 @@ public class AllEvent {
                     }
                     if (Handler.hascurio(player,Items.cell_boom.get())){
                         z.addTag(boom);
+                    }
+                    if (Handler.hascurio(player,Items.cell_calcification.get())){
+                        z.addTag(calcification);
+                    }
+                    if (Handler.hascurio(player,Items.cell_blood.get())){
+                        z.addTag(cb_blood);
                     }
                     player.level().addFreshEntity(z);
                 }
@@ -213,6 +203,30 @@ public class AllEvent {
             }
         }
     }
+    @SubscribeEvent
+    public void beacon(LivingHurtEvent event){
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.beacon.get())){
+                Collection<MobEffectInstance> collection  = player.getActiveEffects();
+                if (!collection.isEmpty()) {
+                    if (event.getSource().getEntity() != null) {
+                        AreaEffectCloud areaeffectcloud = new AreaEffectCloud(event.getSource().getEntity().level(), event.getSource().getEntity().getX(), event.getSource().getEntity().getY(), event.getSource().getEntity().getZ());
+                        areaeffectcloud.setRadius(2.5F);
+                        areaeffectcloud.setRadiusOnUse(-0.5F);
+                        areaeffectcloud.setWaitTime(10);
+                        areaeffectcloud.setDuration(areaeffectcloud.getDuration() / 2);
+                        areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
+                        for(MobEffectInstance mobeffectinstance : collection) {
+                            areaeffectcloud.addEffect(new MobEffectInstance(mobeffectinstance));
+                        }
+                        event.getSource().getEntity().level().addFreshEntity(areaeffectcloud);
+                        player.removeAllEffects();
+                    }
+                }
+            }
+        }
+    }
+
     @SubscribeEvent
     public void brainLHurt(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player){
