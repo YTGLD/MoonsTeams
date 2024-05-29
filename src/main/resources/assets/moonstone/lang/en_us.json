@@ -587,6 +587,9 @@
   "item.cell.tool.string": "Kill creatures to summon zombies",
   "item.adrenaline.tool.string": "Summoned zombies inherit your attack power",
   "item.adrenaline.tool.string.1": "And movement speed",
+  "advancements.tooltip.cell.all.text": "Treasure loot",
+  "advancements.tooltip.nightmare.all.text": "Treasure loot",
+  "advancements.tooltip.necora.all.text": "Treasure loot",
 
 
   "item.moonstone.cell_mummy": "cell mummy",
@@ -599,6 +602,15 @@
   "item.cell_calcification.tool.string": "Zombies receive 50% armor and health bonus from you",
 
   "item.moonstone.cell_blood": "cell blood",
-  "item.cell_blood.tool.string": "Zombies gain the ability to suck blood and each attack prolongs their lifespan"
+  "item.cell_blood.tool.string": "Zombies gain the ability to suck blood and each attack prolongs their lifespan",
+
+  "item.moonstone.motor": "motor",
+  "item.motor.tool.string": "Increase by 15% in air, underwater, and land",
+
+  "item.moonstone.air": "air",
+  "item.air.tool.string": "Increase resistance by 20% while in the air",
+
+  "item.moonstone.watergen": "water",
+  "item.watergen.tool.string": "Increase resistance by 15% in water"
 }
 

@@ -62,6 +62,9 @@ public abstract class LivingEntityMixin {
             if (Handler.hascurio(player, Items.bloodvirus.get())) {
                 player.moveRelative(player.getSpeed()*0.175f, p_21280_);
             }
+            if (Handler.hascurio(player, Items.motor.get())) {
+                player.moveRelative(player.getSpeed()*0.15f, p_21280_);
+            }
         }
     }
     @Inject(at = @At("RETURN"), method = "getJumpPower", cancellable = true)

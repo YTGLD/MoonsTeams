@@ -363,13 +363,16 @@
 
 
   "item.moonstone.necora": "Necora病毒",
+
   "item.moonstone.atpoverdose": "ATP 过量",
   "item.moonstone.autolytic": "自溶性抑制",
   "item.moonstone.putrefactive": "腐败抗性",
-  "item.moonstone.apple": "怪异的瘟疫苹果",
   "item.moonstone.ambush": "漂流发酵",
   "item.moonstone.fermentation": "埋伏性狩猎",
   "item.moonstone.regenerative": "再生活性化",
+
+
+  "item.moonstone.apple": "怪异的瘟疫苹果",
   "item.moonstone.catalyzer": "暗影基因",
   "item.moonstone.bloodvirus": "暗影瘟疫",
   "item.moonstone.botton": "铁罐子",
@@ -606,7 +609,23 @@
   "item.cell_calcification.tool.string": "僵尸获得你50%的护甲和生命值加成",
 
   "item.moonstone.cell_blood": "嗜血性饥渴",
-  "item.cell_blood.tool.string": "僵尸获得吸血能力，并且每次攻击都会延长自身寿命"
+  "item.cell_blood.tool.string": "僵尸获得吸血能力，并且每次攻击都会延长自身寿命",
+
+  "item.moonstone.motor": "运动控制强化",
+  "item.motor.tool.string": "增加15%在空中，水下，陆地的所有速度",
+
+
+  "item.moonstone.air": "大气亲和性",
+  "item.air.tool.string": "在空中时增加20%的抗性",
+
+  "item.moonstone.watergen": "海洋亲和性",
+  "item.watergen.tool.string": "在水中时增加15%的抗性",
+
+
+  "advancements.tooltip.cell.all.text": "宝藏战利品，需要佩戴Necora病毒",
+  "advancements.tooltip.nightmare.all.text": "地牢战利品类型，需要佩戴深渊之眼",
+  "advancements.tooltip.necora.all.text": "地牢/矿井战利品类型，需要佩戴Necora病毒"
+
 }
 
 

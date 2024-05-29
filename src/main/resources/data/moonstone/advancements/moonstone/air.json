@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/necora",
+  "criteria": {
+    "air": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:air"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.cell.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:air"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.air"
+    }
+  },
+  "requirements": [
+    [
+      "air"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

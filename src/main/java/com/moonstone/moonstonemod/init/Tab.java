@@ -102,6 +102,9 @@ public class Tab {
                 b.accept(new ItemStack(Items.cell_boom.get()));
                 b.accept(new ItemStack(Items.cell_calcification.get()));
                 b.accept(new ItemStack(Items.cell_blood.get()));
+                b.accept(new ItemStack(Items.air.get()));
+                b.accept(new ItemStack(Items.motor.get()));
+                b.accept(new ItemStack(Items.watergen.get()));
 
                 b.accept(new ItemStack(Items.botton.get()));
                 b.accept(new ItemStack(Items.catalyzer.get()));

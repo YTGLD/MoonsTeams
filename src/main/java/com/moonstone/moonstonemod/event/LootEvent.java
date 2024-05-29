@@ -55,7 +55,7 @@ public class LootEvent {
         }
 
 
-        int s = Mth.nextInt(RandomSource.create(), 1, 100);
+        int s = Mth.nextInt(RandomSource.create(), 1, 150);
         if (event.getEntity() instanceof Zombie zombie){
             if (s == 1){
                 event.getDrops().add(new ItemEntity(zombie.level(),zombie.getX(),zombie.getY(),zombie.getZ(),
@@ -84,6 +84,10 @@ public class LootEvent {
             if (s == 7){
                 event.getDrops().add(new ItemEntity(zombie.level(),zombie.getX(),zombie.getY(),zombie.getZ(),
                         new ItemStack(Items.mshell.get())));
+            }
+            if (s == 8){
+                event.getDrops().add(new ItemEntity(zombie.level(),zombie.getX(),zombie.getY(),zombie.getZ(),
+                        new ItemStack(Items.mhead.get())));
             }
         }
 

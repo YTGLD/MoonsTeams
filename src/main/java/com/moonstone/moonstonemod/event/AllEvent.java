@@ -116,7 +116,19 @@ public class AllEvent {
             }
         }
     }
-
+    @SubscribeEvent
+    public void gen(LivingHurtEvent event){
+        if ((event.getEntity() instanceof Player player)) {
+            if (Handler.hascurio(player,Items.air.get())){
+                if (!player.onGround()){
+                    event.setAmount(event.getAmount() * 0.8f);
+                }
+                if (!player.isInWater()){
+                    event.setAmount(event.getAmount() * 0.85f);
+                }
+            }
+        }
+    }
     @SubscribeEvent
     public void evil(LivingDeathEvent event){
         if ((event.getEntity() instanceof Player player)) {

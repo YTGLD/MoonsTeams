@@ -161,5 +161,8 @@ public class Items {
     public static final RegistryObject<Item> cell_boom =REGISTRY.register("cell_boom", com.moonstone.moonstonemod.item.bnabush.cell_boom::new);
     public static final RegistryObject<Item> cell_calcification =REGISTRY.register("cell_calcification", com.moonstone.moonstonemod.item.bnabush.cell_calcification::new);
     public static final RegistryObject<Item> cell_blood =REGISTRY.register("cell_blood", com.moonstone.moonstonemod.item.bnabush.cell_blood::new);
+    public static final RegistryObject<Item> motor =REGISTRY.register("motor", com.moonstone.moonstonemod.item.bnabush.me.motor::new);
+    public static final RegistryObject<Item> watergen =REGISTRY.register("watergen", com.moonstone.moonstonemod.item.bnabush.me.watergen::new);
+    public static final RegistryObject<Item> air =REGISTRY.register("air", com.moonstone.moonstonemod.item.bnabush.me.air::new);
 
 }

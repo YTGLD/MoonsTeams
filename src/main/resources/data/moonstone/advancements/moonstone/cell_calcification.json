@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/cell_boom",
+  "criteria": {
+    "cell_calcification": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:cell_calcification"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.cell.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:cell_calcification"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.cell_calcification"
+    }
+  },
+  "requirements": [
+    [
+      "cell_calcification"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

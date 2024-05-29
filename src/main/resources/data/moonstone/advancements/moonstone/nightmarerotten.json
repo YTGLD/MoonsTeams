@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/nightmareeye",
+  "criteria": {
+    "nightmarerotten": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmarerotten"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare.all.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmarerotten"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.nightmarerotten"
+    }
+  },
+  "requirements": [
+    [
+      "nightmarerotten"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/necora",
+  "criteria": {
+    "atpoverdose": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:atpoverdose"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.necora.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:atpoverdose"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.atpoverdose"
+    }
+  },
+  "requirements": [
+    [
+      "atpoverdose"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

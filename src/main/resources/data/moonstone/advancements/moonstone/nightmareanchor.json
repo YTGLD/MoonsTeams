@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/nightmarecharm",
+  "criteria": {
+    "nightmareanchor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmareanchor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmareanchor"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.nightmareanchor"
+    }
+  },
+  "requirements": [
+    [
+      "nightmareanchor"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

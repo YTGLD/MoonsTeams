@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/cell_mummy",
+  "criteria": {
+    "cell_blood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:cell_blood"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.cell.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:cell_blood"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.cell_blood"
+    }
+  },
+  "requirements": [
+    [
+      "cell_blood"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

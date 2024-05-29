@@ -44,23 +44,36 @@ public class DungeonLoot extends LootModifier {
                 if (entity instanceof Player player) {
 
                     if (Handler.hascurio(player, Items.necora.get())){
-                        if (cell == 1){
+                        if (Handler.hascurio(player, Items.cell.get())) {
+                            if (cell == 1) {
+                                generatedLoot.add(new ItemStack(Items.cell.get()));
+                            }
+                            if (cell == 2) {
+                                generatedLoot.add(new ItemStack(Items.adrenaline.get()));
+                            }
+                            if (cell == 3) {
+                                generatedLoot.add(new ItemStack(Items.cell_mummy.get()));
+                            }
+                            if (cell == 4) {
+                                generatedLoot.add(new ItemStack(Items.cell_boom.get()));
+                            }
+                            if (cell == 5) {
+                                generatedLoot.add(new ItemStack(Items.cell_calcification.get()));
+                            }
+                            if (cell == 6) {
+                                generatedLoot.add(new ItemStack(Items.cell_blood.get()));
+                            }
+                        }else {
                             generatedLoot.add(new ItemStack(Items.cell.get()));
                         }
-                        if (cell == 2){
-                            generatedLoot.add(new ItemStack(Items.adrenaline.get()));
+                        if (cell == 7) {
+                            generatedLoot.add(new ItemStack(Items.motor.get()));
                         }
-                        if (cell == 3){
-                            generatedLoot.add(new ItemStack(Items.cell_mummy.get()));
+                        if (cell == 8) {
+                            generatedLoot.add(new ItemStack(Items.air.get()));
                         }
-                        if (cell == 4){
-                            generatedLoot.add(new ItemStack(Items.cell_boom.get()));
-                        }
-                        if (cell == 5){
-                            generatedLoot.add(new ItemStack(Items.cell_calcification.get()));
-                        }
-                        if (cell == 6){
-                            generatedLoot.add(new ItemStack(Items.cell_blood.get()));
+                        if (cell == 9) {
+                            generatedLoot.add(new ItemStack(Items.watergen.get()));
                         }
                     }
 
@@ -184,7 +197,12 @@ public class DungeonLoot extends LootModifier {
                 if (p == 22) {
                     generatedLoot.add(new ItemStack(Items.obsidianring.get()));
                 }
-
+                if (p == 23) {
+                    generatedLoot.add(new ItemStack(Items.magicstone.get()));
+                }
+                if (p == 24) {
+                    generatedLoot.add(new ItemStack(Items.magiceye.get()));
+                }
             }
             if (idSting.contains("city")) {
                 if (context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Player player) {
