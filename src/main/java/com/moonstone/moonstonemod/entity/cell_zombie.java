@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
-public class cell_zombie extends TamableAnimal{
+public class cell_zombie extends TamableAnimal {
     public cell_zombie(EntityType<? extends cell_zombie> c  , Level p_34272_) {
         super(c, p_34272_);
     }

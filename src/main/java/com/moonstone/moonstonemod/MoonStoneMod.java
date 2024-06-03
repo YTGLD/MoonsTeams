@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod;
 
 import com.mojang.logging.LogUtils;
+import com.moonstone.moonstonemod.entity.c.CellZombieG;
 import com.moonstone.moonstonemod.entity.c.SwordRenderer;
 import com.moonstone.moonstonemod.entity.c.ZombieRenderer;
 import com.moonstone.moonstonemod.event.AllEvent;
@@ -59,6 +60,7 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.flysword.get(), SwordRenderer::new);
             event.registerEntityRenderer(EntityTs.suddenrain.get(), SwordRenderer::new);
             event.registerEntityRenderer(EntityTs.cell_zombie.get(), ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.cell_giant.get(), CellZombieG::new);
 
         }
     }

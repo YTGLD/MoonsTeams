@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod;
 
-import com.moonstone.moonstonemod.entity.cell_zombie;
+import com.moonstone.moonstonemod.entity.cell_giant;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

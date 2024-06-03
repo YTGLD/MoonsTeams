@@ -45,9 +45,6 @@ public class DungeonLoot extends LootModifier {
 
                     if (Handler.hascurio(player, Items.necora.get())){
                         if (Handler.hascurio(player, Items.cell.get())) {
-                            if (cell == 1) {
-                                generatedLoot.add(new ItemStack(Items.cell.get()));
-                            }
                             if (cell == 2) {
                                 generatedLoot.add(new ItemStack(Items.adrenaline.get()));
                             }

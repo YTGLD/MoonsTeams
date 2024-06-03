@@ -611,6 +611,8 @@
   "item.air.tool.string": "Increase resistance by 20% while in the air",
 
   "item.moonstone.watergen": "water",
-  "item.watergen.tool.string": "Increase resistance by 15% in water"
+  "item.watergen.tool.string": "Increase resistance by 15% in water",
+
+  "item.moonstone.giant": "giant cell"
 }
 

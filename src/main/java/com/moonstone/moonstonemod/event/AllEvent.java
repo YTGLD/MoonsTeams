@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.event;
 
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.entity.cell_giant;
 import com.moonstone.moonstonemod.entity.cell_zombie;
 import com.moonstone.moonstonemod.entity.flysword;
 import com.moonstone.moonstonemod.entity.suddenrain;
@@ -137,6 +138,17 @@ public class AllEvent {
             }
         }
         if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.giant.get())){
+                if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
+                    if (Mth.nextInt(RandomSource.create(), 1, 20) == 1) {
+                        cell_giant z = new cell_giant(EntityTs.cell_giant.get(), player.level());
+                        z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+                        z.setOwnerUUID(player.getUUID());
+                        player.level().addFreshEntity(z);
+                        player.getCooldowns().addCooldown(Items.giant.get(), 600);
+                    }
+                }
+            }
             if (Handler.hascurio(player, Items.cell.get())){
                 if (Mth.nextInt(RandomSource.create(),1, 2) ==1 ){
                     cell_zombie z = new cell_zombie(EntityTs.cell_zombie.get(), player.level());
@@ -165,11 +177,21 @@ public class AllEvent {
     @SubscribeEvent
     public void evil_zombie(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player player){
+            Vec3 playerPos = player.position().add(0, 0.75, 0);
+            int range = 10;
+            List<cell_zombie> entities = player.level().getEntitiesOfClass(cell_zombie.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+            if (Handler.hascurio(player, Items.giant.get())) {
+                List<cell_giant> entitie = player.level().getEntitiesOfClass(cell_giant.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                for (cell_giant zombie : entitie) {
+                    if (zombie.getOwner() == player) {
+                        if (!(event.getEntity() instanceof cell_giant)) {
+                            zombie.setTarget(event.getEntity());
+                        }
+                    }
+                }
+            }
             if (Handler.hascurio(player, Items.cell.get())){
-                Vec3 playerPos = player.position().add(0, 0.75, 0);
-                int range = 10;
-                List<cell_zombie> entities = player.level().getEntitiesOfClass(cell_zombie.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-                for (cell_zombie zombie : entities){
+                 for (cell_zombie zombie : entities){
                     if (zombie.getOwner() == player){
                         if (!(event.getEntity() instanceof cell_zombie)) {
                             zombie.setTarget(event.getEntity());
@@ -186,6 +208,20 @@ public class AllEvent {
                 for (cell_zombie zombie : entities){
                     if (zombie.getOwner() == player){
                         if (!(event.getSource().getEntity() instanceof cell_zombie)) {
+                            if (event.getSource().getEntity() instanceof LivingEntity living) {
+                                zombie.setTarget(living);
+                            }
+                        }
+                    }
+                }
+            }
+            if (Handler.hascurio(player, Items.giant.get())){
+                Vec3 playerPos = player.position().add(0, 0.75, 0);
+                int range = 10;
+                List<cell_giant> entities = player.level().getEntitiesOfClass(cell_giant.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                for (cell_giant zombie : entities){
+                    if (zombie.getOwner() == player){
+                        if (!(event.getSource().getEntity() instanceof cell_giant)) {
                             if (event.getSource().getEntity() instanceof LivingEntity living) {
                                 zombie.setTarget(living);
                             }
