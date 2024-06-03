@@ -103,6 +103,10 @@ public class LootEvent {
                 event.getDrops().add(new ItemEntity(zombie.level(),zombie.getX(),zombie.getY(),zombie.getZ(),
                         new ItemStack(Items.mhead.get())));
             }
+            if (s == 9){
+                event.getDrops().add(new ItemEntity(zombie.level(),zombie.getX(),zombie.getY(),zombie.getZ(),
+                        new ItemStack(Items.brain.get())));
+            }
         }
 
     }

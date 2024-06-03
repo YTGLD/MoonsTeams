@@ -96,7 +96,7 @@ public class cell_zombie extends TamableAnimal {
     public void die(@NotNull DamageSource p_21809_) {
 
         if (this.getTags().contains(AllEvent.boom)){
-            this.level().explode(null, this.getX(), this.getY(), this.getZ(), 5.5f, true, Level.ExplosionInteraction.MOB);
+            this.level().explode(null, this.getX(), this.getY(), this.getZ(), 5.5f, false, Level.ExplosionInteraction.NONE);
 
         }
 

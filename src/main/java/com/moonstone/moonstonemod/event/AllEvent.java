@@ -231,6 +231,7 @@ public class AllEvent {
             }
         }
     }
+    /*
     @SubscribeEvent
     public void BabyEntitySpawnEvent(BabyEntitySpawnEvent event){
         if (event.getCausedByPlayer()!= null) {
@@ -251,6 +252,8 @@ public class AllEvent {
             }
         }
     }
+
+     */
     @SubscribeEvent
     public void beacon(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){

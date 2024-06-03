@@ -628,8 +628,10 @@
 
   "item.moonstone.giant": "巨人僵尸基因片段",
   "item.giant.tool.string": "杀死生物有些许概率使尸体诱变成巨型细胞僵尸",
-  "advancements.tooltip.giant.text": "装备necora病毒并杀死监守者"
+  "advancements.tooltip.giant.text": "装备necora病毒并杀死监守者",
 
+  "entity.moonstone.cell_giant": "巨型细胞僵尸",
+  "entity.moonstone.cell_zombie": "细胞僵尸"
 }
 
 
