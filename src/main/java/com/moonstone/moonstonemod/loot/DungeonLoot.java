@@ -38,13 +38,20 @@ public class DungeonLoot extends LootModifier {
         int T = Mth.nextInt(RandomSource.create(), 1, 25);
 
         int cell = Mth.nextInt(RandomSource.create(), 1, 33);
+        int giant = Mth.nextInt(RandomSource.create(), 1, 10);
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){
                 if (entity instanceof Player player) {
 
                     if (Handler.hascurio(player, Items.necora.get())){
-                        if (Handler.hascurio(player, Items.cell.get())) {
+                        if (!Handler.hascurio(player,Items.giant.get())){
+                            if (giant == 1) {
+                                generatedLoot.add(new ItemStack(Items.giant.get()));
+                            }
+                        }
+
+                        if (Handler.hascurio(player, Items.cell.get()) && !Handler.hascurio(player,Items.giant.get())) {
                             if (cell == 2) {
                                 generatedLoot.add(new ItemStack(Items.adrenaline.get()));
                             }
@@ -60,7 +67,7 @@ public class DungeonLoot extends LootModifier {
                             if (cell == 6) {
                                 generatedLoot.add(new ItemStack(Items.cell_blood.get()));
                             }
-                        }else {
+                        } else {
                             generatedLoot.add(new ItemStack(Items.cell.get()));
                         }
                         if (cell == 7) {

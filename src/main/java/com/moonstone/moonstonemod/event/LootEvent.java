@@ -8,6 +8,7 @@ import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -24,6 +25,19 @@ public class LootEvent {
                 if (event.getEntity() instanceof ElderGuardian elderGuardian){
                     event.getDrops().add(new ItemEntity(elderGuardian.level(), elderGuardian.getX(), elderGuardian.getY() ,elderGuardian.getZ(),
                             new ItemStack(Items.maxamout.get())));
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void zom(LivingDropsEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            int a = Mth.nextInt(RandomSource.create(), 1, 10);
+            if (Handler.hascurio(player, Items.necora.get())) {
+                if (event.getEntity() instanceof Warden elderGuardian){
+                    if (a == 1) {
+                        event.getDrops().add(new ItemEntity(elderGuardian.level(), elderGuardian.getX(), elderGuardian.getY(), elderGuardian.getZ(), new ItemStack(Items.maxamout.get())));
+                    }
                 }
             }
         }

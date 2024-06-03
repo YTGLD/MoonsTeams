@@ -626,8 +626,9 @@
   "advancements.tooltip.nightmare.all.text": "地牢战利品类型，需要佩戴深渊之眼",
   "advancements.tooltip.necora.all.text": "地牢/矿井战利品类型，需要佩戴Necora病毒",
 
-  "item.moonstone.giant": "巨人僵尸基因片段"
-
+  "item.moonstone.giant": "巨人僵尸基因片段",
+  "item.giant.tool.string": "杀死生物有些许概率使尸体诱变成巨型细胞僵尸",
+  "advancements.tooltip.giant.text": "装备necora病毒并杀死监守者"
 
 }
 

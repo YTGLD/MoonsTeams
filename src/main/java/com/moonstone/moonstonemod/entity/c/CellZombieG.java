@@ -14,16 +14,13 @@ import net.minecraft.world.entity.monster.warden.Warden;
 
 public class CellZombieG  extends MobRenderer<cell_giant, GModel<cell_giant>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/cell_giant.png");
-    private static final ResourceLocation BIOLUMINESCENT_LAYER_TEXTURE = new ResourceLocation("textures/entity/warden/warden_bioluminescent_layer.png");
     private static final ResourceLocation HEART_TEXTURE = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/hearth.png");
     private static final ResourceLocation PULSATING_SPOTS_TEXTURE_1 = new ResourceLocation("textures/entity/warden/warden_pulsating_spots_1.png");
     private static final ResourceLocation PULSATING_SPOTS_TEXTURE_2 = new ResourceLocation("textures/entity/warden/warden_pulsating_spots_2.png");
 
     public CellZombieG(EntityRendererProvider.Context p_234787_) {
         super(p_234787_, new GModel<>(p_234787_.bakeLayer(ModelLayers.WARDEN)), 0.9F);
-        this.addLayer(new GEmissiveLay<>(this, BIOLUMINESCENT_LAYER_TEXTURE, (p_234809_, p_234810_, p_234811_) -> {
-            return 1.0F;
-        }, GModel::getBioluminescentLayerModelParts));
+
         this.addLayer(new GEmissiveLay<>(this, PULSATING_SPOTS_TEXTURE_1, (p_234805_, p_234806_, p_234807_) -> {
             return Math.max(0.0F, Mth.cos(p_234807_ * 0.045F) * 0.25F);
         }, GModel::getPulsatingSpotsLayerModelParts));
