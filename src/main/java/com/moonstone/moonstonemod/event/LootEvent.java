@@ -34,9 +34,11 @@ public class LootEvent {
         if (event.getSource().getEntity() instanceof Player player){
             int a = Mth.nextInt(RandomSource.create(), 1, 10);
             if (Handler.hascurio(player, Items.necora.get())) {
-                if (event.getEntity() instanceof Warden elderGuardian){
-                    if (a == 1) {
-                        event.getDrops().add(new ItemEntity(elderGuardian.level(), elderGuardian.getX(), elderGuardian.getY(), elderGuardian.getZ(), new ItemStack(Items.maxamout.get())));
+                if (!Handler.hascurio(player, Items.giant.get())) {
+                    if (event.getEntity() instanceof Warden elderGuardian) {
+                        if (a == 1) {
+                            event.getDrops().add(new ItemEntity(elderGuardian.level(), elderGuardian.getX(), elderGuardian.getY(), elderGuardian.getZ(), new ItemStack(Items.giant.get())));
+                        }
                     }
                 }
             }

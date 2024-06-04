@@ -315,7 +315,7 @@
   "item.putrefactive.tool.string": "Increases the effect caused by carrion",
 
 
-  "item.regenerative.tool.string": "Restores 1 life point every 5 seconds",
+  "item.regenerative.tool.string": "Restores 1 life point every 1.5 seconds",
   "item.regenerative.tool.string.1": "*The cells of pathogens are more vibrant than in the past",
 
 

@@ -18,7 +18,7 @@ public class regenerative extends TheNecoraIC {
         if (slotContext.entity() instanceof Player player) {
             if (!player.getCooldowns().isOnCooldown(this)) {
                 player.heal(1);
-                player.getCooldowns().addCooldown(this, 100);
+                player.getCooldowns().addCooldown(this, 30);
             }
         }
     }

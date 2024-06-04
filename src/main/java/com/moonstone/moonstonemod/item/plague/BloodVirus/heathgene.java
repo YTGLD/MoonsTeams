@@ -31,6 +31,17 @@ public class heathgene extends BloodViru {
     }
 
     @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
+        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(
+                uuid, MoonStoneMod.MODID+this.getDescriptionId(), 0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
+
+        );
+
+        return modifierMultimap;
+    }
+
+    @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         slotContext.entity().getAttributes().addTransientAttributeModifiers(this.getAttributeModifiers( slotContext.entity(),stack));
         stack.getOrCreateTag().putString("ytgld","ytgld");
