@@ -440,6 +440,6 @@
   "advancements.tooltip.giant.text": "Убейте хранителя, являясь носителем вируса Некора",
   "entity.moonstone.cell_giant": "Клетка гигантского зомби",
   "entity.moonstone.cell_zombie": "Клетка зомби",
-  "item.beacon.tool.string": “,
+  "item.beacon.tool.string": "",
   "item.mhead.tool.string.1": ""
 }
