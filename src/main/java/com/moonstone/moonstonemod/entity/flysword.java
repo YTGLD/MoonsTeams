@@ -1,23 +1,18 @@
 package com.moonstone.moonstonemod.entity;
 
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.event.AllEvent;
-import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Particles;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.*;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class flysword extends ThrowableItemProjectile {
     public int age = 0;
@@ -70,10 +65,6 @@ public class flysword extends ThrowableItemProjectile {
         this.discard();
     }
 
-    @Override
-    protected void onHitBlock(BlockHitResult p_37258_) {
-        this.discard();
-    }
 
 
 }

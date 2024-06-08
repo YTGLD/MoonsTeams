@@ -2,8 +2,8 @@ package com.moonstone.moonstonemod.item.amout;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;

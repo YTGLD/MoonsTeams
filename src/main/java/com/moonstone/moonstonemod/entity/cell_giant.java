@@ -1,7 +1,6 @@
 package com.moonstone.moonstonemod.entity;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.cache.CacheBuilder;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
 import com.moonstone.moonstonemod.init.EntityTs;
@@ -38,9 +37,7 @@ import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.warden.AngerLevel;
 import net.minecraft.world.entity.monster.warden.AngerManagement;
 import net.minecraft.world.entity.monster.warden.WardenAi;
@@ -169,6 +166,12 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
         this.targetSelector.addGoal(6, new NonTameRandomTargetGoal<>(this, Turtle.class, false, Turtle.BABY_ON_LAND_SELECTOR));
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Villager.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Zombie.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Spider.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Skeleton.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Creeper.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, EnderMan.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Monster.class, false));
 
     }
     public float getHeartAnimation(float p_219470_) {

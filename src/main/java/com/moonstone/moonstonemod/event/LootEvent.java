@@ -30,6 +30,33 @@ public class LootEvent {
         }
     }
     @SubscribeEvent
+    public void NeCharm(LivingDropsEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.nightmareeye.get())) {
+                if (!Handler.hascurio(player, Items.nightmareanchor.get())) {
+                    if (event.getEntity() instanceof Warden elderGuardian) {
+                        event.getDrops().add(new ItemEntity(
+                                elderGuardian.level(),
+                                elderGuardian.getX(),
+                                elderGuardian.getY(),
+                                elderGuardian.getZ(),
+                                new ItemStack(Items.nightmareanchor.get())));
+                    }
+                }
+                if (!Handler.hascurio(player, Items.nightmarecharm.get())) {
+                    if (event.getEntity() instanceof ElderGuardian elderGuardian) {
+                        event.getDrops().add(new ItemEntity(
+                                        elderGuardian.level(),
+                                        elderGuardian.getX(),
+                                        elderGuardian.getY(),
+                                        elderGuardian.getZ(),
+                                        new ItemStack(Items.nightmarecharm.get())));
+                    }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
     public void zom(LivingDropsEvent event) {
         if (event.getSource().getEntity() instanceof Player player){
             int a = Mth.nextInt(RandomSource.create(), 1, 10);

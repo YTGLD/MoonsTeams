@@ -2,8 +2,8 @@ package com.moonstone.moonstonemod.item.maulice;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.moonstoneitem.MLS;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.moonstoneitem.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;

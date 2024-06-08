@@ -1,6 +1,5 @@
 package com.moonstone.moonstonemod.mixin;
 
-import com.moonstone.moonstonemod.item.Perhaps;
 import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -11,7 +10,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

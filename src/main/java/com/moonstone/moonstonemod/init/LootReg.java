@@ -3,7 +3,7 @@ package com.moonstone.moonstonemod.init;
 
 import com.mojang.serialization.Codec;
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.loot.*;
+import com.moonstone.moonstonemod.loot.DungeonLoot;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.particle;
+package com.moonstone.moonstonemod.client.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;

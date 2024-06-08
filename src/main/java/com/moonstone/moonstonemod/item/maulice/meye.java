@@ -26,7 +26,9 @@ import java.util.UUID;
 public class meye extends MLS {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
+
         if (slotContext.entity() instanceof Player player){
+
             Vec3 playerPos = player.position().add(0, 0.75, 0);
             int range = 10;
             List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));

@@ -2,15 +2,11 @@ package com.moonstone.moonstonemod.entity.c;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.cell_giant;
-import net.minecraft.client.model.WardenModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.WardenRenderer;
-import net.minecraft.client.renderer.entity.layers.WardenEmissiveLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.monster.warden.Warden;
 
 public class CellZombieG  extends MobRenderer<cell_giant, GModel<cell_giant>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/cell_giant.png");

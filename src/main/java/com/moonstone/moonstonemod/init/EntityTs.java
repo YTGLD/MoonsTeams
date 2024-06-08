@@ -1,13 +1,10 @@
 package com.moonstone.moonstonemod.init;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.cell_zombie;
 import com.moonstone.moonstonemod.entity.flysword;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.monster.warden.Warden;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

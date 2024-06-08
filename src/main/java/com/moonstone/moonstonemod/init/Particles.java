@@ -27,5 +27,6 @@ public class Particles {
         popr = PARTICLE_TYPES.register("popr", ()->{
             return new SimpleParticleType(false);
         });
+
     }
 }

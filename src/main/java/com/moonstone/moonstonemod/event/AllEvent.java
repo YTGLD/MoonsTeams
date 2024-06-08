@@ -14,13 +14,12 @@ import com.moonstone.moonstonemod.item.bnabush.cell_blood;
 import com.moonstone.moonstonemod.item.bnabush.cell_boom;
 import com.moonstone.moonstonemod.item.bnabush.cell_calcification;
 import com.moonstone.moonstonemod.item.bnabush.cell_mummy;
-import com.moonstone.moonstonemod.item.nanodoom.nanorobot;
+import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
 import com.moonstone.moonstonemod.item.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.uncommon.plague;
-import com.moonstone.moonstonemod.mixin.ItemMixin;
 import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -38,9 +37,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ambient.Bat;
-import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -48,7 +45,6 @@ import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
@@ -60,10 +56,8 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderTooltipEvent;
-import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
-import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -72,7 +66,10 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class AllEvent {
     private int shield = 1;
@@ -292,11 +289,10 @@ public class AllEvent {
                             if (stack.getTag()!=null){
                                 String name = event.getEntity().getName().getString();
                                 stack.getTag().putInt(name,stack.getTag().getInt(name)+1);
-
                                 if (stack.getTag().getInt(name)>=5){
                                     event.setAmount(event.getAmount() * 2.25f);
                                     player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.NEUTRAL, 4.5F, 4.1F);
-                                    stack.getTag().putInt(name,0);
+                                    stack.getTag().remove(name);
                                 }
                             }
                         }
@@ -2162,7 +2158,60 @@ public class AllEvent {
             }
         }
     }
+    @SubscribeEvent
+    public void SwordEventLivingEntityUseItemEvent(LivingEntityUseItemEvent.Tick event){
+        if (event.getEntity() instanceof Player player){
+            ItemStack stack = event.getItem();
+            if (stack.getTag() !=null) {
+                if (stack.getTag().getBoolean(wind_and_rain.wind)) {
+                    float s = (float) Math.sin(player.tickCount);
+                    if (s <= 0) {
+                        s = 0.125f;
+                    }
 
+                    int b = Mth.nextInt(RandomSource.create(), 1, 50);
+                    if (player.tickCount % 5 == 0) {
+                        if (b == 1) {
+                            player.getCooldowns().addCooldown(stack.getItem(), 160);
+                        }
+
+
+                        suddenrain item = new suddenrain(EntityTs.suddenrain.get(), player.level());
+                        item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
+                        item.setDeltaMovement(0, s / 1.5f, 0);
+                        if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
+                            player.level().addFreshEntity(item);
+                            stack.hurtAndBreak(3, player, (pl) -> pl.broadcastBreakEvent(event.getEntity().getUsedItemHand()));
+                        }
+
+                    } else if (player.tickCount % 5 == 1) {
+                        if (b == 1) {
+                            player.getCooldowns().addCooldown(stack.getItem(), 160);
+                        }
+                        flysword item = new flysword(EntityTs.flysword.get(), player.level());
+                        item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
+                        item.setDeltaMovement(0, s / 1.5f, 0);
+                        item.addTag(AllEvent.FlySword);
+                        if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
+                            player.level().addFreshEntity(item);
+                            stack.hurtAndBreak(3, player, (pl) -> pl.broadcastBreakEvent(event.getEntity().getUsedItemHand()));
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+    @SubscribeEvent
+    public void SwordEventLivingEntityUseItemEvent(net.minecraftforge.event.entity.player.ItemTooltipEvent event){
+        ItemStack stack = event.getItemStack();
+        if (stack.getTag() !=null){
+            if (stack.getTag().getBoolean(wind_and_rain.wind)){
+                event.getToolTip().add(Component.translatable("item.moonstone.wind_and_rain").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));
+            }
+        }
+    }
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent

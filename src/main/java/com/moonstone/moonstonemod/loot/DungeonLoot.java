@@ -51,6 +51,9 @@ public class DungeonLoot extends LootModifier {
                             }
                         }
 
+                        if (!Handler.hascurio(player, Items.cell.get()) && !Handler.hascurio(player,Items.giant.get())){
+                            generatedLoot.add(new ItemStack(Items.cell.get()));
+                        }
                         if (Handler.hascurio(player, Items.cell.get()) && !Handler.hascurio(player,Items.giant.get())) {
                             if (cell == 2) {
                                 generatedLoot.add(new ItemStack(Items.adrenaline.get()));
@@ -67,9 +70,8 @@ public class DungeonLoot extends LootModifier {
                             if (cell == 6) {
                                 generatedLoot.add(new ItemStack(Items.cell_blood.get()));
                             }
-                        } else {
-                            generatedLoot.add(new ItemStack(Items.cell.get()));
                         }
+
                         if (cell == 7) {
                             generatedLoot.add(new ItemStack(Items.motor.get()));
                         }

@@ -8,6 +8,9 @@ public class Config {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec.IntValue MAGIC_NUMBER = BUILDER
             .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+            .defineInRange("magicNumber", 32, 0, Integer.MAX_VALUE);
+    public static final ForgeConfigSpec.IntValue MAGIC_NUMBER2 = BUILDER
+            .comment("A magic number 2")
+            .defineInRange("magicNumber2", 32, 0, Integer.MAX_VALUE);
     static final ForgeConfigSpec SPEC = BUILDER.build();
 }

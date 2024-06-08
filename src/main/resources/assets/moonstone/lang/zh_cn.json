@@ -631,7 +631,11 @@
   "advancements.tooltip.giant.text": "装备necora病毒并杀死监守者",
 
   "entity.moonstone.cell_giant": "巨型细胞僵尸",
-  "entity.moonstone.cell_zombie": "细胞僵尸"
+  "entity.moonstone.cell_zombie": "细胞僵尸",
+
+  "entity.moonstone.flysword": "飞剑",
+  "entity.moonstone.suddenrain": "雨刃"
+
 }
 
 

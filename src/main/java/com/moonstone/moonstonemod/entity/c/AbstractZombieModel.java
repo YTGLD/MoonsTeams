@@ -4,7 +4,6 @@ import com.moonstone.moonstonemod.entity.cell_zombie;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.world.entity.monster.Monster;
 
 public abstract class AbstractZombieModel <T extends cell_zombie> extends HumanoidModel<T> {
     protected AbstractZombieModel(ModelPart p_170337_) {

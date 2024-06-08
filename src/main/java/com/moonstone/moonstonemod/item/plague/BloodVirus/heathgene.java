@@ -2,8 +2,8 @@ package com.moonstone.moonstonemod.item.plague.BloodVirus;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.BloodViru;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.BloodViru;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

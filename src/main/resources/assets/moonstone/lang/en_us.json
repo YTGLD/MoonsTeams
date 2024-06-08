@@ -617,7 +617,9 @@
   "item.giant.tool.string": "Kill creatures to summon cell zombie (5%)",
   "advancements.tooltip.giant.text": "Wearing NECORA virus, killing Warden",
   "entity.moonstone.cell_giant": "cell giant",
-  "entity.moonstone.cell_zombie": "cell zombie"
+  "entity.moonstone.cell_zombie": "cell zombie",
 
+  "entity.moonstone.flysword": "fly sword",
+  "entity.moonstone.suddenrain": "sudden rain"
 }
 

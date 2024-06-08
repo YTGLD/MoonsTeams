@@ -8,7 +8,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.*;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -70,10 +71,7 @@ public class suddenrain extends ThrowableItemProjectile {
         this.discard();
     }
 
-    @Override
-    protected void onHitBlock(BlockHitResult p_37258_) {
-        this.discard();
-    }
+
 
 }
 
