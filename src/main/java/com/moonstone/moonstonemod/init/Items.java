@@ -166,4 +166,9 @@ public class Items {
     public static final RegistryObject<Item> air =REGISTRY.register("air", com.moonstone.moonstonemod.item.bnabush.me.air::new);
     public static final RegistryObject<Item> giant =REGISTRY.register("giant", com.moonstone.moonstonemod.item.bnabush.giant::new);
 
+    /*
+    public static final RegistryObject<Item> test_image =REGISTRY.register("test_image", test_image::new);
+    public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.item.gorilla.gorillacake::new);
+    public static final RegistryObject<Item> gorilladna =REGISTRY.register("gorilladna", com.moonstone.moonstonemod.item.gorilla.gorilladna::new);
+     */
 }

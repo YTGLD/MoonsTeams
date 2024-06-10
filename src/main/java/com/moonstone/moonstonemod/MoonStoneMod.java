@@ -9,6 +9,7 @@ import com.moonstone.moonstonemod.entity.c.SwordRenderer;
 import com.moonstone.moonstonemod.entity.c.ZombieRenderer;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.event.LootEvent;
+import com.moonstone.moonstonemod.event.Tool;
 import com.moonstone.moonstonemod.event.Village;
 import com.moonstone.moonstonemod.init.*;
 import net.minecraftforge.api.distmarker.Dist;
@@ -33,6 +34,7 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new AllEvent());
         MinecraftForge.EVENT_BUS.register(new LootEvent());
         MinecraftForge.EVENT_BUS.register(new Village());
+        MinecraftForge.EVENT_BUS.register(new Tool());
 
         LootReg.REGISTRY.register(modEventBus);
 

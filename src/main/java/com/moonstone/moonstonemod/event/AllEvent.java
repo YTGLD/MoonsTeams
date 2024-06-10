@@ -15,6 +15,7 @@ import com.moonstone.moonstonemod.item.bnabush.cell_boom;
 import com.moonstone.moonstonemod.item.bnabush.cell_calcification;
 import com.moonstone.moonstonemod.item.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
+import com.moonstone.moonstonemod.item.gorilla.gorillacake;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
@@ -102,8 +103,28 @@ public class AllEvent {
     public static final  String boom = cell_boom.cb;
     public static final  String calcification = cell_calcification.cc;
     public static final  String cb_blood = cell_blood.c_blood;
+    public static final String Gorillas ="Gorillas";
+    /*
+    @SubscribeEvent
+    public void GorillasLivingTickEvent(LivingEvent.LivingTickEvent event){
+        if (event.getEntity().getPersistentData().getInt(Gorillas)> 0){
+            if (event.getEntity().tickCount % 20 == 0 ){
+                event.getEntity().getPersistentData().putInt(Gorillas,
+                        event.getEntity().getPersistentData().getInt(Gorillas)-1);
+            }
+            if (event.getEntity().getPersistentData().getInt(Gorillas) > 0) {
+                if (event.getEntity().tickCount % 20 == 0) {
+                    event.getEntity().hurt(event.getEntity().damageSources().magic(), 2);
+                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 3));
+                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 3));
+                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
+                }
+            }
+        }
+    }
 
 
+     */
     @SubscribeEvent
     public void Boom(LivingHurtEvent event){
         if ((event.getEntity() instanceof Player player)) {
@@ -275,29 +296,19 @@ public class AllEvent {
         }
     }
 
+
+
     @SubscribeEvent
     public void brainLHurt(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player,Items.brain.get())){
-                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
-                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
-                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                        ICurioStacksHandler stacksHandler = entry.getValue();
-                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                            ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.getTag()!=null){
-                                String name = event.getEntity().getName().getString();
-                                stack.getTag().putInt(name,stack.getTag().getInt(name)+1);
-                                if (stack.getTag().getInt(name)>=5){
-                                    event.setAmount(event.getAmount() * 2.25f);
-                                    player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.NEUTRAL, 4.5F, 4.1F);
-                                    stack.getTag().remove(name);
-                                }
-                            }
-                        }
-                    }
-                });
+                String name = event.getEntity().getName().getString();
+                player.getPersistentData().putInt(name, player.getPersistentData().getInt(name) +1);
+                if (player.getPersistentData().getInt(name)>= 5){
+                    event.setAmount(event.getAmount() * 2.25f);
+                    player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.NEUTRAL, 4.5F, 4.1F);
+                    player.getPersistentData().remove(name);
+                }
             }
         }
 
@@ -661,6 +672,18 @@ public class AllEvent {
     @SubscribeEvent
     public void thefruitLivingTickEvent(LivingEvent.LivingTickEvent event){
         if (event.getEntity() instanceof Player player){
+
+            /*
+            CuriosApi.getCuriosInventory(player).ifPresent((handler)->{
+                for (AttributeModifier attributeModifier : handler.getModifiers().values()){
+                    if (attributeModifier.equals(com.moonstone.moonstonemod.item.gorilla.gorillacake.attributeModifier())){
+                        player.getPersistentData().putBoolean(gorillacake.gorillacake,true);
+                    }
+                }
+            });
+
+
+             */
             CuriosApi.getCuriosInventory(player).ifPresent((handler)->{
                 for (AttributeModifier attributeModifier : handler.getModifiers().values()){
                     if (attributeModifier.equals(thefruit.attributeModifier())){
@@ -1460,36 +1483,38 @@ public class AllEvent {
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
                         if (stack.is(Items.parasite.get())) {
-                            if (Handler.hascurio(player, Items.parasite.get())) {
+                            if (stack.getTag()!= null) {
                                 if (Handler.hascurio(player, Items.parasite.get())) {
-                                    if (event.getItem().getUseAnimation() == UseAnim.EAT) {
-                                        if (event.getItem().getFoodProperties(player) != null) {
-                                            int siz = (int) (event.getItem().getFoodProperties(player).getNutrition() + event.getItem().getFoodProperties(player).getSaturationModifier());
-                                            if (stack.getOrCreateTag().getInt(lvl_parasite) <= 1) {
-                                                siz /= 2;
-                                                stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
+                                    if (Handler.hascurio(player, Items.parasite.get())) {
+                                        if (event.getItem().getUseAnimation() == UseAnim.EAT) {
+                                            if (event.getItem().getFoodProperties(player) != null) {
+                                                int siz = (int) (event.getItem().getFoodProperties(player).getNutrition() + event.getItem().getFoodProperties(player).getSaturationModifier());
+                                                if (stack.getOrCreateTag().getInt(lvl_parasite) <= 1) {
+                                                    siz /= 2;
+                                                    stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
 
-                                                if (player.getFoodData().getFoodLevel() < 19) {
-                                                    player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - 1);
+                                                    if (player.getFoodData().getFoodLevel() < 19) {
+                                                        player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - 1);
+                                                    }
                                                 }
-                                            }
-                                            if (stack.getOrCreateTag().getInt(lvl_parasite) <= 2 && stack.getOrCreateTag().getInt(lvl_parasite) > 1) {
-                                                siz /= 3;
-                                                stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
-                                                if (player.getFoodData().getFoodLevel() < 19) {
-                                                    player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() - 1);
+                                                if (stack.getOrCreateTag().getInt(lvl_parasite) <= 2 && stack.getOrCreateTag().getInt(lvl_parasite) > 1) {
+                                                    siz /= 3;
+                                                    stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
+                                                    if (player.getFoodData().getFoodLevel() < 19) {
+                                                        player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() - 1);
+                                                    }
                                                 }
-                                            }
-                                            if (stack.getOrCreateTag().getInt(lvl_parasite) <= 3 && stack.getOrCreateTag().getInt(lvl_parasite) > 2) {
-                                                siz /= 4;
-                                                stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
-                                                if (player.getFoodData().getFoodLevel() < 19) {
-                                                    player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - 1);
-                                                    player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() - 1);
+                                                if (stack.getOrCreateTag().getInt(lvl_parasite) <= 3 && stack.getOrCreateTag().getInt(lvl_parasite) > 2) {
+                                                    siz /= 4;
+                                                    stack.getOrCreateTag().putInt(sizeLevel, stack.getOrCreateTag().getInt(sizeLevel) + siz);
+                                                    if (player.getFoodData().getFoodLevel() < 19) {
+                                                        player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - 1);
+                                                        player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel() - 1);
+                                                    }
                                                 }
-                                            }
-                                            if (!player.level().isClientSide) {
-                                                player.displayClientMessage(Component.translatable("寄生虫增长了"+(siz)+"克").withStyle(ChatFormatting.RED), true);
+                                                if (!player.level().isClientSide) {
+                                                    player.displayClientMessage(Component.translatable("寄生虫增长了" + (siz) + "克").withStyle(ChatFormatting.RED), true);
+                                                }
                                             }
                                         }
                                     }
@@ -1641,7 +1666,8 @@ public class AllEvent {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            {
+
+                           if (stack.getTag()!= null){
                                 if (stack.getOrCreateTag().getBoolean(cod)&&
                                         stack.getOrCreateTag().getBoolean(SALMON)&&
                                         stack.getOrCreateTag().getBoolean(CHICKEN)&&
@@ -1726,13 +1752,15 @@ public class AllEvent {
         if (event.getSource().getEntity() instanceof Player player){
             ItemStack stack = player.getItemInHand(InteractionHand.OFF_HAND);
             if (stack.is(Items.evilmug.get())){
-                if (stack.getOrCreateTag().getInt(evilmug.blood)<100){
-                    int s = (int) event.getAmount();
-                    if (s > 100){
-                        s = 100;
-                    }
-                    if (stack.getTag() != null) {
-                        stack.getTag().putInt(evilmug.blood,stack.getTag().getInt(evilmug.blood) + s);
+                if (stack.getTag()!= null) {
+                    if (stack.getOrCreateTag().getInt(evilmug.blood) < 100) {
+                        int s = (int) event.getAmount();
+                        if (s > 100) {
+                            s = 100;
+                        }
+                        if (stack.getTag() != null) {
+                            stack.getTag().putInt(evilmug.blood, stack.getTag().getInt(evilmug.blood) + s);
+                        }
                     }
                 }
             }
@@ -1865,18 +1893,20 @@ public class AllEvent {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.nightmareanchor.get())) {
-                                if (Handler.hascurio(player, Items.nightmareanchor.get())) {
+                                if (stack.getTag() != null) {
+                                    if (Handler.hascurio(player, Items.nightmareanchor.get())) {
 
-                                    double playerX = player.getX();
-                                    double playerY = player.getY();
-                                    double playerZ = player.getZ();
+                                        double playerX = player.getX();
+                                        double playerY = player.getY();
+                                        double playerZ = player.getZ();
 
-                                    stack.getOrCreateTag().putDouble("x", playerX);
-                                    stack.getOrCreateTag().putDouble("y", playerY);
-                                    stack.getOrCreateTag().putDouble("z", playerZ);
+                                        stack.getOrCreateTag().putDouble("x", playerX);
+                                        stack.getOrCreateTag().putDouble("y", playerY);
+                                        stack.getOrCreateTag().putDouble("z", playerZ);
 
 
-                                    stack.getOrCreateTag().putString("level", player.level().dimension().toString());
+                                        stack.getOrCreateTag().putString("level", player.level().dimension().toString());
+                                    }
                                 }
                             }
                         }

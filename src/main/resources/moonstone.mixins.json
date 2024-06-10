@@ -13,6 +13,7 @@
     "WardenMixin"
   ],
   "client": [
+    "clilt.LivingEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

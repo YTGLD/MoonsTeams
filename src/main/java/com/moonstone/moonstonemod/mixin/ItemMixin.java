@@ -31,9 +31,11 @@ public abstract class ItemMixin {
                 if (!Other.isEmpty()) {
                     if (Other.getItem() instanceof wind_and_rain) {
                         if (me.getItem() instanceof SwordItem) {
-                            if (!me.getOrCreateTag().getBoolean(wind_and_rain.wind)) {
-                                me.getOrCreateTag().putBoolean(wind_and_rain.wind, true);
-                                Other.shrink(1);
+                            if (me.getTag() != null) {
+                                if (!me.getOrCreateTag().getBoolean(wind_and_rain.wind)) {
+                                    me.getOrCreateTag().putBoolean(wind_and_rain.wind, true);
+                                    Other.shrink(1);
+                                }
                             }
                         }
                     }

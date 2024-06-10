@@ -620,6 +620,13 @@
   "entity.moonstone.cell_zombie": "cell zombie",
 
   "entity.moonstone.flysword": "fly sword",
-  "entity.moonstone.suddenrain": "sudden rain"
+  "entity.moonstone.suddenrain": "sudden rain",
+
+  "item.moonstone.gorillacake": "gorilla cake",
+  "item.moonstone.gorilladna": "gorilla dna",
+
+  "item.gorilladna.tool.string": "Enable pathogens to modify chimpanzee genes and significantly improve their intelligence",
+  "item.gorilladna.tool.string.1": "And make the iris of the gorilla's eyes appear green without triggering any immune response\n",
+  "item.gorilladna.tool.string.2": "  This is the time when chimpanzees are rising!"
 }
 
