@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmprism",
+  "criteria": {
+    "dna": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:dna"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.dna.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:dna"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.dna"
+    }
+  },
+  "requirements": [
+    [
+      "dna"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

@@ -29,6 +29,9 @@ public class fortunecrystal extends UnCommonItem {
             if (Handler.hascurio(player, Items.biggreedcrystal.get())){
                 return false;
             }
+            if (Handler.hascurio(player,this)){
+                return false;
+            }
         }
 
         return true;

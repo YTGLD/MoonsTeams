@@ -1,7 +1,9 @@
 package com.moonstone.moonstonemod.mixin;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.item.nightmare.nightmaremoai;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
@@ -52,9 +54,9 @@ public abstract class EnchantmentMenuMixin {
                     EnchantmentMenu container = (EnchantmentMenu) (Object) this;
                     access.execute((level, pos) -> {
                         List<EnchantmentInstance> rolledEnchantments = getEnchantmentList(itemstack, p_39466_, container.costs[p_39466_]);
-                        player.onEnchantmentPerformed(itemstack, p_39466_ + 2);
+                        player.onEnchantmentPerformed(itemstack, (int) (p_39466_ + Config.nightmare_moai.get()));
                         for (EnchantmentInstance data : rolledEnchantments) {
-                            itemstack.enchant(data.enchantment, data.level + 2);
+                            itemstack.enchant(data.enchantment, (int) (data.level +  Config.nightmare_moai.get()));
                             enchantSlots.setChanged();
                             enchantmentSeed.set(player.getEnchantmentSeed());
                             slotsChanged(enchantSlots);

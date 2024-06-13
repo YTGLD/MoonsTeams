@@ -1,7 +1,9 @@
 package com.moonstone.moonstonemod.event;
 
 import com.google.common.collect.Lists;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.cell_giant;
 import com.moonstone.moonstonemod.entity.cell_zombie;
 import com.moonstone.moonstonemod.entity.flysword;
@@ -15,7 +17,7 @@ import com.moonstone.moonstonemod.item.bnabush.cell_boom;
 import com.moonstone.moonstonemod.item.bnabush.cell_calcification;
 import com.moonstone.moonstonemod.item.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
-import com.moonstone.moonstonemod.item.gorilla.gorillacake;
+import com.moonstone.moonstonemod.item.maxitem.the_heart;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
@@ -25,6 +27,8 @@ import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -67,10 +71,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class AllEvent {
     private int shield = 1;
@@ -104,27 +105,47 @@ public class AllEvent {
     public static final  String calcification = cell_calcification.cc;
     public static final  String cb_blood = cell_blood.c_blood;
     public static final String Gorillas ="Gorillas";
-    /*
+
     @SubscribeEvent
-    public void GorillasLivingTickEvent(LivingEvent.LivingTickEvent event){
-        if (event.getEntity().getPersistentData().getInt(Gorillas)> 0){
-            if (event.getEntity().tickCount % 20 == 0 ){
-                event.getEntity().getPersistentData().putInt(Gorillas,
-                        event.getEntity().getPersistentData().getInt(Gorillas)-1);
-            }
-            if (event.getEntity().getPersistentData().getInt(Gorillas) > 0) {
-                if (event.getEntity().tickCount % 20 == 0) {
-                    event.getEntity().hurt(event.getEntity().damageSources().magic(), 2);
-                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 3));
-                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 3));
-                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
-                }
+    public void the_heart(LivingDropsEvent event){
+        if ((event.getSource().getEntity() instanceof Player player)) {
+            if (Handler.hascurio(player,Items.the_heart.get())){
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+
+                            if (!stack.isEmpty()){
+                                if (stack.getTag() != null) {
+                                    CompoundTag compoundtag = stack.getOrCreateTag();
+                                    ListTag listtag = compoundtag.getList("Items", 10);
+                                    for(int s = 0; s < listtag.size(); ++s){
+                                        CompoundTag compoundtag1 = listtag.getCompound(s);
+                                        ItemStack itemstack = ItemStack.of(compoundtag1);
+
+                                        Collection<ItemEntity> drop = event.getDrops();
+                                        for (ItemEntity entity : drop) {
+                                            ItemStack i_stack = entity.getItem();
+                                            if (i_stack.is(itemstack.getItem())) {
+                                                if (!(i_stack.getMaxStackSize() < 3)) {
+                                                    i_stack.setCount(i_stack.getCount() * 3);
+                                                    entity.setItem(i_stack);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
             }
         }
     }
-
-
-     */
     @SubscribeEvent
     public void Boom(LivingHurtEvent event){
         if ((event.getEntity() instanceof Player player)) {
@@ -249,29 +270,7 @@ public class AllEvent {
             }
         }
     }
-    /*
-    @SubscribeEvent
-    public void BabyEntitySpawnEvent(BabyEntitySpawnEvent event){
-        if (event.getCausedByPlayer()!= null) {
-            Player player = event.getCausedByPlayer();
-            int s = Mth.nextInt(RandomSource.create(), 1, 100);
-            if (!Handler.hascurio(player, Items.brain.get())) {
-                if (s == 1) {
-                    if (event.getChild()!= null)
-                    {
-                        ItemEntity entity =  new ItemEntity(player.level(),
-                                event.getParentA().getX(),
-                                event.getParentA().getY(),
-                                event.getParentA().getZ(),
-                                new ItemStack(Items.brain.get()));
-                        player.level().addFreshEntity(entity);
-                    }
-                }
-            }
-        }
-    }
 
-     */
     @SubscribeEvent
     public void beacon(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
@@ -304,8 +303,8 @@ public class AllEvent {
             if (Handler.hascurio(player,Items.brain.get())){
                 String name = event.getEntity().getName().getString();
                 player.getPersistentData().putInt(name, player.getPersistentData().getInt(name) +1);
-                if (player.getPersistentData().getInt(name)>= 5){
-                    event.setAmount(event.getAmount() * 2.25f);
+                if (player.getPersistentData().getInt(name)>= Config.m_brain_many.get()){
+                    event.setAmount((float) (event.getAmount() * Config.m_brain_critical.get()));
                     player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.NEUTRAL, 4.5F, 4.1F);
                     player.getPersistentData().remove(name);
                 }
@@ -533,7 +532,7 @@ public class AllEvent {
                                     if (stack.is(Items.plague.get())) {
                                         if (stack.getTag().getBoolean(plague.YanJIuBoolean)){
 
-                                            event.setNewSpeed(event.getNewSpeed() * 2.7f);
+                                            event.setNewSpeed(event.getNewSpeed() * 1.7f);
                                         }
                                     }
                                 }
@@ -560,7 +559,7 @@ public class AllEvent {
                                     if (stack.is(Items.plague.get())) {
                                         if (stack.getTag().getBoolean(plague.YanJIuBoolean)){
 
-                                            event.setAmount(event.getAmount() *4);
+                                            event.setAmount(event.getAmount() *2);
                                         }
                                     }
                                 }
@@ -599,7 +598,6 @@ public class AllEvent {
                 });
             }
         }
-
     }
     @SubscribeEvent
     public void plague(LivingDeathEvent event) {
@@ -615,7 +613,7 @@ public class AllEvent {
                             if (!stack.isEmpty()){
                                 if (stack.getTag() != null) {
                                     if (stack.is(Items.plague.get())) {
-                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu)+0.1));
+                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu) + Config.plague_speed.get()));
 
                                         if (!stack.getTag().getBoolean(plague.YanJIuBoolean)){
                                             player.displayClientMessage(Component.translatable(""+(stack.getOrCreateTag().getFloat(plague.YanJIu))).append("%").withStyle(ChatFormatting.RED), true);
@@ -2266,6 +2264,11 @@ public class AllEvent {
         if (stack.getItem() instanceof Iplague) {
             tooltipEvent.setBorderStart(0xFF800000);
             tooltipEvent.setBorderStart(0xFF800000);
+        }
+
+        if (stack.getItem() instanceof the_heart) {
+            tooltipEvent.setBorderStart(0xFFFF8C00);
+            tooltipEvent.setBorderEnd(0xFFFFD700);
         }
     }
     public static float EffectInstance(Player player) {

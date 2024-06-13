@@ -455,8 +455,8 @@
 
   "item.plague.tool.string.15": "+100% MOB DAMAGE",
   "item.plague.tool.string.16": "+150% BOSS DAMAGE",
-  "item.plague.tool.string.17": "+300% HEAL",
-  "item.plague.tool.string.18": "+170% DIG SPEED",
+  "item.plague.tool.string.17": "+100% HEAL",
+  "item.plague.tool.string.18": "+70% DIG SPEED",
 
   "item.moonstone.soulbook": "a book",
 
@@ -627,6 +627,21 @@
 
   "item.gorilladna.tool.string": "Enable pathogens to modify chimpanzee genes and significantly improve their intelligence",
   "item.gorilladna.tool.string.1": "And make the iris of the gorilla's eyes appear green without triggering any immune response\n",
-  "item.gorilladna.tool.string.2": "  This is the time when chimpanzees are rising!"
+  "item.gorilladna.tool.string.2": "  This is the time when chimpanzees are rising!",
+  "advancements.tooltip.dna.text": "dna?",
+
+  "advancements.tooltip.germ.text": "Wear a culture dish and find it in the AncientCity",
+
+  "advancements.tooltip.fungus.text": "Kill mushroom cattle while wearing a culture dish and having a weak effect,",
+  "advancements.tooltip.virus.text": "When wearing a culture dish and experiencing weak effects, being hit by a withered skull",
+  "advancements.tooltip.parasite.text": "Wear a petri dish and eat: raw cod, raw salmon, raw beef, raw mutton, raw pork, raw rabbit meat, tropical fish, chicken, and eat any food",
+
+
+  "item.the_heart.tool.string": "Right click on the item to store in the heart, which can store up to 4 items",
+  "item.the_heart.tool.string.1": "If the dropped object is one of the items in the heart",
+  "item.the_heart.tool.string.2": "So multiply the number of dropped objects by 3",
+  "item.the_heart.tool.string.3": "can not remove",
+  "advancements.tooltip.the_heart.text": "treasure item",
+  "item.moonstone.the_heart": "the heart"
 }
 

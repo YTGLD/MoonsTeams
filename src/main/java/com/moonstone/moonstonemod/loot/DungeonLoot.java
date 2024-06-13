@@ -44,6 +44,10 @@ public class DungeonLoot extends LootModifier {
             if (idSting.contains("treasure")){
                 if (entity instanceof Player player) {
 
+                    if (T == 6){
+                        generatedLoot.add(new ItemStack(Items.the_heart.get()));
+                    }
+
                     if (Handler.hascurio(player, Items.necora.get())){
                         if (!Handler.hascurio(player,Items.giant.get())){
                             if (giant == 1) {
@@ -88,17 +92,20 @@ public class DungeonLoot extends LootModifier {
                             generatedLoot.add(new ItemStack(Items.wind_and_rain.get()));
                         }
                     }
+                    if (T == 3) {
+                        if (!Handler.hascurio(player,Items.plague.get())) {
+                            generatedLoot.add(new ItemStack(Items.plague.get()));
+                        }
+                    }
+                    if (T == 4) {
+                        generatedLoot.add(new ItemStack(Items.twistedstone.get()));
+                    }
+                    if (T == 5) {
+                        generatedLoot.add(new ItemStack(Items.ectoplasmstone.get()));
+                    }
                 }
 
-                if (T == 3) {
-                    generatedLoot.add(new ItemStack(Items.plague.get()));
-                }
-                if (T == 4) {
-                    generatedLoot.add(new ItemStack(Items.twistedstone.get()));
-                }
-                if (T == 5) {
-                    generatedLoot.add(new ItemStack(Items.ectoplasmstone.get()));
-                }
+
             }
             if (idSting.contains("dungeon") || idSting.contains("mineshaft")) {
                 if (entity instanceof Player player) {
@@ -212,6 +219,11 @@ public class DungeonLoot extends LootModifier {
             }
             if (idSting.contains("city")) {
                 if (context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Player player) {
+                    if (Handler.hascurio(player,Items.dna.get())){
+                        if (a == 7) {
+                            generatedLoot.add(new ItemStack(Items.germ.get()));
+                        }
+                    }
                     if (Handler.hascurio(player, Items.bloodvirus.get())) {
                         if (a == 1) {
                             generatedLoot.add(new ItemStack(Items.bloodgene.get()));

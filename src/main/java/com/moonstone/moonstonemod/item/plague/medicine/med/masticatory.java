@@ -22,7 +22,7 @@ public class masticatory extends medIC {
             tooltip.add(Component.translatable("item.masticatory.tool.string.1").withStyle(ChatFormatting.RED));
         } else {
             tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("SHIFT").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
+            tooltip.add(Component.literal("SHIFT").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
         }
 
         tooltip.add(Component.translatable(""));

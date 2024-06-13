@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.uncommon;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.Items;
@@ -36,7 +37,7 @@ public class plague extends UnCommonItem {
         stack.getOrCreateTag().putBoolean(DoPlague,true);
         if (slotContext.entity().tickCount%20 == 0) {
             if (stack.getOrCreateTag().getFloat(FanYanJIu) < 100) {
-                stack.getOrCreateTag().putFloat(FanYanJIu, (float) (stack.getOrCreateTag().getFloat(FanYanJIu) + 0.01));
+                stack.getOrCreateTag().putFloat(FanYanJIu, (float) (stack.getOrCreateTag().getFloat(FanYanJIu) + Config.plague_pain.get()));
             }
         }
 
@@ -84,11 +85,15 @@ public class plague extends UnCommonItem {
             c = -c;
             c /= 3;
             c /= 100;
+
+            c *= Config.plague_effect.get();
             modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_TOTAL));
             modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
             float s = stack.getOrCreateTag().getFloat(FanYanJIu) / 100 / 3 / 100;
             s = -s;
+            s *= Config.plague_effect.get();
+
             modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_TOTAL));
             modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_TOTAL));
             modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_TOTAL));

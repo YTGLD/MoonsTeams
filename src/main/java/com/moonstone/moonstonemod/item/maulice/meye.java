@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.maulice;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.moonstoneitem.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -24,11 +25,11 @@ import java.util.List;
 import java.util.UUID;
 
 public class meye extends MLS {
+
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
 
         if (slotContext.entity() instanceof Player player){
-
             Vec3 playerPos = player.position().add(0, 0.75, 0);
             int range = 10;
             List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));

@@ -53,7 +53,7 @@ public class quadriceps extends medIC {
             tooltip.add(Component.translatable("item.quadriceps.tool.string.1").withStyle(ChatFormatting.RED));
             tooltip.add(Component.translatable("item.quadriceps.tool.string.2").withStyle(ChatFormatting.RED));
         } else {
-            tooltip.add(Component.translatable("SHIFT").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
+            tooltip.add(Component.literal("SHIFT").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
         }
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable(""+ medicinebox.do_jump).withStyle(ChatFormatting.RED));

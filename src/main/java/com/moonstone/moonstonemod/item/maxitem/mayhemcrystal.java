@@ -27,6 +27,9 @@ public class mayhemcrystal extends UnCommonItem  implements Iwar {
             if (Handler.hascurio(player, Items.bigwarcrystal.get())){
                 return false;
             }
+            if (Handler.hascurio(player,this)){
+                return false;
+            }
         }
 
         return true;

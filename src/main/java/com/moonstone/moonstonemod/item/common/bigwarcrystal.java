@@ -27,6 +27,9 @@ public class bigwarcrystal extends CommonItem implements Iwar {
             if (Handler.hascurio(player, Items.warcrystal.get())){
                 return false;
             }
+            if (Handler.hascurio(player,this)){
+                return false;
+            }
         }
 
         return true;

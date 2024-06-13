@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nightmare;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

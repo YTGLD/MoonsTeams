@@ -29,6 +29,9 @@ public class biggreedcrystal extends CommonItem {
             if (Handler.hascurio(player, Items.greedcrystal.get())){
                 return false;
             }
+            if (Handler.hascurio(player,this)){
+                return false;
+            }
         }
 
         return true;

@@ -395,8 +395,6 @@
   "item.diemug.tool.string.1": "即可储存药水效果(可存在8种)",
   "item.diemug.tool.string.2": "饮用后获得所有药水效果",
 
-
-
   "item.evilcandle.tool.string": "熔岩行者",
   "item.evilcandle.tool.string.1": "抵挡80%熔岩伤害",
   "item.evilcandle.tool.string.2": "快速熄灭你身上火焰",
@@ -460,8 +458,8 @@
 
   "item.plague.tool.string.15": "+100% 对怪物伤害",
   "item.plague.tool.string.16": "+150% 对高生命值生物的伤害",
-  "item.plague.tool.string.17": "+300% 治疗",
-  "item.plague.tool.string.18": "+170% 挖掘速度",
+  "item.plague.tool.string.17": "+100% 治疗",
+  "item.plague.tool.string.18": "+70% 挖掘速度",
   "item.thefruit.tool.string.3": "深渊之眼将克服这些效果",
 
   "item.moonstone.doomeye": "七剑修罗之心",
@@ -595,7 +593,7 @@
   "item.fortunecrystal.tool.string": "+3 时运",
   "item.moonstone.fortunecrystal": "财富水晶",
   "item.moonstone.mayhemcrystal": "混乱水晶",
-  "item.polyphagia.tool.string": "eat enchanted gold apple",
+  "item.polyphagia.tool.string": "吃一个附魔金苹果",
   "item.moonstone.dna": "培养皿",
 
 
@@ -640,8 +638,21 @@
   "item.moonstone.gorilladna": "猩猩流感",
   "item.gorilladna.tool.string": "使病原体能够修改你的基因进而显著提高智商",
   "item.gorilladna.tool.string.1": "并使双眼虹膜呈现绿色而不会触发任何免疫反应",
-  "item.gorilladna.tool.string.2": "  瘟疫虹膜"
+  "item.gorilladna.tool.string.2": "  瘟疫虹膜",
+  "advancements.tooltip.germ.text": "佩戴培养皿在远古城市找到",
+  "advancements.tooltip.dna.text": "又是无聊的事情",
+  "advancements.tooltip.fungus.text": "在佩戴培养皿并有虚弱效果的情况下杀蘑菇牛",
+  "advancements.tooltip.virus.text": "佩戴培养皿并存在虚弱效果时被凋零骷髅击打",
+  "advancements.tooltip.parasite.text": "佩戴培养皿并吃下：生鳕鱼，生鲑鱼，生牛肉，生羊肉，生猪肉，生兔子肉，热带鱼，鸡肉，在吃下任意食物",
 
+
+
+  "item.the_heart.tool.string": "右键物品存入心脏当中，可存入4种(不可叠加)",
+  "item.the_heart.tool.string.1": "如果掉落物是心脏里物品的某一项",
+  "item.the_heart.tool.string.3": "不可以移除心脏内部物品",
+  "item.the_heart.tool.string.2": "那么该掉落物数量乘以3",
+  "item.moonstone.the_heart": "富饶之心",
+  "advancements.tooltip.the_heart.text": "宝藏物品"
 }
 
 
