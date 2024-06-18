@@ -1,0 +1,15 @@
+{
+  "name": "卑微之酿",
+  "icon": "moonstone:nightmarewater",
+  "category": "moonstone:nightmare",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:nightmarewater",
+      "title": "-卑微之酿-",
+      "text": "发现于地牢和矿井，正常饮用是不可取的，只有拥有深渊之眼的玩家才可以驾驭，通常与深渊方尖碑一起使用"
+    }
+  ]
+}

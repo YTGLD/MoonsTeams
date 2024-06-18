@@ -1,0 +1,15 @@
+{
+  "name": "§4Necora病毒",
+  "icon": "moonstone:necora",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:necora",
+      "title": "-Necora病毒-",
+      "text": "僵尸的监管者，必须佩戴它才能获取和发现此系列物品"
+    }
+  ]
+}

@@ -155,21 +155,20 @@ public class Items {
     public static final RegistryObject<Item> brain =REGISTRY.register("brain", brain::new);
     public static final RegistryObject<Item> beacon =REGISTRY.register("beacon", beacon::new);
     public static final RegistryObject<Item> mhead =REGISTRY.register("mhead", mhead::new);
-    public static final RegistryObject<Item> cell =REGISTRY.register("cell", com.moonstone.moonstonemod.item.bnabush.cell::new);
-    public static final RegistryObject<Item> adrenaline =REGISTRY.register("adrenaline", com.moonstone.moonstonemod.item.bnabush.adrenaline::new);
-    public static final RegistryObject<Item> cell_mummy =REGISTRY.register("cell_mummy", com.moonstone.moonstonemod.item.bnabush.cell_mummy::new);
-    public static final RegistryObject<Item> cell_boom =REGISTRY.register("cell_boom", com.moonstone.moonstonemod.item.bnabush.cell_boom::new);
-    public static final RegistryObject<Item> cell_calcification =REGISTRY.register("cell_calcification", com.moonstone.moonstonemod.item.bnabush.cell_calcification::new);
-    public static final RegistryObject<Item> cell_blood =REGISTRY.register("cell_blood", com.moonstone.moonstonemod.item.bnabush.cell_blood::new);
-    public static final RegistryObject<Item> motor =REGISTRY.register("motor", com.moonstone.moonstonemod.item.bnabush.me.motor::new);
-    public static final RegistryObject<Item> watergen =REGISTRY.register("watergen", com.moonstone.moonstonemod.item.bnabush.me.watergen::new);
-    public static final RegistryObject<Item> air =REGISTRY.register("air", com.moonstone.moonstonemod.item.bnabush.me.air::new);
-    public static final RegistryObject<Item> giant =REGISTRY.register("giant", com.moonstone.moonstonemod.item.bnabush.giant::new);
+    public static final RegistryObject<Item> cell =REGISTRY.register("cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell::new);
+    public static final RegistryObject<Item> adrenaline =REGISTRY.register("adrenaline", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.adrenaline::new);
+    public static final RegistryObject<Item> cell_mummy =REGISTRY.register("cell_mummy", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_mummy::new);
+    public static final RegistryObject<Item> cell_boom =REGISTRY.register("cell_boom", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_boom::new);
+    public static final RegistryObject<Item> cell_calcification =REGISTRY.register("cell_calcification", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_calcification::new);
+    public static final RegistryObject<Item> cell_blood =REGISTRY.register("cell_blood", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_blood::new);
+    public static final RegistryObject<Item> motor =REGISTRY.register("motor", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.me.motor::new);
+    public static final RegistryObject<Item> watergen =REGISTRY.register("watergen", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.me.watergen::new);
+    public static final RegistryObject<Item> air =REGISTRY.register("air", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.me.air::new);
+    public static final RegistryObject<Item> giant =REGISTRY.register("giant", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giant::new);
     public static final RegistryObject<Item> the_heart =REGISTRY.register("the_heart", com.moonstone.moonstonemod.item.maxitem.the_heart::new);
+    public static final RegistryObject<Item> nightmare_orb =REGISTRY.register("nightmare_orb", com.moonstone.moonstonemod.item.nightmare.nightmare_orb::new);
 
-    /*
-    public static final RegistryObject<Item> test_image =REGISTRY.register("test_image", test_image::new);
-    public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.item.gorilla.gorillacake::new);
-    public static final RegistryObject<Item> gorilladna =REGISTRY.register("gorilladna", com.moonstone.moonstonemod.item.gorilla.gorilladna::new);
-     */
+
+    public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.item.gorillacake::new);
+
 }

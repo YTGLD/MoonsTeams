@@ -1,0 +1,15 @@
+{
+  "name": "莫里斯肾结石",
+  "icon": "moonstone:mkidney",
+  "category": "moonstone:m",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:mkidney",
+      "title": "-莫里斯肾结石-",
+      "text": "你可以理解为僵尸的肾结石，可以从僵尸身上获取"
+    }
+  ]
+}

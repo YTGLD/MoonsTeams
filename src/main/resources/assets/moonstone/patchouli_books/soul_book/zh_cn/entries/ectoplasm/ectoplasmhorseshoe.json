@@ -1,0 +1,15 @@
+{
+  "name": "灵质马蹄",
+  "icon": "moonstone:ectoplasmhorseshoe",
+  "category": "moonstone:ectoplasm",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:ectoplasmhorseshoe",
+      "title": "-灵质马蹄-",
+      "text": "地牢，矿井的战利品"
+    }
+  ]
+}

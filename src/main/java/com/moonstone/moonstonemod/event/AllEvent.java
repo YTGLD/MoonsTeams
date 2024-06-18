@@ -3,7 +3,6 @@ package com.moonstone.moonstonemod.event;
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.cell_giant;
 import com.moonstone.moonstonemod.entity.cell_zombie;
 import com.moonstone.moonstonemod.entity.flysword;
@@ -12,10 +11,10 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.Perhaps;
-import com.moonstone.moonstonemod.item.bnabush.cell_blood;
-import com.moonstone.moonstonemod.item.bnabush.cell_boom;
-import com.moonstone.moonstonemod.item.bnabush.cell_calcification;
-import com.moonstone.moonstonemod.item.bnabush.cell_mummy;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_blood;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_boom;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_calcification;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.maxitem.the_heart;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
@@ -600,7 +599,7 @@ public class AllEvent {
         }
     }
     @SubscribeEvent
-    public void plague(LivingDeathEvent event) {
+    public void plague(LivingDropsEvent event) {
         if (event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player,  Items.plague.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
@@ -674,7 +673,7 @@ public class AllEvent {
             /*
             CuriosApi.getCuriosInventory(player).ifPresent((handler)->{
                 for (AttributeModifier attributeModifier : handler.getModifiers().values()){
-                    if (attributeModifier.equals(com.moonstone.moonstonemod.item.gorilla.gorillacake.attributeModifier())){
+                    if (attributeModifier.equals(com.moonstone.moonstonemod.item.gorillacake.attributeModifier())){
                         player.getPersistentData().putBoolean(gorillacake.gorillacake,true);
                     }
                 }
@@ -1007,16 +1006,13 @@ public class AllEvent {
         }
         if (event.getSource().getDirectEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.maxamout.get())) {
-                event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0));
-                player.heal(event.getAmount() / 10);
+                event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, 0));
+                player.heal(event.getAmount() / 20);
 
-                if (Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
-                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
+                if (Mth.nextInt(RandomSource.create(), 1, 12) == 1) {
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 0));
                     event.getEntity().knockback(0.2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
                     event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.YELLOW_WOOL.defaultBlockState()));
-
-                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
-
                 }
             }
         }

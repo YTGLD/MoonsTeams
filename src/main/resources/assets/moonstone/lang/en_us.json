@@ -409,7 +409,7 @@
   "item.maxamout.tool.string": "Attacks weaken enemies",
   "item.maxamout.tool.string.1": "Reduce damage taken by 15%",
   "item.maxamout.tool.string.2": "There is a probability of obtaining damage absorption when injured",
-  "item.maxamout.tool.string.3": "Increase Vampire by 10%",
+  "item.maxamout.tool.string.3": "Increase Vampire by 5%",
   "item.maxamout.tool.string.4": "There is a probability that during an attack, the enemy will be knocked away and slowed down.",
   "item.maxamout.tool.string.5": "And obtain the power effect",
   "item.maxamout.tool.string.6": "After taking damage, 20% will be returned to the attacker.",
@@ -642,6 +642,17 @@
   "item.the_heart.tool.string.2": "So multiply the number of dropped objects by 3",
   "item.the_heart.tool.string.3": "can not remove",
   "advancements.tooltip.the_heart.text": "treasure item",
-  "item.moonstone.the_heart": "the heart"
+  "item.moonstone.the_heart": "the heart",
+  "item.moonstone.nightmare_orb": "nightmare_orb",
+
+  "item.nightmare_orb.tool.string": "When your health is below 20%",
+  "item.nightmare_orb.tool.string.1": "All curses from the Abyss will be reversed into gains for you",
+  "item.nightmare_orb.tool.string.2": "But deal 1% maximum health damage per second",
+  "item.nightmare_orb.tool.string.3": "And unable to receive treatment during this period",
+
+  "tool.string.ectoplasmball": "",
+  "tool.string.ectoplasmball.1": "",
+  "tool.string.ectoplasmball.2": "",
+  "tool.string.ectoplasmball.3": ""
 }
 

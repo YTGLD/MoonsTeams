@@ -7,10 +7,7 @@ import com.moonstone.moonstonemod.client.particle.red;
 import com.moonstone.moonstonemod.entity.c.CellZombieG;
 import com.moonstone.moonstonemod.entity.c.SwordRenderer;
 import com.moonstone.moonstonemod.entity.c.ZombieRenderer;
-import com.moonstone.moonstonemod.event.AllEvent;
-import com.moonstone.moonstonemod.event.LootEvent;
-import com.moonstone.moonstonemod.event.Tool;
-import com.moonstone.moonstonemod.event.Village;
+import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -35,6 +32,8 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new LootEvent());
         MinecraftForge.EVENT_BUS.register(new Village());
         MinecraftForge.EVENT_BUS.register(new Tool());
+        MinecraftForge.EVENT_BUS.register(new LootTableEvent());
+        MinecraftForge.EVENT_BUS.register(new NewEvent());
 
         LootReg.REGISTRY.register(modEventBus);
 

@@ -1,0 +1,15 @@
+{
+  "name": "§4深渊之眼",
+  "icon": "moonstone:nightmareeye",
+  "category": "moonstone:nightmare",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:nightmareeye",
+      "title": "-深渊之眼-",
+      "text": "深渊的领导者，必须佩戴它才能获取和发现深渊系列物品"
+    }
+  ]
+}

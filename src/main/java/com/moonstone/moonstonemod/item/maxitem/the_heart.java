@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem;
 
+import com.moonstone.moonstonemod.Handler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -10,6 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -20,14 +22,31 @@ import net.minecraft.world.inventory.tooltip.BundleTooltip;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurio;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class the_heart extends Item  {
+public class the_heart extends Item implements ICurioItem {
     public the_heart() {
         super(new Properties().stacksTo(1).rarity(Rarity.create("the_heart", ChatFormatting.GOLD)));
+    }
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            return !Handler.hascurio(player, stack.getItem());
+        }
+        return true;
+    }
+
+    @NotNull
+    @Override
+    public ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, int lootingLevel, boolean recentlyHit, ItemStack stack) {
+        return ICurio.DropRule.ALWAYS_KEEP;
     }
     public boolean overrideOtherStackedOnMe(ItemStack p_150742_, ItemStack p_150743_, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
         if (p_150742_.getCount() != 1) return false;

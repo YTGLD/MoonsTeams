@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -56,6 +57,11 @@ public class nightmareeye extends nightmare {
             s += a;
         }
 
+        if (Handler.hascurio(player, Items.nightmare_orb.get())){
+            if (player.getHealth()<= player.getMaxHealth() / 5) {
+                s = -s;
+            }
+        }
 
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
         modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));

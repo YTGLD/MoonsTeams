@@ -1,0 +1,15 @@
+{
+  "name": "病毒",
+  "icon": "moonstone:virus",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:virus",
+      "title": "-病毒-",
+      "text": "佩戴培养皿并存在虚弱效果时被凋零骷髅击打"
+    }
+  ]
+}

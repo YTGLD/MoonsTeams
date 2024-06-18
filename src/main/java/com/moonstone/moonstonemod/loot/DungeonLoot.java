@@ -12,8 +12,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
@@ -27,26 +33,24 @@ public class DungeonLoot extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+
+
         ResourceLocation s = context.getQueriedLootTableId();
         String idSting = String.valueOf(s);
         Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
-        int W = Mth.nextInt(RandomSource.create(), 1, 30);
-        int p = Mth.nextInt(RandomSource.create(), 1, 50);
-        int N = Mth.nextInt(RandomSource.create(), 1, 45);
-        int a = Mth.nextInt(RandomSource.create(), 1, 25);
-        int ne = Mth.nextInt(RandomSource.create(), 1, 35);
-        int T = Mth.nextInt(RandomSource.create(), 1, 25);
+        int W = Mth.nextInt(RandomSource.create(), 1, 20);
 
-        int cell = Mth.nextInt(RandomSource.create(), 1, 33);
+        int N = Mth.nextInt(RandomSource.create(), 1, 60);
+        int a = Mth.nextInt(RandomSource.create(), 1, 35);
+        int ne = Mth.nextInt(RandomSource.create(), 1, 40);
+        int T = Mth.nextInt(RandomSource.create(), 1, 10);
+
+        int cell = Mth.nextInt(RandomSource.create(), 1, 50);
         int giant = Mth.nextInt(RandomSource.create(), 1, 10);
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){
                 if (entity instanceof Player player) {
-
-                    if (T == 6){
-                        generatedLoot.add(new ItemStack(Items.the_heart.get()));
-                    }
 
                     if (Handler.hascurio(player, Items.necora.get())){
                         if (!Handler.hascurio(player,Items.giant.get())){
@@ -92,16 +96,12 @@ public class DungeonLoot extends LootModifier {
                             generatedLoot.add(new ItemStack(Items.wind_and_rain.get()));
                         }
                     }
+
+
                     if (T == 3) {
                         if (!Handler.hascurio(player,Items.plague.get())) {
                             generatedLoot.add(new ItemStack(Items.plague.get()));
                         }
-                    }
-                    if (T == 4) {
-                        generatedLoot.add(new ItemStack(Items.twistedstone.get()));
-                    }
-                    if (T == 5) {
-                        generatedLoot.add(new ItemStack(Items.ectoplasmstone.get()));
                     }
                 }
 
@@ -152,71 +152,14 @@ public class DungeonLoot extends LootModifier {
                         if (N == 7) {
                             generatedLoot.add(new ItemStack(Items.nightmarerotten.get()));
                         }
+                        if (N == 8) {
+                            generatedLoot.add(new ItemStack(Items.nightmare_orb.get()));
+                        }
                     }
                 }
 
-                if (p == 1) {
-                    generatedLoot.add(3, Items.ectoplasmball.get().getDefaultInstance());
-                }
-                if (p == 2) {
-                    generatedLoot.add(2, Items.ectoplasmcloub.get().getDefaultInstance());
-                }
-                if (p == 3) {
-                    generatedLoot.add(1, Items.ectoplasmcube.get().getDefaultInstance());
-                }
-
-                if (p == 6) {
-                    generatedLoot.add(new ItemStack(Items.badgeofthedead.get()));
-                }
-                if (p == 7) {
-                    generatedLoot.add(new ItemStack(Items.battery.get()));
-                }
-                if (p == 10) {
-                    generatedLoot.add(new ItemStack(Items.blackeorb.get()));
-                }
-                if (p == 11) {
-                    generatedLoot.add(new ItemStack(Items.blueamout.get()));
-                }
-                if (p == 12) {
-                    generatedLoot.add(new ItemStack(Items.greedamout.get()));
-                }
-                if (p == 13) {
-                    generatedLoot.add(new ItemStack(Items.greedcrystal.get()));
-                }
-                if (p == 14) {
-                    generatedLoot.add(new ItemStack(Items.redamout.get()));
-                }
-                if (p == 15) {
-                    generatedLoot.add(new ItemStack(Items.warcrystal.get()));
-                }
-                if (p == 16) {
-                    generatedLoot.add(new ItemStack(Items.whiteorb.get()));
-                }
-                if (p == 17) {
-                    generatedLoot.add(new ItemStack(Items.soulbattery.get()));
-                }
-                if (p == 18) {
-                    generatedLoot.add(new ItemStack(Items.soulcube.get()));
-                }
-                if (p == 19) {
-                    generatedLoot.add(new ItemStack(Items.diemug.get()));
-                }
-                if (p == 20) {
-                    generatedLoot.add(new ItemStack(Items.evilcandle.get()));
-                }
-                if (p == 21) {
-                    generatedLoot.add(new ItemStack(Items.evilmug.get()));
-                }
-                if (p == 22) {
-                    generatedLoot.add(new ItemStack(Items.obsidianring.get()));
-                }
-                if (p == 23) {
-                    generatedLoot.add(new ItemStack(Items.magicstone.get()));
-                }
-                if (p == 24) {
-                    generatedLoot.add(new ItemStack(Items.magiceye.get()));
-                }
             }
+
             if (idSting.contains("city")) {
                 if (context.getParamOrNull(LootContextParams.THIS_ENTITY) instanceof Player player) {
                     if (Handler.hascurio(player,Items.dna.get())){
@@ -224,6 +167,7 @@ public class DungeonLoot extends LootModifier {
                             generatedLoot.add(new ItemStack(Items.germ.get()));
                         }
                     }
+
                     if (Handler.hascurio(player, Items.bloodvirus.get())) {
                         if (a == 1) {
                             generatedLoot.add(new ItemStack(Items.bloodgene.get()));
@@ -252,33 +196,15 @@ public class DungeonLoot extends LootModifier {
                         }
                     }
                 }
-                if (p == 19) {
-                    generatedLoot.add(new ItemStack(Items.nanocube.get()));
-                }
-                if (p == 20) {
-                    generatedLoot.add(new ItemStack(Items.nanorobot.get()));
-                }
-                if (p == 21) {
-                    generatedLoot.add(new ItemStack(Items.thedoomstone.get()));
-                }
-                if (p == 22) {
-                    generatedLoot.add(new ItemStack(Items.thefruit.get()));
-                }
-                if (p == 23) {
-                    generatedLoot.add(new ItemStack(Items.flyeye.get()));
-                }
-                if (p == 24) {
-                    generatedLoot.add(new ItemStack(Items.doomeye.get()));
-                }
-                if (p == 25) {
-                    generatedLoot.add(new ItemStack(Items.doomswoud.get()));
-                }
-                if (p == 26) {
-                    generatedLoot.add(new ItemStack(Items.wind.get()));
-                }
+
+
             }
         }
-        return generatedLoot;
+
+
+
+
+    return generatedLoot;
     }
     @Override
     public Codec<? extends IGlobalLootModifier> codec() {

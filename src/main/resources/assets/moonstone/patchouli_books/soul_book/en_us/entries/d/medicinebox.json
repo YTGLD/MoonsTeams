@@ -1,0 +1,15 @@
+{
+  "name": "§4医药箱",
+  "icon": "moonstone:medicinebox",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:medicinebox",
+      "title": "-医药箱-",
+      "text": "必须佩戴它才能获取和发现药物"
+    }
+  ]
+}

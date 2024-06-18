@@ -1,0 +1,15 @@
+{
+  "name": "自爆",
+  "icon": "moonstone:cell_boom",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:cell_boom",
+      "title": "-自爆-",
+      "text": "发现在宝藏类型箱子"
+    }
+  ]
+}

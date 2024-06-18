@@ -1,0 +1,15 @@
+{
+  "name": "莫里斯眼睛",
+  "icon": "moonstone:meye",
+  "category": "moonstone:m",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:meye",
+      "title": "-莫里斯眼睛-",
+      "text": "这个眼睛只能从僵尸手里获得"
+    }
+  ]
+}

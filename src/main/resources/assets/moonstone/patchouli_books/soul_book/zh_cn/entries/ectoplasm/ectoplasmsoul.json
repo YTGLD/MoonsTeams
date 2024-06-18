@@ -1,0 +1,14 @@
+{
+  "name": "没有灵魂的灵质立方",
+  "icon": "moonstone:ectoplasmsoul",
+  "category": "moonstone:ectoplasm",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "crafting",
+      "recipe": "moonstone:ectoplasmsoul",
+      "text": "看见你了"
+    }
+  ]
+}

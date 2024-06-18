@@ -1,0 +1,15 @@
+{
+  "name": "食欲亢进",
+  "icon": "moonstone:masticatory",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:masticatory",
+      "title": "-食欲亢进-",
+      "text": "吃8个金苹果"
+    }
+  ]
+}

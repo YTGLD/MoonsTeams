@@ -1,0 +1,15 @@
+{
+  "name": "嗜血性饥渴",
+  "icon": "moonstone:cell_blood",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:cell_blood",
+      "title": "-嗜血性饥渴-",
+      "text": "发现在宝藏类型箱子"
+    }
+  ]
+}

@@ -411,7 +411,7 @@
   "item.maxamout.tool.string": "攻击会削弱敌人",
   "item.maxamout.tool.string.1": "减少15%受到伤害",
   "item.maxamout.tool.string.2": "受伤时有概率获得伤害吸收效果",
-  "item.maxamout.tool.string.3": "增加10%吸血",
+  "item.maxamout.tool.string.3": "增加5%吸血",
   "item.maxamout.tool.string.4": "攻击时有概率击飞敌人并让其减速",
   "item.maxamout.tool.string.5": "并获得力量效果",
   "item.maxamout.tool.string.6": "受到伤害后将返还20%给进攻者",
@@ -633,7 +633,7 @@
 
   "entity.moonstone.flysword": "飞剑",
   "entity.moonstone.suddenrain": "雨刃",
-  "item.moonstone.gorillacake": "猩猩蛋糕",
+  "item.moonstone.gorillacake": "格拉德种子",
 
   "item.moonstone.gorilladna": "猩猩流感",
   "item.gorilladna.tool.string": "使病原体能够修改你的基因进而显著提高智商",
@@ -645,6 +645,10 @@
   "advancements.tooltip.virus.text": "佩戴培养皿并存在虚弱效果时被凋零骷髅击打",
   "advancements.tooltip.parasite.text": "佩戴培养皿并吃下：生鳕鱼，生鲑鱼，生牛肉，生羊肉，生猪肉，生兔子肉，热带鱼，鸡肉，在吃下任意食物",
 
+  "tool.string.ectoplasmball": "这个物品是这个模组的核心内容",
+  "tool.string.ectoplasmball.1": "通过杀死僵尸,骷髅等常见生物获取",
+  "tool.string.ectoplasmball.2": "也可以通过和牧师交易获取",
+  "tool.string.ectoplasmball.3": "可用于合成灵质云",
 
 
   "item.the_heart.tool.string": "右键物品存入心脏当中，可存入4种(不可叠加)",
@@ -652,7 +656,14 @@
   "item.the_heart.tool.string.3": "不可以移除心脏内部物品",
   "item.the_heart.tool.string.2": "那么该掉落物数量乘以3",
   "item.moonstone.the_heart": "富饶之心",
-  "advancements.tooltip.the_heart.text": "宝藏物品"
+  "advancements.tooltip.the_heart.text": "宝藏物品",
+
+  "item.moonstone.nightmare_orb": "共鸣者法球",
+
+  "item.nightmare_orb.tool.string": "当你的生命值低于20%时",
+  "item.nightmare_orb.tool.string.1": "所有来自深渊的诅咒都会反转成对你的增益",
+  "item.nightmare_orb.tool.string.2": "但是每秒受到1%最大生命值的伤害",
+  "item.nightmare_orb.tool.string.3": "并且在此期间无法受到治疗"
 }
 
 

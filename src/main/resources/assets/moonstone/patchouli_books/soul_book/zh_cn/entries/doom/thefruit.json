@@ -1,0 +1,15 @@
+{
+  "name": "上古果实",
+  "icon": "moonstone:thefruit",
+  "category": "moonstone:doom",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:thefruit",
+      "title": "-上古果实-",
+      "text": "发现在古城"
+    }
+  ]
+}

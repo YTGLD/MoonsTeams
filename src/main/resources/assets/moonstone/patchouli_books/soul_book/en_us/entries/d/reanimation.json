@@ -1,0 +1,15 @@
+{
+  "name": "细胞重生",
+  "icon": "moonstone:reanimation",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:reanimation",
+      "title": "-细胞重生-",
+      "text": "死一次"
+    }
+  ]
+}

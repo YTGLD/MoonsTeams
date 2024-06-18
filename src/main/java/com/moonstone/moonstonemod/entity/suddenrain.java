@@ -52,7 +52,7 @@ public class suddenrain extends ThrowableItemProjectile {
 
                 }else {
                     livingEntity.invulnerableTime = 0;
-                    entity.hurt(this.damageSources().thrown(this, this.getOwner()), 6);
+                    entity.hurt(this.damageSources().thrown(this, this.getOwner()), 4);
                     this.discard();
 
                 }
@@ -60,7 +60,7 @@ public class suddenrain extends ThrowableItemProjectile {
 
                 }else {
                     livingEntity.invulnerableTime = 0;
-                    entity.hurt(this.damageSources().thrown(this, this.getOwner()), 6);
+                    entity.hurt(this.damageSources().thrown(this, this.getOwner()), 4);
                     this.discard();
 
                 }

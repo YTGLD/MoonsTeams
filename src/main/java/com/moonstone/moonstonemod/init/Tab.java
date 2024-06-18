@@ -72,6 +72,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.nightmarestone.get()));
                 b.accept(new ItemStack(Items.nightmaretreasure.get()));
                 b.accept(new ItemStack(Items.nightmarewater.get()));
+                b.accept(new ItemStack(Items.nightmare_orb.get()));
 
 
                 b.accept(new ItemStack(Items.magiceye.get()));
