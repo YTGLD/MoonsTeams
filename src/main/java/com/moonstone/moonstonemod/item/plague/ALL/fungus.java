@@ -8,12 +8,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -24,7 +28,15 @@ public class fungus extends plague implements ICurioItem {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
+            Vec3 playerPos = player.position().add(0, 0.75, 0);
+            int range = 10;
+            List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
 
+            for (LivingEntity entity : entities){
+                if (!player.level().isClientSide&&player.tickCount% 80 == 0) {
+                    fungus_pets(entity, player);
+                }
+            }
 
 
             if (player.level().isDay()) {
@@ -77,6 +89,22 @@ public class fungus extends plague implements ICurioItem {
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("Heal: "+(AllEvent.aFloat*100) +"%").withStyle(ChatFormatting.DARK_RED));
 
+    }
+    public void fungus_pets(LivingEntity living,Player player){
+        if (!living.is(player)) {
+            if (living.isAlliedTo(player)) {
+                living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 1));
+                living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
+                living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
+            }
+        }
+        if (living instanceof OwnableEntity ownableEntity){
+            if (ownableEntity.getOwner()!= null&&ownableEntity.getOwner().is(player)){
+                living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 1));
+                living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
+                living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
+            }
+        }
     }
 }
 

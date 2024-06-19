@@ -28,6 +28,7 @@ import com.moonstone.moonstonemod.item.uncommon.*;
 import com.moonstone.moonstonemod.moonstoneitem.extend.apple;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -167,6 +168,10 @@ public class Items {
     public static final RegistryObject<Item> giant =REGISTRY.register("giant", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giant::new);
     public static final RegistryObject<Item> the_heart =REGISTRY.register("the_heart", com.moonstone.moonstonemod.item.maxitem.the_heart::new);
     public static final RegistryObject<Item> nightmare_orb =REGISTRY.register("nightmare_orb", com.moonstone.moonstonemod.item.nightmare.nightmare_orb::new);
+    public static final RegistryObject<Item> the_heart_image =REGISTRY.register("the_heart_image", ()->{
+        return new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+
+    });
 
 
     public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.item.gorillacake::new);

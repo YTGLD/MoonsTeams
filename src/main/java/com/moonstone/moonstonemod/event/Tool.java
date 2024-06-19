@@ -2,15 +2,10 @@ package com.moonstone.moonstonemod.event;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Tool {
     @SubscribeEvent

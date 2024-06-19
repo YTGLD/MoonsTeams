@@ -13,6 +13,7 @@
     "WardenMixin"
   ],
   "client": [
+    "clilt.GuiGraphicsMixin",
     "clilt.LivingEntityRendererMixin"
   ],
   "injectors": {

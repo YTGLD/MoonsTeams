@@ -11,15 +11,16 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.Perhaps;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_blood;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_boom;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_calcification;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.maxitem.the_heart;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
+import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.BloodViru;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_blood;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_boom;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_calcification;
+import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.uncommon.plague;
 import com.moonstone.moonstonemod.moonstoneitem.*;
@@ -70,7 +71,10 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class AllEvent {
     private int shield = 1;
@@ -1558,8 +1562,6 @@ public class AllEvent {
                 }
             });
         }
-
-
     }
     @SubscribeEvent
     public  void fungus(LivingHealEvent event){
@@ -1570,10 +1572,8 @@ public class AllEvent {
                 List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
                 int integers = 0;
                 for (LivingEntity living : entities) {
-                    if (living.isAlliedTo(player)){
-                        if (!living.is(player)) {
-                            integers++;
-                        }
+                    if (fungus_boolean(living,player)){
+                        integers++;
                     }
                 }
                 float integer = integers;
@@ -2259,14 +2259,33 @@ public class AllEvent {
         }
         if (stack.getItem() instanceof Iplague) {
             tooltipEvent.setBorderStart(0xFF800000);
-            tooltipEvent.setBorderStart(0xFF800000);
+            tooltipEvent.setBackgroundEnd(0x4d800000);
+            tooltipEvent.setBackgroundEnd(0x4d800000);
         }
-
+        if (stack.getItem() instanceof BloodViru) {
+            tooltipEvent.setBorderStart(0xFF800000);
+            tooltipEvent.setBackgroundEnd(0x4d800080);
+            tooltipEvent.setBackgroundEnd(0x4d800080);
+        }
         if (stack.getItem() instanceof the_heart) {
             tooltipEvent.setBorderStart(0xFFFF8C00);
             tooltipEvent.setBorderEnd(0xFFFFD700);
         }
     }
+    public static boolean fungus_boolean(LivingEntity living,Player player){
+        if (!living.is(player)) {
+            if (living.isAlliedTo(player)) {
+                return true;
+            }
+        }
+        if (living instanceof OwnableEntity ownableEntity){
+            if (ownableEntity.getOwner()!= null&&ownableEntity.getOwner().is(player)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static float EffectInstance(Player player) {
         float size = 0;
         List<Integer> Int = Lists.newArrayList();
