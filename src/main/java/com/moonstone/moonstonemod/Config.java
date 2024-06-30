@@ -29,6 +29,9 @@ public class Config {
             .comment("Brain's critical strike multiplier")
             .defineInRange("MBrain_critical_multiplier", 2.25, 1, 999);
 
+    public static final ForgeConfigSpec.BooleanValue Exclusion_and_affinity = BUILDER
+            .comment("Whether to enable exclusion and affinity mechanisms")
+            .define("Exclusion and affinity",false);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 }

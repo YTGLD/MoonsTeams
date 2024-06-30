@@ -1,5 +1,13 @@
 {
+  "curios.modifiers.necora": "when necora",
+  "moonstone.book.error": "you need patchouli mod",
   "itemGroup.tabmoonstone": "Moon Stone",
+  "moonstone.attribute.name.ectoplasm": "ectoplasm",
+  "moonstone.attribute.name.nano": "nano",
+  "moonstone.attribute.name.meet": "meet",
+  "moonstone.attribute.name.mysterious": "mysterious",
+  "moonstone.attribute.name.reality": "reality",
+  "moonstone.attribute.name.twisted": "twisted",
   "item.moonstone.ectoplasmball": "ectoplasm ball",
   "item.moonstone.ectoplasmcloub": "ectoplasm cloub",
   "item.moonstone.ectoplasmcube": "ectoplasm cube",
@@ -202,6 +210,8 @@
   "curios.identifier.ncrdna": "ncr dna",
   "curios.identifier.dna": "dna",
   "curios.modifiers.ncrdna": "necora",
+  "curios.modifiers.dna": "DNA",
+  "curios.modifiers.medicine": "medicine",
 
   "item.moonstone.germ": "germ",
   "item.moonstone.fungus": "fungus",
@@ -624,6 +634,7 @@
 
   "item.moonstone.gorillacake": "gorilla cake",
   "item.moonstone.gorilladna": "gorilla dna",
+  "item.gorillacake.tool.string": "",
 
   "item.gorilladna.tool.string": "Enable pathogens to modify chimpanzee genes and significantly improve their intelligence",
   "item.gorilladna.tool.string.1": "And make the iris of the gorilla's eyes appear green without triggering any immune response\n",
@@ -644,8 +655,10 @@
   "advancements.tooltip.the_heart.text": "treasure item",
   "item.moonstone.the_heart": "the heart",
   "item.moonstone.nightmare_orb": "nightmare_orb",
+  "item.moonstone.nightmare_heart": "nightmare heart",
+  "item.nightmare_heart.tool.string": "Kill creatures and summon the Abyss Cube",
 
-  "item.nightmare_orb.tool.string": "When your health is below 20%",
+  "item.nightmare_orb.tool.string": "When your health is below 33%",
   "item.nightmare_orb.tool.string.1": "All curses from the Abyss will be reversed into gains for you",
   "item.nightmare_orb.tool.string.2": "But deal 1% maximum health damage per second",
   "item.nightmare_orb.tool.string.3": "And unable to receive treatment during this period",

@@ -1,5 +1,14 @@
 {
+  "curios.modifiers.dna": "植入DNA时",
+  "moonstone.book.error": "你需要安装帕秋莉手册",
+  "curios.modifiers.necora": "佩戴时",
   "itemGroup.tabmoonstone": "月之石",
+  "moonstone.attribute.name.ectoplasm": "灵质",
+  "moonstone.attribute.name.mysterious": "神秘",
+  "moonstone.attribute.name.reality": "现实",
+  "moonstone.attribute.name.twisted": "扭曲",
+  "moonstone.attribute.name.nano": "机械",
+  "moonstone.attribute.name.meet": "血肉",
   "item.moonstone.ectoplasmball": "灵质球",
   "item.moonstone.ectoplasmcloub": "灵质云",
   "item.moonstone.ectoplasmcube": "灵质立方",
@@ -143,6 +152,7 @@
   "curios.identifier.ncrdna": "基因片段",
   "curios.identifier.dna": "分段基因组",
   "curios.modifiers.ncrdna": "佩戴时",
+  "curios.modifiers.medicine": "佩戴时",
 
   "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
   "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
@@ -633,7 +643,8 @@
 
   "entity.moonstone.flysword": "飞剑",
   "entity.moonstone.suddenrain": "雨刃",
-  "item.moonstone.gorillacake": "格拉德种子",
+  "item.moonstone.gorillacake": "观察者种子",
+  "item.gorillacake.tool.string": "检查你目前的排斥反应",
 
   "item.moonstone.gorilladna": "猩猩流感",
   "item.gorilladna.tool.string": "使病原体能够修改你的基因进而显著提高智商",
@@ -656,11 +667,13 @@
   "item.the_heart.tool.string.3": "不可以移除心脏内部物品",
   "item.the_heart.tool.string.2": "那么该掉落物数量乘以3",
   "item.moonstone.the_heart": "富饶之心",
+  "item.moonstone.nightmare_heart": "万贯者的悲哀",
   "advancements.tooltip.the_heart.text": "宝藏物品",
+  "item.nightmare_heart.tool.string": "杀死生物召唤深渊立方",
 
   "item.moonstone.nightmare_orb": "共鸣者法球",
 
-  "item.nightmare_orb.tool.string": "当你的生命值低于20%时",
+  "item.nightmare_orb.tool.string": "当你的生命值低于33%时",
   "item.nightmare_orb.tool.string.1": "所有来自深渊的诅咒都会反转成对你的增益",
   "item.nightmare_orb.tool.string.2": "但是每秒受到1%最大生命值的伤害",
   "item.nightmare_orb.tool.string.3": "并且在此期间无法受到治疗"

@@ -23,8 +23,14 @@ public class Tab {
                 b.accept(new ItemStack(Items.maxamout.get()));
                 b.accept(new ItemStack(Items.fortunecrystal.get()));
                 b.accept(new ItemStack(Items.mayhemcrystal.get()));
-                b.accept(new ItemStack(Items.beacon.get()));
+                b.accept(new ItemStack(Items.soulbattery.get()));
+                b.accept(new ItemStack(Items.soulcube.get()));
+                b.accept(new ItemStack(Items.diemug.get()));
+                b.accept(new ItemStack(Items.evilcandle.get()));
+                b.accept(new ItemStack(Items.evilmug.get()));
+                b.accept(new ItemStack(Items.obsidianring.get()));
 
+                b.accept(new ItemStack(Items.beacon.get()));
                 b.accept(new ItemStack(Items.ectoplasmstone.get()));
                 b.accept(new ItemStack(Items.twistedstone.get()));
                 b.accept(new ItemStack(Items.badgeofthedead.get()));
@@ -38,7 +44,6 @@ public class Tab {
                 b.accept(new ItemStack(Items.greedcrystal.get()));
                 b.accept(new ItemStack(Items.warcrystal.get()));
                 b.accept(new ItemStack(Items.whiteorb.get()));
-                b.accept(new ItemStack(Items.flyeye.get()));
 
                 b.accept(new ItemStack(Items.ectoplasmball.get()));
                 b.accept(new ItemStack(Items.ectoplasmapple.get()));
@@ -73,6 +78,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.nightmaretreasure.get()));
                 b.accept(new ItemStack(Items.nightmarewater.get()));
                 b.accept(new ItemStack(Items.nightmare_orb.get()));
+                b.accept(new ItemStack(Items.nightmare_heart.get()));
 
 
                 b.accept(new ItemStack(Items.magiceye.get()));
@@ -85,13 +91,6 @@ public class Tab {
                 b.accept(new ItemStack(Items.doomswoud.get()));
                 b.accept(new ItemStack(Items.wind.get()));
                 b.accept(new ItemStack(Items.wind_and_rain.get()));
-
-                b.accept(new ItemStack(Items.soulbattery.get()));
-                b.accept(new ItemStack(Items.soulcube.get()));
-                b.accept(new ItemStack(Items.diemug.get()));
-                b.accept(new ItemStack(Items.evilcandle.get()));
-                b.accept(new ItemStack(Items.evilmug.get()));
-                b.accept(new ItemStack(Items.obsidianring.get()));
 
                 b.accept(new ItemStack(Items.dna.get()));
                 b.accept(new ItemStack(Items.fungus.get()));

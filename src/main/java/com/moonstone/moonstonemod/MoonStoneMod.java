@@ -43,7 +43,6 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new NewEvent());
 
         LootReg.REGISTRY.register(modEventBus);
-
         EntityTs.REGISTRY.register(modEventBus);
 
         Particles.PARTICLE_TYPES.register(modEventBus);
@@ -71,15 +70,25 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.suddenrain.get(), SwordRenderer::new);
             event.registerEntityRenderer(EntityTs.cell_zombie.get(), ZombieRenderer::new);
             event.registerEntityRenderer(EntityTs.cell_giant.get(), CellZombieG::new);
+            event.registerEntityRenderer(EntityTs.nightmare_entity.get(), ZombieRenderer::new);
 
         }
         @SubscribeEvent
         public static void EntityRenderersEvent(RegisterShadersEvent event) {
             try {
 
+
                 event.registerShader(new ShaderInstance(event.getResourceProvider(),
                         new ResourceLocation(MODID,"rendertype_gateway"),
                         DefaultVertexFormat.POSITION_COLOR_TEX),MRender::setShaderInstance_gateway);
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"rendertype_mls"),
+                        DefaultVertexFormat.POSITION_COLOR_TEX),MRender::setShaderInstance_mls);
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"rendertype_ging"),
+                        DefaultVertexFormat.POSITION_COLOR_TEX),MRender::setShaderInstance_ging);
 
             }catch (IOException exception){
                 exception.printStackTrace();

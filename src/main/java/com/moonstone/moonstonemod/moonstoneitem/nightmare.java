@@ -19,7 +19,9 @@ public class nightmare extends Item implements ICurioItem ,INightmare{
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            return !Handler.hascurio(player, stack.getItem());
+            if (Handler.hascurio(player, stack.getItem())){
+                return false;
+            }
         }
         return true;
     }

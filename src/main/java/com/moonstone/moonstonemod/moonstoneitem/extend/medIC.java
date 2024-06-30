@@ -21,11 +21,13 @@ public class medIC extends Item implements Iplague, ICurioItem {
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            return !Handler.hascurio(player, stack.getItem());
+            if (Handler.hascurio(player, stack.getItem())){
+                return false;
+            }
         }
         return true;
-
     }
+
 
     @NotNull
     @Override

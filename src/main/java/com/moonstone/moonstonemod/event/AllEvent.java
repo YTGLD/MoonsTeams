@@ -635,41 +635,8 @@ public class AllEvent {
         }
 
     }
-    @SubscribeEvent
-    public void FlyEye(LivingHurtEvent event) {
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.flyeye.get())){
-                player.invulnerableTime += (int) (player.invulnerableTime / 4);
-            }
-        }
 
-    }
-    @SubscribeEvent
-    public void FlyEye(LivingKnockBackEvent event) {
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player,  Items.flyeye.get())){
-                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
-                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
-                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                        ICurioStacksHandler stacksHandler = entry.getValue();
-                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                            ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (!stack.isEmpty()){
-                                if (stack.getTag() != null) {
-                                    if (stack.is(Items.flyeye.get())) {
-                                        event.setStrength((float) ((event.getStrength() + 1) * 3));
-                                        stack.getTag().putBoolean(FlyEye, true);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-        }
 
-    }
     @SubscribeEvent
     public void thefruitLivingTickEvent(LivingEvent.LivingTickEvent event){
         if (event.getEntity() instanceof Player player){
@@ -1792,6 +1759,11 @@ public class AllEvent {
                 player.addItem(Items.apple.get().getDefaultInstance());
                 player.addTag("welcome_to_moonstone");
             }
+            if (!player.getTags().contains("give_moonstone_item_book")) {
+                player.addItem(Items.book.get().getDefaultInstance());
+                player.addTag("give_moonstone_item_book");
+            }
+
         }
 
     }
@@ -2256,16 +2228,18 @@ public class AllEvent {
         if (stack.getItem() instanceof IDoom||stack.getItem() instanceof Perhaps) {
             tooltipEvent.setBorderStart(0xFF83DEFC);
             tooltipEvent.setBorderEnd(0xFF0296FE);
+            tooltipEvent.setBackgroundEnd(0x4d000000);
+
         }
+
         if (stack.getItem() instanceof Iplague) {
             tooltipEvent.setBorderStart(0xFF800000);
-            tooltipEvent.setBackgroundEnd(0x4d800000);
+            tooltipEvent.setBorderEnd(0x0ff800000);
             tooltipEvent.setBackgroundEnd(0x4d800000);
         }
         if (stack.getItem() instanceof BloodViru) {
-            tooltipEvent.setBorderStart(0xFF800000);
-            tooltipEvent.setBackgroundEnd(0x4d800080);
-            tooltipEvent.setBackgroundEnd(0x4d800080);
+            tooltipEvent.setBackgroundEnd(0x38800080);
+            tooltipEvent.setBackgroundEnd(0x38800080);
         }
         if (stack.getItem() instanceof the_heart) {
             tooltipEvent.setBorderStart(0xFFFF8C00);

@@ -1,0 +1,15 @@
+{
+  "name": "万贯者的悲哀",
+  "icon": "moonstone:nightmare_heart",
+  "category": "moonstone:nightmare",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:nightmare_heart",
+      "title": "-万贯者的悲哀-",
+      "text": "富饶之心的腐化版本，发现于地牢和矿井，需要佩戴深渊之眼"
+    }
+  ]
+}

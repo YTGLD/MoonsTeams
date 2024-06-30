@@ -149,6 +149,9 @@ public class DungeonLoot extends LootModifier {
                         if (N == 8) {
                             generatedLoot.add(new ItemStack(Items.nightmare_orb.get()));
                         }
+                        if (N == 9) {
+                            generatedLoot.add(new ItemStack(Items.nightmare_heart.get()));
+                        }
                     }
                 }
 

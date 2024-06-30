@@ -141,8 +141,6 @@ public class Items {
 
     public static final RegistryObject<Item> mayhemcrystal =REGISTRY.register("mayhemcrystal",mayhemcrystal::new);
     public static final RegistryObject<Item> fortunecrystal =REGISTRY.register("fortunecrystal",fortunecrystal::new);
-
-    public static final RegistryObject<Item> flyeye =REGISTRY.register("flyeye", flyeye::new);
     public static final RegistryObject<Item> plague =REGISTRY.register("plague", plague::new);
     public static final RegistryObject<Item> doomeye =REGISTRY.register("doomeye", doomeye::new);
 
@@ -168,6 +166,7 @@ public class Items {
     public static final RegistryObject<Item> giant =REGISTRY.register("giant", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giant::new);
     public static final RegistryObject<Item> the_heart =REGISTRY.register("the_heart", com.moonstone.moonstonemod.item.maxitem.the_heart::new);
     public static final RegistryObject<Item> nightmare_orb =REGISTRY.register("nightmare_orb", com.moonstone.moonstonemod.item.nightmare.nightmare_orb::new);
+    public static final RegistryObject<Item> nightmare_heart =REGISTRY.register("nightmare_heart", com.moonstone.moonstonemod.item.nightmare.nightmare_heart::new);
     public static final RegistryObject<Item> the_heart_image =REGISTRY.register("the_heart_image", ()->{
         return new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
 

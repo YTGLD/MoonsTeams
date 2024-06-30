@@ -18,7 +18,7 @@ public class nightmare_orb extends nightmare {
     public static void nightmare_orb_heal(LivingHealEvent event){
         if ((event.getEntity() instanceof Player player)) {
             if (Handler.hascurio(player, Items.nightmare_orb.get())){
-                if (player.getHealth()<= player.getMaxHealth() / 5){
+                if (player.getHealth()<= player.getMaxHealth() / 3){
                     event.setAmount(0);
                 }
             }

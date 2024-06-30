@@ -21,10 +21,12 @@ public class atpoverdose extends TheNecoraIC {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
+
         CuriosApi
                 .addSlotModifier(linkedHashMultimap, "curio", uuid, 1, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

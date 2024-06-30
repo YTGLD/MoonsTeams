@@ -46,9 +46,6 @@ public class LootTableEvent {
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
 
-                        .add(LootItem.lootTableItem(Items.flyeye.get()).setWeight(1))
-                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-
                         .add(LootItem.lootTableItem(Items.doomeye.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
@@ -137,6 +134,9 @@ public class LootTableEvent {
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .add(LootItem.lootTableItem(Items.magiceye.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
+                        .add(LootItem.lootTableItem(Items.ectoplasmhorseshoe.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .build());

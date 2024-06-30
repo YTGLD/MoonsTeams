@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.flysword;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,10 +28,15 @@ public class EntityTs {
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.cell_giant>> cell_giant = REGISTRY.register("cell_giant",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.cell_giant::new, MobCategory.MONSTER).sized(0.9F, 2.9F).clientTrackingRange(16).build("cell_giant"));
 
+
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.nightmare_entity>> nightmare_entity = REGISTRY.register("nightmare_entity",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.nightmare_entity::new, MobCategory.MONSTER).sized(0.1f, 0.1f).clientTrackingRange(16).build("nightmare_entity"));
+
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){
         event.put(EntityTs.cell_zombie.get(), Zombie.createAttributes().build());
         event.put(EntityTs.cell_giant.get(), com.moonstone.moonstonemod.entity.cell_giant.createAttributes().build());
+        event.put(EntityTs.nightmare_entity.get(), Bat.createAttributes().build());
 
     }
 }

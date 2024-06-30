@@ -1,30 +1,36 @@
 package com.moonstone.moonstonemod.event;
 
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.init.Items;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
 public class Tool {
+
+    /*
     @SubscribeEvent
     public void ItemTooltipEventASD(ItemTooltipEvent event){
         Player player = event.getEntity();
         ItemStack stack = event.getItemStack();
-        if (Handler.hascurio(player,Items.gorillacake.get())){
-            /*
-            if (stack.is(Items.ectoplasmball.get())) {
-                List<Component> list = new ArrayList<>();
-                list.add(Component.translatable("tool.string.ectoplasmball").withStyle(ChatFormatting.GOLD));
-                list.add(Component.translatable("tool.string.ectoplasmball.1").withStyle(ChatFormatting.GOLD));
-                list.add(Component.translatable("tool.string.ectoplasmball.2").withStyle(ChatFormatting.GOLD));
-                list.add(Component.literal(""));
-                list.add(Component.translatable("tool.string.ectoplasmball.3").withStyle(ChatFormatting.GRAY));
-                event.getToolTip().addAll(list);
-            }
 
-             */
+        if (stack.is(Items.gorillacake.get())) {
+            List<Component> list = new ArrayList<>();
+            list.add(Component.translatable("moonstone.attribute.name.ectoplasm").withStyle(ChatFormatting.GOLD));
+            if (player != null) {
+                double ectoplasm = Handler.getAttSize(player, MAttribute.ectoplasm.get());
+
+                list.add(Component.literal(ectoplasm +"%").withStyle(ChatFormatting.GOLD));
+            }
+            list.add(Component.translatable("moonstone.attribute.name.meet").withStyle(ChatFormatting.GOLD));
+            if (player != null) {
+                double ectoplasm = Handler.getAttSize(player, MAttribute.nano.get());
+                list.add(Component.literal(ectoplasm +"%").withStyle(ChatFormatting.GOLD));
+            }
+            list.add(Component.translatable("moonstone.attribute.name.nano").withStyle(ChatFormatting.GOLD));
+            if (player != null) {
+                double ectoplasm = Handler.getAttSize(player, MAttribute.meet.get());
+                list.add(Component.literal(ectoplasm +"%").withStyle(ChatFormatting.GOLD));
+            }
+            list.add(Component.literal(""));
+            event.getToolTip().addAll(list);
         }
+
     }
+
+     */
 }

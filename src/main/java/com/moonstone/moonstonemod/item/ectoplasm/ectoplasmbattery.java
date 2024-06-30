@@ -17,6 +17,7 @@ public class ectoplasmbattery extends ectoplasm implements IBattery {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, MoonStoneMod.MODID + ":ectoplasmbattery", 10, AttributeModifier.Operation.ADDITION));
         modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid, MoonStoneMod.MODID + ":ectoplasmbattery", 4, AttributeModifier.Operation.ADDITION));

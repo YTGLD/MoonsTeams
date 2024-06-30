@@ -6,7 +6,6 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ShaderInstance;
-import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
 import net.minecraft.resources.ResourceLocation;
 
 public class MRender extends RenderType {
@@ -14,7 +13,12 @@ public class MRender extends RenderType {
         super(p_173178_, p_173179_, p_173180_, p_173181_, p_173182_, p_173183_, p_173184_, p_173185_);
     }
     private static ShaderInstance ShaderInstance_gateway;
+    private static ShaderInstance ShaderInstance_mls;
+    private static ShaderInstance ShaderInstance_ging;
+
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_gateway);
+    protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_MLS = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_mls);
+    protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_ging = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_ging);
 
     private static final RenderType GATEWAY =
             create("gateway",
@@ -31,10 +35,62 @@ public class MRender extends RenderType {
                                             false,
                                             false).add(new ResourceLocation(MoonStoneMod.MODID,"textures/necr_image.png"),
                                             false, false).build()).createCompositeState(false));
+    private static final RenderType GING =
+            create("ging",
+                    DefaultVertexFormat.POSITION,
+                    VertexFormat.Mode.QUADS,
+                    256,
+                    false,
+                    false,
+                    RenderType.CompositeState.builder()
+                            .setShaderState(RENDER_STATE_SHARD_ging)
+                            .setTextureState(RenderStateShard.
+                                    MultiTextureStateShard.builder().
+                                    add(new ResourceLocation(MoonStoneMod.MODID,"textures/ging.png"),
+                                            false,
+                                            false).add(new ResourceLocation(MoonStoneMod.MODID,"textures/ging.png"),
+                                            false, false).build()).createCompositeState(false));
 
+    private static final RenderType MLS =
+            create("mls",
+                    DefaultVertexFormat.POSITION,
+                    VertexFormat.Mode.QUADS,
+                    256,
+                    false,
+                    false,
+                    RenderType.CompositeState.builder()
+                            .setShaderState(RENDER_STATE_SHARD_MLS)
+                            .setTextureState(RenderStateShard.
+                                    MultiTextureStateShard.builder().
+                                    add(new ResourceLocation(MoonStoneMod.MODID,"textures/mls.png"),
+                                            false,
+                                            false).add(new ResourceLocation(MoonStoneMod.MODID,"textures/mls.png"),
+                                            false, false).build()).createCompositeState(false));
 
     public static RenderType gateways() {
         return GATEWAY;
+    }
+    public static RenderType getMls() {
+        return MLS;
+    }
+    public static RenderType ging() {
+        return GING;
+    }
+
+
+    public static ShaderInstance getShaderInstance_mls() {
+        return ShaderInstance_mls;
+    }
+    public static ShaderInstance getShaderInstance_ging() {
+        return ShaderInstance_ging;
+    }
+
+    public static void setShaderInstance_ging(ShaderInstance shaderInstance_ging) {
+        ShaderInstance_ging = shaderInstance_ging;
+    }
+
+    public static void setShaderInstance_mls(ShaderInstance shaderInstance_mls) {
+        ShaderInstance_mls = shaderInstance_mls;
     }
 
     public static ShaderInstance getShaderInstance_gateway() {

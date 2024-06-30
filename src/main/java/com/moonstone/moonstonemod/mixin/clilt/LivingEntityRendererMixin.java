@@ -23,5 +23,9 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
     @Inject(at = @At("RETURN"), method = "<init>")
     public void init(EntityRendererProvider.Context context, M model, float Radius, CallbackInfo info) {
         addLayer(new StrengtheningLayer<>((LivingEntityRenderer<?, ?>) (Object) this));
+//        addLayer(new Glow<>((LivingEntityRenderer<?, ?>) (Object) this));
+
+
     }
+
 }

@@ -58,7 +58,7 @@ public class nightmareeye extends nightmare {
         }
 
         if (Handler.hascurio(player, Items.nightmare_orb.get())){
-            if (player.getHealth()<= player.getMaxHealth() / 5) {
+            if (player.getHealth()<= player.getMaxHealth() / 3) {
                 s = -s;
             }
         }

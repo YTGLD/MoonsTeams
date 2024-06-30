@@ -14,6 +14,7 @@
   ],
   "client": [
     "clilt.GuiGraphicsMixin",
+    "clilt.ItemRendererMixin",
     "clilt.LivingEntityRendererMixin"
   ],
   "injectors": {

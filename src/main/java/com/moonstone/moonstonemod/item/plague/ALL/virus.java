@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.item.plague.ALL;
 
-import com.moonstone.moonstonemod.moonstoneitem.plague;
+import com.moonstone.moonstonemod.moonstoneitem.extend.medIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -12,7 +12,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class virus extends plague implements ICurioItem {
+public class virus extends medIC implements ICurioItem {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
