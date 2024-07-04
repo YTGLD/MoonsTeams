@@ -9,17 +9,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.extensions.IForgeEntity;
-import org.checkerframework.common.returnsreceiver.qual.This;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -52,7 +46,7 @@ public class nightmare_entity extends cell_zombie {
             this.discard();
         }else {
             if (this.time % 20== 0){
-                this.level().playSound(null,new BlockPos((int)this.getX(), (int) this.getY(), (int) this.getZ()), SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.MUSIC,1,1);
+                this.level().playSound(null,new BlockPos((int)this.getX(), (int) this.getY(), (int) this.getZ()), SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.MUSIC,0.2F,0.2F);
             }
         }
         if (!this.level().isClientSide) {

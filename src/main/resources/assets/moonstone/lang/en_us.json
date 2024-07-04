@@ -156,6 +156,7 @@
   "item.nightmaretreasure.tool.string.3": "Maximum 66%",
   "item.nightmaretreasure.tool.string.4": "Only those who bear the fear of the Nightmare",
   "item.nightmaretreasure.tool.string.5": "To be eligible to use this prop",
+  "item.nightmaretreasure.tool.string.6": "-33% looting",
 
 
   "item.moonstone.diemug": "Death Cask",
@@ -628,6 +629,7 @@
   "advancements.tooltip.giant.text": "Wearing NECORA virus, killing Warden",
   "entity.moonstone.cell_giant": "cell giant",
   "entity.moonstone.cell_zombie": "cell zombie",
+  "entity.moonstone.nightmare_entity": "nightmare entity",
 
   "entity.moonstone.flysword": "fly sword",
   "entity.moonstone.suddenrain": "sudden rain",

@@ -20,12 +20,22 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
         super(p_174008_);
     }
     @Shadow public abstract boolean addLayer(RenderLayer<T, M> p_115327_);
+
+    @Shadow protected abstract boolean isBodyVisible(T p_115341_);
+
+
+    @Shadow
+    public static int getOverlayCoords(LivingEntity p_115339_, float p_115340_) {
+        return 0;
+    }
+
+    @Shadow protected abstract float getWhiteOverlayProgress(T p_115334_, float p_115335_);
+
+    @Shadow protected M model;
+
     @Inject(at = @At("RETURN"), method = "<init>")
     public void init(EntityRendererProvider.Context context, M model, float Radius, CallbackInfo info) {
         addLayer(new StrengtheningLayer<>((LivingEntityRenderer<?, ?>) (Object) this));
-//        addLayer(new Glow<>((LivingEntityRenderer<?, ?>) (Object) this));
-
-
     }
 
 }

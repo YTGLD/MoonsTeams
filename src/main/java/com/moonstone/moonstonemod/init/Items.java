@@ -167,6 +167,7 @@ public class Items {
     public static final RegistryObject<Item> the_heart =REGISTRY.register("the_heart", com.moonstone.moonstonemod.item.maxitem.the_heart::new);
     public static final RegistryObject<Item> nightmare_orb =REGISTRY.register("nightmare_orb", com.moonstone.moonstonemod.item.nightmare.nightmare_orb::new);
     public static final RegistryObject<Item> nightmare_heart =REGISTRY.register("nightmare_heart", com.moonstone.moonstonemod.item.nightmare.nightmare_heart::new);
+    public static final RegistryObject<Item> nightmare_head =REGISTRY.register("nightmare_head", com.moonstone.moonstonemod.item.nightmare.nightmare_head::new);
     public static final RegistryObject<Item> the_heart_image =REGISTRY.register("the_heart_image", ()->{
         return new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
 

@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "block/238",
-		"particle": "block/238"
+		"0": "moonstone:test/238",
+		"particle": "moonstone:test/238"
 	},
 	"elements": [
 		{

@@ -103,6 +103,7 @@
   "item.moonstone.nightmarerotten": "万腐之心",
   "item.moonstone.nightmarestone": "深渊方尖碑",
   "item.moonstone.nightmaretreasure": "魔鬼的财宝",
+  "item.nightmaretreasure.tool.string.6": "-33% 抢夺等级",
   "item.moonstone.nightmarewater": "卑微之酿",
 
 
@@ -676,7 +677,8 @@
   "item.nightmare_orb.tool.string": "当你的生命值低于33%时",
   "item.nightmare_orb.tool.string.1": "所有来自深渊的诅咒都会反转成对你的增益",
   "item.nightmare_orb.tool.string.2": "但是每秒受到1%最大生命值的伤害",
-  "item.nightmare_orb.tool.string.3": "并且在此期间无法受到治疗"
+  "item.nightmare_orb.tool.string.3": "并且在此期间无法受到治疗",
+  "entity.moonstone.nightmare_entity": "深渊立方"
 }
 
 

@@ -90,6 +90,10 @@ public class MoonStoneMod {
                         new ResourceLocation(MODID,"rendertype_ging"),
                         DefaultVertexFormat.POSITION_COLOR_TEX),MRender::setShaderInstance_ging);
 
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"trail"),
+                        DefaultVertexFormat.POSITION_COLOR_TEX),MRender::setShaderInstance_trail);
+
             }catch (IOException exception){
                 exception.printStackTrace();
             }

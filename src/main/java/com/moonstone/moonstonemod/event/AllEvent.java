@@ -1913,10 +1913,10 @@ public class AllEvent {
                 if (Handler.hascurio(player,  Items.nightmaretreasure.get())) {
                     Random random = new Random();
                     int s = 33;
-                    s += (int) player.getLuck();
+                    s += (int) player.getLuck()*3;
 
-                    if (s > 66){
-                        s = 66;
+                    if (s > 99){
+                        s = 99;
                     }
                     if(
                             random.nextInt(100) <= s
@@ -1930,6 +1930,16 @@ public class AllEvent {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public void nightmaretreasure_LootingLevelEvent(LootingLevelEvent event) {
+        if (event.getDamageSource()!= null && event.getDamageSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player, Items.nightmareeye.get())) {
+                if (Handler.hascurio(player,  Items.nightmaretreasure.get())) {
+                    event.setLootingLevel((int) (event.getLootingLevel()*0.66));
                 }
             }
         }
@@ -2224,6 +2234,9 @@ public class AllEvent {
         if (stack.getItem() instanceof INightmare) {
             tooltipEvent.setBorderStart(0xFF800000);
             tooltipEvent.setBorderEnd(0xFF800080);
+
+            tooltipEvent.setBackgroundStart(0xff000000);
+            tooltipEvent.setBackgroundEnd(0x00000000);
         }
         if (stack.getItem() instanceof IDoom||stack.getItem() instanceof Perhaps) {
             tooltipEvent.setBorderStart(0xFF83DEFC);

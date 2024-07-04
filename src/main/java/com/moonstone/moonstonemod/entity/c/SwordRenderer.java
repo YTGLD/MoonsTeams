@@ -30,6 +30,7 @@ public class SwordRenderer <T extends ThrowableItemProjectile> extends EntityRen
         p_113842_.scale(0.05625F, 0.05625F, 0.05625F);
         p_113842_.translate(-4.0F, 0.0F, 0.0F);
         VertexConsumer vertexconsumer = p_113843_.getBuffer(RenderType.entityCutout(this.getTextureLocation(p_113839_)));
+
         PoseStack.Pose posestack$pose = p_113842_.last();
         Matrix4f matrix4f = posestack$pose.pose();
         Matrix3f matrix3f = posestack$pose.normal();
@@ -52,6 +53,8 @@ public class SwordRenderer <T extends ThrowableItemProjectile> extends EntityRen
 
         p_113842_.popPose();
         super.render(p_113839_, p_113840_, p_113841_, p_113842_, p_113843_, p_113844_);
+
+
     }
 
     @Override

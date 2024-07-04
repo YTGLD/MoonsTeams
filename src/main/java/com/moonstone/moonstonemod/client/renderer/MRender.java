@@ -15,11 +15,29 @@ public class MRender extends RenderType {
     private static ShaderInstance ShaderInstance_gateway;
     private static ShaderInstance ShaderInstance_mls;
     private static ShaderInstance ShaderInstance_ging;
+    private static ShaderInstance ShaderInstance_trail;
 
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_gateway);
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_MLS = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_mls);
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_ging = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_ging);
 
+    protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_trail = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_trail);
+
+    public static final RenderType TRAIL =
+            create("tests",
+                    DefaultVertexFormat.POSITION,
+                    VertexFormat.Mode.QUADS,
+                    256,
+                    false,
+                    false,
+                    RenderType.CompositeState.builder()
+                            .setShaderState(RENDER_STATE_SHARD_trail)
+                            .setTextureState(RenderStateShard.
+                                    MultiTextureStateShard.builder().
+                                    add(new ResourceLocation(MoonStoneMod.MODID,"textures/ging.png"),
+                                            false,
+                                            false).add(new ResourceLocation(MoonStoneMod.MODID,"textures/ging.png"),
+                                            false, false).build()).createCompositeState(false));
     private static final RenderType GATEWAY =
             create("gateway",
             DefaultVertexFormat.POSITION,
@@ -70,6 +88,9 @@ public class MRender extends RenderType {
     public static RenderType gateways() {
         return GATEWAY;
     }
+    public static RenderType t() {
+        return TRAIL;
+    }
     public static RenderType getMls() {
         return MLS;
     }
@@ -84,9 +105,15 @@ public class MRender extends RenderType {
     public static ShaderInstance getShaderInstance_ging() {
         return ShaderInstance_ging;
     }
+    public static ShaderInstance getShaderInstance_trail() {
+        return ShaderInstance_trail;
+    }
 
     public static void setShaderInstance_ging(ShaderInstance shaderInstance_ging) {
         ShaderInstance_ging = shaderInstance_ging;
+    }
+    public static void setShaderInstance_trail(ShaderInstance shaderInstance_ging) {
+        ShaderInstance_trail = shaderInstance_ging;
     }
 
     public static void setShaderInstance_mls(ShaderInstance shaderInstance_mls) {

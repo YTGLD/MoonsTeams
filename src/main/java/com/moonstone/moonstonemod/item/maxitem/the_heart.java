@@ -64,27 +64,6 @@ public class the_heart extends Item implements ICurioItem {
         }
         return false;
     }
-    private static Optional<ItemStack> removeOne(ItemStack p_150781_) {
-        CompoundTag compoundtag = p_150781_.getOrCreateTag();
-        if (!compoundtag.contains("Items")) {
-            return Optional.empty();
-        } else {
-            ListTag listtag = compoundtag.getList("Items", 10);
-            if (listtag.isEmpty()) {
-                return Optional.empty();
-            } else {
-                int i = 0;
-                CompoundTag compoundtag1 = listtag.getCompound(0);
-                ItemStack itemstack = ItemStack.of(compoundtag1);
-                listtag.remove(0);
-                if (listtag.isEmpty()) {
-                    p_150781_.removeTagKey("Items");
-                }
-
-                return Optional.of(itemstack);
-            }
-        }
-    }
 
     public InteractionResultHolder<ItemStack> use(Level p_150760_, Player p_150761_, InteractionHand p_150762_) {
         ItemStack itemstack = p_150761_.getItemInHand(p_150762_);
@@ -167,7 +146,7 @@ public class the_heart extends Item implements ICurioItem {
         }
     }
 
-    public Optional<TooltipComponent> getTooltipImage(ItemStack p_150775_) {
+    public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack p_150775_) {
         NonNullList<ItemStack> nonnulllist = NonNullList.create();
         getContents(p_150775_).forEach(nonnulllist::add);
         return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(p_150775_)));

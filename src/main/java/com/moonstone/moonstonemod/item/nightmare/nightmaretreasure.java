@@ -23,6 +23,7 @@ public class nightmaretreasure extends nightmare {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.nightmaretreasure.tool.string.2").withStyle(ChatFormatting.DARK_RED));
             tooltip.add(Component.translatable("item.nightmaretreasure.tool.string.3").withStyle(ChatFormatting.DARK_RED));
+            tooltip.add(Component.translatable("item.nightmaretreasure.tool.string.6").withStyle(ChatFormatting.DARK_RED));
 
         }else {
             tooltip.add(Component.translatable("· [SHIFT]").withStyle(ChatFormatting.DARK_RED));
