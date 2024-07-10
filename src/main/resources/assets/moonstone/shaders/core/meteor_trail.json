@@ -1,0 +1,15 @@
+
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "srcalpha",
+    "dstrgb": "1-srcalpha"
+  },
+  "vertex": "position_color_tex",
+  "fragment": "moonstone:meteor_trail",
+  "attributes": [],
+  "samplers": [
+    { "name": "Sampler0" },
+    { "name": "Sampler1" }
+  ]
+}

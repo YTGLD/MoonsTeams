@@ -11,26 +11,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class popr  extends TextureSheetParticle {
     public popr(ClientLevel level, double x, double y, double z, float movementX, float movementY, float movementZ) {
-
-
         super(level, x, y, z, movementX, movementY, movementZ);
         this.lifetime = 450;
         this.quadSize *= 0.8f;
         this.roll += Mth.nextFloat(RandomSource.create(), 1, 5);
-        this.oRoll += Mth.nextFloat(RandomSource.create(), 1, 5);;
-        this.setParticleSpeed(0,0,0);
-    }
-
-
-
-    @Override
-    protected int getLightColor(float p_107249_) {
-        return 240;
-    }
-
-    @Override
-    public @NotNull ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+        this.oRoll += Mth.nextFloat(RandomSource.create(), 1, 5);
+        this.setParticleSpeed(0, 0, 0);
     }
     public void tick() {
         this.alpha -= 0.03f;
@@ -41,6 +27,16 @@ public class popr  extends TextureSheetParticle {
         }
         super.tick();
 
+    }
+
+    @Override
+    protected int getLightColor(float p_107249_) {
+        return 240;
+    }
+
+    @Override
+    public @NotNull ParticleRenderType getRenderType() {
+        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
     }
     @OnlyIn(Dist.CLIENT)
     public record Provider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {

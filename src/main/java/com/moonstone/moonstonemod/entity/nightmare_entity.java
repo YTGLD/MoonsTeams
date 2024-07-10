@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.entity;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.init.Particles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -21,6 +22,7 @@ public class nightmare_entity extends cell_zombie {
 
     public nightmare_entity(EntityType<? extends nightmare_entity> p_27412_, Level p_27413_) {
         super(p_27412_, p_27413_);
+        this.setNoAi(true);
     }
     public boolean isPushable() {
         return false;
@@ -45,8 +47,11 @@ public class nightmare_entity extends cell_zombie {
             this.level().explode(this,this.getX(),this.getY()+1,this.getZ(),1, Level.ExplosionInteraction.NONE);
             this.discard();
         }else {
-            if (this.time % 20== 0){
-                this.level().playSound(null,new BlockPos((int)this.getX(), (int) this.getY(), (int) this.getZ()), SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.MUSIC,0.2F,0.2F);
+
+            if (this.time < 280) {
+                if (this.time % 130 == 0) {
+                    this.level().playSound(this, new BlockPos((int) this.getX(), (int) this.getY(), (int) this.getZ()), MSound.black_hold.get(), SoundSource.MUSIC, 0.66f, 0.66f);
+                }
             }
         }
         if (!this.level().isClientSide) {

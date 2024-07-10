@@ -25,8 +25,9 @@ import java.util.UUID;
 public class nightmareeye extends nightmare {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
+        stack.getOrCreateTag().putString("TestTag","TestTag");
         if (slotContext.entity() instanceof Player player){
-            player.getAttributes().addTransientAttributeModifiers(un_un_pla(player));
+            player.getAttributes().addTransientAttributeModifiers(un_un_pla(player,stack));
         }
     }
     @Override
@@ -38,10 +39,10 @@ public class nightmareeye extends nightmare {
         }
         return false;
     }
-
-    public Multimap<Attribute, AttributeModifier> un_un_pla(Player player) {
+    public Multimap<Attribute, AttributeModifier> un_un_pla(Player player,ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         UUID uuid = UUID.fromString("83f9fb4e-5c3f-3b02-a19a-70f2fa258dfa");
+
 
         float s = 0.25f;
         if (Handler.hascurio(player, com.moonstone.moonstonemod.init.Items.nightmarecharm.get())){
@@ -60,6 +61,15 @@ public class nightmareeye extends nightmare {
         if (Handler.hascurio(player, Items.nightmare_orb.get())){
             if (player.getHealth()<= player.getMaxHealth() / 3) {
                 s = -s;
+            }
+        }
+        if (Handler.hascurio(player,Items.nightmare_head.get())) {
+            if (stack.getTag() != null) {
+                float d = stack.getTag().getInt(nightmare_head.die);
+                d /= 100;
+                float ds = d;
+                ds = 1 -ds;
+                s = s*(1-ds);
             }
         }
 

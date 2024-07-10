@@ -79,6 +79,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.nightmarewater.get()));
                 b.accept(new ItemStack(Items.nightmare_orb.get()));
                 b.accept(new ItemStack(Items.nightmare_heart.get()));
+                b.accept(new ItemStack(Items.nightmare_head.get()));
+                b.accept(new ItemStack(Items.nightmare_cube.get()));
 
 
                 b.accept(new ItemStack(Items.magiceye.get()));
@@ -107,6 +109,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.motor.get()));
                 b.accept(new ItemStack(Items.watergen.get()));
                 b.accept(new ItemStack(Items.giant.get()));
+                b.accept(new ItemStack(Items.giant_nightmare.get()));
 
                 b.accept(new ItemStack(Items.botton.get()));
                 b.accept(new ItemStack(Items.catalyzer.get()));

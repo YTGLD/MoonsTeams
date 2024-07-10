@@ -22,6 +22,7 @@ public class SwordRenderer <T extends ThrowableItemProjectile> extends EntityRen
     }
 
     public void render(T p_113839_, float p_113840_, float p_113841_, PoseStack p_113842_, MultiBufferSource p_113843_, int p_113844_) {
+
         p_113842_.pushPose();
         p_113842_.mulPose(Axis.YP.rotationDegrees(Mth.lerp(p_113841_, p_113839_.yRotO, p_113839_.getYRot()) - 90.0F));
         p_113842_.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(p_113841_, p_113839_.xRotO, p_113839_.getXRot())));
@@ -53,8 +54,6 @@ public class SwordRenderer <T extends ThrowableItemProjectile> extends EntityRen
 
         p_113842_.popPose();
         super.render(p_113839_, p_113840_, p_113841_, p_113842_, p_113843_, p_113844_);
-
-
     }
 
     @Override

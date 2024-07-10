@@ -1,0 +1,17 @@
+{
+	"black_hold": {
+		"sounds": [
+			"moonstone:black_hold"
+		]
+	},
+	"kidney": {
+		"sounds": [
+			"moonstone:kidney"
+		]
+	},
+	"kidney_die": {
+		"sounds": [
+			"moonstone:kidney_die"
+		]
+	}
+}

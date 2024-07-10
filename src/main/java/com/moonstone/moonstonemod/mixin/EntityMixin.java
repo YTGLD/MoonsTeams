@@ -19,6 +19,5 @@ public class EntityMixin {
                cir.setReturnValue(true);
            }
        }
-
     }
 }

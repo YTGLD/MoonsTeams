@@ -1,0 +1,15 @@
+{
+  "name": "梦魇巨人基因片段",
+  "icon": "moonstone:giant_nightmare",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:giant_nightmare",
+      "title": "-梦魇巨人基因片段-",
+      "text": "在佩戴深渊之眼，necora病毒，巨人僵尸基因片段的情况下杀死监守者20%的概率掉落，如果你已经佩戴此物品，那么将不再掉落"
+    }
+  ]
+}

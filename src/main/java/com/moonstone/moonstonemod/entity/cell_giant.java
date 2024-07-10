@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.entity;
 import com.google.common.annotations.VisibleForTesting;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
+import com.moonstone.moonstonemod.entity.ai.AIgiant;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -19,7 +20,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Unit;
@@ -201,9 +201,6 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
         return 0.0F;
     }
 
-    public boolean isInvulnerableTo(DamageSource p_219427_) {
-        return this.isDiggingOrEmerging() && !p_219427_.is(DamageTypeTags.BYPASSES_INVULNERABILITY) ? true : super.isInvulnerableTo(p_219427_);
-    }
 
     boolean isDiggingOrEmerging() {
         return this.hasPose(Pose.DIGGING) || this.hasPose(Pose.EMERGING);
@@ -266,6 +263,9 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
         this.entityData.set(CLIENT_ANGER_LEVEL, this.getActiveAnger());
     }
 
+    private void sou() {
+        this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.WARDEN_HEARTBEAT, this.getSoundSource(), 5.0F, this.getVoicePitch(), false);
+    }
     public void tick() {
         time++;
         if (this.time > 1200){
@@ -284,7 +284,7 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
             if (this.tickCount % this.getHeartBeatDelay() == 0) {
                 this.heartAnimation = 10;
                 if (!this.isSilent()) {
-                    this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.WARDEN_HEARTBEAT, this.getSoundSource(), 5.0F, this.getVoicePitch(), false);
+                    sou();
                 }
             }
 
@@ -381,8 +381,13 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
         return this.isDiggingOrEmerging();
     }
 
-    public @NotNull Brain getBrain() {
-        return super.getBrain();
+    public @NotNull Brain<cell_giant> getBrain() {
+        return (Brain<cell_giant>)super.getBrain();
+    }
+
+    @Override
+    protected @NotNull Brain<?> makeBrain(Dynamic<?> p_21069_) {
+        return AIgiant.makeBrain(this,p_21069_);
     }
 
     protected void sendDebugPackets() {
@@ -466,13 +471,10 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
 
     public boolean hurt(DamageSource p_219381_, float p_219382_) {
         boolean flag = super.hurt(p_219381_, p_219382_);
-        if (!this.level().isClientSide && !this.isNoAi() && !this.isDiggingOrEmerging()) {
-            Entity entity = p_219381_.getEntity();
-            if (entity instanceof LivingEntity living){
-                this.setAttackTarget(living);
-            }
+        Entity entity = p_219381_.getEntity();
+        if (entity instanceof LivingEntity living){
+            this.setAttackTarget(living);
         }
-
         return flag;
     }
 
@@ -525,6 +527,28 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
 
     public VibrationSystem.User getVibrationUser() {
         return this.vibrationUser;
+    }
+
+    public void increaseAngerAt(@javax.annotation.Nullable Entity p_219442_) {
+        this.increaseAngerAt(p_219442_, 35, true);
+    }
+
+    @VisibleForTesting
+    public void increaseAngerAt(@javax.annotation.Nullable Entity p_219388_, int p_219389_, boolean p_219390_) {
+        if (!this.isNoAi() && this.canTargetEntity(p_219388_)) {
+            WardenAi.setDigCooldown(this);
+            boolean flag = !(this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).orElse((LivingEntity)null) instanceof Player);
+            int i = this.angerManagement.increaseAnger(p_219388_, p_219389_);
+            if (p_219388_ instanceof Player && flag && AngerLevel.byAnger(i).isAngry()) {
+                if (this.getOwner()!= null &&!this.getOwner().is(p_219388_)) {
+                    this.getBrain().eraseMemory(MemoryModuleType.ATTACK_TARGET);
+                }
+            }
+            if (p_219390_) {
+                this.playListeningSound();
+            }
+        }
+
     }
 
     public class VibrationUser implements VibrationSystem.User {

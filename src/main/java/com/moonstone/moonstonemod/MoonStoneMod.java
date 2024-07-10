@@ -9,6 +9,7 @@ import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.entity.c.CellZombieG;
 import com.moonstone.moonstonemod.entity.c.SwordRenderer;
 import com.moonstone.moonstonemod.entity.c.ZombieRenderer;
+import com.moonstone.moonstonemod.entity.nightmare.CellZombieN;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import net.minecraft.client.renderer.ShaderInstance;
@@ -30,6 +31,7 @@ import java.io.IOException;
 
 @Mod(MoonStoneMod.MODID)
 public class MoonStoneMod {
+
     public static final String MODID = "moonstone";
     public static final Logger LOGGER = LogUtils.getLogger();
     public MoonStoneMod() {
@@ -44,6 +46,8 @@ public class MoonStoneMod {
 
         LootReg.REGISTRY.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
+        MSound.REGISTRY.register(modEventBus);
+
 
         Particles.PARTICLE_TYPES.register(modEventBus);
         Items.REGISTRY.register(modEventBus);
@@ -71,6 +75,9 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.cell_zombie.get(), ZombieRenderer::new);
             event.registerEntityRenderer(EntityTs.cell_giant.get(), CellZombieG::new);
             event.registerEntityRenderer(EntityTs.nightmare_entity.get(), ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.red_entity.get(), com.moonstone.moonstonemod.entity.c.red.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.nightmare_giant.get(), CellZombieN::new);
+            event.registerEntityRenderer(EntityTs.test_e.get(), com.moonstone.moonstonemod.entity.c.red.ZombieRenderer::new);
 
         }
         @SubscribeEvent
@@ -93,6 +100,9 @@ public class MoonStoneMod {
                 event.registerShader(new ShaderInstance(event.getResourceProvider(),
                         new ResourceLocation(MODID,"trail"),
                         DefaultVertexFormat.POSITION_COLOR_TEX),MRender::setShaderInstance_trail);
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"meteor_trail"),
+                        DefaultVertexFormat.POSITION_COLOR_TEX),MRender::set_meteorTrailShader);
 
             }catch (IOException exception){
                 exception.printStackTrace();

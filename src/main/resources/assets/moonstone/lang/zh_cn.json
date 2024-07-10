@@ -44,7 +44,7 @@
   "item.moonstone.mbottle": "莫里斯药品",
   "item.moonstone.mbox": "莫里斯盒子",
   "item.moonstone.meye": "莫里斯眼睛",
-  "item.moonstone.mkidney": "莫里斯肾结石",
+  "item.moonstone.mkidney": "莫里斯的玻璃肾结石",
   "item.moonstone.morb": "莫里斯珍珠",
   "item.moonstone.mring": "莫里斯戒指",
   "item.moonstone.mshell": "莫里斯贝壳",
@@ -669,6 +669,7 @@
   "item.the_heart.tool.string.2": "那么该掉落物数量乘以3",
   "item.moonstone.the_heart": "富饶之心",
   "item.moonstone.nightmare_heart": "万贯者的悲哀",
+  "item.moonstone.nightmare_head": "洞悉者的邪术法球",
   "advancements.tooltip.the_heart.text": "宝藏物品",
   "item.nightmare_heart.tool.string": "杀死生物召唤深渊立方",
 
@@ -678,7 +679,24 @@
   "item.nightmare_orb.tool.string.1": "所有来自深渊的诅咒都会反转成对你的增益",
   "item.nightmare_orb.tool.string.2": "但是每秒受到1%最大生命值的伤害",
   "item.nightmare_orb.tool.string.3": "并且在此期间无法受到治疗",
-  "entity.moonstone.nightmare_entity": "深渊立方"
+  "entity.moonstone.nightmare_entity": "深渊立方",
+  "item.moonstone.nightmare_cube": "窥眸者的暗染之眼",
+  "item.nightmare_cube.tool.string": "靠近生物下按下Shift释放暗染丝线，这些丝线会继承你的伤害",
+
+  "item.moonstone.giant_nightmare": "梦魇巨人基因片段",
+  "item.giant_nightmare.tool.string": "杀死生物有概率召唤梦魇巨人",
+  "item.giant_nightmare.tool.string.1": "增加冷却时间",
+
+
+  "item.nightmare_head.tool.string": "免疫所有非生物伤害",
+  "item.nightmare_head.tool.string.1": "任何来源的伤害减免失效并且受到伤害固定为1点，最大生命值固定为10点",
+  "item.nightmare_head.tool.string.2": "每5秒恢复1点生命值，不受任何加成影响",
+  "item.nightmare_head.tool.string.3": "反弹500%的伤害给攻击者",
+  "item.nightmare_head.tool.string.4": "并且每次佩戴此物品死亡都会降低1%对深渊的抵抗力",
+  "item.nightmare_head.tool.string.6": "减少100%深渊的诅咒",
+  "item.nightmare_head.tool.string.7": "无法取下",
+  "item.nightmare_head.tool.string.8": "永远不会判定你为满血状态"
+
 }
 
 

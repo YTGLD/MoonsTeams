@@ -664,10 +664,29 @@
   "item.nightmare_orb.tool.string.1": "All curses from the Abyss will be reversed into gains for you",
   "item.nightmare_orb.tool.string.2": "But deal 1% maximum health damage per second",
   "item.nightmare_orb.tool.string.3": "And unable to receive treatment during this period",
+  "item.moonstone.nightmare_head": "nightmare orb",
+  "item.moonstone.nightmare_cube": "nightmare cube",
+
+  "item.moonstone.giant_nightmare": "giant nightmare",
+  "item.giant_nightmare.tool.string": "Killing creatures has a chance to summon the Nightmare Giant",
+  "item.giant_nightmare.tool.string.1": "Increase cooling time",
+
 
   "tool.string.ectoplasmball": "",
   "tool.string.ectoplasmball.1": "",
   "tool.string.ectoplasmball.2": "",
-  "tool.string.ectoplasmball.3": ""
+  "tool.string.ectoplasmball.3": "",
+  "item.nightmare_cube.tool.string": "You can press Shift while approaching the creature and release the dark dye thread",
+
+
+  "item.nightmare_head.tool.string": "Immune to all non biological injuries",
+  "item.nightmare_head.tool.string.1": "Damage reduction from any source is ineffective and the damage taken is fixed at 1 point, with a maximum health value fixed at 10 points",
+  "item.nightmare_head.tool.string.2": "Restores 0.2 health point per second, unaffected by any bonuses",
+  "item.nightmare_head.tool.string.3": "Bounce 200% penetration damage to the attacker",
+  "item.nightmare_head.tool.string.4": "And every time you wear this item and die, it will reduce your health by 10% and cause the item to fall off",
+  "item.nightmare_head.tool.string.5": "Maximum health restored after wearing",
+  "item.nightmare_head.tool.string.6": "Reduce the curse of the abyss by 100%",
+  "item.nightmare_head.tool.string.7": "Unable to remove normally",
+  "item.nightmare_head.tool.string.8": "And there will always be a ratio between your health and maximum health"
 }
 

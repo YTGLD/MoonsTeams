@@ -3,12 +3,10 @@ package com.moonstone.moonstonemod.event;
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.entity.cell_giant;
-import com.moonstone.moonstonemod.entity.cell_zombie;
-import com.moonstone.moonstonemod.entity.flysword;
-import com.moonstone.moonstonemod.entity.suddenrain;
+import com.moonstone.moonstonemod.entity.*;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.Perhaps;
 import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
@@ -35,6 +33,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.SpawnUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
@@ -160,18 +159,19 @@ public class AllEvent {
         }
     }
     @SubscribeEvent
-    public void gen(LivingHurtEvent event){
+    public void gen(LivingHurtEvent event) {
         if ((event.getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player,Items.air.get())){
-                if (!player.onGround()){
+            if (Handler.hascurio(player, Items.air.get())) {
+                if (!player.onGround()) {
                     event.setAmount(event.getAmount() * 0.8f);
                 }
-                if (!player.isInWater()){
+                if (!player.isInWater()) {
                     event.setAmount(event.getAmount() * 0.85f);
                 }
             }
         }
     }
+
     @SubscribeEvent
     public void evil(LivingDeathEvent event){
         if ((event.getEntity() instanceof Player player)) {
@@ -181,13 +181,26 @@ public class AllEvent {
         }
         if (event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.giant.get())){
-                if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
-                    if (Mth.nextInt(RandomSource.create(), 1, 20) == 1) {
-                        cell_giant z = new cell_giant(EntityTs.cell_giant.get(), player.level());
-                        z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
-                        z.setOwnerUUID(player.getUUID());
-                        player.level().addFreshEntity(z);
-                        player.getCooldowns().addCooldown(Items.giant.get(), 600);
+
+                if (!Handler.hascurio(player,Items.giant_nightmare.get())) {
+                    if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
+                        if (player.level() instanceof ServerLevel p_222881_) {
+                            if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
+                                Handler.trySpawnMob(player, EntityTs.cell_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+                                player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                                player.getCooldowns().addCooldown(Items.giant.get(), 600);
+                            }
+                        }
+                    }
+                }else {
+                    if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
+                        if (player.level() instanceof ServerLevel p_222881_) {
+                            if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                                Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+                                player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                                player.getCooldowns().addCooldown(Items.giant.get(), 1200);
+                            }
+                        }
                     }
                 }
             }
@@ -196,6 +209,7 @@ public class AllEvent {
                     cell_zombie z = new cell_zombie(EntityTs.cell_zombie.get(), player.level());
                     z.teleportTo(event.getEntity().getX(),event.getEntity().getY(), event.getEntity().getZ());
                     z.setOwnerUUID(player.getUUID());
+
                     if (Handler.hascurio(player,Items.adrenaline.get())){
                         z.addTag(DamageCell);
                     }
@@ -1860,7 +1874,7 @@ public class AllEvent {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.nightmareanchor.get())) {
                                 if (stack.getTag() != null) {
-                                    if (Handler.hascurio(player, Items.nightmareanchor.get())) {
+                                   {
 
                                         double playerX = player.getX();
                                         double playerY = player.getY();
@@ -2085,12 +2099,12 @@ public class AllEvent {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) < Kidney) {
                         Kidney /= 2;
                         event.setAmount(0);
-                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HURT, SoundSource.NEUTRAL, 1, 1);
                     } else {
                         Kidney = 100;
 
                         event.setAmount(event.getAmount() + player.getMaxHealth() / 3);
-                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_DEATH, SoundSource.NEUTRAL, 1, 1);
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), MSound.kidney_die.get(), SoundSource.NEUTRAL, 1, 1);
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_DEACTIVATE, SoundSource.NEUTRAL, 1, 1);
                         player.getCooldowns().addCooldown(Items.mkidney.get(), 200);
                     }
                 }
@@ -2248,7 +2262,7 @@ public class AllEvent {
         if (stack.getItem() instanceof Iplague) {
             tooltipEvent.setBorderStart(0xFF800000);
             tooltipEvent.setBorderEnd(0x0ff800000);
-            tooltipEvent.setBackgroundEnd(0x4d800000);
+            tooltipEvent.setBackgroundEnd(0x80800000);
         }
         if (stack.getItem() instanceof BloodViru) {
             tooltipEvent.setBackgroundEnd(0x38800080);

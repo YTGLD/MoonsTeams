@@ -47,6 +47,7 @@ public class nightmareanchor extends nightmare {
                         if (stack.getOrCreateTag().getDouble("x") != 0
                                 && stack.getOrCreateTag().getDouble("y") != 0
                                 && stack.getOrCreateTag().getDouble("z") != 0) {
+
                             player.teleportTo(stack.getOrCreateTag().getDouble("x"),
                                     stack.getOrCreateTag().getDouble("y"),
                                     stack.getOrCreateTag().getDouble("z"));
@@ -55,12 +56,20 @@ public class nightmareanchor extends nightmare {
                             player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
                             player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 2));
                             player.getCooldowns().addCooldown(stack.getItem(), 300);
+
+
                         }
                     }
                 }
             }
         }
     }
+
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        stack.getOrCreateTag().putString("66", stack.getDescriptionId());
+    }
+
     @Override
     public int getUseDuration(ItemStack p_40680_) {
         return 72000;

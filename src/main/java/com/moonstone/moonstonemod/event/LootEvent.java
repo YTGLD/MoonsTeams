@@ -60,7 +60,22 @@ public class LootEvent {
     public void zom(LivingDropsEvent event) {
         if (event.getSource().getEntity() instanceof Player player){
             int a = Mth.nextInt(RandomSource.create(), 1, 10);
+            int ng = Mth.nextInt(RandomSource.create(), 1, 5);
+
             if (Handler.hascurio(player, Items.necora.get())) {
+                if (Handler.hascurio(player, Items.nightmareeye.get())){
+                    if (Handler.hascurio(player, Items.giant.get())){
+                        if (!Handler.hascurio(player, Items.giant_nightmare.get())){
+                            if (event.getEntity() instanceof Warden elderGuardian) {
+                                if (ng == 1) {
+                                    event.getDrops().add(new ItemEntity(elderGuardian.level(), elderGuardian.getX(), elderGuardian.getY(), elderGuardian.getZ(), new ItemStack(Items.giant_nightmare.get())));
+                                }
+                            }
+                        }
+                    }
+                }
+
+
                 if (!Handler.hascurio(player, Items.giant.get())) {
                     if (event.getEntity() instanceof Warden elderGuardian) {
                         if (a == 1) {

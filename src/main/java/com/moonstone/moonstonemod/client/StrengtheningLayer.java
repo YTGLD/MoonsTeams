@@ -5,6 +5,10 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.client.renderer.MRender;
+import com.moonstone.moonstonemod.entity.nightmare_entity;
+import com.moonstone.moonstonemod.entity.nightmare_giant;
+import com.moonstone.moonstonemod.entity.red_entity;
+import com.moonstone.moonstonemod.entity.test_e;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
@@ -18,6 +22,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemDisplayContext;
 import org.jetbrains.annotations.NotNull;
 
 public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>> extends  RenderLayer {
@@ -37,71 +42,102 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
                        @NotNull Entity entity,
                        float limbAngle, float limbDistance,
                        float tickDelta, float animationProgress,
-                       float headYaw, float headPitch)
-    {
+                       float headYaw, float headPitch) {
+        if (entity instanceof nightmare_giant){
+            matrices.pushPose();
+            renderCircle3(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);
+            matrices.popPose();
+            matrices.pushPose();
+            renderCircle4(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);
+            matrices.popPose();
+            matrices.pushPose();
+            renderCircle6(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);
+            matrices.popPose();
+            matrices.pushPose();
+            renderCircle5(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);
+            matrices.popPose();
+            matrices.pushPose();
+            renderCircle7(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);
+            matrices.popPose();
+            matrices.pushPose();
+            renderCircle8(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);
+            matrices.popPose();
+        }
         if (entity instanceof Player player) {
-
-            if (Handler.hascurio(player,Items.nightmare_heart.get())) {
-                {
-                    matrices.pushPose();
-                    Nig(matrices,
-                            vertexConsumers,
-                            light,
-                            entity,
-                            limbAngle,
-                            limbDistance,
-                            tickDelta,
-                            animationProgress,
-                            headYaw,
-                            headPitch);
-                    matrices.popPose();
-                }
-                {
-                    matrices.pushPose();
-                    Nig3(matrices,
-                            vertexConsumers,
-                            light,
-                            entity,
-                            limbAngle,
-                            limbDistance,
-                            tickDelta,
-                            animationProgress,
-                            headYaw,
-                            headPitch);
-                    matrices.popPose();
-                }
-                {
-                    matrices.pushPose();
-                    this.renderCircle3(matrices,vertexConsumers,light,0,0,0,0.2f,entity);
-                    matrices.popPose();
-                }
-                {
-                    matrices.pushPose();
-                    this.renderCircle4(matrices,vertexConsumers,light,0,0,0,0.2f,entity);
-                    matrices.popPose();
-                }
-                {
-                    matrices.pushPose();
-                    this.renderCircle6(matrices,vertexConsumers,light,0,0,0,0.2f,entity);
-                    matrices.popPose();
-                }
-                {
-                    matrices.pushPose();
-                    this.renderCircle5(matrices,vertexConsumers,light,0,0,0,0.2f,entity);
-                    matrices.popPose();
-                }
-                {
-                    matrices.pushPose();
-                    this.renderCircle7(matrices,vertexConsumers,light,0,0,0,0.2f,entity);
-                    matrices.popPose();
-                }
-                {
-                    matrices.pushPose();
-                    this.renderCircle8(matrices,vertexConsumers,light,0,0,0,0.2f,entity);
-                    matrices.popPose();
+            if (Handler.hascurio(player, Items.nightmare_head.get())) {
+                matrices.pushPose();
+                Nig(matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch);
+                matrices.popPose();
+                matrices.pushPose();
+                Nig3(matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch);
+                matrices.popPose();
+                matrices.pushPose();
+                renderCircle3(matrices, vertexConsumers, light, 0.0F, 0.0F, 0.0F, 0.2F, entity);
+                matrices.popPose();
+                matrices.pushPose();
+                renderCircle4(matrices, vertexConsumers, light, 0.0F, 0.0F, 0.0F, 0.2F, entity);
+                matrices.popPose();
+                matrices.pushPose();
+                renderCircle6(matrices, vertexConsumers, light, 0.0F, 0.0F, 0.0F, 0.2F, entity);
+                matrices.popPose();
+                matrices.pushPose();
+                renderCircle5(matrices, vertexConsumers, light, 0.0F, 0.0F, 0.0F, 0.2F, entity);
+                matrices.popPose();
+                matrices.pushPose();
+                renderCircle7(matrices, vertexConsumers, light, 0.0F, 0.0F, 0.0F, 0.2F, entity);
+                matrices.popPose();
+                matrices.pushPose();
+                renderCircle8(matrices, vertexConsumers, light, 0.0F, 0.0F, 0.0F, 0.2F, entity);
+                matrices.popPose();
+            }
+        }
+        if (entity instanceof Player player) {
+            if (Handler.hascurio(player,Items.nightmare_cube.get())){
+                if (!player.getCooldowns().isOnCooldown(Items.nightmare_cube.get())){
+                    new BlackCube(matrices, vertexConsumers, light, entity);
                 }
             }
         }
+        new orb(matrices, vertexConsumers, light, entity);
+
+
+        if (entity instanceof red_entity entity1) {
+            new CircleCube(matrices, vertexConsumers, light, entity);
+        }
+        if (entity instanceof test_e entity1) {
+
+            new CircleCubeBoom(matrices, vertexConsumers, light, entity);
+
+        }
+    }
+    public void gorillacake(@NotNull PoseStack matrices,
+                    @NotNull MultiBufferSource vertexConsumers,
+                    int light,
+                    @NotNull Entity entity,
+                    float limbAngle, float limbDistance,
+                    float tickDelta, float animationProgress,
+                    float headYaw, float headPitch) {
+
+        EntityRenderer<? super LivingEntity> render = Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(entity);
+        if (render instanceof LivingEntityRenderer) {
+            matrices.translate(0, 0, 0);
+            float s = (float) Math.sin((double) entity.tickCount / 22.5);
+            s /= 5;
+            s += 1;
+            matrices.scale(s/2, s/2, s/2);
+
+
+            Minecraft.getInstance().getItemRenderer().renderStatic(
+                    Items.gorillacake.get().getDefaultInstance(),
+                    ItemDisplayContext.GROUND,
+                    light,
+                    OverlayTexture.NO_OVERLAY,
+                    matrices,
+                    vertexConsumers,
+                    entity.level(),
+                    0);
+        }
+
     }
     public void Nig(@NotNull PoseStack matrices,
                           @NotNull MultiBufferSource vertexConsumers,
@@ -150,6 +186,26 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
 
             vertexConsumer.vertex(poseStack.last().pose(), x1, y1, 0).color(0.8F, 0.3F, 0.5F, 1.0f).uv(0, 0).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(packedLight).normal(1, 0, 0).endVertex();
             vertexConsumer.vertex(poseStack.last().pose(), x2, y2, 0).color(0.8F, 0.3F, 0.5F, 1.0f).uv(0, 0).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(packedLight).normal(1, 0, 0).endVertex();
+        }
+    }
+    public void black_hold(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, float x, float y,Entity entity,float rgb) {
+        VertexConsumer vertexConsumer = bufferSource.getBuffer(MRender.t());
+        int segments = 64; // 圆的段数
+        float radius = 1.5f; // 圆的半径
+        // poseStack.mulPose(Axis.XP.rotationDegrees((float) (entity.tickCount)));
+        poseStack.mulPose(Axis.YP.rotationDegrees((float) (entity.tickCount * 1.289)));
+
+        for (int i = 0; i < segments; i++) {
+            float angle1 = (float) (2 * Math.PI * i / segments);
+            float angle2 = (float) (2 * Math.PI * (i + 1) / segments);
+
+            float x1 = (float) (x + radius * Math.cos(angle1));
+            float y1 = (float) (y + radius * Math.sin(angle1));
+            float x2 = (float) (x + radius * Math.cos(angle2));
+            float y2 = (float) (y + radius * Math.sin(angle2));
+
+            vertexConsumer.vertex(poseStack.last().pose(), x1, y1, 0).color(1, 0, 0, rgb).uv(0, 0).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(packedLight).normal(1, 0, 0).endVertex();
+            vertexConsumer.vertex(poseStack.last().pose(), x2, y2, 0).color(1, 0, 0, rgb).uv(0, 0).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(packedLight).normal(1, 0, 0).endVertex();
         }
     }
     public void renderCircle2(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, float x, float y,Entity entity) {

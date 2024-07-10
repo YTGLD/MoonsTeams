@@ -30,6 +30,7 @@ import java.util.List;
 
 @Mixin(GuiGraphics.class)
 public abstract class GuiGraphicsMixin {
+
     @Shadow private ItemStack tooltipStack;
 
     @Shadow public abstract int guiWidth();

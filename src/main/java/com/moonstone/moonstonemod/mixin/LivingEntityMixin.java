@@ -21,6 +21,14 @@ public abstract class LivingEntityMixin {
     @Shadow public abstract ItemStack getItemInHand(InteractionHand p_21121_);
 
     @Shadow protected abstract void setLivingEntityFlag(int p_21156_, boolean p_21157_);
+    @Inject(at = @At("RETURN"), method = "getMaxHealth", cancellable = true)
+    public void getMaxHealth(CallbackInfoReturnable<Float> cir) {
+        if ((LivingEntity) (Object) this instanceof Player player){
+            if (Handler.hascurio(player, Items.nightmare_head.get())){
+                cir.setReturnValue(10f);
+            }
+        }
+    }
     @Inject(at = @At("RETURN"), method = "canBeSeenByAnyone", cancellable = true)
     public void mhead(CallbackInfoReturnable<Boolean> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
