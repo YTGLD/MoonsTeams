@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.mixin;
 
-import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
+import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.SlotAccess;

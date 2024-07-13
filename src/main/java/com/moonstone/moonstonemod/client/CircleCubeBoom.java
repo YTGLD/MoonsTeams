@@ -12,9 +12,9 @@ import org.jetbrains.annotations.NotNull;
 public class CircleCubeBoom {
 
     public CircleCubeBoom(@NotNull PoseStack matrices,
-                      @NotNull MultiBufferSource vertexConsumers,
-                      int light,
-                      @NotNull Entity entity) {
+                          @NotNull MultiBufferSource vertexConsumers,
+                          int light,
+                          @NotNull Entity entity) {
 
 
         float s = entity.tickCount;

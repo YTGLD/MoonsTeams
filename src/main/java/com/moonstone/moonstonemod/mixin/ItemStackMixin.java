@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.mixin;
 
-import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
+import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import org.spongepowered.asm.mixin.Mixin;

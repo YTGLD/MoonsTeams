@@ -22,8 +22,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.tags.GameEventTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Unit;
@@ -34,7 +32,10 @@ import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.*;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NonTameRandomTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
@@ -130,6 +131,12 @@ public class nightmare_giant extends TamableAnimal implements OwnableEntity,Vibr
     public Packet<ClientGamePacketListener> getAddEntityPacket() {
         return new ClientboundAddEntityPacket(this, this.hasPose(Pose.EMERGING) ? 1 : 0);
     }
+
+    @Override
+    public void die(DamageSource p_21809_) {
+
+    }
+
     @Override
     protected void registerGoals() {
 
@@ -531,7 +538,10 @@ public class nightmare_giant extends TamableAnimal implements OwnableEntity,Vibr
             if (this.brain.getMemory(MemoryModuleType.ATTACK_TARGET).isEmpty() && entity instanceof LivingEntity) {
                 LivingEntity livingentity = (LivingEntity)entity;
                 if (!p_219381_.isIndirect() || this.closerThan(livingentity, 5.0D)) {
-                    this.setAttackTarget(livingentity);
+
+                    if (this.getOwner()!= null &&!livingentity.is(this.getOwner())) {
+                        this.setAttackTarget(livingentity);
+                    }
                 }
             }
         }

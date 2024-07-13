@@ -1,9 +1,6 @@
 package com.moonstone.moonstonemod.entity.nightmare;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.c.GEmissiveLay;
-import com.moonstone.moonstonemod.entity.c.GModel;
-import com.moonstone.moonstonemod.entity.cell_giant;
 import com.moonstone.moonstonemod.entity.nightmare_giant;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

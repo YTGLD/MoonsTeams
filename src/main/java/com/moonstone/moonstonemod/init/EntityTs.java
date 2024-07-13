@@ -37,8 +37,13 @@ public class EntityTs {
 
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.red_entity>> red_entity = REGISTRY.register("red_entity",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.red_entity::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("red_entity"));
+
+
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.nightmare_giant>> nightmare_giant = REGISTRY.register("nightmare_giant",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.nightmare_giant::new, MobCategory.MONSTER).sized(0.9F, 2.9F).clientTrackingRange(16).build("nightmare_giant"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.sword>> sword = REGISTRY.register("sword",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.sword::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("sword"));
+
 
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){

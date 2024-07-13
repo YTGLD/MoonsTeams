@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.mixin;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.world.InteractionHand;
@@ -56,17 +57,19 @@ public abstract class LivingEntityMixin {
     public void moonstone$travel(Vec3 p_21280_, CallbackInfo ci) {
         LivingEntity living = (LivingEntity) (Object) this;
         if (living instanceof Player player) {
-            if (Handler.hascurio(player, Items.flygene.get())){
-                player.moveRelative(player.getSpeed()*0.125f, p_21280_);
-                if (!player.onGround()){
-                    player.moveRelative(player.getSpeed()*0.225f, p_21280_);
+            if (player.isSprinting()) {
+                if (Handler.hascurio(player, Items.flygene.get())) {
+                    player.moveRelative((float) (player.getSpeed() * Config.flygene_speed.get()), p_21280_);
+                    if (!player.onGround()) {
+                        player.moveRelative((float) (player.getSpeed() * Config.flygene_speed.get()), p_21280_);
+                    }
                 }
-            }
-            if (Handler.hascurio(player, Items.bloodvirus.get())) {
-                player.moveRelative(player.getSpeed()*0.175f, p_21280_);
-            }
-            if (Handler.hascurio(player, Items.motor.get())) {
-                player.moveRelative(player.getSpeed()*0.15f, p_21280_);
+                if (Handler.hascurio(player, Items.bloodvirus.get())) {
+                    player.moveRelative((float) (player.getSpeed() * Config.bloodvirus_speed.get()), p_21280_);
+                }
+                if (Handler.hascurio(player, Items.motor.get())) {
+                    player.moveRelative((float) (player.getSpeed() * Config.motor_speed.get()), p_21280_);
+                }
             }
         }
     }

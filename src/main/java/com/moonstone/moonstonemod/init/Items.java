@@ -4,13 +4,15 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.book;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
-import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
-import com.moonstone.moonstonemod.item.common.*;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
+import com.moonstone.moonstonemod.item.ectoplasm.soul.soulbattery;
+import com.moonstone.moonstonemod.item.ectoplasm.soul.soulcube;
 import com.moonstone.moonstonemod.item.maulice.*;
 import com.moonstone.moonstonemod.item.maxitem.fortunecrystal;
 import com.moonstone.moonstonemod.item.maxitem.maxamout;
 import com.moonstone.moonstonemod.item.maxitem.mayhemcrystal;
+import com.moonstone.moonstonemod.item.maxitem.uncommon.common.*;
+import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.*;
 import com.moonstone.moonstonemod.item.nightmare.*;
 import com.moonstone.moonstonemod.item.plague.ALL.*;
@@ -22,9 +24,6 @@ import com.moonstone.moonstonemod.item.plague.TheNecora.autolytic;
 import com.moonstone.moonstonemod.item.plague.bloodvirus;
 import com.moonstone.moonstonemod.item.plague.medicine.med.*;
 import com.moonstone.moonstonemod.item.plague.necora;
-import com.moonstone.moonstonemod.item.soul.soulbattery;
-import com.moonstone.moonstonemod.item.soul.soulcube;
-import com.moonstone.moonstonemod.item.uncommon.*;
 import com.moonstone.moonstonemod.moonstoneitem.extend.apple;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraft.world.item.Item;
@@ -70,11 +69,11 @@ public class Items {
     public static final RegistryObject<Item>  biggreedcrystal =REGISTRY.register("biggreedcrystal", biggreedcrystal::new);
     public static final RegistryObject<Item>  bigwarcrystal =REGISTRY.register("bigwarcrystal", bigwarcrystal::new);
     public static final RegistryObject<Item>  blackeorb =REGISTRY.register("blackeorb", blackeorb::new);
-    public static final RegistryObject<Item>  blueamout =REGISTRY.register("blueamout", blueamout::new);
-    public static final RegistryObject<Item>  greedamout =REGISTRY.register("greedamout", greedamout::new);
-    public static final RegistryObject<Item>  greedcrystal =REGISTRY.register("greedcrystal", greedcrystal::new);
-    public static final RegistryObject<Item>  redamout =REGISTRY.register("redamout", redamout::new);
-    public static final RegistryObject<Item>  warcrystal =REGISTRY.register("warcrystal", warcrystal::new);
+    public static final RegistryObject<Item>  blueamout =REGISTRY.register("blueamout", com.moonstone.moonstonemod.item.maxitem.uncommon.common.blueamout::new);
+    public static final RegistryObject<Item>  greedamout =REGISTRY.register("greedamout", com.moonstone.moonstonemod.item.maxitem.uncommon.common.greedamout::new);
+    public static final RegistryObject<Item>  greedcrystal =REGISTRY.register("greedcrystal", com.moonstone.moonstonemod.item.maxitem.uncommon.common.greedcrystal::new);
+    public static final RegistryObject<Item>  redamout =REGISTRY.register("redamout", com.moonstone.moonstonemod.item.maxitem.uncommon.common.redamout::new);
+    public static final RegistryObject<Item>  warcrystal =REGISTRY.register("warcrystal", com.moonstone.moonstonemod.item.maxitem.uncommon.common.warcrystal::new);
     public static final RegistryObject<Item>  whiteorb =REGISTRY.register("whiteorb", whiteorb::new);
 
 
@@ -90,10 +89,10 @@ public class Items {
     public static final RegistryObject<Item>  soulbattery =REGISTRY.register("soulbattery", soulbattery::new);
     public static final RegistryObject<Item>  soulcube =REGISTRY.register("soulcube", soulcube::new);
 
-    public static final RegistryObject<Item>  diemug =REGISTRY.register("diemug", diemug::new);
-    public static final RegistryObject<Item>  evilcandle =REGISTRY.register("evilcandle",evilcandle::new);
-    public static final RegistryObject<Item>  evilmug =REGISTRY.register("evilmug", evilmug::new);
-    public static final RegistryObject<Item>  obsidianring =REGISTRY.register("obsidianring", obsidianring::new);
+    public static final RegistryObject<Item>  diemug =REGISTRY.register("diemug", com.moonstone.moonstonemod.item.maxitem.uncommon.diemug::new);
+    public static final RegistryObject<Item>  evilcandle =REGISTRY.register("evilcandle", com.moonstone.moonstonemod.item.maxitem.uncommon.evilcandle::new);
+    public static final RegistryObject<Item>  evilmug =REGISTRY.register("evilmug", com.moonstone.moonstonemod.item.maxitem.uncommon.evilmug::new);
+    public static final RegistryObject<Item>  obsidianring =REGISTRY.register("obsidianring", com.moonstone.moonstonemod.item.maxitem.uncommon.obsidianring::new);
 
 
     public static final RegistryObject<Item>  dna =REGISTRY.register("dna",dna::new);
@@ -141,7 +140,7 @@ public class Items {
 
     public static final RegistryObject<Item> mayhemcrystal =REGISTRY.register("mayhemcrystal",mayhemcrystal::new);
     public static final RegistryObject<Item> fortunecrystal =REGISTRY.register("fortunecrystal",fortunecrystal::new);
-    public static final RegistryObject<Item> plague =REGISTRY.register("plague", plague::new);
+    public static final RegistryObject<Item> plague =REGISTRY.register("plague", com.moonstone.moonstonemod.item.maxitem.uncommon.plague::new);
     public static final RegistryObject<Item> doomeye =REGISTRY.register("doomeye", doomeye::new);
 
     public static final RegistryObject<Item> doomswoud =REGISTRY.register("doomswoud", doomswoud::new);
@@ -170,6 +169,15 @@ public class Items {
     public static final RegistryObject<Item> nightmare_head =REGISTRY.register("nightmare_head", com.moonstone.moonstonemod.item.nightmare.nightmare_head::new);
     public static final RegistryObject<Item> giant_nightmare =REGISTRY.register("giant_nightmare", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giant_nightmare::new);
     public static final RegistryObject<Item> nightmare_cube =REGISTRY.register("nightmare_cube", com.moonstone.moonstonemod.item.nightmare.nightmare_cube::new);
+
+    public static final RegistryObject<Item> million_sword =REGISTRY.register("million_sword", com.moonstone.moonstonemod.item.nanodoom.sword.million_sword::new);
+
+    public static final RegistryObject<Item> speed_seed =REGISTRY.register("speed_seed", com.moonstone.moonstonemod.item.speed_seed::new);
+
+
+
+
+
     public static final RegistryObject<Item> the_heart_image =REGISTRY.register("the_heart_image", ()->{
         return new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
 

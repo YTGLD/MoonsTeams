@@ -1,5 +1,7 @@
 {
   "curios.modifiers.necora": "when necora",
+  "key.moonstone.y": "skill",
+  "key.categories.moonstone.moonstone_category": "Moonstone",
   "moonstone.book.error": "you need patchouli mod",
   "itemGroup.tabmoonstone": "Moon Stone",
   "moonstone.attribute.name.ectoplasm": "ectoplasm",
@@ -299,6 +301,7 @@
   "item.masticatory.tool.string.1": "50% reduction in eating time",
   "item.masticatory.tool.string.2": "eat 8 gold apple",
   "item.polyphagia.tool.string": "eat enchanted gold apple",
+  "item.polyphagia.tool.string.1": "when eat food you will heal 10% max health",
 
 
   "item.quadriceps.tool.string": "*Strengthening of the experimenter's quadriceps muscles to the point of enhancing the experimenter's locomotor ability",
@@ -630,6 +633,7 @@
   "entity.moonstone.cell_giant": "cell giant",
   "entity.moonstone.cell_zombie": "cell zombie",
   "entity.moonstone.nightmare_entity": "nightmare entity",
+  "entity.moonstone.nightmare_giant": "nightmare giant",
 
   "entity.moonstone.flysword": "fly sword",
   "entity.moonstone.suddenrain": "sudden rain",
@@ -670,6 +674,9 @@
   "item.moonstone.giant_nightmare": "giant nightmare",
   "item.giant_nightmare.tool.string": "Killing creatures has a chance to summon the Nightmare Giant",
   "item.giant_nightmare.tool.string.1": "Increase cooling time",
+
+  "item.moonstone.speed_seed": "speed seed",
+  "item.speed_seed.tool.string": "Fixed speed to 120% of normal value",
 
 
   "tool.string.ectoplasmball": "",

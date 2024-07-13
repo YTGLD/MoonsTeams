@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class suddenrain extends ThrowableItemProjectile {
     public int age = 0;
-    public suddenrain(@NotNull EntityType<suddenrain> p_37248_, Level p_37249_) {
+    public suddenrain(@NotNull EntityType<?extends suddenrain> p_37248_, Level p_37249_) {
         super(p_37248_, p_37249_);
     }
 

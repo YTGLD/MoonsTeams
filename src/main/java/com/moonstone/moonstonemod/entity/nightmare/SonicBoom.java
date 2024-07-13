@@ -16,7 +16,6 @@ import net.minecraft.world.entity.ai.behavior.Behavior;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.minecraft.world.phys.Vec3;
-import oshi.driver.mac.net.NetStat;
 
 public class SonicBoom extends Behavior<nightmare_giant> {
     private static final int DISTANCE_XZ = 15;
@@ -56,38 +55,39 @@ public class SonicBoom extends Behavior<nightmare_giant> {
         p_217725_.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).filter((p_217707_) -> {
             return p_217725_.closerThan(p_217707_, 15.0D, 20.0D);
         }).ifPresent((p_217704_) -> {
-            if (p_217725_.tickCount % 10 == 1) {
-                Vec3 vec3 = p_217725_.position().add(0.0D, (double) 1.6F, 0.0D);
-                Vec3 vec31 = p_217704_.getEyePosition().subtract(vec3);
-                Vec3 vec32 = vec31.normalize();
+            if (p_217704_.isAlive()) {
+                if (p_217725_.tickCount % 10 == 1) {
+                    Vec3 vec3 = p_217725_.position().add(0.0D, (double) 1.6F, 0.0D);
+                    Vec3 vec31 = p_217704_.getEyePosition().subtract(vec3);
+                    Vec3 vec32 = vec31.normalize();
 
-                for (int i = 1; i < Mth.floor(vec31.length()) + 10; ++i) {
-                    Vec3 vec33 = vec3.add(vec32.scale((double) i));
+                    for (int i = 1; i < Mth.floor(vec31.length()) + 10; ++i) {
+                        Vec3 vec33 = vec3.add(vec32.scale((double) i));
 
-                    test_e z = new test_e(EntityTs.test_e.get(), p_217725_.level());
-                    z.teleportTo(vec33.x, vec33.y - 2, vec33.z);
-                    z.setNoAi(true);
-                    z.setNoGravity(true);
-                    ;
-                    z.addTag("NoAiMoonstone");
-                    z.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 12000, 0, false, false));
+                        test_e z = new test_e(EntityTs.test_e.get(), p_217725_.level());
+                        z.teleportTo(vec33.x, vec33.y - 2, vec33.z);
+                        z.setNoAi(true);
+                        z.setNoGravity(true);
+                        z.addTag("NoAiMoonstone");
+                        z.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 12000, 0, false, false));
 
-                    p_217724_.addFreshEntity(z);
+                        p_217724_.addFreshEntity(z);
 
-                }
-                if (p_217725_.getOwner()!= null){
-                    if (p_217725_.getOwner().getHealth() > 10) {
-                        p_217725_.getOwner().hurt(p_217725_.getOwner().damageSources().dryOut(), p_217725_.getOwner().getHealth() / 40);
-                        p_217725_.getOwner().invulnerableTime = 0;
                     }
-                }
+                    if (p_217725_.getOwner() != null) {
+                        if (p_217725_.getOwner().getHealth() > 10) {
+                            p_217725_.getOwner().hurt(p_217725_.getOwner().damageSources().dryOut(), p_217725_.getOwner().getHealth() / 20);
+                            p_217725_.getOwner().invulnerableTime = 0;
+                        }
+                    }
 
-                p_217725_.playSound(SoundEvents.GENERIC_EXPLODE, 3.0F, 1.0F);
-                p_217704_.hurt(p_217724_.damageSources().sonicBoom(p_217725_), 20);
-                p_217704_.invulnerableTime = 0;
-                double d1 = 0.5D * (1.0D - p_217704_.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-                double d0 = 2.5D * (1.0D - p_217704_.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-                p_217704_.push(vec32.x() * d0, vec32.y() * d1, vec32.z() * d0);
+                    p_217725_.playSound(SoundEvents.GENERIC_EXPLODE, 0.1f, 0.1f);
+                    p_217704_.hurt(p_217724_.damageSources().sonicBoom(p_217725_), 20);
+                    p_217704_.invulnerableTime = 0;
+                    double d1 = 0.5D * (1.0D - p_217704_.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+                    double d0 = 2.5D * (1.0D - p_217704_.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+                    p_217704_.push(vec32.x() * d0, vec32.y() * d1, vec32.z() * d0);
+                }
             }
         });
     }

@@ -29,9 +29,27 @@ public class Config {
             .comment("Brain's critical strike multiplier")
             .defineInRange("MBrain_critical_multiplier", 2.25, 1, 999);
 
-    public static final ForgeConfigSpec.BooleanValue Exclusion_and_affinity = BUILDER
-            .comment("Whether to enable exclusion and affinity mechanisms")
-            .define("Exclusion and affinity",false);
+    public static final ForgeConfigSpec.DoubleValue battery_speed = BUILDER
+            .comment("The speed of the battery")
+            .defineInRange("battery", 0.1, 0, 999);
+
+    public static final ForgeConfigSpec.DoubleValue quadriceps_speed = BUILDER
+            .comment("The speed of the quadriceps")
+            .defineInRange("quadriceps", 0.25, 0, 999);
+
+    public static final ForgeConfigSpec.DoubleValue flygene_speed = BUILDER
+            .comment("The speed of the flygene")
+            .defineInRange("flygene", 0.125, 0, 999);
+    public static final ForgeConfigSpec.DoubleValue bloodvirus_speed = BUILDER
+            .comment("The speed of the bloodvirus")
+            .defineInRange("bloodvirus", 0.175, 0, 999);
+    public static final ForgeConfigSpec.DoubleValue motor_speed = BUILDER
+            .comment("The speed of the motor")
+            .defineInRange("motor", 0.15, 0, 999);
+
+    public static final ForgeConfigSpec.ConfigValue<String> ZombieNightmareGiant = BUILDER
+            .comment("What creatures should be killed and dropped")
+            .define("Mob","minecraft:warden");
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 }

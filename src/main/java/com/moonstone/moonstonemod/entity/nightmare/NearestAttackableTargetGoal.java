@@ -3,7 +3,6 @@ package com.moonstone.moonstonemod.entity.nightmare;
 import com.moonstone.moonstonemod.entity.nightmare_giant;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
@@ -68,7 +67,9 @@ public class NearestAttackableTargetGoal <T extends LivingEntity> extends Target
 
     public void start() {
         if (this.mob instanceof nightmare_giant nightmareGiant){
-            nightmareGiant.setAttackTarget(this.target);
+            if (this.target!= null&&nightmareGiant.getOwner()!=null&&!this.target.is(nightmareGiant.getOwner())) {
+                nightmareGiant.setAttackTarget(this.target);
+            }
         }
         super.start();
     }

@@ -6,9 +6,9 @@ import com.moonstone.moonstonemod.client.particle.blue;
 import com.moonstone.moonstonemod.client.particle.popr;
 import com.moonstone.moonstonemod.client.particle.red;
 import com.moonstone.moonstonemod.client.renderer.MRender;
-import com.moonstone.moonstonemod.entity.c.CellZombieG;
-import com.moonstone.moonstonemod.entity.c.SwordRenderer;
-import com.moonstone.moonstonemod.entity.c.ZombieRenderer;
+import com.moonstone.moonstonemod.entity.client.CellZombieG;
+import com.moonstone.moonstonemod.entity.client.SwordRenderer;
+import com.moonstone.moonstonemod.entity.client.ZombieRenderer;
 import com.moonstone.moonstonemod.entity.nightmare.CellZombieN;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
@@ -75,9 +75,10 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.cell_zombie.get(), ZombieRenderer::new);
             event.registerEntityRenderer(EntityTs.cell_giant.get(), CellZombieG::new);
             event.registerEntityRenderer(EntityTs.nightmare_entity.get(), ZombieRenderer::new);
-            event.registerEntityRenderer(EntityTs.red_entity.get(), com.moonstone.moonstonemod.entity.c.red.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.red_entity.get(), com.moonstone.moonstonemod.entity.client.red.ZombieRenderer::new);
             event.registerEntityRenderer(EntityTs.nightmare_giant.get(), CellZombieN::new);
-            event.registerEntityRenderer(EntityTs.test_e.get(), com.moonstone.moonstonemod.entity.c.red.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.test_e.get(), com.moonstone.moonstonemod.entity.client.red.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.sword.get(), SwordRenderer::new);
 
         }
         @SubscribeEvent

@@ -1,8 +1,5 @@
 package com.moonstone.moonstonemod;
 
-import com.moonstone.moonstonemod.entity.cell_zombie;
-import com.moonstone.moonstonemod.entity.nightmare_giant;
-import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

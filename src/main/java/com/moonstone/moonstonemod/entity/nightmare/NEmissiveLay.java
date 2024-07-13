@@ -2,7 +2,6 @@ package com.moonstone.moonstonemod.entity.nightmare;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.moonstone.moonstonemod.entity.c.GModel;
 import com.moonstone.moonstonemod.entity.nightmare_giant;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;

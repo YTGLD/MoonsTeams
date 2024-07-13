@@ -3,14 +3,19 @@ package com.moonstone.moonstonemod.event;
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.entity.*;
+import com.moonstone.moonstonemod.entity.cell_giant;
+import com.moonstone.moonstonemod.entity.cell_zombie;
+import com.moonstone.moonstonemod.entity.flysword;
+import com.moonstone.moonstonemod.entity.suddenrain;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.item.Perhaps;
-import com.moonstone.moonstonemod.item.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.maxitem.the_heart;
+import com.moonstone.moonstonemod.item.maxitem.uncommon.evilmug;
+import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
+import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.ALL.dna;
 import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
@@ -19,8 +24,6 @@ import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_blood;
 import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_boom;
 import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_calcification;
 import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_mummy;
-import com.moonstone.moonstonemod.item.uncommon.evilmug;
-import com.moonstone.moonstonemod.item.uncommon.plague;
 import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -197,6 +200,7 @@ public class AllEvent {
                         if (player.level() instanceof ServerLevel p_222881_) {
                             if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
                                 Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+                                player.hurt(player.damageSources().dryOut(), player.getHealth() /2);
                                 player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
                                 player.getCooldowns().addCooldown(Items.giant.get(), 1200);
                             }
@@ -748,6 +752,12 @@ public class AllEvent {
     @SubscribeEvent
     public void necora(LivingEntityUseItemEvent.Finish event) {
         if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player,Items.polyphagia.get())){
+                if (event.getItem().getUseAnimation() == UseAnim.EAT){
+                    player.heal(player.getMaxHealth() / 15);
+                }
+            }
+
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                 Map<String, ICurioStacksHandler> curios = handler.getCurios();
                 for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

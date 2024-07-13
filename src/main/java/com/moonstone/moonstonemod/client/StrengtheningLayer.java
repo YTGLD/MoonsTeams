@@ -5,7 +5,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.client.renderer.MRender;
-import com.moonstone.moonstonemod.entity.nightmare_entity;
 import com.moonstone.moonstonemod.entity.nightmare_giant;
 import com.moonstone.moonstonemod.entity.red_entity;
 import com.moonstone.moonstonemod.entity.test_e;
@@ -43,6 +42,10 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
                        float limbAngle, float limbDistance,
                        float tickDelta, float animationProgress,
                        float headYaw, float headPitch) {
+
+        new Sword(matrices,vertexConsumers,light,entity);
+        new orb(matrices, vertexConsumers, light, entity);
+
         if (entity instanceof nightmare_giant){
             matrices.pushPose();
             renderCircle3(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);
@@ -98,17 +101,13 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
                 }
             }
         }
-        new orb(matrices, vertexConsumers, light, entity);
-
-
         if (entity instanceof red_entity entity1) {
             new CircleCube(matrices, vertexConsumers, light, entity);
         }
         if (entity instanceof test_e entity1) {
-
             new CircleCubeBoom(matrices, vertexConsumers, light, entity);
-
         }
+
     }
     public void gorillacake(@NotNull PoseStack matrices,
                     @NotNull MultiBufferSource vertexConsumers,

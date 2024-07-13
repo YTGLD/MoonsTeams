@@ -1,9 +1,12 @@
 package com.moonstone.moonstonemod.event;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -13,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class LootEvent {
     @SubscribeEvent
@@ -66,9 +70,11 @@ public class LootEvent {
                 if (Handler.hascurio(player, Items.nightmareeye.get())){
                     if (Handler.hascurio(player, Items.giant.get())){
                         if (!Handler.hascurio(player, Items.giant_nightmare.get())){
-                            if (event.getEntity() instanceof Warden elderGuardian) {
+                            EntityType<?> entity = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(Config.ZombieNightmareGiant.get()));
+
+                            if (event.getEntity().getType() == entity) {
                                 if (ng == 1) {
-                                    event.getDrops().add(new ItemEntity(elderGuardian.level(), elderGuardian.getX(), elderGuardian.getY(), elderGuardian.getZ(), new ItemStack(Items.giant_nightmare.get())));
+                                    event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), new ItemStack(Items.giant_nightmare.get())));
                                 }
                             }
                         }

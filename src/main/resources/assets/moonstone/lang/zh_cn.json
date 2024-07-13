@@ -1,5 +1,7 @@
 {
   "curios.modifiers.dna": "植入DNA时",
+  "key.moonstone.y": "技能",
+  "key.categories.moonstone.moonstone_category": "Moonstone",
   "moonstone.book.error": "你需要安装帕秋莉手册",
   "curios.modifiers.necora": "佩戴时",
   "itemGroup.tabmoonstone": "月之石",
@@ -664,7 +666,7 @@
 
 
   "item.the_heart.tool.string": "右键物品存入心脏当中，可存入4种(不可叠加)",
-  "item.the_heart.tool.string.1": "如果掉落物是心脏里物品的某一项",
+  "item.the_heart.tool.string.1": "如果生物的掉落物是心脏里物品的某一项",
   "item.the_heart.tool.string.3": "不可以移除心脏内部物品",
   "item.the_heart.tool.string.2": "那么该掉落物数量乘以3",
   "item.moonstone.the_heart": "富饶之心",
@@ -685,7 +687,12 @@
 
   "item.moonstone.giant_nightmare": "梦魇巨人基因片段",
   "item.giant_nightmare.tool.string": "杀死生物有概率召唤梦魇巨人",
-  "item.giant_nightmare.tool.string.1": "增加冷却时间",
+  "item.giant_nightmare.tool.string.1": "增加冷却时间,召唤的一瞬间你将损失50%当前生命值",
+  "item.polyphagia.tool.string.1": "吃下食物恢复7%最大生命值",
+
+  "item.moonstone.speed_seed": "限流种子",
+  "item.speed_seed.tool.string": "速度固定到正常值的120%",
+  "entity.moonstone.nightmare_giant": "梦魇巨人",
 
 
   "item.nightmare_head.tool.string": "免疫所有非生物伤害",

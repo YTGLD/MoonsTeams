@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.plague.medicine.med;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medIC;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
@@ -22,10 +23,16 @@ import java.util.UUID;
 
 public class quadriceps extends medIC {
 
+
+
     @Override
-    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
-            player.getAttributes().addTransientAttributeModifiers(aaa(player, stack));
+            if (player.isSprinting()) {
+                player.getAttributes().addTransientAttributeModifiers(aaa(player, stack));
+            }else {
+                player.getAttributes().removeAttributeModifiers(aaa(player, stack));
+            }
         }
     }
 
@@ -38,7 +45,7 @@ public class quadriceps extends medIC {
 
     public Multimap<Attribute, AttributeModifier> aaa(Player player , ItemStack stack){
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        linkedHashMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("c13feccd-e582-4ae1-aee7-35e8acf7e9e1"), MoonStoneMod.MODID+":quadriceps", 0.25, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        linkedHashMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("c13feccd-e582-4ae1-aee7-35e8acf7e9e1"), MoonStoneMod.MODID+":quadriceps", Config.quadriceps_speed.get(), AttributeModifier.Operation.MULTIPLY_TOTAL));
         return linkedHashMultimap;
     }
 
