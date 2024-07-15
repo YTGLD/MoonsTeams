@@ -10,7 +10,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -29,6 +31,10 @@ public class nightmare_entity extends cell_zombie {
     private float clientSideAttackTime = 0;
     public int time = 0;
 
+    @Override
+    public void setItemSlot(EquipmentSlot p_21036_, ItemStack p_21037_) {
+
+    }
 
 
     public float getAttackAnimationScale(float p_32813_) {

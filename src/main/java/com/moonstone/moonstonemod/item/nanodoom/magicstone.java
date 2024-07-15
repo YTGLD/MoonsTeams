@@ -48,9 +48,9 @@ public class magicstone extends Doom {
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
         if (stack.getTag()!= null) {
-            tooltip.add(Component.translatable(" Damage: "+  stack.getTag().getInt("damage") + "%").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable(" Resistance: "+  stack.getTag().getInt("regs") + "%").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable(" KnockBack Resistance: "+  stack.getTag().getInt("kok") + "%").withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("attribute.name.generic.attack_damage").append(stack.getTag().getInt("damage") + "%").withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("effect.minecraft.resistance").append(stack.getTag().getInt("regs") + "%").withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("attribute.name.generic.knockback_resistance").append( stack.getTag().getInt("kok") + "%").withStyle(ChatFormatting.GOLD));
         }
     }
 }

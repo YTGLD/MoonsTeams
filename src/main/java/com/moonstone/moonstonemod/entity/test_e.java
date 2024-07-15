@@ -2,6 +2,8 @@ package com.moonstone.moonstonemod.entity;
 
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class test_e extends cell_zombie {
@@ -20,6 +22,10 @@ public class test_e extends cell_zombie {
     }
     public boolean hurt(DamageSource p_27424_, float p_27425_) {
         return false;
+    }
+    @Override
+    public void setItemSlot(EquipmentSlot p_21036_, ItemStack p_21037_) {
+
     }
 
 
