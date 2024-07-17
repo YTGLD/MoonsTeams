@@ -678,6 +678,23 @@
   "item.moonstone.speed_seed": "speed seed",
   "item.speed_seed.tool.string": "Fixed speed to 120% of normal value",
 
+  "item.moonstone.sword_amout": "sword amout",
+  "item.sword_amout.tool.string": "Your attack speed will increase with the number of slashes, but it will not exceed 100%",
+ "item.sword_amout.tool.string.1": "But your damage will gradually decrease, at most to 33% of its original level",
+ "item.sword_amout.tool.string.2": "When attacking with full force, it will not cause invincible frame protection",
+ "item.sword_amout.tool.string.3": "When your slash count reaches 10, each attack will cause a range effect",
+
+  "item.moonstone.light_amout": "light amout",
+  "item.light_amout.tool.string": "If the distance of a single fall is greater than 2",
+  "item.light_amout.tool.string.1": "So the next all-out strike will be accompanied by a large-scale lightning attack",
+  "item.light_amout.tool.string.2": "The damage of lightning will increase with the increase of its own attack damage and fall distance",
+  "item.light_amout.tool.string.3": "For every additional grid, there will be a 10% increase in damage",
+  "item.nano_box.tool.string": "in shift ， you will summon light bolt",
+  "item.moonstone.nano_box": "light nano box",
+  "item.nano_box.tool.string.1": "Can be retrofitted with batteries",
+
+  "item.moonstone.tooltip.battery": "Can be retrofitted with Nano",
+"item.medicinebox.tool.string.7": "",
 
   "tool.string.ectoplasmball": "",
   "tool.string.ectoplasmball.1": "",

@@ -694,6 +694,10 @@
   "item.speed_seed.tool.string": "速度固定到正常值的120%",
   "entity.moonstone.nightmare_giant": "梦魇巨人",
 
+  "item.light_amout.tool.string": "如果单次坠落距离大于2",
+  "item.light_amout.tool.string.1": "那么接下来的全力一击将附带大范围的闪电攻击",
+  "item.light_amout.tool.string.2": "闪电的伤害会随着自身攻击伤害和摔落距离的增加而增加",
+  "item.light_amout.tool.string.3": "每增加1格，都会增加10%的伤害",
 
   "item.nightmare_head.tool.string": "免疫所有非生物伤害",
   "item.nightmare_head.tool.string.1": "任何来源的伤害减免失效并且受到伤害固定为1点，最大生命值固定为10点",
@@ -702,8 +706,21 @@
   "item.nightmare_head.tool.string.4": "并且每次佩戴此物品死亡都会降低1%对深渊的抵抗力",
   "item.nightmare_head.tool.string.6": "减少100%深渊的诅咒",
   "item.nightmare_head.tool.string.7": "无法取下",
-  "item.nightmare_head.tool.string.8": "永远不会判定你为满血状态"
+  "item.nightmare_head.tool.string.8": "永远不会判定你为满血状态",
 
+  "item.moonstone.light_amout": "雷鸣之章",
+  "item.medicinebox.tool.string.7": "尝尝医药箱的味道如何！",
+  "item.moonstone.nano_box": "天机魔盒",
+  "item.nano_box.tool.string": "Shift状态下，对周围生物造成闪电攻击",
+  "item.nano_box.tool.string.1": "可以使用电池增幅或改装",
+  "item.moonstone.tooltip.battery": "可以改装或者增幅纳米科技",
+
+
+  "item.moonstone.sword_amout": "剑影之章",
+  "item.sword_amout.tool.string": "你的攻击速度会随着斩击次数的增加而增加，但不会超过100%",
+  "item.sword_amout.tool.string.1": "但是你的伤害会逐渐减少，最多降低到原先的33%",
+  "item.sword_amout.tool.string.2": "全力攻击时不会造成无敌帧保护",
+  "item.sword_amout.tool.string.3": "当你的斩击次数到达10时，每次攻击都会造成范围效果"
 }
 
 

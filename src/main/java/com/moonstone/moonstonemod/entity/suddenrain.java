@@ -45,11 +45,12 @@ public class suddenrain extends ThrowableItemProjectile {
 
     @Override
     protected void onHitEntity(@NotNull EntityHitResult hitResult) {
+        super.onHitEntity(hitResult);
         if (age > 30) {
             Entity entity = hitResult.getEntity();
             if (entity instanceof LivingEntity livingEntity){
                 if (Handler.hascurio(livingEntity, com.moonstone.moonstonemod.init.Items.doomeye.get())){
-
+                    return;
                 }else {
                     livingEntity.invulnerableTime = 0;
                     entity.hurt(this.damageSources().thrown(this, this.getOwner()), 4);
@@ -57,6 +58,7 @@ public class suddenrain extends ThrowableItemProjectile {
 
                 }
                 if (Handler.hascurio(livingEntity, com.moonstone.moonstonemod.init.Items.doomswoud.get())){
+                    return;
 
                 }else {
                     livingEntity.invulnerableTime = 0;

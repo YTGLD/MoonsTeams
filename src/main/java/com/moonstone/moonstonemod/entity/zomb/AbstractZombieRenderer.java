@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.entity.client;
+package com.moonstone.moonstonemod.entity.zomb;
 
 import com.moonstone.moonstonemod.entity.cell_zombie;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

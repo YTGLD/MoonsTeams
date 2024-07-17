@@ -28,8 +28,6 @@ public class EntityTs {
 
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.cell_giant>> cell_giant = REGISTRY.register("cell_giant",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.cell_giant::new, MobCategory.MONSTER).sized(0.9F, 2.9F).clientTrackingRange(16).build("cell_giant"));
-
-
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.nightmare_entity>> nightmare_entity = REGISTRY.register("nightmare_entity",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.nightmare_entity::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("nightmare_entity"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.test_e>> test_e = REGISTRY.register("test_e",
@@ -42,8 +40,14 @@ public class EntityTs {
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.nightmare_giant>> nightmare_giant = REGISTRY.register("nightmare_giant",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.nightmare_giant::new, MobCategory.MONSTER).sized(0.9F, 2.9F).clientTrackingRange(16).build("nightmare_giant"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.sword>> sword = REGISTRY.register("sword",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.sword::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("sword"));
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.sword::new, MobCategory.MONSTER).sized(0.1f, 0.1f).clientTrackingRange(16).build("sword"));
 
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bolt>> bolt = REGISTRY.register("bolt",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bolt::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("bolt"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bolt_light>> bolt_light = REGISTRY.register("bolt_light",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bolt_light::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("bolt_light"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bule_bolt>> bule_bolt = REGISTRY.register("bule_bolt",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bule_bolt::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("bule_bolt"));
 
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){
@@ -53,6 +57,10 @@ public class EntityTs {
         event.put(EntityTs.red_entity.get(), Zombie.createAttributes().build());
         event.put(EntityTs.nightmare_giant.get(), Warden.createAttributes().build());
         event.put(EntityTs.test_e.get(), Warden.createAttributes().build());
+        event.put(EntityTs.bolt.get(), Warden.createAttributes().build());
+        event.put(EntityTs.sword.get(), Warden.createAttributes().build());
+        event.put(EntityTs.bolt_light.get(), Warden.createAttributes().build());
+        event.put(EntityTs.bule_bolt.get(), Warden.createAttributes().build());
 
     }
 }

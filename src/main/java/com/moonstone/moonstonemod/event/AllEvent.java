@@ -398,7 +398,7 @@ public class AllEvent {
             int is = 16;
             List<suddenrain> items = livingEntity.level().getEntitiesOfClass(suddenrain.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
             for (suddenrain item : items) {
-                if (!Handler.hascurio(livingEntity,Items.doomswoud.get())) {
+                if (item.getOwner()!= null && !item.getOwner().is(livingEntity)) {
                     if (item.isAlive()) {
                         if (item.level() instanceof ServerLevel serverLevel) {
                             serverLevel.sendParticles(Particles.popr.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
@@ -426,7 +426,7 @@ public class AllEvent {
             int is = 16;
             List<flysword> items = livingEntity.level().getEntitiesOfClass(flysword.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
             for (flysword item : items) {
-                if (!Handler.hascurio(livingEntity,Items.doomeye.get())) {
+                if (item.getOwner()!= null && !item.getOwner().is(livingEntity)) {
                     if (item.isAlive()) {
 
                         if (item.age > 20) {
@@ -2208,6 +2208,7 @@ public class AllEvent {
 
                         suddenrain item = new suddenrain(EntityTs.suddenrain.get(), player.level());
                         item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
+                        item.setOwner(player);
                         item.setDeltaMovement(0, s / 1.5f, 0);
                         if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
                             player.level().addFreshEntity(item);
@@ -2220,6 +2221,7 @@ public class AllEvent {
                         }
                         flysword item = new flysword(EntityTs.flysword.get(), player.level());
                         item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
+                        item.setOwner(player);
                         item.setDeltaMovement(0, s / 1.5f, 0);
                         item.addTag(AllEvent.FlySword);
                         if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
@@ -2234,8 +2236,17 @@ public class AllEvent {
         }
     }
     @SubscribeEvent
-    public void SwordEventLivingEntityUseItemEvent(net.minecraftforge.event.entity.player.ItemTooltipEvent event){
+    public void ItemTooltipEvent_wind(net.minecraftforge.event.entity.player.ItemTooltipEvent event){
         ItemStack stack = event.getItemStack();
+        if (stack.getTag() !=null){
+            if (stack.getTag().getBoolean("ALLBattery")){
+                event.getToolTip().add(Component.translatable("item.moonstone.battery").withStyle(ChatFormatting.GOLD));
+            }
+        }
+        if (stack.getItem() instanceof IBattery){
+            event.getToolTip().add(Component.translatable("item.moonstone.tooltip.battery").withStyle(ChatFormatting.GOLD));
+
+        }
         if (stack.getTag() !=null){
             if (stack.getTag().getBoolean(wind_and_rain.wind)){
                 event.getToolTip().add(Component.translatable("item.moonstone.wind_and_rain").withStyle(ChatFormatting.AQUA).withStyle(ChatFormatting.ITALIC));

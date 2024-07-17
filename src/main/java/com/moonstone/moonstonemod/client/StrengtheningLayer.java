@@ -101,11 +101,46 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
                 }
             }
         }
+        if (entity instanceof Player player) {
+            if (Handler.hascurio(player,Items.nano_box.get())){
+                nano_box(matrices,vertexConsumers,light,entity);
+            }
+        }
         if (entity instanceof red_entity entity1) {
             new CircleCube(matrices, vertexConsumers, light, entity);
         }
         if (entity instanceof test_e entity1) {
             new CircleCubeBoom(matrices, vertexConsumers, light, entity);
+        }
+
+    }
+    public void nano_box(@NotNull PoseStack matrices,
+                            @NotNull MultiBufferSource vertexConsumers,
+                            int light,
+                            @NotNull Entity entity ){
+
+        EntityRenderer<? super LivingEntity> render = Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(entity);
+        if (render instanceof LivingEntityRenderer) {
+            matrices.mulPose(Axis.YN.rotation((float) entity.tickCount / 20));
+
+            matrices.translate(-0.8, -0.25f, 0);
+            matrices.mulPose(Axis.YN.rotation((float) entity.tickCount / 20));
+
+            matrices.mulPose(Axis.ZP.rotation((float)( entity.tickCount )/ 60));
+            matrices.mulPose(Axis.XP.rotation((float)( entity.tickCount) / 60));
+
+            matrices.scale(0.45F,0.45F,0.45F);
+
+
+            Minecraft.getInstance().getItemRenderer().renderStatic(
+                    Items.model_box_nano.get().getDefaultInstance(),
+                    ItemDisplayContext.GROUND,
+                    light,
+                    OverlayTexture.NO_OVERLAY,
+                    matrices,
+                    vertexConsumers,
+                    entity.level(),
+                    0);
         }
 
     }

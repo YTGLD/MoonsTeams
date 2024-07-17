@@ -11,6 +11,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -194,5 +195,8 @@ public class cell_zombie extends TamableAnimal {
     public void setItemSlot(EquipmentSlot p_21036_, ItemStack p_21037_) {
 
     }
+    @Override
+    public void setItemInHand(InteractionHand p_21009_, ItemStack p_21010_) {
 
+    }
 }

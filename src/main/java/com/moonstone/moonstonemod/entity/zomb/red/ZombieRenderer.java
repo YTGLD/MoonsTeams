@@ -1,11 +1,10 @@
-package com.moonstone.moonstonemod.entity.client;
+package com.moonstone.moonstonemod.entity.zomb.red;
 
-import com.moonstone.moonstonemod.entity.cell_zombie;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class ZombieRenderer extends AbstractZombieRenderer<cell_zombie,ZombieModel<cell_zombie>> {
+public class ZombieRenderer extends AbstractZombieRenderer<com.moonstone.moonstonemod.entity.cell_zombie, ZombieModel<com.moonstone.moonstonemod.entity.cell_zombie>> {
     public ZombieRenderer(EntityRendererProvider.Context p_174456_) {
         this(p_174456_, ModelLayers.ZOMBIE, ModelLayers.ZOMBIE_INNER_ARMOR, ModelLayers.ZOMBIE_OUTER_ARMOR);
     }

@@ -62,7 +62,7 @@ public class million_sword extends Doom {
                                                sword item = new sword(EntityTs.sword.get(),player.level());
                                                item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
                                                item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),0,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
-                                               item.setOwner(player);
+                                               item.setOwnerUUID(player.getUUID());
                                                player.level().addFreshEntity(item);
                                            }
 
@@ -76,7 +76,7 @@ public class million_sword extends Doom {
                                                }
                                                sword item = new sword(EntityTs.sword.get(),player.level());
                                                item.setPos(player.position());
-                                               item.setOwner(player);
+                                               item.setOwnerUUID(player.getUUID());
                                                item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/2,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
                                            }
                                        }

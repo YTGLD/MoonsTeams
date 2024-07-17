@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.event;
 
-import com.moonstone.moonstonemod.item.nanodoom.sword.million_sword;
+import com.moonstone.moonstonemod.item.nanodoom.light_amout;
+import com.moonstone.moonstonemod.item.nanodoom.sword_amout;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_head;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_heart;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_orb;
@@ -22,8 +23,9 @@ public class NewEvent {
     public void LivingHurtEvent(LivingHurtEvent event){
         nightmare_heart.NigH(event);
         nightmare_head.headHurt(event);
+        sword_amout.Sword_m(event);
+        light_amout.Sword_m(event);
 
-        million_sword.Sword_m(event);
     }
     @SubscribeEvent
     public void LivingHealEvent(LivingDeathEvent event) {

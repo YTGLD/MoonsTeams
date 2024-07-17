@@ -93,6 +93,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.doomswoud.get()));
                 b.accept(new ItemStack(Items.wind.get()));
                 b.accept(new ItemStack(Items.wind_and_rain.get()));
+                b.accept(new ItemStack(Items.nano_box.get()));
 
                 b.accept(new ItemStack(Items.dna.get()));
                 b.accept(new ItemStack(Items.fungus.get()));

@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -35,7 +36,10 @@ public class nightmare_entity extends cell_zombie {
     public void setItemSlot(EquipmentSlot p_21036_, ItemStack p_21037_) {
 
     }
+    @Override
+    public void setItemInHand(InteractionHand p_21009_, ItemStack p_21010_) {
 
+    }
 
     public float getAttackAnimationScale(float p_32813_) {
         return (clientSideAttackTime + p_32813_) / (float)80;

@@ -1,6 +1,9 @@
 package com.moonstone.moonstonemod.mixin;
 
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
+import com.moonstone.moonstonemod.moonstoneitem.Doom;
+import com.moonstone.moonstonemod.moonstoneitem.IBattery;
+import com.moonstone.moonstonemod.moonstoneitem.INanoBattery;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.SlotAccess;
@@ -29,6 +32,14 @@ public abstract class ItemMixin {
         if (me.getCount() == 1) {
             if (clickAction == ClickAction.SECONDARY && slot.allowModification(player)) {
                 if (!Other.isEmpty()) {
+                    if (Other.getItem() instanceof IBattery){
+                        if (me.getItem() instanceof INanoBattery){
+                            if (me.getTag() != null){
+                                me.getOrCreateTag().putBoolean("ALLBattery",true);
+                                Other.shrink(1);
+                            }
+                        }
+                    }
                     if (Other.getItem() instanceof wind_and_rain) {
                         if (me.getItem() instanceof SwordItem) {
                             if (me.getTag() != null) {

@@ -173,8 +173,12 @@ public class Items {
     public static final RegistryObject<Item> million_sword =REGISTRY.register("million_sword", com.moonstone.moonstonemod.item.nanodoom.sword.million_sword::new);
 
     public static final RegistryObject<Item> speed_seed =REGISTRY.register("speed_seed", com.moonstone.moonstonemod.item.speed_seed::new);
+    public static final RegistryObject<Item> sword_amout =REGISTRY.register("sword_amout", com.moonstone.moonstonemod.item.nanodoom.sword_amout::new);
 
+    public static final RegistryObject<Item> light_amout =REGISTRY.register("light_amout", com.moonstone.moonstonemod.item.nanodoom.light_amout::new);
 
+    public static final RegistryObject<Item> nano_box =REGISTRY.register("nano_box", com.moonstone.moonstonemod.item.nanodoom.nano_box::new);
+    public static final RegistryObject<Item> model_box_nano =REGISTRY.register("model_box_nano", com.moonstone.moonstonemod.item.nanodoom.nano_box.model_box_nano::new);
 
 
 

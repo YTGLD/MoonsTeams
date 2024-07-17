@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.entity.client.red;
+package com.moonstone.moonstonemod.entity.zomb.red;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;

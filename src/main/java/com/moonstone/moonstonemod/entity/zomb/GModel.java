@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.entity.client;
+package com.moonstone.moonstonemod.entity.zomb;
 
 import com.google.common.collect.ImmutableList;
 import com.moonstone.moonstonemod.entity.cell_giant;

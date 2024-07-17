@@ -43,25 +43,27 @@ public class flysword extends ThrowableItemProjectile {
         super.onHitEntity(hitResult);
         Entity entity = hitResult.getEntity();
 
-        if (entity instanceof LivingEntity livingEntity){
-            if (Handler.hascurio(livingEntity, com.moonstone.moonstonemod.init.Items.doomeye.get())){
+        if (age > 20) {
+            if (entity instanceof LivingEntity livingEntity) {
+                if (Handler.hascurio(livingEntity, com.moonstone.moonstonemod.init.Items.doomeye.get())) {
+                    return;
+                } else {
+                    livingEntity.invulnerableTime = 0;
+                    entity.hurt(this.damageSources().thrown(this, this.getOwner()), 4);
+                    this.discard();
 
-            }else {
-                livingEntity.invulnerableTime = 0;
-                entity.hurt(this.damageSources().thrown(this, this.getOwner()), 4);
-                this.discard();
-
+                }
+                if (Handler.hascurio(livingEntity, com.moonstone.moonstonemod.init.Items.doomswoud.get())) {
+                    return;
+                } else {
+                    livingEntity.invulnerableTime = 0;
+                    entity.hurt(this.damageSources().thrown(this, this.getOwner()), 4);
+                    this.discard();
+                }
             }
-            if (Handler.hascurio(livingEntity, com.moonstone.moonstonemod.init.Items.doomswoud.get())){
 
-            }else {
-                livingEntity.invulnerableTime = 0;
-                entity.hurt(this.damageSources().thrown(this, this.getOwner()), 4);
-                this.discard();
-            }
+            this.discard();
         }
-
-        this.discard();
     }
 
 

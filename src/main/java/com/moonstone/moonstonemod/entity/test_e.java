@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.entity;
 
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -27,7 +28,10 @@ public class test_e extends cell_zombie {
     public void setItemSlot(EquipmentSlot p_21036_, ItemStack p_21037_) {
 
     }
+    @Override
+    public void setItemInHand(InteractionHand p_21009_, ItemStack p_21010_) {
 
+    }
 
 
 }

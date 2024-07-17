@@ -30,6 +30,7 @@ public abstract class LivingEntityMixin {
             }
         }
     }
+
     @Inject(at = @At("RETURN"), method = "canBeSeenByAnyone", cancellable = true)
     public void mhead(CallbackInfoReturnable<Boolean> cir) {
         LivingEntity living = (LivingEntity) (Object) this;

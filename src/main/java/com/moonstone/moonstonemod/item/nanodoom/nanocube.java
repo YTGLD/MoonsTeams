@@ -16,6 +16,7 @@ public class nanocube extends INanoBattery {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         super.curioTick(slotContext,stack);
+        this.setT(600,slotContext.entity() ,stack);
         if (slotContext.entity() instanceof Player player){
             if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
                 ItemStack HEAD = player.getItemBySlot(EquipmentSlot.HEAD);
@@ -51,7 +52,7 @@ public class nanocube extends INanoBattery {
                     }
                 }
 
-                player.getCooldowns().addCooldown(stack.getItem(), t);
+                player.getCooldowns().addCooldown(stack.getItem(), getT());
 
             }
         }

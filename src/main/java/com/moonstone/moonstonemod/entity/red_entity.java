@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -72,6 +73,9 @@ public class red_entity extends cell_zombie {
 
     }
 
+    @Override
+    public void setItemInHand(InteractionHand p_21009_, ItemStack p_21010_) {
 
+    }
 }
 
