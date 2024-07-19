@@ -23,9 +23,9 @@ public class magicstone extends Doom {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            final int damage = Mth.nextInt(RandomSource.create(), -15, 15);
-            final int kok = Mth.nextInt(RandomSource.create(), -25, 25);
-            final int regs = Mth.nextInt(RandomSource.create(), -5, 5);
+            final int damage = Mth.nextInt(RandomSource.create(), -7, 21);
+            final int kok = Mth.nextInt(RandomSource.create(), -13, 36);
+            final int regs = Mth.nextInt(RandomSource.create(), -3, 9);
 
             if (!stack.getOrCreateTag().getBoolean(magic)){
                 stack.getOrCreateTag().putInt("damage", damage);

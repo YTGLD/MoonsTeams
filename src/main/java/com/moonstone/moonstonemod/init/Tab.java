@@ -111,6 +111,14 @@ public class Tab {
                 b.accept(new ItemStack(Items.watergen.get()));
                 b.accept(new ItemStack(Items.giant.get()));
                 b.accept(new ItemStack(Items.giant_nightmare.get()));
+                b.accept(new ItemStack(Items.not_blood_cell.get()));
+                b.accept(new ItemStack(Items.anaerobic_cell.get()));
+                b.accept(new ItemStack(Items.giant_boom_cell.get()));
+                b.accept(new ItemStack(Items.subspace_cell.get()));
+                b.accept(new ItemStack(Items.bone_cell.get()));
+                b.accept(new ItemStack(Items.parasitic_cell.get()));
+                b.accept(new ItemStack(Items.mother_cell.get()));
+                b.accept(new ItemStack(Items.disgusting_cells.get()));
 
                 b.accept(new ItemStack(Items.botton.get()));
                 b.accept(new ItemStack(Items.catalyzer.get()));

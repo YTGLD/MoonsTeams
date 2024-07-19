@@ -109,7 +109,15 @@ public class AllEvent {
     public static final  String boom = cell_boom.cb;
     public static final  String calcification = cell_calcification.cc;
     public static final  String cb_blood = cell_blood.c_blood;
-    public static final String Gorillas ="Gorillas";
+    public static final String Giant_Time ="Giant_Time";
+    public static final String Giant_Boom ="Giant_Boom";
+    public static final String Not_Giant_BLOOD ="Not_Giant_BLOOD";
+    public static final String Subspace_Giant ="Subspace_Giant";
+
+    public static final String Bone_Giant = "Bone_Giant";
+    public static final String Parasitic_cell_Giant = "Parasitic_cell_Giant";
+    public static final String Disgusting__cell_Giant = "Disgusting__cell_Giant";
+
 
     @SubscribeEvent
     public void the_heart(LivingDropsEvent event){
@@ -188,7 +196,18 @@ public class AllEvent {
                 if (!Handler.hascurio(player,Items.giant_nightmare.get())) {
                     if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
                         if (player.level() instanceof ServerLevel p_222881_) {
-                            if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
+                            if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
+                                if (Handler.hascurio(player,Items.mother_cell.get())){
+                                    if (Mth.nextInt(RandomSource.create(),1, 2)==1){
+                                        Handler.trySpawnMob(player, EntityTs.cell_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+                                    }
+                                    for (int i = 0; i < 2; i++) {
+                                        cell_zombie cell_zombie = new cell_zombie(EntityTs.cell_zombie.get(),player.level());
+                                        cell_zombie.setOwnerUUID(player.getUUID());
+                                        cell_zombie.setPos(player.position());
+                                        player.level().addFreshEntity(cell_zombie);
+                                    }
+                                }
                                 Handler.trySpawnMob(player, EntityTs.cell_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
                                 player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
                                 player.getCooldowns().addCooldown(Items.giant.get(), 600);
@@ -199,10 +218,16 @@ public class AllEvent {
                     if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
                         if (player.level() instanceof ServerLevel p_222881_) {
                             if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+
                                 Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
-                                player.hurt(player.damageSources().dryOut(), player.getHealth() /2);
+
+                                if (!Handler.hascurio(player,Items.subspace_cell.get())) {
+                                    player.hurt(player.damageSources().dryOut(), player.getHealth() / 2);
+                                }
                                 player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
                                 player.getCooldowns().addCooldown(Items.giant.get(), 1200);
+
+
                             }
                         }
                     }
@@ -362,6 +387,7 @@ public class AllEvent {
                         }
                         suddenrain item = new suddenrain(EntityTs.suddenrain.get(),player.level());
                         item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
+                        item.setOwner(player);
                         item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
                         player.level().addFreshEntity(item);
                         player.getCooldowns().addCooldown(Items.doomswoud.get(), 20);
@@ -381,6 +407,7 @@ public class AllEvent {
                         s = 0.12f;
                     }
                     suddenrain item = new suddenrain(EntityTs.suddenrain.get(), player.level());
+                    item.setOwner(player);
                     item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
                     item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f), s / 1.5f, Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f));
                     player.level().addFreshEntity(item);
@@ -462,7 +489,8 @@ public class AllEvent {
                         }
                         flysword item = new flysword(EntityTs.flysword.get(),player.level());
                         item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
-                        item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
+                        item.setOwner(player);
+                    item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
                         item.setNoGravity(true);
                         item.addTag(FlySword);
                         player.level().addFreshEntity(item);

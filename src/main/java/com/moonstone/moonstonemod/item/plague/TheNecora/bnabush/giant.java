@@ -36,7 +36,7 @@ public class giant extends TheNecoraIC {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
 
         CuriosApi
-                .addSlotModifier(linkedHashMultimap, "dna", uuid, 2, AttributeModifier.Operation.ADDITION);
+                .addSlotModifier(linkedHashMultimap, "dna", uuid, 3, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;
     }
     @Override

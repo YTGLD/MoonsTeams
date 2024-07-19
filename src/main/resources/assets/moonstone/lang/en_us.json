@@ -693,9 +693,39 @@
   "item.moonstone.nano_box": "light nano box",
   "item.nano_box.tool.string.1": "Can be retrofitted with batteries",
 
+
+  "item.moonstone.anaerobic_cell": "anaerobic cell",
+  "item.anaerobic_cell.tool.string": "Nightmare Giant's Survival Time Increases by 50%",
+  "item.moonstone.giant_boom_cell": "giant boom cell",
+  "item.giant_boom_cell.tool.string": "Nightmare giant's death leads to devastating explosion",
+  "item.moonstone.not_blood_cell": "not blood cell",
+  "item.not_blood_cell.tool.string": " Nightmare Giant's ranged attacks will not cause damage to summoners",
+  "item.moonstone.subspace_cell": "subspace cell",
+  "item.subspace_cell.tool.string": "Summon Nightmare Giant to no longer consume health points",
+
+  "item.moonstone.bone_cell": "bone cell",
+  "item.bone_cell.tool.string": "Giant cell zombies will receive 70% of the summoner's armor value when summoned",
+
+  "item.moonstone.parasitic_cell": "parasitic cell",
+  "item.parasitic_cell.tool.string": "Giant cell zombies give birth to 5 cell zombies after death",
+
+  "item.moonstone.mother_cell": "mother cell",
+  "item.mother_cell.tool.string": "Giant cell zombies will generate an additional 2 cell zombies when summoned, with a 50% chance of summoning another giant zombie",
+
+  "item.moonstone.disgusting_cells": "disgusting cells",
+  "item.disgusting_cells.tool.string": "The survival time of giant cell zombies is increased by 100%",
+
+
+
+
+
+
+
+
+
   "item.moonstone.tooltip.battery": "Can be retrofitted with Nano",
 "item.medicinebox.tool.string.7": "",
-
+  "moonstone.string.cooling": "time:",
   "tool.string.ectoplasmball": "",
   "tool.string.ectoplasmball.1": "",
   "tool.string.ectoplasmball.2": "",

@@ -3,8 +3,10 @@ package com.moonstone.moonstonemod.entity;
 import com.google.common.annotations.VisibleForTesting;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
-import com.moonstone.moonstonemod.entity.nightmare.AInightmare;
-import com.moonstone.moonstonemod.entity.nightmare.SonicBoom;
+import com.moonstone.moonstonemod.client.entitys.nightmare.NearestAttackableTargetGoal;
+import com.moonstone.moonstonemod.client.entitys.nightmare.AInightmare;
+import com.moonstone.moonstonemod.client.entitys.nightmare.SonicBoom;
+import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -65,7 +67,6 @@ import org.slf4j.Logger;
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.Optional;
-import java.util.Random;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 
@@ -135,7 +136,9 @@ public class nightmare_giant extends TamableAnimal implements OwnableEntity,Vibr
 
     @Override
     public void die(DamageSource p_21809_) {
-
+        if (this.getTags().contains(AllEvent.Giant_Boom)){
+            this.level().explode(this, this.getX(), this.getY(), this.getZ(), 10, true, Level.ExplosionInteraction.NONE);
+        }
     }
 
     @Override
@@ -154,13 +157,13 @@ public class nightmare_giant extends TamableAnimal implements OwnableEntity,Vibr
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
         this.targetSelector.addGoal(6, new NonTameRandomTargetGoal<>(this, Turtle.class, false, Turtle.BABY_ON_LAND_SELECTOR));
-        this.targetSelector.addGoal(7, new com.moonstone.moonstonemod.entity.nightmare.NearestAttackableTargetGoal<>(this, Villager.class, false));
-        this.targetSelector.addGoal(7, new com.moonstone.moonstonemod.entity.nightmare.NearestAttackableTargetGoal<>(this, Zombie.class, false));
-        this.targetSelector.addGoal(7, new com.moonstone.moonstonemod.entity.nightmare.NearestAttackableTargetGoal<>(this, Spider.class, false));
-        this.targetSelector.addGoal(7, new com.moonstone.moonstonemod.entity.nightmare.NearestAttackableTargetGoal<>(this, Skeleton.class, false));
-        this.targetSelector.addGoal(7, new com.moonstone.moonstonemod.entity.nightmare.NearestAttackableTargetGoal<>(this, Creeper.class, false));
-        this.targetSelector.addGoal(7, new com.moonstone.moonstonemod.entity.nightmare.NearestAttackableTargetGoal<>(this, EnderMan.class, false));
-        this.targetSelector.addGoal(7, new com.moonstone.moonstonemod.entity.nightmare.NearestAttackableTargetGoal<>(this, Monster.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Villager.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Zombie.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Spider.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Skeleton.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Creeper.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, EnderMan.class, false));
+        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Monster.class, false));
 
     }
     public void recreateFromPacket(ClientboundAddEntityPacket p_219420_) {
@@ -250,10 +253,16 @@ public class nightmare_giant extends TamableAnimal implements OwnableEntity,Vibr
     public int time = 0;
 
     public void tick() {
-        time++;
-        if (time > 1200){
+
+        if (!this.getTags().contains(AllEvent.Giant_Time)) {
+            time += 3;
+        }else {
+            time+=2;
+        }
+        if (time > 3600){
             this.discard();
         }
+
         if (this.getOwner()!= null) {
             if (this.getOwner().getLastHurtByMob()!= null) {
                 if (!this.getOwner().getLastHurtByMob().is(this)) {

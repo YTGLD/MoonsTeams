@@ -708,12 +708,50 @@
   "item.nightmare_head.tool.string.7": "无法取下",
   "item.nightmare_head.tool.string.8": "永远不会判定你为满血状态",
 
+
+  "item.moonstone.anaerobic_cell": "无氧呼吸",
+  "item.anaerobic_cell.tool.string": "梦魇巨人的存活时间提高50%",
+  "item.moonstone.giant_boom_cell": "甲烷囊肿",
+  "item.giant_boom_cell.tool.string": "梦魇巨人死亡后产生毁灭性爆炸",
+  "item.moonstone.not_blood_cell": "非嗜血性病变",
+  "item.not_blood_cell.tool.string": " 梦魇巨人的远程攻击不会对召唤者造成伤害",
+  "item.moonstone.subspace_cell": "子空间细胞病变",
+  "item.subspace_cell.tool.string": "召唤梦魇巨人不再消耗生命值",
+
+  "item.moonstone.bone_cell": "骨细胞增生",
+  "item.bone_cell.tool.string": "巨型细胞僵尸在召唤时会获得召唤者70%的护甲值",
+
+
+  "item.moonstone.parasitic_cell": "寄生性僵尸细胞",
+  "item.parasitic_cell.tool.string": "巨型细胞僵尸在死后诞生5个细胞僵尸h",
+
+  "item.moonstone.mother_cell": "子母细胞",
+  "item.mother_cell.tool.string": "巨型细胞僵尸在召唤时会额外产生2个细胞僵尸，并有50%的概率再召唤一个巨人僵尸",
+
+  "item.moonstone.disgusting_cells": "厌氧细胞",
+  "item.disgusting_cells.tool.string": "巨型细胞僵尸的存活时间提高100%",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.moonstone.light_amout": "雷鸣之章",
   "item.medicinebox.tool.string.7": "尝尝医药箱的味道如何！",
   "item.moonstone.nano_box": "天机魔盒",
   "item.nano_box.tool.string": "Shift状态下，对周围生物造成闪电攻击",
   "item.nano_box.tool.string.1": "可以使用电池增幅或改装",
   "item.moonstone.tooltip.battery": "可以改装或者增幅纳米科技",
+  "moonstone.string.cooling": "冷却时间：",
 
 
   "item.moonstone.sword_amout": "剑影之章",

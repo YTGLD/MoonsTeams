@@ -42,6 +42,7 @@ public class sword_amout extends Doom {
 
     当你的斩击次数到达10时，每次攻击都会造成范围效果
      */
+    /*
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
@@ -108,13 +109,12 @@ public class sword_amout extends Doom {
         bolt bolt = new bolt(EntityTs.bolt.get(),slotContext.entity().level());
 
         if (stack.getOrCreateTag().getInt(attack_size)>10){
-            /*
+
             if (!slotContext.entity().level().isClientSide&&slotContext.entity().tickCount% 10 == 0) {
                 bolt.setPos(slotContext.entity().getX() + Mth.nextFloat(RandomSource.create(), -0.51f, 0.51f), slotContext.entity().getEyeY(), slotContext.entity().getZ() + Mth.nextFloat(RandomSource.create(), -0.5f, 0.5f));
                 slotContext.entity().level().addFreshEntity(bolt);
             }
 
-             */
         }
         sword sword = new sword(EntityTs.sword.get(),slotContext.entity().level());
         if (stack.getOrCreateTag().getInt(attack_size)>0){
@@ -133,6 +133,9 @@ public class sword_amout extends Doom {
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifier(stack));
+        slotContext.entity().getAttributes().removeAttributeModifiers(getAttributeModifier(stack));
     }
+
+
+             */
 }

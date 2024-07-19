@@ -1,9 +1,13 @@
 package com.moonstone.moonstonemod.entity;
 
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
+import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.ai.AIgiant;
+import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -27,6 +31,8 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.behavior.warden.SonicBoom;
@@ -116,7 +122,17 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
 
     @Override
     public void die(@NotNull DamageSource p_21809_) {
+        if (this.getTags().contains(AllEvent.Parasitic_cell_Giant)){
+             for (int i = 0; i < 6; i++) {
+                 cell_zombie cell_zombie = new cell_zombie(EntityTs.cell_zombie.get(),this.level());
+                 cell_zombie.setPos(this.getX(),this.getY(),this.getY());
+                 if (this.getOwnerUUID()!=null) {
+                    cell_zombie.setOwnerUUID(this.getOwnerUUID());
+                 }
+                this.level().addFreshEntity(cell_zombie);
 
+            }
+        }
     }
 
     @Nullable
@@ -266,10 +282,24 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
     private void sou() {
         this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.WARDEN_HEARTBEAT, this.getSoundSource(), 5.0F, this.getVoicePitch(), false);
     }
+    private Multimap<Attribute, AttributeModifier> AttributeModifier(cell_giant cellGiant, LivingEntity living){
+        Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
+        if (cellGiant.getTags().contains(AllEvent.Bone_Giant)) {
+            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier((this.uuid), MoonStoneMod.MODID + "cellGiant", living.getAttributeValue(Attributes.ARMOR)* 0.7, AttributeModifier.Operation.ADDITION));
+        }
+        return modifierMultimap;
+    }
     public void tick() {
-        time++;
-        if (this.time > 1200){
+        if (!this.getTags().contains(AllEvent.Disgusting__cell_Giant)) {
+            time += 2;
+        }else {
+            time++;
+        }
+        if (this.time > 2400){
             this.kill();
+        }
+        if (this.getOwner()!= null&&this.getOwner().getAttribute(Attributes.ARMOR)!=null){
+            this.getAttributes().addTransientAttributeModifiers(AttributeModifier(this,(this.getOwner())));
         }
         Level level = this.level();
         if (level instanceof ServerLevel serverlevel) {

@@ -37,7 +37,7 @@ public class INanoBattery extends Doom {
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
-        tooltip.add(Component.literal(String.valueOf(getT())).withStyle(ChatFormatting.GOLD));
+        tooltip.add(Component.translatable("moonstone.string.cooling").append(String.valueOf(getT())).withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.literal(""));
     }
 }

@@ -41,18 +41,47 @@ public class DungeonLoot extends LootModifier {
 
         int cell = Mth.nextInt(RandomSource.create(), 1, 50);
         int giant = Mth.nextInt(RandomSource.create(), 1, 10);
+        int giant_p = Mth.nextInt(RandomSource.create(), 1, 10);
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){
                 if (entity instanceof Player player) {
 
                     if (Handler.hascurio(player, Items.necora.get())){
-                        if (!Handler.hascurio(player,Items.giant.get())){
+                        if (!Handler.hascurio(player,Items.giant.get())) {
                             if (giant == 1) {
                                 generatedLoot.add(new ItemStack(Items.giant.get()));
                             }
                         }
 
+                        if (Handler.hascurio(player, Items.giant.get())) {
+                            if (giant_p  == 2) {
+                                generatedLoot.add(new ItemStack(Items.bone_cell.get()));
+                            }
+                            if (giant_p == 3) {
+                                generatedLoot.add(new ItemStack(Items.parasitic_cell.get()));
+                            }
+                            if (giant_p == 4) {
+                                generatedLoot.add(new ItemStack(Items.mother_cell.get()));
+                            }
+                            if (giant_p == 5) {
+                                generatedLoot.add(new ItemStack(Items.disgusting_cells.get()));
+                            }
+                        }
+                        if (Handler.hascurio(player, Items.giant_nightmare.get())) {
+                            if (giant == 2) {
+                                generatedLoot.add(new ItemStack(Items.giant_boom_cell.get()));
+                            }
+                            if (giant == 3) {
+                                generatedLoot.add(new ItemStack(Items.not_blood_cell.get()));
+                            }
+                            if (giant == 4) {
+                                generatedLoot.add(new ItemStack(Items.anaerobic_cell.get()));
+                            }
+                            if (giant == 5) {
+                                generatedLoot.add(new ItemStack(Items.subspace_cell.get()));
+                            }
+                        }
                         if (!Handler.hascurio(player, Items.cell.get()) && !Handler.hascurio(player,Items.giant.get())){
                             generatedLoot.add(new ItemStack(Items.cell.get()));
                         }

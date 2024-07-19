@@ -1,0 +1,15 @@
+{
+  "name": "子母细胞",
+  "icon": "moonstone:mother_cell",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:mother_cell",
+      "title": "-子母细胞-",
+      "text": "发现在宝藏类型箱子，需要佩戴Necora病毒，应用于巨型细胞僵尸，详细见巨型细胞僵尸章节"
+    }
+  ]
+}

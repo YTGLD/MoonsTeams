@@ -37,6 +37,7 @@ public class light_amout  extends Doom {
 
 
      */
+    /*
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
@@ -96,4 +97,6 @@ public class light_amout  extends Doom {
         stack.getOrCreateTag().putString("a","a");
     }
 
+
+     */
 }

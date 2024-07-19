@@ -169,16 +169,36 @@ public class Items {
     public static final RegistryObject<Item> nightmare_head =REGISTRY.register("nightmare_head", com.moonstone.moonstonemod.item.nightmare.nightmare_head::new);
     public static final RegistryObject<Item> giant_nightmare =REGISTRY.register("giant_nightmare", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giant_nightmare::new);
     public static final RegistryObject<Item> nightmare_cube =REGISTRY.register("nightmare_cube", com.moonstone.moonstonemod.item.nightmare.nightmare_cube::new);
-
     public static final RegistryObject<Item> million_sword =REGISTRY.register("million_sword", com.moonstone.moonstonemod.item.nanodoom.sword.million_sword::new);
 
     public static final RegistryObject<Item> speed_seed =REGISTRY.register("speed_seed", com.moonstone.moonstonemod.item.speed_seed::new);
-    public static final RegistryObject<Item> sword_amout =REGISTRY.register("sword_amout", com.moonstone.moonstonemod.item.nanodoom.sword_amout::new);
-
-    public static final RegistryObject<Item> light_amout =REGISTRY.register("light_amout", com.moonstone.moonstonemod.item.nanodoom.light_amout::new);
+//    public static final RegistryObject<Item> sword_amout =REGISTRY.register("sword_amout", com.moonstone.moonstonemod.item.nanodoom.sword_amout::new);
+//
+//    public static final RegistryObject<Item> light_amout =REGISTRY.register("light_amout", com.moonstone.moonstonemod.item.nanodoom.light_amout::new);
 
     public static final RegistryObject<Item> nano_box =REGISTRY.register("nano_box", com.moonstone.moonstonemod.item.nanodoom.nano_box::new);
     public static final RegistryObject<Item> model_box_nano =REGISTRY.register("model_box_nano", com.moonstone.moonstonemod.item.nanodoom.nano_box.model_box_nano::new);
+
+
+
+
+
+
+
+
+    public static final RegistryObject<Item> not_blood_cell =REGISTRY.register("not_blood_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.not_blood_cell::new);
+    public static final RegistryObject<Item> anaerobic_cell =REGISTRY.register("anaerobic_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.anaerobic_cell::new);
+    public static final RegistryObject<Item> giant_boom_cell =REGISTRY.register("giant_boom_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.giant_boom_cell::new);
+    public static final RegistryObject<Item> subspace_cell =REGISTRY.register("subspace_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.subspace_cell::new);
+    public static final RegistryObject<Item> bone_cell =REGISTRY.register("bone_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.bone_cell::new);
+    public static final RegistryObject<Item> parasitic_cell =REGISTRY.register("parasitic_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.parasitic_cell::new);
+    public static final RegistryObject<Item> mother_cell =REGISTRY.register("mother_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.mother_cell::new);
+    public static final RegistryObject<Item> disgusting_cells =REGISTRY.register("disgusting_cells", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.disgusting_cells::new);
+
+
+
+
+
 
 
 

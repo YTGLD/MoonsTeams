@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod;
 
+import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -37,25 +38,27 @@ public class Handler {
                 T t = p_216404_.create(p_216406_, null, null, blockpos$mutableblockpos, p_216405_, false, false);
                 if (t != null) {
                     t.setOwnerUUID(player.getUUID());
-                    if (Handler.hascurio(player, Items.cell.get())){
-                        if (Handler.hascurio(player,Items.adrenaline.get())){
-                            t.addTag(DamageCell);
-                        }
-                        if (Handler.hascurio(player,Items.cell_mummy.get())){
-                            t.addTag(muMMY);
-                        }
-                        if (Handler.hascurio(player,Items.cell_boom.get())){
-                            t.addTag(boom);
-                        }
-                        if (Handler.hascurio(player,Items.cell_calcification.get())){
-                            t.addTag(calcification);
-                        }
-                        if (Handler.hascurio(player,Items.cell_blood.get())){
-                            t.addTag(cb_blood);
-                        }
+                    if (Handler.hascurio(player,Items.anaerobic_cell.get())){
+                        t.addTag(Giant_Time);
                     }
-
-
+                    if (Handler.hascurio(player,Items.giant_boom_cell.get())){
+                        t.addTag(Giant_Boom);
+                    }
+                    if (Handler.hascurio(player,Items.not_blood_cell.get())){
+                        t.addTag(Not_Giant_BLOOD);
+                    }
+                    if (Handler.hascurio(player,Items.subspace_cell.get())){
+                        t.addTag(Subspace_Giant);
+                    }
+                    if (Handler.hascurio(player,Items.bone_cell.get())){
+                        t.addTag(Bone_Giant);
+                    }
+                    if (Handler.hascurio(player,Items.parasitic_cell.get())){
+                        t.addTag(Parasitic_cell_Giant);
+                    }
+                    if (Handler.hascurio(player,Items.disgusting_cells.get())){
+                        t.addTag(Disgusting__cell_Giant);
+                    }
                 }
                 if (t != null) {
                     if (net.minecraftforge.event.ForgeEventFactory.checkSpawnPosition(t, p_216406_, p_216405_)) {

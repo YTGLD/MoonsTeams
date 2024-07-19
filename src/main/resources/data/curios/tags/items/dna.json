@@ -6,7 +6,16 @@
     "moonstone:cell_mummy",
     "moonstone:cell_calcification",
     "moonstone:cell_blood",
-    "moonstone:giant_nightmare"
+    "moonstone:giant_nightmare",
 
+    "moonstone:anaerobic_cell",
+    "moonstone:giant_boom_cell",
+    "moonstone:not_blood_cell",
+    "moonstone:subspace_cell",
+
+    "moonstone:bone_cell",
+    "moonstone:parasitic_cell",
+    "moonstone:mother_cell",
+    "moonstone:disgusting_cells"
   ]
 }
