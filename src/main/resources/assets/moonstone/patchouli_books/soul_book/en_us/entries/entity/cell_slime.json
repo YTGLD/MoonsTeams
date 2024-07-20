@@ -1,0 +1,23 @@
+{
+  "name": "史莱姆细胞僵尸",
+  "icon": "moonstone:slime",
+  "category": "moonstone:entity",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "entity",
+      "scale": 1,
+      "name": "cell_giant",
+      "rotate": true,
+      "defaultRotation": -45,
+      "entity": "moonstone:cell_slime"
+    },
+    {
+      "type": "spotlight",
+      "item": "moonstone:slime",
+      "title": "-史莱姆细胞僵尸-",
+      "text": "一个可以使用细胞僵尸相关的分段基因组强化的特殊僵尸，但所有来自细胞僵尸类型的强化只能在第一条命生效，长得丑不是它唯一的特点。它和史莱姆差不多，受到致命伤害后会变小，直到消失"
+    }
+  ]
+}

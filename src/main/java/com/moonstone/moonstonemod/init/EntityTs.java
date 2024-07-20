@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.init;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.flysword;
+import com.moonstone.moonstonemod.entity.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ambient.Bat;
@@ -48,6 +48,8 @@ public class EntityTs {
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bolt_light::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("bolt_light"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bule_bolt>> bule_bolt = REGISTRY.register("bule_bolt",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bule_bolt::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("bule_bolt"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.cell_slime>> cell_slime = REGISTRY.register("cell_slime",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.cell_slime::new, MobCategory.MONSTER).sized(0.6f, 1.8f).clientTrackingRange(16).build("cell_slime"));
 
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){
@@ -61,6 +63,7 @@ public class EntityTs {
         event.put(EntityTs.sword.get(), Warden.createAttributes().build());
         event.put(EntityTs.bolt_light.get(), Warden.createAttributes().build());
         event.put(EntityTs.bule_bolt.get(), Warden.createAttributes().build());
+        event.put(EntityTs.cell_slime.get(), com.moonstone.moonstonemod.entity.cell_slime.createAttributes().build());
 
     }
 }

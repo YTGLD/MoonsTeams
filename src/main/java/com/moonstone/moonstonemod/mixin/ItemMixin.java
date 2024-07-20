@@ -1,7 +1,6 @@
 package com.moonstone.moonstonemod.mixin;
 
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
-import com.moonstone.moonstonemod.moonstoneitem.Doom;
 import com.moonstone.moonstonemod.moonstoneitem.IBattery;
 import com.moonstone.moonstonemod.moonstoneitem.INanoBattery;
 import net.minecraft.world.InteractionHand;

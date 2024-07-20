@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.entity.ai;
 
 import com.google.common.collect.ImmutableMap;
+import com.moonstone.moonstonemod.entity.cell_giant;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Pose;
@@ -8,7 +9,7 @@ import net.minecraft.world.entity.ai.behavior.Behavior;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.memory.MemoryStatus;
 
-public class Emerging <E extends com.moonstone.moonstonemod.entity.cell_giant> extends Behavior<E> {
+public class Emerging <E extends cell_giant> extends Behavior<E> {
     public Emerging(int p_217547_) {
         super(ImmutableMap.of(MemoryModuleType.IS_EMERGING, MemoryStatus.VALUE_PRESENT, MemoryModuleType.WALK_TARGET, MemoryStatus.VALUE_ABSENT, MemoryModuleType.LOOK_TARGET, MemoryStatus.REGISTERED), p_217547_);
     }

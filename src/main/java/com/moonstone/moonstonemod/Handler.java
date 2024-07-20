@@ -1,6 +1,5 @@
 package com.moonstone.moonstonemod;
 
-import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

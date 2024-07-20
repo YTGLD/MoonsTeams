@@ -194,6 +194,7 @@ public class Items {
     public static final RegistryObject<Item> parasitic_cell =REGISTRY.register("parasitic_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.parasitic_cell::new);
     public static final RegistryObject<Item> mother_cell =REGISTRY.register("mother_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.mother_cell::new);
     public static final RegistryObject<Item> disgusting_cells =REGISTRY.register("disgusting_cells", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.disgusting_cells::new);
+    public static final RegistryObject<Item> slime =REGISTRY.register("slime", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.slimes.slime::new);
 
 
 

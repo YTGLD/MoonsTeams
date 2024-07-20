@@ -16,6 +16,8 @@
     "moonstone:bone_cell",
     "moonstone:parasitic_cell",
     "moonstone:mother_cell",
-    "moonstone:disgusting_cells"
+    "moonstone:disgusting_cells",
+
+    "moonstone:slime"
   ]
 }

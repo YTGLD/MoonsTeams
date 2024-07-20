@@ -119,6 +119,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.parasitic_cell.get()));
                 b.accept(new ItemStack(Items.mother_cell.get()));
                 b.accept(new ItemStack(Items.disgusting_cells.get()));
+                b.accept(new ItemStack(Items.slime.get()));
 
                 b.accept(new ItemStack(Items.botton.get()));
                 b.accept(new ItemStack(Items.catalyzer.get()));

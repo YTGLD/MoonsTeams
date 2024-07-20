@@ -53,7 +53,7 @@ public class MRender extends RenderType {
 
     private static final RenderType GATEWAY =
             create("gateway",
-            DefaultVertexFormat.POSITION,
+                    DefaultVertexFormat.POSITION,
                     VertexFormat.Mode.QUADS,
                     256,
                     false,

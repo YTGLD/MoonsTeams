@@ -723,7 +723,7 @@
 
 
   "item.moonstone.parasitic_cell": "寄生性僵尸细胞",
-  "item.parasitic_cell.tool.string": "巨型细胞僵尸在死后诞生5个细胞僵尸h",
+  "item.parasitic_cell.tool.string": "巨型细胞僵尸在死后诞生5个细胞僵尸",
 
   "item.moonstone.mother_cell": "子母细胞",
   "item.mother_cell.tool.string": "巨型细胞僵尸在召唤时会额外产生2个细胞僵尸，并有50%的概率再召唤一个巨人僵尸",
@@ -739,9 +739,12 @@
 
 
 
+  "item.moonstone.slime": "史莱姆细胞",
+  "item.slime.tool.string": "杀死生物有概率召唤史莱姆细胞僵尸，可兼容任何召唤类基因，召唤后的5秒内无法再次召唤任何僵尸",
 
 
 
+  "entity.moonstone.cell_slime":"史莱姆细胞僵尸",
 
 
 

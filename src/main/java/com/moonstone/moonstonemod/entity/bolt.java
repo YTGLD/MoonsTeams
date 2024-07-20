@@ -5,7 +5,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
-public class bolt extends cell_zombie{
+public class bolt extends cell_zombie {
     public long seed;
     public float timeB;
 

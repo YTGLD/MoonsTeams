@@ -1,5 +1,7 @@
 package com.moonstone.moonstonemod;
 
+import com.moonstone.moonstonemod.entity.cell_slime;
+import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +24,6 @@ public class book extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
         if (ModList.get().isLoaded("patchouli")){
-
             if (p_41433_ instanceof ServerPlayer player){
                 PatchouliAPI.get().openBookGUI(player,new ResourceLocation(MoonStoneMod.MODID,"soul_book"));
             }

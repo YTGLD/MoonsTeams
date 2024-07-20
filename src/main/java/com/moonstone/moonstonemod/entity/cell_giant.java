@@ -149,7 +149,7 @@ public class cell_giant extends TamableAnimal implements OwnableEntity {
         super.aiStep();
     }
     public boolean wantsToAttack(LivingEntity p_30389_, LivingEntity p_30390_) {
-        if (!(p_30389_ instanceof Creeper) && !(p_30389_ instanceof Ghast)) {
+        if (!(p_30389_ instanceof Creeper) && !(p_30389_ instanceof Ghast) && !(p_30389_ instanceof cell_giant) && !(p_30389_ instanceof cell_zombie)) {
             if (p_30389_ instanceof cell_zombie) {
                 cell_zombie wolf = (cell_zombie)p_30389_;
                 return !wolf.isTame() || wolf.getOwner() != p_30390_;

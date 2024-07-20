@@ -1,7 +1,5 @@
 package com.moonstone.moonstonemod.event;
 
-import com.moonstone.moonstonemod.item.nanodoom.light_amout;
-import com.moonstone.moonstonemod.item.nanodoom.sword_amout;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_head;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_heart;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_orb;

@@ -1,19 +1,14 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
-import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.bule_bolt;
 import com.moonstone.moonstonemod.init.EntityTs;
-import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import com.moonstone.moonstonemod.moonstoneitem.INanoBattery;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;

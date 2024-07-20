@@ -1,30 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.entity.bolt;
-import com.moonstone.moonstonemod.entity.bolt_light;
-import com.moonstone.moonstonemod.init.EntityTs;
-import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.moonstoneitem.Doom;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import top.theillusivec4.curios.api.SlotContext;
-
-import java.util.List;
 
 public class light_amout  extends Doom {
     /*

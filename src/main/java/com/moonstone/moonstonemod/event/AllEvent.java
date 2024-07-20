@@ -3,10 +3,7 @@ package com.moonstone.moonstonemod.event;
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.entity.cell_giant;
-import com.moonstone.moonstonemod.entity.cell_zombie;
-import com.moonstone.moonstonemod.entity.flysword;
-import com.moonstone.moonstonemod.entity.suddenrain;
+import com.moonstone.moonstonemod.entity.*;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
@@ -184,25 +181,24 @@ public class AllEvent {
     }
 
     @SubscribeEvent
-    public void evil(LivingDeathEvent event){
+    public void evil(LivingDeathEvent event) {
         if ((event.getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player,Items.cell_boom.get())){
-                player.level().explode(null,player.getX(),player.getY(),player.getZ(),5.5f,true , Level.ExplosionInteraction.MOB);
+            if (Handler.hascurio(player, Items.cell_boom.get())) {
+                player.level().explode(null, player.getX(), player.getY(), player.getZ(), 5.5f, true, Level.ExplosionInteraction.MOB);
             }
         }
-        if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.giant.get())){
-
-                if (!Handler.hascurio(player,Items.giant_nightmare.get())) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.giant.get())) {
+                if (!Handler.hascurio(player, Items.giant_nightmare.get())) {
                     if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
                         if (player.level() instanceof ServerLevel p_222881_) {
                             if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
-                                if (Handler.hascurio(player,Items.mother_cell.get())){
-                                    if (Mth.nextInt(RandomSource.create(),1, 2)==1){
+                                if (Handler.hascurio(player, Items.mother_cell.get())) {
+                                    if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
                                         Handler.trySpawnMob(player, EntityTs.cell_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
                                     }
                                     for (int i = 0; i < 2; i++) {
-                                        cell_zombie cell_zombie = new cell_zombie(EntityTs.cell_zombie.get(),player.level());
+                                        cell_zombie cell_zombie = new cell_zombie(EntityTs.cell_zombie.get(), player.level());
                                         cell_zombie.setOwnerUUID(player.getUUID());
                                         cell_zombie.setPos(player.position());
                                         player.level().addFreshEntity(cell_zombie);
@@ -210,113 +206,138 @@ public class AllEvent {
                                 }
                                 Handler.trySpawnMob(player, EntityTs.cell_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
                                 player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                                if (Handler.hascurio(player, Items.slime.get())) {
+                                    if (Mth.nextInt(RandomSource.create(), 1, 30) <= 33) {
+
+                                        cell_slime z = new cell_slime(EntityTs.cell_slime.get(), player.level());
+                                        z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+                                        z.setOwnerUUID(player.getUUID());
+                                        if (Handler.hascurio(player, Items.adrenaline.get())) {
+                                            z.addTag(DamageCell);
+                                        }
+                                        if (Handler.hascurio(player, Items.cell_mummy.get())) {
+                                            z.addTag(muMMY);
+                                        }
+                                        if (Handler.hascurio(player, Items.cell_boom.get())) {
+                                            z.addTag(boom);
+                                        }
+                                        if (Handler.hascurio(player, Items.cell_calcification.get())) {
+                                            z.addTag(calcification);
+                                        }
+                                        if (Handler.hascurio(player, Items.cell_blood.get())) {
+                                            z.addTag(cb_blood);
+                                        }
+                                        player.level().addFreshEntity(z);
+
+                                        player.getCooldowns().addCooldown(Items.giant.get(), 100);
+                                    }
+                                }
                                 player.getCooldowns().addCooldown(Items.giant.get(), 600);
                             }
                         }
                     }
-                }else {
+                } else {
                     if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
-                        if (player.level() instanceof ServerLevel p_222881_) {
-                            if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                        if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
+                            if (player.level() instanceof ServerLevel p_222881_) {
+                                if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
 
-                                Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+                                    Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
 
-                                if (!Handler.hascurio(player,Items.subspace_cell.get())) {
-                                    player.hurt(player.damageSources().dryOut(), player.getHealth() / 2);
+                                    if (!Handler.hascurio(player, Items.subspace_cell.get())) {
+                                        player.hurt(player.damageSources().dryOut(), player.getHealth() / 2);
+                                    }
+                                    player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                                    if (Handler.hascurio(player, Items.slime.get())) {
+                                        if (Mth.nextInt(RandomSource.create(), 1, 30) <= 33) {
+
+                                            cell_slime z = new cell_slime(EntityTs.cell_slime.get(), player.level());
+                                            z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+                                            z.setOwnerUUID(player.getUUID());
+                                            if (Handler.hascurio(player, Items.adrenaline.get())) {
+                                                z.addTag(DamageCell);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_mummy.get())) {
+                                                z.addTag(muMMY);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_boom.get())) {
+                                                z.addTag(boom);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_calcification.get())) {
+                                                z.addTag(calcification);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_blood.get())) {
+                                                z.addTag(cb_blood);
+                                            }
+                                            player.level().addFreshEntity(z);
+
+                                            player.getCooldowns().addCooldown(Items.giant.get(), 100);
+                                        }
+                                    }
+
+                                    player.getCooldowns().addCooldown(Items.giant.get(), 1200);
+
+
                                 }
-                                player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
-                                player.getCooldowns().addCooldown(Items.giant.get(), 1200);
-
-
                             }
                         }
                     }
                 }
             }
-            if (Handler.hascurio(player, Items.cell.get())){
-                if (Mth.nextInt(RandomSource.create(),1, 2) ==1 ){
-                    cell_zombie z = new cell_zombie(EntityTs.cell_zombie.get(), player.level());
-                    z.teleportTo(event.getEntity().getX(),event.getEntity().getY(), event.getEntity().getZ());
-                    z.setOwnerUUID(player.getUUID());
+            if (Handler.hascurio(player, Items.cell.get())) {
+                if (!player.getCooldowns().isOnCooldown(Items.cell.get())) {
+                    if (Handler.hascurio(player, Items.slime.get())) {
+                        if (Mth.nextInt(RandomSource.create(), 1, 100) <= 33) {
 
-                    if (Handler.hascurio(player,Items.adrenaline.get())){
-                        z.addTag(DamageCell);
-                    }
-                    if (Handler.hascurio(player,Items.cell_mummy.get())){
-                        z.addTag(muMMY);
-                    }
-                    if (Handler.hascurio(player,Items.cell_boom.get())){
-                        z.addTag(boom);
-                    }
-                    if (Handler.hascurio(player,Items.cell_calcification.get())){
-                        z.addTag(calcification);
-                    }
-                    if (Handler.hascurio(player,Items.cell_blood.get())){
-                        z.addTag(cb_blood);
-                    }
-                    player.level().addFreshEntity(z);
-                }
-            }
-        }
-    }
-    @SubscribeEvent
-    public void evil_zombie(LivingHurtEvent event){
-        if (event.getSource().getEntity() instanceof Player player){
-            Vec3 playerPos = player.position().add(0, 0.75, 0);
-            int range = 10;
-            List<cell_zombie> entities = player.level().getEntitiesOfClass(cell_zombie.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-            if (Handler.hascurio(player, Items.giant.get())) {
-                List<cell_giant> entitie = player.level().getEntitiesOfClass(cell_giant.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-                for (cell_giant zombie : entitie) {
-                    if (zombie.getOwner() == player) {
-                        if (!(event.getEntity() instanceof cell_giant)) {
-                            zombie.setTarget(event.getEntity());
-                        }
-                    }
-                }
-            }
-            if (Handler.hascurio(player, Items.cell.get())){
-                 for (cell_zombie zombie : entities){
-                    if (zombie.getOwner() == player){
-                        if (!(event.getEntity() instanceof cell_zombie)) {
-                            zombie.setTarget(event.getEntity());
-                        }
-                    }
-                }
-            }
-        }
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.cell.get())){
-                Vec3 playerPos = player.position().add(0, 0.75, 0);
-                int range = 10;
-                List<cell_zombie> entities = player.level().getEntitiesOfClass(cell_zombie.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-                for (cell_zombie zombie : entities){
-                    if (zombie.getOwner() == player){
-                        if (!(event.getSource().getEntity() instanceof cell_zombie)) {
-                            if (event.getSource().getEntity() instanceof LivingEntity living) {
-                                zombie.setTarget(living);
+                            cell_slime z = new cell_slime(EntityTs.cell_slime.get(), player.level());
+                            z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+                            z.setOwnerUUID(player.getUUID());
+                            if (Handler.hascurio(player, Items.adrenaline.get())) {
+                                z.addTag(DamageCell);
                             }
-                        }
-                    }
-                }
-            }
-            if (Handler.hascurio(player, Items.giant.get())){
-                Vec3 playerPos = player.position().add(0, 0.75, 0);
-                int range = 10;
-                List<cell_giant> entities = player.level().getEntitiesOfClass(cell_giant.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-                for (cell_giant zombie : entities){
-                    if (zombie.getOwner() == player){
-                        if (!(event.getSource().getEntity() instanceof cell_giant)) {
-                            if (event.getSource().getEntity() instanceof LivingEntity living) {
-                                zombie.setTarget(living);
+                            if (Handler.hascurio(player, Items.cell_mummy.get())) {
+                                z.addTag(muMMY);
                             }
+                            if (Handler.hascurio(player, Items.cell_boom.get())) {
+                                z.addTag(boom);
+                            }
+                            if (Handler.hascurio(player, Items.cell_calcification.get())) {
+                                z.addTag(calcification);
+                            }
+                            if (Handler.hascurio(player, Items.cell_blood.get())) {
+                                z.addTag(cb_blood);
+                            }
+                            player.level().addFreshEntity(z);
+
+                            player.getCooldowns().addCooldown(Items.cell.get(), 100);
                         }
+
+                    }
+                    if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                        cell_zombie z = new cell_zombie(EntityTs.cell_zombie.get(), player.level());
+                        z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+                        z.setOwnerUUID(player.getUUID());
+                        if (Handler.hascurio(player, Items.adrenaline.get())) {
+                            z.addTag(DamageCell);
+                        }
+                        if (Handler.hascurio(player, Items.cell_mummy.get())) {
+                            z.addTag(muMMY);
+                        }
+                        if (Handler.hascurio(player, Items.cell_boom.get())) {
+                            z.addTag(boom);
+                        }
+                        if (Handler.hascurio(player, Items.cell_calcification.get())) {
+                            z.addTag(calcification);
+                        }
+                        if (Handler.hascurio(player, Items.cell_blood.get())) {
+                            z.addTag(cb_blood);
+                        }
+                        player.level().addFreshEntity(z);
                     }
                 }
             }
         }
     }
-
     @SubscribeEvent
     public void beacon(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){

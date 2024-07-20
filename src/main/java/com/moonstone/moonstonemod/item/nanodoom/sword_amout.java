@@ -1,36 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.bolt;
-import com.moonstone.moonstonemod.entity.flysword;
-import com.moonstone.moonstonemod.entity.suddenrain;
-import com.moonstone.moonstonemod.entity.sword;
-import com.moonstone.moonstonemod.init.EntityTs;
-import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.Doom;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
-import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
-
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 
 public class sword_amout extends Doom {
     /*

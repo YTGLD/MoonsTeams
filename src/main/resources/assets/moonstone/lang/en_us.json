@@ -628,12 +628,16 @@
   "item.watergen.tool.string": "Increase resistance by 15% in water",
 
   "item.moonstone.giant": "giant cell",
+  "item.moonstone.slime": "slime",
   "item.giant.tool.string": "Kill creatures to summon cell zombie (5%)",
+
+  "item.slime.tool.string": "Kill creatures to summon slime zombie (33%)",
   "advancements.tooltip.giant.text": "Wearing NECORA virus, killing Warden",
   "entity.moonstone.cell_giant": "cell giant",
   "entity.moonstone.cell_zombie": "cell zombie",
   "entity.moonstone.nightmare_entity": "nightmare entity",
   "entity.moonstone.nightmare_giant": "nightmare giant",
+  "entity.moonstone.cell_slime": "cell slime",
 
   "entity.moonstone.flysword": "fly sword",
   "entity.moonstone.suddenrain": "sudden rain",
