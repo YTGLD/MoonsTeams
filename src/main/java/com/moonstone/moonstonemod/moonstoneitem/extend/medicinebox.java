@@ -3,7 +3,7 @@ package com.moonstone.moonstonemod.moonstoneitem.extend;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.event.AllEvent;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.catalyzer;
+import com.moonstone.moonstonemod.item.BloodVirus.catalyzer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;

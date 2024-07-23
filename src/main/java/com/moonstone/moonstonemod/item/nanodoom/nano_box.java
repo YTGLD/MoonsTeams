@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.bule_bolt;
+import com.moonstone.moonstonemod.entity.other.bule_bolt;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import com.moonstone.moonstonemod.moonstoneitem.INanoBattery;

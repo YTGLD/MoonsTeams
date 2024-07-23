@@ -5,9 +5,10 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.client.renderer.MRender;
-import com.moonstone.moonstonemod.entity.red_entity;
-import com.moonstone.moonstonemod.entity.test_e;
-import com.moonstone.moonstonemod.entity.nightmare_giant;
+import com.moonstone.moonstonemod.entity.bloodvruis.test_blood;
+import com.moonstone.moonstonemod.entity.necora.red_entity;
+import com.moonstone.moonstonemod.entity.necora.test_e;
+import com.moonstone.moonstonemod.entity.necora.nightmare_giant;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
@@ -112,7 +113,9 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
         if (entity instanceof test_e entity1) {
             new CircleCubeBoom(matrices, vertexConsumers, light, entity);
         }
-
+        if (entity instanceof test_blood entity1) {
+            new CircleCubeBlood(matrices, vertexConsumers, light, entity);
+        }
     }
     public void nano_box(@NotNull PoseStack matrices,
                             @NotNull MultiBufferSource vertexConsumers,

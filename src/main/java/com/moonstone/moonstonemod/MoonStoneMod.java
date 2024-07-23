@@ -1,24 +1,21 @@
 package com.moonstone.moonstonemod;
 
-import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.logging.LogUtils;
-import com.moonstone.moonstonemod.entity.entitys.boltR.BoltLightRenderer;
-import com.moonstone.moonstonemod.entity.entitys.boltR.BoltRenderer;
-import com.moonstone.moonstonemod.entity.entitys.boltR.bule_boltR;
-import com.moonstone.moonstonemod.entity.entitys.nightmare.CellZombieN;
-import com.moonstone.moonstonemod.entity.entitys.swords.SwordRenderer;
-import com.moonstone.moonstonemod.entity.entitys.zomb.GIANT.CellZombieG;
-import com.moonstone.moonstonemod.entity.entitys.zomb.red.ZombieRenderer;
+import com.moonstone.moonstonemod.client.entitys.blood.BloodBatRenderer;
+import com.moonstone.moonstonemod.client.entitys.zomb.slime.ZombieRenderer;
+import com.moonstone.moonstonemod.client.entitys.boltR.BoltLightRenderer;
+import com.moonstone.moonstonemod.client.entitys.boltR.BoltRenderer;
+import com.moonstone.moonstonemod.client.entitys.boltR.bule_boltR;
+import com.moonstone.moonstonemod.client.entitys.nightmare.CellZombieN;
+import com.moonstone.moonstonemod.client.entitys.swords.SwordRenderer;
+import com.moonstone.moonstonemod.client.entitys.zomb.GIANT.CellZombieG;
 import com.moonstone.moonstonemod.client.particle.blue;
 import com.moonstone.moonstonemod.client.particle.popr;
 import com.moonstone.moonstonemod.client.particle.red;
 import com.moonstone.moonstonemod.client.renderer.MRender;
-import com.moonstone.moonstonemod.entity.entitys.zomb.slime.ZombieModel;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -102,17 +99,19 @@ public class MoonStoneMod {
         public static void EntityRenderersEvent(EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(EntityTs.flysword.get(), SwordRenderer::new);
             event.registerEntityRenderer(EntityTs.suddenrain.get(), SwordRenderer::new);
-            event.registerEntityRenderer(EntityTs.cell_zombie.get(), com.moonstone.moonstonemod.entity.entitys.zomb.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.cell_zombie.get(), com.moonstone.moonstonemod.client.entitys.zomb.ZombieRenderer::new);
             event.registerEntityRenderer(EntityTs.cell_giant.get(), CellZombieG::new);
-            event.registerEntityRenderer(EntityTs.nightmare_entity.get(), com.moonstone.moonstonemod.entity.entitys.zomb.ZombieRenderer::new);
-            event.registerEntityRenderer(EntityTs.red_entity.get(), ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.nightmare_entity.get(), com.moonstone.moonstonemod.client.entitys.zomb.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.red_entity.get(), com.moonstone.moonstonemod.client.entitys.zomb.red.ZombieRenderer::new);
             event.registerEntityRenderer(EntityTs.nightmare_giant.get(), CellZombieN::new);
-            event.registerEntityRenderer(EntityTs.test_e.get(), ZombieRenderer::new);
-            event.registerEntityRenderer(EntityTs.sword.get(), ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.test_e.get(), com.moonstone.moonstonemod.client.entitys.zomb.red.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.sword.get(), com.moonstone.moonstonemod.client.entitys.zomb.red.ZombieRenderer::new);
             event.registerEntityRenderer(EntityTs.bolt.get(), BoltRenderer::new);
             event.registerEntityRenderer(EntityTs.bolt_light.get(), BoltLightRenderer::new);
             event.registerEntityRenderer(EntityTs.bule_bolt.get(), bule_boltR::new);
-            event.registerEntityRenderer(EntityTs.cell_slime.get(), com.moonstone.moonstonemod.entity.entitys.zomb.slime.ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.cell_slime.get(), ZombieRenderer::new);
+            event.registerEntityRenderer(EntityTs.blood_bat.get(), BloodBatRenderer::new);
+            event.registerEntityRenderer(EntityTs.test_blood.get(), com.moonstone.moonstonemod.client.entitys.zomb.red.ZombieRenderer::new);
 
         }
         @SubscribeEvent

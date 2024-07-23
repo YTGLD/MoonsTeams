@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.entity.ai;
 
 import com.google.common.collect.ImmutableMap;
-import com.moonstone.moonstonemod.entity.cell_giant;
+import com.moonstone.moonstonemod.entity.other.cell_giant;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Pose;

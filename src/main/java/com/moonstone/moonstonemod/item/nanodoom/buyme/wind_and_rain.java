@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom.buyme;
 
-import com.moonstone.moonstonemod.item.Perhaps;
+import com.moonstone.moonstonemod.moonstoneitem.Perhaps;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;

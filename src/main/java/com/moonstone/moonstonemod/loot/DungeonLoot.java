@@ -151,6 +151,10 @@ public class DungeonLoot extends LootModifier {
                         if (ne == 6) {
                             generatedLoot.add(new ItemStack(Items.regenerative.get()));
                         }
+                        if (ne == 7){
+                            generatedLoot.add(new ItemStack(Items.slime.get()));
+
+                        }
                     }
 
                     if (Handler.hascurio(player, Items.nightmareeye.get())) {

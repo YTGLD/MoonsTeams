@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod;
 
-import com.moonstone.moonstonemod.entity.cell_slime;
+import com.moonstone.moonstonemod.entity.bloodvruis.blood_bat;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -23,6 +23,13 @@ public class book extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
+        blood_bat blood_bat =new blood_bat(EntityTs.blood_bat.get(),p_41432_);
+        blood_bat.setPos(p_41433_.position());
+        blood_bat.setOwnerUUID(p_41433_.getUUID());
+
+        p_41432_.addFreshEntity(blood_bat);
+
+
         if (ModList.get().isLoaded("patchouli")){
             if (p_41433_ instanceof ServerPlayer player){
                 PatchouliAPI.get().openBookGUI(player,new ResourceLocation(MoonStoneMod.MODID,"soul_book"));

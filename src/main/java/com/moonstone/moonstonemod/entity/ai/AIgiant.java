@@ -3,7 +3,7 @@ package com.moonstone.moonstonemod.entity.ai;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.serialization.Dynamic;
-import com.moonstone.moonstonemod.entity.cell_giant;
+import com.moonstone.moonstonemod.entity.other.cell_giant;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Unit;
 import net.minecraft.world.entity.ai.Brain;

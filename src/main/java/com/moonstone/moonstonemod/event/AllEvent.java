@@ -3,24 +3,27 @@ package com.moonstone.moonstonemod.event;
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.entity.*;
+import com.moonstone.moonstonemod.entity.necora.cell_slime;
+import com.moonstone.moonstonemod.entity.necora.cell_zombie;
+import com.moonstone.moonstonemod.entity.other.flysword;
+import com.moonstone.moonstonemod.entity.other.suddenrain;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.init.Particles;
-import com.moonstone.moonstonemod.item.Perhaps;
+import com.moonstone.moonstonemod.moonstoneitem.Perhaps;
 import com.moonstone.moonstonemod.item.maxitem.the_heart;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
-import com.moonstone.moonstonemod.item.plague.ALL.dna;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.BloodViru;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_blood;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_boom;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_calcification;
-import com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_mummy;
+import com.moonstone.moonstonemod.item.plague.mobitem.dna;
+import com.moonstone.moonstonemod.item.BloodVirus.batskill;
+import com.moonstone.moonstonemod.moonstoneitem.BloodViru;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_blood;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_boom;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_calcification;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -1431,7 +1434,7 @@ public class AllEvent {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.getItem() instanceof com.moonstone.moonstonemod.item.plague.ALL.virus) {
+                            if (stack.getItem() instanceof com.moonstone.moonstonemod.item.plague.mobitem.virus) {
                                 if (stack.getTag() != null) {
                                     String name = event.getEntity().getEncodeId();
                                     if (name != null) {

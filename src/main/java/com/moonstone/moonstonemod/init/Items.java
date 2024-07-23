@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.init;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.book;
+import com.moonstone.moonstonemod.item.BloodVirus.*;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
@@ -15,15 +16,14 @@ import com.moonstone.moonstonemod.item.maxitem.uncommon.common.*;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.*;
 import com.moonstone.moonstonemod.item.nightmare.*;
-import com.moonstone.moonstonemod.item.plague.ALL.*;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.Skill.batskill;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.*;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.botton;
-import com.moonstone.moonstonemod.item.plague.BloodVirus.ex.catalyzer;
-import com.moonstone.moonstonemod.item.plague.TheNecora.autolytic;
-import com.moonstone.moonstonemod.item.plague.bloodvirus;
+import com.moonstone.moonstonemod.item.plague.mobitem.*;
+import com.moonstone.moonstonemod.item.BloodVirus.batskill;
+import com.moonstone.moonstonemod.item.BloodVirus.botton;
+import com.moonstone.moonstonemod.item.BloodVirus.catalyzer;
+import com.moonstone.moonstonemod.item.TheNecora.autolytic;
+import com.moonstone.moonstonemod.item.bloodvirus;
 import com.moonstone.moonstonemod.item.plague.medicine.med.*;
-import com.moonstone.moonstonemod.item.plague.necora;
+import com.moonstone.moonstonemod.item.necora;
 import com.moonstone.moonstonemod.moonstoneitem.extend.apple;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraft.world.item.Item;
@@ -114,24 +114,24 @@ public class Items {
 
 
 
-    public static final RegistryObject<Item> batgene =REGISTRY.register("batgene",batgene::new);
-    public static final RegistryObject<Item> bloodgene =REGISTRY.register("bloodgene",bloodgene::new);
+    public static final RegistryObject<Item> batgene =REGISTRY.register("batgene", com.moonstone.moonstonemod.item.BloodVirus.batgene::new);
+    public static final RegistryObject<Item> bloodgene =REGISTRY.register("bloodgene", com.moonstone.moonstonemod.item.BloodVirus.bloodgene::new);
     public static final RegistryObject<Item> flygene =REGISTRY.register("flygene",flygene::new);
-    public static final RegistryObject<Item> heathgene =REGISTRY.register("heathgene",heathgene::new);
-    public static final RegistryObject<Item> ragegene =REGISTRY.register("ragegene",ragegene::new);
-    public static final RegistryObject<Item> sleepgene =REGISTRY.register("sleepgene",sleepgene::new);
+    public static final RegistryObject<Item> heathgene =REGISTRY.register("heathgene", com.moonstone.moonstonemod.item.BloodVirus.heathgene::new);
+    public static final RegistryObject<Item> ragegene =REGISTRY.register("ragegene", com.moonstone.moonstonemod.item.BloodVirus.ragegene::new);
+    public static final RegistryObject<Item> sleepgene =REGISTRY.register("sleepgene", com.moonstone.moonstonemod.item.BloodVirus.sleepgene::new);
     public static final RegistryObject<Item> medicinebox =REGISTRY.register("medicinebox",medicinebox::new);
     public static final RegistryObject<Item> apple =REGISTRY.register("apple",apple::new);
 
 
 
 
-    public static final RegistryObject<Item> ambush =REGISTRY.register("ambush", com.moonstone.moonstonemod.item.plague.TheNecora.ambush::new);
-    public static final RegistryObject<Item> atpoverdose =REGISTRY.register("atpoverdose", com.moonstone.moonstonemod.item.plague.TheNecora.atpoverdose::new);
+    public static final RegistryObject<Item> ambush =REGISTRY.register("ambush", com.moonstone.moonstonemod.item.TheNecora.ambush::new);
+    public static final RegistryObject<Item> atpoverdose =REGISTRY.register("atpoverdose", com.moonstone.moonstonemod.item.TheNecora.atpoverdose::new);
     public static final RegistryObject<Item> autolytic =REGISTRY.register("autolytic",autolytic::new);
-    public static final RegistryObject<Item> fermentation =REGISTRY.register("fermentation", com.moonstone.moonstonemod.item.plague.TheNecora.fermentation::new);
-    public static final RegistryObject<Item> putrefactive =REGISTRY.register("putrefactive", com.moonstone.moonstonemod.item.plague.TheNecora.putrefactive::new);
-    public static final RegistryObject<Item> regenerative =REGISTRY.register("regenerative", com.moonstone.moonstonemod.item.plague.TheNecora.regenerative::new);
+    public static final RegistryObject<Item> fermentation =REGISTRY.register("fermentation", com.moonstone.moonstonemod.item.TheNecora.fermentation::new);
+    public static final RegistryObject<Item> putrefactive =REGISTRY.register("putrefactive", com.moonstone.moonstonemod.item.TheNecora.putrefactive::new);
+    public static final RegistryObject<Item> regenerative =REGISTRY.register("regenerative", com.moonstone.moonstonemod.item.TheNecora.regenerative::new);
 
 
     public static final RegistryObject<Item> bloodvirus =REGISTRY.register("bloodvirus",bloodvirus::new);
@@ -153,25 +153,25 @@ public class Items {
     public static final RegistryObject<Item> brain =REGISTRY.register("brain", brain::new);
     public static final RegistryObject<Item> beacon =REGISTRY.register("beacon", beacon::new);
     public static final RegistryObject<Item> mhead =REGISTRY.register("mhead", mhead::new);
-    public static final RegistryObject<Item> cell =REGISTRY.register("cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell::new);
-    public static final RegistryObject<Item> adrenaline =REGISTRY.register("adrenaline", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.adrenaline::new);
-    public static final RegistryObject<Item> cell_mummy =REGISTRY.register("cell_mummy", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_mummy::new);
-    public static final RegistryObject<Item> cell_boom =REGISTRY.register("cell_boom", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_boom::new);
-    public static final RegistryObject<Item> cell_calcification =REGISTRY.register("cell_calcification", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_calcification::new);
-    public static final RegistryObject<Item> cell_blood =REGISTRY.register("cell_blood", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.cell_blood::new);
-    public static final RegistryObject<Item> motor =REGISTRY.register("motor", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.me.motor::new);
-    public static final RegistryObject<Item> watergen =REGISTRY.register("watergen", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.me.watergen::new);
-    public static final RegistryObject<Item> air =REGISTRY.register("air", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.me.air::new);
-    public static final RegistryObject<Item> giant =REGISTRY.register("giant", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giant::new);
+    public static final RegistryObject<Item> cell =REGISTRY.register("cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.cell::new);
+    public static final RegistryObject<Item> adrenaline =REGISTRY.register("adrenaline", com.moonstone.moonstonemod.item.TheNecora.bnabush.adrenaline::new);
+    public static final RegistryObject<Item> cell_mummy =REGISTRY.register("cell_mummy", com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_mummy::new);
+    public static final RegistryObject<Item> cell_boom =REGISTRY.register("cell_boom", com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_boom::new);
+    public static final RegistryObject<Item> cell_calcification =REGISTRY.register("cell_calcification", com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_calcification::new);
+    public static final RegistryObject<Item> cell_blood =REGISTRY.register("cell_blood", com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_blood::new);
+    public static final RegistryObject<Item> motor =REGISTRY.register("motor", com.moonstone.moonstonemod.item.TheNecora.bnabush.me.motor::new);
+    public static final RegistryObject<Item> watergen =REGISTRY.register("watergen", com.moonstone.moonstonemod.item.TheNecora.bnabush.me.watergen::new);
+    public static final RegistryObject<Item> air =REGISTRY.register("air", com.moonstone.moonstonemod.item.TheNecora.bnabush.me.air::new);
+    public static final RegistryObject<Item> giant =REGISTRY.register("giant", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant::new);
     public static final RegistryObject<Item> the_heart =REGISTRY.register("the_heart", com.moonstone.moonstonemod.item.maxitem.the_heart::new);
     public static final RegistryObject<Item> nightmare_orb =REGISTRY.register("nightmare_orb", com.moonstone.moonstonemod.item.nightmare.nightmare_orb::new);
     public static final RegistryObject<Item> nightmare_heart =REGISTRY.register("nightmare_heart", com.moonstone.moonstonemod.item.nightmare.nightmare_heart::new);
     public static final RegistryObject<Item> nightmare_head =REGISTRY.register("nightmare_head", com.moonstone.moonstonemod.item.nightmare.nightmare_head::new);
-    public static final RegistryObject<Item> giant_nightmare =REGISTRY.register("giant_nightmare", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giant_nightmare::new);
+    public static final RegistryObject<Item> giant_nightmare =REGISTRY.register("giant_nightmare", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare::new);
     public static final RegistryObject<Item> nightmare_cube =REGISTRY.register("nightmare_cube", com.moonstone.moonstonemod.item.nightmare.nightmare_cube::new);
     public static final RegistryObject<Item> million_sword =REGISTRY.register("million_sword", com.moonstone.moonstonemod.item.nanodoom.sword.million_sword::new);
 
-    public static final RegistryObject<Item> speed_seed =REGISTRY.register("speed_seed", com.moonstone.moonstonemod.item.speed_seed::new);
+    public static final RegistryObject<Item> speed_seed =REGISTRY.register("speed_seed", com.moonstone.moonstonemod.moonstoneitem.speed_seed::new);
 //    public static final RegistryObject<Item> sword_amout =REGISTRY.register("sword_amout", com.moonstone.moonstonemod.item.nanodoom.sword_amout::new);
 //
 //    public static final RegistryObject<Item> light_amout =REGISTRY.register("light_amout", com.moonstone.moonstonemod.item.nanodoom.light_amout::new);
@@ -186,15 +186,15 @@ public class Items {
 
 
 
-    public static final RegistryObject<Item> not_blood_cell =REGISTRY.register("not_blood_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.not_blood_cell::new);
-    public static final RegistryObject<Item> anaerobic_cell =REGISTRY.register("anaerobic_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.anaerobic_cell::new);
-    public static final RegistryObject<Item> giant_boom_cell =REGISTRY.register("giant_boom_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.giant_boom_cell::new);
-    public static final RegistryObject<Item> subspace_cell =REGISTRY.register("subspace_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.giants.subspace_cell::new);
-    public static final RegistryObject<Item> bone_cell =REGISTRY.register("bone_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.bone_cell::new);
-    public static final RegistryObject<Item> parasitic_cell =REGISTRY.register("parasitic_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.parasitic_cell::new);
-    public static final RegistryObject<Item> mother_cell =REGISTRY.register("mother_cell", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.mother_cell::new);
-    public static final RegistryObject<Item> disgusting_cells =REGISTRY.register("disgusting_cells", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.g.disgusting_cells::new);
-    public static final RegistryObject<Item> slime =REGISTRY.register("slime", com.moonstone.moonstonemod.item.plague.TheNecora.bnabush.slimes.slime::new);
+    public static final RegistryObject<Item> not_blood_cell =REGISTRY.register("not_blood_cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.not_blood_cell::new);
+    public static final RegistryObject<Item> anaerobic_cell =REGISTRY.register("anaerobic_cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.anaerobic_cell::new);
+    public static final RegistryObject<Item> giant_boom_cell =REGISTRY.register("giant_boom_cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.giant_boom_cell::new);
+    public static final RegistryObject<Item> subspace_cell =REGISTRY.register("subspace_cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.subspace_cell::new);
+    public static final RegistryObject<Item> bone_cell =REGISTRY.register("bone_cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_dna.bone_cell::new);
+    public static final RegistryObject<Item> parasitic_cell =REGISTRY.register("parasitic_cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_dna.parasitic_cell::new);
+    public static final RegistryObject<Item> mother_cell =REGISTRY.register("mother_cell", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_dna.mother_cell::new);
+    public static final RegistryObject<Item> disgusting_cells =REGISTRY.register("disgusting_cells", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_dna.disgusting_cells::new);
+    public static final RegistryObject<Item> slime =REGISTRY.register("slime", com.moonstone.moonstonemod.item.TheNecora.bnabush.slimes.slime::new);
 
 
 
@@ -209,6 +209,6 @@ public class Items {
     });
 
 
-    public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.item.gorillacake::new);
+    public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.moonstoneitem.gorillacake::new);
 
 }
