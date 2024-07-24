@@ -64,6 +64,11 @@ public class red_entity extends cell_zombie {
 
 
     @Override
+    public boolean hurt(DamageSource p_30386_, float p_30387_) {
+        return false;
+    }
+
+    @Override
     public void setItemSlot(EquipmentSlot p_21036_, ItemStack p_21037_) {
 
     }

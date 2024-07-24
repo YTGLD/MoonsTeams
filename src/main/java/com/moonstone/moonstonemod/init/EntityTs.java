@@ -70,7 +70,7 @@ public class EntityTs {
         event.put(EntityTs.bule_bolt.get(), Warden.createAttributes().build());
         event.put(EntityTs.cell_slime.get(), com.moonstone.moonstonemod.entity.necora.cell_slime.createAttributes().build());
         event.put(EntityTs.test_blood.get(), Warden.createAttributes().build());
-        event.put(EntityTs.blood_bat.get(), Vex.createAttributes().build());
+        event.put(EntityTs.blood_bat.get(), com.moonstone.moonstonemod.entity.bloodvruis.blood_bat.createAttributes().build());
 
     }
 }

@@ -719,6 +719,41 @@
   "item.moonstone.disgusting_cells": "disgusting cells",
   "item.disgusting_cells.tool.string": "The survival time of giant cell zombies is increased by 100%",
 
+  "item.moonstone.bat_cell": "bat cell",
+  "item.bat_cell.tool.string": "Summon a Shadow Bat with 15% health loss",
+  "item.bat_cell.tool.string.1": "Reduce current health by 15% after summoning",
+  "item.bat_cell.tool.string.2": "The more health points lost, the higher the damage dealt by the Shadow Bat",
+
+  "item.moonstone.cell_doctor": "cell doctor",
+  "item.cell_doctor.tool.string": "You and the Shadow Bat will gain 20% of their bloodsucking ability",
+
+  "item.moonstone.cell_desecrate": "cell desecrate",
+  "item.cell_desecrate.tool.string": "You and Shadow Bat deal 40% more damage to non undead creatures",
+
+  "item.moonstone.cell_harvest": "cell harvest",
+  "item.cell_harvest.tool.string": "The probability of summoning Shadow Bat increases by 35%, but the cooldown time doubles",
+
+  "item.moonstone.cell_scientist": "cell scientist",
+  "item.cell_scientist.tool.string": "When summoning the Shadow Bat, the amount of blood sacrificed doubles, and the Shadow Bat's health and attack power increase according to the amount of blood sacrificed",
+
+
+  "item.moonstone.cell_immortal": "cell Immortal",
+  "item.cell_immortal.tool.string": "Your and Shadow Bat's armor value increases by 10 points",
+
+
+  "item.moonstone.cell_rage": "cell rage",
+  "item.cell_rage.tool.string": "Your attack damage increases by 25%, and Shadow Bat's damage is halved",
+
+  "item.moonstone.cell_blood_attack": "cell blood attack",
+  "item.cell_blood_attack.tool.string": "The Shadow Bat will restore 10% of the Sacrifice's health based on the damage it causes",
+
+
+  "item.moonstone.cell_fear": "cell fear",
+  "item.cell_fear.tool.string": "Increase the survival time of Shadow Bat by 50%",
+
+  "item.moonstone.cell_not_do": "cell not do",
+  "item.cell_not_do.tool.string": "Shadow bats no longer need to sacrifice health points",
+
 
 
 

@@ -21,7 +21,7 @@ public class test_blood extends cell_zombie {
     public void tick() {
         super.tick();
         this.time++;
-        if (this.time > 50) {
+        if (this.time > 30) {
             this.discard();
             this.kill();
         }
@@ -29,7 +29,10 @@ public class test_blood extends cell_zombie {
     public boolean isPushable() {
         return false;
     }
-
+    @Override
+    public boolean hurt(DamageSource p_30386_, float p_30387_) {
+        return false;
+    }
     protected void doPush(Entity p_27415_) {
     }
     protected void pushEntities() {

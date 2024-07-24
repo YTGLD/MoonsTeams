@@ -28,6 +28,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
@@ -66,6 +67,14 @@ public class bloodvirus extends BloodViru {
         double dz = pos1.z - pos2.z;
 
         return Math.sqrt(dx * dx + dy * dy + dz * dz);
+    }
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> multimap = HashMultimap.create();
+        CuriosApi
+                .addSlotModifier(multimap, "ncrdna", uuid, 2, AttributeModifier.Operation.ADDITION);
+
+        return multimap;
     }
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {

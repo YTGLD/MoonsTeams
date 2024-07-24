@@ -134,6 +134,17 @@ public class Tab {
                 b.accept(new ItemStack(Items.heathgene.get()));
                 b.accept(new ItemStack(Items.ragegene.get()));
                 b.accept(new ItemStack(Items.sleepgene.get()));
+                b.accept(new ItemStack(Items.bat_cell.get()));
+
+                b.accept(new ItemStack(Items.cell_blood_attack.get()));
+                b.accept(new ItemStack(Items.cell_desecrate.get()));
+                b.accept(new ItemStack(Items.cell_doctor.get()));
+                b.accept(new ItemStack(Items.cell_fear.get()));
+                b.accept(new ItemStack(Items.cell_harvest.get()));
+                b.accept(new ItemStack(Items.cell_immortal.get()));
+                b.accept(new ItemStack(Items.cell_not_do.get()));
+                b.accept(new ItemStack(Items.cell_rage.get()));
+                b.accept(new ItemStack(Items.cell_scientist.get()));
 
 
                 b.accept(new ItemStack(Items.apple.get()));

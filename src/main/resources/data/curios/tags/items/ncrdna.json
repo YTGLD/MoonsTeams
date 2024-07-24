@@ -5,6 +5,7 @@
     "moonstone:motor",
     "moonstone:watergen",
     "moonstone:air",
-    "moonstone:giant"
+    "moonstone:giant",
+    "moonstone:bat_cell"
   ]
 }

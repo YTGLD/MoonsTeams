@@ -198,7 +198,17 @@ public class Items {
 
 
 
+    public static final RegistryObject<Item> bat_cell =REGISTRY.register("bat_cell", com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell::new);
+    public static final RegistryObject<Item> cell_doctor =REGISTRY.register("cell_doctor", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_doctor::new);
+    public static final RegistryObject<Item> cell_desecrate =REGISTRY.register("cell_desecrate", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_desecrate::new);
+    public static final RegistryObject<Item> cell_harvest =REGISTRY.register("cell_harvest", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_harvest::new);
 
+    public static final RegistryObject<Item> cell_scientist =REGISTRY.register("cell_scientist", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_scientist::new);
+    public static final RegistryObject<Item> cell_immortal =REGISTRY.register("cell_immortal", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_immortal::new);
+    public static final RegistryObject<Item> cell_rage =REGISTRY.register("cell_rage", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_rage::new);
+    public static final RegistryObject<Item> cell_blood_attack =REGISTRY.register("cell_blood_attack", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_blood_attack::new);
+    public static final RegistryObject<Item> cell_fear =REGISTRY.register("cell_fear", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_fear::new);
+    public static final RegistryObject<Item> cell_not_do =REGISTRY.register("cell_not_do", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_not_do::new);
 
 
 

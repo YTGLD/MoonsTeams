@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.client.entitys.blood;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.bloodvruis.blood_bat;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -9,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 public class BloodBatRenderer extends MobRenderer<blood_bat, BloodBatModel> {
-    private static final ResourceLocation BAT_LOCATION = new ResourceLocation("textures/entity/bat.png");
+    private static final ResourceLocation BAT_LOCATION = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/blood_bat.png");
 
     public BloodBatRenderer(EntityRendererProvider.Context p_173929_) {
         super(p_173929_, new BloodBatModel(p_173929_.bakeLayer(ModelLayers.BAT)), 0.25F);

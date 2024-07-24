@@ -18,12 +18,12 @@ public class CircleCubeBlood {
 
 
         float s = entity.tickCount;
-        s /= 10;
+        s /= 14;
 
         float alp =100;
         alp -= entity.tickCount;
-        if (alp>10){
-            alp -= entity.tickCount*2;
+        if (alp>4){
+            alp -= entity.tickCount*4;
         }
         if (alp <0){
             alp = 0;

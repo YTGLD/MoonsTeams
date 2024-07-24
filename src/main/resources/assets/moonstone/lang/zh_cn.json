@@ -746,6 +746,45 @@
 
   "entity.moonstone.cell_slime":"史莱姆细胞僵尸",
 
+  "item.moonstone.cell_doctor": "巫医",
+  "item.cell_doctor.tool.string": "你和暗影蝠将获得20%的吸血能力",
+
+  "item.moonstone.cell_desecrate": "渎圣机组",
+  "item.cell_desecrate.tool.string": "你和暗影蝠对非亡灵生物造成的伤害提高40%",
+
+  "item.moonstone.cell_harvest": "简制增收",
+  "item.cell_harvest.tool.string": "召唤暗影蝠的概率提高10%",
+
+  "item.moonstone.cell_scientist": "疯子科学家",
+  "item.cell_scientist.tool.string": "召唤暗影蝠时献祭的血量加倍，同时暗影蝠的生命值和攻击力会根据献祭的血量来增加",
+
+  "item.moonstone.cell_immortal": "不朽之身",
+  "item.cell_immortal.tool.string": "你和暗影蝠的护甲值增加10点",
+
+
+  "item.moonstone.cell_rage": "狂暴战士",
+  "item.cell_rage.tool.string": "你的攻击伤害增加25%，暗影蝠的伤害减半",
+
+
+  "item.moonstone.cell_blood_attack": "血腥收割",
+  "item.cell_blood_attack.tool.string": "暗影蝠会恢复献祭者10%基于自身造成伤害的血量",
+
+
+  "item.moonstone.cell_fear": "高空恐惧",
+  "item.cell_fear.tool.string": "增加50%暗影蝠的生存时间",
+
+
+  "item.moonstone.cell_not_do": "群居抗拒",
+  "item.cell_not_do.tool.string": "暗影蝠不再需要献祭生命值",
+
+
+
+
+  "item.moonstone.bat_cell": "血色暗影基因片段",
+  "item.bat_cell.tool.string": "损失生命值时有15%召唤一只暗影蝠",
+  "item.bat_cell.tool.string.1": "召唤后减少15%的当前生命值",
+  "item.bat_cell.tool.string.2": "损失的生命值越多，暗影蝠的伤害越高",
+
 
 
   "item.moonstone.light_amout": "雷鸣之章",

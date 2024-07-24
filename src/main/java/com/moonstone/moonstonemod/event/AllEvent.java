@@ -953,8 +953,8 @@ public class AllEvent {
 
 
                     if (player.level() instanceof ServerLevel serverLevel) {
-                        serverLevel.sendParticles(ParticleTypes.SOUL, event.getEntity().getX(), event.getEntity().getY()+1, event.getEntity().getZ(), 9, 0.33, 0.33, 0.33, 0);
-                        serverLevel.sendParticles(ParticleTypes.SCULK_SOUL, event.getEntity().getX(), event.getEntity().getY()+1, event.getEntity().getZ(), 9, 0.33, 0.33, 0.33, 0);
+                        serverLevel.sendParticles(ParticleTypes.SOUL, event.getEntity().getX(), event.getEntity().getY()+1, event.getEntity().getZ(), 2, 0.33, 0.33, 0.33, 0);
+                        serverLevel.sendParticles(ParticleTypes.SCULK_SOUL, event.getEntity().getX(), event.getEntity().getY()+1, event.getEntity().getZ(), 2, 0.33, 0.33, 0.33, 0);
                     }
                     if (Handler.hascurio(player,  Items.bloodvirus.get())) {
                         player.heal(event.getAmount() * 0.1f);
