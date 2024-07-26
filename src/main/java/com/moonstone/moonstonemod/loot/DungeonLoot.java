@@ -43,7 +43,7 @@ public class DungeonLoot extends LootModifier {
         int giant = Mth.nextInt(RandomSource.create(), 1, 10);
         int giant_p = Mth.nextInt(RandomSource.create(), 1, 10);
 
-        int bat = Mth.nextInt(RandomSource.create(), 1, 10);
+        int bat = Mth.nextInt(RandomSource.create(), 1, 18);
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){

@@ -497,7 +497,13 @@
   "item.wind_and_rain.tool.string.1": "之后使用附魂的武器长按右键召唤飞剑",
   "item.wind_and_rain.tool.string.2": "但每次召唤都会有2%的概率进入8秒的冷却",
   "item.wind_and_rain.tool.string.3": "连续召唤会消耗耐久",
-  "item.wind_and_rain.tool.string.4": "必须同时拥有 七剑修罗之心 和 骤雨 来正常使用",
+  "item.wind_and_rain.tool.string.4": "",
+  "item.moonstone.the_pain_stone": "痛苦游离石",
+  "item.the_pain_stone.tool.string.1": "杀死生物后将其50%的最大生命值转换成下一次的额外攻击伤害",
+  "item.the_pain_stone.tool.string.2": "如果下次造成的伤害大于该生物的最大生命值",
+  "item.the_pain_stone.tool.string.3": "那么额外伤害将等比例恢复自身血量",
+  "item.the_pain_stone.tool.string.4": "-15%任何伤害",
+  "item.the_pain_stone.tool.string.5": "下一次: ",
 
 
 

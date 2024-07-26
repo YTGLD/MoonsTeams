@@ -2345,6 +2345,10 @@ public class AllEvent {
             tooltipEvent.setBorderStart(0xFFFF8C00);
             tooltipEvent.setBorderEnd(0xFFFFD700);
         }
+        if (stack.getItem() instanceof ThePain) {
+            tooltipEvent.setBorderStart(0xFFff66ff);
+            tooltipEvent.setBorderEnd(0xFF663300);
+        }
     }
     public static boolean fungus_boolean(LivingEntity living,Player player){
         if (!living.is(player)) {

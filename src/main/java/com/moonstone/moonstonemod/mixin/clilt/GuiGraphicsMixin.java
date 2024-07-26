@@ -2,7 +2,10 @@ package com.moonstone.moonstonemod.mixin.clilt;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.client.glow.Red_glow;
 import com.moonstone.moonstonemod.client.renderer.MRender;
+import com.moonstone.moonstonemod.item.necora;
 import com.moonstone.moonstonemod.moonstoneitem.Perhaps;
 import com.moonstone.moonstonemod.moonstoneitem.BloodViru;
 import com.moonstone.moonstonemod.moonstoneitem.IDoom;
@@ -14,8 +17,13 @@ import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.joml.Matrix4f;
 import org.joml.Vector2ic;
 import org.spongepowered.asm.mixin.Final;
@@ -27,7 +35,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
-
+@OnlyIn(Dist.CLIENT)
 @Mixin(GuiGraphics.class)
 public abstract class GuiGraphicsMixin {
 
@@ -41,6 +49,28 @@ public abstract class GuiGraphicsMixin {
 
     @Shadow @Final private MultiBufferSource.BufferSource bufferSource;
     @Shadow @Deprecated protected abstract void flushIfUnmanaged();
+    @Inject(at = {@At("RETURN")}, method = {"renderItem(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;III)V"})
+    public void ca$renderItemDecorations(LivingEntity p_283524_, Level p_282461_, ItemStack stack, int x, int y, int p_282425_, CallbackInfo ci) {
+        GuiGraphics guiGraphics = (GuiGraphics)(Object)this;
+       if (p_283524_!= null) {
+           int tickCount = p_283524_.tickCount;
+           float s = (float) Math.sin((double) tickCount / 20);
+           if (s < 0) {
+               s = 0;
+           }
+           if (stack.getItem() instanceof necora) {
+               Red_glow.blit(guiGraphics, new ResourceLocation(MoonStoneMod.MODID, "textures/tab.png"), x - 8, y - 8, 0, 0, 32, 32, 32, 32, 1, 0, 0, s);
+           }
+       }
+    }
+
+
+
+
+
+
+
+
     @Inject(at = @At(value = "INVOKE",target = "Lnet/minecraft/client/gui/GuiGraphics;drawManaged(Ljava/lang/Runnable;)V"),method = "renderTooltipInternal(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;)V")
     public void moonstone$ClientTooltipPositioner(Font p_282675_, List<ClientTooltipComponent> p_282615_, int p_283230_, int p_283417_, ClientTooltipPositioner p_282442_, CallbackInfo ci) {
         net.minecraftforge.client.event.RenderTooltipEvent.Pre preEvent = net.minecraftforge.client.ForgeHooksClient.onRenderTooltipPre(this.tooltipStack, (GuiGraphics)(Object)this, p_283230_, p_283417_, guiWidth(), guiHeight(), p_282615_, p_282675_, p_282442_);

@@ -209,6 +209,7 @@ public class Items {
     public static final RegistryObject<Item> cell_blood_attack =REGISTRY.register("cell_blood_attack", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_blood_attack::new);
     public static final RegistryObject<Item> cell_fear =REGISTRY.register("cell_fear", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_fear::new);
     public static final RegistryObject<Item> cell_not_do =REGISTRY.register("cell_not_do", com.moonstone.moonstonemod.item.BloodVirus.dna.cell_not_do::new);
+    public static final RegistryObject<Item> the_pain_stone =REGISTRY.register("the_pain_stone", com.moonstone.moonstonemod.item.pain.the_pain_stone::new);
 
 
 

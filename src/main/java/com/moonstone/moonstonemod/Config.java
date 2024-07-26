@@ -50,6 +50,9 @@ public class Config {
     public static final ForgeConfigSpec.ConfigValue<String> ZombieNightmareGiant = BUILDER
             .comment("What creatures should be killed and dropped")
             .define("Mob","minecraft:warden");
+    public static final ForgeConfigSpec.IntValue the_pain_stone = BUILDER
+            .comment("What is this value, divide the damage by (“2” is “/2”)")
+            .defineInRange("Int", 2, 1, 1000);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 }

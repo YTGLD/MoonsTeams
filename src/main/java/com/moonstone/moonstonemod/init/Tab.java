@@ -29,6 +29,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.evilcandle.get()));
                 b.accept(new ItemStack(Items.evilmug.get()));
                 b.accept(new ItemStack(Items.obsidianring.get()));
+                b.accept(new ItemStack(Items.the_pain_stone.get()));
 
                 b.accept(new ItemStack(Items.beacon.get()));
                 b.accept(new ItemStack(Items.ectoplasmstone.get()));

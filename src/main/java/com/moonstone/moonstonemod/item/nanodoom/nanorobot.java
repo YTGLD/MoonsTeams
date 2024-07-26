@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.moonstoneitem.INanoBattery;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -17,7 +18,7 @@ public class nanorobot extends INanoBattery {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         super.curioTick(slotContext,stack);
-        this.setT(600,slotContext.entity() ,stack);
+        this.setT(480,slotContext.entity() ,stack);
         if (slotContext.entity() instanceof Player player){
             ItemStack ss = player.getItemBySlot(EquipmentSlot.MAINHAND);
             if (!ss.isEmpty()) {
@@ -33,8 +34,6 @@ public class nanorobot extends INanoBattery {
             }
         }
     }
-
-
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

@@ -754,6 +754,13 @@
   "item.moonstone.cell_not_do": "cell not do",
   "item.cell_not_do.tool.string": "Shadow bats no longer need to sacrifice health points",
 
+  "item.moonstone.the_pain_stone": "the pain stone",
+  "item.the_pain_stone.tool.string.1": "After killing a creature, convert 50% of its maximum health to the next additional attack damage",
+  "item.the_pain_stone.tool.string.2": "If the next damage caused exceeds the maximum health of the creature",
+  "item.the_pain_stone.tool.string.3": "So the additional damage will proportionally restore one's own health",
+  "item.the_pain_stone.tool.string.4": "-15% of any damage",
+  "item.the_pain_stone.tool.string.5": "next",
+
 
 
 
