@@ -27,6 +27,12 @@ public class LootTableEvent {
                         .add(LootItem.lootTableItem(Items.the_pain_stone.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
+                        .add(LootItem.lootTableItem(Items.pain_candle.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
+                        .add(LootItem.lootTableItem(Items.pain_ring.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
                         .build());
             }
 
@@ -35,6 +41,8 @@ public class LootTableEvent {
 
             if (event.getName().toString().contains("ancien")){
                 table.addPool(LootPool.lootPool().name("ancien_moon")
+                        .add(LootItem.lootTableItem(Items.nano_box.get()).setWeight(48))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
 
                         .add(LootItem.lootTableItem(Items.ectoplasmball.get()).setWeight(48))
@@ -152,6 +160,12 @@ public class LootTableEvent {
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .add(LootItem.lootTableItem(Items.ectoplasmhorseshoe.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
+                        .add(LootItem.lootTableItem(Items.soulcube.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
+                        .add(LootItem.lootTableItem(Items.soulbattery.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .build());

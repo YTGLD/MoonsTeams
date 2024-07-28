@@ -5,6 +5,8 @@
   "moonstone.book.error": "你需要安装帕秋莉手册",
   "curios.modifiers.necora": "佩戴时",
   "itemGroup.tabmoonstone": "月之石",
+  "itemGroup.tabmoonstone.necora": "月之石:基因",
+
   "moonstone.attribute.name.ectoplasm": "灵质",
   "moonstone.attribute.name.mysterious": "神秘",
   "moonstone.attribute.name.reality": "现实",
@@ -784,6 +786,17 @@
   "item.cell_not_do.tool.string": "暗影蝠不再需要献祭生命值",
 
 
+  "item.moonstone.pain_candle": "污秽蜡烛",
+  "item.pain_candle.tool.string": "恢复血量时+2%受到伤害",
+  "item.pain_candle.tool.string.1": "直到恢复至满血状态",
+  "item.pain_candle.tool.string.2": "+1 生命恢复",
+  "item.pain_candle.tool.string.3": "+33% 生命恢复",
+  "item.pain_candle.tool.string.4": "受到伤害: ",
+
+  "item.moonstone.pain_ring": "邪祟之戒",
+  "item.pain_ring.tool.string": "恢复血量时+1%伤害（不超过100%）",
+  "item.pain_ring.tool.string.1": "直到恢复至满血状态",
+  "item.pain_ring.tool.string.2": "-50% 生命恢复",
 
 
   "item.moonstone.bat_cell": "血色暗影基因片段",

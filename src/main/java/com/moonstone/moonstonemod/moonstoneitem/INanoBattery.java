@@ -32,6 +32,8 @@ public class INanoBattery extends Doom {
         }
         this.t = t;
     }
+
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

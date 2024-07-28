@@ -13,9 +13,9 @@
     "WardenMixin"
   ],
   "client": [
-    "clilt.GuiGraphicsMixin",
-    "clilt.ItemRendererMixin",
-    "clilt.LivingEntityRendererMixin"
+    "client.GuiGraphicsMixin",
+    "client.ItemRendererMixin",
+    "client.LivingEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

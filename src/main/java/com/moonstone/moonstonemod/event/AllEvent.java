@@ -731,8 +731,8 @@ public class AllEvent {
             });
 
             if (player.getPersistentData().getBoolean(thefruit.thefruit)){
-                if (player.hasEffect(MobEffects.GLOWING)) {
-                    player.removeEffect(MobEffects.GLOWING);
+                if (player.hasEffect(MobEffects.DARKNESS)) {
+                    player.removeEffect(MobEffects.DARKNESS);
                 }
             }
 

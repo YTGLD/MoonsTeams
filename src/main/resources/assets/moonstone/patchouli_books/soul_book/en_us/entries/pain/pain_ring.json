@@ -1,0 +1,15 @@
+{
+  "name": "邪祟之戒",
+  "icon": "moonstone:pain_ring",
+  "category": "moonstone:pain",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:pain_ring",
+      "title": "-邪祟之戒-",
+      "text": "发现于猪灵堡垒"
+    }
+  ]
+}

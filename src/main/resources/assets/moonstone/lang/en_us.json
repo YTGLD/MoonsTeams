@@ -4,6 +4,7 @@
   "key.categories.moonstone.moonstone_category": "Moonstone",
   "moonstone.book.error": "you need patchouli mod",
   "itemGroup.tabmoonstone": "Moon Stone",
+  "itemGroup.tabmoonstone.necora": "Moon Stone:DNA",
   "moonstone.attribute.name.ectoplasm": "ectoplasm",
   "moonstone.attribute.name.nano": "nano",
   "moonstone.attribute.name.meet": "meet",
@@ -761,8 +762,18 @@
   "item.the_pain_stone.tool.string.4": "-15% of any damage",
   "item.the_pain_stone.tool.string.5": "next",
 
+  "item.moonstone.pain_candle": "the pain candle",
+  "item.pain_candle.tool.string": "When restoring health,+1% of damage is taken",
+  "item.pain_candle.tool.string.1": "Until it returns to full health status",
+  "item.pain_candle.tool.string.2": "+1. Life recovery",
+  "item.pain_candle.tool.string.3": "+33% Life Recovery",
+  "item.pain_candle.tool.string.4": "Hurt",
 
 
+  "item.moonstone.pain_ring": "the pain candle",
+  "item.pain_ring.tool.string": "When restoring health, increase damage by 1% (not exceeding 100%)",
+  "item.pain_ring.tool.string.1": "Until it returns to full health status",
+  "item.pain_ring.tool.string.2": "-50% heal",
 
 
 

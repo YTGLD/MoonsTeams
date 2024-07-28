@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.mixin.clilt;
+package com.moonstone.moonstonemod.mixin.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

@@ -26,6 +26,11 @@ public class ThePain extends Item implements ICurioItem {
         return true;
     }
 
+    @Override
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        stack.getOrCreateTag().putString("y","y");
+    }
+
     @NotNull
     @Override
     public ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, int lootingLevel, boolean recentlyHit, ItemStack stack) {

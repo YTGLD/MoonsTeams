@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.mixin.clilt;
+package com.moonstone.moonstonemod.mixin.client;
 
 import com.moonstone.moonstonemod.MGuiGraphics;
 import com.moonstone.moonstonemod.MoonStoneMod;

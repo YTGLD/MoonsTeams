@@ -1,5 +1,5 @@
 {
-  "parent": "moonstone:moonstone/medicinebox",
+  "parent": "moonstone:moonstone/necora",
   "criteria": {
     "catalyzer": {
       "conditions": {

@@ -1,5 +1,5 @@
 {
-  "parent": "moonstone:moonstone/ectoplasmcube",
+  "parent": "moonstone:moonstone/ectoplasmprism",
   "criteria": {
     "nightmareeye": {
       "conditions": {
