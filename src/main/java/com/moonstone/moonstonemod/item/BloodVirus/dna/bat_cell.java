@@ -38,68 +38,84 @@ public class bat_cell extends BloodViru {
 
     public static void Bat(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player living) {
-            if (Handler.hascurio(living, Items.bat_cell.get())){
-                if (Handler.hascurio(living,Items.cell_desecrate.get())){
-                    if (event.getEntity() instanceof Mob mob){
-                        if (!mob.isInvertedHealAndHarm()){
-                            event.setAmount(event.getAmount()*1.4f);
+            if (Handler.hascurio(living,Items.bloodvirus.get())) {
+                if (Handler.hascurio(living, Items.bat_cell.get())) {
+                    if (Handler.hascurio(living, Items.cell_desecrate.get())) {
+                        if (event.getEntity() instanceof Mob mob) {
+                            if (!mob.isInvertedHealAndHarm()) {
+                                event.setAmount(event.getAmount() * 1.4f);
+                            }
                         }
                     }
-                }
-                if (Handler.hascurio(living, Items.cell_doctor.get())){
-                    living.heal(event.getAmount()/5);
+                    if (Handler.hascurio(living, Items.cell_doctor.get())) {
+                        living.heal(event.getAmount() / 5);
+                    }
                 }
             }
         }
         if (event.getEntity() instanceof Player living) {
-            if (!living.getCooldowns().isOnCooldown(Items.bat_cell.get())) {
-                if (Handler.hascurio(living, Items.bat_cell.get())) {
-                    int j = Mth.nextInt(RandomSource.create(), 1, 7);
-                    if (Handler.hascurio(living,Items.cell_harvest.get())){
-                        j = Mth.nextInt(RandomSource.create(),1, 4);
-                    }
-                    if (j == 1) {
-                        blood_bat blood_bat = new blood_bat(EntityTs.blood_bat.get(), living.level());
-                        blood_bat.setOwnerUUID(living.getUUID());
-                        blood_bat.teleportTo(living.getX(), living.getY(), living.getZ());
-                        if (!Handler.hascurio(living,Items.cell_scientist.get())){
-                            blood_bat.getAttributes().addTransientAttributeModifiers(modifierMultimap(blood_bat, living.getHealth() * 0.15f));
-                        }else {
-                           blood_bat.getAttributes().addTransientAttributeModifiers(modifierMultimapA(blood_bat, living.getHealth() * 0.25f));
-                            living.hurt(living.damageSources().dryOut(), living.getHealth() * 0.3f);
-                            living.invulnerableTime=0;
+            if (Handler.hascurio(living,Items.bloodvirus.get())) {
+                if (!living.getCooldowns().isOnCooldown(Items.bat_cell.get())) {
+                    if (Handler.hascurio(living, Items.bat_cell.get())) {
+                        int j = Mth.nextInt(RandomSource.create(), 1, 7);
+                        if (Handler.hascurio(living, Items.cell_harvest.get())) {
+                            j = Mth.nextInt(RandomSource.create(), 1, 4);
                         }
-                        if (Handler.hascurio(living, Items.cell_doctor.get())){
-                            blood_bat.addTag(cell_doctor);
-                        }
-                        if (Handler.hascurio(living, Items.cell_desecrate.get())){
-                            blood_bat.addTag(cell_desecrate);
-                        }
-                        if (Handler.hascurio(living, Items.cell_immortal.get())){
-                            blood_bat.addTag(cell_immortal);
-                        }
-                        if (Handler.hascurio(living, Items.cell_rage.get())){
-                            blood_bat.addTag(cell_rage);
-                        }
-                        if (Handler.hascurio(living,Items.cell_blood_attack.get())){
-                            blood_bat.addTag(cell_blood_attack);
+                        if (j == 1) {
+                            blood_bat blood_bat = new blood_bat(EntityTs.blood_bat.get(), living.level());
+                            blood_bat.setOwnerUUID(living.getUUID());
+                            blood_bat.teleportTo(living.getX(), living.getY(), living.getZ());
+                            if (!Handler.hascurio(living, Items.cell_scientist.get())) {
+                                blood_bat.getAttributes().addTransientAttributeModifiers(modifierMultimap(blood_bat, living.getHealth() * 0.15f));
+                            } else {
+                                blood_bat.getAttributes().addTransientAttributeModifiers(modifierMultimapA(blood_bat, living.getHealth() * 0.25f));
+                                living.hurt(living.damageSources().dryOut(), living.getHealth() * 0.3f);
+                                living.invulnerableTime = 0;
+                            }
+                            if (Handler.hascurio(living, Items.cell_doctor.get())) {
+                                blood_bat.addTag(cell_doctor);
+                            }
+                            if (Handler.hascurio(living, Items.cell_desecrate.get())) {
+                                blood_bat.addTag(cell_desecrate);
+                            }
+                            if (Handler.hascurio(living, Items.cell_immortal.get())) {
+                                blood_bat.addTag(cell_immortal);
+                            }
+                            if (Handler.hascurio(living, Items.cell_rage.get())) {
+                                blood_bat.addTag(cell_rage);
+                            }
+                            if (Handler.hascurio(living, Items.cell_blood_attack.get())) {
+                                blood_bat.addTag(cell_blood_attack);
 
-                        }
-                        if (Handler.hascurio(living,Items.cell_fear.get())){
-                            blood_bat.addTag(cell_fear);
-                        }
+                            }
+                            if (Handler.hascurio(living, Items.cell_fear.get())) {
+                                blood_bat.addTag(cell_fear);
+                            }
 
-                        living.level().addFreshEntity(blood_bat);
-                        living.getCooldowns().addCooldown(Items.bat_cell.get(),20);
-                        if (Handler.hascurio(living,Items.cell_not_do.get())) {
-                            living.hurt(living.damageSources().dryOut(), living.getHealth() * 0.15f);
+                            living.level().addFreshEntity(blood_bat);
+                            living.getCooldowns().addCooldown(Items.bat_cell.get(), 20);
+                            if (Handler.hascurio(living, Items.cell_not_do.get())) {
+                                living.hurt(living.damageSources().dryOut(), living.getHealth() * 0.15f);
+                            }
                         }
                     }
                 }
             }
         }
     }
-    public static Multimap<Attribute, AttributeModifier> modifierMultimap (LivingEntity bat,float owner){
+
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        if (Handler.hascurio(slotContext.entity(),Items.cell.get())){
+            return false;
+        }
+        if (Handler.hascurio(slotContext.entity(),Items.giant.get())){
+            return false;
+        }
+        return true;
+    }
+
+    public static Multimap<Attribute, AttributeModifier> modifierMultimap (LivingEntity bat, float owner){
         Multimap<Attribute, AttributeModifier> modifierMultimap =HashMultimap.create();
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier((bat.getUUID()), MoonStoneMod.MODID + "bat",owner, AttributeModifier.Operation.ADDITION));
         return modifierMultimap;
@@ -109,14 +125,6 @@ public class bat_cell extends BloodViru {
         modifierMultimap.put(Attributes.ARMOR, new AttributeModifier((bat.getUUID()), MoonStoneMod.MODID + "bat",owner, AttributeModifier.Operation.ADDITION));
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier((bat.getUUID()), MoonStoneMod.MODID + "bat",owner, AttributeModifier.Operation.ADDITION));
         return modifierMultimap;
-    }
-    @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "dna", uuid, 3, AttributeModifier.Operation.ADDITION);
-        return linkedHashMultimap;
     }
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {

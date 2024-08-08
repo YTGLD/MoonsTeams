@@ -108,11 +108,6 @@ public class Tab {
                 b.accept(new ItemStack(Items.evilcandle.get()));
                 b.accept(new ItemStack(Items.evilmug.get()));
                 b.accept(new ItemStack(Items.obsidianring.get()));
-                b.accept(new ItemStack(Items.the_pain_stone.get()));
-                b.accept(new ItemStack(Items.twistedstone.get()));
-                b.accept(new ItemStack(Items.pain_candle.get()));
-                b.accept(new ItemStack(Items.pain_ring.get()));
-
                 b.accept(new ItemStack(Items.badgeofthedead.get()));
                 b.accept(new ItemStack(Items.battery.get()));
 
@@ -173,6 +168,10 @@ public class Tab {
                 b.accept(new ItemStack(Items.nano_box.get()));
 
 
+                b.accept(new ItemStack(Items.twistedstone.get()));
+                b.accept(new ItemStack(Items.pain_candle.get()));
+                b.accept(new ItemStack(Items.pain_ring.get()));
+                b.accept(new ItemStack(Items.the_pain_stone.get()));
 
             })
             .build());

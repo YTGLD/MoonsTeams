@@ -239,6 +239,28 @@ public class blood_bat extends TamableAnimal {
 
             }
         }
+        if ( this.getOwner()!= null&&this.getTarget()== null) {
+            float m  = (float) calculateDistance(this.getOwner() ,this);
+            if (m>4) {
+                double d2 = this.getOwner().getX() + 0.5D - this.getX();
+                double d0 = this.getOwner().getY() + 0.1D - this.getY();
+                double d1 = this.getOwner().getZ() + 0.5D - this.getZ();
+                Vec3 vec3 = this.getDeltaMovement();
+                Vec3 vec31 = vec3.add((Math.signum(d2) * 0.5D - vec3.x) * (double) 0.1F, (Math.signum(d0) * (double) 0.7F - vec3.y) * (double) 0.1F, (Math.signum(d1) * 0.5D - vec3.z) * (double) 0.1F);
+                this.setDeltaMovement(new Vec3(vec31.x,vec31.y*1.1,vec31.z));
+                float f = (float) (Mth.atan2(vec31.z, vec31.x) * (double) (180F / (float) Math.PI)) - 90.0F;
+                float f1 = Mth.wrapDegrees(f - this.getYRot());
+                this.zza = 0.5F;
+                this.setYRot(this.getYRot() + f1);
+            }else {
+                double d2 = this.getOwner().getX() + 0.5D - this.getX();
+                double d0 = this.getOwner().getY() + 0.1D - this.getY();
+                double d1 = this.getOwner().getZ() + 0.5D - this.getZ();
+                Vec3 vec3 = this.getDeltaMovement();
+                Vec3 vec31 = vec3.add((Math.signum(d2) * 0.5D - vec3.x) * (double) 0.1F, (Math.signum(d0) * (double) 0.7F - vec3.y) * (double) 0.1F, (Math.signum(d1) * 0.5D - vec3.z) * (double) 0.1F);
+                this.setDeltaMovement(new Vec3(-vec31.x,-vec31.y,-vec31.z));
 
+            }
+        }
     }
 }

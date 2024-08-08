@@ -74,35 +74,15 @@ public class bloodvirus extends BloodViru {
         CuriosApi
                 .addSlotModifier(multimap, "ncrdna", uuid, 2, AttributeModifier.Operation.ADDITION);
 
+        CuriosApi
+                .addSlotModifier(multimap, "dna", uuid, 2, AttributeModifier.Operation.ADDITION);
         return multimap;
     }
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
 
-            {
-                Vec3 position = player.position();
-                int is = 18;
-                List<blood_bat> items = player.level().getEntitiesOfClass(blood_bat.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
-                for (blood_bat item : items) {
-                    if (item.getOwner()!= null && item.getOwner().is(player)) {
-                        if (item.getTarget()==null) {
-                            if (item.isAlive()) {
-                                Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
-                                if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
-                                    motion = motion.normalize();
-                                }
-                                float move = (float) calculateDistance(player, item);
-                                if (move > 1.8) {
-                                    item.setDeltaMovement(motion.scale(0.5));
-                                }
-                            }
-                        }else if (item.getTarget().isAlive()){
 
-                        }
-                    }
-                }
-            }
 
 
             if (stack.getTag()!= null){
@@ -144,6 +124,9 @@ public class bloodvirus extends BloodViru {
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (Handler.hascurio(player, Items.necora.get())){
+                return false;
+            }
+            if (Handler.hascurio(player, Items.medicinebox.get())) {
                 return false;
             }
             return !Handler.hascurio(player, stack.getItem());

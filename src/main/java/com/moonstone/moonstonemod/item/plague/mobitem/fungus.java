@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.item.plague.mobitem;
 
 import com.moonstone.moonstonemod.event.AllEvent;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -23,7 +24,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class fungus extends medIC implements ICurioItem {
+public class fungus extends TheNecoraIC implements ICurioItem {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {

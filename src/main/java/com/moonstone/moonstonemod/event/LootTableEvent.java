@@ -41,7 +41,7 @@ public class LootTableEvent {
 
             if (event.getName().toString().contains("ancien")){
                 table.addPool(LootPool.lootPool().name("ancien_moon")
-                        .add(LootItem.lootTableItem(Items.nano_box.get()).setWeight(48))
+                        .add(LootItem.lootTableItem(Items.nano_box.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
 

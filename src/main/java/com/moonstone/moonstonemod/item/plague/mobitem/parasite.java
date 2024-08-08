@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.plague.mobitem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -22,7 +23,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import java.util.List;
 import java.util.UUID;
 
-public class parasite extends medIC implements ICurioItem {
+public class parasite extends TheNecoraIC implements ICurioItem {
     public String lvl_parasite = "lvl";
     public String sizeLevel = "sizeLevel";
     @Override

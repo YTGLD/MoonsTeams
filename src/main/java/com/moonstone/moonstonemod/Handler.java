@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.SpawnUtil;
@@ -91,7 +92,6 @@ public class Handler {
     }
 
     public static boolean hascurio(LivingEntity entity, Item curio) {
-
         if (entity != null) {
             List<SlotResult> find = findCurios(entity, curio);
             for (SlotResult slotResult : find) {

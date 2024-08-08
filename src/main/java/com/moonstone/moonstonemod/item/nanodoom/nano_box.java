@@ -45,7 +45,7 @@ public class nano_box extends INanoBattery {
 
                             bule_bolt bule_bolt = new bule_bolt(EntityTs.bule_bolt.get(), living.level());
                             bule_bolt.teleportTo(living.getX(), living.getY(), living.getZ());
-                            living.hurt(living.damageSources().playerAttack(player), living.getMaxHealth() / 20);
+                            living.hurt(living.damageSources().magic(), living.getMaxHealth() / 20);
                             living.level().addFreshEntity(bule_bolt);
 
                             player.getCooldowns().addCooldown(this, getT());

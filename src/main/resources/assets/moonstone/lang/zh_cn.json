@@ -305,6 +305,10 @@
   "item.medicinebox.tool.string.5": "我感受到强烈的嗜血欲望......",
   "item.medicinebox.tool.string.6": "我想我得杀死一头末影龙......",
 
+  "item.medicinebox.tool.string.8": "吃！！！",
+  "item.medicinebox.tool.string.9": "获得随机正面buff！",
+  "item.medicinebox.tool.string.eat": "你获得了1个药物栏位",
+
 
   "item.calcification.tool.string": "*使实验者的皮肤钙化，增强实验者的战斗能力",
   "item.calcification.tool.string.1": "增加11％伤害抵抗",
@@ -807,7 +811,7 @@
 
 
   "item.moonstone.light_amout": "雷鸣之章",
-  "item.medicinebox.tool.string.7": "尝尝医药箱的味道如何！",
+  "item.medicinebox.tool.string.7": "尝尝医药箱的味道如何！你会+1药物栏位！！",
   "item.moonstone.nano_box": "天机魔盒",
   "item.nano_box.tool.string": "Shift状态下，对周围生物造成闪电攻击",
   "item.nano_box.tool.string.1": "可以使用电池增幅或改装",

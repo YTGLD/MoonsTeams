@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
+import com.moonstone.moonstonemod.moonstoneitem.ThePain;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -20,7 +21,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class twistedstone extends CommonItem {
+public class twistedstone extends ThePain {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {

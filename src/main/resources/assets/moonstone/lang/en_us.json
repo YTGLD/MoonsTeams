@@ -291,12 +291,12 @@
   "item.medicinebox.tool.string.4": "This item must be worn in order to discover the pill!",
   "item.medicinebox.tool.string.5": "",
   "item.medicinebox.tool.string.6": "",
-
-
+  "item.medicinebox.tool.string.8": "Can eat",
+  "item.medicinebox.tool.string.9": "Random effect",
   "item.calcification.tool.string": "*Calcifies the experimenter's skin and enhances the experimenter's ability to fight",
   "item.calcification.tool.string.1": "Increases damage resistance by 11",
   "item.calcification.tool.string.2": "Suffer 350 damage attempts",
-
+  "item.medicinebox.tool.string.eat": "you: +1 slot",
 
   "item.masticatory.tool.string": "*Strengthening of the experimenter's occlusal muscles to the point of enhancing the experimenter's chewing ability",
   "item.masticatory.tool.string.1": "50% reduction in eating time",

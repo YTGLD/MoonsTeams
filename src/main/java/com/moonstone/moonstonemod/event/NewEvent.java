@@ -8,6 +8,7 @@ import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.gia
 import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
+import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -20,6 +21,8 @@ public class NewEvent {
         pain_candle.Heal(event);
         nightmare_head.LivingHealEvent(event);
         pain_ring.Heal(event);
+
+
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingHurtEvent event){

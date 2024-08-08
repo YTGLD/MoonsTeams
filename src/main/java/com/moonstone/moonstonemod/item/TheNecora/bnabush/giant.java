@@ -32,14 +32,6 @@ public class giant extends TheNecoraIC {
         return true;
     }
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "dna", uuid, 3, AttributeModifier.Operation.ADDITION);
-        return linkedHashMultimap;
-    }
-    @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
         tooltip.add(Component.translatable("item.giant.tool.string").withStyle(ChatFormatting.DARK_RED));
