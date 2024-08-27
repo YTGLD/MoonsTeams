@@ -82,6 +82,9 @@ public class Tab {
                 b.accept(new ItemStack(Items.cell_not_do.get()));
                 b.accept(new ItemStack(Items.cell_rage.get()));
                 b.accept(new ItemStack(Items.cell_scientist.get()));
+                b.accept(new ItemStack(Items.acid.get()));
+                b.accept(new ItemStack(Items.zombie_box.get()));
+                b.accept(new ItemStack(Items.zombie_box_nobo.get()));
 
             })
             .build()
@@ -92,6 +95,7 @@ public class Tab {
             .displayItems((a,b)->{
                 b.accept(new ItemStack(Items.book.get()));
                 b.accept(new ItemStack(Items.the_heart.get()));
+                b.accept(new ItemStack(Items.twistedamout.get()));
                 b.accept(new ItemStack(Items.plague.get()));
                 b.accept(new ItemStack(Items.blueamout.get()));
                 b.accept(new ItemStack(Items.greedamout.get()));

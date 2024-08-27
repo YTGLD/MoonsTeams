@@ -8,11 +8,7 @@ import com.moonstone.moonstonemod.client.glow.Red_glow;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.item.necora;
 import com.moonstone.moonstonemod.item.nightmare.nightmareeye;
-import com.moonstone.moonstonemod.moonstoneitem.Perhaps;
-import com.moonstone.moonstonemod.moonstoneitem.BloodViru;
-import com.moonstone.moonstonemod.moonstoneitem.IDoom;
-import com.moonstone.moonstonemod.moonstoneitem.INightmare;
-import com.moonstone.moonstonemod.moonstoneitem.Iplague;
+import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
@@ -53,6 +49,7 @@ public abstract class GuiGraphicsMixin {
     @Shadow @Deprecated protected abstract void flushIfUnmanaged();
 
 
+    @Shadow public abstract PoseStack pose();
 
     @Inject(at = {@At("RETURN")}, method = {"renderItem(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;III)V"})
     public void ca$renderItemDecorations(LivingEntity p_283524_, Level p_282461_, ItemStack stack, int x, int y, int p_282425_, CallbackInfo ci) {
@@ -66,15 +63,6 @@ public abstract class GuiGraphicsMixin {
                     s = 0;
                 }
                 Red_glow.blit(guiGraphics, new ResourceLocation(MoonStoneMod.MODID, "textures/tab.png"), x - 8, y - 8, 0, 0, 32, 32, 32, 32, 1, 0, 0, s);
-            }
-            if (stack.getItem() instanceof nightmareeye) {
-//                float s = (float) Math.sin((double) p_283524_.tickCount / 20);
-//                if (s < 0) {
-//                    s = -s;
-//                }
-//                float tickCount = (float) Math.sin((double) p_283524_.tickCount / 20);
-//                Glow.blit(tickCount, pose, new ResourceLocation(MoonStoneMod.MODID, "textures/nightmare.png"), x - 8, y - 8, 0, 0, 32, 32, 32, 32, 1 * (s / 2), 0, 1 * (s / 2), 1);
-
             }
         }
     }

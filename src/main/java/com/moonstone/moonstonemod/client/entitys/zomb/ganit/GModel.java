@@ -1,7 +1,7 @@
-package com.moonstone.moonstonemod.client.entitys.zomb.GIANT;
+package com.moonstone.moonstonemod.client.entitys.zomb.ganit;
 
 import com.google.common.collect.ImmutableList;
-import com.moonstone.moonstonemod.entity.other.cell_giant;
+import com.moonstone.moonstonemod.entity.necora.cell_giant;
 import net.minecraft.client.animation.definitions.WardenAnimation;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;

@@ -134,6 +134,7 @@ public class MRender extends RenderType {
         ShaderInstance_trail = shaderInstance_ging;
     }
 
+
     public static void setShaderInstance_mls(ShaderInstance shaderInstance_mls) {
         ShaderInstance_mls = shaderInstance_mls;
     }

@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.client.particle;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -25,6 +26,12 @@ public class red extends TextureSheetParticle {
     @Override
     protected int getLightColor(float p_107249_) {
         return 240;
+    }
+
+    @Override
+    public void render(VertexConsumer p_107678_, Camera p_107679_, float p_107680_) {
+
+        super.render(p_107678_, p_107679_, p_107680_);
     }
 
     @Override

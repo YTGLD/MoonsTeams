@@ -1,7 +1,7 @@
-package com.moonstone.moonstonemod.client.entitys.zomb.GIANT;
+package com.moonstone.moonstonemod.client.entitys.zomb.ganit;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.other.cell_giant;
+import com.moonstone.moonstonemod.entity.necora.cell_giant;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -11,8 +11,8 @@ import net.minecraft.util.Mth;
 public class CellZombieG  extends MobRenderer<cell_giant, GModel<cell_giant>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/cell_giant.png");
     private static final ResourceLocation HEART_TEXTURE = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/hearth.png");
-    private static final ResourceLocation PULSATING_SPOTS_TEXTURE_1 = new ResourceLocation("textures/entity/warden/warden_pulsating_spots_1.png");
-    private static final ResourceLocation PULSATING_SPOTS_TEXTURE_2 = new ResourceLocation("textures/entity/warden/warden_pulsating_spots_2.png");
+    private static final ResourceLocation PULSATING_SPOTS_TEXTURE_1 = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/cell_giant_spots_1.png");
+    private static final ResourceLocation PULSATING_SPOTS_TEXTURE_2 = new ResourceLocation(MoonStoneMod.MODID,"textures/entity/cell_giant_spots_2.png");
 
     public CellZombieG(EntityRendererProvider.Context p_234787_) {
         super(p_234787_, new GModel<>(p_234787_.bakeLayer(ModelLayers.WARDEN)), 0.9F);

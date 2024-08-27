@@ -56,6 +56,7 @@ public class bat_cell extends BloodViru {
         if (event.getEntity() instanceof Player living) {
             if (Handler.hascurio(living,Items.bloodvirus.get())) {
                 if (!living.getCooldowns().isOnCooldown(Items.bat_cell.get())) {
+
                     if (Handler.hascurio(living, Items.bat_cell.get())) {
                         int j = Mth.nextInt(RandomSource.create(), 1, 7);
                         if (Handler.hascurio(living, Items.cell_harvest.get())) {

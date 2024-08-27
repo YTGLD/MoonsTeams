@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.entity.other;
+package com.moonstone.moonstonemod.entity.necora;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.HashMultimap;
@@ -7,7 +7,6 @@ import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.ai.AIgiant;
-import com.moonstone.moonstonemod.entity.necora.cell_zombie;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.core.BlockPos;

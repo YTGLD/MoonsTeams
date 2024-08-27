@@ -4,7 +4,6 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.other.cell_giant;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;

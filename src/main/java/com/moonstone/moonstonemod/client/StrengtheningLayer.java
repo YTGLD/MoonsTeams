@@ -43,10 +43,9 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
                        float limbAngle, float limbDistance,
                        float tickDelta, float animationProgress,
                        float headYaw, float headPitch) {
-
         new Sword(matrices,vertexConsumers,light,entity);
         new orb(matrices, vertexConsumers, light, entity);
-
+        new Blood(matrices, vertexConsumers, light, entity);
         if (entity instanceof nightmare_giant){
             matrices.pushPose();
             renderCircle3(matrices, vertexConsumers, light, 0.0F, 1, 0.0F, 0.33f, entity);

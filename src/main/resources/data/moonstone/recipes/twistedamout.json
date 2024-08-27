@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "CBC",
+    "ADA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:obsidian"
+    },
+    "B":
+    {
+      "item": "moonstone:twistedstone"
+    },
+    "C":
+    {
+      "item": "moonstone:bigwarcrystal"
+    },
+    "D":
+    {
+      "item": "moonstone:ectoplasmprism"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:twistedamout",
+    "count": 1
+  }
+}

@@ -823,8 +823,47 @@
   "item.sword_amout.tool.string": "你的攻击速度会随着斩击次数的增加而增加，但不会超过100%",
   "item.sword_amout.tool.string.1": "但是你的伤害会逐渐减少，最多降低到原先的33%",
   "item.sword_amout.tool.string.2": "全力攻击时不会造成无敌帧保护",
-  "item.sword_amout.tool.string.3": "当你的斩击次数到达10时，每次攻击都会造成范围效果"
-}
+  "item.sword_amout.tool.string.3": "当你的斩击次数到达10时，每次攻击都会造成范围效果",
+
+
+  "curios.modifiers.zombie": "装备侍从饰品时",
+  "curios.identifier.zombie": "僵尸侍从插槽",
+
+
+  "item.moonstone.small.all": "右键装备到小侍从上",
+  "item.moonstone.acid": "核酸中和",
+  "item.acid.tool.string": "你的侍从更容易死亡，但是每次死亡都会使主人获得大量buff",
+  "item.moonstone.zombie_box": "僵尸的小盒子",
+  "item.moonstone.zombie_box_nobo": "坏掉的僵尸盒子",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "item.moonstone.twistedamout": "诺克萨斯纹章",
+
+  "item.twistedamout.tool.string": "每次攻击都有概率生成一个血球围绕你旋转",
+  "item.twistedamout.tool.string.1": "当血球数量超过8时",
+  "item.twistedamout.tool.string.2": "下一次斩击将造成4倍伤害",
+  "item.twistedamout.tool.string.3": "血球会随着时间的流失而被你吸收",
+  "item.twistedamout.tool.string.4": "每次吸收都会恢复一定的百分比生命值",
+  "item.twistedamout.tool.string.5": "每颗血球提供5%的伤害加成",
+  "item.twistedamout.tool.string.6": "血球爆炸时对3格内的生物造成中毒效果",
+  "item.twistedamout.tool.string.7": "杀死生物后再获得1~3颗血球"
+  }
 
 
 

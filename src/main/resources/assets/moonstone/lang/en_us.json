@@ -213,9 +213,13 @@
   "curios.identifier.necora": "DNA",
   "curios.identifier.ncrdna": "ncr dna",
   "curios.identifier.dna": "dna",
+
+
   "curios.modifiers.ncrdna": "necora",
   "curios.modifiers.dna": "DNA",
   "curios.modifiers.medicine": "medicine",
+  "curios.modifiers.zombie": "zombie",
+  "curios.identifier.zombie": "zombie",
 
   "item.moonstone.germ": "germ",
   "item.moonstone.fungus": "fungus",
@@ -777,6 +781,17 @@
 
 
 
+  "item.moonstone.twistedamout": "twisted amout",
+
+  "item.twistedamout.tool.string": "Each attack has a probability of generating a blood cell to rotate around you",
+  "item.twistedamout.tool.string.1": "When the number of blood cells exceeds 8,",
+  "item.twistedamout.tool.string.2": "The next slash will deal triple damage",
+  "item.twistedamout.tool.string.3": "Blood cells will be absorbed by you over time",
+  "item.twistedamout.tool.string.4": "Each absorption will restore a certain percentage of health",
+  "item.twistedamout.tool.string.5": "Each blood cell provides a 5% damage bonus",
+  "item.twistedamout.tool.string.6": "Blood cell explosion causes bleeding effect on organisms within 3 cells",
+  "item.twistedamout.tool.string.7": "Kill the creature and obtain 1-3 blood cells",
+
 
 
 
@@ -788,6 +803,12 @@
   "tool.string.ectoplasmball.2": "",
   "tool.string.ectoplasmball.3": "",
   "item.nightmare_cube.tool.string": "You can press Shift while approaching the creature and release the dark dye thread",
+
+  "item.moonstone.small.all": "Right click to equip the attendant",
+  "item.moonstone.acid": "acid",
+  "item.acid.tool.string": "Your attendants are more prone to death, but each death earns the master a large amount of buff",
+  "item.moonstone.zombie_box": "zombie box",
+  "item.moonstone.zombie_box_nobo": "zombie box not",
 
 
   "item.nightmare_head.tool.string": "Immune to all non biological injuries",

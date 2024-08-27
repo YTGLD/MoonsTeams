@@ -3,7 +3,10 @@ package com.moonstone.moonstonemod.init;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.book;
 import com.moonstone.moonstonemod.item.BloodVirus.*;
+import com.moonstone.moonstonemod.item.TheNecora.small.acid;
+import com.moonstone.moonstonemod.item.TheNecora.small.zombie_box;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
+import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
 import com.moonstone.moonstonemod.item.ectoplasm.soul.soulbattery;
@@ -213,12 +216,12 @@ public class Items {
     public static final RegistryObject<Item> pain_candle =REGISTRY.register("pain_candle", com.moonstone.moonstonemod.item.pain.pain_candle::new);
     public static final RegistryObject<Item> pain_ring =REGISTRY.register("pain_ring", com.moonstone.moonstonemod.item.pain.pain_ring::new);
 
+    public static final RegistryObject<Item> twistedamout =REGISTRY.register("twistedamout", twistedamout::new);
+    public static final RegistryObject<Item> acid =REGISTRY.register("acid", acid::new);
 
-
-
-    public static final RegistryObject<Item> the_heart_image =REGISTRY.register("the_heart_image", ()->{
-        return new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
-
+    public static final RegistryObject<Item> zombie_box =REGISTRY.register("zombie_box", zombie_box::new);
+    public static final RegistryObject<Item> zombie_box_nobo =REGISTRY.register("zombie_box_nobo", ()->{
+        return new Item(new Item.Properties().rarity(Rarity.UNCOMMON));
     });
 
 

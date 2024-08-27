@@ -1,8 +1,8 @@
-package com.moonstone.moonstonemod.client.entitys.zomb.GIANT;
+package com.moonstone.moonstonemod.client.entitys.zomb.ganit;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.moonstone.moonstonemod.entity.other.cell_giant;
+import com.moonstone.moonstonemod.entity.necora.cell_giant;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
