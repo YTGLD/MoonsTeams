@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.moonstoneitem.Iplague;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -20,10 +21,8 @@ public class TheNecoraIC extends Item  implements Iplague, ICurioItem {
 
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, stack.getItem())){
-                return false;
-            }
+        if (Handler.hascurio(slotContext.entity(), stack.getItem())) {
+            return false;
         }
         return true;
     }

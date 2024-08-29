@@ -83,6 +83,10 @@ public class Tab {
                 b.accept(new ItemStack(Items.cell_rage.get()));
                 b.accept(new ItemStack(Items.cell_scientist.get()));
                 b.accept(new ItemStack(Items.acid.get()));
+                b.accept(new ItemStack(Items.compression.get()));
+                b.accept(new ItemStack(Items.atrophy.get()));
+                b.accept(new ItemStack(Items.enhancemen.get()));
+
                 b.accept(new ItemStack(Items.zombie_box.get()));
                 b.accept(new ItemStack(Items.zombie_box_nobo.get()));
 

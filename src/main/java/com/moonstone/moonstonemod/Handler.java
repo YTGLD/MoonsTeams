@@ -27,7 +27,7 @@ import static com.moonstone.moonstonemod.event.AllEvent.*;
 
 public class Handler {
 
-    public static <T extends TamableAnimal> void trySpawnMob(Player player, EntityType<T> p_216404_, MobSpawnType p_216405_, ServerLevel p_216406_, BlockPos p_216407_, int p_216408_, int p_216409_, int p_216410_, SpawnUtil.Strategy p_216411_) {
+    public static <T extends TamableAnimal> void trySpawnMob(LivingEntity player, EntityType<T> p_216404_, MobSpawnType p_216405_, ServerLevel p_216406_, BlockPos p_216407_, int p_216408_, int p_216409_, int p_216410_, SpawnUtil.Strategy p_216411_) {
         BlockPos.MutableBlockPos blockpos$mutableblockpos = p_216407_.mutable();
 
         for (int i = 0; i < p_216408_; ++i) {

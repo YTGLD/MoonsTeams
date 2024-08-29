@@ -45,20 +45,16 @@ public class DungeonLoot extends LootModifier {
 
         int bat = Mth.nextInt(RandomSource.create(), 1, 18);
 
-        /*
         if (entity instanceof Player player){
             if (idSting.contains("chests/")){
-                if (Handler.hascurio(player, Items.necora.get())){
-                    if (player.getTags().contains("necora_box")){
+                if (Handler.hascurio(player, Items.medicinebox.get())){
+                    if (!player.getTags().contains("medicinebox")){
                         generatedLoot.add(new ItemStack(Items.zombie_box.get()));
-                        player.addTag("necora_box");
+                        player.addTag("medicinebox");
                     }
                 }
             }
         }
-
-
-         */
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){

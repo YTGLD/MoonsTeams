@@ -3,8 +3,7 @@ package com.moonstone.moonstonemod.init;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.book;
 import com.moonstone.moonstonemod.item.BloodVirus.*;
-import com.moonstone.moonstonemod.item.TheNecora.small.acid;
-import com.moonstone.moonstonemod.item.TheNecora.small.zombie_box;
+import com.moonstone.moonstonemod.item.TheNecora.small.*;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
@@ -218,6 +217,9 @@ public class Items {
 
     public static final RegistryObject<Item> twistedamout =REGISTRY.register("twistedamout", twistedamout::new);
     public static final RegistryObject<Item> acid =REGISTRY.register("acid", acid::new);
+    public static final RegistryObject<Item> compression =REGISTRY.register("compression", compression::new);
+    public static final RegistryObject<Item> atrophy =REGISTRY.register("atrophy", atrophy::new);
+    public static final RegistryObject<Item> enhancemen =REGISTRY.register("enhancemen", enhancemen::new);
 
     public static final RegistryObject<Item> zombie_box =REGISTRY.register("zombie_box", zombie_box::new);
     public static final RegistryObject<Item> zombie_box_nobo =REGISTRY.register("zombie_box_nobo", ()->{

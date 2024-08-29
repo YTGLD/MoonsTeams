@@ -171,14 +171,12 @@ public class AllEvent {
     }
     @SubscribeEvent
     public void gen(LivingHurtEvent event) {
-        if ((event.getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player, Items.air.get())) {
-                if (!player.onGround()) {
-                    event.setAmount(event.getAmount() * 0.8f);
-                }
-                if (!player.isInWater()) {
-                    event.setAmount(event.getAmount() * 0.85f);
-                }
+        if (Handler.hascurio(event.getEntity() , Items.air.get())) {
+            if (!event.getEntity() .onGround()) {
+                event.setAmount(event.getAmount() * 0.8f);
+            }
+            if (!event.getEntity() .isInWater()) {
+                event.setAmount(event.getAmount() * 0.85f);
             }
         }
     }

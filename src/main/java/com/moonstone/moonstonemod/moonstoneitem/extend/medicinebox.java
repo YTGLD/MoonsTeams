@@ -26,6 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +40,25 @@ import java.util.UUID;
 
 public class medicinebox extends TheNecoraIC {
 
+    public static void necora(LivingEntityUseItemEvent.Finish event) {
+        if (Handler.hascurio(event.getEntity(),Items.medicinebox.get())){
+            if (event.getEntity() instanceof Player player) {
+                if (event.getItem().is(Items.calcification.get())) {
+                    player.addItem(new ItemStack(Items.acid.get()));
+                }
+                if (event.getItem().is(Items.masticatory.get())) {
+                    player.addItem(new ItemStack(Items.atrophy.get()));
+                }
+                if (event.getItem().is(Items.polyphagia.get())) {
+                    player.addItem(new ItemStack(Items.compression.get()));
+                }
+                if (event.getItem().is(Items.quadriceps.get())) {
+                    player.addItem(new ItemStack(Items.enhancemen.get()));
+                }
+            }
+        }
+
+    }
     public boolean overrideOtherStackedOnMe(ItemStack me, ItemStack Other, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
         if (me.getCount() != 1) return false;
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {

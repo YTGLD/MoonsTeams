@@ -793,6 +793,7 @@
   "item.twistedamout.tool.string.7": "Kill the creature and obtain 1-3 blood cells",
 
 
+  "entity.moonstone.small_zombie": "small zombie",
 
 
   "item.moonstone.tooltip.battery": "Can be retrofitted with Nano",
@@ -810,6 +811,15 @@
   "item.moonstone.zombie_box": "zombie box",
   "item.moonstone.zombie_box_nobo": "zombie box not",
 
+  "item.moonstone.compression": "compression",
+  "item.compression.tool.string": "Your servant zombies are more vulnerable to damage, but each attack restores their own health",
+
+
+  "item.moonstone.atrophy": "atrophy",
+  "item.atrophy.tool.string": "Make zombie attendants highly aggressive",
+
+  "item.moonstone.enhancemen": "enhancemen",
+  "item.enhancemen.tool.string": "Can equip zombie attendants with gene fragments and segmented genomes",
 
   "item.nightmare_head.tool.string": "Immune to all non biological injuries",
   "item.nightmare_head.tool.string.1": "Damage reduction from any source is ineffective and the damage taken is fixed at 1 point, with a maximum health value fixed at 10 points",

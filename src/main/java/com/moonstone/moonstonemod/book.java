@@ -1,7 +1,5 @@
 package com.moonstone.moonstonemod;
 
-import com.moonstone.moonstonemod.entity.bloodvruis.blood_bat;
-import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +13,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
 import vazkii.patchouli.api.PatchouliAPI;
+
 
 public class book extends Item {
     public book() {

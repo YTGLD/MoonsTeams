@@ -1,5 +1,5 @@
 {
-  "name": "食欲亢进",
+  "name": "咬合肌强化",
   "icon": "moonstone:masticatory",
   "category": "moonstone:d",
   "priority": false,
@@ -8,7 +8,7 @@
     {
       "type": "spotlight",
       "item": "moonstone:masticatory",
-      "title": "-食欲亢进-",
+      "title": "-咬合肌强化-",
       "text": "吃8个金苹果"
     }
   ]

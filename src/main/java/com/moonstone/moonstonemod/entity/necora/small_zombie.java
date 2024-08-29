@@ -7,6 +7,7 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -24,16 +25,16 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class small_zombie extends TamableAnimal {
     public AnimationState emergeAnimationState = new AnimationState();
@@ -52,6 +53,26 @@ public class small_zombie extends TamableAnimal {
     public void tick() {
         super.tick();
         this.getAttributes().addTransientAttributeModifiers(modifierMultimap(this));
+
+        if (Handler.hascurio(this,Items.atrophy.get())) {
+            Vec3 playerPos = this.position().add(0, 0.75, 0);
+            int range = 10;
+            List<Mob> entities = this.level().getEntitiesOfClass(Mob.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+            for (Mob mob : entities) {
+                if (this.getTarget() == null) {
+                    @Nullable ResourceLocation entity = ForgeRegistries.ENTITY_TYPES.getKey(mob.getType());
+                    if (entity != null && !entity.getNamespace().equals(MoonStoneMod.MODID)) {
+                        this.setTarget(mob);
+                        break;
+                    }
+                }
+            }
+            if (this.getTarget() != null) {
+                if (!this.getTarget().isAlive()) {
+                    this.setTarget(null);
+                }
+            }
+        }
     }
 
     public boolean doHurtTarget(Entity p_219472_) {
@@ -69,6 +90,7 @@ public class small_zombie extends TamableAnimal {
         if (Handler.hascurio(livingEntity, Items.acid.get())) {
             modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier((this.uuid), MoonStoneMod.MODID + "DamageCell", -0.95f, AttributeModifier.Operation.ADDITION));
         }
+
         return modifierMultimap;
     }
     @Nullable
@@ -99,21 +121,20 @@ public class small_zombie extends TamableAnimal {
         super.dropFromLootTable(p_21335_, p_21336_);
         this.spawnAtLocation(new ItemStack(Items.zombie_box_nobo.get(), 1));
 
-        CuriosApi.getCuriosInventory(this).ifPresent(handler -> {
-            Map<String, ICurioStacksHandler> curios = handler.getCurios();
-            Set<ItemStack> stacks =new HashSet<>();
-            for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                ICurioStacksHandler stacksHandler = entry.getValue();
-                IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                    stacks.add(stackHandler.getStackInSlot(i));
-                }
-            }
-            for (ItemStack stack : stacks){
-                this.spawnAtLocation(stack, 1);
-                break;
-            }
-        });
+        if (Handler.hascurio(this,Items.acid.get())){
+            this.spawnAtLocation(new ItemStack(Items.acid.get(), 1));
+        }
+        if (Handler.hascurio(this,Items.compression.get())){
+            this.spawnAtLocation(new ItemStack(Items.compression.get(), 1));
+        }
+        if (Handler.hascurio(this,Items.atrophy.get())){
+            this.spawnAtLocation(new ItemStack(Items.atrophy.get(), 1));
+        }
+        if (Handler.hascurio(this,Items.enhancemen.get())){
+            this.spawnAtLocation(new ItemStack(Items.enhancemen.get(), 1));
+        }
+
+
     }
     @Override
     public void die(@NotNull DamageSource p_21809_) {

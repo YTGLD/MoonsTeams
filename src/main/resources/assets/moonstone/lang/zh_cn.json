@@ -655,6 +655,7 @@
 
   "entity.moonstone.cell_giant": "巨型细胞僵尸",
   "entity.moonstone.cell_zombie": "细胞僵尸",
+  "entity.moonstone.small_zombie": "僵尸侍从",
 
   "entity.moonstone.flysword": "飞剑",
   "entity.moonstone.suddenrain": "雨刃",
@@ -830,16 +831,22 @@
   "curios.identifier.zombie": "僵尸侍从插槽",
 
 
-  "item.moonstone.small.all": "右键装备到小侍从上",
-  "item.moonstone.acid": "核酸中和",
-  "item.acid.tool.string": "你的侍从更容易死亡，但是每次死亡都会使主人获得大量buff",
+  "item.moonstone.small.all": "右键装备到僵尸侍从上, Shift+右键在潜行时取出",
   "item.moonstone.zombie_box": "僵尸的小盒子",
   "item.moonstone.zombie_box_nobo": "坏掉的僵尸盒子",
 
+  "item.moonstone.compression": "致命基因压缩",
+  "item.compression.tool.string": "你的侍从僵尸更容易受到伤害，但是每次攻击都会恢复自身生命值",
+
+  "item.moonstone.acid": "核酸中和",
+  "item.acid.tool.string": "你的侍从更容易死亡，但是每次死亡都会使主人获得大量buff",
 
 
+  "item.moonstone.atrophy": "神经萎缩",
+  "item.atrophy.tool.string": "使僵尸侍从具有极强的攻击性",
 
-
+  "item.moonstone.enhancemen": "神经强化",
+  "item.enhancemen.tool.string": "可使僵尸侍从装备基因片段和分段基因组，但是装备的基因片段不会死亡掉落",
 
 
 

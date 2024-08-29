@@ -1,0 +1,15 @@
+{
+  "name": "核酸中和",
+  "icon": "moonstone:acid",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:acid",
+      "title": "-核酸中和-",
+      "text": "先佩戴医药箱，再吃掉 皮肤钙质化 药物"
+    }
+  ]
+}

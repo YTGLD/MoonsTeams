@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "moonstone:acid"
+    "moonstone:acid",
+    "moonstone:compression",
+    "moonstone:atrophy",
+    "moonstone:enhancemen"
   ]
 }
