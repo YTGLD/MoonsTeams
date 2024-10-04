@@ -34,7 +34,7 @@ public class heathgene extends BloodViru {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(
-                uuid, MoonStoneMod.MODID+this.getDescriptionId(), 0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                uuid, MoonStoneMod.MODID+this.getDescriptionId(), 0.1, AttributeModifier.Operation.MULTIPLY_BASE)
 
         );
 

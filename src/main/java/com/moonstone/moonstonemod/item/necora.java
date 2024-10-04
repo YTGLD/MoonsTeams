@@ -57,7 +57,7 @@ public class necora extends TheNecoraIC {
                 UUID.fromString("00000000-0000-300f-95e1-2830b5159532"),
                 "ara",
                 -acc,
-                AttributeModifier.Operation.MULTIPLY_TOTAL));
+                AttributeModifier.Operation.MULTIPLY_BASE));
 
         multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(
                 UUID.fromString("00000000-0000-300f-95e1-2830b5159532"),

@@ -77,7 +77,7 @@ public class LootEvent {
                 if (Handler.hascurio(player, Items.nightmareeye.get())){
                     if (Handler.hascurio(player, Items.giant.get())){
                         if (!Handler.hascurio(player, Items.giant_nightmare.get())){
-                            EntityType<?> entity = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(Config.ZombieNightmareGiant.get()));
+                            EntityType<?> entity = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(Config.SERVER.ZombieNightmareGiant.get()));
 
                             if (event.getEntity().getType() == entity) {
                                 if (ng == 1) {

@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.entity.necora;
 import com.google.common.annotations.VisibleForTesting;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
+import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.entitys.nightmare.AInightmare;
 import com.moonstone.moonstonemod.client.entitys.nightmare.NearestAttackableTargetGoal;
 import com.moonstone.moonstonemod.client.entitys.nightmare.SonicBoom;
@@ -20,6 +21,7 @@ import net.minecraft.network.protocol.game.DebugPackets;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -61,6 +63,7 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.Node;
 import net.minecraft.world.level.pathfinder.PathFinder;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
 
@@ -73,28 +76,7 @@ import java.util.function.BiConsumer;
 public class nightmare_giant extends TamableAnimal implements OwnableEntity,VibrationSystem {
 
     private static final Logger LOGGER = LogUtils.getLogger();
-    private static final int VIBRATION_COOLDOWN_TICKS = 40;
-    private static final int TIME_TO_USE_MELEE_UNTIL_SONIC_BOOM = 200;
-    private static final int MAX_HEALTH = 500;
-    private static final float MOVEMENT_SPEED_WHEN_FIGHTING = 0.3F;
-    private static final float KNOCKBACK_RESISTANCE = 1.0F;
-    private static final float ATTACK_KNOCKBACK = 1.5F;
-    private static final int ATTACK_DAMAGE = 30;
     private static final EntityDataAccessor<Integer> CLIENT_ANGER_LEVEL = SynchedEntityData.defineId(nightmare_giant.class, EntityDataSerializers.INT);
-    private static final int DARKNESS_DISPLAY_LIMIT = 200;
-    private static final int DARKNESS_DURATION = 260;
-    private static final int DARKNESS_RADIUS = 20;
-    private static final int DARKNESS_INTERVAL = 120;
-    private static final int ANGERMANAGEMENT_TICK_DELAY = 20;
-    private static final int DEFAULT_ANGER = 35;
-    private static final int PROJECTILE_ANGER = 10;
-    private static final int ON_HURT_ANGER_BOOST = 20;
-    private static final int RECENT_PROJECTILE_TICK_THRESHOLD = 100;
-    private static final int TOUCH_COOLDOWN_TICKS = 20;
-    private static final int DIGGING_PARTICLES_AMOUNT = 30;
-    private static final float DIGGING_PARTICLES_DURATION = 4.5F;
-    private static final float DIGGING_PARTICLES_OFFSET = 0.7F;
-    private static final int PROJECTILE_ANGER_DISTANCE = 30;
     private int tendrilAnimation;
     private int tendrilAnimationO;
     private int heartAnimation;
@@ -424,10 +406,16 @@ public class nightmare_giant extends TamableAnimal implements OwnableEntity,Vibr
     @Contract("null->false")
     public boolean canTargetEntity(@javax.annotation.Nullable Entity p_219386_) {
         if (p_219386_ instanceof LivingEntity livingentity) {
+
             if (this.getOwner()!= null) {
-                if (!livingentity.is(this.getOwner())) {
-                    if (this.level() == p_219386_.level() && EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(p_219386_) && !this.isAlliedTo(p_219386_) && livingentity.getType() != EntityType.ARMOR_STAND && livingentity.getType() != EntityTs.nightmare_giant.get() && !livingentity.isInvulnerable() && !livingentity.isDeadOrDying() && this.level().getWorldBorder().isWithinBounds(livingentity.getBoundingBox())) {
-                        return true;
+                ResourceLocation name = ForgeRegistries.ENTITY_TYPES.getKey(livingentity.getType());
+                if (name!=null) {
+                    if (!name.getNamespace().contains(MoonStoneMod.MODID)) {
+                        if (!livingentity.is(this.getOwner())) {
+                            if (this.level() == p_219386_.level() && EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(p_219386_) && !this.isAlliedTo(p_219386_) && livingentity.getType() != EntityType.ARMOR_STAND && livingentity.getType() != EntityTs.nightmare_giant.get() && !livingentity.isInvulnerable() && !livingentity.isDeadOrDying() && this.level().getWorldBorder().isWithinBounds(livingentity.getBoundingBox())) {
+                                return true;
+                            }
+                        }
                     }
                 }
             }
@@ -560,10 +548,15 @@ public class nightmare_giant extends TamableAnimal implements OwnableEntity,Vibr
     }
 
     public void setAttackTarget(LivingEntity p_219460_) {
-        this.getBrain().eraseMemory(MemoryModuleType.ROAR_TARGET);
-        this.getBrain().setMemory(MemoryModuleType.ATTACK_TARGET, p_219460_);
-        this.getBrain().eraseMemory(MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE);
-        SonicBoom.setCooldown(this, 20);
+        ResourceLocation name = ForgeRegistries.ENTITY_TYPES.getKey(p_219460_.getType());
+        if (name != null) {
+            if (!name.getNamespace().contains(MoonStoneMod.MODID)) {
+                this.getBrain().eraseMemory(MemoryModuleType.ROAR_TARGET);
+                this.getBrain().setMemory(MemoryModuleType.ATTACK_TARGET, p_219460_);
+                this.getBrain().eraseMemory(MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE);
+                SonicBoom.setCooldown(this, 20);
+            }
+        }
     }
 
     public EntityDimensions getDimensions(Pose p_219392_) {

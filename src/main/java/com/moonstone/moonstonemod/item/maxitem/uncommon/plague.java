@@ -37,7 +37,7 @@ public class plague extends UnCommonItem {
         stack.getOrCreateTag().putBoolean(DoPlague,true);
         if (slotContext.entity().tickCount%20 == 0) {
             if (stack.getOrCreateTag().getFloat(FanYanJIu) < 100) {
-                stack.getOrCreateTag().putFloat(FanYanJIu, (float) (stack.getOrCreateTag().getFloat(FanYanJIu) + Config.plague_pain.get()));
+                stack.getOrCreateTag().putFloat(FanYanJIu, (float) (stack.getOrCreateTag().getFloat(FanYanJIu) + Config.SERVER.plague_pain.get()));
             }
         }
 
@@ -73,30 +73,30 @@ public class plague extends UnCommonItem {
     public Multimap<Attribute, AttributeModifier> APlague(ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         if (stack.getOrCreateTag().getBoolean(YanJIuBoolean)) {
-            modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.5, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.25, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.66, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.9, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.7, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.7, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.7, AttributeModifier.Operation.MULTIPLY_TOTAL));
+            modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.5, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.66, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.9, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.7, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.7, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", 0.7, AttributeModifier.Operation.MULTIPLY_BASE));
         }else {
             float c =  stack.getOrCreateTag().getFloat(plague.CursePlague);
             c = -c;
             c /= 3;
             c /= 100;
 
-            c *= Config.plague_effect.get();
-            modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_TOTAL));
+            c *= Config.SERVER.plague_effect.get();
+            modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", c, AttributeModifier.Operation.MULTIPLY_BASE));
 
             float s = stack.getOrCreateTag().getFloat(FanYanJIu) / 100 / 3 / 100;
             s = -s;
-            s *= Config.plague_effect.get();
+            s *= Config.SERVER.plague_effect.get();
 
-            modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-            modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_TOTAL));
+            modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_BASE));
         }
 
         return modifierMultimap;

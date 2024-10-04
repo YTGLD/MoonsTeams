@@ -6,12 +6,13 @@ import com.mojang.math.Axis;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.entity.bloodvruis.test_blood;
+import com.moonstone.moonstonemod.entity.necora.nightmare_giant;
 import com.moonstone.moonstonemod.entity.necora.red_entity;
 import com.moonstone.moonstonemod.entity.necora.test_e;
-import com.moonstone.moonstonemod.entity.necora.nightmare_giant;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -23,7 +24,11 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>> extends  RenderLayer {
     public StrengtheningLayer(RenderLayerParent<T, M> p_117346_) {
@@ -34,6 +39,7 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
         matrices.translate( 左右 , 上下 , 前后 );
      **/
 
+    private final List<Vec3> trailPositions = new ArrayList<>();
 
     @Override
     public void render(@NotNull PoseStack matrices,
@@ -43,6 +49,8 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
                        float limbAngle, float limbDistance,
                        float tickDelta, float animationProgress,
                        float headYaw, float headPitch) {
+
+
         new Sword(matrices,vertexConsumers,light,entity);
         new orb(matrices, vertexConsumers, light, entity);
         new Blood(matrices, vertexConsumers, light, entity);

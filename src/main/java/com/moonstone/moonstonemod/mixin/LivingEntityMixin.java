@@ -26,7 +26,7 @@ public abstract class LivingEntityMixin {
     public void getMaxHealth(CallbackInfoReturnable<Float> cir) {
         if ((LivingEntity) (Object) this instanceof Player player){
             if (Handler.hascurio(player, Items.nightmare_head.get())){
-                cir.setReturnValue(10f);
+                cir.setReturnValue(8f);
             }
         }
     }
@@ -59,16 +59,16 @@ public abstract class LivingEntityMixin {
         LivingEntity player = (LivingEntity) (Object) this;
         if (player.isSprinting()) {
             if (Handler.hascurio(player, Items.flygene.get())) {
-                player.moveRelative((float) (player.getSpeed() * Config.flygene_speed.get()), p_21280_);
+                player.moveRelative((float) (player.getSpeed() * Config.SERVER.flygene_speed.get()), p_21280_);
                 if (!player.onGround()) {
-                    player.moveRelative((float) (player.getSpeed() * Config.flygene_speed.get()), p_21280_);
+                    player.moveRelative((float) (player.getSpeed() * Config.SERVER.flygene_speed.get()), p_21280_);
                 }
             }
             if (Handler.hascurio(player, Items.bloodvirus.get())) {
-                player.moveRelative((float) (player.getSpeed() * Config.bloodvirus_speed.get()), p_21280_);
+                player.moveRelative((float) (player.getSpeed() * Config.SERVER.bloodvirus_speed.get()), p_21280_);
             }
             if (Handler.hascurio(player, Items.motor.get())) {
-                player.moveRelative((float) (player.getSpeed() * Config.motor_speed.get()), p_21280_);
+                player.moveRelative((float) (player.getSpeed() * Config.SERVER.motor_speed.get()), p_21280_);
             }
         }
     }

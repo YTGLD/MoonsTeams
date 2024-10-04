@@ -21,8 +21,8 @@ public class mhead extends MLS {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        linkedHashMultimap.put(ForgeMod.ENTITY_REACH.get(), new AttributeModifier(uuid, MoonStoneMod.MODID+":mbattery", -10, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        linkedHashMultimap.put(ForgeMod.BLOCK_REACH.get(), new AttributeModifier(uuid, MoonStoneMod.MODID+":mbattery", -10, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        linkedHashMultimap.put(ForgeMod.ENTITY_REACH.get(), new AttributeModifier(uuid, MoonStoneMod.MODID+":mbattery", -10, AttributeModifier.Operation.MULTIPLY_BASE));
+        linkedHashMultimap.put(ForgeMod.BLOCK_REACH.get(), new AttributeModifier(uuid, MoonStoneMod.MODID+":mbattery", -10, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return linkedHashMultimap;
     }

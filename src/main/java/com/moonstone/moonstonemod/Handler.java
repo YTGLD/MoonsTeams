@@ -1,6 +1,10 @@
 package com.moonstone.moonstonemod;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.init.Items;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +19,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
 
@@ -35,38 +41,76 @@ public class Handler {
             int k = Mth.randomBetweenInclusive(p_216406_.random, -p_216409_, p_216409_);
             blockpos$mutableblockpos.setWithOffset(p_216407_, j, p_216410_, k);
             if (p_216406_.getWorldBorder().isWithinBounds(blockpos$mutableblockpos) && moveToPossibleSpawnPosition(p_216406_, p_216410_, blockpos$mutableblockpos, p_216411_)) {
-                T t = p_216404_.create(p_216406_, null, null, blockpos$mutableblockpos, p_216405_, false, false);
-                if (t != null) {
-                    t.setOwnerUUID(player.getUUID());
-                    if (Handler.hascurio(player,Items.anaerobic_cell.get())){
-                        t.addTag(Giant_Time);
+                if (player instanceof Player) {
+                    T t = p_216404_.create(p_216406_, null, null, blockpos$mutableblockpos, p_216405_, false, false);
+                    if (t != null) {
+                        t.setOwnerUUID(player.getUUID());
+                        if (Handler.hascurio(player, Items.anaerobic_cell.get())) {
+                            t.addTag(Giant_Time);
+                        }
+                        if (Handler.hascurio(player, Items.giant_boom_cell.get())) {
+                            t.addTag(Giant_Boom);
+                        }
+                        if (Handler.hascurio(player, Items.not_blood_cell.get())) {
+                            t.addTag(Not_Giant_BLOOD);
+                        }
+                        if (Handler.hascurio(player, Items.subspace_cell.get())) {
+                            t.addTag(Subspace_Giant);
+                        }
+                        if (Handler.hascurio(player, Items.bone_cell.get())) {
+                            t.addTag(Bone_Giant);
+                        }
+                        if (Handler.hascurio(player, Items.parasitic_cell.get())) {
+                            t.addTag(Parasitic_cell_Giant);
+                        }
+                        if (Handler.hascurio(player, Items.disgusting_cells.get())) {
+                            t.addTag(Disgusting__cell_Giant);
+                        }
                     }
-                    if (Handler.hascurio(player,Items.giant_boom_cell.get())){
-                        t.addTag(Giant_Boom);
-                    }
-                    if (Handler.hascurio(player,Items.not_blood_cell.get())){
-                        t.addTag(Not_Giant_BLOOD);
-                    }
-                    if (Handler.hascurio(player,Items.subspace_cell.get())){
-                        t.addTag(Subspace_Giant);
-                    }
-                    if (Handler.hascurio(player,Items.bone_cell.get())){
-                        t.addTag(Bone_Giant);
-                    }
-                    if (Handler.hascurio(player,Items.parasitic_cell.get())){
-                        t.addTag(Parasitic_cell_Giant);
-                    }
-                    if (Handler.hascurio(player,Items.disgusting_cells.get())){
-                        t.addTag(Disgusting__cell_Giant);
-                    }
-                }
-                if (t != null) {
-                    if (net.minecraftforge.event.ForgeEventFactory.checkSpawnPosition(t, p_216406_, p_216405_)) {
-                        p_216406_.addFreshEntityWithPassengers(t);
-                        return;
-                    }
+                    if (t != null) {
+                        if (net.minecraftforge.event.ForgeEventFactory.checkSpawnPosition(t, p_216406_, p_216405_)) {
+                            p_216406_.addFreshEntityWithPassengers(t);
+                            return;
+                        }
 
-                    t.discard();
+                        t.discard();
+                    }
+                }else if (player instanceof TamableAnimal animal){
+                    if (animal.getOwner()!=null) {
+                        T t = p_216404_.create(p_216406_, null, null, blockpos$mutableblockpos, p_216405_, false, false);
+                        if (t != null) {
+                            t.setOwnerUUID(animal.getOwner().getUUID());
+                            if (Handler.hascurio(player, Items.anaerobic_cell.get())) {
+                                t.addTag(Giant_Time);
+                            }
+                            if (Handler.hascurio(player, Items.giant_boom_cell.get())) {
+                                t.addTag(Giant_Boom);
+                            }
+                            if (Handler.hascurio(player, Items.not_blood_cell.get())) {
+                                t.addTag(Not_Giant_BLOOD);
+                            }
+                            if (Handler.hascurio(player, Items.subspace_cell.get())) {
+                                t.addTag(Subspace_Giant);
+                            }
+                            if (Handler.hascurio(player, Items.bone_cell.get())) {
+                                t.addTag(Bone_Giant);
+                            }
+                            if (Handler.hascurio(player, Items.parasitic_cell.get())) {
+                                t.addTag(Parasitic_cell_Giant);
+                            }
+                            if (Handler.hascurio(player, Items.disgusting_cells.get())) {
+                                t.addTag(Disgusting__cell_Giant);
+                            }
+                        }
+                        if (t != null) {
+                            if (net.minecraftforge.event.ForgeEventFactory.checkSpawnPosition(t, p_216406_, p_216405_)) {
+                                p_216406_.addFreshEntityWithPassengers(t);
+                                return;
+                            }
+
+                            t.discard();
+                        }
+                    }
                 }
             }
         }
@@ -103,7 +147,15 @@ public class Handler {
         return false;
     }
 
-
+    public static boolean BlackEntity(LivingEntity living ){
+        for (String string : Config.SERVER.FlyingSword.get()){
+            EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(string));
+            if (living.getType() == entityType){
+                return false;
+            }
+        }
+        return true;
+    }
     public static List<SlotResult> findCurios(@Nonnull LivingEntity livingEntity, Item item) {
         return findCurios(livingEntity, (stack) -> stack.getItem() == item);
     }
@@ -112,5 +164,20 @@ public class Handler {
                                               Predicate<ItemStack> filter) {
         return CuriosApi.getCuriosInventory(livingEntity).map(inv -> inv.findCurios(filter))
                 .orElse(Collections.emptyList());
+    }
+    public static void renderLine(PoseStack poseStack, MultiBufferSource bufferSource, Vec3 start, Vec3 end, float a,RenderType renderType) {
+        VertexConsumer vertexConsumer = bufferSource.getBuffer(renderType);
+
+        // 设置线条的起点
+        vertexConsumer.vertex(poseStack.last().pose(), (float) start.x, (float) start.y, (float) start.z)
+                .color(0,0.25f,1,a)
+                .normal(1,0,0)
+                .endVertex();
+
+        // 设置线条的终点
+        vertexConsumer.vertex(poseStack.last().pose(), (float) end.x, (float) end.y, (float) end.z)
+                .color(0,0.25f,1,a)
+                .normal(1,0,0)
+                .endVertex();
     }
 }

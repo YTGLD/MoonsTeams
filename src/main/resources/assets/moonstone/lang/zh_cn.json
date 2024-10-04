@@ -713,9 +713,9 @@
   "item.light_amout.tool.string.3": "每增加1格，都会增加10%的伤害",
 
   "item.nightmare_head.tool.string": "免疫所有非生物伤害",
-  "item.nightmare_head.tool.string.1": "任何来源的伤害减免失效并且受到伤害固定为1点，最大生命值固定为10点",
+  "item.nightmare_head.tool.string.1": "任何来源的伤害减免失效并且受到伤害固定为1点，最大生命值固定为8点",
   "item.nightmare_head.tool.string.2": "每5秒恢复1点生命值，不受任何加成影响",
-  "item.nightmare_head.tool.string.3": "反弹500%的伤害给攻击者",
+  "item.nightmare_head.tool.string.3": "反弹50%的伤害给攻击者",
   "item.nightmare_head.tool.string.4": "并且每次佩戴此物品死亡都会降低1%对深渊的抵抗力",
   "item.nightmare_head.tool.string.6": "减少100%深渊的诅咒",
   "item.nightmare_head.tool.string.7": "无法取下",
@@ -857,6 +857,7 @@
 
 
 
+  "item.moonstone.zombie_ring": "僵尸召集之戒",
 
 
 

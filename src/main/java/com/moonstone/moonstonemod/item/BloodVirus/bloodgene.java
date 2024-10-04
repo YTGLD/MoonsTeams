@@ -42,11 +42,11 @@ public class bloodgene extends BloodViru {
 
         UUID uuid = UUID.fromString("0d077092-9045-3af8-b41e-a691f388e76a");
         modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(
-                uuid, MoonStoneMod.MODID+":bloodgene", (-0.5)+as, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                uuid, MoonStoneMod.MODID+":bloodgene", (-0.5)+as, AttributeModifier.Operation.MULTIPLY_BASE)
 
         );
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(
-                uuid, MoonStoneMod.MODID+":bloodgene", (-0.5)+as, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                uuid, MoonStoneMod.MODID+":bloodgene", (-0.5)+as, AttributeModifier.Operation.MULTIPLY_BASE)
 
         );
 

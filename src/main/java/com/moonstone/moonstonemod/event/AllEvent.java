@@ -11,19 +11,17 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.init.Particles;
-import com.moonstone.moonstonemod.moonstoneitem.Perhaps;
+import com.moonstone.moonstonemod.item.BloodVirus.batskill;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_blood;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_boom;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_calcification;
+import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.item.maxitem.the_heart;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.mobitem.dna;
-import com.moonstone.moonstonemod.item.BloodVirus.batskill;
-import com.moonstone.moonstonemod.moonstoneitem.BloodViru;
-import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_blood;
-import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_boom;
-import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_calcification;
-import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_mummy;
 import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -101,7 +99,6 @@ public class AllEvent {
     public static String sizeLevel = "sizeLevel";
     public static String blood = "bloodgene";
     public static String rage = "ragegene";
-    public static String FlyEye = "FlyNecoraorb";
     public static String FlySword = "FlySword";
 
     public static final String DamageCell = "DamageCell";
@@ -373,8 +370,8 @@ public class AllEvent {
             if (Handler.hascurio(player,Items.brain.get())){
                 String name = event.getEntity().getName().getString();
                 player.getPersistentData().putInt(name, player.getPersistentData().getInt(name) +1);
-                if (player.getPersistentData().getInt(name)>= Config.m_brain_many.get()){
-                    event.setAmount((float) (event.getAmount() * Config.m_brain_critical.get()));
+                if (player.getPersistentData().getInt(name)>= Config.SERVER.m_brain_many.get()){
+                    event.setAmount((float) (event.getAmount() * Config.SERVER.m_brain_critical.get()));
                     player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_HEARTBEAT, SoundSource.NEUTRAL, 4.5F, 4.1F);
                     player.getPersistentData().remove(name);
                 }
@@ -449,19 +446,21 @@ public class AllEvent {
             int is = 16;
             List<suddenrain> items = livingEntity.level().getEntitiesOfClass(suddenrain.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
             for (suddenrain item : items) {
-                if (item.getOwner()!= null && !item.getOwner().is(livingEntity)) {
-                    if (item.isAlive()) {
-                        if (item.level() instanceof ServerLevel serverLevel) {
-                            serverLevel.sendParticles(Particles.popr.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
-                        }
-                        Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
-                        if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
-                            motion = motion.normalize();
-                        }
-                        if (item.age > 30) {
-                            item.setDeltaMovement(motion.scale(1));
-                        } else {
-                            item.setDeltaMovement(motion.scale(-0.25));
+                if (Handler.BlackEntity(livingEntity)) {
+                    if (item.getOwner() != null && !item.getOwner().is(livingEntity)) {
+                        if (item.isAlive()) {
+                            if (item.level() instanceof ServerLevel serverLevel) {
+                                serverLevel.sendParticles(Particles.popr.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
+                            }
+                            Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
+                            if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
+                                motion = motion.normalize();
+                            }
+                            if (item.age > 30) {
+                                item.setDeltaMovement(motion.scale(1));
+                            } else {
+                                item.setDeltaMovement(motion.scale(-0.25));
+                            }
                         }
                     }
                 }
@@ -477,22 +476,24 @@ public class AllEvent {
             int is = 16;
             List<flysword> items = livingEntity.level().getEntitiesOfClass(flysword.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
             for (flysword item : items) {
-                if (item.getOwner()!= null && !item.getOwner().is(livingEntity)) {
-                    if (item.isAlive()) {
+                if (Handler.BlackEntity(livingEntity)) {
+                    if (item.getOwner() != null && !item.getOwner().is(livingEntity)) {
+                        if (item.isAlive()) {
 
-                        if (item.age > 20) {
-                            if (item.level() instanceof ServerLevel serverLevel) {
-                                serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
-                            }
-                            if (item.getTags().contains(FlySword)) {
+                            if (item.age > 20) {
                                 if (item.level() instanceof ServerLevel serverLevel) {
                                     serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
                                 }
-                                Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
-                                if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
-                                    motion = motion.normalize();
+                                if (item.getTags().contains(FlySword)) {
+                                    if (item.level() instanceof ServerLevel serverLevel) {
+                                        serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
+                                    }
+                                    Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
+                                    if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
+                                        motion = motion.normalize();
+                                    }
+                                    item.setDeltaMovement(motion.scale(1));
                                 }
-                                item.setDeltaMovement(motion.scale(0.5));
                             }
                         }
                     }
@@ -514,7 +515,7 @@ public class AllEvent {
                         flysword item = new flysword(EntityTs.flysword.get(),player.level());
                         item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
                         item.setOwner(player);
-                    item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
+                        item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
                         item.setNoGravity(true);
                         item.addTag(FlySword);
                         player.level().addFreshEntity(item);
@@ -686,7 +687,7 @@ public class AllEvent {
                             if (!stack.isEmpty()){
                                 if (stack.getTag() != null) {
                                     if (stack.is(Items.plague.get())) {
-                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu) + Config.plague_speed.get()));
+                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu) + Config.SERVER.plague_speed.get()));
 
                                         if (!stack.getTag().getBoolean(plague.YanJIuBoolean)){
                                             player.displayClientMessage(Component.translatable(""+(stack.getOrCreateTag().getFloat(plague.YanJIu))).append("%").withStyle(ChatFormatting.RED), true);

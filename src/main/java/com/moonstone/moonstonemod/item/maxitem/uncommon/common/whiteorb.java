@@ -25,7 +25,7 @@ public class whiteorb extends CommonItem {
             a *= 2;
         }
 
-        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":whiteorb", a, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":whiteorb", a, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return modifierMultimap;
     }

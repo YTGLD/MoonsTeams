@@ -33,8 +33,8 @@ public class sword_amout extends Doom {
             s = stack.getTag().getInt(attack_size);//10
         }
         s/=10;//1
-        get.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "million_sword",s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        get.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "million_sword",-s*0.66, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        get.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "million_sword",s, AttributeModifier.Operation.MULTIPLY_BASE));
+        get.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "million_sword",-s*0.66, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return get;
     }

@@ -33,7 +33,7 @@ public class blue extends TextureSheetParticle {
         return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
     }
     public void tick() {
-        this.alpha -= 0.03f;
+        this.alpha -= 0.10f;
         this.roll += 0.1f;
         this.oRoll += 0.1f;
         if (alpha<=0){

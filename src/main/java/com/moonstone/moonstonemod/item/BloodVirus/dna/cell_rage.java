@@ -27,7 +27,7 @@ public class cell_rage extends BloodViru {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":cell_rage", 0.25, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":cell_rage", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
 

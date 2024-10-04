@@ -23,7 +23,7 @@ public class ectoplasmhorseshoe extends ectoplasm {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, MoonStoneMod.MODID + ":ectoplasmhorseshoe", 0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, MoonStoneMod.MODID + ":ectoplasmhorseshoe", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
         modifierMultimap.put(ForgeMod.STEP_HEIGHT_ADDITION.get(), new AttributeModifier(uuid, MoonStoneMod.MODID + ":ectoplasmhorseshoe", 0.5, AttributeModifier.Operation.ADDITION));
         return modifierMultimap;
     }

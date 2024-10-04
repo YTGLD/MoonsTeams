@@ -4,11 +4,13 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.client.entitys.nightmare.SonicBoom;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -19,8 +21,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.animal.Turtle;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -31,10 +33,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
-import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.*;
+import java.util.List;
+import java.util.UUID;
 
 public class small_zombie extends TamableAnimal {
     public AnimationState emergeAnimationState = new AnimationState();
@@ -48,12 +49,37 @@ public class small_zombie extends TamableAnimal {
         }));
     }
 
-
+    public void setAttackTarget(LivingEntity p_219460_) {
+        ResourceLocation name = ForgeRegistries.ENTITY_TYPES.getKey(p_219460_.getType());
+        if (name != null) {
+            if (!name.getNamespace().contains(MoonStoneMod.MODID)) {
+                this.setTarget(p_219460_);
+            }
+        }
+    }
     @Override
     public void tick() {
         super.tick();
         this.getAttributes().addTransientAttributeModifiers(modifierMultimap(this));
+        if (this.getOwner()!= null) {
+            if (this.getOwner().getLastHurtByMob()!= null) {
+                if (!this.getOwner().getLastHurtByMob().is(this)) {
+                    this.setAttackTarget(this.getOwner().getLastHurtByMob());
+                }
+            }
+            if (this.getOwner().getLastAttacker()!= null) {
+                if (!this.getOwner().getLastAttacker().is(this)) {
+                    this.setAttackTarget(this.getOwner().getLastAttacker());
+                }
 
+            }
+            if (this.getOwner().getLastHurtMob()!= null) {
+                if (!this.getOwner().getLastHurtMob().is(this)) {
+                    this.setAttackTarget(this.getOwner().getLastHurtMob());
+                }
+
+            }
+        }
         if (Handler.hascurio(this,Items.atrophy.get())) {
             Vec3 playerPos = this.position().add(0, 0.75, 0);
             int range = 10;
@@ -165,8 +191,6 @@ public class small_zombie extends TamableAnimal {
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
-        this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
         this.targetSelector.addGoal(6, new NonTameRandomTargetGoal<>(this, Turtle.class, false, Turtle.BABY_ON_LAND_SELECTOR));
         this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Monster.class, false));

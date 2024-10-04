@@ -53,9 +53,9 @@ public abstract class EnchantmentMenuMixin {
                     EnchantmentMenu container = (EnchantmentMenu) (Object) this;
                     access.execute((level, pos) -> {
                         List<EnchantmentInstance> rolledEnchantments = getEnchantmentList(itemstack, p_39466_, container.costs[p_39466_]);
-                        player.onEnchantmentPerformed(itemstack, p_39466_ + Config.nightmare_moai.get());
+                        player.onEnchantmentPerformed(itemstack, p_39466_ + Config.SERVER.nightmare_moai.get());
                         for (EnchantmentInstance data : rolledEnchantments) {
-                            itemstack.enchant(data.enchantment, data.level +  Config.nightmare_moai.get());
+                            itemstack.enchant(data.enchantment, data.level +  Config.SERVER.nightmare_moai.get());
                             enchantSlots.setChanged();
                             enchantmentSeed.set(player.getEnchantmentSeed());
                             slotsChanged(enchantSlots);

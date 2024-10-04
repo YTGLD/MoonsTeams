@@ -49,7 +49,7 @@ public class wind extends Doom {
                 UUID.fromString("380df991-f603-344c-a090-369bad2a924a"),
                 MoonStoneMod.MODID+":wind",
                 abc,
-                AttributeModifier.Operation.MULTIPLY_TOTAL));
+                AttributeModifier.Operation.MULTIPLY_BASE));
 
         return multimap;
     }

@@ -46,8 +46,8 @@ public class ectoplasmstar extends ectoplasm {
         UUID uuid = UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8");
         float s = player.getLuck();
         s /= 100;
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ectoplasmstar", s/2, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ectoplasmstar", s, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ectoplasmstar", s/2, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ectoplasmstar", s, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
     @Override

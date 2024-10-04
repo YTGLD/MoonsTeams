@@ -68,8 +68,8 @@ public class nightmare_heart extends nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+ ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid, MoonStoneMod.MODID+ ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+ ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid, MoonStoneMod.MODID+ ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_BASE));
          return modifierMultimap;
     }
 

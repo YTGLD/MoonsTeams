@@ -4,7 +4,6 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.bloodvruis.blood_bat;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
 import com.moonstone.moonstonemod.moonstoneitem.BloodViru;
@@ -165,7 +164,7 @@ public class bloodvirus extends BloodViru {
 
                         uuid,
                         MoonStoneMod.MODID+":bloodvirus",
-                        -0.25, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                        -0.25, AttributeModifier.Operation.MULTIPLY_BASE)
 
         );
 

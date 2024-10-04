@@ -69,7 +69,7 @@ public class maxamout extends UnCommonItem {
     }
     public Multimap<Attribute, AttributeModifier> swim(Player player, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(UUID.fromString("82a617a0-56fe-4ead-82d4-9d968ca7c777"), MoonStoneMod.MODID + "souddsl", 0.75, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(UUID.fromString("82a617a0-56fe-4ead-82d4-9d968ca7c777"), MoonStoneMod.MODID + "souddsl", 0.75, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
 }

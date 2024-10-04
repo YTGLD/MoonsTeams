@@ -29,7 +29,7 @@ public class nightmarerotten extends nightmare {
 
         for (Attribute attribute : ForgeRegistries.ATTRIBUTES){
 
-            get.put(attribute, new AttributeModifier(UUID.fromString("1dd34f6b-f553-3906-92e2-e13f78ae2b51"), MoonStoneMod.MODID +":nightmarerotten", as, AttributeModifier.Operation.MULTIPLY_TOTAL));
+            get.put(attribute, new AttributeModifier(UUID.fromString("1dd34f6b-f553-3906-92e2-e13f78ae2b51"), MoonStoneMod.MODID +":nightmarerotten", as, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         return get;
     }

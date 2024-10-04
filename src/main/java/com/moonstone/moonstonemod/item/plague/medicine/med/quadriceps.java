@@ -74,7 +74,7 @@ public class quadriceps extends medIC {
 
     public Multimap<Attribute, AttributeModifier> aaa(Player player , ItemStack stack){
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        linkedHashMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("c13feccd-e582-4ae1-aee7-35e8acf7e9e1"), MoonStoneMod.MODID+":quadriceps", Config.quadriceps_speed.get(), AttributeModifier.Operation.MULTIPLY_TOTAL));
+        linkedHashMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("c13feccd-e582-4ae1-aee7-35e8acf7e9e1"), MoonStoneMod.MODID+":quadriceps", Config.SERVER.quadriceps_speed.get(), AttributeModifier.Operation.MULTIPLY_BASE));
         return linkedHashMultimap;
     }
 

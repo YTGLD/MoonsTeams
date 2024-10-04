@@ -68,7 +68,7 @@ public class nightmare_head extends nightmare {
             if (Handler.hascurio(player,Items.nightmare_head.get())) {
                 if (event.getSource() != null ){
                     if (event.getSource().getEntity() instanceof LivingEntity living) {
-                        living.hurt(living.damageSources().magic(),event.getAmount() * 5);
+                        living.hurt(living.damageSources().dryOut(),event.getAmount() *0.5f);
                     }
                 }
 

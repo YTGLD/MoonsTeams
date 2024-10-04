@@ -23,9 +23,9 @@ public class soulbattery extends CommonItem implements IBattery {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.02, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.05, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.1, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.02, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.05, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.1, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
 
     }

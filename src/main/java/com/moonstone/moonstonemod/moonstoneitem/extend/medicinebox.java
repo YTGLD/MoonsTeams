@@ -6,7 +6,6 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.BloodVirus.catalyzer;
-import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

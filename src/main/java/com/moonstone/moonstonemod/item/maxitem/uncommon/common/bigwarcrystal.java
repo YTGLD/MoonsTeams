@@ -37,7 +37,7 @@ public class bigwarcrystal extends CommonItem implements Iwar {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":bigwarcrystal", 0.15, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":bigwarcrystal", 0.15, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
 }

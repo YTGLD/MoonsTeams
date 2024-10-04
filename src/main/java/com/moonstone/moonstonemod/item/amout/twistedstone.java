@@ -3,7 +3,6 @@ package com.moonstone.moonstonemod.item.amout;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import com.moonstone.moonstonemod.moonstoneitem.ThePain;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -58,7 +57,7 @@ public class twistedstone extends ThePain {
     }
     public Multimap<Attribute, AttributeModifier> aaa(Player player, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(player.getUUID(), MoonStoneMod.MODID + ":tws", (double) stack.getOrCreateTag().getInt("double_stone_moonstone_tw") /100, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(player.getUUID(), MoonStoneMod.MODID + ":tws", (double) stack.getOrCreateTag().getInt("double_stone_moonstone_tw") /100, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
 }

@@ -814,6 +814,8 @@
   "item.moonstone.compression": "compression",
   "item.compression.tool.string": "Your servant zombies are more vulnerable to damage, but each attack restores their own health",
 
+  "item.moonstone.zombie_ring": "zombie ring",
+
 
   "item.moonstone.atrophy": "atrophy",
   "item.atrophy.tool.string": "Make zombie attendants highly aggressive",
@@ -824,7 +826,7 @@
   "item.nightmare_head.tool.string": "Immune to all non biological injuries",
   "item.nightmare_head.tool.string.1": "Damage reduction from any source is ineffective and the damage taken is fixed at 1 point, with a maximum health value fixed at 10 points",
   "item.nightmare_head.tool.string.2": "Restores 0.2 health point per second, unaffected by any bonuses",
-  "item.nightmare_head.tool.string.3": "Bounce 200% penetration damage to the attacker",
+  "item.nightmare_head.tool.string.3": "Bounce 50% penetration damage to the attacker",
   "item.nightmare_head.tool.string.4": "And every time you wear this item and die, it will reduce your health by 10% and cause the item to fall off",
   "item.nightmare_head.tool.string.5": "Maximum health restored after wearing",
   "item.nightmare_head.tool.string.6": "Reduce the curse of the abyss by 100%",

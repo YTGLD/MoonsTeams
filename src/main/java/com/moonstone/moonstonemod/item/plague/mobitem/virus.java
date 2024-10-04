@@ -1,7 +1,6 @@
 package com.moonstone.moonstonemod.item.plague.mobitem;
 
 import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
-import com.moonstone.moonstonemod.moonstoneitem.extend.medIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;

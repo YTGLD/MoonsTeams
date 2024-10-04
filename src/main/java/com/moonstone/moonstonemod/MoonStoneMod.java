@@ -82,7 +82,7 @@ public class MoonStoneMod {
         Items.REGISTRY.register(modEventBus);
         Tab.TABS.register(modEventBus);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.fc);
     }
     @Mod.EventBusSubscriber(
             modid = MODID,

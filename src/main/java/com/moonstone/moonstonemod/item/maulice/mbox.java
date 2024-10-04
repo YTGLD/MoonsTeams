@@ -18,7 +18,7 @@ public class mbox extends MLS {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        linkedHashMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":mbox", -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        linkedHashMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":mbox", -0.2, AttributeModifier.Operation.MULTIPLY_BASE));
         linkedHashMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid, MoonStoneMod.MODID+":mbox", 8, AttributeModifier.Operation.ADDITION));
         CuriosApi.addSlotModifier(linkedHashMultimap, "charm", uuid, 2, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;

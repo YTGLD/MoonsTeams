@@ -78,9 +78,9 @@ public class nightmarestone extends nightmare {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
 
 
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("c98b3962-3ea9-47f8-820d-134ce2691af0"), MoonStoneMod.MODID + "sojjmjmul",AllEvent. EffectInstance(player)/25, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("c98b3962-3ea9-47f8-820d-134ce2691af0"), MoonStoneMod.MODID + "soudfsdl", AllEvent. EffectInstance(player)/25, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("c98b3962-3ea9-47f8-820d-134ce2691af0"), MoonStoneMod.MODID + "sojjmasdadjmul", AllEvent. EffectInstance(player)/25, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("c98b3962-3ea9-47f8-820d-134ce2691af0"), MoonStoneMod.MODID + "sojjmjmul",AllEvent. EffectInstance(player)/25, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("c98b3962-3ea9-47f8-820d-134ce2691af0"), MoonStoneMod.MODID + "soudfsdl", AllEvent. EffectInstance(player)/25, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(UUID.fromString("c98b3962-3ea9-47f8-820d-134ce2691af0"), MoonStoneMod.MODID + "sojjmasdadjmul", AllEvent. EffectInstance(player)/25, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return modifierMultimap;
     }

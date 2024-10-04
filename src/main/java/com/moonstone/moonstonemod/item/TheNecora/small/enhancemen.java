@@ -20,7 +20,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.SpawnUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
-
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
@@ -51,9 +50,9 @@ public class enhancemen extends TheNecoraIC {
             if (Handler.hascurio(player, Items.giant.get())) {
                 if (!Handler.hascurio(player, Items.giant_nightmare.get())) {
                     if (player.level() instanceof ServerLevel p_222881_) {
-                        if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
+                        if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
                             if (Handler.hascurio(player, Items.mother_cell.get())) {
-                                if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                                if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
                                     Handler.trySpawnMob(player, EntityTs.cell_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
                                 }
                                 for (int i = 0; i < 2; i++) {
@@ -94,7 +93,7 @@ public class enhancemen extends TheNecoraIC {
                     }
                 } else {
                     if (player.level() instanceof ServerLevel p_222881_) {
-                        if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                        if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
 
                             Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
 
@@ -103,7 +102,7 @@ public class enhancemen extends TheNecoraIC {
                             }
                             player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
                             if (Handler.hascurio(player, Items.slime.get())) {
-                                if (Mth.nextInt(RandomSource.create(), 1, 30) <= 33) {
+                                if (Mth.nextInt(RandomSource.create(), 1, 100) <= 33) {
 
                                     cell_slime z = new cell_slime(EntityTs.cell_slime.get(), player.level());
                                     z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());

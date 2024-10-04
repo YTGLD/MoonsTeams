@@ -73,13 +73,13 @@ public class nightmareeye extends nightmare {
             }
         }
 
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
-        modifierMultimap.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(uuid, MoonStoneMod.MODID + "ec", -s, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
     @Override

@@ -2,7 +2,6 @@ package com.moonstone.moonstonemod.item.BloodVirus.dna;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.moonstoneitem.BloodViru;
 import net.minecraft.ChatFormatting;

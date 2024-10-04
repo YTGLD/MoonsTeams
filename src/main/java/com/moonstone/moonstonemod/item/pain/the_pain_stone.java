@@ -13,7 +13,6 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
@@ -42,7 +41,7 @@ public class the_pain_stone extends ThePain {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.the_pain_stone.get())){
                                 if (stack.getTag()!=null){
-                                    stack.getOrCreateTag().putFloat(pain, event.getEntity().getMaxHealth()/ Config.the_pain_stone.get());
+                                    stack.getOrCreateTag().putFloat(pain, event.getEntity().getMaxHealth()/ Config.SERVER.the_pain_stone.get());
                                 }
                             }
                         }
