@@ -1,4 +1,5 @@
 {
+
   "curios.modifiers.dna": "植入DNA时",
   "key.moonstone.y": "技能",
   "key.categories.moonstone.moonstone_category": "Moonstone",
@@ -855,6 +856,251 @@
 
 
 
+
+  "advancements.tooltip.blood.hand": "一血",
+  "advancements.tooltip.blood.text": "获得血球",
+
+  "advancements.tooltip.blood_magic_box.hand": "魔物末日",
+  "advancements.tooltip.blood_magic_box.text": "获得血之魔盒",
+
+  "advancements.tooltip.blood_sun.hand": "血日东升",
+  "advancements.tooltip.blood_sun.text": "获得血日",
+
+  "entity.moonstone.owner_blood": "巨型血灵增生体",
+  "entity.moonstone.blood_orb_owner": "怨念合并体",
+
+  "advancements.tooltip.max_eye.hand": "无懈可击！",
+  "advancements.tooltip.max_eye.text": "获得无懈之眼",
+
+  "advancements.tooltip.max_sword.hand": "吃我一斧！",
+  "advancements.tooltip.max_sword.text": "获得诺克萨斯纹章",
+
+  "advancements.tooltip.max_blood_eye.hand": "总有改变的时候",
+  "advancements.tooltip.max_blood_eye.text": "制作校准之眼",
+
+  "advancements.tooltip.max_blood_cube.hand": "注视我！",
+  "advancements.tooltip.max_blood_cube.text": "制作复仇之骰",
+
+  "effect.moonstone.rage": "重伤",
+  "effect.moonstone.fear": "恐惧",
+  "effect.moonstone.pain": "痛苦",
+  "effect.moonstone.blood": "流血",
+
+  "item.moonstone.max_eye": "§4无懈之眼",
+  "item.max_eye.tool.string": "杀死生物获得血液",
+  "item.max_eye.tool.string.1": "最多储存4点",
+  "item.max_eye.tool.string.2": "当你拥有血液时，你将减少90%受到伤害",
+  "item.max_eye.tool.string.3": "但每次受到伤害你都会减少一滴血液、",
+  "item.max_eye.tool.string.4": "时间推移，血量也会被你吸收并恢复10%最大生命值",
+  "item.max_sword.tool.string.5": "每颗血球提供5%的伤害加成",
+  "item.max_sword.tool.string.6": "血球爆炸时对3格内的生物造成流血效果",
+  "item.max_sword.tool.string.7": "杀死生物后再获得1~3颗血球",
+
+  "item.moonstone.max_sword": "§4诺克萨斯纹章",
+  "item.max_sword.tool.string": "每次攻击都有概率生成一个血球围绕你旋转",
+  "item.max_sword.tool.string.1": "当血球数量超过8时",
+  "item.max_sword.tool.string.2": "下一次斩击将造成4倍伤害",
+  "item.max_sword.tool.string.3": "血球会随着时间的流失而被你吸收",
+  "item.max_sword.tool.string.4": "每次吸收都会恢复一定的百分比生命值",
+
+  "item.moonstone.max_blood_eye": "§4校准之眼",
+  "item.max_blood_eye.tool.string": "每次全力攻击都会施加流血（叠加）",
+  "item.max_blood_eye.tool.string.1": "当流血层数超过3时",
+  "item.max_blood_eye.tool.string.2": "产生一次血爆造成伤害,并清除流血状态",
+  "item.max_blood_eye.tool.string.3": "被波及者获得流血，如果状态已存在，则转换成重伤",
+  "item.max_blood_eye.tool.string.4": "冷却时间1秒",
+
+  "item.moonstone.blood_amout": "§4血符",
+  "item.blood_amout.tool.string": "受伤召唤血灵",
+
+  "advancements.tooltip.blood_snake.hand": "血之审判",
+  "advancements.tooltip.blood_snake.text": "获得蛇血魔符",
+
+  "item.moonstone.the_prison_of_sin": "§4罪孽囚笼",
+  "item.the_prison_of_sin.tool.string": "自佩戴以来，你杀死了：",
+  "item.the_prison_of_sin.tool.string.5": "属性提高了：",
+
+
+  "item.the_prison_of_sin.tool.string.1": "-80% 护甲，最大生命值",
+
+  "item.the_prison_of_sin.tool.string.2": "+10% 全部属性",
+  "item.the_prison_of_sin.tool.string.3": "每杀死1种不同的生物，此奖励都将增加1%",
+
+  "item.the_prison_of_sin.tool.string.4": "无法取下",
+
+
+  "item.the_prison_of_sin.tool.string.6": "你还无法参悟它的本质",
+  "item.the_prison_of_sin.tool.string.7": "无限制的能力增长和超强的适应能力",
+  "item.the_prison_of_sin.tool.string.8": "但...代价是什么?",
+
+  "advancements.tooltip.the_prison_of_sin.hand": "好奇心害死猫",
+  "advancements.tooltip.the_prison_of_sin.text": "获得罪孽囚笼",
+
+  "item.moonstone.blood_snake": "§4蛇血魔符",
+  "item.blood_snake.tool.string": "杀死生物发射3条会造成150%伤害的血蛇",
+  "item.blood_snake.tool.string.1": "血蛇数量会随着生物的最大生命值来增加",
+  "item.blood_snake.tool.string.2": "但不超过10条",
+  "item.blood_snake.tool.string.3": "-20% 伤害",
+
+  "item.moonstone.max_blood_cube": "§4复仇之骰",
+  "item.max_blood_cube.tool.string": "拿着任意物品对准生物潜行并长按右键释放技能",
+  "item.max_blood_cube.tool.string.1": "技能期间无法移动",
+  "item.moonstone.blood_magic_box": "§4血之魔盒",
+  "item.moonstone.blood": "血球",
+  "item.blood_magic_box.tool.string": "杀死生物获得它们的血液",
+
+  "item.moonstone.blood_candle": "§4封魔烛台",
+
+  "item.moonstone.the_blood_book": "§4封魔录",
+  "item.blood_candle.tool.string": "召唤一个巨型血灵增生体协助你作战",
+  "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品",
+
+
+  "item.blood_candle.tool.string.2": "血灵增生体的攻击会造成基于你最大生命值的伤害",
+
+
+
+  "attribute.name.moonstone.allattack": "通用伤害",
+
+  "attribute.name.moonstone.cit": "暴击伤害",
+  "attribute.name.moonstone.heal": "治疗",
+  "attribute.name.moonstone.dig": "挖掘速度",
+
+
+
+  "item.moonstone.evil_mob": "邪念体",
+  "item.moonstone.god_lead": "血虐之铅",
+  "item.moonstone.malice_die": "恶意之殇",
+
+
+  "item.malice_die.tool.string.1": "如果附近生物的攻击目标是你，那么每增加一个生物：",
+  "item.malice_die.tool.string.2": "+10%伤害",
+  "item.malice_die.tool.string.3": "+9%生命恢复",
+  "item.malice_die.tool.string.4": "+8%速度",
+  "item.malice_die.tool.string.5": "+7%攻击速度",
+  "item.malice_die.tool.string.6": "+6%护甲",
+  "item.malice_die.tool.string.7": "+5%暴击",
+  "item.malice_die.tool.string.8": "攻击会使目标8格半径内的生物主动攻击你",
+  "item.malice_die.tool.string.9": "-15% 所有伤害",
+  "item.malice_die.tool.string.10": "如果目标数量少于3，那么你造成的伤害减35%",
+  "item.evil_mob.tool.string.1": "允许你在不佩戴深渊之眼,necora病毒，暗影瘟疫的情况下使用和发现相应的物品",
+  "item.evil_mob.tool.string.2": "佩戴后，自动获得深渊之眼，necora病毒，暗影瘟疫的一些特殊能力",
+
+
+  "item.god_lead.tool.string.1":"受到致命伤害时，伤害转移到附近的生物身上(冷却10秒)",
+  "item.god_lead.tool.string.2":"如果此生物死亡，那么冷却清除",
+  "item.god_lead.tool.string.3":"+150%受到伤害",
+
+  "item.moonstone.evil_blood": "§4渎圣玩偶",
+  "item.evil_blood.tool.string": "召唤一个怨念合并体协助你作战",
+
+
+  "advancements.tooltip.evil_blood.text": "打开深渊的媒介",
+
+  "item.moonstone.deceased_contract": "§4死灵契约",
+
+  "item.moonstone.atp_height": "ATP高能量",
+  "item.moonstone.cell_god": "神创论",
+  "item.moonstone.cell_ground": "大地亲和性",
+  "item.moonstone.cell_inheritance": "模拟遗传基因",
+  "item.moonstone.cell_oxygen": "碱性氧化",
+  "item.moonstone.cell_big_boom": "细胞色素爆发",
+  "item.moonstone.cell_break_down_water": "碱性水解",
+  "item.moonstone.cell_darwin": "达尔文主义",
+  "item.moonstone.cell_disorder": "代谢紊乱",
+  "item.moonstone.cell_in_air": "大气亲和性",
+  "item.moonstone.cell_in_water": "海洋亲和性",
+  "item.moonstone.cell_off_on": "催化剂开关",
+  "item.moonstone.speed_metabolism": "极速代谢",
+  "item.moonstone.medicinebox.tool": "用于粉碎药物或任意基因物品",
+  "item.moonstone.dna_box": "药物回收盒",
+  "item.moonstone.medicinebox.tool.2": "你需要右键这个物品来存入，然后长按右键咀嚼，直到下方的红色字体消失",
+
+  "item.moonstone.blood_sun": "§4血日",
+  "item.moonstone.blood_jelly": "血浆果冻",
+  "item.blood_sun.tool.string": "杀死生物召唤末日之灵",
+  "entity.moonstone.sun": "末日之灵",
+  "error.moonstone.dna_box": "检测到未知物品ID",
+
+  "moonstone.difficulty.name.all": "的DNA序列",
+  "moonstone.difficulty.name.peaceful": "简单",
+  "moonstone.difficulty.name.easy": "普通",
+  "moonstone.difficulty.name.normal": "复杂",
+  "moonstone.difficulty.name.hard": "极度复杂",
+
+  "item.moonstone.cell_necrosis":"液化性坏死",
+  "item.moonstone.cell_digestion":"表皮消化",
+  "item.moonstone.cell_acid":"酸性液体逆流",
+  "item.moonstone.cell_eyes":"眼镜蛇式锁定",
+  "item.moonstone.cell_bone_add":"骨骼结构异化",
+  "item.moonstone.cell_sense":"感官系统强化",
+
+  "item.moonstone.cell_cranial":"脑组织转移",
+  "item.moonstone.cell_dna_suppression":"神经递质抑制",
+  "item.moonstone.cell_putrefactive":"热分解抑制",
+  "item.moonstone.cell_synthesis":"肽合成增强",
+
+  "item.moonstone.body_stone":"万魔石",
+
+  "moonstone.curse.name.meet": "肉瘤",
+  "moonstone.curse.name.all": "施加了诅咒[Ctrl]",
+  "moonstone.curse.name.die": "死灵",
+  "moonstone.curse.name.doctor": "巫医",
+
+  "moonstone.curse.name.cell_cell": "细胞",
+  "moonstone.curse.name.chromosome": "染色体",
+  "moonstone.curse.name.bone": "骨头",
+  "moonstone.curse.name.die_body": "尸体",
+
+  "item.moonstone.probability":"机运之石",
+
+
+
+  "item.probability.tool.string.1": "你的攻击伤害将在10%~200%之间浮动",
+  "item.probability.tool.string.2": "你受到的伤害将在25%~200%之间浮动",
+  "item.probability.tool.string.3": "每一点幸运，都会使最小值加1%",
+  "item.probability.tool.string.4": "对于万魔石",
+  "item.probability.tool.string.5": "获得的诅咒的最大和最小值加1",
+  "item.probability.tool.string.6": "每一点幸运都会使最大和最小值加5%",
+
+  "item.body_stone.tool.string": "这个物品有概率使箱子里的饰品附加负面附魔",
+  "item.body_stone.tool.string.1": "并且随机附加1~2个负面附魔",
+  "item.body_stone.tool.string.2": "作为补偿，每个具有负面附魔的物品，都会获得强大的增益",
+  "item.body_stone.tool.string.3": "每级附魔：",
+  "item.body_stone.tool.string.4": "  +0.45%伤害，最大生命; +0.1%暴击",
+  "item.body_stone.tool.string.5": "  +1%护甲",
+  "item.body_stone.tool.string.6": "  +2%挖掘速度",
+  "item.body_stone.tool.string.7": "  +1%抗击退",
+  "item.body_stone.tool.string.8": "  +0.15%速度，近战伤害，攻速",
+
+
+  "item.moonstone.luck_ring":"幸运魔戒",
+  "item.luck_ring.tool.string.1":"每5级经验",
+  "item.luck_ring.tool.string.2": "+1 幸运",
+
+  "item.moonstone.luck_stone":"幸运石头",
+  "item.luck_stone.tool.string.1":"每10幸运：",
+  "item.luck_stone.tool.string.2": "+1 抢夺和时运",
+
+  "moonstone.difficulty.name.god_loot_a": "异变",
+  "moonstone.difficulty.name.god_loot_b": "神创",
+  "moonstone.difficulty.name.god_loot_c": "未知",
+  "entity.moonstone.blood_bat": "暗影蝠",
+
+  "enchantment.moonstone.terror": "恐怖",
+  "enchantment.moonstone.threat": "威胁",
+
+  "item.moonstone.cell_compress":"致命基因压缩",
+  "item.moonstone.cell_preferential":"择优进化论",
+  "item.moonstone.cell_flu":"病毒性流感",
+  "item.moonstone.cell_constant":"常量因子激增",
+  "item.moonstone.cell_chromosome":"染色体结构变异",
+  "moonstone.curse.name.all.this": "这个物品被",
+  "item.deceased_contract.tool.string": "你可以在箱子里找到被诅咒的饰品",
+  "enchantment.moonstone.malice": "恶意",
+  "moonstone.difficulty.name.god": "类神",
+  "item.blood.tool.string.winds.1": "  50%的速度加成转换成攻击伤害",
+  "item.blood.tool.string.winds.2": "  如果你佩戴了 梦魇之眼 物品，则伤害加倍",
 
 
   "item.moonstone.zombie_ring": "僵尸召集之戒",

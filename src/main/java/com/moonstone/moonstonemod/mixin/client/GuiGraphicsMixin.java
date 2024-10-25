@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.glow.Red_glow;
 import com.moonstone.moonstonemod.client.renderer.MRender;
+import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
 import com.moonstone.moonstonemod.item.necora;
 import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.client.gui.Font;
@@ -107,7 +108,7 @@ public abstract class GuiGraphicsMixin {
             moonstone$renderTooltipBackground_nig((GuiGraphics)(Object)this, l, i1, i2, j2, 400, 0xff000000,0xff000000,0xff000000,0xff000000);
             this.pose.popPose();
         }
-        if (tooltipStack.getItem()instanceof Iplague){
+        if (tooltipStack.getItem()instanceof Iplague||tooltipStack.getItem()instanceof Blood){
             this.pose.pushPose();
             moonstone$renderTooltipBackground_TheNecora((GuiGraphics)(Object)this, l, i1, i2, j2, 400, 0x00ffffff,0x00ffffff,0x4dFF8C00,0x4dFF8C00);
             this.pose.popPose();

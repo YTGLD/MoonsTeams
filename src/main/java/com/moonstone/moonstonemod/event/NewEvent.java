@@ -7,6 +7,9 @@ import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.giant_boom_cell;
 import com.moonstone.moonstonemod.item.TheNecora.small.enhancemen;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
+import com.moonstone.moonstonemod.item.blood.*;
+import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
+import com.moonstone.moonstonemod.item.blood.magic.blood_sun;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_head;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_heart;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_orb;
@@ -34,6 +37,10 @@ import java.util.Map;
 
 public class NewEvent {
     @SubscribeEvent
+    public  void RightClickItem(PlayerInteractEvent.RightClickItem event){
+        max_blood_cube.RightClickItem(event);
+    }
+    @SubscribeEvent
     public  void necora(LivingEntityUseItemEvent.Finish event){
         medicinebox.necora(event);
     }
@@ -56,8 +63,8 @@ public class NewEvent {
         pain_ring.Hurt(event);
         the_pain_stone.PainStoneAttack(event);
         twistedamout.hurt(event);
-
-
+        max_eye.A(event);
+        blood_amout.Hurt(event);
         if (Handler.hascurio(event.getEntity(),Items.acid.get())){
             event.setAmount(event.getAmount()*50);
         }
@@ -77,6 +84,11 @@ public class NewEvent {
         the_pain_stone.PainStone(event);
         twistedamout.die(event);
         enhancemen.Death(event);
+        the_prison_of_sin.LivingDeathEvent(event);
+        max_eye.Die(event);
+        blood_snake.Die(event);
+        blood_magic_box.Did(event);
+        blood_sun.Did(event);
     }
     @SubscribeEvent
     public void PlayerInteractEvent(PlayerInteractEvent.EntityInteract event) {

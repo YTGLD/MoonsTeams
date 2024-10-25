@@ -4,13 +4,11 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.client.entitys.nightmare.SonicBoom;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -20,9 +18,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.*;
-import net.minecraft.world.entity.ai.memory.MemoryModuleType;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NonTameRandomTargetGoal;
 import net.minecraft.world.entity.animal.Turtle;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -142,22 +142,27 @@ public class small_zombie extends TamableAnimal {
 
         super.onSyncedDataUpdated(p_219422_);
     }
+    private void spawnAtLocations(ItemStack itemStack){
+        if (this.getOwner()!=null){
+            this.getOwner().level().addFreshEntity(new ItemEntity(this.getOwner().level(),this.getOwner().getX(),this.getOwner().getY(),this.getOwner().getZ(),itemStack));
+        }
+    }
     @Override
     protected void dropFromLootTable(DamageSource p_21335_, boolean p_21336_) {
         super.dropFromLootTable(p_21335_, p_21336_);
-        this.spawnAtLocation(new ItemStack(Items.zombie_box_nobo.get(), 1));
+        this.spawnAtLocations(new ItemStack(Items.zombie_box_nobo.get(), 1));
 
         if (Handler.hascurio(this,Items.acid.get())){
-            this.spawnAtLocation(new ItemStack(Items.acid.get(), 1));
+            this.spawnAtLocations(new ItemStack(Items.acid.get(), 1));
         }
         if (Handler.hascurio(this,Items.compression.get())){
-            this.spawnAtLocation(new ItemStack(Items.compression.get(), 1));
+            this.spawnAtLocations(new ItemStack(Items.compression.get(), 1));
         }
         if (Handler.hascurio(this,Items.atrophy.get())){
-            this.spawnAtLocation(new ItemStack(Items.atrophy.get(), 1));
+            this.spawnAtLocations(new ItemStack(Items.atrophy.get(), 1));
         }
         if (Handler.hascurio(this,Items.enhancemen.get())){
-            this.spawnAtLocation(new ItemStack(Items.enhancemen.get(), 1));
+            this.spawnAtLocations(new ItemStack(Items.enhancemen.get(), 1));
         }
 
 

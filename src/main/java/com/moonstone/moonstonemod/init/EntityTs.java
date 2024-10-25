@@ -5,6 +5,7 @@ import com.moonstone.moonstonemod.entity.other.flysword;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ambient.Bat;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -56,6 +57,30 @@ public class EntityTs {
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.cell_slime::new, MobCategory.MONSTER).sized(0.6f, 1.8f).clientTrackingRange(16).build("cell_slime"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.necora.small_zombie>> small_zombie = REGISTRY.register("small_zombie",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.small_zombie::new, MobCategory.MONSTER).sized(0.25f, 1).clientTrackingRange(16).build("small_zombie"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.zombie.blood_zombie_fly>> blood_zombie_fly = REGISTRY.register("blood_zombie_fly",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.zombie.blood_zombie_fly::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("blood_zombie_fly"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.zombie.blood_zombie_boom>> blood_zombie_boom = REGISTRY.register("blood_zombie_boom",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.zombie.blood_zombie_boom::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("blood_zombie_boom"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.line>> line = REGISTRY.register("line",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.line::new, MobCategory.MONSTER).sized(1, 0.2f).clientTrackingRange(16).build("line"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.snake>> snake = REGISTRY.register("snake",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.snake::new, MobCategory.MONSTER).sized(1, 0.2f).clientTrackingRange(16).build("snake"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.blood>> blood = REGISTRY.register("blood",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.blood::new, MobCategory.MISC).sized(0.5f, 0.5f).clientTrackingRange(16).build("blood"));
+
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.attack_blood>> attack_blood = REGISTRY.register("attack_blood",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.attack_blood::new, MobCategory.MISC).sized(0.5f, 0.2f).clientTrackingRange(16).build("attack_blood"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.owner_blood>> owner_blood = REGISTRY.register("owner_blood",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.owner_blood::new, MobCategory.MISC).sized(0.5f, 0.2f).clientTrackingRange(16).build("owner_blood"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_owner>> blood_orb_owner = REGISTRY.register("blood_orb_owner",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_owner::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_owner"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_attack>> blood_orb_attack = REGISTRY.register("blood_orb_attack",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_attack::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_attack"));
+
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_small>> blood_orb_small = REGISTRY.register("blood_orb_small",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_small::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_small"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.sun>> sun = REGISTRY.register("sun",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.sun::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("sun"));
 
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){
@@ -65,14 +90,19 @@ public class EntityTs {
         event.put(EntityTs.red_entity.get(), Zombie.createAttributes().build());
         event.put(EntityTs.nightmare_giant.get(), Warden.createAttributes().build());
         event.put(EntityTs.test_e.get(), Warden.createAttributes().build());
+        event.put(EntityTs.test_blood.get(), Zombie.createAttributes().build());
+        event.put(EntityTs.blood_bat.get(), Zombie.createAttributes().build());
+        event.put(EntityTs.blood_zombie_boom.get(), Zombie.createAttributes().build());
+        event.put(EntityTs.line.get(), Zombie.createAttributes().build());
+        event.put(EntityTs.snake.get(), Bat.createAttributes().build());
+        event.put(EntityTs.owner_blood.get(), IronGolem.createAttributes().build());
+        event.put(EntityTs.blood_orb_owner.get(), IronGolem.createAttributes().build());
+        event.put(EntityTs.small_zombie.get(), com.moonstone.moonstonemod.entity.necora.small_zombie.createAttributes().build());
         event.put(EntityTs.bolt.get(), Warden.createAttributes().build());
         event.put(EntityTs.sword.get(), Warden.createAttributes().build());
         event.put(EntityTs.bolt_light.get(), Warden.createAttributes().build());
         event.put(EntityTs.bule_bolt.get(), Warden.createAttributes().build());
         event.put(EntityTs.cell_slime.get(), com.moonstone.moonstonemod.entity.necora.cell_slime.createAttributes().build());
-        event.put(EntityTs.test_blood.get(), Warden.createAttributes().build());
-        event.put(EntityTs.blood_bat.get(), com.moonstone.moonstonemod.entity.bloodvruis.blood_bat.createAttributes().build());
-        event.put(EntityTs.small_zombie.get(), com.moonstone.moonstonemod.entity.necora.small_zombie.createAttributes().build());
 
     }
 }

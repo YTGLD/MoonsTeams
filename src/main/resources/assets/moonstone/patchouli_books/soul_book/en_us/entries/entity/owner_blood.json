@@ -1,0 +1,23 @@
+{
+  "name": "血灵增生体",
+  "icon": "moonstone:blood_candle",
+  "category": "moonstone:entity",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "entity",
+      "scale": 1,
+      "name": "owner_blood",
+      "rotate": true,
+      "defaultRotation": -45,
+      "entity": "moonstone:owner_blood"
+    },
+    {
+      "type": "spotlight",
+      "item": "moonstone:blood_candle",
+      "title": "-血灵增生体-",
+      "text": "由封魔烛台召唤"
+    }
+  ]
+}

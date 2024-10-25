@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:blood_jelly"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    }
+  ],
+  "result": {
+    "item": "moonstone:blood_sun",
+    "count": 1
+  }
+}

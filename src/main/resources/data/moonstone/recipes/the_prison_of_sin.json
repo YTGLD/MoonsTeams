@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:blood_amout"
+    },
+    {
+      "item": "moonstone:mayhemcrystal"
+    },
+    {
+      "item": "moonstone:fortunecrystal"
+    }
+  ],
+  "result": {
+    "item": "moonstone:the_prison_of_sin",
+    "count": 1
+  }
+}

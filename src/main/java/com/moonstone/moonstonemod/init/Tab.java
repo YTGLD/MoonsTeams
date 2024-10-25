@@ -181,6 +181,18 @@ public class Tab {
                 b.accept(new ItemStack(Items.pain_ring.get()));
                 b.accept(new ItemStack(Items.the_pain_stone.get()));
 
+                b.accept(new ItemStack(Items.blood_candle.get()));
+                b.accept(new ItemStack(Items.the_blood_book.get()));
+                b.accept(new ItemStack(Items.blood_magic_box.get()));
+                b.accept(new ItemStack(Items.blood.get()));
+                b.accept(new ItemStack(Items.max_eye.get()));
+                b.accept(new ItemStack(Items.max_blood_cube.get()));
+                b.accept(new ItemStack(Items.blood_amout.get()));
+                b.accept(new ItemStack(Items.blood_snake.get()));
+                b.accept(new ItemStack(Items.the_prison_of_sin.get()));
+
+                b.accept(new ItemStack(Items.blood_sun.get()));
+                b.accept(new ItemStack(Items.blood_jelly.get()));
             })
             .build());
 }

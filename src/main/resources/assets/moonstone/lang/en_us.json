@@ -759,6 +759,41 @@
   "item.moonstone.cell_not_do": "cell not do",
   "item.cell_not_do.tool.string": "Shadow bats no longer need to sacrifice health points",
 
+
+
+  "item.moonstone.twistedamout": "twisted amout",
+
+  "item.twistedamout.tool.string": "Each attack has a probability of generating a blood cell to rotate around you",
+  "item.twistedamout.tool.string.1": "When the number of blood cells exceeds 8,",
+  "item.twistedamout.tool.string.2": "The next slash will deal triple damage",
+  "item.twistedamout.tool.string.3": "Blood cells will be absorbed by you over time",
+  "item.twistedamout.tool.string.4": "Each absorption will restore a certain percentage of health",
+  "item.twistedamout.tool.string.5": "Each blood cell provides a 5% damage bonus",
+  "item.twistedamout.tool.string.6": "Blood cell explosion causes bleeding effect on organisms within 3 cells",
+  "item.twistedamout.tool.string.7": "Kill the creature and obtain 1-3 blood cells",
+
+
+  "entity.moonstone.small_zombie": "small zombie",
+
+
+  "item.moonstone.small.all": "Right click to equip the attendant",
+  "item.moonstone.acid": "acid",
+  "item.acid.tool.string": "Your attendants are more prone to death, but each death earns the master a large amount of buff",
+  "item.moonstone.zombie_box": "zombie box",
+  "item.moonstone.zombie_box_nobo": "zombie box not",
+
+  "item.moonstone.compression": "compression",
+  "item.compression.tool.string": "Your servant zombies are more vulnerable to damage, but each attack restores their own health",
+
+  "item.moonstone.zombie_ring": "zombie ring",
+
+
+  "item.moonstone.atrophy": "atrophy",
+  "item.atrophy.tool.string": "Make zombie attendants highly aggressive",
+
+  "item.moonstone.enhancemen": "enhancemen",
+  "item.enhancemen.tool.string": "Can equip zombie attendants with gene fragments and segmented genomes",
+
   "item.moonstone.the_pain_stone": "the pain stone",
   "item.the_pain_stone.tool.string.1": "After killing a creature, convert 50% of its maximum health to the next additional attack damage",
   "item.the_pain_stone.tool.string.2": "If the next damage caused exceeds the maximum health of the creature",
@@ -779,25 +814,40 @@
   "item.pain_ring.tool.string.1": "Until it returns to full health status",
   "item.pain_ring.tool.string.2": "-50% heal",
 
+  "item.moonstone.max_sword": "max sword",
+  "effect.moonstone.rage": "rage",
+  "effect.moonstone.fear": "fear",
+  "effect.moonstone.pain": "pain",
+  "effect.moonstone.blood": "blood",
 
 
-  "item.moonstone.twistedamout": "twisted amout",
-
-  "item.twistedamout.tool.string": "Each attack has a probability of generating a blood cell to rotate around you",
-  "item.twistedamout.tool.string.1": "When the number of blood cells exceeds 8,",
-  "item.twistedamout.tool.string.2": "The next slash will deal triple damage",
-  "item.twistedamout.tool.string.3": "Blood cells will be absorbed by you over time",
-  "item.twistedamout.tool.string.4": "Each absorption will restore a certain percentage of health",
-  "item.twistedamout.tool.string.5": "Each blood cell provides a 5% damage bonus",
-  "item.twistedamout.tool.string.6": "Blood cell explosion causes bleeding effect on organisms within 3 cells",
-  "item.twistedamout.tool.string.7": "Kill the creature and obtain 1-3 blood cells",
+  "item.max_sword.tool.string": "Each attack has a probability of generating a blood cell to rotate around you",
+  "item.max_sword.tool.string.1": "When the number of blood cells exceeds 8,",
+  "item.max_sword.tool.string.2": "The next slash will deal triple damage",
+  "item.max_sword.tool.string.3": "Blood cells will be absorbed by you over time",
+  "item.max_sword.tool.string.4": "Each absorption will restore a certain percentage of health",
+  "item.max_sword.tool.string.5": "Each blood cell provides a 5% damage bonus",
+  "item.max_sword.tool.string.6": "Blood cell explosion causes bleeding effect on organisms within 3 cells",
+  "item.max_sword.tool.string.7": "Kill the creature and obtain 1-3 blood cells",
 
 
-  "entity.moonstone.small_zombie": "small zombie",
+  "item.moonstone.max_blood_eye": "max blood eye",
+  "item.max_blood_eye.tool.string": "Every time you strike with all your might, you will experience bleeding",
+  "item.max_blood_eye.tool.string.1": "When the number of bleeding organisms in the vicinity exceeds 3",
+  "item.max_blood_eye.tool.string.2": "Generate a blood explosion and cause damage based on the number of organisms",
+  "item.max_blood_eye.tool.string.3": "The affected person will bleed, and if the condition already exists, it will be converted to serious injury",
+  "item.max_blood_eye.tool.string.4": "Cooling time 5 seconds",
+
+  "item.moonstone.max_eye": "max eye",
+  "item.max_eye.tool.string": "Killing organisms to obtain blood",
+  "item.max_eye.tool.string.1": "Up to 4 points can be stored",
+  "item.max_eye.tool.string.2": "When you have blood, you will reduce damage by 90%",
+  "item.max_eye.tool.string.3": "But every time you get hurt, you lose a drop of blood",
+  "item.max_eye.tool.string.4": "Over time, your health will also be absorbed and restored to 10% of your maximum health",
 
 
   "item.moonstone.tooltip.battery": "Can be retrofitted with Nano",
-"item.medicinebox.tool.string.7": "",
+  "item.medicinebox.tool.string.7": "",
   "moonstone.string.cooling": "time:",
   "tool.string.ectoplasmball": "",
   "tool.string.ectoplasmball.1": "",
@@ -805,24 +855,218 @@
   "tool.string.ectoplasmball.3": "",
   "item.nightmare_cube.tool.string": "You can press Shift while approaching the creature and release the dark dye thread",
 
-  "item.moonstone.small.all": "Right click to equip the attendant",
-  "item.moonstone.acid": "acid",
-  "item.acid.tool.string": "Your attendants are more prone to death, but each death earns the master a large amount of buff",
-  "item.moonstone.zombie_box": "zombie box",
-  "item.moonstone.zombie_box_nobo": "zombie box not",
+  "advancements.tooltip.max_eye.hand": "with no chink in one's armour！",
+  "advancements.tooltip.max_eye.text": "The blood eye",
 
-  "item.moonstone.compression": "compression",
-  "item.compression.tool.string": "Your servant zombies are more vulnerable to damage, but each attack restores their own health",
+  "advancements.tooltip.max_sword.hand": "Eat me an axe！",
+  "advancements.tooltip.max_sword.text": "Max Sword",
 
-  "item.moonstone.zombie_ring": "zombie ring",
+  "advancements.tooltip.blood_snake.hand": "blood snake",
+  "advancements.tooltip.blood_snake.text": "sweet snake",
+
+  "advancements.tooltip.max_blood_eye.hand": "max blood eye",
+  "advancements.tooltip.max_blood_eye.text": "out",
+  "item.moonstone.the_prison_of_sin": "the prison of sin",
+  "item.the_prison_of_sin.tool.string": "Since wearing it, you have killed:",
+  "item.the_prison_of_sin.tool.string.1": "+50% of all attributes",
+  "item.the_prison_of_sin.tool.string.2": "-90% life limit",
+  "item.the_prison_of_sin.tool.string.3": "But for every different creature killed, this punishment will be reduced by 1%",
+  "item.the_prison_of_sin.tool.string.4": "Unable to remove",
+  "item.the_prison_of_sin.tool.string.5": "",
+  "item.the_prison_of_sin.tool.string.6": "",
+  "item.the_prison_of_sin.tool.string.7": "",
+  "item.the_prison_of_sin.tool.string.8": "",
+
+  "advancements.tooltip.the_prison_of_sin.hand": "Sin",
+  "advancements.tooltip.the_prison_of_sin.text": "",
+
+  "item.moonstone.blood_amout": "blood amout",
+  "item.blood_amout.tool.string": "Injured Summon Blood Spirit",
+
+  "item.moonstone.blood_snake": "blood amout",
+  "item.blood_snake.tool.string": "Kill the creature and launch 3 blood snakes",
+  "item.blood_snake.tool.string.1": "The number of blood snakes increases with the maximum health of the organism",
+  "item.blood_snake.tool.string.2": "But not exceeding 10",
+  "item.blood_snake.tool.string.3": "-20% Damage",
+
+  "advancements.tooltip.max_blood_cube.hand": "see me！",
+  "advancements.tooltip.max_blood_cube.text": "max blood cube",
+
+  "item.moonstone.max_blood_cube": "max blood cube",
+  "item.max_blood_cube.tool.string": "Aim at the creature and stealth, then long press and right-click to release the skill",
+  "item.max_blood_cube.tool.string.1": "Cannot attack during skill period",
+
+  "item.moonstone.blood_magic_box": "blood magic box",
+  "item.moonstone.blood": "blood",
+  "item.blood_magic_box.tool.string": "Kill mob , Now!",
+
+  "item.moonstone.blood_candle": "blood candle",
+  "item.blood_candle.tool.string.1": "",
+
+  "item.moonstone.the_blood_book": "Sealing Record",
+  "item.the_blood_book.tool.string": "It can be ignited twice ",
+  "item.blood.tool.string.evil": "evil",
+  "item.blood.tool.string.evil.1": "There is a 33% chance that killing a creature will regenerate into a blood cell",
+  "item.blood.tool.string.evil.2": "Harvest blood cells to restore 4 health points",
+  "item.blood.tool.string.evil.3": "If you wear Shadow Plague, the health value restored by Evil Mind Demon will be changed to percentage form",
+
+  "item.blood.tool.string.sword.1": "Summon 1 Flying Sword for every 10% loss of health",
+  "item.blood.tool.string.sword.2": " If you wear the Seven Swords of Asura Heart or Sudden Rain, you will lose 50% of your health",
+  "item.blood.tool.string.sword": "sword",
+  "item.blood_candle.tool.string.2": "",
 
 
-  "item.moonstone.atrophy": "atrophy",
-  "item.atrophy.tool.string": "Make zombie attendants highly aggressive",
+  "item.blood_candle.tool.string": "Summon a giant blood spirit growth body to assist you in battle",
 
-  "item.moonstone.enhancemen": "enhancemen",
-  "item.enhancemen.tool.string": "Can equip zombie attendants with gene fragments and segmented genomes",
 
+  "entity.moonstone.owner_blood": "owner blood",
+
+
+  "attribute.name.moonstone.allattack": "all damage",
+  "attribute.name.moonstone.cit": "cit damage",
+  "attribute.name.moonstone.heal": "heal",
+
+
+
+
+  "item.moonstone.evil_blood": "evil blood",
+  "item.evil_blood.tool.string": "Summon a ？ to assist you in battle",
+
+  "advancements.tooltip.evil_blood.text": "evil blood",
+  "entity.moonstone.blood_orb_owner": "blood orb owner",
+
+
+
+
+  "item.moonstone.evil_mob": "evil mob",
+  "item.moonstone.god_lead": "god lead",
+  "item.moonstone.malice_die": "malice die",
+  "item.evil_mob.tool.string.1": "Allow you to use and discover corresponding items without wearing Abyss Eye or Necrora virus",
+  "item.evil_mob.tool.string.2": "null",
+  "item.evil_mob.tool.string.3": "null",
+  "item.god_lead.tool.string.1": "When fatally injured, the damage is transferred to nearby creatures (cool down for 10 seconds)",
+  "item.god_lead.tool.string.2": "If this organism dies, then cool it down and clear it",
+  "item.god_lead.tool.string.3": "+150% injured",
+
+  "item.malice_die.tool.string.1": "If the target of nearby creatures' attacks is you, then for every additional creature:",
+  "item.malice_die.tool.string.2": "+10% damage",
+  "item.malice_die.tool.string.3": "+9% Life Recovery",
+  "item.malice_die.tool.string.4": "+8% speed",
+  "item.malice_die.tool.string.5": "+7% attack speed",
+  "item.malice_die.tool.string.6": "+6% Armor",
+  "item.malice_die.tool.string.7": "+5% cit value",
+  "item.malice_die.tool.string.8": "Attacking will cause creatures within an 8-grid radius of the target to actively attack you",
+  "item.malice_die.tool.string.9": "-30% all damage",
+  "item.malice_die.tool.string.10": "If the number of targets is less than 3, the damage you cause will be reduced by 35%",
+
+
+  "item.moonstone.deceased_contract": "deceased contract",
+  "item.moonstone.blood_sun": "blood sun",
+  "item.blood_sun.tool.string": "kill the mob",
+  "item.moonstone.blood_jelly": "blood jelly",
+  "item.moonstone.dna_box": "dna box",
+  "item.moonstone.medicinebox.tool.2": "",
+
+  "error.moonstone.dna_box": "",
+  "item.moonstone.atp_height": "",
+  "item.moonstone.cell_god": "",
+  "item.moonstone.cell_ground": "",
+  "item.moonstone.cell_inheritance": "",
+  "item.moonstone.cell_oxygen": "",
+  "item.moonstone.cell_big_boom":"",
+  "item.moonstone.cell_break_down_water": "",
+  "item.moonstone.cell_darwin": "",
+  "item.moonstone.cell_disorder":"",
+  "item.moonstone.cell_in_air": "",
+  "item.moonstone.cell_in_water": "",
+  "item.moonstone.cell_off_on": "",
+  "item.moonstone.speed_metabolism":"",
+
+  "item.moonstone.cell_necrosis":"",
+  "item.moonstone.cell_digestion":"",
+  "item.moonstone.cell_acid":"",
+  "item.moonstone.cell_eyes":"",
+  "item.moonstone.cell_bone_add":"",
+  "item.moonstone.cell_sense":"",
+
+  "item.moonstone.cell_cranial":"",
+  "item.moonstone.cell_dna_suppression":"",
+  "item.moonstone.cell_putrefactive":"",
+  "item.moonstone.cell_synthesis":"",
+
+  "item.moonstone.cell_compress":"",
+  "item.moonstone.cell_preferential":"",
+  "item.moonstone.cell_flu":"",
+  "item.moonstone.cell_constant":"",
+  "item.moonstone.cell_chromosome":"",
+
+  "advancements.tooltip.blood.hand": "",
+  "advancements.tooltip.blood.text": "=",
+
+  "advancements.tooltip.blood_magic_box.hand": "",
+  "advancements.tooltip.blood_magic_box.text": "",
+
+  "advancements.tooltip.blood_sun.hand": "",
+  "advancements.tooltip.blood_sun.text": "",
+  "item.moonstone.medicinebox.tool": "",
+  "moonstone.difficulty.name.all": " DNA",
+
+  "moonstone.curse.name.all.this": "this item is",
+  "moonstone.curse.name.meet": "meet",
+  "moonstone.curse.name.all": "curse",
+
+  "moonstone.difficulty.name.peaceful": "peaceful",
+  "moonstone.difficulty.name.easy": "easy",
+  "moonstone.difficulty.name.normal": "normal",
+  "moonstone.difficulty.name.hard": "hard",
+  "moonstone.difficulty.name.god_loot_a": "",
+  "moonstone.difficulty.name.god_loot_b": "",
+  "moonstone.difficulty.name.god_loot_c": "",
+
+  "moonstone.curse.name.die": "die",
+  "moonstone.curse.name.doctor": "doctor",
+  "moonstone.curse.name.cell_cell": "cell ",
+  "moonstone.curse.name.chromosome": "chromosome",
+  "item.deceased_contract.tool.string": "you can find in curse item",
+
+  "moonstone.curse.name.bone": "bone",
+  "moonstone.curse.name.die_body": "die body",
+  "moonstone.difficulty.name.god": "god",
+
+  "item.blood.tool.string.winds.1": "5% speed bonus converted to attack damage",
+  "item.blood.tool.string.winds.2": "If you wear a nightmare item, the damage doubles",
+  "item.blood.tool.string.winds": "winds",
+  "item.moonstone.body_stone":"body stone",
+
+  "item.probability.tool.string.1":"Your attack damage will fluctuate between 10% and 400%,",
+  "item.probability.tool.string.2": "The damage you receive will fluctuate between 25% and 200%,",
+  "item.probability.tool.string.3": "Every bit of luck adds 1% to the minimum value,",
+  "item.probability.tool.string.4": "For the Wanmo Stone,",
+  "item.probability.tool.string.5": "Add 400% to the maximum and minimum values of the curse attribute obtained,",
+  "item.probability.tool.string.6": "Every bit of luck adds 5% to the maximum and minimum values,",
+
+  "item.body_stone.tool.string": "This item will curse all the accessories in the box",
+  "item.body_stone.tool.string.1": "And randomly add 1-2 negative enchantments",
+  "item.body_stone.tool.string.2": "As compensation, every item with negative enchantments will receive powerful gains",
+  "item.body_stone.tool.string.3": "Each level of enchantment:",
+  "item.body_stone.tool.string.4": "+0.1 damage, critical strike, maximum life",
+  "item.body_stone.tool.string.5": "+0.002 treatment",
+  "item.body_stone.tool.string.6": "+2% excavation speed",
+  "item.body_stone.tool.string.7": "+3% resistance and retreat",
+  "item.body_stone.tool.string.8": "+0.4% speed, melee damage, attack speed",
+  "attribute.name.moonstone.dig": "dig",
+
+  "item.moonstone.luck_ring":"luck ring",
+  "item.luck_ring.tool.string.1":"when 5 exp level:",
+  "item.luck_ring.tool.string.2": "+1 luck",
+
+  "item.moonstone.luck_stone":"luck stone",
+  "item.luck_stone.tool.string.1":"when 10 luck:",
+  "item.luck_stone.tool.string.2": "+1 looting and fortune",
+  "enchantment.moonstone.terror": "terror",
+  "enchantment.moonstone.malice": "malice",
+  "enchantment.moonstone.threat": "threat",
+  "item.moonstone.probability":"probability stone",
   "item.nightmare_head.tool.string": "Immune to all non biological injuries",
   "item.nightmare_head.tool.string.1": "Damage reduction from any source is ineffective and the damage taken is fixed at 1 point, with a maximum health value fixed at 10 points",
   "item.nightmare_head.tool.string.2": "Restores 0.2 health point per second, unaffected by any bonuses",

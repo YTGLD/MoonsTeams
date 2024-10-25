@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:obsidian"
+    },
+    "B":
+    {
+      "item": "moonstone:max_eye"
+    }
+  },
+  "result": {
+    "item": "moonstone:max_sword",
+    "count": 1
+  }
+}

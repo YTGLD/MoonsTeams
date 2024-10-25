@@ -11,6 +11,9 @@ import com.moonstone.moonstonemod.item.TheNecora.small.*;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.amout.twistedstone;
+import com.moonstone.moonstonemod.item.blood.*;
+import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
+import com.moonstone.moonstonemod.item.blood.magic.the_blood_book;
 import com.moonstone.moonstonemod.item.bloodvirus;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
 import com.moonstone.moonstonemod.item.ectoplasm.soul.soulbattery;
@@ -225,6 +228,20 @@ public class Items {
     public static final RegistryObject<Item> zombie_box_nobo =REGISTRY.register("zombie_box_nobo", ()->{
         return new Item(new Item.Properties().rarity(Rarity.UNCOMMON));
     });
+
+    public static final RegistryObject<Item> max_eye =REGISTRY.register("max_eye", () -> new max_eye());
+    public static final RegistryObject<Item> max_blood_cube =REGISTRY.register("max_blood_cube", () -> new max_blood_cube());
+    public static final RegistryObject<Item> blood_amout =REGISTRY.register("blood_amout", () -> new blood_amout());
+
+    public static final RegistryObject<Item> blood_snake =REGISTRY.register("blood_snake", () -> new blood_snake());
+    public static final RegistryObject<Item> the_prison_of_sin =REGISTRY.register("the_prison_of_sin", () -> new the_prison_of_sin());
+    public static final RegistryObject<Item> blood_magic_box =REGISTRY.register("blood_magic_box", () -> new blood_magic_box());
+    public static final RegistryObject<Item> the_blood_book =REGISTRY.register("the_blood_book", () -> new the_blood_book());
+    public static final RegistryObject<Item> blood =REGISTRY.register("blood", ()-> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
+    public static final RegistryObject<Item> blood_candle =REGISTRY.register("blood_candle", com.moonstone.moonstonemod.item.blood.magic.blood_candle::new);
+
+    public static final RegistryObject<Item> blood_sun =REGISTRY.register("blood_sun", com.moonstone.moonstonemod.item.blood.magic.blood_sun::new);
+    public static final RegistryObject<Item> blood_jelly =REGISTRY.register("blood_jelly", com.moonstone.moonstonemod.item.blood.blood_jelly::new);
 
 
     public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.moonstoneitem.gorillacake::new);

@@ -12,7 +12,6 @@ import com.moonstone.moonstonemod.entity.necora.test_e;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
