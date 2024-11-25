@@ -124,7 +124,7 @@
 
   "item.nightmareeye.tool.string": "Increase damage taken by 33%",
   "item.nightmareeye.tool.string.1": "Most of your attributes will be reduced by 25%",
-  "item.nightmareeye.tool.string.2": "Can Un equip plague",
+  "item.nightmareeye.tool.string.2": "Can not Unequip",
 
 
   "item.nightmaremoai.tool.string": "+2 Enchantment level of the enchanted product",
@@ -1059,6 +1059,8 @@
   "item.moonstone.luck_ring":"luck ring",
   "item.luck_ring.tool.string.1":"when 5 exp level:",
   "item.luck_ring.tool.string.2": "+1 luck",
+  "item.moonstone.probability_stone":"probability stone",
+  "item.probability_stone.tool.string.1": "击中生物立即触发所有的斩杀效果，冷却20秒",
 
   "item.moonstone.luck_stone":"luck stone",
   "item.luck_stone.tool.string.1":"when 10 luck:",

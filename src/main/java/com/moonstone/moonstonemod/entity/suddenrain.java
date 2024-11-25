@@ -56,6 +56,7 @@ public class suddenrain extends ThrowableItemProjectile {
             Vec3 direction = targetPos.subtract(currentPos).normalize();
             this.setDeltaMovement(direction.x *0.375f, direction.y *0.375f, direction.z *0.375f);
         }
+       
     }
 
     private void findNewTarget() {

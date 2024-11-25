@@ -18,9 +18,7 @@ public class Tab {
             .icon(()->new ItemStack(Items.necora.get()))
             .title(Component.translatable("itemGroup.tabmoonstone.necora"))
             .displayItems((a,b)->{
-
                 b.accept(new ItemStack(Items.medicinebox.get()));
-
 
                 b.accept(new ItemStack(Items.necora.get()));
                 b.accept(new ItemStack(Items.dna.get()));
@@ -97,8 +95,11 @@ public class Tab {
             .icon(()->new ItemStack(Items.ectoplasmball.get()))
             .title(Component.translatable("itemGroup.tabmoonstone"))
             .displayItems((a,b)->{
+
+
                 b.accept(new ItemStack(Items.book.get()));
                 b.accept(new ItemStack(Items.the_heart.get()));
+                b.accept(new ItemStack(Items.probability_stone.get()));
                 b.accept(new ItemStack(Items.twistedamout.get()));
                 b.accept(new ItemStack(Items.plague.get()));
                 b.accept(new ItemStack(Items.blueamout.get()));

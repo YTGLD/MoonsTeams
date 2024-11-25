@@ -1,10 +1,12 @@
 package com.moonstone.moonstonemod.entity.other;
 
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.entity.ExtendEntityLiving;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
@@ -39,7 +41,6 @@ public class suddenrain extends ThrowableItemProjectile {
         if (age > 220) {
             this.discard();
         }
-
     }
 
 

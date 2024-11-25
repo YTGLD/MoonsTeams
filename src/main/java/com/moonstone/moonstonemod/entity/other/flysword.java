@@ -30,23 +30,6 @@ public class flysword extends ThrowableItemProjectile {
     @Override
     public void tick() {
         super.tick();
-
-        trailPositions.add(new Vec3(this.getX(), this.getY(), this.getZ()));
-
-        if (trailPositions.size()>50){
-            trailPositions.remove(0);
-        }
-        if (trailPositions.size() > 6) {
-            Vec3 lastPosition = trailPositions.get(trailPositions.size() - 2);
-            Vec3 currentPosition = trailPositions.get(trailPositions.size() - 1);
-            if (lastPosition.equals(currentPosition)) {
-                trailPositions.remove(0);
-                trailPositions.remove(1);
-                trailPositions.remove(2);
-                trailPositions.remove(3);
-            }
-        }
-
         this.setNoGravity(true);
         age++;
         if (age > 100) {
@@ -55,11 +38,6 @@ public class flysword extends ThrowableItemProjectile {
         if (age > 20) {
             if (this.level() instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(Particles.blue.get(), this.getX(), this.getEyeY(), this.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
-            }
-        }
-        if (age > 50) {
-            if (trailPositions.size()>1){
-                trailPositions.remove(0);
             }
         }
     }
@@ -85,9 +63,5 @@ public class flysword extends ThrowableItemProjectile {
             }
         }
     }
-    private final List<Vec3> trailPositions = new ArrayList<>();
 
-    public List<Vec3> getTrailPositions() {
-        return trailPositions;
-    }
 }

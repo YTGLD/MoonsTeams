@@ -129,11 +129,10 @@ public class medicinebox extends TheNecoraIC {
                 stack.getTag().getBoolean(AllEvent.blood_enchant))
         {
             player.displayClientMessage(Component.translatable("item.medicinebox.tool.string.eat").append("%").withStyle(ChatFormatting.RED), true);
-
         }
         player.startUsingItem(p_41434_);
 
-        return InteractionResultHolder.fail(stack);
+        return super.use(level,player,p_41434_);
     }
     public AttributeModifier attributeModifier (){
         return new AttributeModifier(UUID.fromString("f32cf69c-7cce-3f6d-81d4-191672800bce"), "medicinebox", 1, AttributeModifier.Operation.ADDITION);
@@ -159,7 +158,7 @@ public class medicinebox extends TheNecoraIC {
                 }
             }
         }
-        return this.getDefaultInstance();
+        return s;
     }
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {

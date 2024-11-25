@@ -6,6 +6,7 @@ import com.google.common.collect.Multimap;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.entity.ExtendEntityLiving;
 import com.moonstone.moonstonemod.entity.ai.AIgiant;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
@@ -70,7 +71,7 @@ import org.slf4j.Logger;
 import java.util.Collections;
 import java.util.UUID;
 
-public class cell_giant extends TamableAnimal implements OwnableEntity {
+public class cell_giant extends ExtendEntityLiving implements OwnableEntity {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final EntityDataAccessor<Integer> CLIENT_ANGER_LEVEL = SynchedEntityData.defineId(cell_giant.class, EntityDataSerializers.INT);
     private int tendrilAnimation;

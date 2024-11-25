@@ -4,8 +4,10 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
@@ -26,6 +28,12 @@ public class blood extends ThrowableItemProjectile {
         this.setNoGravity(true);
 
     }
+
+    @Override
+    public boolean canCollideWith(Entity p_20303_) {
+        return super.canCollideWith(p_20303_);
+    }
+
     public List<Vec3> getTrailPositions() {
         return trailPositions;
     }

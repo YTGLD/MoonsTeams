@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.entity.bloodvruis;
+package com.moonstone.moonstonemod.entity.other;
 
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;

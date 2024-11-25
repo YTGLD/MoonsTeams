@@ -47,7 +47,6 @@ public class owner_blood extends TamableAnimal {
         this.setNoGravity(true);
 
 
-
         LivingEntity owner = getOwner(); // 获取主人
         LivingEntity target = getTarget(); // 获取目标
         Vec3 currentPos = this.position();

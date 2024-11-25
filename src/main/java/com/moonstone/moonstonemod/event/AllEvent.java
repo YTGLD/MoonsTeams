@@ -128,22 +128,40 @@ public class AllEvent {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-
                             if (!stack.isEmpty()){
                                 if (stack.getTag() != null) {
+
                                     CompoundTag compoundtag = stack.getOrCreateTag();
                                     ListTag listtag = compoundtag.getList("Items", 10);
                                     for(int s = 0; s < listtag.size(); ++s){
                                         CompoundTag compoundtag1 = listtag.getCompound(s);
-                                        ItemStack itemstack = ItemStack.of(compoundtag1);
+                                        //.....省略.....
+                                        ItemStack itemstack =  //获取所有心脏内物品
+                                                ItemStack.of(compoundtag1);
 
                                         Collection<ItemEntity> drop = event.getDrops();
+                                        //获取所有掉落物实体
+
                                         for (ItemEntity entity : drop) {
+                                            //遍历所有掉落物实体，以确定它们的种类
+
                                             ItemStack i_stack = entity.getItem();
+                                            //掉落物实体的物品种类
+
                                             if (i_stack.is(itemstack.getItem())) {
+                                                //假设物品于心脏内的物品一样
+
                                                 if (!(i_stack.getMaxStackSize() < 3)) {
+                                                    //保证物品最大堆叠不超过3
+                                                    //防止类似三个不死图腾
+
+
                                                     i_stack.setCount(i_stack.getCount() * 3);
+                                                    //X3实体掉落物
+
                                                     entity.setItem(i_stack);
+                                                    //将这个实体设置为这个新的实体
+
                                                 }
                                             }
                                         }
@@ -1999,10 +2017,19 @@ public class AllEvent {
                     if(
                             random.nextInt(100) <= s
                     ) {
+                        //.....省略.....
                         Collection<ItemEntity> drop = event.getDrops();
+                        //和之前的图一样
                         for (ItemEntity entity : drop) {
+                            //和之前的图一样
+
                             ItemStack stack = entity.getItem();
+                            //和之前的图一样
+
                             if (stack.getMaxStackSize() != 1) {
+                                //和之前的图的逻辑差不多，就是防止超过最大值
+
+                                //和之前的图一样
                                 stack.setCount(stack.getCount() * 3);
                                 entity.setItem(stack);
                             }

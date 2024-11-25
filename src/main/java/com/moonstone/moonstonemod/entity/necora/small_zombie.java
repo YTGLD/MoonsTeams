@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.entity.ExtendEntityLiving;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -37,7 +38,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import java.util.List;
 import java.util.UUID;
 
-public class small_zombie extends TamableAnimal {
+public class small_zombie extends ExtendEntityLiving {
     public AnimationState emergeAnimationState = new AnimationState();
     public AnimationState attackAnimationState = new AnimationState();
 

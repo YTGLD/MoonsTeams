@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "BCD",
+    "AAA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    "B":
+    {
+      "item": "moonstone:ectoplasmstone"
+    },
+    "C":
+    {
+      "item": "moonstone:maxamout"
+    },
+    "D":
+    {
+      "item": "moonstone:ectoplasmapple"
+    }
+
+  },
+  "result":
+  {
+    "item": "moonstone:probability_stone",
+    "count": 1
+  }
+}

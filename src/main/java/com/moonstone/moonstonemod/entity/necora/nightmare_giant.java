@@ -7,6 +7,7 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.entitys.nightmare.AInightmare;
 import com.moonstone.moonstonemod.client.entitys.nightmare.NearestAttackableTargetGoal;
 import com.moonstone.moonstonemod.client.entitys.nightmare.SonicBoom;
+import com.moonstone.moonstonemod.entity.ExtendEntityLiving;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.core.BlockPos;
@@ -73,7 +74,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 
-public class nightmare_giant extends TamableAnimal implements OwnableEntity,VibrationSystem {
+public class nightmare_giant extends ExtendEntityLiving implements OwnableEntity,VibrationSystem {
 
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final EntityDataAccessor<Integer> CLIENT_ANGER_LEVEL = SynchedEntityData.defineId(nightmare_giant.class, EntityDataSerializers.INT);

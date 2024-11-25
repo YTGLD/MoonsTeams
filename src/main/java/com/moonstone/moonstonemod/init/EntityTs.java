@@ -29,17 +29,17 @@ public class EntityTs {
 
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.necora.cell_giant>> cell_giant = REGISTRY.register("cell_giant",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.cell_giant::new, MobCategory.MONSTER).sized(0.9F, 2.9F).clientTrackingRange(16).build("cell_giant"));
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.necora.nightmare_entity>> nightmare_entity = REGISTRY.register("nightmare_entity",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.nightmare_entity::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("nightmare_entity"));
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.necora.test_e>> test_e = REGISTRY.register("test_e",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.test_e::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("test_e"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.nightmare_entity>> nightmare_entity = REGISTRY.register("nightmare_entity",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.nightmare_entity::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("nightmare_entity"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.test_e>> test_e = REGISTRY.register("test_e",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.test_e::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("test_e"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.test_blood>> test_blood = REGISTRY.register("test_blood",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.test_blood::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("test_blood"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.blood_bat>> blood_bat = REGISTRY.register("blood_bat",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.blood_bat::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("blood_bat"));
 
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.necora.red_entity>> red_entity = REGISTRY.register("red_entity",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.red_entity::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("red_entity"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.red_entity>> red_entity = REGISTRY.register("red_entity",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.red_entity::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(16).build("red_entity"));
 
 
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.necora.nightmare_giant>> nightmare_giant = REGISTRY.register("nightmare_giant",
@@ -57,10 +57,10 @@ public class EntityTs {
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.cell_slime::new, MobCategory.MONSTER).sized(0.6f, 1.8f).clientTrackingRange(16).build("cell_slime"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.necora.small_zombie>> small_zombie = REGISTRY.register("small_zombie",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.necora.small_zombie::new, MobCategory.MONSTER).sized(0.25f, 1).clientTrackingRange(16).build("small_zombie"));
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.zombie.blood_zombie_fly>> blood_zombie_fly = REGISTRY.register("blood_zombie_fly",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.zombie.blood_zombie_fly::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("blood_zombie_fly"));
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.zombie.blood_zombie_boom>> blood_zombie_boom = REGISTRY.register("blood_zombie_boom",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.zombie.blood_zombie_boom::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("blood_zombie_boom"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.blood_zombie_fly>> blood_zombie_fly = REGISTRY.register("blood_zombie_fly",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.blood_zombie_fly::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("blood_zombie_fly"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.blood_zombie_boom>> blood_zombie_boom = REGISTRY.register("blood_zombie_boom",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.blood_zombie_boom::new, MobCategory.MONSTER).sized(1, 1).clientTrackingRange(16).build("blood_zombie_boom"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.line>> line = REGISTRY.register("line",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.line::new, MobCategory.MONSTER).sized(1, 0.2f).clientTrackingRange(16).build("line"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.snake>> snake = REGISTRY.register("snake",
@@ -72,13 +72,13 @@ public class EntityTs {
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.attack_blood::new, MobCategory.MISC).sized(0.5f, 0.2f).clientTrackingRange(16).build("attack_blood"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.owner_blood>> owner_blood = REGISTRY.register("owner_blood",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.owner_blood::new, MobCategory.MISC).sized(0.5f, 0.2f).clientTrackingRange(16).build("owner_blood"));
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_owner>> blood_orb_owner = REGISTRY.register("blood_orb_owner",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_owner::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_owner"));
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_attack>> blood_orb_attack = REGISTRY.register("blood_orb_attack",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_attack::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_attack"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.blood_orb_owner>> blood_orb_owner = REGISTRY.register("blood_orb_owner",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.blood_orb_owner::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_owner"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.blood_orb_attack>> blood_orb_attack = REGISTRY.register("blood_orb_attack",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.blood_orb_attack::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_attack"));
 
-    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_small>> blood_orb_small = REGISTRY.register("blood_orb_small",
-            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.bloodvruis.blood_orb_small::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_small"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.other.blood_orb_small>> blood_orb_small = REGISTRY.register("blood_orb_small",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.other.blood_orb_small::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("blood_orb_small"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.sun>> sun = REGISTRY.register("sun",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.sun::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("sun"));
 

@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.item.blood;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.entity.zombie.blood_zombie_fly;
+import com.moonstone.moonstonemod.entity.other.blood_zombie_fly;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;

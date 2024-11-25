@@ -51,6 +51,8 @@ public class line  extends TamableAnimal {
         if (cloudTime > 0){
             cloudTime--;
         }
+
+      
         Vec3 playerPos = this.position().add(0, 0.75, 0);
         int range = 1;
         List<LivingEntity> entities = this.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
@@ -72,7 +74,7 @@ public class line  extends TamableAnimal {
                 }
             }
         }
-
+       
 
 
 

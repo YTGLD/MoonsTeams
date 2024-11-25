@@ -7,7 +7,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -64,11 +66,32 @@ public class the_heart extends Item implements ICurioItem {
         }
         return false;
     }
+    private static boolean dropContents(ItemStack p_150730_, Player p_150731_) {
+        CompoundTag compoundtag = p_150730_.getOrCreateTag();
+        if (!compoundtag.contains("Items")) {
+            return false;
+        } else {
+            if (p_150731_ instanceof ServerPlayer) {
+                ListTag listtag = compoundtag.getList("Items", 10);
 
+                for(int i = 0; i < listtag.size(); ++i) {
+                    CompoundTag compoundtag1 = listtag.getCompound(i);
+                    ItemStack itemstack = ItemStack.of(compoundtag1);
+                    p_150731_.drop(itemstack, true);
+                }
+            }
+
+            p_150730_.removeTagKey("Items");
+            return true;
+        }
+    }
     public InteractionResultHolder<ItemStack> use(Level p_150760_, Player p_150761_, InteractionHand p_150762_) {
         ItemStack itemstack = p_150761_.getItemInHand(p_150762_);
-        return InteractionResultHolder.sidedSuccess(itemstack, p_150760_.isClientSide());
-
+        if (dropContents(itemstack, p_150761_)) {
+            return InteractionResultHolder.sidedSuccess(itemstack, p_150760_.isClientSide());
+        } else {
+            return InteractionResultHolder.fail(itemstack);
+        }
     }
 
     public boolean isBarVisible(ItemStack p_150769_) {
@@ -156,8 +179,6 @@ public class the_heart extends Item implements ICurioItem {
         p_150751_.add(Component.translatable("item.the_heart.tool.string").withStyle(ChatFormatting.GOLD));
         p_150751_.add(Component.translatable("item.the_heart.tool.string.1").withStyle(ChatFormatting.GOLD));
         p_150751_.add(Component.translatable("item.the_heart.tool.string.2").withStyle(ChatFormatting.GOLD));
-        p_150751_.add(Component.translatable(""));
-        p_150751_.add(Component.translatable("item.the_heart.tool.string.3").withStyle(ChatFormatting.DARK_RED));
         p_150751_.add(Component.translatable(""));
         p_150751_.add(Component.translatable("item.minecraft.bundle.fullness", (getContentWeight(p_150749_)/16), 4).withStyle(ChatFormatting.GOLD,ChatFormatting.BOLD));
     }

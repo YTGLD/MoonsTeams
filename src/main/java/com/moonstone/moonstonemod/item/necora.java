@@ -83,9 +83,11 @@ public class necora extends TheNecoraIC {
         }
     }
 
+
     @Override
-    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            player.getAttributes().removeAttributeModifiers(Head(player, stack));
         }
     }
 

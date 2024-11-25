@@ -27,23 +27,24 @@ public class DungeonLoot extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+        int bc = 3;
 
 
         ResourceLocation s = context.getQueriedLootTableId();
         String idSting = String.valueOf(s);
         Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
-        int W = Mth.nextInt(RandomSource.create(), 1, 20);
+        int W = Mth.nextInt(RandomSource.create(), 1, bc*20);
 
-        int N = Mth.nextInt(RandomSource.create(), 1, 60);
-        int a = Mth.nextInt(RandomSource.create(), 1, 35);
-        int ne = Mth.nextInt(RandomSource.create(), 1, 40);
-        int T = Mth.nextInt(RandomSource.create(), 1, 10);
+        int N = Mth.nextInt(RandomSource.create(), 1, bc*60);
+        int a = Mth.nextInt(RandomSource.create(), 1, bc*35);
+        int ne = Mth.nextInt(RandomSource.create(), 1, bc*40);
+        int T = Mth.nextInt(RandomSource.create(), 1, bc*10);
 
-        int cell = Mth.nextInt(RandomSource.create(), 1, 50);
-        int giant = Mth.nextInt(RandomSource.create(), 1, 10);
-        int giant_p = Mth.nextInt(RandomSource.create(), 1, 10);
+        int cell = Mth.nextInt(RandomSource.create(), 1, bc*50);
+        int giant = Mth.nextInt(RandomSource.create(), 1, bc*10);
+        int giant_p = Mth.nextInt(RandomSource.create(), 1, bc*10);
 
-        int bat = Mth.nextInt(RandomSource.create(), 1, 18);
+        int bat = Mth.nextInt(RandomSource.create(), 1, bc*18);
 
         if (entity instanceof Player player){
             if (idSting.contains("chests/")){

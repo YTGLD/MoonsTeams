@@ -1,5 +1,6 @@
-package com.moonstone.moonstonemod.entity.necora;
+package com.moonstone.moonstonemod.entity.other;
 
+import com.moonstone.moonstonemod.entity.necora.cell_zombie;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

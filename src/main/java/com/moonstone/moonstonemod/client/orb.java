@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.moonstone.moonstonemod.client.renderer.MRender;
-import com.moonstone.moonstonemod.entity.necora.nightmare_entity;
+import com.moonstone.moonstonemod.entity.other.nightmare_entity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.Entity;
@@ -102,9 +102,11 @@ public class orb {
     public void black_hold(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, float x, float y,Entity entity,float rgb) {
         VertexConsumer vertexConsumer = bufferSource.getBuffer(MRender.t());
         int segments = 64; // 圆的段数
-        float radius = 1.5f; // 圆的半径
+        float radius = 0.75f; // 圆的半径
         // poseStack.mulPose(Axis.XP.rotationDegrees((float) (entity.tickCount)));
         poseStack.mulPose(Axis.YP.rotationDegrees((float) (entity.tickCount * 1.289)));
+        poseStack.mulPose(Axis.ZP.rotationDegrees((float) (entity.tickCount * 1.289)));
+        poseStack.mulPose(Axis.XP.rotationDegrees((float) (entity.tickCount * 1.289)));
 
         for (int i = 0; i < segments; i++) {
             float angle1 = (float) (2 * Math.PI * i / segments);

@@ -1,6 +1,7 @@
-package com.moonstone.moonstonemod.entity.necora;
+package com.moonstone.moonstonemod.entity.other;
 
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.entity.necora.cell_zombie;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.init.Particles;

@@ -239,6 +239,7 @@ public class Items {
     public static final RegistryObject<Item> the_blood_book =REGISTRY.register("the_blood_book", () -> new the_blood_book());
     public static final RegistryObject<Item> blood =REGISTRY.register("blood", ()-> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> blood_candle =REGISTRY.register("blood_candle", com.moonstone.moonstonemod.item.blood.magic.blood_candle::new);
+    public static final RegistryObject<Item> probability_stone =REGISTRY.register("probability_stone", com.moonstone.moonstonemod.item.amout.probability_stone::new);
 
     public static final RegistryObject<Item> blood_sun =REGISTRY.register("blood_sun", com.moonstone.moonstonemod.item.blood.magic.blood_sun::new);
     public static final RegistryObject<Item> blood_jelly =REGISTRY.register("blood_jelly", com.moonstone.moonstonemod.item.blood.blood_jelly::new);

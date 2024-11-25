@@ -68,6 +68,7 @@ public class the_pain_stone extends ThePain {
                                         float health = event.getAmount() -event.getEntity().getMaxHealth();
                                         player.heal(health);
                                     }
+                                    stack.getOrCreateTag().remove(pain);
                                 }
                             }
                         }

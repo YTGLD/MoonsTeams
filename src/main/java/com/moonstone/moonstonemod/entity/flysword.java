@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -54,7 +55,7 @@ public class flysword extends ThrowableItemProjectile {
             Vec3 direction = targetPos.subtract(currentPos).normalize();
             this.setDeltaMovement(direction.x *0.375f, direction.y *0.375f, direction.z *0.375f);
         }
-
+       
     }
     private void findNewTarget() {
         AABB searchBox = this.getBoundingBox().inflate(16);

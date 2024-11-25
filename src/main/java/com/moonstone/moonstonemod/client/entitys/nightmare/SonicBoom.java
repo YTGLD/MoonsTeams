@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.client.entitys.nightmare;
 
 import com.google.common.collect.ImmutableMap;
 import com.moonstone.moonstonemod.entity.necora.nightmare_giant;
-import com.moonstone.moonstonemod.entity.necora.test_e;
+import com.moonstone.moonstonemod.entity.other.test_e;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.server.level.ServerLevel;

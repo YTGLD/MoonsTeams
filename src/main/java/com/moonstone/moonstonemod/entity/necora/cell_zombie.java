@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.entity.ExtendEntityLiving;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
@@ -32,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
-public class cell_zombie extends TamableAnimal {
+public class cell_zombie extends ExtendEntityLiving {
     public cell_zombie(EntityType<? extends cell_zombie> c  , Level p_34272_) {
         super(c, p_34272_);
     }

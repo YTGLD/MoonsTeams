@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.entity;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.zombie.blood_zombie_boom;
+import com.moonstone.moonstonemod.entity.other.blood_zombie_boom;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -68,6 +68,7 @@ public class sun extends ThrowableItemProjectile {
             this.discard();
 
         }
+       
         if (this.tickCount < 20) {
             this.setPos(new Vec3(this.getX(), this.getY() + 0.15f, this.getZ()));
         }else{

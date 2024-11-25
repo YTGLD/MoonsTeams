@@ -77,8 +77,6 @@ public class snake  extends TamableAnimal {
 
 
 
-
-
         if (target == null || !target.isAlive()) {
             findNewTarget();
         }

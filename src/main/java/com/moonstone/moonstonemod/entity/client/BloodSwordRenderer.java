@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
-import com.moonstone.moonstonemod.entity.zombie.blood_zombie_fly;
+import com.moonstone.moonstonemod.entity.other.blood_zombie_fly;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

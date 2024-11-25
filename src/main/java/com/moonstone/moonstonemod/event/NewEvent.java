@@ -23,6 +23,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
@@ -65,6 +66,18 @@ public class NewEvent {
         twistedamout.hurt(event);
         max_eye.A(event);
         blood_amout.Hurt(event);
+
+        if (event.getSource().getEntity() instanceof Player living) {
+            if  (Handler.hascurio(living,Items.probability_stone.get())) {
+                if (!living.getCooldowns().isOnCooldown(Items.probability_stone.get())) {
+                    LivingDeathEvent deathEvent = new LivingDeathEvent(event.getEntity(), event.getSource());
+                    MinecraftForge.EVENT_BUS.post(deathEvent);
+
+                    living.getCooldowns().addCooldown(Items.probability_stone.get(),400);
+                }
+            }
+        }
+
         if (Handler.hascurio(event.getEntity(),Items.acid.get())){
             event.setAmount(event.getAmount()*50);
         }
