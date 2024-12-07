@@ -79,15 +79,8 @@ public class medicinebox extends TheNecoraIC {
 
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
-            if (Handler.hascurio(player, Items.necora.get())){
-                return false;
-            }
-            if (Handler.hascurio(player, Items.bloodvirus.get())){
-                return false;
-            }
-        }
-        return true;
+
+        return !Handler.hascurio(slotContext.entity(),this);
     }
 
     @Override

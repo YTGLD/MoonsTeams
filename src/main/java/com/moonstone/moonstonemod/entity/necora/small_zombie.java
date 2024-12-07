@@ -151,7 +151,6 @@ public class small_zombie extends ExtendEntityLiving {
     @Override
     protected void dropFromLootTable(DamageSource p_21335_, boolean p_21336_) {
         super.dropFromLootTable(p_21335_, p_21336_);
-        this.spawnAtLocations(new ItemStack(Items.zombie_box_nobo.get(), 1));
 
         if (Handler.hascurio(this,Items.acid.get())){
             this.spawnAtLocations(new ItemStack(Items.acid.get(), 1));

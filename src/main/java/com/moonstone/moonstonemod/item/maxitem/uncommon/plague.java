@@ -92,7 +92,7 @@ public class plague extends UnCommonItem {
 
             float s = stack.getOrCreateTag().getFloat(FanYanJIu) / 100 / 3 / 100;
             s = -s;
-            s *= Config.SERVER.plague_effect.get();
+            s *=  Config.SERVER.plague_effect.get();
 
             modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_BASE));
             modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("380df991-f603-344c-a090-369bad2a924a"), MoonStoneMod.MODID + ":plague", s, AttributeModifier.Operation.MULTIPLY_BASE));

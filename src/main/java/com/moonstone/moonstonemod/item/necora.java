@@ -115,14 +115,7 @@ public class necora extends TheNecoraIC {
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.bloodvirus.get())) {
-                return false;
-            }
-            if (Handler.hascurio(player, Items.medicinebox.get())) {
-                return false;
-            }
             return !Handler.hascurio(player, stack.getItem());
-
         }
         return true;
     }

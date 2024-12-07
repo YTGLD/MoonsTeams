@@ -7,6 +7,7 @@ import com.moonstone.moonstonemod.client.entitys.boltR.BoltLightRenderer;
 import com.moonstone.moonstonemod.client.entitys.boltR.BoltRenderer;
 import com.moonstone.moonstonemod.client.entitys.boltR.bule_boltR;
 import com.moonstone.moonstonemod.client.entitys.nightmare.CellZombieN;
+import com.moonstone.moonstonemod.client.entitys.swords.AsSwordRender;
 import com.moonstone.moonstonemod.client.entitys.swords.SwordRenderer;
 import com.moonstone.moonstonemod.client.entitys.zomb.ganit.CellZombieG;
 import com.moonstone.moonstonemod.client.entitys.zomb.slime.ZombieRenderer;
@@ -63,6 +64,7 @@ public class MoonStoneMod {
     public static final String MODID = "moonstone";
     public static final Logger LOGGER = LogUtils.getLogger();
     public MoonStoneMod() {
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new AllEvent());
@@ -77,11 +79,13 @@ public class MoonStoneMod {
         LootReg.REGISTRY.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
         MSound.REGISTRY.register(modEventBus);
+        AttReg.REGISTRY.register(modEventBus);
 
 
         Particles.PARTICLE_TYPES.register(modEventBus);
         Items.REGISTRY.register(modEventBus);
         Tab.TABS.register(modEventBus);
+
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.fc);
     }
@@ -128,6 +132,7 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.blood_orb_owner.get(), com.moonstone.moonstonemod.entity.client.blood.BloodOrbOwner::new);
             event.registerEntityRenderer(EntityTs.blood_orb_small.get(), com.moonstone.moonstonemod.entity.client.blood.BloodOrbSmall::new);
             event.registerEntityRenderer(EntityTs.sun.get(), com.moonstone.moonstonemod.entity.client.SunRenderer::new);
+            event.registerEntityRenderer(EntityTs.as_sword.get(), AsSwordRender::new);
 
         }
         @SubscribeEvent

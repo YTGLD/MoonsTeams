@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "moonstone:zombie_box_nobo"
-  },
-  "result": "moonstone:zombie_box",
-  "experience": 0.1,
-  "cookingtime": 1200
-}

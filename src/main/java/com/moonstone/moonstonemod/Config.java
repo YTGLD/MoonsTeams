@@ -70,35 +70,47 @@ public class Config {
                 .comment("Will the Flying Sword and Suddenrain Sword attack any creatures")
                 .define("Entity",List.of("minecraft:pig","minecraft:villager"));
 
+        giveBook = BUILDER
+                .comment("Starting with a book or not")
+                .define("give", true);
+
+        bat = BUILDER
+                .comment("The probability of discovering Shadow Plague items from the chests")
+                .defineInRange("Plague_probability", 10, 1, 100);
+        necora = BUILDER
+                .comment("The probability of Necora items from the chests")
+                .defineInRange("Necora_probability", 10, 1, 100);
+
+        night = BUILDER
+                .comment("The probability of Nightmare items from the chests")
+                .defineInRange("Nightmare_probability", 10, 1, 100);
+
+        common = BUILDER
+                .comment("The larger this value, the lower the probability of discovering the item")
+                .defineInRange("Common_probability", 1, 0.1, 100);
 
         BUILDER.build();
     }
     public  ForgeConfigSpec.DoubleValue plague_speed;
     public   ForgeConfigSpec.DoubleValue plague_pain;
-
     public   ForgeConfigSpec.DoubleValue plague_effect;
-
     public   ForgeConfigSpec.IntValue nightmare_moai;
-    public   ForgeConfigSpec.IntValue m_brain_many
-
-            ;
-
+    public   ForgeConfigSpec.IntValue m_brain_many;
     public   ForgeConfigSpec.DoubleValue m_brain_critical;
-
     public   ForgeConfigSpec.DoubleValue battery_speed;
-
     public   ForgeConfigSpec.DoubleValue quadriceps_speed;
-
     public   ForgeConfigSpec.DoubleValue flygene_speed;
-
-
     public   ForgeConfigSpec.DoubleValue bloodvirus_speed;
     public   ForgeConfigSpec.DoubleValue motor_speed ;
     public   ForgeConfigSpec.ConfigValue<String> ZombieNightmareGiant;
-
     public   ForgeConfigSpec.IntValue the_pain_stone ;
-
+    public   ForgeConfigSpec.BooleanValue giveBook ;
     public   ForgeConfigSpec.ConfigValue<List<String>> FlyingSword ;
+    public   ForgeConfigSpec.IntValue bat ;
+    public   ForgeConfigSpec.IntValue necora ;
+    public   ForgeConfigSpec.IntValue night ;
+    public   ForgeConfigSpec.DoubleValue common ;
+
 
 
 }

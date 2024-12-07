@@ -10,7 +10,6 @@ import com.moonstone.moonstonemod.entity.other.suddenrain;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
-import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_blood;
@@ -189,6 +188,8 @@ public class AllEvent {
     public void gen(LivingHurtEvent event) {
         if (Handler.hascurio(event.getEntity() , Items.air.get())) {
             if (!event.getEntity() .onGround()) {
+
+
                 event.setAmount(event.getAmount() * 0.8f);
             }
             if (!event.getEntity() .isInWater()) {
@@ -457,70 +458,7 @@ public class AllEvent {
         }
     }
 
-    @SubscribeEvent
-    public void suddenrainLivingTickEvent(LivingEvent.LivingTickEvent event){
-        if (event.getEntity() instanceof LivingEntity) {
-            LivingEntity livingEntity = event.getEntity();
-            Vec3 position = livingEntity.position().add(0,0.75,0);
-            int is = 16;
-            List<suddenrain> items = livingEntity.level().getEntitiesOfClass(suddenrain.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
-            for (suddenrain item : items) {
-                if (Handler.BlackEntity(livingEntity)) {
-                    if (item.getOwner() != null && !item.getOwner().is(livingEntity)) {
-                        if (item.isAlive()) {
-                            if (item.level() instanceof ServerLevel serverLevel) {
-                                serverLevel.sendParticles(Particles.popr.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
-                            }
-                            Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
-                            if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
-                                motion = motion.normalize();
-                            }
-                            if (item.age > 30) {
-                                item.setDeltaMovement(motion.scale(1));
-                            } else {
-                                item.setDeltaMovement(motion.scale(-0.25));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 
-    @SubscribeEvent
-    public void doomeyeLLivingTickEvent(LivingEvent.LivingTickEvent event){
-        if (event.getEntity() instanceof LivingEntity) {
-            LivingEntity livingEntity = event.getEntity();
-            Vec3 position = livingEntity.position();
-            int is = 16;
-            List<flysword> items = livingEntity.level().getEntitiesOfClass(flysword.class, new AABB(position.x - is, position.y - is, position.z - is, position.x + is, position.y + is, position.z + is));
-            for (flysword item : items) {
-                if (Handler.BlackEntity(livingEntity)) {
-                    if (item.getOwner() != null && !item.getOwner().is(livingEntity)) {
-                        if (item.isAlive()) {
-
-                            if (item.age > 20) {
-                                if (item.level() instanceof ServerLevel serverLevel) {
-                                    serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
-                                }
-                                if (item.getTags().contains(FlySword)) {
-                                    if (item.level() instanceof ServerLevel serverLevel) {
-                                        serverLevel.sendParticles(Particles.blue.get(), item.getX(), item.getEyeY(), item.getZ(), 1, 0.0D, 0.0D, 0.0D, 0);
-                                    }
-                                    Vec3 motion = position.subtract(item.position().add(0, item.getBbHeight() / 2, 0));
-                                    if (Math.sqrt(motion.x * motion.x + motion.y * motion.y + motion.z * motion.z) > 1) {
-                                        motion = motion.normalize();
-                                    }
-                                    item.setDeltaMovement(motion.scale(1));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-    }
     @SubscribeEvent
     public void doomeyeLivingKnockBackEvent(LivingKnockBackEvent event){
         if (event.getEntity() instanceof Player player){
@@ -977,14 +915,22 @@ public class AllEvent {
                         serverLevel.sendParticles(ParticleTypes.SCULK_SOUL, event.getEntity().getX(), event.getEntity().getY()+1, event.getEntity().getZ(), 2, 0.33, 0.33, 0.33, 0);
                     }
                     if (Handler.hascurio(player,  Items.bloodvirus.get())) {
-                        player.heal(event.getAmount() * 0.1f);
+                        float f = event.getAmount() * 0.1f;
+                        if (f>player.getMaxHealth()/20){
+                            f=player.getMaxHealth()/20;
+                        }
+                        player.heal(f);
                         if (event.getEntity() instanceof Mob mob) {
                             if (!mob.isInvertedHealAndHarm()) {
                                 event.setAmount(event.getAmount() * 1.25f);
                             }
                         }
                         if (Mth.nextInt(RandomSource.create(), 1, 10) == 1) {
-                            player.heal(event.getAmount() * 0.2f);
+                            float s = event.getAmount() * 0.2f;
+                            if (s>player.getMaxHealth()/20){
+                                s=player.getMaxHealth()/20;
+                            }
+                            player.heal(s);
                             event.getEntity().hurt(event.getSource(), 8);
                         }
                     }
@@ -1074,7 +1020,12 @@ public class AllEvent {
         if (event.getSource().getDirectEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.maxamout.get())) {
                 event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, 0));
-                player.heal(event.getAmount() / 20);
+                float s = event.getAmount() / 20;
+                if (s>player.getMaxHealth()/20){
+                    s=player.getMaxHealth()/20;
+                }
+
+                player.heal(s);
 
                 if (Mth.nextInt(RandomSource.create(), 1, 12) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, 0));
@@ -1855,11 +1806,12 @@ public class AllEvent {
                 player.addItem(Items.apple.get().getDefaultInstance());
                 player.addTag("welcome_to_moonstone");
             }
-            if (!player.getTags().contains("give_moonstone_item_book")) {
-                player.addItem(Items.book.get().getDefaultInstance());
-                player.addTag("give_moonstone_item_book");
+            if (Config.SERVER.giveBook.get()) {
+                if (!player.getTags().contains("give_moonstone_item_book")) {
+                    player.addItem(Items.book.get().getDefaultInstance());
+                    player.addTag("give_moonstone_item_book");
+                }
             }
-
         }
 
     }

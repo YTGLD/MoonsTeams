@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.init;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.book;
+import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
 import com.moonstone.moonstonemod.item.BloodVirus.botton;
 import com.moonstone.moonstonemod.item.BloodVirus.catalyzer;
@@ -31,11 +32,21 @@ import com.moonstone.moonstonemod.item.plague.medicine.med.*;
 import com.moonstone.moonstonemod.item.plague.mobitem.*;
 import com.moonstone.moonstonemod.moonstoneitem.extend.apple;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class Items {
     public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, MoonStoneMod.MODID);
@@ -100,7 +111,7 @@ public class Items {
     public static final RegistryObject<Item>  obsidianring =REGISTRY.register("obsidianring", com.moonstone.moonstonemod.item.maxitem.uncommon.obsidianring::new);
 
 
-    public static final RegistryObject<Item>  dna =REGISTRY.register("dna",dna::new);
+    public static final RegistryObject<Item>  dna =REGISTRY.register("dna", () -> new dna());
     public static final RegistryObject<Item>  fungus =REGISTRY.register("fungus",fungus::new);
     public static final RegistryObject<Item>  germ =REGISTRY.register("germ",germ::new);
     public static final RegistryObject<Item>  parasite =REGISTRY.register("parasite",parasite::new);
@@ -226,7 +237,21 @@ public class Items {
 
     public static final RegistryObject<Item> zombie_box =REGISTRY.register("zombie_box", zombie_box::new);
     public static final RegistryObject<Item> zombie_box_nobo =REGISTRY.register("zombie_box_nobo", ()->{
-        return new Item(new Item.Properties().rarity(Rarity.UNCOMMON));
+        return new Item(new Item.Properties().rarity(Rarity.UNCOMMON)){
+
+            @Override
+            public InteractionResultHolder<ItemStack> use(Level p_41432_, Player player, InteractionHand p_41434_) {
+                Vec3 playerPos = player.position().add(0, 0.75, 0);
+                int range = 2;
+                List<small_zombie> entities = player.level().getEntitiesOfClass(small_zombie.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                for (small_zombie smallZombie : entities){
+                    player.getItemInHand(p_41434_).shrink(1);
+                    player.setItemInHand(p_41434_,new ItemStack(Items.zombie_box.get()));
+                    smallZombie.kill();
+                }
+                return super.use(p_41432_, player, p_41434_);
+            }
+        };
     });
 
     public static final RegistryObject<Item> max_eye =REGISTRY.register("max_eye", () -> new max_eye());
@@ -243,6 +268,23 @@ public class Items {
 
     public static final RegistryObject<Item> blood_sun =REGISTRY.register("blood_sun", com.moonstone.moonstonemod.item.blood.magic.blood_sun::new);
     public static final RegistryObject<Item> blood_jelly =REGISTRY.register("blood_jelly", com.moonstone.moonstonemod.item.blood.blood_jelly::new);
+
+
+    public static final RegistryObject<Item> million =REGISTRY.register("million", com.moonstone.moonstonemod.item.nanodoom.million::new);
+    public static final RegistryObject<Item> as_amout =REGISTRY.register("as_amout", com.moonstone.moonstonemod.item.nanodoom.as_amout::new);
+
+    public static final RegistryObject<Item> nine_sword_book =REGISTRY.register("nine_sword_book", com.moonstone.moonstonemod.item.maxitem.book.nine_sword_book::new);
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.moonstoneitem.gorillacake::new);

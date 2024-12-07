@@ -62,10 +62,6 @@ public class sword extends cell_zombie {
                 }
             }
 
-        }else {
-            if (this.level() instanceof ServerLevel serverLevel){
-                serverLevel.sendParticles(Particles.blue.get(), this.getX(), this.getEyeY(), this.getZ(), 2, 0.0D, 0.0D, 0.0D, 0);
-            }
         }
         if (age > 30) {
             this.discard();

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "moonstone:as_amout",
     "moonstone:ectoplasmapple",
     "moonstone:ectoplasmbattery",
     "moonstone:ectoplasmhorseshoe",

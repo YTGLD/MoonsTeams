@@ -1,7 +1,9 @@
 package com.moonstone.moonstonemod.event;
 
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.book;
 import com.moonstone.moonstonemod.entity.necora.small_zombie;
+import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.giant_boom_cell;
@@ -10,6 +12,9 @@ import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.blood.*;
 import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
 import com.moonstone.moonstonemod.item.blood.magic.blood_sun;
+import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_book;
+import com.moonstone.moonstonemod.item.nanodoom.as_amout;
+import com.moonstone.moonstonemod.item.nanodoom.million;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_head;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_heart;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_orb;
@@ -17,9 +22,12 @@ import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -28,6 +36,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -52,6 +61,11 @@ public class NewEvent {
         nightmare_head.LivingHealEvent(event);
         pain_ring.Heal(event);
 
+        if (event.getEntity().getAttribute(AttReg.heal.get())!=null){
+            float attack = (float) event.getEntity().getAttribute(AttReg.heal.get()).getValue();
+            event.setAmount(event.getAmount()*(attack));
+        }
+
 
     }
     @SubscribeEvent
@@ -66,7 +80,9 @@ public class NewEvent {
         twistedamout.hurt(event);
         max_eye.A(event);
         blood_amout.Hurt(event);
-
+        as_amout.hurt(event);
+        million.hurt(event);
+        nine_sword_book.att(event);
         if (event.getSource().getEntity() instanceof Player living) {
             if  (Handler.hascurio(living,Items.probability_stone.get())) {
                 if (!living.getCooldowns().isOnCooldown(Items.probability_stone.get())) {
@@ -101,7 +117,9 @@ public class NewEvent {
         max_eye.Die(event);
         blood_snake.Die(event);
         blood_magic_box.Did(event);
+        nine_sword_book.die(event);
         blood_sun.Did(event);
+
     }
     @SubscribeEvent
     public void PlayerInteractEvent(PlayerInteractEvent.EntityInteract event) {
@@ -180,6 +198,31 @@ public class NewEvent {
                         }
                     }
                 });
+            }
+        }
+    }
+    @SubscribeEvent
+    public void Book(ItemTooltipEvent event){
+        ItemStack stack = event.getItemStack();
+        Player player = event.getEntity();
+        if (stack.is(Items.nine_sword_book.get())) {
+            if ( stack.getTag() != null) {
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.13").withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.12").withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal(""));
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.11").withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.10").withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.9").withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal(""));
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.8").withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.7").withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal(""));
+                event.getToolTip().add(1, Component.literal("+").append(String.valueOf(1)).append(Component.translatable("item.nine_sword_book.tool.string.6")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", ((stack.getTag().getInt(nine_sword_book.lvl) ) /3f/100f*100f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.5")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", ((stack.getTag().getInt(nine_sword_book.lvl)) /3f/35f*100f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.4")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", ((stack.getTag().getInt(nine_sword_book.attackSpeedLvlSmall)/100f /3f)/20f*100f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.3")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", ((stack.getTag().getInt(nine_sword_book.attackLvlsmall)/100f /3f)  /10f*100f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.2")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.1").withStyle(ChatFormatting.GOLD));
             }
         }
     }

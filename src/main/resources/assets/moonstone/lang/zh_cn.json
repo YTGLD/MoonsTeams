@@ -1109,6 +1109,29 @@
   "item.moonstone.probability_stone":"月之石",
   "item.probability_stone.tool.string.1": "击中生物立即触发所有的斩杀效果，冷却20秒",
 
+  "item.moonstone.as_amout": "七剑修罗·剑阵之章",
+  "item.as_amout.tool.string.1": "攻击时从目标背后发射7把飞剑",
+  "item.as_amout.tool.string.2": "飞剑可以存在20秒",
+
+  "item.as_amout.tool.string.3": "前10秒会尝试攻击生物",
+  "item.as_amout.tool.string.4": "后10秒会尝试飞向玩家",
+
+  "item.as_amout.tool.string.5": "这些飞剑附带10%玩家攻击属性",
+  "item.as_amout.tool.string.6": "若拾取飞剑，则恢复5%最大生命值",
+
+  "item.as_amout.tool.string.7": "冷却5秒",
+
+
+  "item.moonstone.million": "七剑修罗·万法",
+  "item.million.tool.string.1": "这个盒子里存储了30把飞剑",
+  "item.million.tool.string.2": "每次全力斩击都会召唤3把",
+  "item.million.tool.string.3": "每当飞剑被拾取时都会恢复1把",
+  "item.million.tool.string.4": "每次拾取飞剑都会获得1%的伤害加成",
+  "item.million.tool.string.5": "持续10秒，最多叠加到100%",
+  "item.million.tool.string.6": "Shift",
+  "item.million.tool.string.7": "获得的加成：",
+  "item.million.tool.string.8": "储存的飞剑数量：",
+
 
   "item.moonstone.twistedamout": "诺克萨斯纹章",
 
