@@ -54,9 +54,10 @@ public class nine_sword_book extends BookSkill implements IDoom {
     public static final String small = "nineSwordBookSwordLvlSmall";
 
     public static int test = 1;
+    public static int sl = 2;
     /*
         在剑仙7重境内击中击中生物+1“伤害“修炼值（可以杀死敌对生物来获取更多）
-        若大于7重境，则必须杀死敌对生物来获取修炼值（1个生物为5点）
+        若大于剑仙7重境，则必须杀死敌对生物来获取修炼值（1个生物为5点）
 
         在剑神1重境内击中击中生物+1“攻速“修炼值（对这个物品右键钻石来获取更多）{
             可以使用Mixin来修改以下数值：{
@@ -85,23 +86,23 @@ public class nine_sword_book extends BookSkill implements IDoom {
                                     if (stack.getTag() != null) {
                                         if (event.getEntity() instanceof Mob mob) {
                                             if (mob.getTarget() != null && mob.getTarget().is(player)) {
-                                                if (stack.getTag().getInt(attackLvlsmall) <= 2 * addLvl) {
-                                                    if (Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
+                                                if (stack.getTag().getInt(attackLvlsmall) <= addLvl) {
+                                                    if (Mth.nextInt(RandomSource.create(), 1, sl) == 1) {
                                                         stack.getTag().putInt(attackLvlsmall, stack.getTag().getInt(attackLvlsmall) + 1);
                                                     }
                                                 }
                                             }
                                         }
                                         if (stack.getTag().getInt(attackSpeedLvlSmall) <= 3 * addLvl) {
-                                            if (Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
-                                                stack.getTag().putInt(attackSpeedLvlSmall, stack.getTag().getInt(attackSpeedLvlSmall) + 1 * test);
+                                            if (Mth.nextInt(RandomSource.create(), 1, sl) == 1) {
+                                                stack.getTag().putInt(attackSpeedLvlSmall, stack.getTag().getInt(attackSpeedLvlSmall) + test);
                                             }
                                         }
 
 
                                         if (stack.getTag().getInt(small) <= maxLvl * addLvl) {
-                                            if (Mth.nextInt(RandomSource.create(), 1, 4) == 1) {
-                                                stack.getTag().putInt(small, stack.getTag().getInt(small) + 1 * test);
+                                            if (Mth.nextInt(RandomSource.create(), 1, sl) == 1) {
+                                                stack.getTag().putInt(small, stack.getTag().getInt(small) + test);
                                             }
                                         }
                                         if (stack.getTag().getInt(small) % addLvl == 0) {
@@ -143,7 +144,10 @@ public class nine_sword_book extends BookSkill implements IDoom {
                                     if (!player.getCooldowns().isOnCooldown(Items.nine_sword_book.get())) {
                                         event.setAmount(damage);
                                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.NEUTRAL, 2, 2);
-                                        player.getCooldowns().addCooldown(Items.nine_sword_book.get(), 100);
+
+                                        float time = 30f - (stack.getTag().getInt(small)/4f/10);//1000
+                                        time*=20;
+                                        player.getCooldowns().addCooldown(Items.nine_sword_book.get(), (int) time);
                                     }
                                 }
                             }
@@ -186,9 +190,30 @@ public class nine_sword_book extends BookSkill implements IDoom {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         stack.setDamageValue(stack.getDamageValue()+1);
+        String ss = "small";
         if (slotContext.entity() instanceof Player player){
             if (!player.level().isClientSide) {
                 if (stack.getTag() != null) {
+
+                    int lg = stack.getTag().getInt(small);
+                    int ls = stack.getTag().getInt(attackSpeedLvlSmall);
+                    int ld = stack.getTag().getInt(attackLvlsmall);
+
+                    float l = (lg + ls + ld) / 3f;
+                    if (l > 0 && l < 300) {
+                        stack.getTag().putInt(ss, (int) (l / 30));// 计算0到299之间的值
+                    } else if (l >= 300 && l < 600) {
+                        stack.getTag().putInt(ss, (int) ((l - 300) / 30)); // 计算300到599之间的值，显示从1开始
+                    } else if (l >= 600 ) {
+                        stack.getTag().putInt(ss, (int) ((l - 600) / 30)); // 计算600到899之间的值，显示从1开始
+                    }
+                    if (add > 0) {
+                        if (stack.getTag().getInt(attackSpeedLvlSmall) < addLvl*maxLvl) {
+                            stack.getTag().putInt(attackSpeedLvlSmall, stack.getTag().getInt(attackSpeedLvlSmall) + 1);
+                        }
+                        add--;
+                    }
+
                     List<Integer> integers = new ArrayList<>();
                     for (int i = 0; i < 9; i++) {
                         ItemStack sword = player.getInventory().items.get(i);
@@ -242,14 +267,11 @@ public class nine_sword_book extends BookSkill implements IDoom {
         }
         return 0;
     }
+    private int add = 0;
     public boolean overrideOtherStackedOnMe(ItemStack me, ItemStack p_150743_, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
-
             if (!p_150746_.level().isClientSide) {
-                if (me.getTag() != null && me.getTag().getInt(attackSpeedLvlSmall) < maxLvl * addLvl) {
-                    me.getTag().putInt(attackSpeedLvlSmall,
-                            me.getTag().getInt(attackSpeedLvlSmall) + addOlofDiamondOrItem(p_150743_.getItem()) * test);
-                }
+                add+=addOlofDiamondOrItem(p_150743_.getItem());
                 p_150743_.shrink(1);
                 return true;
             }
@@ -260,7 +282,7 @@ public class nine_sword_book extends BookSkill implements IDoom {
     private Multimap<Attribute, AttributeModifier> Head(Player player,ItemStack stack){
         Multimap<Attribute, AttributeModifier> multimap = HashMultimap.create();
         if (stack.getTag()!=null) {
-            float level =2*((stack.getTag().getInt(lvl))/10f);//0~2
+            float level = stack.getTag().getInt(small)/100F;
 
             List<Integer> integers = new ArrayList<>();
             for (int i = 0; i < 9; i++) {
@@ -269,30 +291,30 @@ public class nine_sword_book extends BookSkill implements IDoom {
                     integers.add(1);
                 }
             }
-            float attLevel =(((stack.getTag().getInt(attackLvlsmall)/100f))/10f);
+            float attLevel = stack.getTag().getInt(attackLvlsmall)/100F;
             multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(
                      UUID.fromString("492dc575-b72e-3d83-b2fd-33ab63727150"),
                         "s",
-                    ((integers.size() / 10f /3f)*attLevel)-0.25,
+                    ((integers.size() / 15f/6)*attLevel)-0.25,
                     AttributeModifier.Operation.MULTIPLY_BASE));
 
-            float attackSpeedLevel =(((stack.getTag().getInt(attackSpeedLvlSmall)/100f)-1)/10f);
+            float attackSpeedLevel = stack.getTag().getInt(attackSpeedLvlSmall)/100F;
             multimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(
                      UUID.fromString("492dc575-b72e-3d83-b2fd-33ab63727150"),
                         "s",
-                    (integers.size() / 20F /3f)*attackSpeedLevel,
+                    (integers.size() / 20F/5)*attackSpeedLevel,
                     AttributeModifier.Operation.MULTIPLY_BASE));
 
             multimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(
                      UUID.fromString("492dc575-b72e-3d83-b2fd-33ab63727150"),
                         "s",
-                    (integers.size() / 35F /3f)*level,
+                    (integers.size() / 35F/7f)*level,
                     AttributeModifier.Operation.MULTIPLY_BASE));
 
             multimap.put(AttReg.heal.get(), new AttributeModifier(
                     UUID.fromString("492dc575-b72e-3d83-b2fd-33ab63727150"),
                     "s",
-                    (integers.size() / 100F /3f)*level,
+                    (integers.size() / 77F/4f)*level,
                     AttributeModifier.Operation.MULTIPLY_BASE));
 
             multimap.put(Attributes.MAX_HEALTH, new AttributeModifier(
@@ -307,18 +329,18 @@ public class nine_sword_book extends BookSkill implements IDoom {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-        if (pStack.getTag()!=null) {
+        if (pContext != null && pStack.getTag() != null && pContext.isClientSide) {
             int lg = pStack.getTag().getInt(small);
             int ls = pStack.getTag().getInt(attackSpeedLvlSmall);
             int ld = pStack.getTag().getInt(attackLvlsmall);
 
             pTooltipComponents.add(Component.literal(""));
-            if ((lg + ls + ld) / 3<=300){
-                addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.1");
-            }else if ((lg + ls + ld) / 3>300&&(lg + ls + ld) / 3<=600){
-                addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.2");
-            }else if ((lg + ls + ld) / 3>600){
-                addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.3");
+            if ((lg + ls + ld) / 3 <= 300) {
+                addNme(pStack, pTooltipComponents, "item.nine_sword_book_skill.tool.string.1");
+            } else if ((lg + ls + ld) / 3 > 300 && (lg + ls + ld) / 3 <= 600) {
+                addNme(pStack, pTooltipComponents, "item.nine_sword_book_skill.tool.string.2");
+            } else if ((lg + ls + ld) / 3 > 600) {
+                addNme(pStack, pTooltipComponents, "item.nine_sword_book_skill.tool.string.3");
             }
 
             pTooltipComponents.add(Component.translatable("item.nine_sword_book_lvl.tool.string.2").append(" " + pStack.getTag().getInt(small)).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF6A5ACD))));
@@ -328,31 +350,9 @@ public class nine_sword_book extends BookSkill implements IDoom {
     }
 
     private void addNme(ItemStack pStack, List<Component> pTooltipComponents, String translatable) {
-
+        String ss = "small";
         if (pStack.getTag()!=null) {
-            int lg = pStack.getTag().getInt(small);
-            int ls = pStack.getTag().getInt(attackSpeedLvlSmall);
-            int ld = pStack.getTag().getInt(attackLvlsmall);
-
-            int l = (lg + ls + ld) / 3;
-            String ss = "small";
             int displayValue = pStack.getTag().getInt(ss); // 用于存放要显示的值
-
-            if (l > 0 && l < 300) {
-                pStack.getTag().putInt(ss, l / 30);// 计算0到299之间的值
-            } else if (l >= 300 && l < 600) {
-                pStack.getTag().putInt(ss, (l - 300) / 30); // 计算300到599之间的值，显示从1开始
-            } else if (l >= 600 && l <= 10000) {
-                pStack.getTag().putInt(ss, (l - 600) / 30); // 计算600到899之间的值，显示从1开始
-            }
-
-            // 限制 displayValue 在 1 到 10 之间
-            if (pStack.getTag().getInt(ss) < 1) {
-                pStack.getTag().putInt(ss, 1);// 计算0到299之间的值
-            } else if (pStack.getTag().getInt(ss) > 10) {
-                pStack.getTag().putInt(ss, 10);
-            }
-
             // 添加到tooltip中
             pTooltipComponents.add(Component.translatable(translatable)
                     .append(String.valueOf(displayValue))

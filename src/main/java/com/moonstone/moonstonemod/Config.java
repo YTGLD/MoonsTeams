@@ -74,6 +74,7 @@ public class Config {
                 .comment("Starting with a book or not")
                 .define("give", true);
 
+        BUILDER.push("Loot");
         bat = BUILDER
                 .comment("The probability of discovering Shadow Plague items from the chests")
                 .defineInRange("Plague_probability", 10, 1, 100);
@@ -88,6 +89,10 @@ public class Config {
         common = BUILDER
                 .comment("The larger this value, the lower the probability of discovering the item")
                 .defineInRange("Common_probability", 1, 0.1, 100);
+        nine_sword_book = BUILDER
+                .comment("After enabling, you can find “nine_sword_books”")
+                .define("NineSwordBooks", true);
+        BUILDER.pop();
 
         BUILDER.build();
     }
@@ -110,6 +115,8 @@ public class Config {
     public   ForgeConfigSpec.IntValue necora ;
     public   ForgeConfigSpec.IntValue night ;
     public   ForgeConfigSpec.DoubleValue common ;
+
+    public   ForgeConfigSpec.BooleanValue nine_sword_book ;
 
 
 

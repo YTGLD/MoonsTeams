@@ -274,6 +274,7 @@ public class Items {
     public static final RegistryObject<Item> as_amout =REGISTRY.register("as_amout", com.moonstone.moonstonemod.item.nanodoom.as_amout::new);
 
     public static final RegistryObject<Item> nine_sword_book =REGISTRY.register("nine_sword_book", com.moonstone.moonstonemod.item.maxitem.book.nine_sword_book::new);
+    public static final RegistryObject<Item> nine_sword_books =REGISTRY.register("nine_sword_books", com.moonstone.moonstonemod.item.maxitem.book.nine_sword_books::new);
 
 
 

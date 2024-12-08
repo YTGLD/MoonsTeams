@@ -169,7 +169,6 @@ public class small_zombie extends ExtendEntityLiving {
     }
     @Override
     public void die(@NotNull DamageSource p_21809_) {
-        super.die(p_21809_);
         if (Handler.hascurio(this,Items.acid.get())){
             if (this.getOwner()!=null&&this.getOwner() instanceof Player player){
                 player.heal(20);

@@ -3,6 +3,8 @@ package com.moonstone.moonstonemod.mixin;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.moonstoneitem.IBattery;
 import com.moonstone.moonstonemod.moonstoneitem.INanoBattery;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.SlotAccess;
@@ -13,6 +15,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ForgeItemTagsProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -40,14 +44,17 @@ public abstract class ItemMixin {
                         }
                     }
                     if (Other.getItem() instanceof wind_and_rain) {
-                        if (me.getItem() instanceof SwordItem) {
-                            if (me.getTag() != null) {
-                                if (!me.getOrCreateTag().getBoolean(wind_and_rain.wind)) {
-                                    me.getOrCreateTag().putBoolean(wind_and_rain.wind, true);
-                                    Other.shrink(1);
-                                }
+                        if (me.getItem() instanceof SwordItem
+                                || BuiltInRegistries.ITEM.getKey(me.getItem()).getPath().contains("sword")
+                                || !me.getOrCreateTag().getString("sword").isEmpty()
+                                || me.is(ItemTags.SWORDS)
+                        ) {
+                            if (!me.getOrCreateTag().getBoolean(wind_and_rain.wind)) {
+                                me.getOrCreateTag().putBoolean(wind_and_rain.wind, true);
+                                Other.shrink(1);
                             }
                         }
+
                     }
                 }
             }

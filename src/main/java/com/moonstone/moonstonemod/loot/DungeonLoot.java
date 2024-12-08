@@ -48,6 +48,21 @@ public class DungeonLoot extends LootModifier {
             }
         }
     }
+    private void addLootCommon(ObjectArrayList<ItemStack> generatedLoot,
+                         Random random ,
+                         Entity entity ,
+                         List<Item> itemList,
+                         int gLvl){
+        if (entity instanceof Player){
+            int i = random.nextInt(itemList.size());
+            if (gLvl >= 100){
+                gLvl = 100;
+            }
+            if (Mth.nextInt(RandomSource.create(), 1, 100) <= gLvl) {
+                generatedLoot.add(new ItemStack(itemList.get(i)));
+            }
+        }
+    }
     private void addLootHasB(ObjectArrayList<ItemStack> generatedLoot,
                          Random random ,
                              boolean a,
@@ -72,6 +87,13 @@ public class DungeonLoot extends LootModifier {
 
         if (idSting.contains("chests/")) {
             if (idSting.contains("treasure")){
+                if (Config.SERVER.nine_sword_book.get()){
+                    addLootCommon(generatedLoot,random,entity,List.of(
+                            Items.nine_sword_books.get()
+                    ),2);
+                }
+
+
                 addLoot(generatedLoot, random, Items.bat_cell.get(), entity, List.of(
                         Items.cell_blood_attack.get(),
                         Items.cell_desecrate.get(),

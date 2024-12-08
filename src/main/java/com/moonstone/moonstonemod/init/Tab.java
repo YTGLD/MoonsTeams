@@ -98,7 +98,7 @@ public class Tab {
 
 
                 b.accept(new ItemStack(Items.book.get()));
-                b.accept(new ItemStack(Items.nine_sword_book.get()));
+                b.accept(new ItemStack(Items.nine_sword_books.get()));
                 b.accept(new ItemStack(Items.the_heart.get()));
                 b.accept(new ItemStack(Items.probability_stone.get()));
                 b.accept(new ItemStack(Items.twistedamout.get()));

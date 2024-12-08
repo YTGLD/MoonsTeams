@@ -1121,6 +1121,7 @@
 
   "item.as_amout.tool.string.7": "冷却5秒",
 
+  "item.moonstone.nine_sword_books": "九剑归一诀",
 
   "item.moonstone.million": "七剑修罗·万法",
   "item.million.tool.string.1": "这个盒子里存储了30把飞剑",
@@ -1135,6 +1136,46 @@
 
   "item.moonstone.twistedamout": "诺克萨斯纹章",
 
+  "item.moonstone.nine_sword_book": "九剑归一诀",
+  "item.nine_sword_book.tool.string.1": "快捷栏内每存在一把剑类武器：",
+  "item.nine_sword_book.tool.string.2": "伤害",
+  "item.nine_sword_book.tool.string.3": "攻速",
+  "item.nine_sword_book.tool.string.4": "速度",
+  "item.nine_sword_book.tool.string.5": "治疗",
+  "item.nine_sword_book.tool.string.6": "飞剑",
+
+  "item.nine_sword_book.tool.string.9": "造成伤害时有5%（x飞剑数量）的概率释放所有飞剑",
+  "item.nine_sword_book.tool.string.10": "飞剑会随着时间缓慢恢复",
+  "item.nine_sword_book.tool.string.11": "飞剑击中后恢复自身1%当前生命值",
+
+  "item.nine_sword_book.tool.string.12": "-25%所有伤害",
+  "item.nine_sword_book.tool.string.13": "-50%最大生命值",
+  "moonstone.jei.ectoplasmstone": "开局的随机护身符之一",
+  "moonstone.jei.twistedstone": "开局的随机护身符之一",
+
+  "moonstone.jei.necora.all": "需要佩戴Neocra病毒才能发现于地牢，矿井之中",
+  "moonstone.jei.necora.treasure.all": "需要佩戴Neocra病毒才能发现于宝藏战利品之中",
+  "moonstone.jei.necora.giant_nightmare.all": "需要佩戴Neocra病毒和梦魇巨人基因片段后才能发现于宝藏战利品之中",
+
+  "moonstone.jei.necora.bnabush.all": "需要佩戴Neocra病毒才能发现于宝藏战利品之中",
+
+  "moonstone.jei.giant": "需要佩戴Neocra病毒才能发现于宝藏战利品之中",
+  "moonstone.jei.cell": "需要佩戴Neocra病毒才能发现于宝藏战利品之中，佩戴后将无法再次获得",
+  "moonstone.jei.cell": "需要佩戴细胞重生基因佩戴才能发现于宝藏战利品之中",
+
+
+  "item.nine_sword_book.tool.string.7": "下一次斩击会造成（快捷栏内所有剑类武器伤害的总和）的生命值",
+  "item.nine_sword_book.tool.string.8": "冷却",
+  "item.nine_sword_book.tool.string.14": "你无法使用非剑类武器",
+  "item.nine_sword_books.tool.string.14": "只能使用剑类武器",
+  "item.nine_sword_book_skill.tool.string.1": "剑仙",
+  "item.nine_sword_book_skill.tool.string.2": "剑神",
+  "item.nine_sword_book_skill.tool.string.3": "剑圣",
+  "sword.moonstone.lvl": "重",
+  "item.nine_sword_book_lvl.tool.string.1": "剑仙",
+  "item.nine_sword_book_lvl.tool.string.2": "修炼-基础",
+  "item.nine_sword_book_lvl.tool.string.4": "修炼-攻伤",
+  "item.nine_sword_book_lvl.tool.string.3": "修炼-攻速",
   "item.twistedamout.tool.string": "每次攻击都有概率生成一个血球围绕你旋转",
   "item.twistedamout.tool.string.1": "当血球数量超过8时",
   "item.twistedamout.tool.string.2": "下一次斩击将造成4倍伤害",
