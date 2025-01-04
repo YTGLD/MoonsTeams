@@ -1,0 +1,23 @@
+{
+  "name": "梦魇巨人",
+  "icon": "moonstone:giant_nightmare",
+  "category": "moonstone:entity",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "entity",
+      "scale": 1,
+      "name": "nightmare_giant",
+      "rotate": true,
+      "defaultRotation": -45,
+      "entity": "moonstone:nightmare_giant"
+    },
+    {
+      "type": "spotlight",
+      "item": "moonstone:giant_nightmare",
+      "title": "-梦魇巨人-",
+      "text": "这是巨型细胞僵尸的腐化版本，拥有和监守者相同的属性，当召唤者攻击生物时，梦魇巨人会发动近战攻击。当目标被杀死，梦魇巨人将攻击附近怪物，并且它一般使用远程攻击，该远程攻击的伤害是20点生命值，所以可以一击杀死普通的敌对生物，并且冷却时间较短，仅只有0.5秒，但代价十分明显，每次发射都会减少召唤者5%的当前生命值(不会降低到10点生命值以下)"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/necora",
+  "criteria": {
+    "fermentation": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:fermentation"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.necora.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:fermentation"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.fermentation"
+    }
+  },
+  "requirements": [
+    [
+      "fermentation"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:nanocube",
+
+    "moonstone:botton",
+    "moonstone:medicinebox",
+
+    "moonstone:ectoplasmsoul",
+    "moonstone:beacon",
+    "moonstone:mbox"
+  ]
+}

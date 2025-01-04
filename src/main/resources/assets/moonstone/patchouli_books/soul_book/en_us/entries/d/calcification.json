@@ -1,0 +1,15 @@
+{
+  "name": "皮肤钙质化",
+  "icon": "moonstone:calcification",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:calcification",
+      "title": "-皮肤钙质化-",
+      "text": "受到350次伤害"
+    }
+  ]
+}

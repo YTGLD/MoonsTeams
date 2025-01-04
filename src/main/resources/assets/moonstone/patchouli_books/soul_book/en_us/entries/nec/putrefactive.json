@@ -1,0 +1,15 @@
+{
+  "name": "腐败抗性",
+  "icon": "moonstone:putrefactive",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:putrefactive",
+      "title": "-腐败抗性-",
+      "text": "发现在地牢,矿井"
+    }
+  ]
+}

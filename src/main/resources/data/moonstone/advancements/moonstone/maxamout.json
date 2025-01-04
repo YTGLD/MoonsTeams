@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmcube",
+  "criteria": {
+    "maxamout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:maxamout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.maxamout.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:maxamout"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.maxamout.hand"
+    }
+  },
+  "requirements": [
+    [
+      "maxamout"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

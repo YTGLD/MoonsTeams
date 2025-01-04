@@ -1,0 +1,15 @@
+{
+  "name": "七剑修罗之心",
+  "icon": "moonstone:doomeye",
+  "category": "moonstone:doom",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:doomeye",
+      "title": "-七剑修罗之心-",
+      "text": "发现在古城，灵感来源于某个游戏"
+    }
+  ]
+}

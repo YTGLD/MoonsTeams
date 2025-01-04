@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmcloub",
+  "criteria": {
+    "the_heart": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:the_heart"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.the_heart.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:the_heart"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.the_heart"
+    }
+  },
+  "requirements": [
+    [
+      "the_heart"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

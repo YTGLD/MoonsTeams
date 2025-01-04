@@ -1,0 +1,709 @@
+{
+  "curios.modifiers.dna": "植入DNA時",
+  "key.moonstone.y": "技能",
+  "key.categories.moonstone.moonstone_category": "Moonstone",
+  "moonstone.book.error": "你需要安裝 Patchouli 手冊模組",
+  "curios.modifiers.necora": "佩戴時",
+  "itemGroup.tabmoonstone": "月之石",
+  "moonstone.attribute.name.ectoplasm": "靈質",
+  "moonstone.attribute.name.mysterious": "神秘",
+  "moonstone.attribute.name.reality": "現實",
+  "moonstone.attribute.name.twisted": "扭曲",
+  "moonstone.attribute.name.nano": "機械",
+  "moonstone.attribute.name.meet": "血肉",
+  "item.moonstone.ectoplasmball": "靈質球",
+  "item.moonstone.ectoplasmcloub": "靈質雲",
+  "item.moonstone.ectoplasmcube": "靈質立方",
+  "item.moonstone.ectoplasmslate": "靈質石板",
+  "item.moonstone.ectoplasmhorseshoe": "靈質馬蹄",
+  "item.moonstone.ectoplasmbadge": "靈質徽章",
+  "item.moonstone.ectoplasmapple": "靈質果",
+  "item.moonstone.ectoplasmstone": "靈質石頭",
+  "item.moonstone.twistedstone": "扭曲石頭",
+
+  "item.moonstone.ectoplasmprism": "靈質稜鏡",
+  "item.moonstone.ectoplasmfood": "靈質食物",
+  "item.moonstone.ectoplasmcharm": "靈質護符",
+  "item.moonstone.ectoplasmcharmstone": "靈質石頭護符",
+  "item.moonstone.ectoplasmshild": "靈質盾牌",
+  "item.moonstone.ectoplasmbattery": "靈質電池",
+
+
+  "item.moonstone.badgeofthedead": "不死徽章",
+  "item.moonstone.battery": "電池",
+  "item.moonstone.biggreedcrystal": "大貪婪水晶",
+  "item.moonstone.bigwarcrystal": "大戰爭水晶",
+  "item.moonstone.blackeorb": "黑魔球",
+  "item.moonstone.blueamout": "藍色符石",
+  "item.moonstone.greedamout": "綠色符石",
+  "item.moonstone.greedcrystal": "貪婪水晶",
+  "item.moonstone.redamout": "紅色符石",
+  "item.moonstone.warcrystal": "戰爭水晶",
+  "item.moonstone.whiteorb": "白魔球",
+
+  "item.moonstone.mbattery": "莫里斯電池",
+  "item.moonstone.mblock": "莫里斯方塊",
+  "item.moonstone.mbottle": "莫里斯藥品",
+  "item.moonstone.mbox": "莫里斯盒子",
+  "item.moonstone.meye": "莫里斯眼睛",
+  "item.moonstone.mkidney": "莫里斯的玻璃腎結石",
+  "item.moonstone.morb": "莫里斯珍珠",
+  "item.moonstone.mring": "莫里斯戒指",
+  "item.moonstone.mshell": "莫里斯貝殼",
+
+
+
+
+  "item.ectoplasmapple.tool.string": "受到攻擊會使周圍生物受到2%最高生命值的傷害",
+  "item.ectoplasmhorseshoe.tool.string": "減少90%來自摔落的傷害",
+  "item.ectoplasmshild.tool.string": "持續的抗性",
+  "item.ectoplasmshild.tool.string.2": "減少30%來自爆炸的傷害",
+  "item.ectoplasmshild.tool.string.3": "每受到5次傷害，都將免疫下一次的攻擊",
+
+
+
+  "item.mbattery.tool.string": "殭屍害怕你",
+  "item.mbattery.tool.string.1": "對殭屍的傷害提高50%",
+  "item.mbattery.tool.string.2": "+2 幸運",
+  "item.mbattery.tool.string.3": "+2 掠奪",
+
+  "item.mblock.tool.string": "+1 幸運",
+  "item.mblock.tool.string.1": "+1 掠奪",
+
+  "item.mbottle.tool.string": "存在虛弱時：",
+  "item.mbottle.tool.string.1": "+2 掠奪",
+  "item.mbottle.tool.string.2": "存在挖掘疲勞時",
+  "item.mbottle.tool.string.3": "+2 幸運",
+
+
+
+  "item.meye.tool.string": "使半徑10格內的不死生物發光",
+
+
+  "item.mkidney.tool.string": "受傷時有機率免除傷害",
+  "item.mkidney.tool.string.1": "第一次百分百，第二次百分之五十，第三次百分之二十五",
+  "item.mkidney.tool.string.2": "以此類推",
+  "item.mkidney.tool.string.3": "免除失敗你將額外受到最大生命33%的傷害",
+  "item.mkidney.tool.string.4": "同時此物品將進入10秒的冷卻",
+
+
+  "item.morb.tool.string": "+1 經驗掉落",
+  "item.morb.tool.string.1": "+50% 額外經驗掉落",
+
+  "item.mring.tool.string": "+100% 被擊退距離",
+  "item.mring.tool.string.1": "+40% 治療",
+
+
+  "item.mshell.tool.string": "-25% 來自不死生物的傷害",
+  "item.mshell.tool.string.1": "-10% 造成的傷害",
+
+
+  "item.moonstone.nightmareanchor": "虛偽錨",
+  "item.moonstone.nightmarecharm": "深淵護符",
+  "item.moonstone.nightmareeye": "深淵之眼",
+  "item.moonstone.nightmaremoai": "深淵石球",
+  "item.moonstone.nightmarerotten": "萬腐之心",
+  "item.moonstone.nightmarestone": "深淵方尖碑",
+  "item.moonstone.nightmaretreasure": "魔鬼的財寶",
+  "item.nightmaretreasure.tool.string.6": "-33% 掠奪等級",
+  "item.moonstone.nightmarewater": "卑微之釀",
+
+
+  "item.moonstone.magiceye": "機械眼",
+  "item.moonstone.magicstone": "神奇石頭",
+  "item.moonstone.nanocube": "奈米立方",
+  "item.moonstone.nanorobot": "奈米機器人",
+  "item.moonstone.thedoomstone": "末日之石",
+  "item.moonstone.thefruit": "上古果實",
+
+
+  "item.nightmareanchor.tool.string": "佩戴它並死亡",
+  "item.nightmareanchor.tool.string.1": "可記錄這一次的死亡地點",
+  "item.nightmareanchor.tool.string.2": "右鍵傳送到上個紀錄點",
+  "item.nightmareanchor.tool.string.3": "但你必須在同一維度內",
+  "item.nightmareanchor.tool.string.4": "佩戴時:",
+  "item.nightmareanchor.tool.string.5": "減少5％來自深淵的詛咒",
+  "item.nightmareanchor.tool.string.6": "唯有承受深淵之恐的人",
+  "item.nightmareanchor.tool.string.7": "才有資格使用此道具",
+
+
+  "item.nightmarecharm.tool.string": "減少15％來自深淵之眼的詛咒",
+  "item.nightmarecharm.tool.string.1": "加法計算",
+  "item.nightmarecharm.tool.string.2": "+1飾品槽位",
+  "item.nightmarecharm.tool.string.3": "唯有承受深淵之恐的人",
+  "item.nightmarecharm.tool.string.4": "才有資格使用此道具",
+
+
+  "item.nightmareeye.tool.string": "受到傷害增加33％",
+  "item.nightmareeye.tool.string.1": "你大部分屬性都會降低25%",
+  "item.nightmareeye.tool.string.2": "可以取下亞特格拉德病毒",
+
+
+  "item.nightmaremoai.tool.string": "+2 附魔產物的附魔等級",
+  "item.nightmaremoai.tool.string.1": "唯有承受深淵之恐的人",
+  "item.nightmaremoai.tool.string.2": "才有資格使用此道具",
+
+
+  "item.nightmarerotten.tool.string": "+33％ 所有屬性",
+  "item.nightmarerotten.tool.string.1": "但是每增加1種屬性",
+  "item.nightmarerotten.tool.string.2": "來自深淵的詛咒都會增加1.1％",
+  "item.nightmarerotten.tool.string.3": "唯有承受深淵之恐的人",
+  "item.nightmarerotten.tool.string.4": "才有資格使用此道具",
+
+  "curios.identifier.medicine": "藥物",
+  "curios.identifier.necora": "DNA",
+  "curios.identifier.ncrdna": "基因片段",
+  "curios.identifier.dna": "分段基因組",
+  "curios.modifiers.ncrdna": "佩戴時",
+  "curios.modifiers.medicine": "佩戴時",
+
+  "item.nightmarestone.tool.string": "你的身上每存在一個負面效果：",
+  "item.nightmarestone.tool.string.1": "+4％傷害、移速、護甲",
+  "item.nightmarestone.tool.string.2": "+7％生命回復、抗擊退",
+  "item.nightmarestone.tool.string.3": "+10％挖掘速度、經驗掉落",
+  "item.nightmarestone.tool.string.4": "傷害、移速、護甲",
+  "item.nightmarestone.tool.string.5": "生命回復、抗擊退",
+  "item.nightmarestone.tool.string.6": "挖掘速度、經驗掉落",
+  "item.nightmarestone.tool.string.7": "你身上的任何負面效果時長翻倍",
+  "item.nightmarestone.tool.string.8": "受到任何來源的傷害都會獲得一個隨機負面效果",
+  "item.nightmarestone.tool.string.9": "唯有承受深淵之恐的人",
+  "item.nightmarestone.tool.string.10": "才有資格使用此道具",
+
+
+
+  "item.nightmaretreasure.tool.string": "你造成的傷害降低50％",
+  "item.nightmaretreasure.tool.string.1": "擊殺獲得的戰利品有1/3的機率取得三倍",
+  "item.nightmaretreasure.tool.string.2": "每增加1的幸運，都會提高3％的機率",
+  "item.nightmaretreasure.tool.string.3": "不超過66％",
+  "item.nightmaretreasure.tool.string.4": "唯有承受深淵之恐的人",
+  "item.nightmaretreasure.tool.string.5": "才有資格使用此道具",
+
+
+  "item.moonstone.diemug": "死亡酒桶",
+  "item.moonstone.evilcandle": "邪惡蠟燭",
+  "item.moonstone.evilmug": "邪惡酒桶",
+  "item.moonstone.obsidianring": "黑曜石戒指",
+
+
+  "item.nightmarewater.tool.string": "腐朽…虛弱……",
+  "item.nightmarewater.tool.string.1": "深淵…永恆……",
+
+  "item.moonstone.soulbattery": "靈魂電池",
+  "item.moonstone.soulcube": "靈魂立方",
+
+  "item.magiceye.tool.string": "在你攻擊生物的半徑四格內的所有生物",
+  "item.magiceye.tool.string.1": "將受到50％的範圍傷害",
+
+  "item.nanocube.tool.string": "每隔30秒修復自身盔甲30點耐久值",
+  "item.nanocube.tool.string.1": "佩戴電池後冷卻減少30%",
+
+  "item.nanorobot.tool.string": "每隔30秒修復主手手持物品30點耐久",
+  "item.nanorobot.tool.string.1": "佩戴電池後冷卻減少30%",
+
+  "item.thedoomstone.tool.string": "你的攻擊將施加黑暗效果",
+  "item.thedoomstone.tool.string.1": "將以攻擊生物為中心，對存在黑暗效果的生物造成音爆攻擊",
+  "item.thedoomstone.tool.string.2": "被波及的生物將持續受到負面效果的影響",
+
+
+  "item.thefruit.tool.string": "食用後：",
+  "item.thefruit.tool.string.1": "免疫發光效果",
+  "item.thefruit.tool.string.2": "伏守者感覺你很親近！",
+
+  "item.badgeofthedead.tool.string": "對不死生物的傷害提高25％",
+
+  "item.biggreedcrystal.tool.string": "+2 幸運",
+
+  "item.greedcrystal.tool.string": "+1 幸運",
+
+  "item.blueamout.tool.string": "攻擊時有機率削弱敵人",
+  "item.blueamout.tool.string.1": "受傷時有機率獲得抗性II效果",
+
+  "item.greedamout.tool.string": "攻擊時有機率吸取生命",
+  "item.greedamout.tool.string.1": "受傷時有機率獲得吸收效果",
+
+
+  "item.redamout.tool.string": "攻擊時有機率擊飛敵人",
+  "item.redamout.tool.string.1": "然後暫時獲得力量II的效果",
+
+
+
+  "item.fungus.tool.string": "根據周圍寵物的數量獲得回復加成",
+  "item.fungus.tool.string.1": "每個生物可提升該加成25％",
+  "item.fungus.tool.string.2": "最高不超過150％",
+  "item.fungus.tool.string.3": "轉換腳下的草地",
+  "item.fungus.tool.string.4": "在菌絲方塊上獲得回復效果",
+  "item.fungus.tool.string.5": "免疫凋零、虛弱、緩慢、劇毒",
+  "item.fungus.tool.string.6": "在陽光下你會燃燒，哪怕你戴著帽子",
+  "item.fungus.tool.string.7": "強化附近寵物",
+
+  "item.moonstone.germ": "細菌",
+  "item.moonstone.fungus": "真菌",
+  "item.moonstone.parasite": "蛀蝕蟲",
+  "item.moonstone.virus": "病毒",
+
+
+  "item.germ.tool.string": "挖掘方塊時增加細菌的適應值：",
+  "item.germ.tool.string.1": "每250點適應值都可以從細菌上取得額外屬性",
+
+  "item.blackeorb.tool.string": "增加白魔球的屬性",
+
+  "item.parasite.tool.string": "根據食物的營養價值增加蛀蝕蟲的活性",
+  "item.parasite.tool.string.1": "蛀蝕蟲活性越高，你的屬性越強",
+  "item.parasite.tool.string.2": "蛀蝕蟲活性越高，可增加的活性也會變少",
+  "item.parasite.tool.string.3": "隨著蛀蝕蟲活性的提高，你將越來越難以飽腹",
+  "item.parasite.tool.string.4": "在必要時刻，蛀蝕蟲會犧牲活性來保全他們的宿主！",
+  "item.parasite.tool.string.5": "飢餓值少於50％時，你將變得虛弱",
+
+
+  "item.virus.tool.string": "殺死生物奪取它們的DNA！",
+  "item.virus.tool.string.1": "每奪取10點DNA都會對此類型生物額外造成2.5％傷害",
+  "item.virus.tool.string.2": "最多不超過50％",
+
+
+  "item.botton.tool.string": "*如果你找到一些不詳的基因…",
+  "item.botton.tool.string.1": "*或許我可以給你打造一個全新的身體…",
+  "item.botton.tool.string.2": "佩戴此物品，在終界中開啟戰利品箱可能會發現一些基因體",
+
+
+  "item.catalyzer.tool.string": "右鍵使用可感染一些特殊物品",
+
+
+  "item.batskill.tool.string": "攻擊有15％的機率召喚3隻蝙蝠",
+  "item.batskill.tool.string.1": "並且在半徑12格內",
+  "item.batskill.tool.string.2": "每存在一隻蝙蝠、你受到的傷害減少5％",
+  "item.batskill.tool.string.3": "最多不超過80％",
+  "item.batskill.tool.string.4": "周圍的蝙蝠每過1秒減少10％的生命值",
+  "item.batskill.tool.string.5": "可植入暗影瘟疫之內",
+
+
+  "item.batgene.tool.string": "你附近的蝙蝠受到的傷害減少60％",
+  "item.batgene.tool.string.1": "每存在一隻蝙蝠、你造成的傷害增加10％",
+  "item.batgene.tool.string.2": "減少10％傷害",
+
+
+  "item.flygene.tool.string": "飛行速度增加13％",
+  "item.flygene.tool.string.1": "滑翔時，在空中以方向鍵可以實現加速或減速",
+
+
+  "item.ragegene.tool.string": "當你的攻擊蓄力條為100％時",
+  "item.ragegene.tool.string.1": "每次攻擊都會增加5％的傷害",
+  "item.ragegene.tool.string.2": "最多不超過100％",
+  "item.ragegene.tool.string.3": "受到傷害後重新計算",
+
+
+  "item.sleepgene.tool.string": "白天不會獲得負面效果",
+  "item.sleepgene.tool.string.1": "夜晚無法獲得增益效果",
+
+
+  "item.medicinebox.tool.string": "如果你找到一些好的藥物…",
+  "item.medicinebox.tool.string.1": "或許我可以給你打造一個全新的身體…",
+  "item.medicinebox.tool.string.2": "佩戴此物品，可以透過一些方式取得藥物",
+  "item.medicinebox.tool.string.3": "你可以選擇將發現的藥物融合或直接佩戴",
+  "item.medicinebox.tool.string.4": "*必須佩戴此物品才能發現藥物！",
+  "item.medicinebox.tool.string.5": "我感受到強烈的嗜血欲望......",
+  "item.medicinebox.tool.string.6": "我想我得殺死一頭終界龍......",
+
+
+  "item.calcification.tool.string": "*使實驗者的外觀鈣化，增強實驗者的戰鬥能力",
+  "item.calcification.tool.string.1": "增加11％傷害抵抗",
+
+
+  "item.masticatory.tool.string": "*使實驗者咬合肌強化，增強實驗者的咀嚼能力",
+  "item.masticatory.tool.string.1": "減少50％進食時長",
+
+
+  "item.quadriceps.tool.string": "*使實驗者四頭肌強化，增強實驗者的運動能力",
+  "item.quadriceps.tool.string.1": "增加20％移動速度",
+  "item.quadriceps.tool.string.2": "增加50％跳躍高度",
+
+
+  "item.reanimation.tool.string": "*使實驗者細胞強化，增強實驗者的細胞重生能力",
+  "item.reanimation.tool.string.1": "同時恢復重要器官的低等功能",
+  "item.reanimation.tool.string.2": "復活",
+  "item.reanimation.tool.string.3": "300秒冷卻",
+
+
+  "item.autolytic.tool.string": "抑制 Necora 病毒帶來的游泳速度減少效果",
+
+
+  "item.fermentation.tool.string": "10秒冷卻",
+  "item.fermentation.tool.string.1": "冷卻期間，傷害降低70％",
+  "item.fermentation.tool.string.2": "冷卻結束後，傷害提升300％",
+  "item.fermentation.tool.string.3": "*病原體依然保有狩獵的本能，這使它們能耐心等待，並給予致命一擊！",
+
+
+  "item.putrefactive.tool.string": "增加腐肉的效果",
+
+
+  "item.regenerative.tool.string": "每1.5秒恢復一點生命值",
+  "item.regenerative.tool.string.1": "*病原體的細胞比過去更加鮮活",
+
+
+  "item.bloodvirus.tool.string": "增加25％對非不死生物的傷害",
+  "item.bloodvirus.tool.string.1": "增加17％在夜晚的速度",
+  "item.bloodvirus.tool.string.2": "滑翔時，可以點擊前進鍵來衝刺",
+  "item.bloodvirus.tool.string.3": "在黑暗中，你將獲得夜視",
+  "item.bloodvirus.tool.string.4": "增加10％的生命偷取",
+  "item.bloodvirus.tool.string.5": "*以靈魂為食糧",
+  "item.bloodvirus.tool.string.6": "減少30％任何來源的回覆效果",
+  "item.bloodvirus.tool.string.7": "陽光下你將燃燒，且變得極度弱小！",
+  "item.bloodvirus.tool.string.8": "增加100％被擊退距離",
+  "item.bloodvirus.tool.string.9": "減少25％生命上限",
+  "item.bloodvirus.tool.string.10": "你只能吃肉",
+  "item.bloodvirus.tool.string.11": "*感知型誘變蛀蝕體，激發宿主嗜血欲望！",
+  "item.bloodvirus.tool.string.12": "還可以植入：",
+
+
+  "item.necora.tool.string": "喪屍化帶來的5條詛咒：",
+  "item.necora.tool.string.1": "*你對水感到恐懼；游泳速度大幅降低",
+  "item.necora.tool.string.2": "*陽光下你將燃燒；或許戴點什麼在頭上能暫時解決這個麻煩",
+  "item.necora.tool.string.3": "*你的身軀逐漸散發腐臭；人類村民懼怕你，鐵魔像視你為敵人",
+  "item.necora.tool.string.4": "*能夠辨別同類；對不死造成的傷害減少20％",
+  "item.necora.tool.string.5": "*一旦植入該病毒，將沒有回頭路！",
+  "item.necora.tool.string.6": "喪屍化帶來的5條強化：",
+  "item.necora.tool.string.7": "*你的身軀更加堅硬了；傷害增加3點、抗性增加10%",
+  "item.necora.tool.string.8": "*難以被元素影響；受到的魔法傷害減少70％",
+  "item.necora.tool.string.9": "*任何生物都將被你撕碎成腐肉，吃下它們，你會獲得額外的效果！",
+  "item.necora.tool.string.10": "*你被同類視為領主；不死生物對你造成的傷害減少50％",
+  "item.necora.tool.string.11": "*細胞活性大大提高；提高50％回復",
+  "item.necora.tool.string.12": "該病原體尚未被歸類",
+  "item.necora.tool.string.13": "且早期醫學報告中，表明它具有",
+  "item.necora.tool.string.14": "強大的再生能力和無休止的進食需求",
+  "item.necora.tool.string.15": "但是它的大部分基因結構仍然是未解之謎",
+
+  "item.heathgene.tool.string": "+10 最高生命值",
+
+
+
+  "item.moonstone.necora": "Necora 病毒",
+
+  "item.moonstone.atpoverdose": "ATP 過量",
+  "item.moonstone.autolytic": "自溶性抑制",
+  "item.moonstone.putrefactive": "腐敗抗性",
+  "item.moonstone.ambush": "漂流發酵",
+  "item.moonstone.fermentation": "埋伏性狩獵",
+  "item.moonstone.regenerative": "再生活性化",
+
+
+  "item.moonstone.apple": "怪異的瘟疫蘋果",
+  "item.moonstone.catalyzer": "暗影基因",
+  "item.moonstone.bloodvirus": "暗影瘟疫",
+  "item.moonstone.botton": "鐵罐子",
+  "item.moonstone.bloodgene": "自適應強化基因",
+  "item.moonstone.ragegene": "自修正強化基因",
+  "item.moonstone.flygene": "夜行蝠突變基因",
+  "item.moonstone.heathgene": "生命強化基因",
+  "item.moonstone.sleepgene": "適應性休眠基因",
+  "item.moonstone.batgene": "夜行蝙蝠基因",
+  "item.moonstone.batskill": "基因片段",
+
+  "item.moonstone.medicinebox": "醫藥箱",
+  "item.moonstone.polyphagia": "藥物 - 食慾亢進",
+  "item.moonstone.quadriceps": "藥物 - 四頭肌強化",
+  "item.moonstone.masticatory": "藥物 - 咬合肌強化",
+  "item.moonstone.calcification": "藥物 - 外觀質鈣化",
+  "item.moonstone.reanimation": "藥物 - 細胞重生",
+
+  "item.diemug.tool.string": "使用藥水右鍵此聖杯",
+  "item.diemug.tool.string.1": "即可儲存藥水效果(可存在8種)",
+  "item.diemug.tool.string.2": "飲用後獲得所有藥水效果",
+
+  "item.evilcandle.tool.string": "熔岩行者",
+  "item.evilcandle.tool.string.1": "抵擋80%熔岩傷害",
+  "item.evilcandle.tool.string.2": "快速熄滅你身上火焰",
+
+
+  "item.evilmug.tool.string": "空的",
+  "item.evilmug.tool.string.1": "由攻擊時造成的傷害來補充酒桶內的鮮血（副手）",
+  "item.evilmug.tool.string.2": "並且可以提取你自己的血",
+  "item.evilmug.tool.string.3": "喝！",
+
+  "item.soulbattery.tool.string": "+25％ 暴擊傷害",
+  "item.moonstone.maxamout": "原始紋章",
+
+  "item.maxamout.tool.string": "攻擊會削弱敵人",
+  "item.maxamout.tool.string.1": "減少15%受到傷害",
+  "item.maxamout.tool.string.2": "受傷時有機率獲得吸收效果",
+  "item.maxamout.tool.string.3": "增加5%吸血",
+  "item.maxamout.tool.string.4": "攻擊時有機率擊飛敵人並讓其減速",
+  "item.maxamout.tool.string.5": "並獲得力量效果",
+  "item.maxamout.tool.string.6": "受到傷害後將返還20%給進攻者",
+  "item.maxamout.tool.string.7": "免疫挖掘疲勞效果",
+  "item.maxamout.tool.string.8": "增加75%游泳速度",
+
+  "allevent.moonstone.virus": "已採集DNA : ",
+
+
+  "item.bloodgene.tool.string": "基礎傷害，攻速降低50%",
+  "item.bloodgene.tool.string.1": "每次受到傷害都會獲得提升",
+  "item.bloodgene.tool.string.2": "最大是原來的200%",
+  "item.bloodgene.tool.string.3": "增加10%受到傷害",
+  "item.ambush.tool.string": "可以行走在液體表面",
+
+
+  "item.moonstone.flyeye": "飛翔的眼睛",
+  "item.flyeye.tool.string": "+300% 被擊退",
+  "item.flyeye.tool.string.1": "+25% 無敵幀",
+  "item.flyeye.tool.string.2": "無敵期間對周圍生物造成傷害",
+
+
+
+  "item.moonstone.plague": "亞特格拉德病毒",
+  "item.plague.tool.string": "研究點數",
+  "item.plague.tool.string.1": "病毒點數",
+  "item.plague.tool.string.2": "反研究點數",
+
+  "item.plague.tool.string.3": "殺死生物獲得點數",
+  "item.plague.tool.string.4": "你必須把點數研究到100%",
+  "item.plague.tool.string.5": "點數影響屬性，並且最好在規定時間內完成........",
+  "item.plague.tool.string.6": "你真的能主宰世界嗎？",
+  "item.plague.tool.string.un": "使用 深淵之眼 取下",
+
+
+
+  "item.plague.tool.string.8": "+50% 生命",
+  "item.plague.tool.string.9": "+25% 速度",
+  "item.plague.tool.string.10": "+66% 護甲",
+  "item.plague.tool.string.11": "+90% 抗擊退",
+  "item.plague.tool.string.12": "+70% 攻速",
+  "item.plague.tool.string.13": "+70% 傷害",
+  "item.plague.tool.string.14": "+70% 水下速度",
+
+  "item.plague.tool.string.15": "+100% 對怪物傷害",
+  "item.plague.tool.string.16": "+150% 對高生命值生物的傷害",
+  "item.plague.tool.string.17": "+100% 治療",
+  "item.plague.tool.string.18": "+70% 挖掘速度",
+  "item.thefruit.tool.string.3": "深淵之眼將克服這些效果",
+
+  "item.moonstone.doomeye": "七劍修羅之心",
+  "item.doomeye.tool.string": "受傷召喚7把飛劍攻擊敵人",
+
+  "item.moonstone.soulbook": "一本書",
+  "item.masticatory.tool.string.2": "吃8個金蘋果",
+  "item.calcification.tool.string.2": "受到350次傷害",
+  "item.quadriceps.tool.string.3": "跳 500 次",
+  "item.reanimation.tool.string.4": "死掉",
+
+  "item.moonstone.doomswoud": "驟雨",
+  "item.doomswoud.tool.string": "擊中生物造成2把飛劍",
+  "item.doomswoud.tool.string.1": "每增加20%的速度增加1把飛劍",
+  "item.doomswoud.tool.string.2": "殺死生物立即召喚4把飛劍",
+
+  "item.moonstone.wind": "疾風",
+  "item.wind.tool.string": "連續奔跑增加速度",
+
+  "item.moonstone.wind_and_rain": "疾風驟雨",
+  "item.wind_and_rain.tool.string": "拖動此物品右鍵劍類武器來進行附魂",
+  "item.wind_and_rain.tool.string.1": "之後使用附魂的武器長按右鍵召喚飛劍",
+  "item.wind_and_rain.tool.string.2": "但每次召喚都會有2%的機率進入8秒的冷卻",
+  "item.wind_and_rain.tool.string.3": "連續召喚會消耗耐久",
+  "item.wind_and_rain.tool.string.4": "必須同時擁有 七劍修羅之心 和 驟雨 來正常使用",
+
+
+
+  "advancements.tooltip.ectoplasmstone.hand": "靈質！",
+  "advancements.tooltip.ectoplasmstone.text": "獲得開局的靈質石頭",
+
+
+  "advancements.tooltip.twistedstone.hand": "扭曲。。。",
+  "advancements.tooltip.twistedstone.text": "獲得開局的扭曲石頭",
+
+
+  "advancements.tooltip.ectoplasmball.hand": "靈質球",
+  "advancements.tooltip.ectoplasmball.text": "殺死怪物",
+
+
+  "advancements.tooltip.ectoplasmcloub.hand": "靈質雲",
+  "advancements.tooltip.ectoplasmcloub.text": "怪物的末日",
+
+
+  "advancements.tooltip.ectoplasmprism.hand": "靈質稜鏡",
+  "advancements.tooltip.ectoplasmprism.text": "成山的屍體堆積成的稜鏡",
+
+
+  "advancements.tooltip.ectoplasmcube.hand": "靈質立方",
+  "advancements.tooltip.ectoplasmcube.text": "用屍體堆積成的稜鏡",
+
+
+  "advancements.tooltip.maxamout.hand": "原始紋章",
+  "advancements.tooltip.maxamout.text": "在擁有紅色，藍色，綠色符石的情況下殺死遠古深海守衛!",
+
+  "advancements.tooltip.wind_and_rain.hand": "疾風驟雨",
+  "advancements.tooltip.wind_and_rain.text": "在擁有七劍修羅之心和驟雨的情況下開取遠古城市的儲物箱！",
+
+  "advancements.tooltip.nightmareeye.hand": "深淵之眼",
+  "advancements.tooltip.nightmareeye.text": "佩戴深淵之眼的情況下開取地牢，礦井，遠古城市的儲物箱來取得之後的物品.....",
+
+  "advancements.tooltip.medicinebox.hand": " 醫藥箱",
+  "advancements.tooltip.medicinebox.text": "佩戴此物品的情況下完成一些無聊的任務",
+
+  "advancements.tooltip.calcification.hand": "外觀質鈣化",
+  "advancements.tooltip.calcification.text": "受到350次傷害",
+
+  "advancements.tooltip.masticatory.hand": "咬合肌強化",
+  "advancements.tooltip.masticatory.text": "吃8金蘋果",
+
+
+  "advancements.tooltip.polyphagia.hand": "食慾亢進",
+  "advancements.tooltip.polyphagia.text": "吃附魔金蘋果",
+
+  "advancements.tooltip.quadriceps.hand": "四頭肌強化",
+  "advancements.tooltip.quadriceps.text": "跳躍500次",
+
+  "advancements.tooltip.reanimation.hand": "細胞重生",
+  "advancements.tooltip.reanimation.text": "死掉",
+
+  "advancements.tooltip.necora.hand": "殭屍病毒",
+  "advancements.tooltip.necora.text": "在佩戴此物品的情況下開取地牢儲物箱",
+
+  "advancements.tooltip.botton.hand": "鐵罐子",
+  "advancements.tooltip.botton.text": "使用暗影基因右鍵醫藥箱",
+
+  "advancements.tooltip.catalyzer.hand": "暗影基因",
+  "advancements.tooltip.catalyzer.text": "在完成所有醫藥箱的任務後殺死終界龍",
+
+  "advancements.tooltip.bloodvirus.hand": "暗影瘟疫",
+  "advancements.tooltip.bloodvirus.text": "使用暗影基因右鍵necora病毒,之後在開取終界的儲物箱取得之後的物品",
+
+  "item.moonstone.ectoplasmstar":"靈質幸運星",
+  "item.ectoplasmstar.tool.string": "每1點幸運增加1%的攻速和0.5%的傷害",
+  "item.ectoplasmstar.tool.string.1": "+20 幸運",
+  "advancements.tooltip.ectoplasmstar.hand": "靈質幸運星",
+  "advancements.tooltip.ectoplasmstar.text": "神話直呼內行",
+
+  "item.moonstone.ectoplasmsoul": "沒有靈魂的靈質立方",
+  "advancements.tooltip.ectoplasmsoul.hand": "沒有靈魂的靈質立方",
+  "advancements.tooltip.ectoplasmsoul.text": "那還叫靈質立方嗎",
+
+  "item.moonstone.ectoplasmtree": "靈質樹",
+  "advancements.tooltip.ectoplasmtree.hand": "靈質樹",
+  "advancements.tooltip.ectoplasmtree.text": "心中的樹",
+
+  "item.moonstone.brain": "莫里斯的腦子",
+  "item.brain.tool.string": "攻擊一個生物5次後，第六次造成2.25倍的傷害",
+  "advancements.tooltip.brain.hand": "莫里斯的腦子",
+  "advancements.tooltip.brain.text": "冒心的腦子",
+
+
+  "item.moonstone.beacon": "靈質烽火台",
+  "item.beacon.tool.string.1": "把藥水效果同步加入給攻擊目標,並造成範圍效果",
+  "advancements.tooltip.beacon.hand": "靈質烽火台",
+  "advancements.tooltip.beacon.text": "現在，我們真正榮辱與共了。",
+
+  "item.moonstone.mhead": "莫里斯頭顱",
+  "item.mhead.tool.string": "你無法攻擊任何生物，並且怪物無法攻擊你",
+  "advancements.tooltip.mhead.hand": "莫里斯頭顱",
+  "advancements.tooltip.mhead.text": "絕對的虛無縹緲與邊緣化",
+
+
+  "item.moonstone.cell": "細胞重生",
+  "item.moonstone.adrenaline": "腎上腺素激增",
+  "item.cell.tool.string": "殺死生物有可能將屍體轉化為殭屍",
+  "item.adrenaline.tool.string": "召喚的殭屍繼承你的攻擊力",
+  "item.adrenaline.tool.string.1": "和移動速度",
+
+
+  "item.fortunecrystal.tool.string": "+3 幸運",
+  "item.moonstone.fortunecrystal": "財富水晶",
+  "item.moonstone.mayhemcrystal": "混亂水晶",
+  "item.polyphagia.tool.string": "吃一個附魔金蘋果",
+  "item.moonstone.dna": "培養皿",
+
+
+  "item.moonstone.cell_mummy": "木乃伊乾屍化",
+  "item.cell_mummy.tool.string": "有效降低生成的殭屍其腐化速度",
+
+  "item.moonstone.cell_boom": "自爆",
+  "item.cell_boom.tool.string": "你和和殭屍在死後會產生一次劇烈爆炸",
+
+  "item.moonstone.cell_calcification": "外觀鈣質化",
+  "item.cell_calcification.tool.string": "殭屍獲得你50%的護甲和生命值加成",
+
+  "item.moonstone.cell_blood": "嗜血性飢渴",
+  "item.cell_blood.tool.string": "殭屍獲得吸血能力，並且每次攻擊都會延長自身壽命",
+
+  "item.moonstone.motor": "運動控制強化",
+  "item.motor.tool.string": "增加15%在空中，水下，陸地的所有速度",
+
+
+  "item.moonstone.air": "大氣親和性",
+  "item.air.tool.string": "在空中時增加20%的抗性",
+
+  "item.moonstone.watergen": "海洋親和性",
+  "item.watergen.tool.string": "在水中時增加15%的抗性",
+
+
+  "advancements.tooltip.cell.all.text": "寶藏戰利品，需要佩戴Necora病毒",
+  "advancements.tooltip.nightmare.all.text": "地牢戰利品類型，需要佩戴深淵之眼",
+  "advancements.tooltip.necora.all.text": "地牢/礦井戰利品類型，需要佩戴Necora病毒",
+
+  "item.moonstone.giant": "巨人殭屍基因片段",
+  "item.giant.tool.string": "殺死生物有些許機率使屍體誘變成巨型細胞殭屍",
+  "advancements.tooltip.giant.text": "裝備necora病毒並殺死伏守者",
+
+  "entity.moonstone.cell_giant": "巨型細胞殭屍",
+  "entity.moonstone.cell_zombie": "細胞殭屍",
+
+  "entity.moonstone.flysword": "飛劍",
+  "entity.moonstone.suddenrain": "雨刃",
+  "item.moonstone.gorillacake": "觀察者種子",
+  "item.gorillacake.tool.string": "檢查你目前的排斥反應",
+
+  "item.moonstone.gorilladna": "猩猩流感",
+  "item.gorilladna.tool.string": "使病原體能夠修改你的基因進而顯著提高智商",
+  "item.gorilladna.tool.string.1": "並使雙眼虹膜呈現綠色而不會觸發任何免疫反應",
+  "item.gorilladna.tool.string.2": "  瘟疫虹膜",
+  "advancements.tooltip.germ.text": "佩戴培養皿在遠古城市找到",
+  "advancements.tooltip.dna.text": "又是無聊的事情",
+  "advancements.tooltip.fungus.text": "在佩戴培養皿並有虛弱效果的情況下殺蘑菇牛",
+  "advancements.tooltip.virus.text": "佩戴培養皿並存在虛弱效果時被凋零骷髏擊打",
+  "advancements.tooltip.parasite.text": "佩戴培養皿並吃下：生鱈魚，生鮭魚，生牛肉，生羊肉，生豬肉，生兔子肉，熱帶魚，雞肉，在吃下任意食物",
+
+  "tool.string.ectoplasmball": "這個物品是這個模組的核心內容",
+  "tool.string.ectoplasmball.1": "透過殺死殭屍,骷髏等常見生物取得",
+  "tool.string.ectoplasmball.2": "也可以透過和牧師交易取得",
+  "tool.string.ectoplasmball.3": "可用於合成靈質雲",
+
+
+  "item.the_heart.tool.string": "右鍵物品存入心臟當中，可存入4種(不可疊加)",
+  "item.the_heart.tool.string.1": "如果生物的掉落物是心臟裡物品的某一項",
+  "item.the_heart.tool.string.3": "不可以移除心臟內部物品",
+  "item.the_heart.tool.string.2": "那麼該掉落物數量乘以3",
+  "item.moonstone.the_heart": "富饒之心",
+  "item.moonstone.nightmare_heart": "萬貫者的悲哀",
+  "item.moonstone.nightmare_head": "洞悉者的邪術法球",
+  "advancements.tooltip.the_heart.text": "寶藏物品",
+  "item.nightmare_heart.tool.string": "殺死生物召喚深淵立方",
+
+  "item.moonstone.nightmare_orb": "共鳴者法球",
+
+  "item.nightmare_orb.tool.string": "當你的生命值低於33%時",
+  "item.nightmare_orb.tool.string.1": "所有來自深淵的詛咒都會反轉成對你的增益",
+  "item.nightmare_orb.tool.string.2": "但是每秒受到1%最高生命值的傷害",
+  "item.nightmare_orb.tool.string.3": "並且在此期間無法受到治療",
+  "entity.moonstone.nightmare_entity": "深淵立方",
+  "item.moonstone.nightmare_cube": "窺眸者的暗染之眼",
+  "item.nightmare_cube.tool.string": "靠近生物下按下Shift釋放暗染絲線，這些絲線會繼承你的傷害",
+
+  "item.moonstone.giant_nightmare": "夢魘巨人基因片段",
+  "item.giant_nightmare.tool.string": "殺死生物有機率召喚夢魘巨人",
+  "item.giant_nightmare.tool.string.1": "增加冷卻時間,召喚的一瞬間你將損失50%目前生命值",
+  "item.polyphagia.tool.string.1": "吃下食物恢復7%最高生命值",
+
+  "item.moonstone.speed_seed": "限流種子",
+  "item.speed_seed.tool.string": "速度固定到正常值的120%",
+  "entity.moonstone.nightmare_giant": "夢魘巨人",
+
+
+  "item.nightmare_head.tool.string": "免疫所有非生物傷害",
+  "item.nightmare_head.tool.string.1": "任何來源的傷害減免失效並且受到傷害固定為1點，最高生命值固定為10點",
+  "item.nightmare_head.tool.string.2": "每5秒恢復1點生命值，不受任何加成影響",
+  "item.nightmare_head.tool.string.3": "反彈500%的傷害給攻擊者",
+  "item.nightmare_head.tool.string.4": "並且每次佩戴此物品死亡都會降低1%對深淵的抵抗力",
+  "item.nightmare_head.tool.string.6": "減少100%深淵的詛咒",
+  "item.nightmare_head.tool.string.7": "無法取下"
+
+}
+
+
+

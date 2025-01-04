@@ -1,0 +1,14 @@
+{
+  "name": "灵质树",
+  "icon": "moonstone:ectoplasmtree",
+  "category": "moonstone:ectoplasm",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "crafting",
+      "recipe": "moonstone:ectoplasmtree",
+      "text": "地狱神奇的法器"
+    }
+  ]
+}

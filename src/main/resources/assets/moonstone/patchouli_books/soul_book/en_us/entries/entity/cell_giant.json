@@ -1,0 +1,23 @@
+{
+  "name": "细胞巨人",
+  "icon": "moonstone:giant",
+  "category": "moonstone:entity",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "entity",
+      "scale": 1,
+      "name": "cell_giant",
+      "rotate": true,
+      "defaultRotation": -45,
+      "entity": "moonstone:cell_giant"
+    },
+    {
+      "type": "spotlight",
+      "item": "moonstone:giant",
+      "title": "-细胞巨人-",
+      "text": "可叫做巨型细胞僵尸，使用巨人僵尸基因片段召唤，属性比监守者弱，并且没有远程攻击手段，主要用于过度为梦魇巨人"
+    }
+  ]
+}

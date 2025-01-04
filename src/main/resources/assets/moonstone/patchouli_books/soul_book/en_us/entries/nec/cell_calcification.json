@@ -1,0 +1,15 @@
+{
+  "name": "皮肤钙质化",
+  "icon": "moonstone:cell_calcification",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:cell_calcification",
+      "title": "-皮肤钙质化-",
+      "text": "发现在宝藏类型箱子"
+    }
+  ]
+}

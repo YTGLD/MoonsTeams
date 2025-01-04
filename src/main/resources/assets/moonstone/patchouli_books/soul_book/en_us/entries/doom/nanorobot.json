@@ -1,0 +1,15 @@
+{
+  "name": "纳米机器人",
+  "icon": "moonstone:nanorobot",
+  "category": "moonstone:doom",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:nanorobot",
+      "title": "-纳米机器人-",
+      "text": "发现在古城"
+    }
+  ]
+}

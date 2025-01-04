@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:cell",
+    "moonstone:motor",
+    "moonstone:watergen",
+    "moonstone:air",
+    "moonstone:giant",
+    "moonstone:bat_cell"
+  ]
+}

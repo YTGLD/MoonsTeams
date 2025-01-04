@@ -1,0 +1,15 @@
+{
+  "name": "深渊护符",
+  "icon": "moonstone:nightmarecharm",
+  "category": "moonstone:nightmare",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:nightmarecharm",
+      "title": "-深渊护符-",
+      "text": "发现于地牢和矿井，也可以从远古守卫者那里获取"
+    }
+  ]
+}

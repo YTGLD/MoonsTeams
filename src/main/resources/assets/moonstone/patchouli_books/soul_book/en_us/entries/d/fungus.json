@@ -1,0 +1,15 @@
+{
+  "name": "真菌",
+  "icon": "moonstone:fungus",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:fungus",
+      "title": "-真菌-",
+      "text": "在佩戴培养皿并有虚弱效果的情况下杀蘑菇牛"
+    }
+  ]
+}

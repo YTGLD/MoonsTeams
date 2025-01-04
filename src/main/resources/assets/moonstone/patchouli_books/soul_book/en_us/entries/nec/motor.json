@@ -1,0 +1,15 @@
+{
+  "name": "运动控制强化",
+  "icon": "moonstone:motor",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:motor",
+      "title": "-运动控制强化-",
+      "text": "发现在宝藏类型箱子"
+    }
+  ]
+}

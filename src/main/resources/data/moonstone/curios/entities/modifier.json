@@ -1,0 +1,23 @@
+
+{
+  "entities": [
+    "player",
+    "moonstone:small_zombie"
+  ],
+  "slots": [
+    "back",
+    "belt",
+    "charm",
+    "ring",
+    "head",
+    "curio",
+    "medicine",
+    "necora",
+    "nanos",
+    "body",
+    "hands",
+    "ncrdna",
+    "dna",
+    "zombie"
+  ]
+}

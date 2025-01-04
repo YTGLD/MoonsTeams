@@ -1,0 +1,15 @@
+{
+  "name": "过量ATP",
+  "icon": "moonstone:atpoverdose",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:atpoverdose",
+      "title": "-过量ATP-",
+      "text": "发现在地牢,矿井"
+    }
+  ]
+}

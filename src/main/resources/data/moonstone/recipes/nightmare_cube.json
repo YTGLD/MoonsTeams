@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:nightmaremoai"
+    },
+    {
+      "item": "moonstone:nightmarerotten"
+    },
+    {
+      "item": "moonstone:nightmarestone"
+    },
+    {
+      "item": "moonstone:nightmarewater"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "moonstone:nightmareeye"
+    }
+  ],
+  "result": {
+    "item": "moonstone:nightmare_cube",
+    "count": 1
+  }
+}

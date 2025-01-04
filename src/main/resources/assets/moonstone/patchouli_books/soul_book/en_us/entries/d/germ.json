@@ -1,0 +1,15 @@
+{
+  "name": "细菌",
+  "icon": "moonstone:germ",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:germ",
+      "title": "-细菌-",
+      "text": "佩戴培养皿在远古城市找到"
+    }
+  ]
+}

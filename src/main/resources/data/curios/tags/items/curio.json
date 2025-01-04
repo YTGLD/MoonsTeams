@@ -1,0 +1,57 @@
+{
+  "replace": false,
+  "values": [
+
+    "moonstone:nightmareanchor",
+    "moonstone:nightmarecharm",
+    "moonstone:nightmareeye",
+    "moonstone:nightmaremoai",
+    "moonstone:nightmarerotten",
+    "moonstone:nightmarestone",
+    "moonstone:nightmaretreasure",
+    "moonstone:nightmarewater",
+
+    "moonstone:biggreedcrystal",
+    "moonstone:bigwarcrystal",
+    "moonstone:greedcrystal",
+    "moonstone:warcrystal",
+    "moonstone:blackeorb",
+    "moonstone:whiteorb",
+
+    "moonstone:bloodvirus",
+    "moonstone:necora",
+
+    "moonstone:blood_candle",
+    "moonstone:blood_magic_box",
+    "moonstone:blood_sun",
+    "moonstone:the_blood_book",
+    "moonstone:blood_amout",
+    "moonstone:blood_jelly",
+    "moonstone:blood_snake",
+    "moonstone:max_blood_cube",
+    "moonstone:max_eye",
+    "moonstone:the_prison_of_sin",
+
+
+
+    "moonstone:nine_sword_book",
+    "moonstone:nine_sword_books",
+
+
+
+    "moonstone:ectoplasmstone",
+    "moonstone:twistedstone",
+
+    "moonstone:maxamout",
+
+    "moonstone:fortunecrystal",
+    "moonstone:mayhemcrystal",
+    "moonstone:plague",
+    "moonstone:wind",
+
+    "moonstone:gorillacake",
+    "moonstone:nightmare_head",
+    "moonstone:nightmare_cube",
+    "moonstone:nano_box"
+  ]
+}

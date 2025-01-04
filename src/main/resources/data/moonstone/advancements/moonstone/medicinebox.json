@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmcube",
+  "criteria": {
+    "medicinebox": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:medicinebox"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.medicinebox.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:medicinebox"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.medicinebox.hand"
+    }
+  },
+  "requirements": [
+    [
+      "medicinebox"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

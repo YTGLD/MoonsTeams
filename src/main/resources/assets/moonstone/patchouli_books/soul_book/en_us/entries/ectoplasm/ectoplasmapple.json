@@ -1,0 +1,14 @@
+{
+  "name": "灵质果",
+  "icon": "moonstone:ectoplasmapple",
+  "category": "moonstone:ectoplasm",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "crafting",
+      "recipe": "moonstone:ectoplasmapple",
+      "text": "对于高血量的生物来说，这是个噩梦"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "非嗜血性病变",
+  "icon": "moonstone:not_blood_cell",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:not_blood_cell",
+      "title": "-非嗜血性病变-",
+      "text": "发现在宝藏类型箱子，需要佩戴Necora病毒，应用于梦魇巨人，详细见梦魇巨人章节"
+    }
+  ]
+}

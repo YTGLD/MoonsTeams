@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/nightmare_orb",
+  "criteria": {
+    "nightmare_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmare_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare.all.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmare_head"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": ""
+    }
+  },
+  "requirements": [
+    [
+      "nightmare_head"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

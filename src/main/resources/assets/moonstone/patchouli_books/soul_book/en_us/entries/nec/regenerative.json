@@ -1,0 +1,15 @@
+{
+  "name": "再生活性化",
+  "icon": "moonstone:regenerative",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:regenerative",
+      "title": "-再生活性化-",
+      "text": "发现在地牢,矿井"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "痛苦游离石",
+  "icon": "moonstone:the_pain_stone",
+  "category": "moonstone:pain",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:the_pain_stone",
+      "title": "-痛苦游离石-",
+      "text": "发现于猪灵堡垒"
+    }
+  ]
+}
