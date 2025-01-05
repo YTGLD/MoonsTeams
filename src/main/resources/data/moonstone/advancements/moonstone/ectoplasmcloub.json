@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmball",
+  "criteria": {
+    "ectoplasmcloub": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:ectoplasmcloub"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.ectoplasmcloub.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:ectoplasmcloub"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.ectoplasmcloub.hand"
+    }
+  },
+  "requirements": [
+    [
+      "ectoplasmcloub"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

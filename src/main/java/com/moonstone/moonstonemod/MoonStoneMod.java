@@ -63,7 +63,6 @@ public class MoonStoneMod {
     public static final ResourceLocation POST = ResourceLocation.fromNamespaceAndPath(MoonStoneMod.MODID,
             "shaders/post/entity_outline.json");
 
-
     public static final String MODID = "moonstone";
     public static final Logger LOGGER = LogUtils.getLogger();
     public MoonStoneMod() {

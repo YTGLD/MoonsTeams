@@ -268,47 +268,45 @@ public class AllEvent {
                         }
                     } else {
                         if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
-                            if (!player.getCooldowns().isOnCooldown(Items.giant.get())) {
-                                if (player.level() instanceof ServerLevel p_222881_) {
-                                    if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                            if (player.level() instanceof ServerLevel p_222881_) {
+                                if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
 
-                                        Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
+                                    Handler.trySpawnMob(player, EntityTs.nightmare_giant.get(), MobSpawnType.TRIGGERED, p_222881_, new BlockPos((int) event.getEntity().getX(), (int) event.getEntity().getY(), (int) event.getEntity().getZ()), 10, 2, 3, SpawnUtil.Strategy.ON_TOP_OF_COLLIDER);
 
-                                        if (!Handler.hascurio(player, Items.subspace_cell.get())) {
-                                            player.hurt(player.damageSources().dryOut(), player.getHealth() / 2);
-                                        }
-                                        player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
-                                        if (Handler.hascurio(player, Items.slime.get())) {
-                                            if (Mth.nextInt(RandomSource.create(), 1, 30) <= 33) {
-
-                                                cell_slime z = new cell_slime(EntityTs.cell_slime.get(), player.level());
-                                                z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
-                                                z.setOwnerUUID(player.getUUID());
-                                                if (Handler.hascurio(player, Items.adrenaline.get())) {
-                                                    z.addTag(DamageCell);
-                                                }
-                                                if (Handler.hascurio(player, Items.cell_mummy.get())) {
-                                                    z.addTag(muMMY);
-                                                }
-                                                if (Handler.hascurio(player, Items.cell_boom.get())) {
-                                                    z.addTag(boom);
-                                                }
-                                                if (Handler.hascurio(player, Items.cell_calcification.get())) {
-                                                    z.addTag(calcification);
-                                                }
-                                                if (Handler.hascurio(player, Items.cell_blood.get())) {
-                                                    z.addTag(cb_blood);
-                                                }
-                                                player.level().addFreshEntity(z);
-
-                                                player.getCooldowns().addCooldown(Items.giant.get(), 100);
-                                            }
-                                        }
-
-                                        player.getCooldowns().addCooldown(Items.giant.get(), 1200);
-
-
+                                    if (!Handler.hascurio(player, Items.subspace_cell.get())) {
+                                        player.hurt(player.damageSources().dryOut(), player.getHealth() / 2);
                                     }
+                                    player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                                    if (Handler.hascurio(player, Items.slime.get())) {
+                                        if (Mth.nextInt(RandomSource.create(), 1, 30) <= 33) {
+
+                                            cell_slime z = new cell_slime(EntityTs.cell_slime.get(), player.level());
+                                            z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+                                            z.setOwnerUUID(player.getUUID());
+                                            if (Handler.hascurio(player, Items.adrenaline.get())) {
+                                                z.addTag(DamageCell);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_mummy.get())) {
+                                                z.addTag(muMMY);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_boom.get())) {
+                                                z.addTag(boom);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_calcification.get())) {
+                                                z.addTag(calcification);
+                                            }
+                                            if (Handler.hascurio(player, Items.cell_blood.get())) {
+                                                z.addTag(cb_blood);
+                                            }
+                                            player.level().addFreshEntity(z);
+
+                                            player.getCooldowns().addCooldown(Items.giant.get(), 100);
+                                        }
+                                    }
+
+                                    player.getCooldowns().addCooldown(Items.giant.get(), 1200);
+
+
                                 }
                             }
                         }

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "moonstone:blood_amout"
+    },
+    {
+      "item": "moonstone:blood_snake"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    },
+    {
+      "item": "moonstone:blood"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "moonstone:blood_candle"
+  }
+}

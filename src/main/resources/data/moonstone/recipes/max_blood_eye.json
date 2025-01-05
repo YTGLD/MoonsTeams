@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:max_eye"
+    }
+  ],
+  "result": {
+    "item": "moonstone:max_eye",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "灵魂之书",
+  "landing_text": "QQ反馈群：927227960",
+  "version": "~1.0.0",
+  "use_resource_pack": true,
+  "book_texture": "moonstone:textures/img.png",
+  "crafting_texture": "moonstone:textures/img_1.png"
+}

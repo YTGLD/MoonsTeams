@@ -1,0 +1,15 @@
+{
+  "name": "大气亲和性",
+  "icon": "moonstone:air",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:air",
+      "title": "-大气亲和性-",
+      "text": "发现在宝藏类型箱子"
+    }
+  ]
+}

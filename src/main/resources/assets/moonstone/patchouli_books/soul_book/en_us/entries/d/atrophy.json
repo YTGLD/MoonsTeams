@@ -1,0 +1,15 @@
+{
+  "name": "神经萎缩",
+  "icon": "moonstone:atrophy",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:atrophy",
+      "title": "-神经萎缩-",
+      "text": "先佩戴医药箱，再吃掉 咬合肌强化 药物"
+    }
+  ]
+}

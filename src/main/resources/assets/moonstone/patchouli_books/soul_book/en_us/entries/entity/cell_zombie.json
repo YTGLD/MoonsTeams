@@ -1,0 +1,23 @@
+{
+  "name": "细胞僵尸",
+  "icon": "moonstone:cell",
+  "category": "moonstone:entity",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "entity",
+      "scale": 1,
+      "name": "cell_zombie",
+      "rotate": true,
+      "defaultRotation": -45,
+      "entity": "moonstone:cell_zombie"
+    },
+    {
+      "type": "spotlight",
+      "item": "moonstone:cell",
+      "title": "-细胞僵尸-",
+      "text": "这种僵尸的属性很差，但可以使用分段基因组来强化它们，它不会在阳光下燃烧，除此之外和僵尸没什么不同"
+    }
+  ]
+}

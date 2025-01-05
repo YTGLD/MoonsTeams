@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:dna",
+    "moonstone:fungus",
+    "moonstone:germ",
+    "moonstone:parasite",
+    "moonstone:virus",
+
+    "moonstone:calcification",
+    "moonstone:masticatory",
+    "moonstone:polyphagia",
+    "moonstone:quadriceps",
+    "moonstone:reanimation"
+
+  ]
+}

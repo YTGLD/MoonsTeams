@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ACA",
+    "DBD",
+    "ACA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:quartz_block"
+    },
+    "B":
+    {
+      "item": "moonstone:diamondhorseshoe"
+    },
+    "C":
+    {
+      "item": "minecraft:diamond"
+    },
+    "D":
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:ectoplasmhorseshoe",
+    "count": 1
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/dna",
+  "criteria": {
+    "fungus": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:fungus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.fungus.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:fungus"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.fungus"
+    }
+  },
+  "requirements": [
+    [
+      "fungus"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

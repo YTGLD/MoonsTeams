@@ -14,6 +14,15 @@
     "moonstone:nightmare_orb",
     "moonstone:the_pain_stone",
     "moonstone:probability_stone",
-    "moonstone:pain_candle"
+    "moonstone:pain_candle",
+
+
+    "moonstone:owner_blood_eye",
+    "moonstone:owner_blood_attack_eye",
+    "moonstone:owner_blood_speed_eye",
+    "moonstone:owner_blood_effect_eye",
+    "moonstone:owner_blood_boom_eye",
+    "moonstone:owner_blood_vex",
+    "moonstone:owner_blood_earth"
   ]
 }

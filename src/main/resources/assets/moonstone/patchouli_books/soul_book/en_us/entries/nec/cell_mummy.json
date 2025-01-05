@@ -1,0 +1,15 @@
+{
+  "name": "木乃伊干尸化",
+  "icon": "moonstone:cell_mummy",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:cell_mummy",
+      "title": "-木乃伊干尸化-",
+      "text": "发现在宝藏类型箱子"
+    }
+  ]
+}

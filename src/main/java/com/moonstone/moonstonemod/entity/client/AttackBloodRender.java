@@ -23,9 +23,9 @@ public class AttackBloodRender extends EntityRenderer<attack_blood> {
 
     @Override
     public void render(attack_blood entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {
+        MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
         setT(poseStack, entity, bufferSource);
         renderSphere1(poseStack,bufferSource,240,0.15f);
-        MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
 
         super.render(entity, p_114486_, p_114487_, poseStack, bufferSource, p_114490_);
     }

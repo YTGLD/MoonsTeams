@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "DBD",
+    "ACA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    "B":
+    {
+      "item": "moonstone:slatecube"
+    },
+    "C":
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    "D":
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:slatecharm",
+    "count": 1
+  }
+}

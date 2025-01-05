@@ -1,0 +1,15 @@
+{
+  "name": "血色暗影基因片段",
+  "icon": "moonstone:bat_cell",
+  "category": "moonstone:blood",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:bat_cell",
+      "title": "-血色暗影基因片段-",
+      "text": "发现于宝藏战利品箱，需要佩戴暗瘟疫"
+    }
+  ]
+}

@@ -4,6 +4,8 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -23,6 +25,12 @@ public class attack_blood extends ThrowableItemProjectile {
     private LivingEntity target;
     private final List<Vec3> trailPositions = new ArrayList<>();
 
+    public float damages = 4;
+    public boolean follow = true;
+    public boolean slime = false;
+    public boolean boom = false;
+    public boolean effect = false;
+    public float speeds = 0.125f;
     public attack_blood(EntityType<? extends attack_blood> entityType, Level level) {
         super(entityType, level);
         this.setNoGravity(true);
@@ -65,19 +73,31 @@ public class attack_blood extends ThrowableItemProjectile {
         super.tick();
         Vec3 playerPos = this.position().add(0, 0.75, 0);
         int range = 1;
-        List<Mob> entities = this.level().getEntitiesOfClass(Mob.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-        for (Mob entity : entities){
-            if (this.getOwner()!=null) {
-                if (!entity.is(this.getOwner())&&this.getOwner() instanceof Player player){
+        List<LivingEntity> entities = this.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+        for (LivingEntity entity : entities) {
+            if (this.getOwner() != null) {
+                if (!entity.is(this.getOwner()) && this.getOwner() instanceof Player player) {
                     ResourceLocation entitys = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
                     if (!entitys.getNamespace().equals(MoonStoneMod.MODID)) {
                         entity.invulnerableTime = 0;
-                        entity.hurt(this.getOwner().damageSources().dryOut(), 4 + player.getMaxHealth() / 10);
+                        if (boom) {
+                            this.level().explode(this, this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
+                        }
+                        if (effect) {
+                            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
+                            entity.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 1));
+                            entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
+                        }
+                        if (slime){
+                            player.heal(damages);
+                        }
+                        entity.hurt(this.getOwner().damageSources().dryOut(), damages + player.getMaxHealth() / 10);
                         this.discard();
                     }
                 }
             }
         }
+
         if (this.tickCount > 200) {
             this.discard();
         }
@@ -88,30 +108,39 @@ public class attack_blood extends ThrowableItemProjectile {
             }
         }
 
-        float s = this.tickCount / 200f;
+        float s = 0.075F;
         if (target != null) {
-            Vec3 targetPos = target.position().add(0, 0.5, 0);
-            Vec3 currentPos = this.position();
-            Vec3 direction = targetPos.subtract(currentPos).normalize();
+            if (follow) {
+                Vec3 targetPos = target.position().add(0, 0.5, 0);
+                Vec3 currentPos = this.position();
+                Vec3 direction = targetPos.subtract(currentPos).normalize();
 
-            // 获取当前运动方向
-            Vec3 currentDirection = this.getDeltaMovement().normalize();
+                // 获取当前运动方向
+                Vec3 currentDirection = this.getDeltaMovement().normalize();
 
-            // 计算目标方向与当前方向之间的夹角
-            double angle = Math.acos(currentDirection.dot(direction)) * (180.0 / Math.PI);
+                // 计算目标方向与当前方向之间的夹角
+                double angle = Math.acos(currentDirection.dot(direction)) * (180.0 / Math.PI);
 
-            // 如果夹角超过10度，则限制方向
-            if (angle > 45) {
-                // 计算旋转后的新方向
-                double angleLimit = Math.toRadians(45); // 将10度转为弧度
+                // 如果夹角超过10度，则限制方向
+                if (angle > 45) {
+                    // 计算旋转后的新方向
+                    double angleLimit = Math.toRadians(45); // 将10度转为弧度
 
-                // 根据正弦法则计算限制后的方向
-                Vec3 limitedDirection = currentDirection.scale(Math.cos(angleLimit)) // 计算缩放因子
-                        .add(direction.normalize().scale(Math.sin(angleLimit))); // 根据目标方向进行调整
+                    // 根据正弦法则计算限制后的方向
+                    Vec3 limitedDirection = currentDirection.scale(Math.cos(angleLimit)) // 计算缩放因子
+                            .add(direction.normalize().scale(Math.sin(angleLimit))); // 根据目标方向进行调整
 
-                this.setDeltaMovement(limitedDirection.x * (0.125f+s), limitedDirection.y *(0.125f+s), limitedDirection.z * (0.125f+s));
-            } else {
-                this.setDeltaMovement(direction.x * (0.125f+s), direction.y * (0.125f+s), direction.z * (0.125f+s));
+                    this.setDeltaMovement(limitedDirection.x * (0.125f + s), limitedDirection.y * (0.125f + s), limitedDirection.z * (0.125f + s));
+                } else {
+                    this.setDeltaMovement(direction.x * (0.125f + s), direction.y * (0.125f + s), direction.z * (0.125f + s));
+                }
+            }else {
+                if (this.tickCount < 5) {
+                    Vec3 targetPos = target.position().add(0, 0.5, 0);
+                    Vec3 currentPos = this.position();
+                    Vec3 direction = targetPos.subtract(currentPos).normalize();
+                    this.setDeltaMovement(direction.x * (speeds + s), direction.y * (speeds + s), direction.z * (speeds + s));
+                }
             }
         }
 
@@ -149,5 +178,36 @@ public class attack_blood extends ThrowableItemProjectile {
         this.target = closestEntity;
     }
 
+    public void setBoom(boolean boom) {
+        this.boom = boom;
+    }
+
+    public void setDamage(float damage) {
+        damages = damage;
+    }
+
+    public void setEffect(boolean effect) {
+        this.effect = effect;
+    }
+
+    public void setSpeed(float speed) {
+        speeds = speed;
+    }
+
+    public float getSpeeds() {
+        return speeds;
+    }
+
+    public float getDamages() {
+        return damages;
+    }
+
+    public void setHeal(boolean slime) {
+        this.slime = slime;
+    }
+
+    public void setCannotFollow(boolean t) {
+        follow = t;
+    }
 }
 

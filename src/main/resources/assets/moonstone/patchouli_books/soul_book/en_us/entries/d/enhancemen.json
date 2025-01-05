@@ -1,0 +1,15 @@
+{
+  "name": "神经强化",
+  "icon": "moonstone:enhancemen",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:enhancemen",
+      "title": "-神经强化-",
+      "text": "先佩戴医药箱，再吃掉 四头肌强化 药物"
+    }
+  ]
+}

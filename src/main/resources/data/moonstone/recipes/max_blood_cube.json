@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    "B":
+    {
+      "item": "moonstone:max_eye"
+    }
+  },
+  "result": {
+    "item": "moonstone:max_blood_cube",
+    "count": 1
+  }
+}

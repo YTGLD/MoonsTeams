@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:doomswoud"
+    },
+    {
+      "item": "moonstone:mkidney"
+    }
+  ],
+  "result": {
+    "item": "moonstone:wind",
+    "count": 1
+  }
+}

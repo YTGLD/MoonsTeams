@@ -1,0 +1,15 @@
+{
+  "name": "§4培养皿",
+  "icon": "moonstone:dna",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:dna",
+      "title": "-培养皿-",
+      "text": "生物武器培养措施，必须佩戴它才能获取和发现生物武器"
+    }
+  ]
+}

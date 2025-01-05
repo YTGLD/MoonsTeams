@@ -1,0 +1,15 @@
+{
+  "name": "寄生虫",
+  "icon": "moonstone:parasite",
+  "category": "moonstone:d",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:parasite",
+      "title": "-寄生虫-",
+      "text": "佩戴培养皿并吃下：生鳕鱼，生鲑鱼，生牛肉，生羊肉，生猪肉，生兔子肉，热带鱼，鸡肉，在吃下任意食物"
+    }
+  ]
+}

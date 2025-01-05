@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/necora",
+  "criteria": {
+    "motor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:motor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.cell.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:motor"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.motor"
+    }
+  },
+  "requirements": [
+    [
+      "motor"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

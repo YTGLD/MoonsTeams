@@ -13,6 +13,7 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.protocol.Packet;
@@ -26,12 +27,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Unit;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -64,12 +68,15 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.Node;
 import net.minecraft.world.level.pathfinder.PathFinder;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.function.BiConsumer;
@@ -234,6 +241,7 @@ public class nightmare_giant extends ExtendEntityLiving implements OwnableEntity
     }
 
     public int time = 0;
+    int sZombieTime = 0;
 
     public void tick() {
 
@@ -242,10 +250,62 @@ public class nightmare_giant extends ExtendEntityLiving implements OwnableEntity
         }else {
             time+=2;
         }
+        if (sZombieTime>0){
+            sZombieTime--;
+        }
         if (time > 3600){
             this.discard();
         }
+        {
+            Vec3 playerPos = this.position().add(0, 0.75, 0);
+            int range = 10;
+            List<Mob> entities = this.level().getEntitiesOfClass(Mob.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+            for (Mob mob : entities) {
+                ResourceLocation entity = BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType());
+                if (!entity.getNamespace().equals(MoonStoneMod.MODID)) {
+                    if (sZombieTime <= 0) {
+                        if (this.getOwner() != null) {
+                            for (int i = 0; i < 2; i++) {
+                                cell_zombie cellZombie = new cell_zombie(EntityTs.cell_zombie.get(), this.level());
+                                cellZombie.teleportTo(this.getX(), this.getY(), this.getZ());
+                                cellZombie.setOwnerUUID(this.getOwnerUUID());
+                                cellZombie.addTag(AllEvent.DamageCell);
+                                this.level().playSound(null, this.getOnPos(), SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.AMBIENT, 10, 10);
+                                this.level().addFreshEntity(cellZombie);
+                                sZombieTime = 300;
+                            }
+                        }
+                    }
+                    mob.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0));
+                    mob.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 2));
+                    mob.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
+                    mob.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 2));
 
+                    this.setAttackTarget(mob);
+                    break;
+                }
+            }
+        }
+        {
+            Vec3 playerPos = this.position().add(0, 1.25, 0);
+            float range = 16;
+            List<cell_zombie> entities =
+                    this.level().getEntitiesOfClass(cell_zombie.class,
+                            new AABB(playerPos.x - range,
+                                    playerPos.y - range,
+                                    playerPos.z - range,
+                                    playerPos.x + range,
+                                    playerPos.y + range,
+                                    playerPos.z + range));
+
+            for (Entity c : entities) {
+                if (c instanceof cell_zombie cellZombie) {
+                    if (this.tickCount % 20 == 1) {
+                        this.heal(entities.size());
+                    }
+                }
+            }
+        }
         if (this.getOwner()!= null) {
             if (this.getOwner().getLastHurtByMob()!= null) {
                 if (!this.getOwner().getLastHurtByMob().is(this)) {

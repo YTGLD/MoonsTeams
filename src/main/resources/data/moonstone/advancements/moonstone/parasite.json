@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/dna",
+  "criteria": {
+    "parasite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:parasite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.parasite.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:parasite"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.parasite"
+    }
+  },
+  "requirements": [
+    [
+      "parasite"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

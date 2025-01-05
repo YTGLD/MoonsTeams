@@ -1,0 +1,15 @@
+{
+  "name": "自融抑制",
+  "icon": "moonstone:autolytic",
+  "category": "moonstone:nec",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "moonstone:autolytic",
+      "title": "-自融抑制-",
+      "text": "发现在地牢,矿井"
+    }
+  ]
+}

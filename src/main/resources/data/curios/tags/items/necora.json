@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+
+    "moonstone:batgene",
+    "moonstone:bloodgene",
+    "moonstone:flygene",
+    "moonstone:heathgene",
+    "moonstone:ragegene",
+    "moonstone:sleepgene",
+
+    "moonstone:ambush",
+    "moonstone:atpoverdose",
+    "moonstone:autolytic",
+    "moonstone:fermentation",
+    "moonstone:putrefactive",
+    "moonstone:regenerative"
+  ]
+}

@@ -1,10 +1,44 @@
 package com.moonstone.moonstonemod.item.plague.mobitem;
 
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.init.AttReg;
+import com.moonstone.moonstonemod.init.DNAItems;
 import com.moonstone.moonstonemod.moonstoneitem.Iplague;
 import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
+import net.minecraft.ChatFormatting;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
+import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.SlotAccess;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ClickAction;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeMod;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Stream;
 
 public class dna extends TheNecoraIC implements ICurioItem , Iplague {
 
@@ -13,7 +47,6 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
         stack.getOrCreateTag().putString("ytgld", "ytgld");
 
     }
-    //{
 //
 //        private static final int BAR_COLOR = Mth.color(0.4F, 0.4F, 1.0F);
 //
@@ -154,7 +187,8 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
 //        p_150751_.add(Component.translatable("item.minecraft.bundle.fullness", getContentWeight(p_150749_), 320).withStyle(ChatFormatting.GRAY));
 //    }
 //
-//        @Override
+//
+//    @Override
 //        public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
 //        Multimap<Attribute, AttributeModifier> multimap = HashMultimap.create();
 //        CompoundTag compoundtag = stack.getOrCreateTag();
@@ -163,150 +197,167 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
 //            CompoundTag compoundtag1 = listtag.getCompound(s);
 //
 //            ItemStack itemStack = ItemStack.of(compoundtag1);
-//            if (itemStack.is(DNAItems.atp_height)) {
+//            if (itemStack.is(DNAItems.atp_height.get())) {
 //                int count = itemStack.getCount();
 //                int a = count / 4;
 //                multimap.put(Attributes.MAX_HEALTH, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        a,
-//                        AttributeModifier.Operation.ADD_VALUE));
+//                        AttributeModifier.Operation.ADDITION));
 //            }
 //
-//            if (itemStack.is(DNAItems.cell_off_on)) {
+//            if (itemStack.is(DNAItems.cell_off_on.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
 //
-//            if (itemStack.is(DNAItems.cell_oxygen)) {
+//            if (itemStack.is(DNAItems.cell_oxygen.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                count *= 0.5F;
 //                multimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
 //
 //
-//            if (itemStack.is(DNAItems.cell_in_water)) {
+//            if (itemStack.is(DNAItems.cell_in_water.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                multimap.put(Attributes.WATER_MOVEMENT_EFFICIENCY, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_VALUE));
+//                        AttributeModifier.Operation.ADDITION));
 //            }
 //
-//            if (itemStack.is(DNAItems.cell_break_down_water)) {
+//            if (itemStack.is(DNAItems.cell_break_down_water.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                count *= 1.5F;
-//                multimap.put(NeoForgeMod.SWIM_SPEED, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                multimap.put(ForgeMod.SWIM_SPEED.get(), new AttributeModifier(
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
 //
-//            if (itemStack.is(DNAItems.cell_in_air)) {
+//            if (itemStack.is(DNAItems.cell_in_air.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                multimap.put(Attributes.JUMP_STRENGTH, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
-//            if (itemStack.is(DNAItems.cell_ground)) {
+//            if (itemStack.is(DNAItems.cell_ground.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                count *= 2F;
-//                multimap.put(Attributes.BLOCK_BREAK_SPEED, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                multimap.put(AttReg.break_speed.get(), new AttributeModifier(
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
-//            if (itemStack.is(DNAItems.cell_necrosis)) {
+//            if (itemStack.is(DNAItems.cell_necrosis.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
-//                multimap.put(AttReg.heal, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                multimap.put(AttReg.heal.get(), new AttributeModifier(
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
-//            if (itemStack.is(DNAItems.cell_bone_add)) {
+//            if (itemStack.is(DNAItems.cell_bone_add.get())) {
 //                float count = itemStack.getCount();
 //                count /= 4f;
 //                multimap.put(Attributes.ARMOR, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_VALUE));
+//                        AttributeModifier.Operation.ADDITION));
 //            }
-//            if (itemStack.is(DNAItems.cell_sense)) {
+//            if (itemStack.is(DNAItems.cell_sense.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                multimap.put(Attributes.OXYGEN_BONUS, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_VALUE));
+//                        AttributeModifier.Operation.ADDITION));
 //
 //                multimap.put(Attributes.SUBMERGED_MINING_SPEED, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count * 10,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
-//            if (itemStack.is(DNAItems.cell_synthesis)) {
+//            if (itemStack.is(DNAItems.cell_synthesis.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                multimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
-//            if (itemStack.is(DNAItems.cell_putrefactive)) {
+//            if (itemStack.is(DNAItems.cell_putrefactive.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
 //                multimap.put(Attributes.BURNING_TIME, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        -count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
-//            if (itemStack.is(DNAItems.cell_dna_suppression)) {
+//            if (itemStack.is(DNAItems.cell_dna_suppression.get())) {
 //                float count = itemStack.getCount();
 //                count /= 100f;
-//                multimap.put(AttReg.cit, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                multimap.put(AttReg.cit.get(), new AttributeModifier(
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
 //
-//            if (itemStack.is(DNAItems.cell_preferential)) {
+//            if (itemStack.is(DNAItems.cell_preferential.get())) {
 //                {
 //                    float count = itemStack.getCount();
 //                    count /= 100;
-//                    multimap.put(AttReg.heal, new AttributeModifier(
-//                            ResourceLocation.withDefaultNamespace("base_attack_damage_heal_cell_preferential" + this.getDescriptionId()),
+//                    multimap.put(AttReg.heal.get(), new AttributeModifier(
+//                            uuid,
+//                            "a",
 //                            count,
-//                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                            AttributeModifier.Operation.MULTIPLY_BASE));
 //                }
 //                {
 //                    float count = itemStack.getCount();
 //                    count /= 4;
 //                    multimap.put(Attributes.MAX_HEALTH, new AttributeModifier(
-//                            ResourceLocation.withDefaultNamespace("base_attack_damage_max_health_cell_preferential" + this.getDescriptionId()),
-//                            count,
-//                            AttributeModifier.Operation.ADD_VALUE));
+//                            uuid,
+//                            "a",
+//                                                count,
+//                                                AttributeModifier.Operation.ADDITION));
 //                }
 //            }
-//            if (itemStack.is(DNAItems.cell_chromosome)) {
+//            if (itemStack.is(DNAItems.cell_chromosome.get())) {
 //                float count = itemStack.getCount();
 //                count /= 10;
 //                multimap.put(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(
-//                        ResourceLocation.withDefaultNamespace("base_attack_damage" + this.getDescriptionId()),
+//                        uuid,
+//                        "a",
 //                        count,
-//                        AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+//                        AttributeModifier.Operation.MULTIPLY_BASE));
 //            }
 //
 //        }
@@ -321,13 +372,10 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
 //        p_186352_.playSound(SoundEvents.BUNDLE_INSERT, 0.8F, 0.8F + p_186352_.level().getRandom().nextFloat() * 0.4F);
 //    }
 //
-//        private void playDropContentsSound(Entity p_186354_) {
-//        p_186354_.playSound(SoundEvents.BUNDLE_DROP_CONTENTS, 0.8F, 0.8F + p_186354_.level().getRandom().nextFloat() * 0.4F);
-//    }
 //
-//        @Override
-//        public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-//        stack.getOrCreateTag().putString("ytgld","ytgld");
+//    private void playDropContentsSound(Entity p_186354_) {
+//        p_186354_.playSound(SoundEvents.BUNDLE_DROP_CONTENTS, 0.8F, 0.8F + p_186354_.level().getRandom().nextFloat() * 0.4F);
+//
 //    }
-//    }
+
 }

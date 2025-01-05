@@ -12,6 +12,10 @@ public class AttReg {
     public static final RegistryObject<Attribute> heal  =REGISTRY.register("heal", ()->{
         return new RangedAttribute("attribute.name.moonstone.heal", 1.0d, 0.0D, 1024.0D).setSyncable(true);
     });
-
-
+    public static final RegistryObject<Attribute> cit  =REGISTRY.register("cit", ()->{
+        return new RangedAttribute("attribute.name.moonstone.cit", 1.0d, 0.0D, 1024.0D).setSyncable(true);
+    });
+    public static final RegistryObject<Attribute> break_speed  =REGISTRY.register("break_speed", ()->{
+        return new RangedAttribute("attribute.name.moonstone.break_speed", 1.0d, 0.0D, 1024.0D).setSyncable(true);
+    });
 }
