@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "moonstone:nightmare_virus"
+    }
+  ],
+  "result": {
+    "id": "moonstone:nightmare_base_stone_brain",
+    "count": 1
+  }
+}

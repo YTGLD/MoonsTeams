@@ -2,7 +2,9 @@ package com.moonstone.moonstonemod.mixin;
 
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.event.NewEvent;
 import com.moonstone.moonstonemod.init.Items;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +18,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
+
+import java.util.Map;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -28,6 +35,30 @@ public abstract class LivingEntityMixin {
             if (Handler.hascurio(player, Items.nightmare_head.get())){
                 cir.setReturnValue(8f);
             }
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (stack.getTag()!=null){
+                            if (stack.getTag().getBoolean(Difficulty.EASY.getKey())){
+                                cir.setReturnValue(cir.getReturnValue()+0.175f);
+                            }
+                            if (stack.getTag().getBoolean(Difficulty.NORMAL.getKey())){
+                                cir.setReturnValue(cir.getReturnValue()+0.33f);
+                            }
+                            if (stack.getTag().getBoolean(Difficulty.HARD.getKey())){
+                                cir.setReturnValue(cir.getReturnValue()+0.5f);
+                            }
+                            if (stack.getTag().getBoolean(NewEvent.lootTable)){
+                                cir.setReturnValue(cir.getReturnValue()+0.66f);
+                            }
+                        }
+                    }
+                }
+            });
         }
     }
 

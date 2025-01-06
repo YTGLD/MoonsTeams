@@ -19,6 +19,36 @@ public class Tab {
             .title(Component.translatable("itemGroup.tabmoonstone.necora"))
             .displayItems((a,b)->{
                 b.accept(new ItemStack(Items.medicinebox.get()));
+                b.accept(new ItemStack(Items.dna_box.get()));
+
+                b.accept(new ItemStack(DNAItems.atp_height.get()));
+                b.accept(new ItemStack(DNAItems.cell_big_boom.get()));
+                b.accept(new ItemStack(DNAItems.speed_metabolism.get()));
+                b.accept(new ItemStack(DNAItems.cell_disorder.get()));
+                b.accept(new ItemStack(DNAItems.cell_off_on.get()));
+                b.accept(new ItemStack(DNAItems.cell_darwin.get()));
+                b.accept(new ItemStack(DNAItems.cell_god.get()));
+                b.accept(new ItemStack(DNAItems.cell_inheritance.get()));
+                b.accept(new ItemStack(DNAItems.cell_oxygen.get()));
+                b.accept(new ItemStack(DNAItems.cell_break_down_water.get()));
+                b.accept(new ItemStack(DNAItems.cell_ground.get()));
+                b.accept(new ItemStack(DNAItems.cell_in_water.get()));
+                b.accept(new ItemStack(DNAItems.cell_in_air.get()));
+                b.accept(new ItemStack(DNAItems.cell_necrosis.get()));
+                b.accept(new ItemStack(DNAItems.cell_digestion.get()));
+                b.accept(new ItemStack(DNAItems.cell_acid.get()));
+                b.accept(new ItemStack(DNAItems.cell_eyes.get()));
+                b.accept(new ItemStack(DNAItems.cell_bone_add.get()));
+                b.accept(new ItemStack(DNAItems.cell_sense.get()));
+                b.accept(new ItemStack(DNAItems.cell_cranial.get()));
+                b.accept(new ItemStack(DNAItems.cell_dna_suppression.get()));
+                b.accept(new ItemStack(DNAItems.cell_putrefactive.get()));
+                b.accept(new ItemStack(DNAItems.cell_synthesis.get()));
+                b.accept(new ItemStack(DNAItems.cell_compress.get()));
+                b.accept(new ItemStack(DNAItems.cell_preferential.get()));
+                b.accept(new ItemStack(DNAItems.cell_flu.get()));
+                b.accept(new ItemStack(DNAItems.cell_constant.get()));
+                b.accept(new ItemStack(DNAItems.cell_chromosome.get()));
 
                 b.accept(new ItemStack(Items.necora.get()));
                 b.accept(new ItemStack(Items.dna.get()));
@@ -87,6 +117,7 @@ public class Tab {
 
                 b.accept(new ItemStack(Items.zombie_box.get()));
                 b.accept(new ItemStack(Items.zombie_box_nobo.get()));
+
 
             })
             .build()
@@ -163,6 +194,36 @@ public class Tab {
                 b.accept(new ItemStack(Items.nightmare_heart.get()));
                 b.accept(new ItemStack(Items.nightmare_head.get()));
                 b.accept(new ItemStack(Items.nightmare_cube.get()));
+                b.accept(new ItemStack(Items.nightmare_base.get()));
+                b.accept(new ItemStack(Items.nightmare_base_black_eye.get()));
+                b.accept(new ItemStack(Items.nightmare_base_black_eye_eye.get()));
+                b.accept(new ItemStack(Items.nightmare_base_black_eye_heart.get()));
+                b.accept(new ItemStack(Items.nightmare_base_black_eye_red.get()));
+                b.accept(new ItemStack(Items.nightmare_base_stone.get()));
+                b.accept(new ItemStack(Items.nightmare_base_stone_meet.get()));
+                b.accept(new ItemStack(Items.nightmare_base_stone_virus.get()));
+                b.accept(new ItemStack(Items.nightmare_base_stone_brain.get()));
+                b.accept(new ItemStack(Items.nightmare_virus.get()));
+                b.accept(new ItemStack(Items.nightmare_base_reversal.get()));
+                b.accept(new ItemStack(Items.nightmare_base_reversal_orb.get()));
+                b.accept(new ItemStack(Items.nightmare_base_reversal_card.get()));
+                b.accept(new ItemStack(Items.nightmare_base_reversal_mysterious.get()));
+                b.accept(new ItemStack(Items.nightmare_base_redemption.get()));
+                b.accept(new ItemStack(Items.nightmare_base_redemption_deception.get()));
+                b.accept(new ItemStack(Items.nightmare_base_redemption_degenerate.get()));
+                b.accept(new ItemStack(Items.nightmare_base_redemption_down_and_out.get()));
+                b.accept(new ItemStack(Items.nightmare_base_fool.get()));
+                b.accept(new ItemStack(Items.nightmare_base_fool_soul.get()));
+                b.accept(new ItemStack(Items.nightmare_base_fool_betray.get()));
+                b.accept(new ItemStack(Items.nightmare_base_fool_bone.get()));
+                b.accept(new ItemStack(Items.nightmare_base_insight.get()));
+                b.accept(new ItemStack(Items.nightmare_base_insight_drug.get()));
+                b.accept(new ItemStack(Items.nightmare_base_insight_insane.get()));
+                b.accept(new ItemStack(Items.nightmare_base_insight_collapse.get()));
+                b.accept(new ItemStack(Items.nightmare_base_start.get()));
+                b.accept(new ItemStack(Items.nightmare_base_start_pod.get()));
+                b.accept(new ItemStack(Items.nightmare_base_start_egg.get()));
+                b.accept(new ItemStack(Items.nightmare_base_start_power.get()));
 
 
                 b.accept(new ItemStack(Items.magiceye.get()));

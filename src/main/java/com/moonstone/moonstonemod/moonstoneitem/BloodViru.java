@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.moonstoneitem;
 
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.item.Item;
@@ -11,10 +12,8 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public class BloodViru extends Item implements ICurioItem {
-    public BloodViru() {
-        super(new Properties().stacksTo(1).rarity(Rarity.create("blood_viru", ChatFormatting.DARK_PURPLE)));
-    }
+public class BloodViru extends TheNecoraIC implements ICurioItem {
+
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         stack.getOrCreateTag().putString("ytgld","ytgld");

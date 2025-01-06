@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.moonstoneitem.i.IBattery;
 import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.giant_boom_cell;
 import com.moonstone.moonstonemod.item.TheNecora.small.enhancemen;
@@ -18,14 +19,19 @@ import com.moonstone.moonstonemod.item.nanodoom.million;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_head;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_heart;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_orb;
+import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
 import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -44,9 +50,12 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
+import java.text.DecimalFormat;
 import java.util.Map;
 
 public class NewEvent {
+    public static final String lootTable = "god_loot";
+    public static final String die = "the_die";
     @SubscribeEvent
     public  void RightClickItem(PlayerInteractEvent.RightClickItem event){
         max_blood_cube.RightClickItem(event);
@@ -61,7 +70,8 @@ public class NewEvent {
         pain_candle.Heal(event);
         nightmare_head.LivingHealEvent(event);
         pain_ring.Heal(event);
-
+        nightmare_base_black_eye_heart.heal(event);
+        nightmare_base_reversal_orb.LivingHealEvent(event);
         if (event.getEntity().getAttribute(AttReg.heal.get())!=null){
             float attack = (float) event.getEntity().getAttribute(AttReg.heal.get()).getValue();
             event.setAmount(event.getAmount()*(attack));
@@ -69,20 +79,6 @@ public class NewEvent {
 
 
     }
-//    @SubscribeEvent
-//    public void LivingHealEvent(CriticalHitEvent event) {
-//        if (event.getEntity().getAttribute(AttReg.cit.get())!=null){
-//            float attack = (float) event.getEntity().getAttribute(AttReg.cit.get()).getValue();
-//            event.setDamageModifier(event.getDamageModifier()*(attack));
-//        }
-//    }
-//    @SubscribeEvent
-//    public void LivingHealEvent(PlayerEvent.BreakSpeed event) {
-//        if (event.getEntity().getAttribute(AttReg.break_speed.get())!=null){
-//            float attack = (float) event.getEntity().getAttribute(AttReg.break_speed.get()).getValue();
-//            event.setNewSpeed(event.getNewSpeed()*(attack));
-//        }
-//    }
     @SubscribeEvent
     public void LivingHurtEvent(LivingHurtEvent event){
         nightmare_heart.NigH(event);
@@ -99,6 +95,15 @@ public class NewEvent {
         million.hurt(event);
         nine_sword_book.att(event);
         nine_sword_books.att(event);
+        nightmare_base_fool_bone.attLook(event);
+        nightmare_base_black_eye_eye.attLook(event);
+        nightmare_base_black_eye_heart.hurt(event);
+        nightmare_base_insight_insane.damage(event);
+        nightmare_base_start_pod.damage(event);
+        nightmare_base_stone_brain.hurts(event);
+        nightmare_base_stone_virus.aVoid(event);
+        nightmare_base_stone.LivingHurtEvent(event);
+        nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
         if (event.getSource().getEntity() instanceof Player living) {
             if  (Handler.hascurio(living,Items.probability_stone.get())) {
                 if (!living.getCooldowns().isOnCooldown(Items.probability_stone.get())) {
@@ -135,7 +140,8 @@ public class NewEvent {
         blood_magic_box.Did(event);
         nine_sword_book.die(event);
         blood_sun.Did(event);
-
+        nightmare_base_black_eye_red.kill(event);
+        nightmare_base_insight_insane.LivingDeathEvents(event);
     }
     @SubscribeEvent
     public void PlayerInteractEvent(PlayerInteractEvent.EntityInteract event) {
@@ -170,7 +176,50 @@ public class NewEvent {
 
 
     }
+    @SubscribeEvent
+    public void BatteryName(ItemTooltipEvent event){
+        ItemStack stack = event.getItemStack();
 
+        if (stack.getTag() !=null){
+            if (stack.getTag().getBoolean("ALLBattery")){
+                event.getToolTip().add(Component.translatable("item.moonstone.battery").withStyle(ChatFormatting.GOLD));
+            }
+        }
+
+        if (stack.getItem() instanceof IBattery){
+            event.getToolTip().add(Component.translatable("item.moonstone.tooltip.battery").withStyle(ChatFormatting.GOLD));
+
+        }
+        if (stack.getTag() !=null) {
+            if (stack.getTag().getBoolean(Difficulty.PEACEFUL.getKey())) {
+
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.peaceful").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+
+            }
+            if (stack.getTag().getBoolean(Difficulty.EASY.getKey())) {
+
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.easy").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+
+            }
+            if (stack.getTag().getBoolean(Difficulty.NORMAL.getKey())) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.normal").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+
+            }
+            if (stack.getTag().getBoolean(Difficulty.HARD.getKey())) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.hard").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+            }
+            if (stack.getTag().getBoolean(lootTable)) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.god").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+            }
+
+        }
+
+    }
 
     public void PlayerInteractZombie(Player player, Entity target, Item doItem,String slot) {
         if (target instanceof small_zombie smallZombie){

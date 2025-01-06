@@ -38,29 +38,7 @@ import java.io.IOException;
 @Mod(MoonStoneMod.MODID)
 public class MoonStoneMod {
 
-//    public class DataReg {
-//        public static final DeferredRegister<DataComponentType<?>> REGISTRY = DeferredRegister.create(BuiltInRegistries.DATA_COMPONENT_TYPE, MoonStoneMod.MODID);
-//
-//        public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> String =
-//                REGISTRY.register("string",()-> DataComponentType.<String>builder().persistent(Codec.STRING).networkSynchronized(ByteBufCodecs.STRING_UTF8).build());
-//
-//        public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> Integer =
-//                REGISTRY.register("int_int",()-> DataComponentType.<Integer>builder().persistent(Codec.INT).networkSynchronized(ByteBufCodecs.VAR_INT).build());
-//
-//
-//
-//    }
-//   stack.set(DataReg.String,this.getDescriptionId());
-//   if (stack.get(DataReg.Integer)!= null) {
-//           stack.set(DataReg.Integer, pPlayer.getItemInHand(pUsedHand).get(DataReg.Integer) + 1);
-//        }else {
-//            stack.set(DataReg.Integer, 0);
-//        }
-//
-//
-//
-
-    public static final ResourceLocation POST = ResourceLocation.fromNamespaceAndPath(MoonStoneMod.MODID,
+    public static final ResourceLocation POST = new ResourceLocation(MoonStoneMod.MODID,
             "shaders/post/entity_outline.json");
 
     public static final String MODID = "moonstone";
@@ -75,8 +53,9 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new Tool());
         MinecraftForge.EVENT_BUS.register(new LootTableEvent());
         MinecraftForge.EVENT_BUS.register(new NewEvent());
+        MinecraftForge.EVENT_BUS.register(new AdvancementEvt());
 
-
+        DNAItems.REGISTRY.register(modEventBus);
 
         LootReg.REGISTRY.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);

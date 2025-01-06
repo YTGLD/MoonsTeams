@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/nightmare_base_black_eye",
+  "criteria": {
+    "nightmare_base_black_eye_heart": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmare_base_black_eye_heart"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare_base_black_eye_heart.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+     "icon": {
+      "item":"moonstone:nightmare_base_black_eye_heart"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.nightmare_base_black_eye_heart.hand"
+    }
+  },
+  "requirements": [
+    [
+      "nightmare_base_black_eye_heart"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

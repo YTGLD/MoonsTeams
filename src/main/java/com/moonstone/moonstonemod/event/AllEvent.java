@@ -36,6 +36,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.SpawnUtil;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
@@ -114,7 +115,36 @@ public class AllEvent {
     public static final String Parasitic_cell_Giant = "Parasitic_cell_Giant";
     public static final String Disgusting__cell_Giant = "Disgusting__cell_Giant";
 
+    @SubscribeEvent
+    public void th_dna(LivingHurtEvent event){
+        if ((event.getSource().getEntity() instanceof Player player)){
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (stack.getTag()!=null){
+                            if (stack.getTag().getBoolean(Difficulty.EASY.getKey())){
+                                event.setAmount(event.getAmount()+0);
+                            }
+                            if (stack.getTag().getBoolean(Difficulty.NORMAL.getKey())){
+                                event.setAmount(event.getAmount()+0.08f);
+                            }
+                            if (stack.getTag().getBoolean(Difficulty.HARD.getKey())){
+                                event.setAmount(event.getAmount()+0.17f);
+                            }
+                            if (stack.getTag().getBoolean(NewEvent.lootTable)){
+                                event.setAmount(event.getAmount()+0.25f);
+                            }
 
+                        }
+                    }
+                }
+            });
+        }
+    }
     @SubscribeEvent
     public void the_heart(LivingDropsEvent event){
         if ((event.getSource().getEntity() instanceof Player player)) {
@@ -1821,6 +1851,10 @@ public class AllEvent {
                     player.addTag("give_moonstone_item_book");
                 }
             }
+            if (!player.getTags().contains("nightmare")) {
+                player.addItem(Items.nightmare_base.get().getDefaultInstance());
+                player.addTag("nightmare");
+            }
         }
 
     }
@@ -2312,7 +2346,7 @@ public class AllEvent {
             tooltipEvent.setBorderStart(0xFF800000);
             tooltipEvent.setBorderEnd(0xFF800080);
 
-            tooltipEvent.setBackgroundStart(0xff000000);
+            tooltipEvent.setBackgroundStart(0x00000000);
             tooltipEvent.setBackgroundEnd(0x00000000);
         }
         if (stack.getItem() instanceof IDoom||stack.getItem() instanceof Perhaps) {
