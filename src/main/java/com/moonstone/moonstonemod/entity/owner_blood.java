@@ -106,7 +106,6 @@ public class owner_blood extends TamableAnimal {
         if (this.getTarget() != null&&this.getOwner()!=null){
             if (this.getTarget().is(this.getOwner())){
                 this.setTarget(null);
-
             }
         }
         if (this.getTarget() != null) {
@@ -116,18 +115,18 @@ public class owner_blood extends TamableAnimal {
         }
         if (this.getOwner()!= null) {
 
-            if (this.getOwner().getLastHurtByMob() != null) {
+            if (this.getOwner().getLastHurtByMob() != null&&isMoon(this.getOwner().getLastHurtByMob())) {
                 if (!this.getOwner().getLastHurtByMob().is(this)) {
                     this.setTarget(this.getOwner().getLastHurtByMob());
                 }
             }
-            if (this.getOwner().getLastAttacker() != null) {
+            if (this.getOwner().getLastAttacker() != null&&isMoon(this.getOwner().getLastAttacker())) {
                 if (!this.getOwner().getLastAttacker().is(this)) {
                     this.setTarget(this.getOwner().getLastAttacker());
                 }
 
             }
-            if (this.getOwner().getLastHurtMob() != null) {
+            if (this.getOwner().getLastHurtMob() != null&&isMoon(this.getOwner().getLastHurtMob())) {
                 if (!this.getOwner().getLastHurtMob().is(this)) {
                     this.setTarget(this.getOwner().getLastHurtMob());
                 }
@@ -226,6 +225,13 @@ public class owner_blood extends TamableAnimal {
                 }
             }
         }
+    }
+    private boolean isMoon(LivingEntity living){
+        if (living != null){
+            ResourceLocation entity = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());
+            return !entity.getNamespace().equals(MoonStoneMod.MODID);
+        }
+        return  true;
     }
     private void playRemoveOneSound(Entity p_186343_) {
         p_186343_.playSound(SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), 0.8F, 0.8F + p_186343_.level().getRandom().nextFloat() * 0.4F);

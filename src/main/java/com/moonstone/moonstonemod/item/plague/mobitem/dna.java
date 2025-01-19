@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.plague.mobitem;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.DNAItems;
 import com.moonstone.moonstonemod.moonstoneitem.Iplague;
@@ -15,9 +16,13 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -26,16 +31,20 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Stream;
@@ -377,5 +386,220 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
         p_186354_.playSound(SoundEvents.BUNDLE_DROP_CONTENTS, 0.8F, 0.8F + p_186354_.level().getRandom().nextFloat() * 0.4F);
 
     }
+    public  static void doBreak(LivingEntityUseItemEvent.Start event){
+        LivingEntity player = event.getEntity();
+        if (Handler.hascurio(player, com.moonstone.moonstonemod.init.Items.dna.get())) {CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (stack.is(  com.moonstone.moonstonemod.init.Items.dna.get())) {
+                            CompoundTag compoundtag = stack.getOrCreateTag();
+                            ListTag listtag = compoundtag.getList("Items", 10);
+                            for (int s = 0; s < listtag.size(); ++s) {
+                                CompoundTag compoundtag1 = listtag.getCompound(s);
 
+                                ItemStack itemStack = ItemStack.of(compoundtag1);
+
+                                if (itemStack.is(DNAItems.cell_big_boom.get())) {
+                                    int count = itemStack.getCount();
+                                    if (event.getItem().getUseAnimation() == UseAnim.EAT){
+                                        event.setDuration((int) (event.getDuration() * (1 - (count/100f))));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    public  static void eat(LivingEntityUseItemEvent.Finish event){
+        LivingEntity kl = event.getEntity();
+        if (kl instanceof Player player) {
+            if (Handler.hascurio(player,  com.moonstone.moonstonemod.init.Items.dna.get())) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.is( com.moonstone.moonstonemod.init.Items.dna.get())) {
+
+                                CompoundTag compoundtag = stack.getOrCreateTag();
+                                ListTag listtag = compoundtag.getList("Items", 10);
+                                for (int s = 0; s < listtag.size(); ++s) {
+                                    CompoundTag compoundtag1 = listtag.getCompound(s);
+
+                                    ItemStack itemStack = ItemStack.of(compoundtag1);
+                                    if (itemStack.is(DNAItems.cell_digestion.get())) {
+
+                                        int count = itemStack.getCount();
+                                        if (event.getItem().getUseAnimation() == UseAnim.EAT) {
+                                            player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel()+count/10);
+                                            player.getFoodData().setSaturation(player.getFoodData().getSaturationLevel()+count/10f);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
+    public  static void hur(LivingHurtEvent event){
+        Entity p = event.getEntity();
+        if (p instanceof Player player) {
+            if (Handler.hascurio(player,  com.moonstone.moonstonemod.init.Items.dna.get())) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.is( com.moonstone.moonstonemod.init.Items.dna.get())) {
+
+                                CompoundTag compoundtag = stack.getOrCreateTag();
+                                ListTag listtag = compoundtag.getList("Items", 10);
+                                for (int js = 0; js < listtag.size(); ++js) {
+                                    CompoundTag compoundtag1 = listtag.getCompound(js);
+
+                                    ItemStack itemStack = ItemStack.of(compoundtag1);
+                                    if (itemStack.is(DNAItems.cell_inheritance.get())) {
+                                        float s = itemStack.getCount();//64
+                                        s/=100f;//0.64
+                                        s/=3.2f;//0.2
+                                        event.setAmount(event.getAmount()*(1-s));
+                                    }
+                                    if (itemStack.is(DNAItems.cell_cranial.get())) {
+                                        float s = itemStack.getCount();//64
+                                        s/=100f;//0.64
+                                        if (event.getSource().is(DamageTypes.FALLING_ANVIL)
+                                                && event.getSource().is(DamageTypes.FALLING_STALACTITE)
+                                                && event.getSource().is(DamageTypes.FALLING_BLOCK)
+                                                && event.getSource().is(DamageTypes.MOB_PROJECTILE))
+                                        {
+                                            event.setAmount(event.getAmount()*(1-s));
+                                        }
+                                    }
+
+                                    if (itemStack.is(DNAItems.cell_compress.get())) {
+                                        float s = itemStack.getCount();//64
+                                        s/=100f;//0.64
+                                        if (event.getSource().getEntity() instanceof LivingEntity living){
+                                            float dam = event.getAmount() * s;
+                                            living.hurt(living.damageSources().dryOut(),dam);
+                                        }
+                                    }
+                                    if (itemStack.is(DNAItems.cell_constant.get())) {
+                                        if (!player.getCooldowns().isOnCooldown(DNAItems.cell_constant.get())) {
+                                            float s = itemStack.getCount();//64
+                                            s /= 100f;//0.64
+                                            player.invulnerableTime = player.invulnerableTime + ((int) (player.invulnerableTime * s));
+                                            player.getCooldowns().addCooldown(DNAItems.cell_constant.get(), player.invulnerableTime);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player,  com.moonstone.moonstonemod.init.Items.dna.get())) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.is( com.moonstone.moonstonemod.init.Items.dna.get())) {
+
+                                CompoundTag compoundtag = stack.getOrCreateTag();
+                                ListTag listtag = compoundtag.getList("Items", 10);
+                                for (int s = 0; s < listtag.size(); ++s) {
+                                    CompoundTag compoundtag1 = listtag.getCompound(s);
+
+                                    ItemStack itemStack = ItemStack.of(compoundtag1);
+                                    if (itemStack.is(DNAItems.cell_acid.get())) {
+                                        int count = itemStack.getCount();//64
+                                        ItemStack head = event.getEntity().getItemBySlot(EquipmentSlot.HEAD);
+                                        if (!head.isEmpty()&&head.getMaxDamage()!=0) {
+                                            head.hurtAndBreak(count, event.getEntity(), (living) -> {
+                                                living.broadcastBreakEvent(EquipmentSlot.HEAD);
+                                            });
+                                        }
+                                        ItemStack CHEST = event.getEntity().getItemBySlot(EquipmentSlot.CHEST);
+                                        if (!CHEST.isEmpty()&&CHEST.getMaxDamage()!=0){
+                                            CHEST.hurtAndBreak(count, event.getEntity(),(living)->{
+                                                living.broadcastBreakEvent(EquipmentSlot.CHEST);
+                                            });
+                                        }
+                                        ItemStack LEGS = event.getEntity().getItemBySlot(EquipmentSlot.LEGS);
+                                        if (!LEGS.isEmpty()&&LEGS.getMaxDamage()!=0){
+                                            LEGS.hurtAndBreak(count, event.getEntity(),(living) -> {
+                                                living.broadcastBreakEvent(EquipmentSlot.LEGS);
+                                            });
+                                        }
+                                        ItemStack FEET = event.getEntity().getItemBySlot(EquipmentSlot.FEET);
+                                        if (!FEET.isEmpty()&&FEET.getMaxDamage()!=0){
+                                            FEET.hurtAndBreak(count, event.getEntity(),(living) -> {
+                                                living.broadcastBreakEvent(EquipmentSlot.FEET);
+                                            });
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
+    public  static void dieD(LivingDeathEvent event){
+        Entity p = event.getSource().getEntity();
+        if (p instanceof Player player) {
+            if (Handler.hascurio(player,  com.moonstone.moonstonemod.init.Items.dna.get())) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.is( com.moonstone.moonstonemod.init.Items.dna.get())) {
+
+                                CompoundTag compoundtag = stack.getOrCreateTag();
+                                ListTag listtag = compoundtag.getList("Items", 10);
+                                for (int s = 0; s < listtag.size(); ++s) {
+                                    CompoundTag compoundtag1 = listtag.getCompound(s);
+
+                                    ItemStack itemStack = ItemStack.of(compoundtag1);
+                                    if (itemStack.is(DNAItems.cell_darwin.get())) {
+                                        float count = itemStack.getCount();
+                                        if (Mth.nextInt(RandomSource.create(),1,2)==1){
+                                            player.heal(count/8);
+                                        }else {
+                                            player.hurt(player.damageSources().magic(),count/32);
+                                        }
+                                    }
+                                    if (itemStack.is(DNAItems.cell_god.get())) {
+                                        float count = itemStack.getCount();
+                                        player.heal(count/32);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
 }

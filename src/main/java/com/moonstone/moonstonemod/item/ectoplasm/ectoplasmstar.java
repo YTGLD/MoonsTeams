@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.ectoplasm;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.moonstoneitem.ectoplasm;
 import net.minecraft.ChatFormatting;
@@ -45,6 +46,9 @@ public class ectoplasmstar extends ectoplasm {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         UUID uuid = UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8");
         float s = player.getLuck();
+        if (s > Config.SERVER.ectoplasmstar.get()) {
+            s=Config.SERVER.ectoplasmstar.get();
+        }
         s /= 100;
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + "ectoplasmstar", s/2, AttributeModifier.Operation.MULTIPLY_BASE));
         modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID + "ectoplasmstar", s, AttributeModifier.Operation.MULTIPLY_BASE));

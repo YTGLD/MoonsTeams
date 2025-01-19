@@ -1264,7 +1264,7 @@
   "item.moonstone.nightmare_base_black_eye_eye": "§4惶恐肉瘤",
   "item.nightmare_base_black_eye_eye.tool.string": "被注视的生物会无法移动",
   "item.nightmare_base_black_eye_eye.tool.string.1": "同时他会获得大量负面BUFF",
-  "item.nightmare_base_black_eye_eye.tool.string.2": "当你看向任意生物时，你会获得100%的伤害加成",
+  "item.nightmare_base_black_eye_eye.tool.string.2": "当你看向任意生物时，你会获得30%的伤害加成",
 
   "item.moonstone.nightmare_base_black_eye_red": "§4罪恶之红唇",
   "item.nightmare_base_black_eye_red.tool.string": "每次杀死生物都会使所有属性增加5%",

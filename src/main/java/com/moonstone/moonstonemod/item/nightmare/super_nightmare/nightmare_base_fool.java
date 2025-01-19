@@ -79,7 +79,7 @@ public class nightmare_base_fool extends nightmare {
             }
             dam /= 100f;
             dam *= 5f;
-
+            dam= -dam;
 
             linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("545a2afa-533e-3fcd-9875-3ac2e8ca7acf"),"a", dam, AttributeModifier.Operation.MULTIPLY_BASE));
         }
@@ -112,6 +112,7 @@ public class nightmare_base_fool extends nightmare {
             }
             health /= 100f;
             health *= 3f;
+            health= -health;
             linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("545a2afa-533e-3fcd-9875-3ac2e8ca7acf"),"a", health, AttributeModifier.Operation.MULTIPLY_BASE));
         }
 

@@ -23,6 +23,7 @@ import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
 import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
+import com.moonstone.moonstonemod.item.plague.mobitem.dna;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -103,6 +104,7 @@ public class NewEvent {
         nightmare_base_stone_brain.hurts(event);
         nightmare_base_stone_virus.aVoid(event);
         nightmare_base_stone.LivingHurtEvent(event);
+        dna.hur(event);
         nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
         if (event.getSource().getEntity() instanceof Player living) {
             if  (Handler.hascurio(living,Items.probability_stone.get())) {
@@ -142,6 +144,16 @@ public class NewEvent {
         blood_sun.Did(event);
         nightmare_base_black_eye_red.kill(event);
         nightmare_base_insight_insane.LivingDeathEvents(event);
+        dna.dieD(event);
+    }
+
+    @SubscribeEvent
+    public void Finish(LivingEntityUseItemEvent.Finish event) {
+        dna.eat(event);
+    }
+    @SubscribeEvent
+    public void Start(LivingEntityUseItemEvent.Start event) {
+        dna.doBreak(event);
     }
     @SubscribeEvent
     public void PlayerInteractEvent(PlayerInteractEvent.EntityInteract event) {

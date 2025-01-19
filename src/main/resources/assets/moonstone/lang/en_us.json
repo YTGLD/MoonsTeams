@@ -1223,7 +1223,7 @@
   "item.moonstone.nightmare_base_black_eye_eye": "§4Dreadful Tumor",
   "item.nightmare_base_black_eye_eye.tool.string": "Creatures under your gaze will be unable to move",
   "item.nightmare_base_black_eye_eye.tool.string.1": "They will also receive a large amount of negative BUFFs",
-  "item.nightmare_base_black_eye_eye.tool.string.2": "When you look at any creature, you will gain a 100% damage bonus",
+  "item.nightmare_base_black_eye_eye.tool.string.2": "When you look at any creature, you will gain a 30% damage bonus",
 
   "item.moonstone.nightmare_base_black_eye_red": "§4Sinful Red Lip",
   "item.nightmare_base_black_eye_red.tool.string": "Killing creatures increases all attributes by 5%",

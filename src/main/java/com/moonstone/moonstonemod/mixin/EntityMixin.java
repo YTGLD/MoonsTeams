@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.mixin;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,5 +20,17 @@ public class EntityMixin {
                cir.setReturnValue(true);
            }
        }
+        if ((Entity) (Object) this instanceof Player player) {
+            if (Handler.hascurio(player, Items.nightmare_base_redemption_degenerate.get())) {
+                if (p_20122_.is(DamageTypes.MAGIC) ||
+                        p_20122_.is(DamageTypes.FALL) ||
+                        p_20122_.is(DamageTypes.ON_FIRE) ||
+                        p_20122_.is(DamageTypes.LAVA) ||
+                        p_20122_.is(DamageTypes.IN_FIRE)) {
+                    cir.setReturnValue(true);
+                }
+            }
+        }
     }
+
 }

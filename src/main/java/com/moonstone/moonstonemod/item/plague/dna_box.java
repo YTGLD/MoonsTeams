@@ -3,8 +3,8 @@ package com.moonstone.moonstonemod.item.plague;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.event.NewEvent;
 import com.moonstone.moonstonemod.init.DNAItems;
-import com.moonstone.moonstonemod.init.moonstoneitem.i.Iplague;
 import com.moonstone.moonstonemod.item.necora;
+import com.moonstone.moonstonemod.moonstoneitem.Iplague;
 import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medIC;
 import net.minecraft.ChatFormatting;
@@ -32,42 +32,41 @@ import java.util.List;
 
 public class dna_box extends TheNecoraIC {
     public boolean overrideOtherStackedOnMe(ItemStack me, ItemStack Other, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
-        if (me.getCount() != 1) return false;
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
             if (Other.getItem() instanceof Iplague) {
-                if (me.getItem() instanceof dna_box) {
-                    CompoundTag tag = me.getTag();
-                    if (tag != null){
-                        ResourceLocation Dna = BuiltInRegistries.ITEM.getKey(Other.getItem());
-                        String dnas = Dna.getPath();
-                        if (!tag.getBoolean(dnas)) {
-                            tag.putBoolean(dnas, true);
+                CompoundTag tag = me.getTag();
+                if (tag == null) {
+                    CompoundTag t = new CompoundTag();
+                    me.setTag(t);
+                }
+                if (tag != null) {
+                    ResourceLocation Dna = BuiltInRegistries.ITEM.getKey(Other.getItem());
+                    String dnas = Dna.getPath();
+                    if (!tag.getBoolean(dnas)) {
+                        tag.putBoolean(dnas, true);
 
-                            if (Other.getTag()!=null) {
-                                if (Other.getTag().getBoolean(Difficulty.PEACEFUL.getKey())) {
-                                    tag.putBoolean(Difficulty.PEACEFUL.getKey() + dnas, true);
-                                }
-                                if (Other.getTag().getBoolean(Difficulty.EASY.getKey())) {
-                                    tag.putBoolean(Difficulty.EASY.getKey() + dnas, true);
-                                }
-                                if (Other.getTag().getBoolean(Difficulty.NORMAL.getKey())) {
-                                    tag.putBoolean(Difficulty.NORMAL.getKey() + dnas, true);
-                                }
-                                if (Other.getTag().getBoolean(Difficulty.HARD.getKey())) {
-                                    tag.putBoolean(Difficulty.HARD.getKey() + dnas, true);
-                                }
-                                if (Other.getTag().getBoolean(NewEvent.lootTable)) {
-                                    tag.putBoolean(NewEvent.lootTable + dnas, true);
-                                }
-
+                        if (Other.getTag() != null) {
+                            if (Other.getTag().getBoolean(Difficulty.PEACEFUL.getKey())) {
+                                tag.putBoolean(Difficulty.PEACEFUL.getKey() + dnas, true);
                             }
-                            Other.shrink(1);
-                            return true;
-                        }
+                            if (Other.getTag().getBoolean(Difficulty.EASY.getKey())) {
+                                tag.putBoolean(Difficulty.EASY.getKey() + dnas, true);
+                            }
+                            if (Other.getTag().getBoolean(Difficulty.NORMAL.getKey())) {
+                                tag.putBoolean(Difficulty.NORMAL.getKey() + dnas, true);
+                            }
+                            if (Other.getTag().getBoolean(Difficulty.HARD.getKey())) {
+                                tag.putBoolean(Difficulty.HARD.getKey() + dnas, true);
+                            }
+                            if (Other.getTag().getBoolean(NewEvent.lootTable)) {
+                                tag.putBoolean(NewEvent.lootTable + dnas, true);
+                            }
 
-                    }else {
-                        me.getOrCreateTag();
+                        }
+                        Other.shrink(1);
+                        return true;
                     }
+
                 }
             }
             if (Other.getItem() instanceof medIC necoraIC) {

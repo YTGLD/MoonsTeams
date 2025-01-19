@@ -75,6 +75,11 @@ public class Config {
                 .comment("Starting with a book or not")
                 .define("give", true);
 
+        ectoplasmstar = BUILDER
+                .comment("What is the maximum number of lucky values that can be converted from the attributes of the Spirit Lucky Star")
+                .defineInRange("EctoplasmStar", 100, 0, 1024);
+
+
         BUILDER.push("Loot");
         bat = BUILDER
                 .comment("The probability of discovering Shadow Plague items from the chests")
@@ -120,5 +125,6 @@ public class Config {
     public   ForgeConfigSpec.BooleanValue nine_sword_book ;
 
 
+    public   ForgeConfigSpec.IntValue ectoplasmstar ;
 
 }

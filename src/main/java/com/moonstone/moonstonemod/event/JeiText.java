@@ -199,5 +199,15 @@ public class JeiText implements IModPlugin {
         registration.addIngredientInfo(new ItemStack(Items.nightmare_base_start_pod.get()), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.nightmare_base_start_pod").append(Component.translatable("moonstone.jei.item.moonstone.nightmare_base.all").append(Component.translatable("item.moonstone.nightmare_base_start"))));
         registration.addIngredientInfo(new ItemStack(Items.nightmare_base_start_power.get()), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.nightmare_base_start_power").append(Component.translatable("moonstone.jei.item.moonstone.nightmare_base.all").append(Component.translatable("item.moonstone.nightmare_base_start"))));
 
+
+        registration.addIngredientInfo(Items.owner_blood_attack_eye.get().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.owner_blood_attack_eye"));
+        registration.addIngredientInfo(Items.owner_blood_speed_eye.get().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.owner_blood_speed_eye"));
+        registration.addIngredientInfo(Items.owner_blood_eye.get().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.owner_blood_eye"));
+        registration.addIngredientInfo(Items.owner_blood_effect_eye.get().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.owner_blood_effect_eye"));
+        registration.addIngredientInfo(Items.owner_blood_boom_eye.get().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.owner_blood_boom_eye"));
+        registration.addIngredientInfo(Items.owner_blood_vex.get().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.owner_blood_vex"));
+        registration.addIngredientInfo(Items.owner_blood_earth.get().getDefaultInstance(), VanillaTypes.ITEM_STACK, Component.translatable("moonstone.jei.item.moonstone.owner_blood_earth"));
+
+
     }
 }
