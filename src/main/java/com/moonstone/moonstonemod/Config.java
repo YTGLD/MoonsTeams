@@ -20,18 +20,10 @@ public class Config {
         plague_speed = BUILDER
                 .comment("The growth rate of plague research sites")
                 .defineInRange("GrowthSpeed", 0.1, 0, 100);
-
         plague_pain = BUILDER
                 .comment("The corrosion speed of the plague")
                 .defineInRange("CorrosionSpeed", 0.01, 0, 100);
 
-
-        plague_effect = BUILDER
-                .comment("The corrosive effect of plague(All effects will be multiplied by this value)")
-                .defineInRange("CorrosionEffect", 1d, 0.01, 100);
-        plague_effect = BUILDER
-                .comment("The corrosive effect of plague(All effects will be multiplied by this value)")
-                .defineInRange("CorrosionEffect", 1d, 0.01, 100);
         nightmare_moai = BUILDER
                 .comment("Nightmare Moai's enchantment level bonus")
                 .defineInRange("EnchantmentBonus", 2, 0, 100);
@@ -104,7 +96,6 @@ public class Config {
     }
     public  ForgeConfigSpec.DoubleValue plague_speed;
     public   ForgeConfigSpec.DoubleValue plague_pain;
-    public   ForgeConfigSpec.DoubleValue plague_effect;
     public   ForgeConfigSpec.IntValue nightmare_moai;
     public   ForgeConfigSpec.IntValue m_brain_many;
     public   ForgeConfigSpec.DoubleValue m_brain_critical;

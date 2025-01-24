@@ -456,7 +456,9 @@
 
 
 
+  "item.moonstone.plagues": "亚特格拉德病毒-重生",
   "item.moonstone.plague": "亚特格拉德病毒",
+  "item.plague.s.tool.string": "这个物品已经没有任何用处了",
   "item.plague.tool.string": "研究点数",
   "item.plague.tool.string.1": "病毒点数",
   "item.plague.tool.string.2": "反研究点数",

@@ -31,16 +31,12 @@ public class apple extends Item implements Iplague {
     public ItemStack finishUsingItem(ItemStack s, Level level, LivingEntity living) {
         ItemStack stack = super.finishUsingItem(s, level, living);
         if (living instanceof Player player){
-            if (!player.getTags().contains("add_nec_moonstone")) {
-                UUID uuid = UUID.fromString("00000000-0000-300f-95e1-2830b5159532");
-                CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("necora").ifPresent(stacks -> {
-                    if (!stacks.getModifiers().containsKey(uuid)) {
-                        stacks.addPermanentModifier(new AttributeModifier(uuid, "acc_mid_asd", 3, AttributeModifier.Operation.ADDITION));
-                    }
-                }));
-
-                player.addTag("add_nec_moonstone");
-            }
+            UUID uuid = UUID.fromString("00000000-0000-300f-95e1-2830b5159532");
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("necora").ifPresent(stacks -> {
+                if (!stacks.getModifiers().containsKey(uuid)) {
+                    stacks.addPermanentModifier(new AttributeModifier(uuid, "acc_mid_asd", 1, AttributeModifier.Operation.ADDITION));
+                }
+            }));
 
             player.addEffect(new MobEffectInstance(MobEffects.HUNGER, 2000, 2));
         }

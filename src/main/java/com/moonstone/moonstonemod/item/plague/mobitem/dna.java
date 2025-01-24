@@ -326,7 +326,7 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
                 multimap.put(Attributes.LUCK, new AttributeModifier(
                         uuid,
                         "a",
-                        -count,
+                        count,
                         AttributeModifier.Operation.MULTIPLY_BASE));
             }
             if (itemStack.is(DNAItems.cell_dna_suppression.get())) {

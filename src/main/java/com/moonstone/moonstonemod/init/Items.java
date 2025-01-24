@@ -25,6 +25,7 @@ import com.moonstone.moonstonemod.item.maxitem.fortunecrystal;
 import com.moonstone.moonstonemod.item.maxitem.maxamout;
 import com.moonstone.moonstonemod.item.maxitem.mayhemcrystal;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.common.*;
+import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.*;
 import com.moonstone.moonstonemod.item.necora;
@@ -161,6 +162,7 @@ public class Items {
     public static final RegistryObject<Item> mayhemcrystal =REGISTRY.register("mayhemcrystal",mayhemcrystal::new);
     public static final RegistryObject<Item> fortunecrystal =REGISTRY.register("fortunecrystal",fortunecrystal::new);
     public static final RegistryObject<Item> plague =REGISTRY.register("plague", com.moonstone.moonstonemod.item.maxitem.uncommon.plague::new);
+    public static final RegistryObject<Item> plagues =REGISTRY.register("plagues", com.moonstone.moonstonemod.item.maxitem.uncommon.plague.plagues::new);
     public static final RegistryObject<Item> doomeye =REGISTRY.register("doomeye", doomeye::new);
 
     public static final RegistryObject<Item> doomswoud =REGISTRY.register("doomswoud", doomswoud::new);

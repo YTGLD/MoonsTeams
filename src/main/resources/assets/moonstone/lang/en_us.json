@@ -455,7 +455,9 @@
   "item.flyeye.tool.string.2": "Cause damage to surrounding creatures during invincibility",
 
   "item.moonstone.plague": "plague",
-  "item.plague.tool.string": "Research progress",
+  "item.moonstone.plagues": "plague",
+  "item.plague.s.tool.string": "这个物品已经没有任何用处了",
+  "item.plague.tool.string": "研究点数",
   "item.plague.tool.string.un": "use nightmare eye Can Un equip plague",
 
   "item.plague.tool.string.1": "Virus progress",

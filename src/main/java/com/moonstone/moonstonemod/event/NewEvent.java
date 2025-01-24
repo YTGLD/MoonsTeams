@@ -73,12 +73,20 @@ public class NewEvent {
         pain_ring.Heal(event);
         nightmare_base_black_eye_heart.heal(event);
         nightmare_base_reversal_orb.LivingHealEvent(event);
+
         if (event.getEntity().getAttribute(AttReg.heal.get())!=null){
             float attack = (float) event.getEntity().getAttribute(AttReg.heal.get()).getValue();
             event.setAmount(event.getAmount()*(attack));
         }
 
 
+    }
+    @SubscribeEvent
+    public void LivingHealEvent(CriticalHitEvent event) {
+        if (event.getEntity().getAttribute(AttReg.cit.get())!=null){
+            float attack = (float) event.getEntity().getAttribute(AttReg.cit.get()).getValue();
+            event.setDamageModifier(event.getDamageModifier()*(attack));
+        }
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingHurtEvent event){

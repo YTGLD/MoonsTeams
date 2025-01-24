@@ -114,7 +114,182 @@ public class AllEvent {
     public static final String Bone_Giant = "Bone_Giant";
     public static final String Parasitic_cell_Giant = "Parasitic_cell_Giant";
     public static final String Disgusting__cell_Giant = "Disgusting__cell_Giant";
+    @SubscribeEvent
+    public void LivingDeathEvent(LivingDeathEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,  Items.plagues.get())){
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (!stack.isEmpty()){
+                                if (stack.getTag() != null) {
+                                    if (stack.is(Items.plagues.get())) {
+                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu)+0.1));
 
+                                        if (!stack.getTag().getBoolean(plague.YanJIuBoolean)){
+                                            player.displayClientMessage(Component.translatable(""+(stack.getOrCreateTag().getFloat(plague.YanJIu))).append("%").withStyle(ChatFormatting.RED), true);
+                                            if (stack.getOrCreateTag().getFloat(plague.CursePlague)<100) {
+                                                stack.getOrCreateTag().putFloat(plague.CursePlague, stack.getOrCreateTag().getFloat(plague.CursePlague) + 0.1f);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+    }
+
+    @SubscribeEvent
+    public void plagueLivingHurtEvent(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,  Items.plagues.get())){
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (!stack.isEmpty()){
+                                if (stack.getTag() != null) {
+                                    if (stack.is(Items.plagues.get())) {
+                                        if (stack.getTag().getBoolean(plague.YanJIuBoolean)){
+                                            if (event.getEntity() instanceof Mob){
+                                                event.setAmount(event.getAmount() *2);
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+    }
+    @SubscribeEvent
+    public void plagueLBreakSpeed(PlayerEvent.BreakSpeed event) {
+        if (Handler.hascurio(event.getEntity(), Items.plagues.get())) {
+            CuriosApi.getCuriosInventory(event.getEntity()).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            if (stack.getTag() != null) {
+                                if (stack.is(Items.plagues.get())) {
+                                    if (stack.getTag().getBoolean(plague.YanJIuBoolean)) {
+
+                                        event.setNewSpeed(event.getNewSpeed() * 1.7f);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+    @SubscribeEvent
+    public void plagueLivingHurtEvent(LivingHealEvent event) {
+        if (event.getEntity() instanceof Player player){
+            if (Handler.hascurio(player,  Items.plagues.get())){
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (!stack.isEmpty()){
+                                if (stack.getTag() != null) {
+                                    if (stack.is(Items.plagues.get())) {
+                                        if (stack.getTag().getBoolean(plague.YanJIuBoolean)){
+
+                                            event.setAmount(event.getAmount() *2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
+    @SubscribeEvent
+    public void Boss(LivingHurtEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,  Items.plagues.get())){
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (!stack.isEmpty()){
+                                if (stack.getTag() != null) {
+                                    if (stack.is(Items.plagues.get())) {
+                                        if (stack.getTag().getBoolean(plague.YanJIuBoolean)) {
+                                            if (event.getEntity().getMaxHealth() > player.getHealth() * 10) {
+                                                event.setAmount(event.getAmount() * 2.5f);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
+    @SubscribeEvent
+    public void plague(LivingDropsEvent event) {
+        if (event.getSource().getEntity() instanceof Player player){
+            if (Handler.hascurio(player,  Items.plagues.get())){
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (!stack.isEmpty()){
+                                if (stack.getTag() != null) {
+                                    if (stack.is(Items.plagues.get())) {
+                                        stack.getTag().putFloat(plague.YanJIu, (float) (stack.getOrCreateTag().getFloat(plague.YanJIu) + Config.SERVER.plague_speed.get()));
+
+                                        if (!stack.getTag().getBoolean(plague.YanJIuBoolean)){
+                                            player.displayClientMessage(Component.translatable(""+(stack.getOrCreateTag().getFloat(plague.YanJIu))).append("%").withStyle(ChatFormatting.RED), true);
+
+                                            if (stack.getOrCreateTag().getFloat(plague.CursePlague)<100) {
+                                                stack.getOrCreateTag().putFloat(plague.CursePlague, (float) (stack.getOrCreateTag().getFloat(plague.CursePlague) +  Config.SERVER.plague_pain.get()));
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+    }
     @SubscribeEvent
     public void th_dna(LivingHurtEvent event){
         if ((event.getSource().getEntity() instanceof Player player)){
@@ -1660,7 +1835,6 @@ public class AllEvent {
                 if (a == 2) {
                     player.addItem(Items.twistedstone.get().getDefaultInstance());
                 }
-                player.addItem(Items.apple.get().getDefaultInstance());
                 player.addTag("welcome_to_moonstone");
             }
             if (Config.SERVER.giveBook.get()) {
