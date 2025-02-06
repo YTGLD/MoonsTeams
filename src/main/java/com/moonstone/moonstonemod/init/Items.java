@@ -25,7 +25,6 @@ import com.moonstone.moonstonemod.item.maxitem.fortunecrystal;
 import com.moonstone.moonstonemod.item.maxitem.maxamout;
 import com.moonstone.moonstonemod.item.maxitem.mayhemcrystal;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.common.*;
-import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.*;
 import com.moonstone.moonstonemod.item.necora;
@@ -33,7 +32,7 @@ import com.moonstone.moonstonemod.item.nightmare.*;
 import com.moonstone.moonstonemod.item.plague.dna_box;
 import com.moonstone.moonstonemod.item.plague.medicine.med.*;
 import com.moonstone.moonstonemod.item.plague.mobitem.*;
-import com.moonstone.moonstonemod.moonstoneitem.extend.apple;
+import com.moonstone.moonstonemod.item.apple;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
 import net.minecraft.world.InteractionHand;
@@ -50,7 +49,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
-import java.util.Properties;
 
 public class Items {
     public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, MoonStoneMod.MODID);
@@ -191,7 +189,6 @@ public class Items {
     public static final RegistryObject<Item> nightmare_head =REGISTRY.register("nightmare_head", com.moonstone.moonstonemod.item.nightmare.nightmare_head::new);
     public static final RegistryObject<Item> giant_nightmare =REGISTRY.register("giant_nightmare", com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare::new);
     public static final RegistryObject<Item> nightmare_cube =REGISTRY.register("nightmare_cube", com.moonstone.moonstonemod.item.nightmare.nightmare_cube::new);
-    public static final RegistryObject<Item> million_sword =REGISTRY.register("million_sword", com.moonstone.moonstonemod.item.nanodoom.sword.million_sword::new);
 
     public static final RegistryObject<Item> speed_seed =REGISTRY.register("speed_seed", com.moonstone.moonstonemod.moonstoneitem.speed_seed::new);
 //    public static final RegistryObject<Item> sword_amout =REGISTRY.register("sword_amout", com.moonstone.moonstonemod.item.nanodoom.sword_amout::new);

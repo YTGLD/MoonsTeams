@@ -29,7 +29,7 @@ public class nightmare_base_insight_collapse extends nightmare {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         CuriosApi
-                .addSlotModifier(linkedHashMultimap, "curio", uuid, 1, AttributeModifier.Operation.MULTIPLY_BASE);
+                .addSlotModifier(linkedHashMultimap, "curio", uuid, 2, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
         return linkedHashMultimap;
      }

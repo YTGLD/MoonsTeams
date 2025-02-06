@@ -5,8 +5,13 @@ import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.item.nightmare.super_nightmare.nightmare_base_stone_meet;
 import com.moonstone.moonstonemod.moonstoneitem.Iwar;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
+import net.minecraft.core.Holder;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -19,25 +24,40 @@ import java.util.UUID;
 public class mayhemcrystal extends UnCommonItem  implements Iwar {
 
     @Override
-    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-           if (Handler.hascurio(player, Items.warcrystal.get())){
-               return false;
-           }
-            if (Handler.hascurio(player, Items.bigwarcrystal.get())){
-                return false;
-            }
-            if (Handler.hascurio(player,this)){
-                return false;
+            if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
+                if (stack.getTag() != null) {
+                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,true);
+                }else {
+                    stack.getOrCreateTag();
+                }
             }
         }
+    }
 
-        return true;
+    @Override
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            if (!Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
+                if (stack.getTag() != null) {
+                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,false);
+                }else {
+                    stack.getOrCreateTag();
+                }
+
+            }
+        }
     }
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":mayhemcrystal", 0.3, AttributeModifier.Operation.MULTIPLY_BASE));
+        float s  = 0.3f;
+        if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_stone_meet.get())){
+            s*=1.5f;
+        }
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid,"uuid", s, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
 }

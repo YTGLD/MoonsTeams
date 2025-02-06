@@ -59,6 +59,7 @@ public class nightmare_base_black_eye_red  extends nightmare {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        super.onEquip(slotContext, prevStack, stack);
         slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack));
     }
 

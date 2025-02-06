@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class PlayerMixin {
     @Inject(at = @At("RETURN"), method = "createAttributes", cancellable = true)
     private static void createAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir){
-        cir.setReturnValue(cir.getReturnValue().add(AttReg.heal.get(),1));
+        cir.setReturnValue(cir.getReturnValue().add(AttReg.heal.get(),1).add(AttReg.cit.get(),1).add(AttReg.break_speed.get(),1));
     }
 }

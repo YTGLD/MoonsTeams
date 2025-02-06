@@ -86,6 +86,9 @@ public class LootTableEvent {
                         .add(LootItem.lootTableItem(Items.as_amout.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
+                        .add(LootItem.lootTableItem(Items.germ.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
                         .build());
             }
 
@@ -145,11 +148,11 @@ public class LootTableEvent {
                         .add(LootItem.lootTableItem(Items.blueamout.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
-                        .add(LootItem.lootTableItem(Items.greedcrystal.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.greedcrystal.get()).setWeight(2))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
 
-                        .add(LootItem.lootTableItem(Items.warcrystal.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.warcrystal.get()).setWeight(2))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .add(LootItem.lootTableItem(Items.whiteorb.get()).setWeight(1))

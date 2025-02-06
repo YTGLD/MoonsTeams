@@ -1,0 +1,118 @@
+{
+  "name": "月之石的综合介绍",
+  "icon": "moonstone:ectoplasmball",
+  "category": "moonstone:start_any",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "text",
+      "text": "月之石的综合介绍，包含了大量基础物品"
+    },
+    {
+      "type": "text",
+      "text": "下一页"
+    },
+    {
+      "type": "image",
+      "border": true,
+      "title": "基础",
+      "images": [
+        "moonstone:textures/image/start_any.png"
+      ]
+    },
+
+    {
+      "type": "spotlight",
+      "item": "moonstone:ectoplasmball",
+      "title": "一些小东西",
+      "text": "没什么好介绍的，都是开箱子"
+    },
+    {
+      "type": "image",
+      "border": true,
+      "title": "莫里斯物品",
+      "images": [
+        "moonstone:textures/image/mls.png"
+      ]
+    },
+
+    {
+      "type": "spotlight",
+      "item": "moonstone:meye",
+      "title": "莫里斯",
+      "text": "它们基本发现于僵尸"
+    },
+
+    {
+      "type": "image",
+      "border": true,
+      "title": "深渊",
+      "images": [
+        "moonstone:textures/image/abyss.png"
+      ]
+    },
+
+    {
+      "type": "spotlight",
+      "item": "moonstone:nightmareeye",
+      "title": "深渊",
+      "text": "它们需要再佩戴深渊之眼的情况下发现在各种战利品箱子里"
+    },
+
+    {
+      "type": "image",
+      "border": true,
+      "title": "神剑",
+      "images": [
+        "moonstone:textures/image/sword.png"
+      ]
+    },
+
+    {
+      "type": "spotlight",
+      "item": "moonstone:as_amout",
+      "title": "修炼",
+      "text": "古城的箱子里可能会发现"
+    },
+
+
+
+
+
+    {
+      "type": "image",
+      "border": true,
+      "title": "血魔",
+      "images": [
+        "moonstone:textures/image/blood.png"
+      ]
+    },
+
+    {
+      "type": "spotlight",
+      "item": "moonstone:blood_candle",
+      "title": "血魔",
+      "text": "需要血之魔盒做起始，这个物品会带来重要物品-血液"
+    },
+
+
+
+
+    {
+      "type": "image",
+      "border": true,
+      "title": "噩梦",
+      "images": [
+        "moonstone:textures/image/nigthmare.png"
+      ]
+    },
+
+    {
+      "type": "spotlight",
+      "item": "moonstone:nightmare_base",
+      "title": "噩梦",
+      "text": "佩戴开局的噩梦基座,你会随机获得三个，之后的四个无法获取！这些物品多数是需要完成任务获取，你需要查看jei模组来进行下一步计划"
+    }
+  ]
+}

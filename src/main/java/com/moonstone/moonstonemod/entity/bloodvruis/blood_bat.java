@@ -89,18 +89,7 @@ public class blood_bat extends TamableAnimal {
                                 Vec3 vec32 = vec31.normalize();
 
                                 if (Mth.floor(vec31.length()) < 5) {
-                                    for (int i = 1; i < Mth.floor(vec31.length()) + 10; ++i) {
-                                        Vec3 vec33 = vec3.add(vec32.scale(i));
 
-                                        test_blood z = new test_blood(EntityTs.test_blood.get(), this.level());
-
-                                        z.teleportTo(vec33.x, vec33.y - 1, vec33.z);
-                                        z.setNoAi(true);
-                                        z.setNoGravity(true);
-                                        z.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 12000, 0, false, false));
-
-                                        this.level().addFreshEntity(z);
-                                    }
                                     if (this.getAttribute(Attributes.ATTACK_DAMAGE)!= null) {
                                         if (this.getTags().contains(bat_cell.cell_doctor)) {
                                             this.heal((float) (this.getAttribute(Attributes.ATTACK_DAMAGE).getValue() / 5));

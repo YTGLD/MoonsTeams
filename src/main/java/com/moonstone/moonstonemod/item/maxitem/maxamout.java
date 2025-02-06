@@ -2,10 +2,14 @@ package com.moonstone.moonstonemod.item.maxitem;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.item.nightmare.super_nightmare.nightmare_base_stone_meet;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -28,7 +32,17 @@ public class maxamout extends UnCommonItem {
                 player.removeEffect(MobEffects.DIG_SLOWDOWN);
             }
         }
+        if (slotContext.entity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
+                if (stack.getTag() != null) {
+                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,true);
+                }else {
+                    stack.getOrCreateTag();
+                }
+            }
+        }
     }
+
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
@@ -41,6 +55,15 @@ public class maxamout extends UnCommonItem {
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             player.getAttributes().removeAttributeModifiers(swim(player, stack));
+        }
+        if (slotContext.entity() instanceof Player player) {
+            if (!Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
+                if (stack.getTag() != null) {
+                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,false);
+                }else {
+                    stack.getOrCreateTag();
+                }
+            }
         }
     }
     @Override

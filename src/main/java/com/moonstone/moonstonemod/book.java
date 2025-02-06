@@ -4,7 +4,6 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -33,7 +32,6 @@ import java.util.UUID;
 
 
 public class    book extends UnCommonItem {
-
 
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
@@ -77,7 +75,6 @@ public class    book extends UnCommonItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
         if (ModList.get().isLoaded("patchouli")){
-
             if (p_41433_ instanceof ServerPlayer player){
                 PatchouliAPI.get().openBookGUI(player,new ResourceLocation(MoonStoneMod.MODID,"soul_book"));
             }

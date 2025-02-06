@@ -17,7 +17,7 @@ void main() {
     float totalStrength = 0.0;
     float totalAlpha = 0.0;
     float totalSamples = 0.0;
-    for(float r = -Radius; r <= Radius; r += 0.10) {
+    for(float r = -Radius; r <= Radius; r += 0.08) {
         vec4 sampleValue = texture(DiffuseSampler, texCoord + oneTexel * r * BlurDir);
 
 		// Accumulate average alpha
@@ -29,5 +29,5 @@ void main() {
         totalStrength = totalStrength + strength;
         blurred = blurred + sampleValue;
     }
-    fragColor = vec4(blurred.rgb / (Radius * 2.0 + 1.0), totalAlpha);
+    fragColor = vec4(blurred.rgb / (Radius * 1.75 + 1.0), totalAlpha);
 }

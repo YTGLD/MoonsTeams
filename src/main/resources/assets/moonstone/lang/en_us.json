@@ -971,6 +971,20 @@
   "item.moonstone.blood_jelly": "blood jelly",
   "item.moonstone.dna_box": "dna box",
   "item.moonstone.medicinebox.tool.2": "",
+  "item.dnas.tool.string": "提示：使用药物粉碎盒粉碎基因物品",
+  "item.moonstone.cell_disorder.tool": "Clear all BUFFs every (number) turns",
+  "item.moonstone.cell_god.tool": "Restore (number) health points when killing a creature",
+  "item.moonstone.cell_inheritance.tool": "Increase (number) damage resistance",
+  "item.moonstone.cell_big_boom.tool": "Increase (number) eating speed",
+  "item.moonstone.cell_darwin.tool": "Restore or deduct (number) health points when killing a creature",
+  "item.moonstone.speed_metabolism.tool": "Consume 1 hunger point when satiety is less than (number)",
+  "item.moonstone.cell_acid.tool": "Corrode the equipment of (number) attacked creatures",
+  "item.moonstone.cell_eyes.tool": "Make creatures within a radius of (number) glow",
+  "item.moonstone.cell_digestion.tool": "Increase (number) food satiety and hunger points",
+  "item.moonstone.cell_cranial.tool": "Increase (number) head damage resistance",
+  "item.moonstone.cell_compress.tool": "Increase (number) damage reflection",
+  "item.moonstone.cell_flu.tool": "Weaken creatures within a radius of (number)",
+  "item.moonstone.cell_constant.tool": "Increase (number) invincibility frames",
 
   "error.moonstone.dna_box": "",
   "item.moonstone.atp_height": "",
@@ -1193,9 +1207,12 @@
 
 
 
+  "item.book.tool.string": "See what's in the book! +1 accessory slot after wearing!",
 
+  "item.book.tool.string.nine_sword": "The power of the sword",
+  "item.book.tool.string.modi_blood": "Blood Demon Overlord",
   "item.moonstone.nightmare_base": "§4Nightmare Base",
-  "item.nightmare_base.tool.string": "-15% damage,health,armor",
+  "item.nightmare_base.tool.string": "-30% damage,health,armor",
   "item.nightmare_base.tool.string.1": "Evil Thought Antimony, Blood Cruel Lead, Malicious Mourning Nullification",
 
   "item.moonstone.nightmare_base_stone": "§4Deadly Obelisk",

@@ -114,7 +114,6 @@ public class nightmare_base  extends nightmare {
     @Override
     public void appendHoverText(ItemStack p_41421_,Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
         p_41423_.add(Component.translatable("item.nightmare_base.tool.string").withStyle(ChatFormatting.DARK_RED));
-        p_41423_.add(Component.translatable("item.nightmare_base.tool.string.1").withStyle(ChatFormatting.DARK_RED));
         p_41423_.add(Component.literal(""));
         p_41423_.add(Component.translatable("item.nightmareeye.tool.string.2").withStyle(ChatFormatting.DARK_RED));    }
 

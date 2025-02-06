@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.event;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.init.AttReg;
+import com.moonstone.moonstonemod.init.DNAItems;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.IBattery;
 import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
@@ -37,6 +38,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
@@ -82,10 +86,75 @@ public class NewEvent {
 
     }
     @SubscribeEvent
+    public void BreakSpeed(PlayerEvent.BreakSpeed event) {
+        if (event.getEntity().getAttribute(AttReg.break_speed.get())!=null){
+            float attack = (float) event.getEntity().getAttribute(AttReg.break_speed.get()).getValue();
+            event.setNewSpeed(event.getNewSpeed()*(attack));
+        }
+    }
+    @SubscribeEvent
     public void LivingHealEvent(CriticalHitEvent event) {
         if (event.getEntity().getAttribute(AttReg.cit.get())!=null){
             float attack = (float) event.getEntity().getAttribute(AttReg.cit.get()).getValue();
             event.setDamageModifier(event.getDamageModifier()*(attack));
+        }
+    }
+    @SubscribeEvent
+    public void Night(ItemTooltipEvent event) {
+        ItemStack stack = event.getItemStack();
+        Player player = event.getEntity();
+        if (Handler.hascurio(player,Items.nightmare_base_stone_meet.get())){
+            if (stack.is(Items.ectoplasmstar.get())){
+                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.nightmare_base_stone_meet").withStyle(ChatFormatting.DARK_RED));
+            }
+            if (stack.is(Items.mayhemcrystal.get())){
+                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.mayhemcrystal").withStyle(ChatFormatting.DARK_RED));
+
+            }
+            if (stack.is(Items.maxamout.get())){
+                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.maxamout").withStyle(ChatFormatting.DARK_RED));
+                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.maxamout.1").withStyle(ChatFormatting.DARK_RED));
+                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.maxamout.2").withStyle(ChatFormatting.DARK_RED));
+            }
+        }
+
+    }
+    @OnlyIn(Dist.CLIENT)
+    @SubscribeEvent
+    public void RenderTooltipEven4t(RenderTooltipEvent.Color tooltipEvent){
+        ItemStack stack =  tooltipEvent.getItemStack();
+        if (stack.is(Items.ectoplasmstar.get())){
+            if (stack.getTag()!=null){
+                if (stack.getTag().getBoolean(nightmare_base_stone_meet.curse)){
+                    tooltipEvent.setBorderEnd(0xFFff70b2);
+                    tooltipEvent.setBorderStart(0xFFff70b2);
+
+                    tooltipEvent.setBackgroundEnd(0xFF230613);
+                    tooltipEvent.setBackgroundStart(0xFF230613);
+                }
+            }
+        }
+        if (stack.is(Items.mayhemcrystal.get())){
+            if (stack.getTag()!=null){
+                if (stack.getTag().getBoolean(nightmare_base_stone_meet.curse)){
+                    tooltipEvent.setBorderEnd(0xFFff70b2);
+                    tooltipEvent.setBorderStart(0xFFff70b2);
+
+                    tooltipEvent.setBackgroundEnd(0xFF230613);
+                    tooltipEvent.setBackgroundStart(0xFF230613); }
+            }
+        }
+        if (stack.is(Items.maxamout.get())){
+            if (stack.getTag()!=null){
+                if (stack.getTag().getBoolean(nightmare_base_stone_meet.curse)){
+                    tooltipEvent.setBorderEnd(0xFFff70b2);
+                    tooltipEvent.setBorderStart(0xFFff70b2);
+
+                    tooltipEvent.setBackgroundEnd(0xFF230613);
+                    tooltipEvent.setBackgroundStart(0xFF230613);
+
+                }
+            }
         }
     }
     @SubscribeEvent
@@ -196,9 +265,28 @@ public class NewEvent {
 
 
     }
+    public void addV(ItemStack stack,Item Dhis,ItemTooltipEvent event,String string){
+        if (stack.is(Dhis)) {
+            event.getToolTip().add(1,Component.translatable(string).withStyle(ChatFormatting.RED));
+        }
+    }
     @SubscribeEvent
     public void BatteryName(ItemTooltipEvent event){
         ItemStack stack = event.getItemStack();
+        addV(stack, DNAItems.cell_disorder.get(),event,"item.moonstone.cell_disorder.tool");
+        addV(stack,DNAItems.cell_god.get(),event,"item.moonstone.cell_god.tool");
+        addV(stack,DNAItems.cell_inheritance.get(),event,"item.moonstone.cell_inheritance.tool");
+        addV(stack,DNAItems.cell_big_boom.get(),event,"item.moonstone.cell_big_boom.tool");
+        addV(stack,DNAItems.cell_darwin.get(),event,"item.moonstone.cell_darwin.tool");
+        addV(stack,DNAItems.speed_metabolism.get(),event,"item.moonstone.speed_metabolism.tool");
+        addV(stack,DNAItems.cell_acid.get(),event,"item.moonstone.cell_acid.tool");
+        addV(stack,DNAItems.cell_eyes.get(),event,"item.moonstone.cell_eyes.tool");
+        addV(stack,DNAItems.cell_digestion.get(),event,"item.moonstone.cell_digestion.tool");
+        addV(stack,DNAItems.cell_cranial.get(),event,"item.moonstone.cell_cranial.tool");
+        addV(stack,DNAItems.cell_compress.get(),event,"item.moonstone.cell_compress.tool");
+        addV(stack,DNAItems.cell_flu.get(),event,"item.moonstone.cell_flu.tool");
+        addV(stack,DNAItems.cell_constant.get(),event,"item.moonstone.cell_constant.tool");
+
 
         if (stack.getTag() !=null){
             if (stack.getTag().getBoolean("ALLBattery")){

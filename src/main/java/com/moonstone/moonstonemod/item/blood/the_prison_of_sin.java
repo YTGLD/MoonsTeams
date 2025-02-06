@@ -117,7 +117,7 @@ public class the_prison_of_sin extends Item implements ICurioItem, Blood {
     }
     public Multimap<Attribute, AttributeModifier> Health() {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),"name", -0.80, AttributeModifier.Operation.ADDITION));
+        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),"name", -0.80, AttributeModifier.Operation.MULTIPLY_BASE));
         modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),"name", -0.80, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return modifierMultimap;

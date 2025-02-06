@@ -308,7 +308,7 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
                 multimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(
                         uuid,
                         "a",
-                        count * 10,
+                        count,
                         AttributeModifier.Operation.MULTIPLY_BASE));
             }
             if (itemStack.is(DNAItems.cell_synthesis.get())) {
@@ -355,8 +355,8 @@ public class dna extends TheNecoraIC implements ICurioItem , Iplague {
                     multimap.put(Attributes.MAX_HEALTH, new AttributeModifier(
                             uuid,
                             "a",
-                                                count,
-                                                AttributeModifier.Operation.ADDITION));
+                            count,
+                            AttributeModifier.Operation.ADDITION));
                 }
             }
             if (itemStack.is(DNAItems.cell_chromosome.get())) {

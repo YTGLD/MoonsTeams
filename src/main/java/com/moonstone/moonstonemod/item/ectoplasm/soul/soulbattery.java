@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.ectoplasm.soul;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import com.moonstone.moonstonemod.moonstoneitem.IBattery;
 import net.minecraft.ChatFormatting;
@@ -26,6 +27,7 @@ public class soulbattery extends CommonItem implements IBattery {
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.02, AttributeModifier.Operation.MULTIPLY_BASE));
         modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.05, AttributeModifier.Operation.MULTIPLY_BASE));
         modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.1, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(AttReg.cit.get(), new AttributeModifier(uuid, MoonStoneMod.MODID+":soulbattery", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
 
     }

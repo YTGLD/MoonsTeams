@@ -956,7 +956,7 @@
 
   "item.moonstone.the_blood_book": "§4封魔录",
   "item.blood_candle.tool.string": "召唤一个巨型血灵增生体协助你作战",
-  "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品",
+  "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品或右键这个物品",
 
 
   "item.blood_candle.tool.string.2": "血灵增生体的攻击会造成基于你最大生命值的伤害",
@@ -1017,7 +1017,21 @@
   "item.moonstone.speed_metabolism": "极速代谢",
   "item.moonstone.medicinebox.tool": "用于粉碎药物或任意基因物品",
   "item.moonstone.dna_box": "药物回收盒",
+
   "item.moonstone.medicinebox.tool.2": "你需要右键这个物品来存入，然后长按右键咀嚼，直到下方的红色字体消失",
+  "item.moonstone.cell_disorder.tool": "每隔（数量）清除所有BUFF",
+  "item.moonstone.cell_god.tool": "杀死生物回复（数量）生命值",
+  "item.moonstone.cell_inheritance.tool": "加（数量）伤害抗性",
+  "item.moonstone.cell_big_boom.tool": "加（数量）吃东西的速度",
+  "item.moonstone.cell_darwin.tool": "杀死生物回复或者扣除（数量）生命值",
+  "item.moonstone.speed_metabolism.tool": "饱食度小于（数量）时消耗1点饥饿值",
+  "item.moonstone.cell_acid.tool": "腐蚀（数量）的被攻击生物装备",
+  "item.moonstone.cell_eyes.tool": "使半径（数量）的生物发光",
+  "item.moonstone.cell_digestion.tool": "加（数量）食物饱食度和饥饿值",
+  "item.moonstone.cell_cranial.tool": "加（数量）对头部伤害的抗性",
+  "item.moonstone.cell_compress.tool": "加（数量）的伤害反弹",
+  "item.moonstone.cell_flu.tool": "使半径（数量）的生物虚弱",
+  "item.moonstone.cell_constant.tool": "加（数量）的无敌帧",
 
   "item.moonstone.blood_sun": "§4血日",
   "item.moonstone.blood_jelly": "血浆果冻",
@@ -1225,10 +1239,12 @@
 
 
   "item.moonstone.nightmare_base": "§4噩梦基座",
-  "item.nightmare_base.tool.string": "攻击伤害,生命值,护甲减少15%",
+  "item.nightmare_base.tool.string": "攻击伤害,生命值,护甲减少30%",
   "item.nightmare_base.tool.string.1": "邪念体，血虐之铅，恶意之殇无效化",
 
-
+  "item.book.tool.string": "看看书里有什么！佩戴后+1饰品栏！",
+  "item.book.tool.string.nine_sword": "剑骨之力",
+  "item.book.tool.string.modi_blood": "血魔霸体",
   "item.moonstone.nightmare_base_stone": "§4死兆方尖碑",
   "item.nightmare_base_stone.tool.string": "满生命值时受到的伤害增加500%",
   "item.nightmare_base_stone.tool.string.1": "但是你可以解锁下列物品",
@@ -1484,6 +1500,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   "advancements.tooltip.nightmare_base.text": "获得这个物品",
   "advancements.tooltip.nightmare_base.hand": "起始",
 
@@ -1512,6 +1537,13 @@
   "item.twistedamout.tool.string.5": "每颗血球提供5%的伤害加成",
   "item.twistedamout.tool.string.6": "血球爆炸时对3格内的生物造成中毒效果",
   "item.twistedamout.tool.string.7": "杀死生物后再获得1~3颗血球"
+
+
+
+
+
+
+
   }
 
 
