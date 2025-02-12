@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.Items;
@@ -37,7 +38,7 @@ public class nightmareeye extends nightmare {
                 return true;
             }
         }
-        return false;
+        return Config.SERVER.canUnequipMoonstoneItem.get();
     }
     public Multimap<Attribute, AttributeModifier> un_un_pla(Player player,ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();

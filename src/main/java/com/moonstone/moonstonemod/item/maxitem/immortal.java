@@ -1,0 +1,140 @@
+package com.moonstone.moonstonemod.item.maxitem;
+
+import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.Effects;
+import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurio;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
+
+import java.util.List;
+
+/**
+ * 不朽轮回之印章
+ * <p>
+ * <p>
+ * 受到攻击有80%的概率规避并反弹50%的伤害给攻击者
+ * <p>
+ * 如果攻击者生命值大于70%，则反弹150%的伤害并破除无敌帧
+ * <p>
+ * <p>
+ * 每隔5秒对周围生物施加一层枯朽Buff，最多达到5级
+ * <p>
+ * 被施加的生物每级减少20%抗性,护甲,治疗和5%的伤害,移速,攻速
+ * <p>
+ * <p>
+ * 若你被杀死，则对攻击者造成20%当前生命值的穿透伤害并附加10级枯朽（10秒）
+ * <p>
+ * <p>
+ * 深渊和噩梦物品无效化
+ */
+public class immortal extends Item implements ICurioItem, Blood {
+
+    public immortal() {
+        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+    }
+
+    @NotNull
+    @Override
+    public ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, int lootingLevel, boolean recentlyHit, ItemStack stack) {
+        return ICurio.DropRule.ALWAYS_KEEP;
+    }
+
+    public static void hEvt(LivingHurtEvent event){
+        if (event.getSource().getEntity() instanceof LivingEntity living){
+            if (event.getEntity() instanceof Player player){
+                int lvl = Mth.nextInt(RandomSource.create(),1,100);
+                if (Handler.hascurio(player, Items.immortal.get())){
+                    if (lvl<=80){
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_HIT_PLAYER, SoundSource.NEUTRAL, 1F, 1F);
+                        if (living.getHealth()<=living.getMaxHealth()*0.7f){
+                            living.hurt(living.damageSources().dryOut(),event.getAmount()*0.5f);
+                            event.setAmount(0);
+                        }else {
+                            living.invulnerableTime = 0;
+                            living.hurt(living.damageSources().dryOut(),event.getAmount()*1.5f);
+                            event.setAmount(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void livDead(LivingDeathEvent event){
+        if (event.getSource().getEntity() instanceof LivingEntity living){
+            if (event.getEntity() instanceof Player player){
+                if (Handler.hascurio(player, Items.immortal.get())){
+                    living.addEffect(new MobEffectInstance(Effects.dead.get(),200,9));
+                }
+            }
+        }
+    }
+
+
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player){
+            Vec3 playerPos = player.position().add(0, 0.75, 0);
+            int range = 8;
+            List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+
+            for (LivingEntity living : entities){
+                if (!living.is(player)){
+                    if (player.tickCount%100==1){
+                        living.addEffect(new MobEffectInstance(Effects.dead.get(),600,0));
+
+                        if (living.getEffect(Effects.dead.get())!=null){
+                            if (living.getEffect(Effects.dead.get()).getAmplifier()<6) {
+                                living.addEffect(new MobEffectInstance(Effects.dead.get(), 600, living.getEffect(Effects.dead.get()).getAmplifier() + 1));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @Override
+    public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
+        super.appendHoverText(stack, level, tooltip, flags);
+       if (Screen.hasShiftDown()) {
+           tooltip.add(Component.literal(""));
+           tooltip.add(Component.translatable("item.immortal.tool.string").withStyle(ChatFormatting.RED));
+           tooltip.add(Component.translatable("item.immortal.tool.string.1").withStyle(ChatFormatting.RED));
+           tooltip.add(Component.literal(""));
+           tooltip.add(Component.translatable("item.immortal.tool.string.2").withStyle(ChatFormatting.RED));
+           tooltip.add(Component.translatable("item.immortal.tool.string.3").withStyle(ChatFormatting.RED));
+           tooltip.add(Component.literal(""));
+           tooltip.add(Component.translatable("item.immortal.tool.string.4").withStyle(ChatFormatting.RED));
+           tooltip.add(Component.literal(""));
+           tooltip.add(Component.translatable("item.immortal.tool.string.5").withStyle(ChatFormatting.RED));
+       }else {
+           tooltip.add(Component.translatable("key.keyboard.left.shift").withStyle(ChatFormatting.DARK_RED));
+           tooltip.add(Component.literal(""));
+           tooltip.add(Component.translatable("item.immortal.tool.string.6").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
+           tooltip.add(Component.translatable("item.immortal.tool.string.7").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
+           tooltip.add(Component.translatable("item.immortal.tool.string.8").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
+       }
+    }
+}

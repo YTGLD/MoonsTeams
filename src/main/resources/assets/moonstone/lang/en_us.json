@@ -4,6 +4,8 @@
   "key.categories.moonstone.moonstone_category": "Moonstone",
   "moonstone.book.error": "you need patchouli mod",
   "moonstone.tool.youcannot": "你必须将重复物品取出才能使用",
+  "moonstone.translation.nightmare": "你感受到了强烈的不安与恐惧",
+  "moonstone.translation.nightmare.1": "你真的要佩戴它吗",
 
   "itemGroup.tabmoonstone": "Moon Stone",
   "itemGroup.tabmoonstone.necora": "Moon Stone:DNA",
@@ -1498,6 +1500,16 @@
   "advancements.tooltip.nightmare_base.text": "Obtain this item",
   "advancements.tooltip.nightmare_base.hand": "Beginning",
 
+  "item.moonstone.immortal": "§4The seal of immortal reincarnation",
+  "item.immortal.tool.string": "When attacked, there is an 80% chance to evade and reflect 50% of the damage to the attacker",
+  "item.immortal.tool.string.1": "If the attacker's health is greater than 70%, 150% of the damage is reflected and the invincibility frame is broken",
+  "item.immortal.tool.string.2": "Applies a Withered Buff to nearby mobs every 5 seconds, up to a maximum of level 5",
+  "item.immortal.tool.string.3": "Applied creatures have 20% less resistance, armor, healing, and 5% damage per level, movement speed, and attack speed",
+  "item.immortal.tool.string.4": "If you are killed, deal 20% of current health as piercing damage to the attacker and attach 10 levels of Decay (10 seconds).",
+  "item.immortal.tool.string.5": "Abyss and Nightmare items are neutralized",
+  "item.immortal.tool.string.6": "A person who is rumored to have the power of life and death...",
+  "item.immortal.tool.string.7": "You can control the power of the Supreme Dao...",
+  "item.immortal.tool.string.8": "But ...., at what cost？",
 
   "item.nine_sword_book.tool.string.7": "下一次斩击会造成（快捷栏内所有剑类武器伤害的总和）的生命值",
   "item.nine_sword_book.tool.string.8": "冷却",

@@ -60,12 +60,17 @@ public class ectoplasmstar extends ectoplasm {
 
     public Multimap<Attribute, AttributeModifier> att(Player player){
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
+        int max = Config.SERVER.ectoplasmstar.get();
+
         int s = 20;
         if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
             s*=2;
         }
+        if (s>max){
+            s=max;
+        }
 
-        modifierMultimap.put(Attributes.LUCK, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.LUCK, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s, AttributeModifier.Operation.ADDITION));
         return modifierMultimap;
     }
     public Multimap<Attribute, AttributeModifier> att2(Player player){

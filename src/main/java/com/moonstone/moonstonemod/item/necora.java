@@ -102,14 +102,14 @@ public class necora extends TheNecoraIC {
         return multimap;
     }
 
-    @Override
+      @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){
                 return true;
             }
         }
-        return false;
+        return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
     }
 
     @Override

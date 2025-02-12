@@ -7,7 +7,8 @@
   "curios.modifiers.necora": "佩戴时",
   "itemGroup.tabmoonstone": "月之石",
   "itemGroup.tabmoonstone.necora": "月之石:基因",
-
+  "moonstone.translation.nightmare.1": "你真的要佩戴它吗",
+  "moonstone.translation.nightmare": "你感受到了强烈的不安与恐惧",
   "moonstone.tool.youcannot": "你必须将重复物品取出才能使用",
   "moonstone.attribute.name.ectoplasm": "灵质",
   "moonstone.attribute.name.mysterious": "神秘",
@@ -1536,15 +1537,24 @@
   "item.twistedamout.tool.string.4": "每次吸收都会恢复一定的百分比生命值",
   "item.twistedamout.tool.string.5": "每颗血球提供5%的伤害加成",
   "item.twistedamout.tool.string.6": "血球爆炸时对3格内的生物造成中毒效果",
-  "item.twistedamout.tool.string.7": "杀死生物后再获得1~3颗血球"
+  "item.twistedamout.tool.string.7": "杀死生物后再获得1~3颗血球",
 
 
 
 
 
 
-
-  }
+  "item.moonstone.immortal": "§4不朽轮回之印章",
+  "item.immortal.tool.string": "受到攻击有80%的概率规避并反弹50%的伤害给攻击者",
+  "item.immortal.tool.string.1": "如果攻击者生命值大于70%，则反弹150%的伤害并破除无敌帧",
+  "item.immortal.tool.string.2": "每隔5秒对周围生物施加一层枯朽Buff，最多达到5级",
+  "item.immortal.tool.string.3": "被施加的生物每级减少20%抗性,护甲,治疗和5%的伤害,移速,攻速",
+  "item.immortal.tool.string.4": "若你被杀死，则对攻击者造成20%当前生命值的穿透伤害并附加10级枯朽（10秒）",
+  "item.immortal.tool.string.5": "深渊和噩梦物品无效化",
+  "item.immortal.tool.string.6": "传闻掌握的生死轮回之力的人...",
+  "item.immortal.tool.string.7": "即可规避因果的反噬...",
+  "item.immortal.tool.string.8": "但...代价是什么？"
+}
 
 
 

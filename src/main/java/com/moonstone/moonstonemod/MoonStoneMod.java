@@ -53,7 +53,7 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new AdvancementEvt());
 
         DNAItems.REGISTRY.register(modEventBus);
-
+        Effects.REGISTRY.register(modEventBus);
         LootReg.REGISTRY.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
         MSound.REGISTRY.register(modEventBus);

@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "moonstone:maxamout"
+    },
+
+
+    {
+      "tag": "curios:nightmare"
+    },
+    {
+      "tag": "curios:nightmare"
+    },
+    {
+      "tag": "curios:nightmare"
+    },
+    {
+      "tag": "curios:nightmare"
+    },
+    {
+      "tag": "curios:nightmare"
+    },
+    {
+      "tag": "curios:nightmare"
+    }
+  ],
+  "result": {
+    "item": "moonstone:immortal",
+    "count": 1
+  }
+}

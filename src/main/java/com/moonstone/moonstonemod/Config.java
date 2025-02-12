@@ -71,6 +71,9 @@ public class Config {
                 .comment("What is the maximum number of lucky values that can be converted from the attributes of the Spirit Lucky Star")
                 .defineInRange("EctoplasmStar", 100, 0, 1024);
 
+        canUnequipMoonstoneItem = BUILDER
+                .comment("Can unequip some moonstone item")
+                .define("Can", false);
 
         BUILDER.push("Loot");
         bat = BUILDER
@@ -117,5 +120,6 @@ public class Config {
 
 
     public   ForgeConfigSpec.IntValue ectoplasmstar ;
+    public   ForgeConfigSpec.BooleanValue canUnequipMoonstoneItem ;
 
 }

@@ -22,6 +22,7 @@ import com.moonstone.moonstonemod.item.ectoplasm.soul.soulbattery;
 import com.moonstone.moonstonemod.item.ectoplasm.soul.soulcube;
 import com.moonstone.moonstonemod.item.maulice.*;
 import com.moonstone.moonstonemod.item.maxitem.fortunecrystal;
+import com.moonstone.moonstonemod.item.maxitem.immortal;
 import com.moonstone.moonstonemod.item.maxitem.maxamout;
 import com.moonstone.moonstonemod.item.maxitem.mayhemcrystal;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.common.*;
@@ -334,6 +335,7 @@ public class Items {
 
     public static final RegistryObject<Item> nightmare_base_start_power =REGISTRY.register("nightmare_base_start_power", nightmare_base_start_power::new);
     public static final RegistryObject<Item> dna_box =REGISTRY.register("dna_box", dna_box::new);
+    public static final RegistryObject<Item> immortal =REGISTRY.register("immortal", immortal::new);
 
 
 

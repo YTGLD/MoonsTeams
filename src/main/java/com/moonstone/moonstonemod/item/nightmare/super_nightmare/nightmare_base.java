@@ -92,14 +92,14 @@ public class nightmare_base  extends nightmare {
         return linkedHashMultimap;
     }
 
-    @Override
+      @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){
                 return true;
             }
         }
-        return false;
+        return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
     }
     private void addLoot(Entity entity ,
                          Item itemList,

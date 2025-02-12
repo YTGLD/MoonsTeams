@@ -243,14 +243,14 @@ public class nine_sword_book extends BookSkill implements IDoom {
         return !Handler.hascurio(slotContext.entity(),this);
     }
 
-    @Override
+      @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){
                 return true;
             }
         }
-        return false;
+        return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
     }
 
     @Override

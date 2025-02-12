@@ -24,14 +24,14 @@ import java.util.List;
 import java.util.UUID;
 
 public class nightmare_base_start extends nightmare {
-    @Override
+      @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){
                 return true;
             }
         }
-        return false;
+        return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
     }
     public static void damage(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player) {

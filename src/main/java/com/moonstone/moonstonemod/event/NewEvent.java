@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.DNAItems;
+import com.moonstone.moonstonemod.init.Effects;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.IBattery;
 import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
@@ -11,6 +12,7 @@ import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.gia
 import com.moonstone.moonstonemod.item.TheNecora.small.enhancemen;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.blood.*;
+import com.moonstone.moonstonemod.item.maxitem.*;
 import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
 import com.moonstone.moonstonemod.item.blood.magic.blood_sun;
 import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_book;
@@ -35,6 +37,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -183,6 +186,16 @@ public class NewEvent {
         nightmare_base_stone.LivingHurtEvent(event);
         dna.hur(event);
         nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
+        immortal.hEvt(event);
+        if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get())!=null){
+            float lvl = event.getEntity().getEffect(Effects.dead.get()).getAmplifier();
+            lvl *= 0.2f;
+            event.setAmount(event.getAmount()*(1+lvl));
+
+        }
+
+
+
         if (event.getSource().getEntity() instanceof Player living) {
             if  (Handler.hascurio(living,Items.probability_stone.get())) {
                 if (!living.getCooldowns().isOnCooldown(Items.probability_stone.get())) {
@@ -222,6 +235,7 @@ public class NewEvent {
         nightmare_base_black_eye_red.kill(event);
         nightmare_base_insight_insane.LivingDeathEvents(event);
         dna.dieD(event);
+        immortal.livDead(event);
     }
 
     @SubscribeEvent

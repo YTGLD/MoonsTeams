@@ -32,14 +32,14 @@ public class nightmare_base_reversal extends nightmare {
     public static final String att= "Attrib";
 
 
-    @Override
+      @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){
                 return true;
             }
         }
-        return false;
+        return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
     }
     public static void LivingDeathEvent(LivingDeathEvent event){
         if (event.getEntity() instanceof Player player) {
