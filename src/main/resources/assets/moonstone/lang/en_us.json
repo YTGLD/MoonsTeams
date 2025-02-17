@@ -822,6 +822,7 @@
 
   "item.moonstone.max_sword": "max sword",
   "effect.moonstone.rage": "rage",
+  "effect.moonstone.dead": "dead",
   "effect.moonstone.fear": "fear",
   "effect.moonstone.pain": "pain",
   "effect.moonstone.blood": "blood",
@@ -910,7 +911,17 @@
   "item.blood_candle.tool.string.1": "",
 
   "item.moonstone.the_blood_book": "Sealing Record",
-  "item.the_blood_book.tool.string": "It can be ignited twice ",
+
+  "item.the_blood_book.tool.string": "Blood Spirit Growth's damage is increased by 50%",
+  "item.the_blood_book.tool.string.1": "Blood Grower's blood bead speed is reduced by 50%",
+  "item.the_blood_book.tool.string.2": "The blood beads of the Blood Spirit Grower will explode",
+  "item.the_blood_book.tool.string.3": "Blood Grower's fire speed is increased by 30%",
+  "item.the_blood_book.tool.string.4": "Blood Spirit Grower's Lifespan is reduced by 60%",
+  "item.the_blood_book.tool.string.5": "Comes with all the features of the Graver and the Blasphemer",
+  "item.the_blood_book.tool.string.6": "Each hit of the Blood Soul Grower is equivalent to an attack from you",
+
+
+
   "item.blood.tool.string.evil": "evil",
   "item.blood.tool.string.evil.1": "There is a 33% chance that killing a creature will regenerate into a blood cell",
   "item.blood.tool.string.evil.2": "Harvest blood cells to restore 4 health points",

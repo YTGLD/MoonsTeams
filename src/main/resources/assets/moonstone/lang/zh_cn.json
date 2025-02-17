@@ -885,7 +885,16 @@
   "advancements.tooltip.max_blood_cube.hand": "注视我！",
   "advancements.tooltip.max_blood_cube.text": "制作复仇之骰",
 
+  "item.the_blood_book.tool.string": "血灵增生体的伤害增加50%",
+  "item.the_blood_book.tool.string.1": "血灵增生体的血珠速度增加100%",
+  "item.the_blood_book.tool.string.2": "血灵增生体的血珠会爆炸",
+
+  "item.the_blood_book.tool.string.3": "血灵增生体的射击速度增加100%",
+  "item.the_blood_book.tool.string.4": "血灵增生体的血珠寿命降低70%",
+  "item.the_blood_book.tool.string.5": "自带刻画者和渎圣者的所有功能",
+  "item.the_blood_book.tool.string.6": "血灵增生体每次命中都相当于你发起了一次攻击",
   "effect.moonstone.rage": "重伤",
+  "effect.moonstone.dead": "枯朽",
   "effect.moonstone.fear": "恐惧",
   "effect.moonstone.pain": "痛苦",
   "effect.moonstone.blood": "流血",
@@ -1551,7 +1560,7 @@
   "item.immortal.tool.string.3": "被施加的生物每级减少20%抗性,护甲,治疗和5%的伤害,移速,攻速",
   "item.immortal.tool.string.4": "若你被杀死，则对攻击者造成20%当前生命值的穿透伤害并附加10级枯朽（10秒）",
   "item.immortal.tool.string.5": "深渊和噩梦物品无效化",
-  "item.immortal.tool.string.6": "传闻掌握的生死轮回之力的人...",
+  "item.immortal.tool.string.6": "传闻掌握生死轮回之力的人...",
   "item.immortal.tool.string.7": "即可规避因果的反噬...",
   "item.immortal.tool.string.8": "但...代价是什么？"
 }

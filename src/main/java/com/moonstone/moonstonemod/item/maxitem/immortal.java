@@ -86,6 +86,7 @@ public class immortal extends Item implements ICurioItem, Blood {
         if (event.getSource().getEntity() instanceof LivingEntity living){
             if (event.getEntity() instanceof Player player){
                 if (Handler.hascurio(player, Items.immortal.get())){
+                    living.hurt(living.damageSources().dryOut(),living.getHealth()*0.2f);
                     living.addEffect(new MobEffectInstance(Effects.dead.get(),200,9));
                 }
             }
@@ -106,8 +107,10 @@ public class immortal extends Item implements ICurioItem, Blood {
                         living.addEffect(new MobEffectInstance(Effects.dead.get(),600,0));
 
                         if (living.getEffect(Effects.dead.get())!=null){
-                            if (living.getEffect(Effects.dead.get()).getAmplifier()<6) {
+                            if (living.getEffect(Effects.dead.get()).getAmplifier()<5) {
                                 living.addEffect(new MobEffectInstance(Effects.dead.get(), 600, living.getEffect(Effects.dead.get()).getAmplifier() + 1));
+                            }else {
+                                living.addEffect(new MobEffectInstance(Effects.dead.get(), 600, 5));
                             }
                         }
                     }

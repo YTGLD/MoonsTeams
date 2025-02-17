@@ -64,11 +64,11 @@ public abstract class GuiGraphicsMixin {
             int tickCount = p_283524_.tickCount;
             Minecraft minecraft = this.minecraft;
 
-            if (minecraft.screen instanceof IAbstractContainerScreen screen){
-                if (screen.isHasItem()) {
-
-                }
-            }
+//            if (minecraft.screen instanceof IAbstractContainerScreen screen){
+//                if (screen.isHasItem()) {
+//
+//                }
+//            }
 
 
 

@@ -185,6 +185,9 @@ public class NewEvent {
         nightmare_base_stone_virus.aVoid(event);
         nightmare_base_stone.LivingHurtEvent(event);
         dna.hur(event);
+        god_lead.hurtS(event);
+        malice_die.att(event);
+
         nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
         immortal.hEvt(event);
         if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get())!=null){

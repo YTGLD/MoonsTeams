@@ -77,20 +77,6 @@ public class suddenrain extends ThrowableItemProjectile {
         for (LivingEntity entity : entities) {
             ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
 
-            // 检查当前实体是否在 FlyingSword 配置中
-            boolean isExcluded = false;
-            for (String s : Config.SERVER.FlyingSword.get()) {
-                if (name.toString().equals(s)) {
-                    isExcluded = true;
-                    break;  // 找到匹配，退出内层循环
-                }
-            }
-
-            // 如果实体被排除，则继续下一个实体
-            if (isExcluded) {
-                continue;
-            }
-
             if (this.getOwner() != null) {
                 if (!name.getNamespace().equals(MoonStoneMod.MODID) && !(entity.is(this.getOwner()))) {
                     double distance = this.distanceToSqr(entity);

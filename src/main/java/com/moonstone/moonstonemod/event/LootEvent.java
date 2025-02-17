@@ -6,6 +6,7 @@ import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
@@ -77,9 +78,7 @@ public class LootEvent {
                 if (Handler.hascurio(player, Items.nightmareeye.get())){
                     if (Handler.hascurio(player, Items.giant.get())){
                         if (!Handler.hascurio(player, Items.giant_nightmare.get())){
-                            EntityType<?> entity = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(Config.SERVER.ZombieNightmareGiant.get()));
-
-                            if (event.getEntity().getType() == entity) {
+                             if (event.getEntity().getType()  == (EntityType.WARDEN)) {
                                 if (ng == 1) {
                                     event.getDrops().add(new ItemEntity(event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), new ItemStack(Items.giant_nightmare.get())));
                                 }

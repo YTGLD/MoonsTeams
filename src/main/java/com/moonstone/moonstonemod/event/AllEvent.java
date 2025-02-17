@@ -11,6 +11,7 @@ import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_blood;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_boom;
@@ -2342,6 +2343,13 @@ public class AllEvent {
         if (stack.getItem() instanceof IEctoplasm) {
             tooltipEvent.setBorderStart(0xFF87CEFA);
             tooltipEvent.setBorderEnd(0xFFF8F8FF);
+        }
+        if (stack.getItem() instanceof Die) {
+            tooltipEvent.setBorderStart(0XFF8B658B);
+            tooltipEvent.setBorderEnd(0XFF8B658B);
+            tooltipEvent.setBackgroundEnd(0xff000000);
+            tooltipEvent.setBackgroundStart(0xff000000);
+
         }
         if (stack.getItem() instanceof MLS) {
             tooltipEvent.setBorderStart(0xFF006400);

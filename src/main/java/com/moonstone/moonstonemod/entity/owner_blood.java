@@ -146,6 +146,9 @@ public class owner_blood extends TamableAnimal {
             if (Handler.hascurio(player,Items.owner_blood_boom_eye.get())){
                 s*= 3;
             }
+            if (Handler.hascurio(player,Items.the_blood_book.get())){
+                s *= 0.5f;
+            }
         }
         if (this.getOwner()!= null &&this.getOwner() instanceof Player player&&this.getTarget()!=null){
             if (this.tickCount % (int) s == 0) {
@@ -157,6 +160,12 @@ public class owner_blood extends TamableAnimal {
                     if (Handler.hascurio(player, Items.owner_blood_speed_eye.get())) {
                         attackBlood.setCannotFollow(false);
                         attackBlood.setSpeed(attackBlood.getSpeeds() * 4);
+                    }
+                    if (Handler.hascurio(player, Items.the_blood_book.get())) {
+                        attackBlood.setSpeed(attackBlood.getSpeeds()*2f);
+                        attackBlood.setMaxTime(attackBlood.getMaxTime()*0.4f);
+                        attackBlood.setDamage(attackBlood.getDamages()*1.5f);
+                        attackBlood.setBoom(true);
                     }
                     if (Handler.hascurio(player, Items.owner_blood_attack_eye.get())) {
                         attackBlood.setDamage(attackBlood.getDamages() * 1.2f);
@@ -172,6 +181,7 @@ public class owner_blood extends TamableAnimal {
                         attackBlood.setSpeed(attackBlood.getSpeeds() * 0.8f);
                         attackBlood.setBoom(true);
                     }
+
                     attackBlood.setPos(this.position());
                     attackBlood.setOwner(this.getOwner());
 

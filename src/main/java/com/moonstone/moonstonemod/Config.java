@@ -5,6 +5,8 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = MoonStoneMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -51,17 +53,10 @@ public class Config {
         motor_speed = BUILDER
                 .comment("The speed of the motor")
                 .defineInRange("motor", 0.15, 0, 999);
-        ZombieNightmareGiant = BUILDER
-                .comment("What creatures should be killed and dropped")
-                .define("Mob","minecraft:warden");
 
         the_pain_stone = BUILDER
                 .comment("What is this value, divide the damage by (“2” is “/2”)")
                 .defineInRange("Int", 2, 1, 1000);
-
-        FlyingSword = BUILDER
-                .comment("Will the Flying Sword and Suddenrain Sword attack any creatures")
-                .define("Entity", new ArrayList<>(List.of("minecraft:player","minecraft:pig")));
 
         giveBook = BUILDER
                 .comment("Starting with a book or not")
@@ -107,10 +102,8 @@ public class Config {
     public   ForgeConfigSpec.DoubleValue flygene_speed;
     public   ForgeConfigSpec.DoubleValue bloodvirus_speed;
     public   ForgeConfigSpec.DoubleValue motor_speed ;
-    public   ForgeConfigSpec.ConfigValue<String> ZombieNightmareGiant;
     public   ForgeConfigSpec.IntValue the_pain_stone ;
     public   ForgeConfigSpec.BooleanValue giveBook ;
-    public   ForgeConfigSpec.ConfigValue<List<String>> FlyingSword ;
     public   ForgeConfigSpec.IntValue bat ;
     public   ForgeConfigSpec.IntValue necora ;
     public   ForgeConfigSpec.IntValue night ;

@@ -31,6 +31,7 @@ public class attack_blood extends ThrowableItemProjectile {
     public boolean boom = false;
     public boolean effect = false;
     public float speeds = 0.125f;
+    public float maxTime = 200;
     public attack_blood(EntityType<? extends attack_blood> entityType, Level level) {
         super(entityType, level);
         this.setNoGravity(true);
@@ -81,8 +82,10 @@ public class attack_blood extends ThrowableItemProjectile {
                     if (!entitys.getNamespace().equals(MoonStoneMod.MODID)) {
                         entity.invulnerableTime = 0;
                         if (boom) {
-                            this.level().explode(this, this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
+                            this.level().explode(this.getOwner(), this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
                         }
+
+
                         if (effect) {
                             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
                             entity.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 1));
@@ -97,8 +100,11 @@ public class attack_blood extends ThrowableItemProjectile {
                 }
             }
         }
+        if (boom&&tickCount>=maxTime) {
+            this.level().explode(this.getOwner(), this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
+        }
 
-        if (this.tickCount > 200) {
+        if (this.tickCount > maxTime) {
             this.discard();
         }
         if (target != null) {
@@ -176,6 +182,14 @@ public class attack_blood extends ThrowableItemProjectile {
         }
 
         this.target = closestEntity;
+    }
+
+    public float getMaxTime() {
+        return maxTime;
+    }
+
+    public void setMaxTime(float maxTime) {
+        this.maxTime = maxTime;
     }
 
     public void setBoom(boolean boom) {

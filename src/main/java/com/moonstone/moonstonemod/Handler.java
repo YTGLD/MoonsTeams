@@ -142,6 +142,24 @@ public class Handler {
                     return false;
                 }
             }
+            if (CuriosApi.getCuriosInventory(entity).isPresent()
+                    && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.nightmare_base.get())) {
+                if (curio == Items.evil_mob.get() || curio == Items.god_lead.get() || curio == Items.malice_die.get()) {
+                    return false;
+                }
+            }
+            if (CuriosApi.getCuriosInventory(entity).isPresent()
+                    && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.the_blood_book.get())) {
+                if (curio == Items.owner_blood_speed_eye.get() || curio == Items.owner_blood_eye.get()) {
+                    return true;
+                }
+            }
+            if (CuriosApi.getCuriosInventory(entity).isPresent()
+                    && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.evil_mob.get())) {
+                if (curio == Items.necora.get() || curio == Items.nightmareeye.get() || curio == Items.bloodvirus.get()) {
+                    return true;
+                }
+            }
             List<SlotResult> find = findCurios(entity, curio);
             for (SlotResult slotResult : find) {
                 if (slotResult.stack().is(curio)) {

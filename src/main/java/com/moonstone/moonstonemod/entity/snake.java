@@ -61,15 +61,17 @@ public class snake  extends TamableAnimal {
                         && living.is(this.target)
                         && player.getAttribute(Attributes.ATTACK_DAMAGE)!=null)
                 {
-                    cloudTime = 5;
-                    float dam = (float) player.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
-                    dam*=1.5f;
+                    if (this.tickCount>10) {
+                        cloudTime = 5;
+                        float dam = (float) player.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
+                        dam *= 1.5f;
 
-                    this.target.invulnerableTime = 0;
-                    this.target.hurt(living.damageSources().mobAttack(this), dam);
+                        this.target.invulnerableTime = 0;
+                        this.target.hurt(living.damageSources().mobAttack(this), dam);
 
-                    if (target.isAlive()&&this.time>10) {
-                        this.discard();
+                        if (target.isAlive()) {
+                            this.discard();
+                        }
                     }
                 }
             }
