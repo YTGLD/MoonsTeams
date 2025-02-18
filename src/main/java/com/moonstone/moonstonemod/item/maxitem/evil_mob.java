@@ -51,7 +51,7 @@ public class evil_mob extends CommonItem implements Die {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         var s = super.getAttributeModifiers(slotContext, uuid, stack);
         CuriosApi
-                .addSlotModifier(s, "ncrdna",uuid, 2, AttributeModifier.Operation.ADDITION);
+                .addSlotModifier(s, "ncrdna",uuid, 3, AttributeModifier.Operation.ADDITION);
         return s;
     }
 

@@ -67,6 +67,8 @@ public class EntityTs {
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.sun::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(16).build("sun"));
     public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.as_sword>> as_sword = REGISTRY.register("as_sword",
             ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.as_sword::new, MobCategory.MISC).sized(0.5f, 0.5f).clientTrackingRange(16).build("as_sword"));
+    public static final RegistryObject<EntityType<com.moonstone.moonstonemod.entity.axe>> axe = REGISTRY.register("axe",
+            ()-> EntityType.Builder.of(com.moonstone.moonstonemod.entity.axe::new, MobCategory.MISC).sized(0.5f, 0.5f).clientTrackingRange(16).build("axe"));
 
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){

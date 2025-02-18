@@ -12,6 +12,7 @@ import com.moonstone.moonstonemod.client.particle.blue;
 import com.moonstone.moonstonemod.client.particle.popr;
 import com.moonstone.moonstonemod.client.particle.red;
 import com.moonstone.moonstonemod.client.renderer.MRender;
+import com.moonstone.moonstonemod.entity.client.AxeRenderer;
 import com.moonstone.moonstonemod.entity.client.BloodSwordRenderer;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
@@ -102,6 +103,7 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.owner_blood.get(), com.moonstone.moonstonemod.entity.client.OwnerBloodRenderer::new);
             event.registerEntityRenderer(EntityTs.sun.get(), com.moonstone.moonstonemod.entity.client.SunRenderer::new);
             event.registerEntityRenderer(EntityTs.as_sword.get(), AsSwordRender::new);
+            event.registerEntityRenderer(EntityTs.axe.get(), AxeRenderer::new);
 
         }
         @SubscribeEvent

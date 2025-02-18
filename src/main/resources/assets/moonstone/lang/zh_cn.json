@@ -855,9 +855,19 @@
 
 
 
-
-
-
+  "item.at_a_book.tool.string.lvl.1": "金仙",
+  "item.at_a_book.tool.string.lvl.2": "金仙",
+  "item.at_a_book.tool.string.lvl.3": "仙尊",
+  "item.at_a_book.tool.string.lvl.4": "仙帝",
+  "item.at_a_book.tool.string.lvl.5": "炼神",
+  "item.at_a_book.tool.string.lvl.6": "天神",
+  "item.at_a_book.tool.string.lvl.7": "主神",
+  "item.at_a_book.tool.string.lvl.8": "天劫",
+  "item.at_a_book.tool.string.lvl.9": "合道",
+  "item.at_a_book.tool.string.lvl.10": "圣玄",
+  "item.at_a_book.tool.string.lvl.11": "圣君",
+  "item.at_a_book.tool.string.lvl.12": "圣尊",
+  "item.moonstone.at_a_book": "很普通的书",
 
 
 
@@ -1441,7 +1451,7 @@
 
   "item.moonstone.nightmare_base_insight_drug":"§4疯狂灵药",
   "item.nightmare_base_insight_drug.tool.string": "伤害,护甲,生命值提高100%",
-  "item.nightmare_base_insight_drug.tool.string.1": "但是每佩戴一件饰品，此奖励都将减少8%",
+  "item.nightmare_base_insight_drug.tool.string.1": "但是每佩戴一件饰品，此奖励都将减少8%，最低到10%",
   "advancements.tooltip.nightmare_base_insight_drug.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_insight_drug.hand": "长生者",
 
@@ -1534,6 +1544,8 @@
   "item.nine_sword_book_skill.tool.string.1": "剑仙",
   "item.nine_sword_book_skill.tool.string.2": "剑神",
   "item.nine_sword_book_skill.tool.string.3": "剑圣",
+  "item.nine_sword_book_skill.tool.string.4": "剑帝",
+  "item.nine_sword_book_skill.tool.string.5": "剑祖",
   "sword.moonstone.lvl": "重",
   "item.nine_sword_book_lvl.tool.string.1": "剑仙",
   "item.nine_sword_book_lvl.tool.string.2": "修炼-基础",
@@ -1549,6 +1561,27 @@
   "item.twistedamout.tool.string.7": "杀死生物后再获得1~3颗血球",
 
 
+  "item.moonstone.nightmare_axe":"混沌战斧",
+
+  "item.nightmare_axe.tool.string": "杀死生物召唤混沌战斧，落下造成300%你的攻击伤害",
+  "item.nightmare_axe.tool.string.1": "附近每有一把混沌战斧：",
+  "item.nightmare_axe.tool.string.2": "+25%伤害",
+  "item.nightmare_axe.tool.string.3": "+25%治疗",
+  "item.nine_sword_book_skill.tool.string.attack_damage": "所有剑类斩击的伤害",
+
+  "item.moonstone.killer": "终结者头骨",
+  "item.killer.tool.string.1": "每损失1%的生命值：",
+  "item.killer.tool.string.2": "+1.25%治疗",
+  "item.killer.tool.string.3": "+0.8%速度",
+  "item.killer.tool.string.4": "+0.75%伤害",
+  "item.killer.tool.string.5": "+0.5%攻速",
+  "item.killer.tool.string.6": "+0.35%护甲",
+  "item.killer.tool.string.7": "现在",
+  "item.killer.tool.string.8": "治疗: ",
+  "item.killer.tool.string.9": "速度: ",
+  "item.killer.tool.string.10": "伤害: ",
+  "item.killer.tool.string.11": "攻速: ",
+  "item.killer.tool.string.12": "护甲: ",
 
 
 

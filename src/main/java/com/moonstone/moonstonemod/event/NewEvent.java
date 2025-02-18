@@ -19,6 +19,7 @@ import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_book;
 import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_books;
 import com.moonstone.moonstonemod.item.nanodoom.as_amout;
 import com.moonstone.moonstonemod.item.nanodoom.million;
+import com.moonstone.moonstonemod.item.nightmare.nightmare_axe;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_head;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_heart;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_orb;
@@ -80,7 +81,7 @@ public class NewEvent {
         pain_ring.Heal(event);
         nightmare_base_black_eye_heart.heal(event);
         nightmare_base_reversal_orb.LivingHealEvent(event);
-
+        nightmare_axe.heals(event);
         if (event.getEntity().getAttribute(AttReg.heal.get())!=null){
             float attack = (float) event.getEntity().getAttribute(AttReg.heal.get()).getValue();
             event.setAmount(event.getAmount()*(attack));
@@ -187,7 +188,7 @@ public class NewEvent {
         dna.hur(event);
         god_lead.hurtS(event);
         malice_die.att(event);
-
+        nightmare_axe.att(event);
         nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
         immortal.hEvt(event);
         if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get())!=null){
@@ -238,6 +239,7 @@ public class NewEvent {
         nightmare_base_black_eye_red.kill(event);
         nightmare_base_insight_insane.LivingDeathEvents(event);
         dna.dieD(event);
+        nightmare_axe.Nig(event);
         immortal.livDead(event);
     }
 
@@ -397,6 +399,10 @@ public class NewEvent {
         Player player = event.getEntity();
         if (stack.is(Items.nine_sword_books.get())) {
             if ( stack.getTag() != null) {
+                float level = (1f + stack.getTag().getInt(nine_sword_books.lvl) / 10f);
+                if (stack.getTag().getInt(nine_sword_books.small)>900){
+                    level*=1.25f;
+                }
                 event.getToolTip().add(1, Component.translatable("item.nine_sword_books.tool.string.14").withStyle(ChatFormatting.GOLD));
                 event.getToolTip().add(1, Component.literal(""));
                 event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.13").withStyle(ChatFormatting.GOLD));
@@ -410,10 +416,10 @@ public class NewEvent {
                 event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.7").withStyle(ChatFormatting.GOLD));
                 event.getToolTip().add(1, Component.literal(""));
                 event.getToolTip().add(1, Component.literal("+").append(String.valueOf(1)).append(Component.translatable("item.nine_sword_book.tool.string.6")).withStyle(ChatFormatting.GOLD));
-                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 1f * (1f + stack.getTag().getInt(nine_sword_book.lvl) / 10f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.5")).withStyle(ChatFormatting.GOLD));
-                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 3f * (1f + stack.getTag().getInt(nine_sword_book.lvl) / 10f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.4")).withStyle(ChatFormatting.GOLD));
-                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 5f * (1f + stack.getTag().getInt(nine_sword_book.lvl) / 10f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.3")).withStyle(ChatFormatting.GOLD));
-                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 10f * (1f + stack.getTag().getInt(nine_sword_book.lvl) / 10f))).append("%").append(Component.translatable("item.nine_sword_book.tool.string.2")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 1f * level)).append("%").append(Component.translatable("item.nine_sword_book.tool.string.5")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 3f * level)).append("%").append(Component.translatable("item.nine_sword_book.tool.string.4")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 5f * level)).append("%").append(Component.translatable("item.nine_sword_book.tool.string.3")).withStyle(ChatFormatting.GOLD));
+                event.getToolTip().add(1, Component.literal("+").append(String.format("%.2f", 10f * level)).append("%").append(Component.translatable("item.nine_sword_book.tool.string.2")).withStyle(ChatFormatting.GOLD));
                 event.getToolTip().add(1, Component.translatable("item.nine_sword_book.tool.string.1").withStyle(ChatFormatting.GOLD));
             }
         }

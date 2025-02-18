@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:soulbook"
+    },{
+      "item": "moonstone:ectoplasmball"
+    },{
+      "item": "moonstone:ectoplasmcloub"
+    },{
+      "item": "moonstone:ectoplasmcube"
+    },{
+      "item": "moonstone:ectoplasmprism"
+    }
+  ],
+  "result": {
+    "item": "moonstone:at_a_book",
+    "count": 1
+  }
+}

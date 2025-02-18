@@ -129,6 +129,7 @@ public class Tab {
 
 
                 b.accept(new ItemStack(Items.book.get()));
+                b.accept(new ItemStack(Items.at_a_book.get()));
                 b.accept(new ItemStack(Items.evil_mob.get()));
                 b.accept(new ItemStack(Items.malice_die.get()));
                 b.accept(new ItemStack(Items.god_lead.get()));
@@ -186,6 +187,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.brain.get()));
                 b.accept(new ItemStack(Items.mhead.get()));
 
+                b.accept(new ItemStack(Items.nightmare_axe.get()));
                 b.accept(new ItemStack(Items.nightmareanchor.get()));
                 b.accept(new ItemStack(Items.nightmarecharm.get()));
                 b.accept(new ItemStack(Items.nightmareeye.get()));
@@ -272,6 +274,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.owner_blood_boom_eye.get()));
                 b.accept(new ItemStack(Items.owner_blood_vex.get()));
                 b.accept(new ItemStack(Items.owner_blood_earth.get()));
+                b.accept(new ItemStack(Items.killer.get()));
 
             })
             .build());

@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.maxitem.book;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.as_sword;
 import com.moonstone.moonstonemod.init.AttReg;
@@ -41,8 +42,10 @@ public class nine_sword_books extends BookSkill implements IDoom {
     public static final String size = "swordSize";
     public static final String lvl = "nineSwordBookSwordLvl";
     public static final String small = "nineSwordBookSwordLvlSmall";
-    public static final int maxLvl = 10;
-    public static final int addLvl = 100;
+
+    public static final String maxDamage = "maxDamage";
+
+    public static final int maxLvl = 1501;
 
     public static void att(LivingHurtEvent event){
         if (event.getSource().getEntity() != null && event.getSource().getEntity() instanceof Player player){
@@ -56,7 +59,7 @@ public class nine_sword_books extends BookSkill implements IDoom {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (!stack.isEmpty()&&stack.is(Items.nine_sword_books.get())){
                                 if (stack.getTag()!=null){
-                                    if (stack.getTag().getInt(small)<=(addLvl*maxLvl)){
+                                    if (stack.getTag().getInt(small)<=maxLvl){
                                         stack.getTag().putInt(small,stack.getTag().getInt(small)+1);
                                     }
                                     if (stack.getTag().getInt(small)%100==0){
@@ -65,7 +68,7 @@ public class nine_sword_books extends BookSkill implements IDoom {
 
 
                                     int s = 5* stack.getTag().getInt(size);
-                                    if (Mth.nextInt(RandomSource.create(),0,100)<=s){
+                                    if (Mth.nextInt(RandomSource.create(),0,1500)<=s){
                                         for (int j = 0; j < stack.getTag().getInt(size); j++) {
                                             float lvl = Mth.nextFloat(RandomSource.create(), -0.3f, 0.3f);
 
@@ -95,8 +98,12 @@ public class nine_sword_books extends BookSkill implements IDoom {
                                 for (float all: floats){
                                     damage+=all;
                                 }
+                                double sDam = Config.SERVER.nine_sword.get();
+                                if (damage > Config.SERVER.nine_sword.get()){
+                                    damage = (float) sDam;
+                                }
                                 if (!player.getCooldowns().isOnCooldown(Items.nine_sword_books.get())) {
-                                    event.setAmount(damage);
+                                    event.setAmount(event.getAmount()+damage);
                                     player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.NEUTRAL, 2, 2);
                                     player.getCooldowns().addCooldown(Items.nine_sword_books.get(),100);
                                 }
@@ -119,8 +126,23 @@ public class nine_sword_books extends BookSkill implements IDoom {
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (stack.getTag()!=null) {
-                if (stack.getTag().getInt(lvl)>10){
-                    stack.getTag().putInt(lvl,10);
+                List<Float> floats = new ArrayList<>();
+                for (int j = 0; j < 9; j++) {
+                    ItemStack sword = player.getInventory().items.get(j);
+                    if (sword.getItem() instanceof SwordItem swordItem) {
+                        floats.add(swordItem.getTier().getAttackDamageBonus()+4);
+                    }
+                }
+                float damage = 0;
+                for (float all: floats){
+                    damage+=all;
+                }
+                if (stack.getTag() != null) {
+                    stack.getTag().putFloat(maxDamage,damage);
+                }
+
+                if (stack.getTag().getInt(lvl)>maxLvl/100){
+                    stack.getTag().putInt(lvl,maxLvl/100);
                 }
                 List<Integer> integers = new ArrayList<>();
                 for (int i = 0; i < 9; i++) {
@@ -161,6 +183,9 @@ public class nine_sword_books extends BookSkill implements IDoom {
         Multimap<Attribute, AttributeModifier>  multimap = HashMultimap.create();
         if (stack.getTag()!=null) {
             float level =1 +  (stack.getTag().getInt(lvl)/10f);
+            if (stack.getTag().getInt(small)>900){
+                level*=1.25f;
+            }
             List<Integer> integers = new ArrayList<>();
             for (int i = 0; i < 9; i++) {
                 ItemStack sword = player.getInventory().items.get(i);
@@ -171,8 +196,11 @@ public class nine_sword_books extends BookSkill implements IDoom {
             multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(
                       UUID.fromString("492dc575-b72e-3d83-b2fd-33ab63727150"),
                         "s",
-                    (integers.size() / 10f)*level -0.25f,
+                    (integers.size() / 10f)*level,
                     AttributeModifier.Operation.MULTIPLY_BASE));
+
+
+
 
             multimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(
                       UUID.fromString("492dc575-b72e-3d83-b2fd-33ab63727150"),
@@ -196,7 +224,13 @@ public class nine_sword_books extends BookSkill implements IDoom {
                       UUID.fromString("492dc575-b72e-3d83-b2fd-33ab63727150"),
                         "s",
                     -0.5,
-                    AttributeModifier.Operation.MULTIPLY_BASE));
+                    AttributeModifier.Operation.MULTIPLY_TOTAL));
+            multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(
+                    UUID.fromString("4d37c633-0973-3240-a4d3-ce7d81f39110"),
+                    "s",
+                    -0.25f,
+                    AttributeModifier.Operation.MULTIPLY_TOTAL));
+
         }
         return multimap;
     }
@@ -205,9 +239,10 @@ public class nine_sword_books extends BookSkill implements IDoom {
     public void appendHoverText(ItemStack pStack, Level pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
 
-
-
-
+        pTooltipComponents.add(Component.translatable("item.nine_sword_book_skill.tool.string.attack_damage")
+                        .append(Component.literal(": "))
+                        .append(String.valueOf(pStack.getOrCreateTag().getFloat(maxDamage)))
+                .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF6A5ACD))));
 
         if (pStack.getTag()!=null) {
             pTooltipComponents.add(Component.literal(""));
@@ -215,8 +250,12 @@ public class nine_sword_books extends BookSkill implements IDoom {
                 addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.1");
             }else if (pStack.getTag().getInt(small)>300&&pStack.getTag().getInt(small)<=600){
                 addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.2");
-            }else if (pStack.getTag().getInt(small)>900){
+            }else if (pStack.getTag().getInt(small)>600&&pStack.getTag().getInt(small)<=900){
                 addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.3");
+            }else if (pStack.getTag().getInt(small)>900&&pStack.getTag().getInt(small)<=1200){
+                addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.4");
+            }else if (pStack.getTag().getInt(small)>1200){
+                addNme(pStack,pTooltipComponents,"item.nine_sword_book_skill.tool.string.5");
             }
 
             pTooltipComponents.add(Component.translatable("item.nine_sword_book_lvl.tool.string.2").append(" " + pStack.getTag().getInt(small)).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF6A5ACD))));
@@ -231,8 +270,12 @@ public class nine_sword_books extends BookSkill implements IDoom {
             pStack.getTag().putInt(ss,l / 30);// 计算0到299之间的值
         } else if (l >= 300 && l < 600) {
             pStack.getTag().putInt(ss,(l - 300) / 30); // 计算300到599之间的值，显示从1开始
-        } else if (l >= 600 && l <= 10000) {
+        } else if (l >= 600 && l <= 900) {
             pStack.getTag().putInt(ss,(l - 600) / 30); // 计算600到899之间的值，显示从1开始
+        }else if (l >= 900 && l <= 1200) {
+            pStack.getTag().putInt(ss,(l - 900) / 30); // 计算600到899之间的值，显示从1开始
+        }else if (l >= 1200 && l <= 99999) {
+            pStack.getTag().putInt(ss,(l - 1200) / 30); // 计算600到899之间的值，显示从1开始
         }
 
         // 限制 displayValue 在 1 到 10 之间

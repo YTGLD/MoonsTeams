@@ -56,7 +56,7 @@ public class CellZombieN extends MobRenderer<nightmare_giant, NModel<nightmare_g
 
             Vec3 end = nearbyEntityPos.subtract(entityPos);
 
-            Handler.renderLine(p_115458_, p_115459_, new Vec3(0,2,0), end,1, MRender.out_nig);
+            Handler.renderLine(p_115458_, p_115459_, new Vec3(0,2,0), end,1, MRender.out_nig,0.05f);
 
             break;
         }

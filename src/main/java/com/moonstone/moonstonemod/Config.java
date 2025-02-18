@@ -58,6 +58,10 @@ public class Config {
                 .comment("What is this value, divide the damage by (“2” is “/2”)")
                 .defineInRange("Int", 2, 1, 1000);
 
+        nine_sword = BUILDER
+                .comment("The maximum amount of damage that can be dealt")
+                .defineInRange("Nine Sword Books", 256D, 0, 5120);
+
         giveBook = BUILDER
                 .comment("Starting with a book or not")
                 .define("give", true);
@@ -108,6 +112,7 @@ public class Config {
     public   ForgeConfigSpec.IntValue necora ;
     public   ForgeConfigSpec.IntValue night ;
     public   ForgeConfigSpec.DoubleValue common ;
+    public   ForgeConfigSpec.DoubleValue nine_sword ;
 
     public   ForgeConfigSpec.BooleanValue nine_sword_book ;
 

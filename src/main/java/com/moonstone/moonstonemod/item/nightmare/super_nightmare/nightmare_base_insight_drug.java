@@ -55,7 +55,11 @@ public class nightmare_base_insight_drug extends nightmare {
         for (int ignored : integersHealth) {
             health-=8;
         }
+        if (health<10){
+            health = 10;
+        }
         health/=100;
+
         linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("c35c79fa-c14d-3173-a5f4-409e5a0c65eb"),"a", health, AttributeModifier.Operation.MULTIPLY_BASE));
         linkedHashMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("c35c79fa-c14d-3173-a5f4-409e5a0c65eb"),"a", health, AttributeModifier.Operation.MULTIPLY_BASE));
         linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("c35c79fa-c14d-3173-a5f4-409e5a0c65eb"),"a", health, AttributeModifier.Operation.MULTIPLY_BASE));

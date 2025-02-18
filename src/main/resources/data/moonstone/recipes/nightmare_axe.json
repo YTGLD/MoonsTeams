@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "moonstone:nightmarerotten"
+    },
+    {
+      "item": "moonstone:nightmareeye"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "minecraft:diamond_axe"
+    },
+    {
+      "item": "moonstone:blood_jelly"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "moonstone:nightmare_axe"
+  }
+}

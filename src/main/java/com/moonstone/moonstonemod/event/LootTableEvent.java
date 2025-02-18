@@ -19,8 +19,6 @@ public class LootTableEvent {
         LootTable table = event.getTable();
         if (event.getName().toString().contains("chests/")){
 
-
-
             if (event.getName().toString().contains("bastion")) {
                 table.addPool(LootPool.lootPool().name("moon_bastion")
 
