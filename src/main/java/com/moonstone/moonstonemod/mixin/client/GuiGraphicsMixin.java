@@ -46,9 +46,9 @@ import java.util.List;
 @Mixin(GuiGraphics.class)
 public abstract class GuiGraphicsMixin {
 
-    @Shadow private ItemStack tooltipStack;
 
     @Shadow public abstract int guiWidth();
+    @Shadow private ItemStack tooltipStack;
 
     @Shadow public abstract int guiHeight();
     @Shadow @Final private PoseStack pose;

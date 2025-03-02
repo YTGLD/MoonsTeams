@@ -184,7 +184,7 @@ public class nine_sword_books extends BookSkill implements IDoom {
         if (stack.getTag()!=null) {
             float level =1 +  (stack.getTag().getInt(lvl)/10f);
             if (stack.getTag().getInt(small)>900){
-                level*=1.25f;
+                level*=0.875f;
             }
             List<Integer> integers = new ArrayList<>();
             for (int i = 0; i < 9; i++) {
@@ -259,6 +259,7 @@ public class nine_sword_books extends BookSkill implements IDoom {
             }
 
             pTooltipComponents.add(Component.translatable("item.nine_sword_book_lvl.tool.string.2").append(" " + pStack.getTag().getInt(small)).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF6A5ACD))));
+            pTooltipComponents.add(Component.translatable("item.nine_sword_book.tool.string.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF6A5ACD))));
         }
     }
     private void addNme(ItemStack pStack, List<Component> pTooltipComponents, String translatable) {

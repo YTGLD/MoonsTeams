@@ -164,8 +164,8 @@ public class owner_blood extends TamableAnimal {
                     if (Handler.hascurio(player, Items.the_blood_book.get())) {
                         attackBlood.setSpeed(attackBlood.getSpeeds()*2f);
                         attackBlood.setMaxTime(attackBlood.getMaxTime()*0.4f);
-                        attackBlood.setDamage(attackBlood.getDamages()*1.5f);
-                        attackBlood.setBoom(true);
+                        attackBlood.setDamage(attackBlood.getDamages()*3f);
+                        attackBlood.isPlayer = true;
                     }
                     if (Handler.hascurio(player, Items.owner_blood_attack_eye.get())) {
                         attackBlood.setDamage(attackBlood.getDamages() * 1.2f);

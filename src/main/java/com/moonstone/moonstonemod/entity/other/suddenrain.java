@@ -1,6 +1,5 @@
 package com.moonstone.moonstonemod.entity.other;
 
-import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.Items;
 import net.minecraft.core.registries.BuiltInRegistries;

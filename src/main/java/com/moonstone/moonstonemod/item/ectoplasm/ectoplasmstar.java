@@ -4,16 +4,12 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.nightmare.super_nightmare.nightmare_base_stone_meet;
 import com.moonstone.moonstonemod.moonstoneitem.ectoplasm;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -60,14 +56,9 @@ public class ectoplasmstar extends ectoplasm {
 
     public Multimap<Attribute, AttributeModifier> att(Player player){
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        int max = Config.SERVER.ectoplasmstar.get();
-
         int s = 20;
         if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
             s*=2;
-        }
-        if (s>max){
-            s=max;
         }
 
         modifierMultimap.put(Attributes.LUCK, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s, AttributeModifier.Operation.ADDITION));
@@ -75,7 +66,11 @@ public class ectoplasmstar extends ectoplasm {
     }
     public Multimap<Attribute, AttributeModifier> att2(Player player){
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
+        int max = Config.SERVER.ectoplasmstar.get();
         float s = player.getLuck();
+        if (s>max){
+            s=max;
+        }
         s /= 100;
         if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
             modifierMultimap.put(AttReg.heal.get(), new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"), "sss", s*2.5f, AttributeModifier.Operation.MULTIPLY_BASE));

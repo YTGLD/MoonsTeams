@@ -191,6 +191,7 @@ public class NewEvent {
         nightmare_axe.att(event);
         nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
         immortal.hEvt(event);
+        twelve_sword.att(event);
         if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get())!=null){
             float lvl = event.getEntity().getEffect(Effects.dead.get()).getAmplifier();
             lvl *= 0.2f;
@@ -401,7 +402,7 @@ public class NewEvent {
             if ( stack.getTag() != null) {
                 float level = (1f + stack.getTag().getInt(nine_sword_books.lvl) / 10f);
                 if (stack.getTag().getInt(nine_sword_books.small)>900){
-                    level*=1.25f;
+                    level*=0.875f;
                 }
                 event.getToolTip().add(1, Component.translatable("item.nine_sword_books.tool.string.14").withStyle(ChatFormatting.GOLD));
                 event.getToolTip().add(1, Component.literal(""));

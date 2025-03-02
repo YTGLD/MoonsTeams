@@ -152,7 +152,6 @@ public class malice_die extends CommonItem implements Die {
         pTooltipComponents.add(Component.literal(""));
         pTooltipComponents.add(Component.translatable("item.malice_die.tool.string.8").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF483D8B))));
         pTooltipComponents.add(Component.literal(""));
-        pTooltipComponents.add(Component.translatable("item.malice_die.tool.string.9").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF483D8B))));
     }
 
 }

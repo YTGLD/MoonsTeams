@@ -5,8 +5,9 @@ import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.moonstoneitem.BookSkill;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -145,7 +146,7 @@ public class at_a_book  extends BookSkill implements Die {
                     l++;
                 }
             }
-            pTooltipComponents.add(Component.translatable(baseKey + l).withStyle(ChatFormatting.LIGHT_PURPLE));
+            pTooltipComponents.add(Component.translatable(baseKey + l).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF483D8B))));
             addNme(pStack,pTooltipComponents,"");
         }
     }
@@ -160,7 +161,7 @@ public class at_a_book  extends BookSkill implements Die {
             pTooltipComponents.add(Component.translatable(translatable)
                     .append(String.valueOf(displayValue))
                     .append(Component.translatable("sword.moonstone.lvl"))
-                    .withStyle(ChatFormatting.LIGHT_PURPLE));
+                    .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF483D8B))));
         }
     }
 }

@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.entity.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import com.moonstone.moonstonemod.ConfigClient;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
@@ -35,7 +36,9 @@ public class AxeRenderer<T extends axe> extends EntityRenderer<T> {
     @Override
     public void render(T entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {
         setT(poseStack, entity, bufferSource);
-        MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
+        if (ConfigClient.Client.Shader.get()) {
+            MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
+        }
 
         {
             Vec3 playerPos = entity.position();

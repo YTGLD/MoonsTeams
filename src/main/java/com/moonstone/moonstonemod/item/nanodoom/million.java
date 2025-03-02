@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.as_sword;
+import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.Doom;
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class million extends Doom {
+public class million extends Doom  implements TextEvt.Twelve{
     public static final String sizeLvl = "swordSize";
     public static final String attackLvl = "attackLvlSize";
     public static final String allAttackTime = "allAttackTime";
@@ -43,7 +44,6 @@ public class million extends Doom {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (stack.getTag() != null) {
-            slotContext.entity().getAttributes().addTransientAttributeModifiers(Head(stack));
             if (stack.getTag().getInt(allAttackTime)>0){
                 stack.getTag().putInt(allAttackTime,stack.getTag().getInt(allAttackTime)-1);
             }
@@ -52,7 +52,7 @@ public class million extends Doom {
                 stack.getTag().putInt(attackLvl,0);
             }
         }else {
-            stack.getOrCreateTag().putInt(sizeLvl,30);
+            stack.getOrCreateTag().putInt(sizeLvl,15);
         }
     }
 
@@ -61,8 +61,18 @@ public class million extends Doom {
         slotContext.entity().getAttributes().removeAttributeModifiers(Head(stack));
     }
 
+    @Override
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (stack.getTag() !=null) {
+            slotContext.entity().getAttributes().addTransientAttributeModifiers(Head(stack));
+        }
+    }
+
     public static void hurt(LivingHurtEvent event) {
         if (event.getSource().getDirectEntity() instanceof Player player) {
+            if (Handler.hascurio(player,Items.as_amout.get())&&Handler.hascurio(player,Items.million.get())){
+                return;
+            }
             if (Handler.hascurio(player, Items.million.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -117,7 +127,7 @@ public class million extends Doom {
         Multimap<Attribute, AttributeModifier> multimap = HashMultimap.create();
 
         if (stack.getTag() != null) {
-            float dam = stack.getTag().getInt(attackLvl) / 100f;
+            float dam = stack.getTag().getInt(attackLvl) / 100f / 2f;
             multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("0cad2f47-2665-3067-89f3-6434c639de1f"),"million",
                     dam,
                     AttributeModifier.Operation.MULTIPLY_BASE));
@@ -142,7 +152,7 @@ public class million extends Doom {
             pTooltipComponents.add(Component.translatable("item.million.tool.string.6").withStyle(ChatFormatting.GOLD));
             pTooltipComponents.add(Component.literal(""));
             if (pStack.getTag()!=null) {
-                pTooltipComponents.add(Component.translatable("item.million.tool.string.7").append(pStack.getTag().getInt(attackLvl) + "%").withStyle(ChatFormatting.YELLOW));
+                pTooltipComponents.add(Component.translatable("item.million.tool.string.7").append((pStack.getTag().getInt(attackLvl)/2) + "%").withStyle(ChatFormatting.YELLOW));
                 pTooltipComponents.add(Component.translatable("item.million.tool.string.8").append(pStack.getTag().getInt(sizeLvl) + "").withStyle(ChatFormatting.YELLOW));
             }
         }

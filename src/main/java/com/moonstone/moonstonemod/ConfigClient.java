@@ -15,9 +15,15 @@ public class ConfigClient {
 
         BUILDER.push("client");
 
+
         MaxAmout = BUILDER
                 .comment("Display Nexus' blood cells")
                 .define("MaxAmout", true);
+        Shader = BUILDER
+                .comment("Do you want to enable the post rendering system")
+                .define("RenderBackEnds", true);
+
+
         BUILDER.pop();
 
         BUILDER.build();
@@ -25,6 +31,7 @@ public class ConfigClient {
 
     public   ForgeConfigSpec.BooleanValue MaxAmout ;
 
+    public   ForgeConfigSpec.BooleanValue Shader ;
 
 
 }

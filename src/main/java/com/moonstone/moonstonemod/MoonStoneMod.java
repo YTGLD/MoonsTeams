@@ -12,8 +12,10 @@ import com.moonstone.moonstonemod.client.particle.blue;
 import com.moonstone.moonstonemod.client.particle.popr;
 import com.moonstone.moonstonemod.client.particle.red;
 import com.moonstone.moonstonemod.client.renderer.MRender;
+import com.moonstone.moonstonemod.entity.client.AtSwordRender;
 import com.moonstone.moonstonemod.entity.client.AxeRenderer;
 import com.moonstone.moonstonemod.entity.client.BloodSwordRenderer;
+import com.moonstone.moonstonemod.entity.client.SwordOfTwelveRenderer;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import net.minecraft.client.renderer.ShaderInstance;
@@ -52,6 +54,8 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new LootTableEvent());
         MinecraftForge.EVENT_BUS.register(new NewEvent());
         MinecraftForge.EVENT_BUS.register(new AdvancementEvt());
+        MinecraftForge.EVENT_BUS.register(new BookEvt());
+        MinecraftForge.EVENT_BUS.register(new TextEvt());
 
         DNAItems.REGISTRY.register(modEventBus);
         Effects.REGISTRY.register(modEventBus);
@@ -104,6 +108,9 @@ public class MoonStoneMod {
             event.registerEntityRenderer(EntityTs.sun.get(), com.moonstone.moonstonemod.entity.client.SunRenderer::new);
             event.registerEntityRenderer(EntityTs.as_sword.get(), AsSwordRender::new);
             event.registerEntityRenderer(EntityTs.axe.get(), AxeRenderer::new);
+
+            event.registerEntityRenderer(EntityTs.at_sword_entity.get(), AtSwordRender::new);
+            event.registerEntityRenderer(EntityTs.sword.get(), SwordOfTwelveRenderer::new);
 
         }
         @SubscribeEvent

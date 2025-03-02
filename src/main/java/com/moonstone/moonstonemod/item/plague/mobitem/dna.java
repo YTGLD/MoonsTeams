@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.plague.mobitem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.DNAItems;
 import com.moonstone.moonstonemod.moonstoneitem.Iplague;
@@ -49,7 +50,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-public class dna extends TheNecoraIC implements ICurioItem , Iplague {
+public class dna extends TheNecoraIC implements ICurioItem , Iplague , TextEvt.Twelve {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {

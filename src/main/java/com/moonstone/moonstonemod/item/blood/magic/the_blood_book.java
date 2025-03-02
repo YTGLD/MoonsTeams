@@ -25,12 +25,12 @@ public class the_blood_book  extends Item implements ICurioItem, Blood {
         super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
         p_41423_.add(Component.translatable("item.the_blood_book.tool.string").withStyle(ChatFormatting.RED));
         p_41423_.add(Component.translatable("item.the_blood_book.tool.string.1").withStyle(ChatFormatting.RED));
-        p_41423_.add(Component.translatable("item.the_blood_book.tool.string.2").withStyle(ChatFormatting.RED));
         p_41423_.add(Component.translatable("item.the_blood_book.tool.string.3").withStyle(ChatFormatting.RED));
         p_41423_.add(Component.translatable("item.the_blood_book.tool.string.4").withStyle(ChatFormatting.RED));
         p_41423_.add(Component.literal(""));
         p_41423_.add(Component.translatable("item.the_blood_book.tool.string.5").withStyle(ChatFormatting.RED));
         p_41423_.add(Component.literal(""));
         p_41423_.add(Component.translatable("item.the_blood_book.tool.string.6").withStyle(ChatFormatting.RED));
+        p_41423_.add(Component.literal(""));
     }
 }

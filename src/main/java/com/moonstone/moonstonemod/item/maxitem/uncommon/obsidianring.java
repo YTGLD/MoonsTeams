@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.maxitem.uncommon;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -12,7 +13,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.UUID;
 
-public class obsidianring extends UnCommonItem {
+public class obsidianring extends UnCommonItem  implements TextEvt.Twelve{
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
 

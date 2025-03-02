@@ -8,7 +8,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
@@ -30,6 +30,7 @@ public class attack_blood extends ThrowableItemProjectile {
     public boolean slime = false;
     public boolean boom = false;
     public boolean effect = false;
+    public boolean isPlayer = false;
     public float speeds = 0.125f;
     public float maxTime = 200;
     public attack_blood(EntityType<? extends attack_blood> entityType, Level level) {
@@ -94,7 +95,12 @@ public class attack_blood extends ThrowableItemProjectile {
                         if (slime){
                             player.heal(damages);
                         }
-                        entity.hurt(this.getOwner().damageSources().dryOut(), damages + player.getMaxHealth() / 10);
+                        if (isPlayer){
+                            entity.hurt(this.getOwner().damageSources().playerAttack(player), (float) (damages + player.getMaxHealth() / 10 + player.getAttributeValue(Attributes.ATTACK_DAMAGE) / 10));
+
+                        }else {
+                            entity.hurt(this.getOwner().damageSources().dryOut(), (float) (damages + player.getMaxHealth() / 10 + player.getAttributeValue(Attributes.ATTACK_DAMAGE) / 10));
+                        }
                         this.discard();
                     }
                 }

@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
@@ -18,7 +19,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 
@@ -29,41 +29,40 @@ import java.util.UUID;
 
 public class nightmare_base  extends nightmare {
 
-    public int tick = 0;
 
+
+    @Override
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (!stack.getOrCreateTag().getBoolean("canDo")) {
+            slotContext.entity().level().playSound(null, slotContext.entity().getX(), slotContext.entity().getY(), slotContext.entity().getZ(), SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.NEUTRAL, 1, 1);
+            Random random = new Random();
+            ArrayList<Item> items= new ArrayList<>(List.of(
+                    Items.nightmare_base_stone.get(),
+                    Items.nightmare_base_reversal.get(),
+                    Items.nightmare_base_black_eye.get(),
+
+                    Items.nightmare_base_redemption.get(),
+                    Items.nightmare_base_fool.get(),
+                    Items.nightmare_base_insight.get(),
+
+                    Items.nightmare_base_start.get()
+            ));
+            for (int i = 0; i < Config.SERVER.nightmareBaseMaxItem.get(); i++) {
+
+                if (!items.isEmpty()) {
+                    int index = random.nextInt(items.size());
+                    Item selectedItem = items.remove(index);
+                    addLoot(slotContext.entity(), selectedItem, stack);
+                }
+            }
+            stack.getOrCreateTag().putBoolean("canDo",true);
+        }
+
+    }
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext,stack));
-        tick = 100;
-        if (stack.getTag()==null) {
-            slotContext.entity().level().playSound(null, slotContext.entity().getX(), slotContext.entity().getY(), slotContext.entity().getZ(), SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.NEUTRAL, 1, 1);
-            stack.getOrCreateTag();
-        }else {
-            if (!stack.getTag().getBoolean("canDo")) {
-                Random random = new Random();
-                ArrayList<Item> items= new ArrayList<>(List.of(
-                        Items.nightmare_base_stone.get(),
-                        Items.nightmare_base_reversal.get(),
-                        Items.nightmare_base_black_eye.get(),
-
-                        Items.nightmare_base_redemption.get(),
-                        Items.nightmare_base_fool.get(),
-                        Items.nightmare_base_insight.get(),
-
-                        Items.nightmare_base_start.get()
-                ));
-                for (int i = 0; i < 3; i++) {
-
-                    if (!items.isEmpty()) {
-                        int index = random.nextInt(items.size());
-                        Item selectedItem = items.remove(index);
-                        addLoot(slotContext.entity(), selectedItem, stack);
-                    }
-                }
-                stack.getTag().putBoolean("canDo",true);
-            }
-        }
     }
 
     @Override

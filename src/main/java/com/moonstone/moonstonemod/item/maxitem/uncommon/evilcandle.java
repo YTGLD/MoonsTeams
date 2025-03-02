@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem.uncommon;
 
+import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -10,7 +11,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class evilcandle extends UnCommonItem {
+public class evilcandle extends UnCommonItem  implements TextEvt.Twelve{
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         slotContext.entity().clearFire();

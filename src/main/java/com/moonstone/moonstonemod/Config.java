@@ -73,6 +73,11 @@ public class Config {
         canUnequipMoonstoneItem = BUILDER
                 .comment("Can unequip some moonstone item")
                 .define("Can", false);
+        itemQuality = BUILDER
+                .comment("If enabled, the item's cultivation value system (Golden Immortal - Merge - Saint Monarch) is enabled.")
+                .define("Quality", true);
+
+
 
         BUILDER.push("Loot");
         bat = BUILDER
@@ -92,6 +97,17 @@ public class Config {
         nine_sword_book = BUILDER
                 .comment("After enabling, you can find “nine_sword_books”")
                 .define("NineSwordBooks", true);
+        BUILDER.pop();
+
+
+
+
+
+
+        BUILDER.push("nightmare");
+        nightmareBaseMaxItem = BUILDER
+                .comment("The value is equip NightmareBase give your item size")
+                .defineInRange("Common_probability", 3, 0, 7);
         BUILDER.pop();
 
         BUILDER.build();
@@ -119,5 +135,7 @@ public class Config {
 
     public   ForgeConfigSpec.IntValue ectoplasmstar ;
     public   ForgeConfigSpec.BooleanValue canUnequipMoonstoneItem ;
+    public   ForgeConfigSpec.IntValue nightmareBaseMaxItem ;
+    public   ForgeConfigSpec.BooleanValue itemQuality;
 
 }

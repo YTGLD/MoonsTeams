@@ -895,7 +895,7 @@
   "advancements.tooltip.max_blood_cube.hand": "注视我！",
   "advancements.tooltip.max_blood_cube.text": "制作复仇之骰",
 
-  "item.the_blood_book.tool.string": "血灵增生体的伤害增加50%",
+  "item.the_blood_book.tool.string": "血灵增生体的伤害增加200%",
   "item.the_blood_book.tool.string.1": "血灵增生体的血珠速度增加100%",
   "item.the_blood_book.tool.string.2": "血灵增生体的血珠会爆炸",
 
@@ -979,7 +979,7 @@
   "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品或右键这个物品",
 
 
-  "item.blood_candle.tool.string.2": "血灵增生体的攻击会造成基于你最大生命值的伤害",
+  "item.blood_candle.tool.string.2": "血灵增生体的攻击会造成基于你10%最大生命值和攻击属性的伤害",
 
 
 
@@ -997,15 +997,16 @@
 
 
   "item.malice_die.tool.string.1": "如果附近生物的攻击目标是你，那么每增加一个生物：",
-  "item.malice_die.tool.string.2": "+10%伤害",
-  "item.malice_die.tool.string.3": "+9%生命恢复",
-  "item.malice_die.tool.string.4": "+8%速度",
-  "item.malice_die.tool.string.5": "+7%攻击速度",
-  "item.malice_die.tool.string.6": "+6%护甲",
-  "item.malice_die.tool.string.7": "+5%暴击",
+  "item.malice_die.tool.string.2": "+3.3%伤害",
+  "item.malice_die.tool.string.3": "+3%生命恢复",
+  "item.malice_die.tool.string.4": "+2.7%速度",
+  "item.malice_die.tool.string.5": "+2.5%攻击速度",
+  "item.malice_die.tool.string.6": "+2%护甲",
+  "item.malice_die.tool.string.7": "+1.7%暴击",
   "item.malice_die.tool.string.8": "攻击会使目标8格半径内的生物主动攻击你",
   "item.malice_die.tool.string.9": "-15% 所有伤害",
   "item.malice_die.tool.string.10": "如果目标数量少于3，那么你造成的伤害减35%",
+
   "item.evil_mob.tool.string.1": "允许你在不佩戴深渊之眼,necora病毒，暗影瘟疫的情况下使用和发现相应的物品",
   "item.evil_mob.tool.string.2": "佩戴后，自动获得深渊之眼，necora病毒，暗影瘟疫的一些特殊能力",
 
@@ -1161,11 +1162,11 @@
   "item.moonstone.nine_sword_books": "九剑归一诀",
 
   "item.moonstone.million": "七剑修罗·万法",
-  "item.million.tool.string.1": "这个盒子里存储了30把飞剑",
+  "item.million.tool.string.1": "这个盒子里存储了15把飞剑",
   "item.million.tool.string.2": "每次全力斩击都会召唤3把",
   "item.million.tool.string.3": "每当飞剑被拾取时都会恢复1把",
   "item.million.tool.string.4": "每次拾取飞剑都会获得1%的伤害加成",
-  "item.million.tool.string.5": "持续10秒，最多叠加到100%",
+  "item.million.tool.string.5": "持续10秒，最多叠加到50%",
   "item.million.tool.string.6": "Shift",
   "item.million.tool.string.7": "获得的加成：",
   "item.million.tool.string.8": "储存的飞剑数量：",
@@ -1216,10 +1217,10 @@
   "moonstone.jei.nanodoom.all": "发现在古城",
   "moonstone.jei.wind_and_rain": "同时带上七剑修罗和骤雨然后摸地牢/矿井/宝藏/城市类型箱子",
   "moonstone.jei.calcification": "： 受到350次伤害，需要佩戴医药箱",
-  "moonstone.jei.masticatory": "： 死掉一次，需要佩戴医药箱",
+  "moonstone.jei.masticatory": "： 吃8个金苹果，需要佩戴医药箱",
   "moonstone.jei.polyphagia": "： 吃个附魔金苹果，需要佩戴医药箱",
   "moonstone.jei.quadriceps": "： 跳500次，需要佩戴医药箱",
-  "moonstone.jei.reanimation": "： 吃8个金苹果，需要佩戴医药箱",
+  "moonstone.jei.reanimation": "： 死掉一次，需要佩戴医药箱",
 
   "moonstone.jei.nightmare_cube": "： ",
   "moonstone.jei.nightmare_head":"： ",
@@ -1584,6 +1585,25 @@
   "item.killer.tool.string.12": "护甲: ",
 
 
+  "item.moonstone.twelve_sword":"诸神剑阵",
+
+  "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵",
+  "item.twelve_sword.tool.string.2": "在剑阵附近获得10%~120%的伤害加成",
+  "item.twelve_sword.tool.string.3": "剑阵内的生物会被死界剑坠落攻击",
+  "item.twelve_sword.tool.string.4": "数量取决于你生肖物品的数量",
+
+  "moonstone.twelve.1": "生肖：子",
+  "moonstone.twelve.2": "生肖：丑",
+  "moonstone.twelve.3": "生肖：寅",
+  "moonstone.twelve.4": "生肖：卯",
+  "moonstone.twelve.5": "生肖：辰",
+  "moonstone.twelve.6": "生肖：巳",
+  "moonstone.twelve.7": "生肖：午",
+  "moonstone.twelve.8": "生肖：未",
+  "moonstone.twelve.9": "生肖：申",
+  "moonstone.twelve.10": "生肖：酉",
+  "moonstone.twelve.11": "生肖：戌",
+  "moonstone.twelve.12": "生肖：亥",
 
 
   "item.moonstone.immortal": "§4不朽轮回之印章",

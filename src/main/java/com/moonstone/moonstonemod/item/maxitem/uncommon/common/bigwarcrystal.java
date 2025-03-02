@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import com.moonstone.moonstonemod.moonstoneitem.Iwar;
@@ -16,7 +17,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.UUID;
 
-public class bigwarcrystal extends CommonItem implements Iwar {
+public class bigwarcrystal extends CommonItem implements Iwar  , TextEvt.Twelve{
 
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {

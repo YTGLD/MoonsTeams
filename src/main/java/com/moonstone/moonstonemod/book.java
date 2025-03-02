@@ -10,10 +10,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ClickAction;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
@@ -37,6 +40,23 @@ public class    book extends UnCommonItem {
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
         return !Handler.hascurio(slotContext.entity(),this);
 
+    }
+    public boolean overrideOtherStackedOnMe(ItemStack me, ItemStack Other, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
+        if (me.getCount() != 1) return false;
+        if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
+            if (Other.isEmpty()){
+                if (ModList.get().isLoaded("patchouli")){
+                    if (p_150746_ instanceof ServerPlayer player){
+                        PatchouliAPI.get().openBookGUI(player,new ResourceLocation(MoonStoneMod.MODID,"soul_book"));
+                    }
+                }else {
+                    p_150746_.displayClientMessage(Component.translatable("moonstone.book.error").withStyle(ChatFormatting.RED), false);
+                    p_150746_.displayClientMessage(Component.translatable("moonstone.book.error").withStyle(ChatFormatting.RED), true);
+                }
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

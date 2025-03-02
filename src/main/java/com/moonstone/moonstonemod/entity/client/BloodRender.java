@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.entity.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.moonstone.moonstonemod.ConfigClient;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
@@ -25,8 +26,9 @@ public class BloodRender extends EntityRenderer<blood> {
     public void render(blood entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {
         setT(poseStack, entity, bufferSource);
         renderSphere1(poseStack,bufferSource,240,0.15f);
-        MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
-
+        if (ConfigClient.Client.Shader.get()) {
+            MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
+        }
         super.render(entity, p_114486_, p_114487_, poseStack, bufferSource, p_114490_);
     }
 

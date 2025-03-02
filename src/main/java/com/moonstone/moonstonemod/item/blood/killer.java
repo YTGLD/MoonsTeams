@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.blood;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
 import net.minecraft.ChatFormatting;
@@ -23,7 +24,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
-public class killer extends Item implements ICurioItem, Blood {
+public class killer extends Item implements ICurioItem, Blood , TextEvt.Twelve {
     public killer() {
         super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
 

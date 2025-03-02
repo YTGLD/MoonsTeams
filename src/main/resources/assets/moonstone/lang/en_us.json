@@ -993,6 +993,7 @@
   "item.malice_die.tool.string.8": "Attacking will cause creatures within an 8-grid radius of the target to actively attack you",
   "item.malice_die.tool.string.9": "-30% all damage",
   "item.malice_die.tool.string.10": "If the number of targets is less than 3, the damage you cause will be reduced by 35%",
+  "item.nine_sword_book.tool.string.all": "修炼到[剑帝][剑祖]级别后，属性增长降低22.5%”",
 
 
   "item.moonstone.deceased_contract": "deceased contract",
@@ -1562,6 +1563,25 @@
   "item.nightmare_axe.tool.string.3": "+25% heal",
   "item.nine_sword_book_skill.tool.string.attack_damage": "all damage",
 
+  "item.moonstone.twelve_sword":"诸神剑阵",
+
+  "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵",
+  "item.twelve_sword.tool.string.2": "在剑阵附近获得1%0~120%的伤害加成",
+  "item.twelve_sword.tool.string.3": "剑阵内的生物会被死界碑坠落攻击",
+  "item.twelve_sword.tool.string.4": "数量取决于你生肖物品的数量",
+
+  "moonstone.twelve.1": "子",
+  "moonstone.twelve.2": "丑",
+  "moonstone.twelve.3": "寅",
+  "moonstone.twelve.4": "卯",
+  "moonstone.twelve.5": "辰",
+  "moonstone.twelve.6": "巳",
+  "moonstone.twelve.7": "午",
+  "moonstone.twelve.8": "未",
+  "moonstone.twelve.9": "申",
+  "moonstone.twelve.10": "酉",
+  "moonstone.twelve.11": "戌",
+  "moonstone.twelve.12": "亥",
   "item.nine_sword_book.tool.string.7": "下一次斩击会造成（快捷栏内所有剑类武器伤害的总和）的生命值",
   "item.nine_sword_book.tool.string.8": "冷却",
   "item.moonstone.nine_sword_books": "nine_sword_books",

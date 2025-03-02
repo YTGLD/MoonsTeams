@@ -50,7 +50,7 @@ public class as_sword extends ThrowableItemProjectile {
                         ItemStack stack = stackHandler.getStackInSlot(i);
                         if (stack.getTag() != null) {
 
-                            if (stack.getTag().getInt(million.sizeLvl) < 30) {
+                            if (stack.getTag().getInt(million.sizeLvl) < 15) {
                                 stack.getTag().putInt(million.sizeLvl,stack.getTag().getInt(million.sizeLvl)+1);
                             }
                             if (stack.getTag().getInt(million.attackLvl) < 100) {

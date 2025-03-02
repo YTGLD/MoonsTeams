@@ -1518,7 +1518,7 @@ public class AllEvent {
                             if (Handler.hascurio(player, Items.parasite.get())) {
                                 if (event.getAmount() >player.getHealth()){
                                     if (stack.getOrCreateTag().getInt(sizeLevel) > 900){
-                                        if (player.getFoodData().getFoodLevel() > player.getFoodData().getFoodLevel() * 0.6){
+                                        if (player.getFoodData().getFoodLevel() > 12){
                                             event.setAmount(event.getAmount() * 1.4f);
                                         }
                                     }
@@ -2107,7 +2107,7 @@ public class AllEvent {
                                     }
                                 }
                                 livingentity.level().playSound(null, livingentity.getX(), livingentity.getY(), livingentity.getZ(), SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.NEUTRAL, 0.22f, 0.22f);
-                                livingentity.hurt(livingentity.damageSources().magic(), 4 + livingentity.getMaxHealth() / 25);
+                                livingentity.hurt(livingentity.damageSources().magic(), 10);
                                 livingentity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 1));
                                 livingentity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
                                 livingentity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));

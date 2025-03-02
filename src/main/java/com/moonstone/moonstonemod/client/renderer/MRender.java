@@ -184,6 +184,24 @@ public class MRender extends RenderType {
     public static void setShaderInstance_mls(ShaderInstance shaderInstance_mls) {
         ShaderInstance_mls = shaderInstance_mls;
     }
+    public static final RenderType Bluer = create(
+            "blue",
+            DefaultVertexFormat.POSITION,
+            VertexFormat.Mode.QUADS,
+            256,
+            false,
+            false,
+            RenderType.CompositeState.builder()
+                    .setShaderState(RENDER_STATE_SHARD_MLS)
+                    .setWriteMaskState(COLOR_DEPTH_WRITE)
+                    .setTransparencyState(LIGHTNING_TRANSPARENCY)
+                    .setOutputState(setOutputState)
+                    .setTextureState(RenderStateShard.
+                            MultiTextureStateShard.builder().
+                            add(new ResourceLocation (MoonStoneMod.MODID,"textures/sword.png"),
+                                    false,
+                                    false).add(new ResourceLocation (MoonStoneMod.MODID,"textures/sword.png"),
+                                    false, false).build()).createCompositeState(false));
 
     public static ShaderInstance getShaderInstance_gateway() {
         return ShaderInstance_gateway;

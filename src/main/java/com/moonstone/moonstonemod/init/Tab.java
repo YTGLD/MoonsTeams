@@ -129,6 +129,7 @@ public class Tab {
 
 
                 b.accept(new ItemStack(Items.book.get()));
+                b.accept(new ItemStack(Items.twelve_sword_.get()));
                 b.accept(new ItemStack(Items.at_a_book.get()));
                 b.accept(new ItemStack(Items.evil_mob.get()));
                 b.accept(new ItemStack(Items.malice_die.get()));
