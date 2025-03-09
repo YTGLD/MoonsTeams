@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.pain;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.ThePain;
@@ -35,8 +36,8 @@ public class pain_ring extends ThePain {
                             if (stack.is(Items.pain_ring.get())) {
                                 if (stack.getTag()!= null){
 
-                                    if (stack.getOrCreateTag().getInt(pain)<100) {
-                                        stack.getOrCreateTag().putInt(pain, stack.getOrCreateTag().getInt(pain) + 1);
+                                    if (stack.getOrCreateTag().getInt(pain)<Config.SERVER.pain_ring.get()*100) {
+                                        stack.getOrCreateTag().putInt(pain, stack.getOrCreateTag().getInt(pain) + Config.SERVER.pain_ring.get());
                                     }
                                     event.setAmount((event.getAmount())*0.5f);
                                 }

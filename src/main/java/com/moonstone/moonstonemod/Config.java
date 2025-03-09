@@ -79,6 +79,46 @@ public class Config {
 
 
 
+        BUILDER.push("zh_cn");
+
+        rage_eye = BUILDER
+                .comment("狂暴之眼最多可以偷盗的属性（相对于玩家）")
+                .defineInRange("rage_eye", 0.25, 0, 1000);
+        rage_eye_copy = BUILDER
+                .comment("狂暴之眼最多可以偷盗的属性（相对于怪物）")
+                .defineInRange("rage_eye_copy", 0.1, 0, 1000);
+        Nightecora = BUILDER
+                .comment("Nightecora病毒的额外生命值惩罚，单位百分比")
+                .defineInRange("Nightecora", 25, 0, 100);
+
+        nightmare_base_redemption_deception = BUILDER
+                .comment("“欺骗”恢复的生命值，单位百分比")
+                .defineInRange("nightmare_base_redemption_deception", 100, 0, 100);
+
+        nightmare_base_fool_bone = BUILDER
+                .comment("危险的头骨造成的额外伤害，“2”是两倍")
+                .defineInRange("nightmare_base_fool_bone", 2, 0, 9999);
+
+        nightmare_base_insight_drug = BUILDER
+                .comment("疯狂灵药的最大属性加成，单位百分比")
+                .defineInRange("nightmare_base_insight_drug", 100, 0, 99999);
+
+        nightmare_base_insight_drug_2 = BUILDER
+                .comment("疯狂灵药的单物品计算的属性衰败，单位百分比")
+                .defineInRange("nightmare_base_insight_drug_2", 8, 0, 99999);
+
+        nightmare_base_insight_insane = BUILDER
+                .comment("癫狂之石的杀死生物后获得的伤害加成，单位百分比")
+                .defineInRange("nightmare_base_insight_insane", 150, 0, 99999);
+        pain_ring = BUILDER
+                .comment("邪祟之戒获得最大伤害加成和增加速度，单位百分比")
+                .defineInRange("pain_ring", 1, 0, 99999);
+        nightmarerotten = BUILDER
+                .comment("万腐之心的属性加成，单位百分比")
+                .defineInRange("nightmarerotten", 10, 0, 1000000);
+        BUILDER.pop();
+
+
         BUILDER.push("Loot");
         bat = BUILDER
                 .comment("The probability of discovering Shadow Plague items from the chests")
@@ -112,6 +152,9 @@ public class Config {
 
         BUILDER.build();
     }
+    public ForgeConfigSpec.DoubleValue rage_eye;
+    public ForgeConfigSpec.DoubleValue rage_eye_copy;
+
     public  ForgeConfigSpec.DoubleValue plague_speed;
     public   ForgeConfigSpec.DoubleValue plague_pain;
     public   ForgeConfigSpec.IntValue nightmare_moai;
@@ -136,6 +179,32 @@ public class Config {
     public   ForgeConfigSpec.IntValue ectoplasmstar ;
     public   ForgeConfigSpec.BooleanValue canUnequipMoonstoneItem ;
     public   ForgeConfigSpec.IntValue nightmareBaseMaxItem ;
+
+
+
+
+
+
+
+
+    public   ForgeConfigSpec.IntValue Nightecora ;
+    public   ForgeConfigSpec.IntValue nightmare_base_redemption_deception ;
+    public   ForgeConfigSpec.IntValue nightmare_base_fool_bone ;
+    public   ForgeConfigSpec.IntValue nightmare_base_insight_drug ;
+    public   ForgeConfigSpec.IntValue nightmare_base_insight_drug_2 ;
+    public   ForgeConfigSpec.IntValue nightmare_base_insight_insane ;
+    public   ForgeConfigSpec.IntValue pain_ring ;
+    public   ForgeConfigSpec.IntValue nightmarerotten ;
+
+
+
+
+
+
+
+
+
+
     public   ForgeConfigSpec.BooleanValue itemQuality;
 
 }

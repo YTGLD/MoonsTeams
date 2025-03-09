@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "moonstone:rage_crystal_big"
+    },
+    {
+      "item": "moonstone:rage_crystal_big"
+    },
+    {
+      "item": "moonstone:battery"
+    }
+  ],
+  "result": {
+    "item": "moonstone:rage_crystal_max",
+    "count": 1
+  }
+}

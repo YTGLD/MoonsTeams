@@ -16,6 +16,7 @@ import com.moonstone.moonstonemod.item.amout.twistedstone;
 import com.moonstone.moonstonemod.item.blood.*;
 import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
 import com.moonstone.moonstonemod.item.blood.magic.the_blood_book;
+import com.moonstone.moonstonemod.item.blood.magic.undead_blood_charm;
 import com.moonstone.moonstonemod.item.bloodvirus;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
 import com.moonstone.moonstonemod.item.ectoplasm.soul.soulbattery;
@@ -26,7 +27,9 @@ import com.moonstone.moonstonemod.item.maxitem.fortunecrystal;
 import com.moonstone.moonstonemod.item.maxitem.*;
 import com.moonstone.moonstonemod.item.maxitem.maxamout;
 import com.moonstone.moonstonemod.item.maxitem.mayhemcrystal;
+import com.moonstone.moonstonemod.item.maxitem.rage.*;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.common.*;
+import com.moonstone.moonstonemod.item.maxitem.uncommon.magnet;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.*;
 import com.moonstone.moonstonemod.item.necora;
@@ -347,9 +350,24 @@ public class Items {
     public static final RegistryObject<Item> at_a_book =REGISTRY.register("at_a_book", at_a_book::new);
 
 
+    public static final RegistryObject<Item> rage_crystal =REGISTRY.register("rage_crystal", rage_crystal::new);
+    public static final RegistryObject<Item> rage_crystal_big =REGISTRY.register("rage_crystal_big", rage_crystal_big::new);
+    public static final RegistryObject<Item> rage_crystal_max =REGISTRY.register("rage_crystal_max", rage_crystal_max::new);
+    public static final RegistryObject<Item> undead_blood_charm =REGISTRY.register("undead_blood_charm", undead_blood_charm::new);
+    public static final RegistryObject<Item> rage_charm =REGISTRY.register("rage_charm", rage_charm::new);
+
+    public static final RegistryObject<Item> rage_eye =REGISTRY.register("rage_eye", rage_eye::new);
+
+    public static final RegistryObject<Item> magnet =REGISTRY.register("magnet", magnet::new );
+    public static final RegistryObject<Item> rage_magnet =REGISTRY.register("rage_magnet", rage_magnet::new );
+    public static final RegistryObject<Item> rage_stone =REGISTRY.register("rage_stone", rage_stone::new );
+    public static final RegistryObject<Item> rage_lock =REGISTRY.register("rage_lock", rage_lock::new );
+
+
     public static final RegistryObject<Item> sword =REGISTRY.register("sword",twelve_sword.sword::new );
     public static final RegistryObject<Item> at_sword_ =REGISTRY.register("at_sword",twelve_sword.at_sword::new );
     public static final RegistryObject<Item> god_sword_ =REGISTRY.register("god_sword",twelve_sword.god_sword::new );
+    public static final RegistryObject<Item> belt =REGISTRY.register("belt",belt::new );
     public static final RegistryObject<Item> twelve_sword_ =REGISTRY.register("twelve_sword", twelve_sword::new);
 
     public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.moonstoneitem.gorillacake::new);

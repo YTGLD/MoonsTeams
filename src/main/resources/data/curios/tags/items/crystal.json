@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:bigwarcrystal",
+    "moonstone:greedcrystal",
+    "moonstone:warcrystal",
+
+    "moonstone:fortunecrystal",
+    "moonstone:biggreedcrystal",
+    "moonstone:mayhemcrystal",
+
+    "moonstone:rage_crystal",
+    "moonstone:rage_crystal_big",
+    "moonstone:rage_crystal_max"
+
+  ]
+}

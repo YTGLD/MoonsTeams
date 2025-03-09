@@ -55,7 +55,7 @@ public class nightmareeye extends nightmare {
         if (Handler.hascurio(player, com.moonstone.moonstonemod.init.Items.nightmarerotten.get())){
             float a = ForgeRegistries.ATTRIBUTES.getValues().size();
             a /= 100;
-            a *= 1.1F;
+            a *= 0.2f;
             s += a;
         }
 

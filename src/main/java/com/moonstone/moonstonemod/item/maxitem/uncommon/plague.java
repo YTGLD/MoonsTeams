@@ -70,7 +70,10 @@ public class plague extends UnCommonItem {
 
         @Override
         public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
-            return Handler.hascurio(slotContext.entity(), Items.nightmareeye.get());
+            if (Handler.hascurio(slotContext.entity(), Items.nightmareeye.get())) {
+                return true;
+            }
+            return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
         }
 
         public Multimap<Attribute, AttributeModifier> APlague(ItemStack stack) {

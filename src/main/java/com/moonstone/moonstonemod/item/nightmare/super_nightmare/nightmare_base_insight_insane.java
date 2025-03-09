@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
@@ -26,7 +27,7 @@ public class nightmare_base_insight_insane extends nightmare {
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.nightmare_base_insight_insane.get())) {
                 if (player.getCooldowns().isOnCooldown(Items.nightmare_base_insight_insane.get())){
-                    event.setAmount(event.getAmount()*2.5f);
+                    event.setAmount(event.getAmount()*(1+( Config.SERVER.nightmare_base_insight_insane.get()/100f)));
                     player.getCooldowns().addCooldown(Items.nightmare_base_insight_insane.get(),0);
                 }
             }

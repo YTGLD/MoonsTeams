@@ -91,7 +91,8 @@ public class nightmare_base  extends nightmare {
         return linkedHashMultimap;
     }
 
-      @Override
+
+    @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){

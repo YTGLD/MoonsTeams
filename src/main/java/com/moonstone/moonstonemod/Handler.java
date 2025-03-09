@@ -149,6 +149,12 @@ public class Handler {
                 }
             }
             if (CuriosApi.getCuriosInventory(entity).isPresent()
+                    && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.maxamout.get())) {
+                if (curio == Items.redamout.get() || curio == Items.greedamout.get() || curio == Items.blueamout.get()) {
+                    return true;
+                }
+            }
+            if (CuriosApi.getCuriosInventory(entity).isPresent()
                     && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.the_blood_book.get())) {
                 if (curio == Items.owner_blood_speed_eye.get() || curio == Items.owner_blood_eye.get()) {
                     return true;

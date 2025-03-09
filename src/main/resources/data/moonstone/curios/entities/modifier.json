@@ -1,11 +1,11 @@
-
 {
   "entities": [
     "player",
-    "moonstone:small_zombie"
+    "moonstone:sword_soul"
   ],
   "slots": [
     "back",
+    "nightmare",
     "belt",
     "charm",
     "ring",
@@ -18,7 +18,7 @@
     "hands",
     "ncrdna",
     "dna",
-    "zombie",
-    "nightmare"
+    "crystal",
+    "stone"
   ]
 }

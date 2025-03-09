@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
@@ -25,7 +26,7 @@ public class nightmare_base_stone_virus extends nightmare {
     public static void aVoid(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.nightmare_base_stone_virus.get())){
-                player.setHealth(player.getHealth() - player.getMaxHealth()/4);
+                player.setHealth(player.getHealth() - player.getMaxHealth()*(Config.SERVER.Nightecora.get()/100f));
             }
         }
     }

@@ -77,10 +77,7 @@ public class maxamout extends UnCommonItem implements TextEvt.Twelve {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.maxamout.tool.string.2").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("item.maxamout.tool.string.3").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable(""));
-            tooltip.add(Component.translatable("item.maxamout.tool.string.4").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable("item.maxamout.tool.string.5").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable(""));
+             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.maxamout.tool.string.6").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("item.maxamout.tool.string.7").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("item.maxamout.tool.string.8").withStyle(ChatFormatting.GOLD));

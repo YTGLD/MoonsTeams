@@ -17,6 +17,7 @@ import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_blood;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_boom;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_calcification;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.cell_mummy;
+import com.moonstone.moonstonemod.item.maxitem.rage.RAGE;
 import com.moonstone.moonstonemod.item.maxitem.the_heart;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.evilmug;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
@@ -1086,7 +1087,6 @@ public class AllEvent {
     public void fermentation(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.fermentation.get())){
-
                 if (player.getCooldowns().isOnCooldown(Items.fermentation.get())){
                     event.setAmount(event.getAmount() * 0.3f);
                 }else {
@@ -2369,6 +2369,12 @@ public class AllEvent {
 
         }
 
+        if (stack.getItem() instanceof RAGE) {
+            tooltipEvent.setBorderStart(0xFFFFDEAD);
+            tooltipEvent.setBorderEnd(0xFFB22222);
+            tooltipEvent.setBackgroundStart(0xFF000000);
+            tooltipEvent.setBackgroundEnd(0xFF000000);
+        }
         if (stack.getItem() instanceof Iplague||stack.getItem() instanceof Blood) {
             tooltipEvent.setBorderStart(0xFF800000);
             tooltipEvent.setBorderEnd(0x0ff800000);

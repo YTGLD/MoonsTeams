@@ -12,11 +12,15 @@ import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.gia
 import com.moonstone.moonstonemod.item.TheNecora.small.enhancemen;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.blood.*;
+import com.moonstone.moonstonemod.item.blood.magic.undead_blood_charm;
 import com.moonstone.moonstonemod.item.maxitem.*;
 import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
 import com.moonstone.moonstonemod.item.blood.magic.blood_sun;
 import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_book;
 import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_books;
+import com.moonstone.moonstonemod.item.maxitem.rage.rage_charm;
+import com.moonstone.moonstonemod.item.maxitem.rage.rage_lock;
+import com.moonstone.moonstonemod.item.maxitem.rage.rage_magnet;
 import com.moonstone.moonstonemod.item.nanodoom.as_amout;
 import com.moonstone.moonstonemod.item.nanodoom.million;
 import com.moonstone.moonstonemod.item.nightmare.nightmare_axe;
@@ -82,6 +86,8 @@ public class NewEvent {
         nightmare_base_black_eye_heart.heal(event);
         nightmare_base_reversal_orb.LivingHealEvent(event);
         nightmare_axe.heals(event);
+        undead_blood_charm.LivingHealEvent(event);
+        rage_lock.LivingHealEvent(event);
         if (event.getEntity().getAttribute(AttReg.heal.get())!=null){
             float attack = (float) event.getEntity().getAttribute(AttReg.heal.get()).getValue();
             event.setAmount(event.getAmount()*(attack));
@@ -192,6 +198,8 @@ public class NewEvent {
         nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
         immortal.hEvt(event);
         twelve_sword.att(event);
+        rage_lock.LivingIncomingDamageEvent(event);
+        undead_blood_charm.LivingIncomingDamageEvent(event);
         if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get())!=null){
             float lvl = event.getEntity().getEffect(Effects.dead.get()).getAmplifier();
             lvl *= 0.2f;
@@ -242,6 +250,12 @@ public class NewEvent {
         dna.dieD(event);
         nightmare_axe.Nig(event);
         immortal.livDead(event);
+        rage_charm.die(event);
+        rage_lock.LivingDeathEvent(event);
+    }
+    @SubscribeEvent
+    public  void pick(PlayerEvent.ItemPickupEvent event){
+        rage_magnet.pick(event);
     }
 
     @SubscribeEvent

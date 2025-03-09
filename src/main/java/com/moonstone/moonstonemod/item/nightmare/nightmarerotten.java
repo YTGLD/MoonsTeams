@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
@@ -25,7 +26,7 @@ public class nightmarerotten extends nightmare {
 
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers() {
         Multimap<Attribute, AttributeModifier> get = HashMultimap.create();
-        double as = 0.33;
+        double as  = (Config.SERVER.nightmarerotten.get()/100f);
 
         for (Attribute attribute : ForgeRegistries.ATTRIBUTES){
 

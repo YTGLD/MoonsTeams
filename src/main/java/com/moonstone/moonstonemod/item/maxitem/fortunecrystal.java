@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.maxitem;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,7 +16,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class fortunecrystal extends UnCommonItem implements TextEvt.Twelve {
+public class fortunecrystal extends UnCommonItem implements TextEvt.Twelve, Die {
 
     @Override
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {

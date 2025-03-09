@@ -218,7 +218,11 @@
   "curios.identifier.ncrdna": "ncr dna",
   "curios.identifier.dna": "dna",
 
+  "curios.identifier.crystal": "crystal",
+  "curios.identifier.stone": "stone",
 
+  "curios.modifiers.crystal": "佩戴水晶时",
+  "curios.modifiers.stone": "佩戴符石后",
   "curios.modifiers.ncrdna": "necora",
   "curios.modifiers.dna": "DNA",
   "curios.modifiers.medicine": "medicine",
@@ -1565,11 +1569,50 @@
 
   "item.moonstone.twelve_sword":"诸神剑阵",
 
+  "item.moonstone.rage_crystal":"血怒水晶",
+  "item.moonstone.rage_crystal_big":"大血怒水晶",
+  "item.moonstone.rage_crystal_max":"战神晶体",
+
   "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵",
   "item.twelve_sword.tool.string.2": "在剑阵附近获得1%0~120%的伤害加成",
   "item.twelve_sword.tool.string.3": "剑阵内的生物会被死界碑坠落攻击",
   "item.twelve_sword.tool.string.4": "数量取决于你生肖物品的数量",
+  "item.moonstone.belt":"belt",
 
+
+  "item.moonstone.rage_eye": "偷盗者的狂暴之眼",
+  "item.rage_eye.tool.string": "手持眼睛左键生物偷取10%基础属性",
+  "item.rage_eye.tool.string.4": "盗取的属性最大值不超过你的25%",
+
+
+  "item.moonstone.rage_charm": "狂暴统治者徽章",
+  "item.rage_charm.tool.string": "杀死生物获得属性加成",
+  "item.rage_charm.tool.string.1": "随时间减少",
+
+  "item.moonstone.magnet": "磁铁",
+  "item.magnet.tool.string": "吸引半径8格内的掉落物",
+
+  "item.moonstone.rage_magnet": "狂暴磁铁",
+  "item.rage_magnet.tool.string": "吸引掉落物时恢复生命值",
+
+  "item.moonstone.rage_stone": "下界岩石",
+  "item.rage_stone.tool.string": "将附近掉落物形式的下界岩转换成经验球",
+
+  "item.moonstone.rage_lock": "狂暴锁",
+  "item.rage_lock.tool.string": "-75%治疗",
+  "item.rage_lock.tool.string.1": "+25%满血抗性",
+  "item.rage_lock.tool.string.2": "+10%所有伤害",
+  "item.rage_lock.tool.string.3": "+15%吸血",
+  "item.rage_lock.tool.string.4": "+40%杀戮吸血",
+
+
+
+  "item.moonstone.undead_blood_charm":"决裁者徽章",
+  "item.undead_blood_charm.tool.string.1": "标记攻击者，每次你恢复生命值都会对他造成150%恢复量的伤害",
+  "item.undead_blood_charm.tool.string.2": "标记对你有仇恨的生物，每次恢复生命都会对他造成50%恢复量的伤害",
+  "item.undead_blood_charm.tool.string.3": "对亡灵造成额外50%的伤害",
+  "item.undead_blood_charm.tool.string.4": "治疗增加50%",
+  "item.undead_blood_charm.tool.string.5": "受到伤害增加40%",
   "moonstone.twelve.1": "子",
   "moonstone.twelve.2": "丑",
   "moonstone.twelve.3": "寅",

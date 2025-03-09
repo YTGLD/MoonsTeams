@@ -18,23 +18,6 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.UUID;
 
 public class bigwarcrystal extends CommonItem implements Iwar  , TextEvt.Twelve{
-
-    @Override
-    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.mayhemcrystal.get())){
-                return false;
-            }
-            if (Handler.hascurio(player, Items.warcrystal.get())){
-                return false;
-            }
-            if (Handler.hascurio(player,this)){
-                return false;
-            }
-        }
-
-        return true;
-    }
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();

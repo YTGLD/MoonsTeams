@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
@@ -27,7 +28,9 @@ public class nightmare_base_redemption_deception extends nightmare {
                 if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_redemption_deception.get())) {
                     if (event.getAmount() > player.getHealth()) {
 
-                        player.heal(player.getMaxHealth());
+                        player.heal(player.getMaxHealth()* (Config.SERVER.nightmare_base_redemption_deception.get()/100f));
+
+
                         player.getCooldowns().addCooldown(Items.nightmare_base_redemption_deception.get(), 1200);
                         player.invulnerableTime += 140;
                         Vec3 playerPos = player.position().add(0, 0.75, 0);

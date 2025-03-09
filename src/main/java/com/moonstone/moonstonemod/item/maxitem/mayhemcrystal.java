@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.item.nightmare.super_nightmare.nightmare_base_stone_meet;
 import com.moonstone.moonstonemod.moonstoneitem.Iwar;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
@@ -16,7 +17,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.UUID;
 
-public class mayhemcrystal extends UnCommonItem  implements Iwar {
+public class mayhemcrystal extends UnCommonItem  implements Iwar, Die {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {

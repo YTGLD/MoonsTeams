@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:leather"
+    },
+    "B": {
+      "item": "minecraft:string"
+    },
+    "C": {
+      "item": "moonstone:ectoplasmball"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "A B",
+    "BBC"
+  ],
+  "result": {
+    "item": "moonstone:belt"
+  }
+}

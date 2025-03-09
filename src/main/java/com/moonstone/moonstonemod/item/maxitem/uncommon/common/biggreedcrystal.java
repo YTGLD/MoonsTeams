@@ -20,22 +20,7 @@ public class biggreedcrystal extends CommonItem {
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
         return 2;
     }
-    @Override
-    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.fortunecrystal.get())){
-                return false;
-            }
-            if (Handler.hascurio(player, Items.greedcrystal.get())){
-                return false;
-            }
-            if (Handler.hascurio(player,this)){
-                return false;
-            }
-        }
 
-        return true;
-    }
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

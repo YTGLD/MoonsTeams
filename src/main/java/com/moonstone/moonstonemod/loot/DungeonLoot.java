@@ -175,6 +175,14 @@ public class DungeonLoot extends LootModifier {
         if (idSting.contains("chests/")) {
             if (entity instanceof Player player) {
                 if (idSting.contains("treasure")) {
+
+                    if (!player.getTags().contains("treasureRageEye")){
+                        generatedLoot.add(new ItemStack(Items.rage_eye.get()));
+                        player.addTag("treasureRageEye");
+                    }
+
+
+
                     boolean ab = !Handler.hascurio(player, Items.cell.get())
                             && !Handler.hascurio(player, Items.giant.get())
                             && Handler.hascurio(player, Items.necora.get());

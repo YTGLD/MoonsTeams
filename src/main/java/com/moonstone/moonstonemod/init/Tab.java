@@ -129,6 +129,13 @@ public class Tab {
 
 
                 b.accept(new ItemStack(Items.book.get()));
+
+                b.accept(new ItemStack(Items.magnet.get()));
+                b.accept(new ItemStack(Items.rage_magnet.get()));
+                b.accept(new ItemStack(Items.rage_stone.get()));
+                b.accept(new ItemStack(Items.rage_lock.get()));
+
+
                 b.accept(new ItemStack(Items.twelve_sword_.get()));
                 b.accept(new ItemStack(Items.at_a_book.get()));
                 b.accept(new ItemStack(Items.evil_mob.get()));
@@ -144,12 +151,17 @@ public class Tab {
                 b.accept(new ItemStack(Items.greedamout.get()));
                 b.accept(new ItemStack(Items.redamout.get()));
                 b.accept(new ItemStack(Items.maxamout.get()));
+
+                b.accept(new ItemStack(Items.belt.get()));
                 b.accept(new ItemStack(Items.fortunecrystal.get()));
                 b.accept(new ItemStack(Items.mayhemcrystal.get()));
                 b.accept(new ItemStack(Items.biggreedcrystal.get()));
                 b.accept(new ItemStack(Items.bigwarcrystal.get()));
                 b.accept(new ItemStack(Items.greedcrystal.get()));
                 b.accept(new ItemStack(Items.warcrystal.get()));
+                b.accept(new ItemStack(Items.rage_crystal.get()));
+                b.accept(new ItemStack(Items.rage_crystal_big.get()));
+                b.accept(new ItemStack(Items.rage_crystal_max.get()));
 
                 b.accept(new ItemStack(Items.diemug.get()));
                 b.accept(new ItemStack(Items.evilcandle.get()));
@@ -260,6 +272,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.blood_amout.get()));
                 b.accept(new ItemStack(Items.blood_snake.get()));
                 b.accept(new ItemStack(Items.the_prison_of_sin.get()));
+                b.accept(new ItemStack(Items.undead_blood_charm.get()));
 
                 b.accept(new ItemStack(Items.blood_sun.get()));
                 b.accept(new ItemStack(Items.blood_jelly.get()));
@@ -276,6 +289,8 @@ public class Tab {
                 b.accept(new ItemStack(Items.owner_blood_vex.get()));
                 b.accept(new ItemStack(Items.owner_blood_earth.get()));
                 b.accept(new ItemStack(Items.killer.get()));
+                b.accept(new ItemStack(Items.rage_charm.get()));
+                b.accept(new ItemStack(Items.rage_eye.get()));
 
             })
             .build());
