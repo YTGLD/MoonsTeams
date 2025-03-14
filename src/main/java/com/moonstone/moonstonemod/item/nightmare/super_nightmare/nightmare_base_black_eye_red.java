@@ -24,12 +24,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class nightmare_base_black_eye_red  extends nightmare {
+public class nightmare_base_black_eye_red  extends nightmare implements SuperNightmare{
     public static final String aty  = "NightmareRed";
 
       public static void kill(LivingDeathEvent event){
-        if (event.getSource().getEntity() instanceof Player player ){
-            if (Handler.hascurio(player, Items.nightmare_base_black_eye_red.get())){
+        if (event.getSource().getEntity() instanceof Player player ) {
+            if (Handler.hascurio(player, Items.nightmare_base_black_eye_red.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -37,7 +37,7 @@ public class nightmare_base_black_eye_red  extends nightmare {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is( Items.nightmare_base_black_eye_red.get())) {
+                            if (stack.is(Items.nightmare_base_black_eye_red.get())) {
                                 if (stack.getTag() != null) {
                                     if (stack.getTag().getInt(aty) < 50) {
                                         stack.getTag().putInt(aty, stack.getTag().getInt(aty) + 5);
@@ -54,7 +54,9 @@ public class nightmare_base_black_eye_red  extends nightmare {
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         super.onEquip(slotContext, prevStack, stack);
-        slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack));
+        if (Handler.hascurio(slotContext.entity(),this)) {
+            slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack));
+        }
     }
 
     @Override

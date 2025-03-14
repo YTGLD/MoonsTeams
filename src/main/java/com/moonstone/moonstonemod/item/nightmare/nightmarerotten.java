@@ -3,7 +3,9 @@ package com.moonstone.moonstonemod.item.nightmare;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -39,7 +41,9 @@ public class nightmarerotten extends nightmare {
         if (slotContext.entity() instanceof Player player){
             int s =  ForgeRegistries.ATTRIBUTES.getValues().size();
             stack.getOrCreateTag().putInt(nightmarerotten, s);
-            player.getAttributes().addTransientAttributeModifiers(this.getAttributeModifiers());
+            if (Handler.hascurio(player, Items.nightmareeye.get())) {
+                player.getAttributes().addTransientAttributeModifiers(this.getAttributeModifiers());
+            }
         }
     }
     @Override

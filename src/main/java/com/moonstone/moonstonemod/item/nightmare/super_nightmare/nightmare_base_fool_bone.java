@@ -17,17 +17,17 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.util.List;
 
-public class nightmare_base_fool_bone extends nightmare {
+public class nightmare_base_fool_bone extends nightmare implements SuperNightmare{
 
     public static void attLook(LivingHurtEvent event){
-        if (event.getSource().getEntity() instanceof Player player ){
+        if (event.getSource().getEntity() instanceof Player player ) {
             if (Handler.hascurio(player, Items.nightmare_base_fool_bone.get())) {
-                if (event.getEntity() instanceof Mob mob){
-                    if (mob.getTarget()!=null &&mob.getTarget().is(player)){
-                        if (Mth.nextInt(RandomSource.create(),1,100)<=30){
+                if (event.getEntity() instanceof Mob mob) {
+                    if (mob.getTarget() != null && mob.getTarget().is(player)) {
+                        if (Mth.nextInt(RandomSource.create(), 1, 100) <= 30) {
                             mob.invulnerableTime = 0;
                         }
-                        event.setAmount(event.getAmount()* (Config.SERVER.nightmare_base_fool_bone.get()));
+                        event.setAmount(event.getAmount() * (Config.SERVER.nightmare_base_fool_bone.get()));
                     }
                 }
             }

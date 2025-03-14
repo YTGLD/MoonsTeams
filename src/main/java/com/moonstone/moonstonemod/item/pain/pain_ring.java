@@ -35,9 +35,8 @@ public class pain_ring extends ThePain {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.pain_ring.get())) {
                                 if (stack.getTag()!= null){
-
-                                    if (stack.getOrCreateTag().getInt(pain)<Config.SERVER.pain_ring.get()*100) {
-                                        stack.getOrCreateTag().putInt(pain, stack.getOrCreateTag().getInt(pain) + Config.SERVER.pain_ring.get());
+                                    if (stack.getOrCreateTag().getFloat(pain) < (Config.SERVER.pain_ring.get()/100)*100) {
+                                        stack.getOrCreateTag().putFloat(pain,  (float) (stack.getOrCreateTag().getFloat(pain) + Config.SERVER.pain_ring.get()/100));
                                     }
                                     event.setAmount((event.getAmount())*0.5f);
                                 }
@@ -60,7 +59,7 @@ public class pain_ring extends ThePain {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.pain_ring.get())) {
                                 if (stack.getTag()!= null){
-                                    float dam = stack.getOrCreateTag().getInt(pain);
+                                    float dam = stack.getOrCreateTag().getFloat(pain);
                                     dam/=100;
                                     event.setAmount(event.getAmount()*(1+dam));
                                 }
@@ -91,7 +90,7 @@ public class pain_ring extends ThePain {
             tooltip.add(Component.literal("Shift").withStyle(ChatFormatting.DARK_RED));
         }
         tooltip.add(Component.translatable(""));
-        tooltip.add(Component.translatable("effect.minecraft.strength").append(": "+(stack.getOrCreateTag().getInt(pain))+"%").withStyle(ChatFormatting.RED));
+        tooltip.add(Component.translatable("effect.minecraft.strength").append(": "+(stack.getOrCreateTag().getFloat(pain))+"%").withStyle(ChatFormatting.RED));
 
 
     }

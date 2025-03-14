@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -22,10 +23,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class nightmare_base_insight_drug extends nightmare {
+public class nightmare_base_insight_drug extends nightmare implements SuperNightmare{
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
+        if (Handler.hascurio(slotContext.entity(),this)) {
+            slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
+        }
     }
 
     @Override

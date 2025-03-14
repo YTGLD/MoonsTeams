@@ -27,7 +27,7 @@ public class nightmare_head extends nightmare {
     public int size = 0;
     public static void LivingDeathEvent(LivingDeathEvent event){
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player,Items.nightmare_head.get())){
+            if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player,Items.nightmare_head.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -65,7 +65,7 @@ public class nightmare_head extends nightmare {
     }
     public static void headHurt(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player,Items.nightmare_head.get())) {
+            if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player,Items.nightmare_head.get())) {
                 if (event.getSource() != null ){
                     if (event.getSource().getEntity() instanceof LivingEntity living) {
                         living.hurt(living.damageSources().dryOut(),event.getAmount() *0.5f);
@@ -96,8 +96,10 @@ public class nightmare_head extends nightmare {
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (!slotContext.entity().level().isClientSide
                 &&slotContext.entity().tickCount % 100 == 0){
-            stack.getOrCreateTag().putString("TestTag","TestTag");
-            slotContext.entity().setHealth(slotContext.entity().getHealth()+1);
+            if (Handler.hascurio(slotContext.entity(),Items.nightmareeye.get())) {
+                stack.getOrCreateTag().putString("TestTag", "TestTag");
+                slotContext.entity().setHealth(slotContext.entity().getHealth() + 1);
+            }
         }
     }
 

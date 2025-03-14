@@ -21,7 +21,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.Optional;
 
-public class nightmare_base_black_eye_eye  extends nightmare {
+public class nightmare_base_black_eye_eye  extends nightmare implements SuperNightmare{
   
      @Override
     public void appendHoverText(ItemStack stack ,net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {

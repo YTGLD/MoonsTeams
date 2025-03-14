@@ -12,7 +12,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.util.List;
 
-public class nightmare_base_start_pod extends nightmare {
+public class nightmare_base_start_pod extends nightmare implements SuperNightmare{
     public static void damage(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.nightmare_base_start_pod.get())) {

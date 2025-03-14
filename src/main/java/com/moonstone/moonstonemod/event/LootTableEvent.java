@@ -15,6 +15,10 @@ public class LootTableEvent {
     @SubscribeEvent
     public void ItemTooltipEventASD(LootTableLoadEvent event){
 
+        if (Config.SERVER.allLoot.get()){
+            return;
+        }
+
         int bc = 2;
         LootTable table = event.getTable();
         if (event.getName().toString().contains("chests/")){
@@ -85,6 +89,9 @@ public class LootTableEvent {
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .add(LootItem.lootTableItem(Items.germ.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
+                        .add(LootItem.lootTableItem(Items.magnet.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .build());
@@ -199,6 +206,9 @@ public class LootTableEvent {
 
 
                         .add(LootItem.lootTableItem(Items.killer.get()).setWeight(1))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+
+                        .add(LootItem.lootTableItem(Items.magnet.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .build());

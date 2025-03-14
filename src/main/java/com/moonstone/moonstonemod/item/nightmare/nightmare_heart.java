@@ -33,7 +33,7 @@ import java.util.UUID;
 public class nightmare_heart extends nightmare {
     public static void NigH(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_heart.get())){
+            if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player,Items.nightmare_heart.get())){
                 if (event.getSource().getEntity()!= null&& event.getSource().getEntity() instanceof nightmare_entity){
                     event.setAmount(0);
                 }
@@ -43,7 +43,7 @@ public class nightmare_heart extends nightmare {
     public static void Nig(LivingDeathEvent event){
         if (event.getSource() != null) {
             if (event.getSource().getEntity() instanceof Player player) {
-                if (Handler.hascurio(player, Items.nightmare_heart.get())) {
+                if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player, Items.nightmare_heart.get())) {
                     if (!player.getCooldowns().isOnCooldown(Items.nightmare_heart.get())) {
                         nightmare_entity e = new nightmare_entity(EntityTs.nightmare_entity.get(), event.getEntity().level());
                         e.setPos(new Vec3(event.getEntity().getX(), event.getEntity().getY()-1, event.getEntity().getZ()));
@@ -68,9 +68,9 @@ public class nightmare_heart extends nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID+ ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_BASE));
-        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid, MoonStoneMod.MODID+ ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_BASE));
-         return modifierMultimap;
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, MoonStoneMod.MODID + ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid, MoonStoneMod.MODID + ":nightmare_heart", -0.15, AttributeModifier.Operation.MULTIPLY_BASE));
+        return modifierMultimap;
     }
 
 

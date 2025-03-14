@@ -19,7 +19,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmare_base_stone extends nightmare {
+public class nightmare_base_stone extends nightmare implements SuperNightmare{
 
     public static void LivingHurtEvent(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player ){
@@ -44,7 +44,8 @@ public class nightmare_base_stone extends nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
+
+            CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;
     }
      @Override

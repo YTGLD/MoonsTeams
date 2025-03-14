@@ -2,6 +2,8 @@ package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,7 +17,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmare_base_insight_collapse extends nightmare {
+public class nightmare_base_insight_collapse extends nightmare implements SuperNightmare{
      @Override
     public void appendHoverText(ItemStack stack ,net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
@@ -25,9 +27,7 @@ public class nightmare_base_insight_collapse extends nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "curio", uuid, 2, AttributeModifier.Operation.MULTIPLY_TOTAL);
-
+        CuriosApi.addSlotModifier(linkedHashMultimap, "curio", uuid, 2, AttributeModifier.Operation.MULTIPLY_TOTAL);
         return linkedHashMultimap;
      }
 }

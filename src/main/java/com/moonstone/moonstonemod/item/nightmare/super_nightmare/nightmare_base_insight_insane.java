@@ -14,7 +14,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.util.List;
 
-public class nightmare_base_insight_insane extends nightmare {
+public class nightmare_base_insight_insane extends nightmare implements SuperNightmare{
     public static void LivingDeathEvents(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.nightmare_base_insight_insane.get())) {

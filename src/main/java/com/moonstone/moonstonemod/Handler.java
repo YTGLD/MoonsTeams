@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.item.nightmare.super_nightmare.SuperNightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -136,6 +137,12 @@ public class Handler {
 
     public static boolean hascurio(LivingEntity entity, Item curio) {
         if (entity != null) {
+            if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()
+                    && !CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.nightmare_base.get())){
+                if (curio instanceof SuperNightmare){
+                    return false;
+                }
+            }
             if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()
                     && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.immortal.get())){
                 if (curio instanceof nightmare){

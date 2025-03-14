@@ -15,7 +15,6 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 public class nightmare extends Item implements ICurioItem ,INightmare{
     public nightmare() {
         super(new Properties().stacksTo(1).rarity(Rarity.create("nightmare", ChatFormatting.RED)));
-
     }
 
     @Override
@@ -24,7 +23,6 @@ public class nightmare extends Item implements ICurioItem ,INightmare{
         if (stack.getTag()==null){
             stack.getOrCreateTag().putBoolean("Yt",true);
         }
-
     }
 
     @Override

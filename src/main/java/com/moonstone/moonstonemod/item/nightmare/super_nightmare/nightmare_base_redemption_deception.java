@@ -19,7 +19,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.util.List;
 
-public class nightmare_base_redemption_deception extends nightmare {
+public class nightmare_base_redemption_deception extends nightmare implements SuperNightmare{
 
 
     public static void LivingIncomingDamageEvent(LivingHurtEvent event){
@@ -32,7 +32,7 @@ public class nightmare_base_redemption_deception extends nightmare {
 
 
                         player.getCooldowns().addCooldown(Items.nightmare_base_redemption_deception.get(), 1200);
-                        player.invulnerableTime += 140;
+                        player.invulnerableTime += (Config.SERVER.nightmare_base_redemption_deception_time.get()*20);
                         Vec3 playerPos = player.position().add(0, 0.75, 0);
                         float range =10;
                         List<LivingEntity> entities =

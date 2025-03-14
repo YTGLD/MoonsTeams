@@ -28,9 +28,6 @@ import java.util.Random;
 import java.util.UUID;
 
 public class nightmare_base  extends nightmare {
-
-
-
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (!stack.getOrCreateTag().getBoolean("canDo")) {

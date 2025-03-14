@@ -1,6 +1,8 @@
 package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
@@ -15,18 +17,26 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmare_base_start_egg extends nightmare {
-    @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> attributeModifiers = super.getAttributeModifiers(slotContext, uuid, stack);
+public class nightmare_base_start_egg extends nightmare implements SuperNightmare{
+    UUID uuid = UUID.fromString("7b2fc485-d259-389c-bb22-fc20b2865ae3");
+    public Multimap<Attribute, AttributeModifier> gets() {
+        Multimap<Attribute, AttributeModifier> attributeModifiers = HashMultimap.create();
         attributeModifiers.put(Attributes.LUCK, new AttributeModifier(uuid, "a",10, AttributeModifier.Operation.ADDITION));
         attributeModifiers.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, "a", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
         attributeModifiers.put(AttReg.heal.get(), new AttributeModifier(uuid, "a", 0.5, AttributeModifier.Operation.MULTIPLY_BASE));
-
         return attributeModifiers;
     }
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        if (Handler.hascurio(slotContext.entity(),this) ){
+            slotContext.entity().getAttributes().addTransientAttributeModifiers(gets());
+        }
+    }
 
-
+    @Override
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        slotContext.entity().getAttributes().removeAttributeModifiers(gets());
+    }
      @Override
     public void appendHoverText(ItemStack stack ,net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);

@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.event.AdvancementEvt;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
@@ -19,7 +20,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmare_base_redemption extends nightmare {
+public class nightmare_base_redemption extends nightmare implements SuperNightmare{
       @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
@@ -62,7 +63,8 @@ public class nightmare_base_redemption extends nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
+
+            CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;
     }
 }

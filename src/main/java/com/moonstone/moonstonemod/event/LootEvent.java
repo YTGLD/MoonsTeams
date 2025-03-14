@@ -22,6 +22,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class LootEvent {
     @SubscribeEvent
     public void max_charm(LivingDropsEvent event) {
+        if (Config.SERVER.allLoot.get()){
+            return;
+        }
         if (event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.redamout.get())
                     &&Handler.hascurio(player, Items.blueamout.get())
@@ -36,6 +39,9 @@ public class LootEvent {
     }
     @SubscribeEvent
     public void NeCharm(LivingDropsEvent event) {
+        if (Config.SERVER.allLoot.get()){
+            return;
+        }
         if (event.getSource().getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.nightmareeye.get())) {
                 if (!Handler.hascurio(player, Items.nightmareanchor.get())) {
@@ -63,6 +69,9 @@ public class LootEvent {
     }
     @SubscribeEvent
     public void zom(LivingDropsEvent event) {
+        if (Config.SERVER.allLoot.get()){
+            return;
+        }
         if (event.getSource().getEntity() instanceof Player player){
             int a = Mth.nextInt(RandomSource.create(), 1, 10);
             int ng = Mth.nextInt(RandomSource.create(), 1, 5);
@@ -100,6 +109,9 @@ public class LootEvent {
     }
     @SubscribeEvent
     public void LivingKnockBackEvent(LivingDropsEvent event) {
+        if (Config.SERVER.allLoot.get()){
+            return;
+        }
         int a = Mth.nextInt(RandomSource.create(), 1, 20);
         if (event.getEntity() instanceof Zombie  ||
                 event.getEntity() instanceof Spider  ||

@@ -23,7 +23,7 @@ import java.util.List;
 public class nightmare_axe extends nightmare {
     public static void Nig(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_axe.get())) {
+            if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player, Items.nightmare_axe.get())) {
                 if (!player.getCooldowns().isOnCooldown(Items.nightmare_axe.get())) {
                     axe e = new axe(EntityTs.axe.get(), event.getEntity().level());
 
@@ -40,7 +40,7 @@ public class nightmare_axe extends nightmare {
     }
     public static void heals(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_axe.get())) {
+            if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player, Items.nightmare_axe.get())) {
                 Vec3 playerPos = player.position();
                 float range =12;
                 List<axe> entities =
@@ -59,7 +59,7 @@ public class nightmare_axe extends nightmare {
     }
     public static void att(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_axe.get())) {
+            if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player, Items.nightmare_axe.get())) {
                 Vec3 playerPos = player.position();
                 float range =12;
                 List<axe> entities =

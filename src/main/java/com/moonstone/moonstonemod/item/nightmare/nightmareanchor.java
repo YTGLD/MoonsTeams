@@ -2,6 +2,8 @@ package com.moonstone.moonstonemod.item.nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -40,24 +42,26 @@ public class nightmareanchor extends nightmare {
         int i = this.getUseDuration(stack) - p_40670_;
 
         if (p_40669_ instanceof Player player) {
-            float f = BowItem.getPowerForTime(i);
-            if (f == 1.0f) {
-                if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
-                    if (player.level().dimension().toString().contains(stack.getOrCreateTag().getString("level"))) {
-                        if (stack.getOrCreateTag().getDouble("x") != 0
-                                && stack.getOrCreateTag().getDouble("y") != 0
-                                && stack.getOrCreateTag().getDouble("z") != 0) {
+            if (Handler.hascurio(player, Items.nightmareeye.get())) {
+                float f = BowItem.getPowerForTime(i);
+                if (f == 1.0f) {
+                    if (!player.getCooldowns().isOnCooldown(stack.getItem())) {
+                        if (player.level().dimension().toString().contains(stack.getOrCreateTag().getString("level"))) {
+                            if (stack.getOrCreateTag().getDouble("x") != 0
+                                    && stack.getOrCreateTag().getDouble("y") != 0
+                                    && stack.getOrCreateTag().getDouble("z") != 0) {
 
-                            player.teleportTo(stack.getOrCreateTag().getDouble("x"),
-                                    stack.getOrCreateTag().getDouble("y"),
-                                    stack.getOrCreateTag().getDouble("z"));
-                            player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.RESPAWN_ANCHOR_SET_SPAWN, SoundSource.NEUTRAL, 1F, 1F);
-                            player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 200, 2));
-                            player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
-                            player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 2));
-                            player.getCooldowns().addCooldown(stack.getItem(), 300);
+                                player.teleportTo(stack.getOrCreateTag().getDouble("x"),
+                                        stack.getOrCreateTag().getDouble("y"),
+                                        stack.getOrCreateTag().getDouble("z"));
+                                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.RESPAWN_ANCHOR_SET_SPAWN, SoundSource.NEUTRAL, 1F, 1F);
+                                player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 200, 2));
+                                player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
+                                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 2));
+                                player.getCooldowns().addCooldown(stack.getItem(), 300);
 
 
+                            }
                         }
                     }
                 }

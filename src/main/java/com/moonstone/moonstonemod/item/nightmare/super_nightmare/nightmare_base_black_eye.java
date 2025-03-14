@@ -2,6 +2,8 @@ package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -16,7 +18,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmare_base_black_eye extends nightmare {
+public class nightmare_base_black_eye extends nightmare implements SuperNightmare{
     
       @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {

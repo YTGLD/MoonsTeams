@@ -7,6 +7,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.phys.AABB;
@@ -16,7 +17,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.util.List;
 
-public class nightmare_base_black_eye_heart  extends nightmare {
+public class nightmare_base_black_eye_heart  extends nightmare implements SuperNightmare{
       public static void heal(LivingHealEvent event){
         if (event.getEntity() instanceof LivingEntity) {
             LivingEntity living = event.getEntity();

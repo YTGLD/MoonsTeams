@@ -12,7 +12,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.util.List;
 
-public class nightmare_base_stone_brain  extends nightmare {
+public class nightmare_base_stone_brain  extends nightmare implements SuperNightmare{
    
     public static void hurts(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player player){

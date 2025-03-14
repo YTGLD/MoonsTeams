@@ -1,5 +1,7 @@
 package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
+import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -18,46 +20,48 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class nightmare_base_fool_betray extends nightmare {
+public class nightmare_base_fool_betray extends nightmare implements SuperNightmare{
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
-            if (!player.getCooldowns().isOnCooldown(this)) {
-                Vec3 playerPos = player.position().add(0, 0.75, 0);
-                float range = 10;
-                List<Mob> entities =
-                        player.level().getEntitiesOfClass(Mob.class,
-                                new AABB(playerPos.x - range,
-                                        playerPos.y - range,
-                                        playerPos.z - range,
-                                        playerPos.x + range,
-                                        playerPos.y + range,
-                                        playerPos.z + range));
-                for (Mob mob : entities) {
-                    if (mob instanceof OwnableEntity ownableEntity) {
-                        if (ownableEntity.getOwner()!=null&&!ownableEntity.getOwner().is(player)) {
-                            ownableEntity.getOwner().hurt(ownableEntity.getOwner().damageSources().dryOut(),
-                                    ownableEntity.getOwner().getMaxHealth() / 10);
-                        }else {
-                            if (mob instanceof TamableAnimal animal) {
-                                for (MobEffectInstance effect : player.getActiveEffects()) {
-                                    if (effect != null
-                                            && effect.getEffect().isBeneficial()) {
-                                        animal.addEffect(effect);
+            if (Handler.hascurio(player,this)) {
+                if (!player.getCooldowns().isOnCooldown(this)) {
+                    Vec3 playerPos = player.position().add(0, 0.75, 0);
+                    float range = 10;
+                    List<Mob> entities =
+                            player.level().getEntitiesOfClass(Mob.class,
+                                    new AABB(playerPos.x - range,
+                                            playerPos.y - range,
+                                            playerPos.z - range,
+                                            playerPos.x + range,
+                                            playerPos.y + range,
+                                            playerPos.z + range));
+                    for (Mob mob : entities) {
+                        if (mob instanceof OwnableEntity ownableEntity) {
+                            if (ownableEntity.getOwner() != null && !ownableEntity.getOwner().is(player)) {
+                                ownableEntity.getOwner().hurt(ownableEntity.getOwner().damageSources().dryOut(),
+                                        ownableEntity.getOwner().getMaxHealth() / 10);
+                            } else {
+                                if (mob instanceof TamableAnimal animal) {
+                                    for (MobEffectInstance effect : player.getActiveEffects()) {
+                                        if (effect != null
+                                                && effect.getEffect().isBeneficial()) {
+                                            animal.addEffect(effect);
+                                        }
                                     }
+                                    animal.setOwnerUUID(player.getUUID());
                                 }
-                                animal.setOwnerUUID(player.getUUID());
                             }
                         }
+
+
+                        if (player.getLastAttacker() != null) {
+                            mob.setTarget(player.getLastAttacker());
+                        }
+                        slotContext.entity().level().playSound(null, slotContext.entity().getX(), slotContext.entity().getY(), slotContext.entity().getZ(), SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.NEUTRAL, 1, 1);
+                        player.getCooldowns().addCooldown(this, 100 + entities.size() * 100);
                     }
-
-
-                    if (player.getLastAttacker() != null) {
-                        mob.setTarget(player.getLastAttacker());
-                     }
-                    slotContext.entity().level().playSound(null, slotContext.entity().getX(), slotContext.entity().getY(), slotContext.entity().getZ(), SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.NEUTRAL, 1, 1);
-                    player.getCooldowns().addCooldown(this, 100 + entities.size() * 100);
                 }
             }
         }

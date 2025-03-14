@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class nightmare_base_reversal extends nightmare {
+public class nightmare_base_reversal extends nightmare implements SuperNightmare{
 
 
     public static final String att= "Attrib";
@@ -110,7 +110,8 @@ public class nightmare_base_reversal extends nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
+
+            CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;
     }
     public Multimap<Attribute, AttributeModifier> geta(ItemStack stack) {

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class nightmare_base_fool extends nightmare {
+public class nightmare_base_fool extends nightmare implements SuperNightmare{
       @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
@@ -139,7 +139,8 @@ public class nightmare_base_fool extends nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
-        CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
+
+            CuriosApi.addSlotModifier(linkedHashMultimap, "nightmare", uuid, 3, AttributeModifier.Operation.ADDITION);
         return linkedHashMultimap;
     }
 }

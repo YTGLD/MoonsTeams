@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare.super_nightmare;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmare_base_reversal_mysterious extends nightmare {
+public class nightmare_base_reversal_mysterious extends nightmare implements SuperNightmare{
 
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers() {
         Multimap<Attribute, AttributeModifier> get = HashMultimap.create();
@@ -34,7 +35,9 @@ public class nightmare_base_reversal_mysterious extends nightmare {
         if (slotContext.entity() instanceof Player player) {
             CompoundTag tag = stack.getTag();
             if (tag != null){
-                player.getAttributes().addTransientAttributeModifiers(this.getAttributeModifiers());
+                if (Handler.hascurio(player,this)) {
+                    player.getAttributes().addTransientAttributeModifiers(this.getAttributeModifiers());
+                }
             }else {
                 stack.getOrCreateTag();
             }

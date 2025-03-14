@@ -8,7 +8,7 @@ import net.minecraft.world.item.TooltipFlag;
 
 import java.util.List;
 
-public class nightmare_base_stone_meet   extends nightmare {
+public class nightmare_base_stone_meet   extends nightmare implements SuperNightmare{
     public static final String curse = "IS_CURSE";
 
      @Override
