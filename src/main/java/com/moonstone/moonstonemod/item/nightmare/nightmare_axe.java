@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.axe;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -20,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class nightmare_axe extends nightmare {
+public class nightmare_axe extends nightmare implements INightmare {
     public static void Nig(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player, Items.nightmare_axe.get())) {

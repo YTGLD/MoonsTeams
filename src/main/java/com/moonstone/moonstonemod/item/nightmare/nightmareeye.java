@@ -32,6 +32,12 @@ public class nightmareeye extends nightmare {
         }
     }
     @Override
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            player.getAttributes().removeAttributeModifiers(un_un_pla(player, stack));
+        }
+    }
+    @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){

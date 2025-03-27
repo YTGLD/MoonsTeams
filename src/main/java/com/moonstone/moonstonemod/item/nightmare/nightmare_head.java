@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -22,7 +23,7 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 import java.util.List;
 import java.util.Map;
 
-public class nightmare_head extends nightmare {
+public class nightmare_head extends nightmare  implements Nightmare {
     public static final String die = "NigDie";
     public int size = 0;
     public static void LivingDeathEvent(LivingDeathEvent event){

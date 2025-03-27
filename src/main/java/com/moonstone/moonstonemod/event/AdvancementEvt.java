@@ -489,8 +489,7 @@ public class AdvancementEvt {
                 if (player.hasEffect(MobEffects.POISON)
                         && player.hasEffect(MobEffects.WITHER)
                         && player.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)
-                        && player.hasEffect(MobEffects.BLINDNESS)
-                        && player.hasEffect(MobEffects.DARKNESS)){
+                        && player.hasEffect(MobEffects.BLINDNESS)){
                     if (player.getRemainingFireTicks() > 0){
                         CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                             Map<String, ICurioStacksHandler> curios = handler.getCurios();

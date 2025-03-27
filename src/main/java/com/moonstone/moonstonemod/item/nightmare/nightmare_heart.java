@@ -8,6 +8,7 @@ import com.moonstone.moonstonemod.entity.other.nightmare_entity;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
+import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -30,7 +31,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmare_heart extends nightmare {
+public class nightmare_heart extends nightmare  implements Nightmare {
     public static void NigH(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
             if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player,Items.nightmare_heart.get())){

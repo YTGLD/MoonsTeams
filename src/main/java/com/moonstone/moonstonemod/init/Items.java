@@ -38,6 +38,7 @@ import com.moonstone.moonstonemod.item.plague.dna_box;
 import com.moonstone.moonstonemod.item.plague.medicine.med.*;
 import com.moonstone.moonstonemod.item.plague.mobitem.*;
 import com.moonstone.moonstonemod.item.apple;
+import com.moonstone.moonstonemod.item.universe;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
 import net.minecraft.world.InteractionHand;
@@ -362,6 +363,7 @@ public class Items {
     public static final RegistryObject<Item> rage_magnet =REGISTRY.register("rage_magnet", rage_magnet::new );
     public static final RegistryObject<Item> rage_stone =REGISTRY.register("rage_stone", rage_stone::new );
     public static final RegistryObject<Item> rage_lock =REGISTRY.register("rage_lock", rage_lock::new );
+    public static final RegistryObject<Item> universe =REGISTRY.register("universe", universe::new);
 
 
     public static final RegistryObject<Item> sword =REGISTRY.register("sword",twelve_sword.sword::new );

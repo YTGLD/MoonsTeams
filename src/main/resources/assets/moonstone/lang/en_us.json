@@ -6,7 +6,8 @@
   "moonstone.tool.youcannot": "你必须将重复物品取出才能使用",
   "moonstone.translation.nightmare": "你感受到了强烈的不安与恐惧",
   "moonstone.translation.nightmare.1": "你真的要佩戴它吗",
-
+  "moonstone.super_nightmare.name": "这个物品只能在佩戴噩梦基座的情况下使用",
+  "moonstone.nightmare.name": "这个物品只能在佩戴深渊之眼的情况下使用",
   "itemGroup.tabmoonstone": "Moon Stone",
   "itemGroup.tabmoonstone.necora": "Moon Stone:DNA",
   "moonstone.attribute.name.ectoplasm": "ectoplasm",
@@ -115,15 +116,15 @@
   "item.nightmareanchor.tool.string.3": "But you have to be in the same dimension",
   "item.nightmareanchor.tool.string.4": "while wearing:",
   "item.nightmareanchor.tool.string.5": "Reduces curse from the Nightmare by 5%",
-  "item.nightmareanchor.tool.string.6": "Only those who bear the fear of the Nightmare",
-  "item.nightmareanchor.tool.string.7": "To be eligible to use this prop",
+  "item.nightmareanchor.tool.string.6": "",
+  "item.nightmareanchor.tool.string.7": "",
 
 
   "item.nightmarecharm.tool.string": "Reduces curses from Nightmare-eye by 15%",
   "item.nightmarecharm.tool.string.1": "*overlay calculation",
   "item.nightmarecharm.tool.string.2": "+1 curios slot",
-  "item.nightmarecharm.tool.string.3": "Only those who bear the fear of the Nightmare",
-  "item.nightmarecharm.tool.string.4": "To be eligible to use this prop",
+  "item.nightmarecharm.tool.string.3": "",
+  "item.nightmarecharm.tool.string.4": "",
 
 
   "item.nightmareeye.tool.string": "Increase damage taken by 33%",
@@ -132,15 +133,15 @@
 
 
   "item.nightmaremoai.tool.string": "+2 Enchantment level of the enchanted product",
-  "item.nightmaremoai.tool.string.1": "Only those who bear the fear of the Nightmare",
-  "item.nightmaremoai.tool.string.2": "To be eligible to use this prop",
+  "item.nightmaremoai.tool.string.1": "",
+  "item.nightmaremoai.tool.string.2": "",
 
 
   "item.nightmarerotten.tool.string": "+33％ All Attributes",
   "item.nightmarerotten.tool.string.1": "But for every additional 1 attribute",
   "item.nightmarerotten.tool.string.2": "Curses from the Nightmare will increase by 1.1%",
-  "item.nightmarerotten.tool.string.3": "Only those who bear the fear of the Nightmare",
-  "item.nightmarerotten.tool.string.4": "To be eligible to use this prop",
+  "item.nightmarerotten.tool.string.3": "",
+  "item.nightmarerotten.tool.string.4": "",
 
 
   "item.nightmarestone.tool.string": "For each debuff that exists on you:",
@@ -152,8 +153,8 @@
   "item.nightmarestone.tool.string.6": " Breaking speed、Experience Drops",
   "item.nightmarestone.tool.string.7": "Double the duration of any debuffs on you",
   "item.nightmarestone.tool.string.8": "Taking damage from any source gains a random debuff",
-  "item.nightmarestone.tool.string.9": "Only those who bear the fear of the Nightmare",
-  "item.nightmarestone.tool.string.10": "To be eligible to use this prop",
+  "item.nightmarestone.tool.string.9": "",
+  "item.nightmarestone.tool.string.10": "",
 
 
 
@@ -161,8 +162,8 @@
   "item.nightmaretreasure.tool.string.1": "Loot gained from kills has a 33% chance of getting triple",
   "item.nightmaretreasure.tool.string.2": "Each increase of 1 in luck increases the probability by 3%",
   "item.nightmaretreasure.tool.string.3": "Maximum 66%",
-  "item.nightmaretreasure.tool.string.4": "Only those who bear the fear of the Nightmare",
-  "item.nightmaretreasure.tool.string.5": "To be eligible to use this prop",
+  "item.nightmaretreasure.tool.string.4": "",
+  "item.nightmaretreasure.tool.string.5": "",
   "item.nightmaretreasure.tool.string.6": "-33% looting",
 
 
@@ -1341,7 +1342,7 @@
 
   "moonstone.jei.item.moonstone.nightmare_base.all": ", requires wearing:",
 
-  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "Trigger the Undying Totem acquisition when the following conditions are met: Poisoned, Withering, Slowness, Darkness, Blindness, and on Fire",
+  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "Trigger the Undying Totem acquisition when the following conditions are met: Poisoned, Withering, Slowness, Blindness, and on Fire",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_eye": "Kill the Guardian",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_red": "Found in Ancient Cities, about 5% chance",
 
@@ -1402,8 +1403,9 @@
 
 
   "item.moonstone.nightmare_base_fool":"§4Fool's Danger",
-  "item.nightmare_base_fool.tool.string": "Starting from 2 pieces, each additional accessory will reduce health by 3%",
-  "item.nightmare_base_fool.tool.string.1": "Starting from 5 pieces, each additional accessory will reduce damage by 5%",
+  "item.nightmare_base_fool.tool.string": "Starting from 2 pieces, each additional accessory will reduce health by 1%",
+  "item.nightmare_base_fool.tool.string.1": "Starting from 5 pieces, each additional accessory will reduce damage by 2%",
+  "item.nightmare_base_fool.tool.string.2": "Damage and health penalty of 50% or less.",
 
   "advancements.tooltip.nightmare_base_fool.text": "Obtain this item",
   "advancements.tooltip.nightmare_base_fool.hand": "Choice",
@@ -1604,6 +1606,13 @@
   "item.rage_lock.tool.string.2": "+10%所有伤害",
   "item.rage_lock.tool.string.3": "+15%吸血",
   "item.rage_lock.tool.string.4": "+40%杀戮吸血",
+
+  "item.moonstone.universe": "万象模板",
+  "item.universe.tool.string": "在物品栏内合成后",
+  "item.universe.tool.string.1": "自动获得该物品的一些特殊能力",
+  "item.universe.tool.string.2": "可以使用3次",
+  "item.universe.tool.string.3": "你与下列物品进行了合成：",
+  "item.universe.tool.null": "空的",
 
 
 

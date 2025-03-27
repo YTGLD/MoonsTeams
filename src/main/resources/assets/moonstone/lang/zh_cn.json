@@ -1328,7 +1328,7 @@
 
   "moonstone.jei.item.moonstone.nightmare_base.all": "，需要佩戴:",
 
-  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发不死图腾获取：中毒,凋零,缓慢,黑暗,失明并且着火",
+  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发不死图腾获取：中毒,凋零,缓慢,失明并且着火",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_eye": "杀死坚守者",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_red": "发现在古城，概率在5%左右",
 
@@ -1389,8 +1389,9 @@
 
 
   "item.moonstone.nightmare_base_fool":"§4愚者之危",
-  "item.nightmare_base_fool.tool.string": "从2件开始，每多佩戴一件饰品都会使生命值减少3%",
-  "item.nightmare_base_fool.tool.string.1": "从5件开始，每多佩戴一件饰品都会使伤害减少5%",
+  "item.nightmare_base_fool.tool.string": "从2件开始，每多佩戴一件饰品都会使生命值减少1%",
+  "item.nightmare_base_fool.tool.string.1": "从5件开始，每多佩戴一件饰品都会使伤害减少2%",
+  "item.nightmare_base_fool.tool.string.2": "伤害和生命值惩罚不高于50%",
 
   "advancements.tooltip.nightmare_base_fool.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_fool.hand": "抉择",

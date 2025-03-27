@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:coast_armor_trim_smithing_template"
+    },
+    {
+      "item": "minecraft:ward_armor_trim_smithing_template"
+    },
+    {
+      "item": "minecraft:tide_armor_trim_smithing_template"
+    },
+    {
+      "item": "minecraft:rib_armor_trim_smithing_template"
+    },
+    {
+      "item": "minecraft:eye_armor_trim_smithing_template"
+    },
+
+
+    {
+      "item": "moonstone:rage_crystal_max"
+    },
+    {
+      "item": "moonstone:mayhemcrystal"
+    },
+    {
+      "item": "moonstone:fortunecrystal"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  ],
+  "result": {
+    "item": "moonstone:universe",
+    "count": 1
+  }
+}

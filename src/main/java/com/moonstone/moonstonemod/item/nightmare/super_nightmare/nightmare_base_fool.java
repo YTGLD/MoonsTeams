@@ -78,9 +78,11 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare{
                 dam = 0;
             }
             dam /= 100f;
-            dam *= 5f;
-            dam= -dam;
-
+            dam *= 2;
+            dam=-dam;
+            if (dam <= -0.5f) {
+                dam=-0.5f;
+            }
             linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("545a2afa-533e-3fcd-9875-3ac2e8ca7acf"),"a", dam, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         {
@@ -111,8 +113,11 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare{
                 health = 0;
             }
             health /= 100f;
-            health *= 3f;
+            health *= 1;
             health= -health;
+            if (health <= -0.5f) {
+                health=-0.5f;
+            }
             linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("545a2afa-533e-3fcd-9875-3ac2e8ca7acf"),"a", health, AttributeModifier.Operation.MULTIPLY_BASE));
         }
 
@@ -125,7 +130,9 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare{
     public void appendHoverText(ItemStack stack,  Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
         pTooltipComponents.add(Component.translatable("item.nightmare_base_fool.tool.string").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+         pTooltipComponents.add(Component.translatable("item.nightmare_base_fool.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+         pTooltipComponents.add(Component.literal(""));
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool.tool.string.2").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.literal(""));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye.tool.string.1").withStyle(ChatFormatting.RED));
         pTooltipComponents.add(Component.translatable("item.moonstone.nightmare_base_fool_betray").withStyle(ChatFormatting.DARK_RED));

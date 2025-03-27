@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.item.nightmare;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -14,7 +15,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class nightmare_orb extends nightmare {
+public class nightmare_orb extends nightmare  implements Nightmare {
     public static void nightmare_orb_heal(LivingHealEvent event){
         if ((event.getEntity() instanceof Player player)) {
             if (Handler.hascurio(player,Items.nightmareeye.get())&&Handler.hascurio(player, Items.nightmare_orb.get())){

@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nightmare;
 
+import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -10,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class nightmaremoai extends nightmare {
+public class nightmaremoai extends nightmare implements INightmare {
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

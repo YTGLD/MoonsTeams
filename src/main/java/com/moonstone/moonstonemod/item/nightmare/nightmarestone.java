@@ -6,6 +6,7 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.event.AllEvent;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -25,7 +26,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-public class nightmarestone extends nightmare {
+public class nightmarestone extends nightmare  implements Nightmare {
 
 
     @Override

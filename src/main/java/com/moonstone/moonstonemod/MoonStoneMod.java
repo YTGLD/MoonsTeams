@@ -12,6 +12,8 @@ import com.moonstone.moonstonemod.client.particle.blue;
 import com.moonstone.moonstonemod.client.particle.popr;
 import com.moonstone.moonstonemod.client.particle.red;
 import com.moonstone.moonstonemod.client.renderer.MRender;
+import com.moonstone.moonstonemod.crafting.AllCrafting;
+import com.moonstone.moonstonemod.crafting.MoonRecipeProvider;
 import com.moonstone.moonstonemod.entity.client.AtSwordRender;
 import com.moonstone.moonstonemod.entity.client.AxeRenderer;
 import com.moonstone.moonstonemod.entity.client.BloodSwordRenderer;
@@ -19,12 +21,16 @@ import com.moonstone.moonstonemod.entity.client.SwordOfTwelveRenderer;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -34,6 +40,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
 
 @Mod(MoonStoneMod.MODID)
 public class MoonStoneMod {
@@ -56,7 +63,7 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new AdvancementEvt());
         MinecraftForge.EVENT_BUS.register(new BookEvt());
         MinecraftForge.EVENT_BUS.register(new TextEvt());
-
+        AllCrafting.REGISTRY.register(modEventBus);
         DNAItems.REGISTRY.register(modEventBus);
         Effects.REGISTRY.register(modEventBus);
         LootReg.REGISTRY.register(modEventBus);
@@ -64,12 +71,21 @@ public class MoonStoneMod {
         MSound.REGISTRY.register(modEventBus);
         AttReg.REGISTRY.register(modEventBus);
 
+        modEventBus.addListener(this::gatherData);
+
 
         Particles.PARTICLE_TYPES.register(modEventBus);
         Items.REGISTRY.register(modEventBus);
         Tab.TABS.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.fc);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigClient.fc);
+    }
+    public void gatherData(GatherDataEvent event){
+        DataGenerator gen = event.getGenerator();
+        PackOutput packOutput = gen.getPackOutput();
+        gen.addProvider(event.includeServer(),
+                new MoonRecipeProvider(packOutput));
+
     }
     @Mod.EventBusSubscriber(
             modid = MODID,

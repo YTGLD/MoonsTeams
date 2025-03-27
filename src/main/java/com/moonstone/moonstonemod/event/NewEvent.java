@@ -23,15 +23,13 @@ import com.moonstone.moonstonemod.item.maxitem.rage.rage_lock;
 import com.moonstone.moonstonemod.item.maxitem.rage.rage_magnet;
 import com.moonstone.moonstonemod.item.nanodoom.as_amout;
 import com.moonstone.moonstonemod.item.nanodoom.million;
-import com.moonstone.moonstonemod.item.nightmare.nightmare_axe;
-import com.moonstone.moonstonemod.item.nightmare.nightmare_head;
-import com.moonstone.moonstonemod.item.nightmare.nightmare_heart;
-import com.moonstone.moonstonemod.item.nightmare.nightmare_orb;
+import com.moonstone.moonstonemod.item.nightmare.*;
 import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
 import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
 import com.moonstone.moonstonemod.item.plague.mobitem.dna;
+import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -113,6 +111,25 @@ public class NewEvent {
     public void Night(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
         Player player = event.getEntity();
+        if (stack.getItem() instanceof SuperNightmare){
+            if (!Handler.hascurio(player,Items.nightmare_base.get())) {
+                event.getToolTip().add(1, Component.literal(""));
+                event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(ChatFormatting.DARK_RED));
+            }else {
+                event.getToolTip().add(1, Component.literal(""));
+                event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
+            }
+        }
+        if (stack.getItem() instanceof Nightmare){
+            if (!Handler.hascurio(player,Items.nightmareeye.get())) {
+                event.getToolTip().add(1, Component.literal(""));
+                event.getToolTip().add(1, Component.translatable("moonstone.nightmare.name").withStyle(ChatFormatting.DARK_RED));
+            }else {
+                event.getToolTip().add(1, Component.literal(""));
+                event.getToolTip().add(1, Component.translatable("moonstone.nightmare.name").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
+            }
+        }
+
         if (Handler.hascurio(player,Items.nightmare_base_stone_meet.get())){
             if (stack.is(Items.ectoplasmstar.get())){
                 event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.nightmare_base_stone_meet").withStyle(ChatFormatting.DARK_RED));
