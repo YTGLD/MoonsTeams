@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    "B":
+    {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:ectoplasmstar",
+    "count": 1
+  }
+}

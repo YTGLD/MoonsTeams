@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:twistedstone"
+    },
+    {
+      "item": "minecraft:netherrack"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  ],
+  "result": {
+    "item": "moonstone:rage_stone",
+    "count": 1
+  }
+}

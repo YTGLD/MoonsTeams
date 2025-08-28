@@ -1,0 +1,35 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:mbottle",
+    "moonstone:meye",
+    "moonstone:mkidney",
+    "moonstone:morb",
+    "moonstone:redamout",
+    "moonstone:badgeofthedead",
+    "moonstone:magiceye",
+    "moonstone:magicstone",
+    "moonstone:evilcandle",
+    "moonstone:battery",
+    "moonstone:nightmare_orb",
+    "moonstone:the_pain_stone",
+    "moonstone:probability_stone",
+    "moonstone:pain_candle",
+
+    "moonstone:evil_mob",
+    "moonstone:god_lead",
+    "moonstone:malice_die",
+
+    "moonstone:undead_blood_charm",
+    "moonstone:rage_charm",
+    "moonstone:rage_eye",
+
+    "moonstone:owner_blood_eye",
+    "moonstone:owner_blood_attack_eye",
+    "moonstone:owner_blood_speed_eye",
+    "moonstone:owner_blood_effect_eye",
+    "moonstone:owner_blood_boom_eye",
+    "moonstone:owner_blood_vex",
+    "moonstone:owner_blood_earth"
+  ]
+}

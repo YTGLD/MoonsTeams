@@ -1,0 +1,48 @@
+{
+    "targets": [
+        "swap",
+        "final"
+    ],
+    "passes": [
+        {
+            "name": "moonstone:entity_outline",
+            "intarget": "final",
+            "outtarget": "swap"
+        },
+        {
+            "name": "moonstone:blur",
+            "intarget": "swap",
+            "outtarget": "final",
+            "uniforms": [
+                {
+                    "name": "BlurDir",
+                    "values": [ 3, 0.0 ]
+                },
+                {
+                    "name": "Radius",
+                    "values": [ 22.5 ]
+                }
+            ]
+        },
+        {
+            "name": "moonstone:blur",
+            "intarget": "final",
+            "outtarget": "swap",
+            "uniforms": [
+                {
+                    "name": "BlurDir",
+                    "values": [ 0.0, 3 ]
+                },
+                {
+                    "name": "Radius",
+                    "values": [ 22.5 ]
+                }
+            ]
+        },
+        {
+            "name": "blit",
+            "intarget": "swap",
+            "outtarget": "final"
+        }
+    ]
+}

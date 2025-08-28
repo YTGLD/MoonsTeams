@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:malice_die"
+    },
+    {
+      "item": "moonstone:god_lead"
+    },
+    {
+      "item": "moonstone:evil_mob"
+    },
+    {
+      "item": "moonstone:ectoplasmball"
+    },
+    {
+      "item": "moonstone:ectoplasmcloub"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  ],
+  "result": {
+    "item": "moonstone:twelve_sword",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:muscle_conversion",
+    "moonstone:phosphate_bond",
+    "moonstone:chemical_compound",
+    "moonstone:skin_glucose_fermentation",
+    "moonstone:white_blood_cells_are_abruptly_reduced"
+  ]
+}

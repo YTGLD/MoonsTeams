@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "CDC",
+    " A "
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "minecraft:obsidian"
+    },
+    "B":
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    "C":
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    "D":
+    {
+      "item": "moonstone:ectoplasmprism"
+    }
+
+  },
+  "result":
+  {
+    "item": "moonstone:ectoplasmtree",
+    "count": 1
+  }
+}

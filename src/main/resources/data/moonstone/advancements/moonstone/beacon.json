@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/ectoplasmprism",
+  "criteria": {
+    "beacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:beacon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.beacon.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:beacon"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.beacon.hand"
+    }
+  },
+  "requirements": [
+    [
+      "beacon"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

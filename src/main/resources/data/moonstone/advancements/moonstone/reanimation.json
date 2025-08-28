@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/medicinebox",
+  "criteria": {
+    "reanimation": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:reanimation"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.reanimation.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:reanimation"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.reanimation.hand"
+    }
+  },
+  "requirements": [
+    [
+      "reanimation"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

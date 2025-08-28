@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/medicinebox",
+  "criteria": {
+    "masticatory": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:masticatory"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.masticatory.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:masticatory"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.masticatory.hand"
+    }
+  },
+  "requirements": [
+    [
+      "masticatory"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

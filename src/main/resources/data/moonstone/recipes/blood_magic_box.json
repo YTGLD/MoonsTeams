@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "moonstone:fortunecrystal"
+    },
+    {
+      "item": "moonstone:twistedamout"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "moonstone:blood_magic_box"
+  }
+}

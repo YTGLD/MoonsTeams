@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:nightmare_heart"
+    },
+    {
+      "item": "moonstone:nightmare_orb"
+    },
+    {
+      "item": "moonstone:nightmareanchor"
+    },
+    {
+      "item": "moonstone:nightmarecharm"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "moonstone:nightmareeye"
+    }
+  ],
+  "result": {
+    "item": "moonstone:nightmare_head",
+    "count": 1
+  }
+}

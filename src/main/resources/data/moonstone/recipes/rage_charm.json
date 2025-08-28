@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "moonstone:blood"
+    },
+    "B":
+    {
+      "item": "moonstone:badgeofthedead"
+    }
+  },
+  "result": {
+    "item": "moonstone:rage_charm",
+    "count": 1
+  }
+}

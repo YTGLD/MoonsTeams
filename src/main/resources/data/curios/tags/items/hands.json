@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:greedamout",
+    "moonstone:blueamout",
+    "moonstone:nightmare_axe",
+
+
+    "moonstone:magnet",
+    "moonstone:rage_magnet",
+    "moonstone:rage_stone",
+    "moonstone:rage_lock"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "BAB",
+    " B "
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "moonstone:ectoplasmcube"
+    },
+    "B":
+    {
+      "item": "minecraft:golden_carrot"
+    }
+  },
+  "result":
+  {
+    "item": "moonstone:ectoplasmsoul",
+    "count": 1
+  }
+}

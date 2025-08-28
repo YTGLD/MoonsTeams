@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:adrenaline",
+    "moonstone:cell_boom",
+    "moonstone:cell_mummy",
+    "moonstone:cell_calcification",
+    "moonstone:cell_blood",
+    "moonstone:giant_nightmare",
+
+    "moonstone:anaerobic_cell",
+    "moonstone:giant_boom_cell",
+    "moonstone:not_blood_cell",
+    "moonstone:subspace_cell",
+
+    "moonstone:bone_cell",
+    "moonstone:parasitic_cell",
+    "moonstone:mother_cell",
+    "moonstone:disgusting_cells",
+
+    "moonstone:slime",
+    "moonstone:cell_doctor",
+    "moonstone:cell_desecrate",
+    "moonstone:cell_scientist",
+    "moonstone:cell_harvest",
+    "moonstone:cell_immortal",
+    "moonstone:cell_rage",
+    "moonstone:cell_blood_attack",
+    "moonstone:cell_fear",
+    "moonstone:cell_not_do"
+  ]
+}

@@ -1,0 +1,1838 @@
+{
+
+  "curios.modifiers.dna": "植入DNA时",
+  "key.moonstone.y": "技能",
+  "key.categories.moonstone.moonstone_category": "Moonstone",
+  "moonstone.book.error": "你需要安装帕秋莉手册",
+  "curios.modifiers.necora": "佩戴时",
+  "itemGroup.tabmoonstone": "月之石",
+  "itemGroup.tabmoonstone.necora": "月之石:基因",
+  "moonstone.translation.nightmare.1": "你真的要佩戴它吗",
+  "moonstone.translation.nightmare": "你感受到了强烈的不安与恐惧",
+  "moonstone.tool.youcannot": "你必须将重复物品取出才能使用",
+  "moonstone.attribute.name.ectoplasm": "灵质",
+  "moonstone.attribute.name.mysterious": "神秘",
+  "moonstone.attribute.name.reality": "现实",
+  "moonstone.attribute.name.twisted": "扭曲",
+  "moonstone.attribute.name.nano": "机械",
+  "moonstone.attribute.name.meet": "血肉",
+  "item.moonstone.ectoplasmball": "灵质球",
+  "item.moonstone.ectoplasmcloub": "灵质云",
+  "item.moonstone.ectoplasmcube": "灵质立方",
+  "item.moonstone.ectoplasmslate": "灵质石板",
+  "item.moonstone.ectoplasmhorseshoe": "灵质马蹄",
+  "item.moonstone.ectoplasmbadge": "灵质徽章",
+  "item.moonstone.ectoplasmapple": "灵质果",
+  "item.moonstone.ectoplasmstone": "灵质石头",
+  "item.moonstone.twistedstone": "扭曲石头",
+
+  "item.moonstone.ectoplasmprism": "灵质棱镜",
+  "item.moonstone.ectoplasmfood": "灵质食物",
+  "item.moonstone.ectoplasmcharm": "灵质护符",
+  "item.moonstone.ectoplasmcharmstone": "灵质石头护符",
+  "item.moonstone.ectoplasmshild": "灵质盾牌",
+  "item.moonstone.ectoplasmbattery": "灵质电池",
+
+
+  "item.moonstone.badgeofthedead": "亡灵徽章",
+  "item.moonstone.battery": "电池",
+  "item.moonstone.biggreedcrystal": "大贪婪水晶",
+  "item.moonstone.bigwarcrystal": "大战争水晶",
+  "item.moonstone.blackeorb": "黑魔球",
+  "item.moonstone.blueamout": "蓝色符石",
+  "item.moonstone.greedamout": "绿色符石",
+  "item.moonstone.greedcrystal": "贪婪水晶",
+  "item.moonstone.redamout": "红色符石",
+  "item.moonstone.warcrystal": "战争水晶",
+  "item.moonstone.whiteorb": "白魔球",
+
+  "item.moonstone.mbattery": "莫里斯电池",
+  "item.moonstone.mblock": "莫里斯方块",
+  "item.moonstone.mbottle": "莫里斯药品",
+  "item.moonstone.mbox": "莫里斯盒子",
+  "item.moonstone.meye": "莫里斯眼睛",
+  "item.moonstone.mkidney": "莫里斯的玻璃肾结石",
+  "item.moonstone.morb": "莫里斯珍珠",
+  "item.moonstone.mring": "莫里斯戒指",
+  "item.moonstone.mshell": "莫里斯贝壳",
+
+
+
+
+  "item.ectoplasmapple.tool.string": "受到攻击会使周围生物受到2%最大生命值的伤害",
+  "item.ectoplasmhorseshoe.tool.string": "减少90%来自摔落的伤害",
+  "item.ectoplasmshild.tool.string": "持续的抗性提升",
+  "item.ectoplasmshild.tool.string.2": "减少30%来自爆炸的伤害",
+  "item.ectoplasmshild.tool.string.3": "每受到5次伤害，都将免疫下一次的攻击",
+
+
+
+  "item.mbattery.tool.string": "僵尸害怕你",
+  "item.mbattery.tool.string.1": "对僵尸的伤害提高50%",
+  "item.mbattery.tool.string.2": "+2 时运",
+  "item.mbattery.tool.string.3": "+2 抢夺",
+
+  "item.mblock.tool.string": "+1 时运",
+  "item.mblock.tool.string.1": "+1 抢夺",
+
+  "item.mbottle.tool.string": "存在虚弱时：",
+  "item.mbottle.tool.string.1": "+2 抢夺",
+  "item.mbottle.tool.string.2": "存在挖掘疲劳时",
+  "item.mbottle.tool.string.3": "+2 时运",
+
+
+
+  "item.meye.tool.string": "使半径10格内的亡灵生物发光",
+
+
+  "item.mkidney.tool.string": "受伤时有概率免除伤害",
+  "item.mkidney.tool.string.1": "第一次百分百，第二次百分之五十，第三次百分之二十五",
+  "item.mkidney.tool.string.2": "以此类推",
+  "item.mkidney.tool.string.3": "免除失败你将额外受到最大生命33%的伤害",
+  "item.mkidney.tool.string.4": "同时此物品将进入10秒的冷却",
+
+
+  "item.morb.tool.string": "+1 经验掉落",
+  "item.morb.tool.string.1": "+50% 额外经验掉落",
+
+  "item.mring.tool.string": "+100% 被击退距离",
+  "item.mring.tool.string.1": "+40% 治疗",
+
+
+  "item.mshell.tool.string": "-25% 来自亡灵生物的伤害",
+  "item.mshell.tool.string.1": "-10% 造成的伤害",
+
+
+  "item.moonstone.nightmareanchor": "虚伪锚",
+  "item.moonstone.nightmarecharm": "深渊护符",
+  "item.moonstone.nightmareeye": "深渊之眼",
+  "item.moonstone.nightmaremoai": "深渊石球",
+  "item.moonstone.nightmarerotten": "万腐之心",
+  "item.moonstone.nightmarestone": "深渊方尖碑",
+  "item.moonstone.nightmaretreasure": "魔鬼的财宝",
+  "item.nightmaretreasure.tool.string.6": "-33% 抢夺等级",
+  "item.moonstone.nightmarewater": "卑微之酿",
+
+
+  "item.moonstone.magiceye": "机械眼",
+  "item.moonstone.magicstone": "神奇石头",
+  "item.moonstone.nanocube": "纳米立方",
+  "item.moonstone.nanorobot": "纳米机器人",
+  "item.moonstone.thedoomstone": "末日之石",
+  "item.moonstone.thefruit": "上古果实",
+
+
+  "item.nightmareanchor.tool.string": "佩戴它并死亡",
+  "item.nightmareanchor.tool.string.1": "可记录这一次的死亡地点",
+  "item.nightmareanchor.tool.string.2": "右键传送到上个记录点",
+  "item.nightmareanchor.tool.string.3": "但你必须在同一维度内",
+  "item.nightmareanchor.tool.string.4": "佩戴时:",
+  "item.nightmareanchor.tool.string.5": "减少5％来自深渊的诅咒",
+  "item.nightmareanchor.tool.string.6": "唯有承受深渊之恐的人",
+  "item.nightmareanchor.tool.string.7": "才有资格使用此道具",
+
+
+  "item.nightmarecharm.tool.string": "减少15％来自深渊之眼的诅咒",
+  "item.nightmarecharm.tool.string.1": "加法计算",
+  "item.nightmarecharm.tool.string.2": "+1饰品槽位",
+  "item.nightmarecharm.tool.string.3": "唯有承受深渊之恐的人",
+  "item.nightmarecharm.tool.string.4": "才有资格使用此道具",
+
+
+  "item.nightmareeye.tool.string": "受到伤害增加33％",
+  "item.nightmareeye.tool.string.1": "你大部分属性都会降低25%",
+  "item.nightmareeye.tool.string.2": "不可取下",
+
+
+  "item.nightmaremoai.tool.string": "+2 附魔产物的附魔等级",
+  "item.nightmaremoai.tool.string.1": "唯有承受深渊之恐的人",
+  "item.nightmaremoai.tool.string.2": "才有资格使用此道具",
+
+
+  "item.nightmarerotten.tool.string": "+10％ 所有属性",
+  "item.nightmarerotten.tool.string.1": "但是每增加1种属性",
+  "item.nightmarerotten.tool.string.2": "来自深渊的诅咒都会增加0.2％",
+  "item.nightmarerotten.tool.string.3": "唯有承受深渊之恐的人",
+  "item.nightmarerotten.tool.string.4": "才有资格使用此道具",
+
+  "curios.identifier.medicine": "药物",
+  "curios.identifier.necora": "异种基因",
+  "curios.identifier.man": "玩家基因",
+  "curios.identifier.ncrdna": "基因片段",
+  "curios.identifier.dna": "分段基因组",
+  "curios.modifiers.ncrdna": "佩戴时",
+  "curios.modifiers.medicine": "佩戴时",
+
+  "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
+  "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",
+  "item.nightmarestone.tool.string.2": "+7％生命回复、击退抗性",
+  "item.nightmarestone.tool.string.3": "+10％挖掘速度、经验掉落",
+  "item.nightmarestone.tool.string.4": "伤害、移速、护甲",
+  "item.nightmarestone.tool.string.5": "生命回复、击退抗性",
+  "item.nightmarestone.tool.string.6": "挖掘速度、经验掉落",
+  "item.nightmarestone.tool.string.7": "你身上的任何负面效果时长翻倍",
+  "item.nightmarestone.tool.string.8": "受到任何来源的伤害都会获得一个随机负面效果",
+  "item.nightmarestone.tool.string.9": "唯有承受深渊之恐的人",
+  "item.nightmarestone.tool.string.10": "才有资格使用此道具",
+
+
+
+  "item.nightmaretreasure.tool.string": "你造成的伤害降低50％",
+  "item.nightmaretreasure.tool.string.1": "击杀获得的战利品有1/3的概率获取三倍",
+  "item.nightmaretreasure.tool.string.2": "每增加1的幸运，都会提高3％的概率",
+  "item.nightmaretreasure.tool.string.3": "不超过66％",
+  "item.nightmaretreasure.tool.string.4": "唯有承受深渊之恐的人",
+  "item.nightmaretreasure.tool.string.5": "才有资格使用此道具",
+
+
+  "item.moonstone.diemug": "死亡酒桶",
+  "item.moonstone.evilcandle": "邪恶蜡烛",
+  "item.moonstone.evilmug": "邪恶酒桶",
+  "item.moonstone.obsidianring": "黑曜石戒指",
+
+
+  "item.nightmarewater.tool.string": "腐朽…虚弱……",
+  "item.nightmarewater.tool.string.1": "深渊…永恒……",
+
+  "item.moonstone.soulbattery": "灵魂电池",
+  "item.moonstone.soulcube": "灵魂立方",
+
+  "item.magiceye.tool.string": "在你攻击生物的半径四格内的所有生物",
+  "item.magiceye.tool.string.1": "将受到50％的范围伤害",
+
+  "item.nanocube.tool.string": "每隔30秒修复自身盔甲30点耐久值",
+  "item.nanocube.tool.string.1": "佩戴电池后冷却减少30%",
+
+  "item.nanorobot.tool.string": "每隔30秒修复主手手持物品30点耐久",
+  "item.nanorobot.tool.string.1": "佩戴电池后冷却减少30%",
+
+  "item.thedoomstone.tool.string": "你的攻击将施加黑暗效果",
+  "item.thedoomstone.tool.string.1": "将以攻击生物为中心，对存在黑暗效果的生物造成音爆攻击",
+  "item.thedoomstone.tool.string.2": "被波及的生物将持续受到负面效果的影响",
+
+
+  "item.thefruit.tool.string": "食用后：",
+  "item.thefruit.tool.string.1": "免疫发光效果",
+  "item.thefruit.tool.string.2": "监守者感觉你很亲近！",
+
+  "item.badgeofthedead.tool.string": "对亡灵生物的伤害提高25％",
+
+  "item.biggreedcrystal.tool.string": "+2 时运",
+
+  "item.greedcrystal.tool.string": "+1 时运",
+
+  "item.blueamout.tool.string": "攻击时有概率削弱敌人",
+  "item.blueamout.tool.string.1": "受伤时有概率获得抗性提升II效果",
+
+  "item.greedamout.tool.string": "攻击时有概率吸取生命",
+  "item.greedamout.tool.string.1": "受伤时有概率获得伤害吸收效果",
+
+
+  "item.redamout.tool.string": "攻击时有概率击飞敌人",
+  "item.redamout.tool.string.1": "然后暂时获得力量II的效果",
+
+
+
+  "item.fungus.tool.string": "根据周围宠物的数量获得生命恢复加成",
+  "item.fungus.tool.string.1": "每个生物可提升该加成25％",
+  "item.fungus.tool.string.2": "最高不超过150％",
+  "item.fungus.tool.string.3": "转换脚下的草方块",
+  "item.fungus.tool.string.4": "在菌丝方块上获得生命恢复效果",
+  "item.fungus.tool.string.5": "免疫凋零、虚弱、缓慢、中毒",
+  "item.fungus.tool.string.6": "在阳光下你会燃烧，哪怕你戴着帽子",
+  "item.fungus.tool.string.7": "强化附近宠物",
+
+  "item.moonstone.germ": "细菌",
+  "item.moonstone.fungus": "真菌",
+  "item.moonstone.parasite": "寄生虫",
+  "item.moonstone.virus": "病毒",
+
+
+  "item.germ.tool.string": "挖掘方块时增加细菌的适应值：",
+  "item.germ.tool.string.1": "每250点适应值都可以从细菌上获取额外属性",
+
+  "item.blackeorb.tool.string": "增加白魔球的属性",
+
+  "item.parasite.tool.string": "根据食物的营养价值增加寄生虫的活性",
+  "item.parasite.tool.string.1": "寄生虫活性越高，你的属性越强",
+  "item.parasite.tool.string.2": "寄生虫活性越高，可增加的活性也会变少",
+  "item.parasite.tool.string.3": "随着寄生虫活性的提高，你将越来越难以饱腹",
+  "item.parasite.tool.string.4": "在必要时刻，寄生虫会牺牲活性来保全他们的宿主！",
+  "item.parasite.tool.string.5": "饥饿值少于50％时，你将变得虚弱",
+
+
+  "item.virus.tool.string": "杀死生物夺取它们的DNA！",
+  "item.virus.tool.string.1": "每夺取10点DNA都会对此类型生物额外造成2.5％伤害",
+  "item.virus.tool.string.2": "最多不超过50％",
+
+
+  "item.botton.tool.string": "*如果你找到一些不详的基因…",
+  "item.botton.tool.string.1": "*或许我可以给你打造一个全新的身体…",
+  "item.botton.tool.string.2": "佩戴此物品，在末地中开启战利品箱可能会发现一些基因体",
+
+
+  "item.catalyzer.tool.string": "右键使用可感染一些特殊物品",
+
+
+  "item.batskill.tool.string": "攻击有15％的概率召唤3只蝙蝠",
+  "item.batskill.tool.string.1": "并且在半径12格内",
+  "item.batskill.tool.string.2": "每存在一只蝙蝠、你受到的伤害减少5％",
+  "item.batskill.tool.string.3": "最多不超过80％",
+  "item.batskill.tool.string.4": "周围的蝙蝠每过1秒减少10％的生命值",
+  "item.batskill.tool.string.5": "可植入暗影瘟疫之内",
+  "item.batgene.tool.string.3" : "最大伤害不超过200%",
+
+
+  "item.batgene.tool.string": "你附近的蝙蝠受到的伤害减少60％",
+  "item.batgene.tool.string.1": "每存在一只蝙蝠、你造成的伤害增加10％",
+  "item.batgene.tool.string.2": "减少10％伤害",
+
+
+  "item.flygene.tool.string": "飞行速度增加13％",
+  "item.flygene.tool.string.1": "滑翔时，在空中以方向键可以实现加速或减速",
+
+
+  "item.ragegene.tool.string": "当你的攻击蓄力条为100％时",
+  "item.ragegene.tool.string.1": "每次攻击都会增加5％的伤害",
+  "item.ragegene.tool.string.2": "最多不超过100％",
+  "item.ragegene.tool.string.3": "受到伤害后重新计算",
+
+
+  "item.sleepgene.tool.string": "白天不会获得负面效果",
+  "item.sleepgene.tool.string.1": "夜晚无法获得增益效果",
+
+
+  "item.medicinebox.tool.string": "如果你找到一些好的药物…",
+  "item.medicinebox.tool.string.1": "或许我可以给你打造一个全新的身体…",
+  "item.medicinebox.tool.string.2": "佩戴此物品，可以通过一些方式获取药物",
+  "item.medicinebox.tool.string.3": "你可以选择将发现的药物融合或直接佩戴",
+  "item.medicinebox.tool.string.4": "*必须佩戴此物品才能发现药物！",
+  "item.medicinebox.tool.string.5": "我感受到强烈的嗜血欲望......",
+  "item.medicinebox.tool.string.6": "我想我得杀死一头末影龙......",
+
+  "item.medicinebox.tool.string.8": "吃！！！",
+  "item.medicinebox.tool.string.9": "获得随机正面buff！",
+  "item.medicinebox.tool.string.eat": "你获得了1个药物栏位",
+
+
+  "item.calcification.tool.string": "*使实验者的皮肤钙化，增强实验者的战斗能力",
+  "item.calcification.tool.string.1": "增加11％伤害抵抗",
+
+
+  "item.masticatory.tool.string": "*使实验者咬合肌强化，增强实验者的咀嚼能力",
+  "item.masticatory.tool.string.1": "减少50％进食时长",
+
+
+  "item.quadriceps.tool.string": "*使实验者四头肌强化，增强实验者的运动能力",
+  "item.quadriceps.tool.string.1": "增加20％移动速度",
+  "item.quadriceps.tool.string.2": "增加50％跳跃高度",
+
+
+  "item.reanimation.tool.string": "*使实验者细胞强化，增强实验者的细胞重生能力",
+  "item.reanimation.tool.string.1": "同时恢复重要器官的低等功能",
+  "item.reanimation.tool.string.2": "复活",
+  "item.reanimation.tool.string.3": "300秒冷却",
+
+
+  "item.autolytic.tool.string": "抑制Necora病毒带来的游泳速度减少效果",
+
+
+  "item.fermentation.tool.string": "10秒冷却",
+  "item.fermentation.tool.string.1": "冷却期间，伤害降低70％",
+  "item.fermentation.tool.string.2": "冷却结束后，伤害提升300％",
+  "item.fermentation.tool.string.3": "*病原体依然保有狩猎的本能，这使它们能耐心等待，并给予致命一击！",
+
+
+  "item.putrefactive.tool.string": "增加腐肉的效果",
+
+
+  "item.regenerative.tool.string": "每1.5秒恢复一点生命值",
+  "item.regenerative.tool.string.1": "*病原体的细胞比过去更加鲜活",
+
+
+  "item.bloodvirus.tool.string": "增加25％对非亡灵生物的伤害",
+  "item.bloodvirus.tool.string.1": "增加17％在夜晚的速度",
+  "item.bloodvirus.tool.string.2": "滑翔时，可以单击前进键来冲刺",
+  "item.bloodvirus.tool.string.3": "在黑暗中，你将获得夜视",
+  "item.bloodvirus.tool.string.4": "增加10％的生命偷取",
+  "item.bloodvirus.tool.string.5": "*以灵魂为食粮",
+  "item.bloodvirus.tool.string.6": "减少30％任何来源的生命恢复效果",
+  "item.bloodvirus.tool.string.7": "阳光下你将燃烧，且变得极度弱小！",
+  "item.bloodvirus.tool.string.8": "增加100％被击退距离",
+  "item.bloodvirus.tool.string.9": "减少25％生命上限",
+  "item.bloodvirus.tool.string.10": "你只能吃肉",
+  "item.bloodvirus.tool.string.11": "*感知型诱变寄生体，激发宿主嗜血欲望！",
+  "item.bloodvirus.tool.string.12": "还可以植入：",
+
+
+  "item.necora.tool.string": "丧尸化带来的5条诅咒：",
+  "item.necora.tool.string.1": "*你对水感到恐惧；游泳速度大幅降低",
+  "item.necora.tool.string.2": "*阳光下你将燃烧；或许戴点什么在头上能暂时解决这个麻烦",
+  "item.necora.tool.string.3": "*你的身躯逐渐散发腐臭；人类村民惧怕你，铁傀儡视你为敌人",
+  "item.necora.tool.string.4": "*能够辨别同类；对亡灵造成的伤害减少20％",
+  "item.necora.tool.string.5": "*一旦植入该病毒，将没有回头路！",
+  "item.necora.tool.string.6": "丧尸化带来的5条强化：",
+  "item.necora.tool.string.7": "*你的身躯更加坚硬了；伤害增加3点、抗性增加10%",
+  "item.necora.tool.string.8": "*难以被元素影响；受到的魔法伤害减少70％",
+  "item.necora.tool.string.9": "*任何生物都将被你撕碎成腐肉，吃下它们，你会获得额外的效果！",
+  "item.necora.tool.string.10": "*你被同类视为领主；亡灵生物对你造成的伤害减少50％",
+  "item.necora.tool.string.11": "*细胞活性大大提高；提高50％生命恢复",
+  "item.necora.tool.string.12": "该病原体尚未被归类",
+  "item.necora.tool.string.13": "且早期医学报告中，表明它具有",
+  "item.necora.tool.string.14": "强大的再生能力和无休止的进食需求",
+  "item.necora.tool.string.15": "但是它的大部分基因结构仍然是未解之谜",
+
+  "item.heathgene.tool.string": "+10 最大生命值",
+
+
+
+  "item.moonstone.necora": "Necora病毒",
+
+  "item.moonstone.atpoverdose": "ATP 过量",
+  "item.moonstone.autolytic": "自溶性抑制",
+  "item.moonstone.putrefactive": "腐败抗性",
+  "item.moonstone.ambush": "漂流发酵",
+  "item.moonstone.fermentation": "埋伏性狩猎",
+  "item.moonstone.regenerative": "再生活性化",
+
+
+  "item.moonstone.apple": "怪异的瘟疫苹果",
+  "item.moonstone.catalyzer": "暗影基因",
+  "item.moonstone.bloodvirus": "暗影瘟疫",
+  "item.moonstone.botton": "铁罐子",
+  "item.moonstone.bloodgene": "自适应强化基因",
+  "item.moonstone.ragegene": "自修正强化基因",
+  "item.moonstone.flygene": "夜行蝠突变基因",
+  "item.moonstone.heathgene": "生命强化基因",
+  "item.moonstone.sleepgene": "适应性休眠基因",
+  "item.moonstone.batgene": "夜行蝙蝠基因",
+  "item.moonstone.batskill": "基因片段",
+
+  "item.moonstone.medicinebox": "医药箱",
+  "item.moonstone.polyphagia": "药物 - 食欲亢进",
+  "item.moonstone.quadriceps": "药物 - 四头肌强化",
+  "item.moonstone.masticatory": "药物 - 咬合肌强化",
+  "item.moonstone.calcification": "药物 - 皮肤质钙化",
+  "item.moonstone.reanimation": "药物 - 细胞重生",
+
+  "item.diemug.tool.string": "使用药水右键此圣杯",
+  "item.diemug.tool.string.1": "即可储存药水效果(可存在8种)",
+  "item.diemug.tool.string.2": "饮用后获得所有药水效果",
+
+  "item.evilcandle.tool.string": "熔岩行者",
+  "item.evilcandle.tool.string.1": "抵挡80%熔岩伤害",
+  "item.evilcandle.tool.string.2": "快速熄灭你身上火焰",
+
+
+  "item.evilmug.tool.string": "空的",
+  "item.evilmug.tool.string.1": "由攻击时造成的伤害来补充酒桶内的鲜血（副手）",
+  "item.evilmug.tool.string.2": "并且可以提取你自己的血",
+  "item.evilmug.tool.string.3": "喝！",
+
+  "item.soulbattery.tool.string": "+25％ 暴击伤害",
+  "item.moonstone.maxamout": "原始纹章",
+
+  "item.maxamout.tool.string": "获得三色符石的所有能力！",
+  "item.maxamout.tool.string.1": "减少15%受到伤害",
+  "item.maxamout.tool.string.2": "受伤时有概率获得伤害吸收效果",
+  "item.maxamout.tool.string.3": "增加5%吸血",
+  "item.maxamout.tool.string.6": "受到伤害后将返还20%给进攻者",
+  "item.maxamout.tool.string.7": "免疫挖掘疲劳效果",
+  "item.maxamout.tool.string.8": "增加75%游泳速度",
+
+  "allevent.moonstone.virus": "已采集DNA : ",
+
+
+  "item.bloodgene.tool.string": "基础伤害，攻速降低50%",
+  "item.bloodgene.tool.string.1": "每次受到伤害都会获得提升",
+  "item.bloodgene.tool.string.2": "最大是原来的200%",
+  "item.bloodgene.tool.string.3": "增加10%受到伤害",
+  "item.ambush.tool.string": "可以行走在液体表面",
+
+
+  "item.moonstone.flyeye": "飞翔的眼睛",
+  "item.flyeye.tool.string": "+300% 被击退",
+  "item.flyeye.tool.string.1": "+25% 无敌帧",
+  "item.flyeye.tool.string.2": "无敌期间对周围生物造成伤害",
+
+
+
+  "item.moonstone.plagues": "亚特格拉德病毒-重生",
+  "item.moonstone.plague": "亚特格拉德病毒",
+  "item.plague.s.tool.string": "这个物品已经没有任何用处了",
+  "item.plague.tool.string": "研究点数",
+  "item.plague.tool.string.1": "病毒点数",
+  "item.plague.tool.string.2": "反研究点数",
+
+  "item.plague.tool.string.3": "杀死生物获得点数",
+  "item.plague.tool.string.4": "你必须把点数研究到100%",
+  "item.plague.tool.string.5": "点数影响属性，并且最好在规定时间内完成........",
+  "item.plague.tool.string.6": "你真的能主宰世界吗？",
+  "item.plague.tool.string.un": "使用 深渊之眼 取下",
+
+
+
+  "item.plague.tool.string.8": "+50% 生命",
+  "item.plague.tool.string.9": "+25% 速度",
+  "item.plague.tool.string.10": "+66% 护甲",
+  "item.plague.tool.string.11": "+90% 击退抗性",
+  "item.plague.tool.string.12": "+70% 攻速",
+  "item.plague.tool.string.13": "+70% 伤害",
+  "item.plague.tool.string.14": "+70% 水下速度",
+
+  "item.plague.tool.string.15": "+100% 对怪物伤害",
+  "item.plague.tool.string.16": "+150% 对高生命值生物的伤害",
+  "item.plague.tool.string.17": "+100% 治疗",
+  "item.plague.tool.string.18": "+70% 挖掘速度",
+  "item.thefruit.tool.string.3": "深渊之眼将克服这些效果",
+
+  "item.moonstone.doomeye": "七剑修罗之心",
+  "item.doomeye.tool.string": "受伤召唤7把飞剑攻击敌人",
+
+  "item.moonstone.soulbook": "一本书",
+  "item.masticatory.tool.string.2": "吃8个金苹果",
+  "item.calcification.tool.string.2": "受到350次伤害",
+  "item.quadriceps.tool.string.3": "跳 500 次",
+  "item.reanimation.tool.string.4": "死掉",
+
+  "item.moonstone.doomswoud": "骤雨",
+  "item.doomswoud.tool.string": "击中生物造成2把飞剑",
+  "item.doomswoud.tool.string.1": "每增加20%的速度增加1把飞剑",
+  "item.doomswoud.tool.string.2": "杀死生物立即召唤4把飞剑",
+
+  "item.moonstone.wind": "疾风",
+  "item.wind.tool.string": "连续奔跑增加速度",
+
+  "item.moonstone.wind_and_rain": "疾风骤雨",
+  "item.wind_and_rain.tool.string": "拖动此物品右键剑类武器来进行附魂",
+  "item.wind_and_rain.tool.string.1": "之后使用附魂的武器长按右键召唤飞剑",
+  "item.wind_and_rain.tool.string.2": "但每次召唤都会有2%的概率进入8秒的冷却",
+  "item.wind_and_rain.tool.string.3": "连续召唤会消耗耐久",
+  "item.wind_and_rain.tool.string.4": "",
+  "item.moonstone.the_pain_stone": "痛苦游离石",
+  "item.the_pain_stone.tool.string.1": "杀死生物后将其50%的最大生命值转换成下一次的额外攻击伤害",
+  "item.the_pain_stone.tool.string.2": "如果下次造成的伤害大于该生物的最大生命值",
+  "item.the_pain_stone.tool.string.3": "那么额外伤害将等比例恢复自身血量",
+  "item.the_pain_stone.tool.string.4": "-15%任何伤害",
+  "item.the_pain_stone.tool.string.5": "下一次: ",
+
+
+
+  "advancements.tooltip.ectoplasmstone.hand": "灵质！",
+  "advancements.tooltip.ectoplasmstone.text": "获得开局的灵质石头",
+
+
+  "advancements.tooltip.twistedstone.hand": "扭曲。。。",
+  "advancements.tooltip.twistedstone.text": "获得开局的扭曲石头",
+
+
+  "advancements.tooltip.ectoplasmball.hand": "灵质球",
+  "advancements.tooltip.ectoplasmball.text": "杀死怪物",
+
+
+  "advancements.tooltip.ectoplasmcloub.hand": "灵质云",
+  "advancements.tooltip.ectoplasmcloub.text": "怪物的末日",
+
+
+  "advancements.tooltip.ectoplasmprism.hand": "灵质棱镜",
+  "advancements.tooltip.ectoplasmprism.text": "成山的尸体堆积成的棱镜",
+
+
+  "advancements.tooltip.ectoplasmcube.hand": "灵质立方",
+  "advancements.tooltip.ectoplasmcube.text": "用尸体堆积成的棱镜",
+
+
+  "advancements.tooltip.maxamout.hand": "原始纹章",
+  "advancements.tooltip.maxamout.text": "在拥有红色，蓝色，绿色符石的情况下杀死远古守卫者!",
+
+  "advancements.tooltip.wind_and_rain.hand": "疾风骤雨",
+  "advancements.tooltip.wind_and_rain.text": "在拥有七剑修罗之心和骤雨的情况下开取远古城市的箱子！",
+
+  "advancements.tooltip.nightmareeye.hand": "深渊之眼",
+  "advancements.tooltip.nightmareeye.text": "佩戴深渊之眼的情况下开取地牢，矿井，远古城市的箱子来获取之后的物品.....",
+
+  "advancements.tooltip.medicinebox.hand": " 医药箱",
+  "advancements.tooltip.medicinebox.text": "佩戴此物品的情况下完成一些无聊的任务",
+
+  "advancements.tooltip.calcification.hand": "皮肤质钙化",
+  "advancements.tooltip.calcification.text": "受到350次伤害",
+
+  "advancements.tooltip.masticatory.hand": "咬合肌强化",
+  "advancements.tooltip.masticatory.text": "吃8金苹果",
+
+
+  "advancements.tooltip.polyphagia.hand": "食欲亢进",
+  "advancements.tooltip.polyphagia.text": "吃附魔金苹果",
+
+  "advancements.tooltip.quadriceps.hand": "四头肌强化",
+  "advancements.tooltip.quadriceps.text": "跳跃500次",
+
+  "advancements.tooltip.reanimation.hand": "细胞重生",
+  "advancements.tooltip.reanimation.text": "死掉",
+
+  "advancements.tooltip.necora.hand": "僵尸病毒",
+  "advancements.tooltip.necora.text": "在佩戴此物品的情况下开取地牢箱子",
+
+  "advancements.tooltip.botton.hand": "铁罐子",
+  "advancements.tooltip.botton.text": "使用暗影基因右键医药箱",
+
+  "advancements.tooltip.catalyzer.hand": "暗影基因",
+  "advancements.tooltip.catalyzer.text": "在完成所有医药箱的任务后杀死末影龙",
+
+  "advancements.tooltip.bloodvirus.hand": "暗影瘟疫",
+  "advancements.tooltip.bloodvirus.text": "使用暗影基因右键necora病毒,之后在开取末地的箱子获取之后的物品",
+
+  "item.moonstone.ectoplasmstar":"灵质幸运星",
+  "item.ectoplasmstar.tool.string": "每1点幸运增加1%的攻速和0.5%的伤害",
+  "item.ectoplasmstar.tool.string.1": "+20 幸运",
+  "advancements.tooltip.ectoplasmstar.hand": "灵质幸运星",
+  "advancements.tooltip.ectoplasmstar.text": "神话直呼内行",
+
+  "item.moonstone.ectoplasmsoul": "没有灵魂的灵质立方",
+  "advancements.tooltip.ectoplasmsoul.hand": "没有灵魂的灵质立方",
+  "advancements.tooltip.ectoplasmsoul.text": "那还叫灵质立方吗",
+
+  "item.moonstone.ectoplasmtree": "灵质树",
+  "advancements.tooltip.ectoplasmtree.hand": "灵质树",
+  "advancements.tooltip.ectoplasmtree.text": "心中的树",
+
+  "item.moonstone.brain": "莫里斯的脑子",
+  "item.brain.tool.string": "攻击一个生物5次后，第六次造成2.25倍的伤害",
+  "advancements.tooltip.brain.hand": "莫里斯的脑子",
+  "advancements.tooltip.brain.text": "冒心的脑子",
+
+
+  "item.moonstone.beacon": "灵质信标",
+  "item.beacon.tool.string.1": "把药水效果同步添加给攻击目标,并造成范围效果",
+  "advancements.tooltip.beacon.hand": "灵质信标",
+  "advancements.tooltip.beacon.text": "现在，我们真正荣辱与共了。",
+
+  "item.moonstone.mhead": "莫里斯头颅",
+  "item.mhead.tool.string": "你无法攻击任何生物，并且怪物无法攻击你",
+  "advancements.tooltip.mhead.hand": "莫里斯头颅",
+  "advancements.tooltip.mhead.text": "绝对的虚无缥缈与边缘化",
+
+
+  "item.moonstone.cell": "细胞重生",
+  "item.moonstone.adrenaline": "肾上腺素激增",
+  "item.cell.tool.string": "杀死生物有可能将尸体转化为僵尸",
+  "item.adrenaline.tool.string": "召唤的僵尸继承你的攻击力",
+  "item.adrenaline.tool.string.1": "和移动速度",
+
+
+  "item.fortunecrystal.tool.string": "+3 时运",
+  "item.moonstone.fortunecrystal": "财富水晶",
+  "item.moonstone.mayhemcrystal": "混乱水晶",
+  "item.polyphagia.tool.string": "吃一个附魔金苹果",
+  "item.moonstone.dna": "培养皿",
+
+
+  "item.moonstone.cell_mummy": "木乃伊干尸化",
+  "item.cell_mummy.tool.string": "有效降低生成的僵尸其腐化速度",
+
+  "item.moonstone.cell_boom": "自爆",
+  "item.cell_boom.tool.string": "你和和僵尸在死后会产生一次剧烈爆炸",
+
+  "item.moonstone.cell_calcification": "皮肤钙质化",
+  "item.cell_calcification.tool.string": "僵尸获得你50%的护甲和生命值加成",
+
+  "item.moonstone.cell_blood": "嗜血性饥渴",
+  "item.cell_blood.tool.string": "僵尸获得吸血能力，并且每次攻击都会延长自身寿命",
+
+  "item.moonstone.motor": "运动控制强化",
+  "item.motor.tool.string": "增加15%在空中，水下，陆地的所有速度",
+
+
+  "item.moonstone.air": "大气亲和性",
+  "item.air.tool.string": "在空中时增加20%的抗性",
+
+  "item.moonstone.watergen": "海洋亲和性",
+  "item.watergen.tool.string": "在水中时增加15%的抗性",
+
+
+  "advancements.tooltip.cell.all.text": "宝藏战利品，需要佩戴Necora病毒",
+  "advancements.tooltip.nightmare.all.text": "地牢战利品类型，需要佩戴深渊之眼",
+  "advancements.tooltip.necora.all.text": "地牢/矿井战利品类型，需要佩戴Necora病毒",
+
+  "item.moonstone.giant": "巨人僵尸基因片段",
+  "item.giant.tool.string": "杀死生物有些许概率使尸体诱变成巨型细胞僵尸",
+  "advancements.tooltip.giant.text": "装备necora病毒并杀死监守者",
+
+  "entity.moonstone.cell_giant": "巨型细胞僵尸",
+  "entity.moonstone.cell_zombie": "细胞僵尸",
+  "entity.moonstone.small_zombie": "僵尸侍从",
+
+  "entity.moonstone.flysword": "飞剑",
+  "entity.moonstone.suddenrain": "雨刃",
+  "item.moonstone.gorillacake": "观察者种子",
+  "item.gorillacake.tool.string": "检查你目前的排斥反应",
+
+  "item.moonstone.gorilladna": "猩猩流感",
+  "item.gorilladna.tool.string": "使病原体能够修改你的基因进而显著提高智商",
+  "item.gorilladna.tool.string.1": "并使双眼虹膜呈现绿色而不会触发任何免疫反应",
+  "item.gorilladna.tool.string.2": "  瘟疫虹膜",
+  "advancements.tooltip.germ.text": "佩戴培养皿在远古城市找到",
+  "advancements.tooltip.dna.text": "又是无聊的事情",
+  "advancements.tooltip.fungus.text": "在佩戴培养皿并有虚弱效果的情况下杀蘑菇牛",
+  "advancements.tooltip.virus.text": "佩戴培养皿并存在虚弱效果时被凋零骷髅击打",
+  "advancements.tooltip.parasite.text": "佩戴培养皿并吃下：生鳕鱼，生鲑鱼，生牛肉，生羊肉，生猪肉，生兔子肉，热带鱼，鸡肉，在吃下任意食物",
+
+  "tool.string.ectoplasmball": "这个物品是这个模组的核心内容",
+  "tool.string.ectoplasmball.1": "通过杀死僵尸,骷髅等常见生物获取",
+  "tool.string.ectoplasmball.2": "也可以通过和牧师交易获取",
+  "tool.string.ectoplasmball.3": "可用于合成灵质云",
+
+
+  "item.the_heart.tool.string": "右键物品存入心脏当中，可存入4种(不可叠加)",
+  "item.the_heart.tool.string.1": "如果生物的掉落物是心脏里物品的某一项",
+  "item.the_heart.tool.string.3": "不可以移除心脏内部物品",
+  "item.the_heart.tool.string.2": "那么该掉落物数量乘以3",
+  "item.moonstone.the_heart": "富饶之心",
+  "item.moonstone.nightmare_heart": "万贯者的悲哀",
+  "item.moonstone.nightmare_head": "洞悉者的邪术法球",
+  "advancements.tooltip.the_heart.text": "宝藏物品",
+  "item.nightmare_heart.tool.string": "杀死生物召唤深渊立方",
+
+  "item.moonstone.nightmare_orb": "共鸣者法球",
+
+  "item.nightmare_orb.tool.string": "当你的生命值低于33%时",
+  "item.nightmare_orb.tool.string.1": "所有来自深渊的诅咒都会反转成对你的增益",
+  "item.nightmare_orb.tool.string.2": "但是每秒受到1%最大生命值的伤害",
+  "item.nightmare_orb.tool.string.3": "并且在此期间无法受到治疗",
+  "entity.moonstone.nightmare_entity": "深渊立方",
+  "item.moonstone.nightmare_cube": "窥眸者的暗染之眼",
+  "item.nightmare_cube.tool.string": "靠近生物下按下Shift释放暗染丝线，这些丝线会继承你的伤害",
+
+  "item.moonstone.giant_nightmare": "梦魇巨人基因片段",
+  "item.giant_nightmare.tool.string": "杀死生物有概率召唤梦魇巨人",
+  "item.giant_nightmare.tool.string.1": "增加冷却时间,召唤的一瞬间你将损失50%当前生命值",
+  "item.polyphagia.tool.string.1": "吃下食物恢复7%最大生命值",
+
+  "item.moonstone.speed_seed": "限流种子",
+  "item.speed_seed.tool.string": "速度固定到正常值的120%",
+  "entity.moonstone.nightmare_giant": "梦魇巨人",
+
+  "item.light_amout.tool.string": "如果单次坠落距离大于2",
+  "item.light_amout.tool.string.1": "那么接下来的全力一击将附带大范围的闪电攻击",
+  "item.light_amout.tool.string.2": "闪电的伤害会随着自身攻击伤害和摔落距离的增加而增加",
+  "item.light_amout.tool.string.3": "每增加1格，都会增加10%的伤害",
+
+  "item.nightmare_head.tool.string": "免疫所有非生物伤害",
+  "item.nightmare_head.tool.string.1": "任何来源的伤害减免失效并且受到伤害固定为1点，最大生命值固定为8点",
+  "item.nightmare_head.tool.string.2": "每5秒恢复1点生命值，不受任何加成影响",
+  "item.nightmare_head.tool.string.3": "反弹50%的伤害给攻击者",
+  "item.nightmare_head.tool.string.4": "并且每次佩戴此物品死亡都会降低1%对深渊的抵抗力",
+  "item.nightmare_head.tool.string.6": "减少100%深渊的诅咒",
+  "item.nightmare_head.tool.string.7": "无法取下",
+  "item.nightmare_head.tool.string.8": "永远不会判定你为满血状态",
+
+
+  "death.attack.abyss.message": "你受到了深渊的侵蚀",
+  "death.attack.sword_damage.message": "你被飞剑刺穿了",
+
+
+  "item.moonstone.anaerobic_cell": "无氧呼吸",
+  "item.anaerobic_cell.tool.string": "梦魇巨人的存活时间提高50%",
+  "item.moonstone.giant_boom_cell": "甲烷囊肿",
+  "item.giant_boom_cell.tool.string": "梦魇巨人死亡后产生毁灭性爆炸",
+  "item.moonstone.not_blood_cell": "非嗜血性病变",
+  "item.not_blood_cell.tool.string": " 梦魇巨人的远程攻击不会对召唤者造成伤害",
+  "item.moonstone.subspace_cell": "子空间细胞病变",
+  "item.subspace_cell.tool.string": "召唤梦魇巨人不再消耗生命值",
+
+  "item.moonstone.bone_cell": "骨细胞增生",
+  "item.bone_cell.tool.string": "巨型细胞僵尸在召唤时会获得召唤者70%的护甲值",
+
+
+  "item.moonstone.parasitic_cell": "寄生性僵尸细胞",
+  "item.parasitic_cell.tool.string": "巨型细胞僵尸在死后诞生5个细胞僵尸",
+
+  "item.moonstone.mother_cell": "子母细胞",
+  "item.mother_cell.tool.string": "巨型细胞僵尸在召唤时会额外产生2个细胞僵尸，并有50%的概率再召唤一个巨人僵尸",
+
+  "item.moonstone.disgusting_cells": "厌氧细胞",
+  "item.disgusting_cells.tool.string": "巨型细胞僵尸的存活时间提高100%",
+
+
+
+
+
+
+
+
+
+  "item.moonstone.slime": "史莱姆细胞",
+  "item.slime.tool.string": "杀死生物有概率召唤史莱姆细胞僵尸，可兼容任何召唤类基因，召唤后的5秒内无法再次召唤任何僵尸",
+
+
+
+  "entity.moonstone.cell_slime":"史莱姆细胞僵尸",
+
+  "item.moonstone.cell_doctor": "巫医",
+  "item.cell_doctor.tool.string": "你和暗影蝠将获得20%的吸血能力",
+
+  "item.moonstone.cell_desecrate": "渎圣机组",
+  "item.cell_desecrate.tool.string": "你和暗影蝠对非亡灵生物造成的伤害提高40%",
+
+  "item.moonstone.cell_harvest": "简制增收",
+  "item.cell_harvest.tool.string": "召唤暗影蝠的概率提高10%",
+
+  "item.moonstone.cell_scientist": "疯子科学家",
+  "item.cell_scientist.tool.string": "召唤暗影蝠时献祭的血量加倍，同时暗影蝠的生命值和攻击力会根据献祭的血量来增加",
+
+  "item.moonstone.cell_immortal": "不朽之身",
+  "item.cell_immortal.tool.string": "你和暗影蝠的护甲值增加10点",
+
+
+  "item.moonstone.cell_rage": "狂暴战士",
+  "item.cell_rage.tool.string": "你的攻击伤害增加25%，暗影蝠的伤害减半",
+
+
+  "item.moonstone.cell_blood_attack": "血腥收割",
+  "item.cell_blood_attack.tool.string": "暗影蝠会恢复献祭者10%基于自身造成伤害的血量",
+
+
+  "item.moonstone.cell_fear": "高空恐惧",
+  "item.cell_fear.tool.string": "增加50%暗影蝠的生存时间",
+
+
+  "item.moonstone.cell_not_do": "群居抗拒",
+  "item.cell_not_do.tool.string": "暗影蝠不再需要献祭生命值",
+
+
+  "item.moonstone.pain_candle": "污秽蜡烛",
+  "item.pain_candle.tool.string": "恢复血量时+2%受到伤害",
+  "item.pain_candle.tool.string.1": "直到恢复至满血状态",
+  "item.pain_candle.tool.string.2": "+1 生命恢复",
+  "item.pain_candle.tool.string.3": "+33% 生命恢复",
+  "item.pain_candle.tool.string.4": "受到伤害: ",
+
+  "item.moonstone.pain_ring": "邪祟之戒",
+  "item.pain_ring.tool.string": "恢复血量时+1%伤害（不超过100%）",
+  "item.pain_ring.tool.string.1": "直到恢复至满血状态",
+  "item.pain_ring.tool.string.2": "-50% 生命恢复",
+
+
+  "item.moonstone.bat_cell": "血色暗影基因片段",
+  "item.bat_cell.tool.string": "损失生命值时有15%召唤一只暗影蝠",
+  "item.bat_cell.tool.string.1": "召唤后减少15%的当前生命值",
+  "item.bat_cell.tool.string.2": "损失的生命值越多，暗影蝠的伤害越高",
+
+
+
+  "item.moonstone.light_amout": "雷鸣之章",
+  "item.medicinebox.tool.string.7": "尝尝医药箱的味道如何！你会+1药物栏位！！",
+  "item.moonstone.nano_box": "天机魔盒",
+  "item.nano_box.tool.string": "Shift状态下，对周围生物造成闪电攻击",
+  "item.nano_box.tool.string.1": "可以使用电池增幅或改装",
+  "item.moonstone.tooltip.battery": "可以改装或者增幅纳米科技",
+  "moonstone.string.cooling": "冷却时间：",
+
+
+  "item.moonstone.sword_amout": "剑影之章",
+  "item.sword_amout.tool.string": "你的攻击速度会随着斩击次数的增加而增加，但不会超过100%",
+  "item.sword_amout.tool.string.1": "但是你的伤害会逐渐减少，最多降低到原先的33%",
+  "item.sword_amout.tool.string.2": "全力攻击时不会造成无敌帧保护",
+  "item.sword_amout.tool.string.3": "当你的斩击次数到达10时，每次攻击都会造成范围效果",
+
+
+  "curios.modifiers.zombie": "装备侍从饰品时",
+  "curios.identifier.zombie": "僵尸侍从插槽",
+
+
+  "item.moonstone.small.all": "右键装备到僵尸侍从上, Shift+右键在潜行时取出",
+  "item.moonstone.zombie_box": "僵尸的小盒子",
+  "item.moonstone.zombie_box_nobo": "坏掉的僵尸盒子",
+
+  "item.moonstone.compression": "致命基因压缩",
+  "item.compression.tool.string": "你的侍从僵尸更容易受到伤害，但是每次攻击都会恢复自身生命值",
+
+  "item.moonstone.acid": "核酸中和",
+  "item.acid.tool.string": "你的侍从更容易死亡，但是每次死亡都会使主人获得大量buff",
+
+
+  "item.moonstone.atrophy": "神经萎缩",
+  "item.atrophy.tool.string": "使僵尸侍从具有极强的攻击性",
+
+  "item.moonstone.enhancemen": "神经强化",
+  "item.enhancemen.tool.string": "可使僵尸侍从装备基因片段和分段基因组，但是装备的基因片段不会死亡掉落",
+
+
+
+  "item.at_a_book.tool.string.lvl.1": "金仙",
+  "item.at_a_book.tool.string.lvl.2": "金仙",
+  "item.at_a_book.tool.string.lvl.3": "仙尊",
+  "item.at_a_book.tool.string.lvl.4": "仙帝",
+  "item.at_a_book.tool.string.lvl.5": "炼神",
+  "item.at_a_book.tool.string.lvl.6": "天神",
+  "item.at_a_book.tool.string.lvl.7": "主神",
+  "item.at_a_book.tool.string.lvl.8": "天劫",
+  "item.at_a_book.tool.string.lvl.9": "合道",
+  "item.at_a_book.tool.string.lvl.10": "圣玄",
+  "item.at_a_book.tool.string.lvl.11": "圣君",
+  "item.at_a_book.tool.string.lvl.12": "圣尊",
+  "item.moonstone.at_a_book": "很普通的书",
+
+
+
+  "advancements.tooltip.blood.hand": "一血",
+  "advancements.tooltip.blood.text": "获得血球",
+
+  "advancements.tooltip.blood_magic_box.hand": "魔物末日",
+  "advancements.tooltip.blood_magic_box.text": "获得血之魔盒",
+
+  "advancements.tooltip.blood_sun.hand": "血日东升",
+  "advancements.tooltip.blood_sun.text": "获得血日",
+
+  "entity.moonstone.owner_blood": "巨型血灵增生体",
+  "entity.moonstone.blood_orb_owner": "怨念合并体",
+
+  "advancements.tooltip.max_eye.hand": "无懈可击！",
+  "advancements.tooltip.max_eye.text": "获得无懈之眼",
+
+  "advancements.tooltip.max_sword.hand": "吃我一斧！",
+  "advancements.tooltip.max_sword.text": "获得诺克萨斯纹章",
+
+  "advancements.tooltip.max_blood_eye.hand": "总有改变的时候",
+  "advancements.tooltip.max_blood_eye.text": "制作校准之眼",
+
+  "advancements.tooltip.max_blood_cube.hand": "注视我！",
+  "advancements.tooltip.max_blood_cube.text": "制作复仇之骰",
+
+  "item.the_blood_book.tool.string": "血灵增生体的伤害增加200%",
+  "item.the_blood_book.tool.string.1": "血灵增生体的血珠速度增加100%",
+  "item.the_blood_book.tool.string.2": "血灵增生体的血珠会爆炸",
+
+  "item.the_blood_book.tool.string.3": "血灵增生体的射击速度增加100%",
+  "item.the_blood_book.tool.string.4": "血灵增生体的血珠寿命降低70%",
+  "item.the_blood_book.tool.string.5": "自带刻画者和渎圣者的所有功能",
+  "item.the_blood_book.tool.string.6": "血灵增生体每次命中都相当于你发起了一次攻击",
+  "effect.moonstone.rage": "重伤",
+  "effect.moonstone.dead": "枯朽",
+  "effect.moonstone.fear": "恐惧",
+  "effect.moonstone.pain": "痛苦",
+  "effect.moonstone.blood": "流血",
+
+  "item.moonstone.max_eye": "§4无懈之眼",
+  "item.max_eye.tool.string": "杀死生物获得血液",
+  "item.max_eye.tool.string.1": "最多储存4点",
+  "item.max_eye.tool.string.2": "当你拥有血液时，你将减少90%受到伤害",
+  "item.max_eye.tool.string.3": "但每次受到伤害你都会减少一滴血液、",
+  "item.max_eye.tool.string.4": "时间推移，血量也会被你吸收并恢复10%最大生命值",
+  "item.max_sword.tool.string.5": "每颗血球提供5%的伤害加成",
+  "item.max_sword.tool.string.6": "血球爆炸时对3格内的生物造成流血效果",
+  "item.max_sword.tool.string.7": "杀死生物后再获得1~3颗血球",
+
+  "item.moonstone.max_sword": "§4诺克萨斯纹章",
+  "item.max_sword.tool.string": "每次攻击都有概率生成一个血球围绕你旋转",
+  "item.max_sword.tool.string.1": "当血球数量超过8时",
+  "item.max_sword.tool.string.2": "下一次斩击将造成4倍伤害",
+  "item.max_sword.tool.string.3": "血球会随着时间的流失而被你吸收",
+  "item.max_sword.tool.string.4": "每次吸收都会恢复一定的百分比生命值",
+
+  "item.moonstone.max_blood_eye": "§4校准之眼",
+  "item.max_blood_eye.tool.string": "每次全力攻击都会施加流血（叠加）",
+  "item.max_blood_eye.tool.string.1": "当流血层数超过3时",
+  "item.max_blood_eye.tool.string.2": "产生一次血爆造成伤害,并清除流血状态",
+  "item.max_blood_eye.tool.string.3": "被波及者获得流血，如果状态已存在，则转换成重伤",
+  "item.max_blood_eye.tool.string.4": "冷却时间1秒",
+
+  "item.moonstone.blood_amout": "§4血符",
+  "item.blood_amout.tool.string": "受伤召唤血灵",
+
+  "advancements.tooltip.blood_snake.hand": "血之审判",
+  "advancements.tooltip.blood_snake.text": "获得蛇血魔符",
+
+  "item.moonstone.the_prison_of_sin": "§4罪孽囚笼",
+  "item.the_prison_of_sin.tool.string": "自佩戴以来，你杀死了：",
+  "item.the_prison_of_sin.tool.string.5": "属性提高了：",
+
+
+  "item.the_prison_of_sin.tool.string.1": "-80% 护甲，最大生命值",
+
+  "item.the_prison_of_sin.tool.string.2": "+10% 全部属性",
+  "item.the_prison_of_sin.tool.string.3": "每杀死1种不同的生物，此奖励都将增加1%",
+
+  "item.the_prison_of_sin.tool.string.4": "无法取下",
+
+
+  "item.the_prison_of_sin.tool.string.6": "你还无法参悟它的本质",
+  "item.the_prison_of_sin.tool.string.7": "无限制的能力增长和超强的适应能力",
+  "item.the_prison_of_sin.tool.string.8": "但...代价是什么?",
+
+  "advancements.tooltip.the_prison_of_sin.hand": "好奇心害死猫",
+  "advancements.tooltip.the_prison_of_sin.text": "获得罪孽囚笼",
+
+  "item.moonstone.blood_snake": "§4蛇血魔符",
+  "item.blood_snake.tool.string": "杀死生物发射3条会造成150%伤害的血蛇",
+  "item.blood_snake.tool.string.1": "血蛇数量会随着生物的最大生命值来增加",
+  "item.blood_snake.tool.string.2": "但不超过10条",
+  "item.blood_snake.tool.string.3": "-20% 伤害",
+
+  "item.moonstone.max_blood_cube": "§4复仇之骰",
+  "item.max_blood_cube.tool.string": "拿着任意物品对准生物潜行并长按右键释放技能",
+  "item.max_blood_cube.tool.string.1": "技能期间无法移动",
+  "item.moonstone.blood_magic_box": "§4血之魔盒",
+  "item.moonstone.blood": "血球",
+  "item.blood_magic_box.tool.string": "杀死生物获得它们的血液",
+
+  "item.moonstone.blood_candle": "§4封魔烛台",
+
+  "item.moonstone.the_blood_book": "§4封魔录",
+  "item.blood_candle.tool.string": "召唤一个巨型血灵增生体协助你作战",
+  "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品或右键这个物品",
+
+
+  "item.blood_candle.tool.string.2": "血灵增生体的攻击会造成基于你10%最大生命值和攻击属性的伤害",
+
+
+
+  "attribute.name.moonstone.allattack": "通用伤害",
+
+  "attribute.name.moonstone.cit": "暴击伤害",
+  "attribute.name.moonstone.heal": "治疗",
+  "attribute.name.moonstone.dig": "挖掘速度",
+
+
+
+  "item.moonstone.evil_mob": "邪念体",
+  "item.moonstone.god_lead": "血虐之铅",
+  "item.moonstone.malice_die": "恶意之殇",
+
+
+  "item.malice_die.tool.string.1": "如果附近生物的攻击目标是你，那么每增加一个生物：",
+  "item.malice_die.tool.string.2": "+3.3%伤害",
+  "item.malice_die.tool.string.3": "+3%生命恢复",
+  "item.malice_die.tool.string.4": "+2.7%速度",
+  "item.malice_die.tool.string.5": "+2.5%攻击速度",
+  "item.malice_die.tool.string.6": "+2%护甲",
+  "item.malice_die.tool.string.7": "+1.7%暴击",
+  "item.malice_die.tool.string.8": "攻击会使目标8格半径内的生物主动攻击你",
+  "item.malice_die.tool.string.9": "-15% 所有伤害",
+  "item.malice_die.tool.string.10": "如果目标数量少于3，那么你造成的伤害减35%",
+
+  "item.evil_mob.tool.string.1": "允许你在不佩戴深渊之眼,necora病毒，暗影瘟疫的情况下使用和发现相应的物品",
+  "item.evil_mob.tool.string.2": "佩戴后，自动获得深渊之眼，necora病毒，暗影瘟疫的一些特殊能力",
+
+
+  "item.god_lead.tool.string.1":"受到致命伤害时，伤害转移到附近的生物身上(冷却10秒)",
+  "item.god_lead.tool.string.2":"如果此生物死亡，那么冷却清除",
+  "item.god_lead.tool.string.3":"+150%受到伤害",
+
+  "item.moonstone.evil_blood": "§4渎圣玩偶",
+  "item.evil_blood.tool.string": "召唤一个怨念合并体协助你作战",
+
+
+  "advancements.tooltip.evil_blood.text": "打开深渊的媒介",
+
+  "item.moonstone.deceased_contract": "§4死灵契约",
+
+  "item.moonstone.blood_stasis": "瘀血",
+  "item.blood_stasis.tool.string": "僵尸死亡后恢复召唤者10%的最大生命值",
+  "item.moonstone.bone_structure": "骨结构异常",
+  "item.bone_structure.tool.string": "僵尸继承玩家70%的护甲值和30%最大生命值",
+  "item.moonstone.mummification": "干尸化",
+  "item.mummification.tool.string": "有效抑制僵尸的腐化速度，但是会减低20%的攻击伤害",
+  "item.organizational_regeneration.tool.string": "僵尸会缓慢恢复生命值，并提高腐化速度",
+  "item.moonstone.tumour": "肿瘤",
+  "item.tumour.tool.string": "僵尸伤害减半，但是生命值加倍",
+
+
+  "item.moonstone.bloodstain": "血污",
+  "item.bloodstain.tool.string": "拾取血球发生爆炸，但不会破坏方块",
+
+  "item.moonstone.detect": "要素察觉",
+  "item.detect.tool.string": "被僵尸锁定的生物会发光",
+
+
+  "item.moonstone.exercise_reinforcement": "运动强化",
+  "item.exercise_reinforcement.tool.string": "僵尸获得60%召唤者移动速度",
+
+  "item.moonstone.plague_book": "瘟疫",
+  "item.plague_book.tool.string": "被僵尸攻击的生物会在短时间内受到额外33%的伤害",
+
+  "item.moonstone.spore_outbreak": "孢子喷发",
+  "item.spore_outbreak.tool.string": "拾取血球恢复20%的最大生命值",
+
+  "item.moonstone.weak": "神经衰弱",
+  "item.weak.tool.string": "拾取血球立即损失10%的生命值获得5颗黄心",
+  "item.deceased_contract.tool.string.0": "杀死生物有15%的概率获得它们的血液",
+  "item.deceased_contract.tool.string.1": "拾取血液恢复15%最大生命值",
+  "item.deceased_contract.tool.string.2": "-20%伤害\n-25%抗性\n-15%暴击\n-30%治疗",
+  "item.deceased_contract.tool.string.3": "杀死生物有30%的概率召唤一只僵尸\n杀死生物有15%的概率召唤一只巨人僵尸\n召唤的僵尸最大生命值为20%",
+  "item.deceased_contract.tool.string.4": "召唤的僵尸获得50%召唤者的伤害，速度，防御，最大生命值的加成",
+  "item.deceased_contract.tool.string.5": "召唤的僵尸获得获得召唤者目前存在的所有正面药水状态",
+  "item.deceased_contract.tool.string.6": "Necora病毒及其附属物品无效化\n暗影瘟疫及其附属物品无效化",
+  "item.deceased_contract.tool.string.7": "你必须佩戴",
+  "item.deceased_contract.tool.string.8": "秒后才能取下",
+  "item.deceased_contract.tool.string.9": "目前，它是可以被取下的",
+
+  "item.moonstone.atp_height": "ATP高能量",
+  "item.moonstone.cell_god": "神创论",
+  "item.moonstone.cell_ground": "大地亲和性",
+  "item.moonstone.cell_inheritance": "模拟遗传基因",
+  "item.moonstone.cell_oxygen": "碱性氧化",
+  "item.moonstone.cell_big_boom": "细胞色素爆发",
+  "item.moonstone.cell_break_down_water": "碱性水解",
+  "item.moonstone.cell_darwin": "达尔文主义",
+  "item.moonstone.cell_disorder": "代谢紊乱",
+  "item.moonstone.cell_in_air": "大气亲和性",
+  "item.moonstone.cell_in_water": "海洋亲和性",
+  "item.moonstone.cell_off_on": "催化剂开关",
+  "item.moonstone.speed_metabolism": "极速代谢",
+  "item.moonstone.medicinebox.tool": "用于粉碎药物或任意基因物品",
+  "item.moonstone.dna_box": "药物回收盒",
+
+  "item.moonstone.medicinebox.tool.2": "你需要右键这个物品来存入，然后长按右键咀嚼，直到下方的红色字体消失",
+  "item.moonstone.cell_disorder.tool": "每隔（数量）清除所有BUFF",
+  "item.moonstone.cell_god.tool": "杀死生物回复（数量）生命值",
+  "item.moonstone.cell_inheritance.tool": "加（数量）伤害抗性",
+  "item.moonstone.cell_big_boom.tool": "加（数量）吃东西的速度",
+  "item.moonstone.cell_darwin.tool": "杀死生物回复或者扣除（数量）生命值",
+  "item.moonstone.speed_metabolism.tool": "饱食度小于（数量）时消耗1点饥饿值",
+  "item.moonstone.cell_acid.tool": "腐蚀（数量）的被攻击生物装备",
+  "item.moonstone.cell_eyes.tool": "使半径（数量）的生物发光",
+  "item.moonstone.cell_digestion.tool": "加（数量）食物饱食度和饥饿值",
+  "item.moonstone.cell_cranial.tool": "加（数量）对头部伤害的抗性",
+  "item.moonstone.cell_compress.tool": "加（数量）的伤害反弹",
+  "item.moonstone.cell_flu.tool": "使半径（数量）的生物虚弱",
+  "item.moonstone.cell_constant.tool": "加（数量）的无敌帧",
+
+  "item.moonstone.blood_sun": "§4血日",
+  "item.moonstone.blood_jelly": "血浆果冻",
+  "item.blood_sun.tool.string": "杀死生物召唤末日之灵",
+  "entity.moonstone.sun": "末日之灵",
+  "error.moonstone.dna_box": "检测到未知物品ID",
+
+  "moonstone.difficulty.name.all": "的DNA序列",
+  "moonstone.difficulty.name.peaceful": "简单",
+  "moonstone.difficulty.name.easy": "普通",
+  "moonstone.difficulty.name.normal": "复杂",
+  "moonstone.difficulty.name.hard": "极度复杂",
+
+  "item.moonstone.cell_necrosis":"液化性坏死",
+  "item.moonstone.cell_digestion":"表皮消化",
+  "item.moonstone.cell_acid":"酸性液体逆流",
+  "item.moonstone.cell_eyes":"眼镜蛇式锁定",
+  "item.moonstone.cell_bone_add":"骨骼结构异化",
+  "item.moonstone.cell_sense":"感官系统强化",
+
+  "item.moonstone.cell_cranial":"脑组织转移",
+  "item.moonstone.cell_dna_suppression":"神经递质抑制",
+  "item.moonstone.cell_putrefactive":"热分解抑制",
+  "item.moonstone.cell_synthesis":"肽合成增强",
+
+  "item.moonstone.body_stone":"万魔石",
+
+  "moonstone.curse.name.meet": "肉瘤",
+  "moonstone.curse.name.all": "施加了诅咒[Ctrl]",
+  "moonstone.curse.name.die": "死灵",
+  "moonstone.curse.name.doctor": "巫医",
+
+  "moonstone.curse.name.cell_cell": "细胞",
+  "moonstone.curse.name.chromosome": "染色体",
+  "moonstone.curse.name.bone": "骨头",
+  "moonstone.curse.name.die_body": "尸体",
+
+  "item.moonstone.probability":"机运之石",
+
+
+
+  "item.probability.tool.string.1": "你的攻击伤害将在10%~200%之间浮动",
+  "item.probability.tool.string.2": "你受到的伤害将在25%~200%之间浮动",
+  "item.probability.tool.string.3": "每一点幸运，都会使最小值加1%",
+  "item.probability.tool.string.4": "对于万魔石",
+  "item.probability.tool.string.5": "获得的诅咒的最大和最小值加1",
+  "item.probability.tool.string.6": "每一点幸运都会使最大和最小值加5%",
+
+  "item.body_stone.tool.string": "这个物品有概率使箱子里的饰品附加负面附魔",
+  "item.body_stone.tool.string.1": "并且随机附加1~2个负面附魔",
+  "item.body_stone.tool.string.2": "作为补偿，每个具有负面附魔的物品，都会获得强大的增益",
+  "item.body_stone.tool.string.3": "每级附魔：",
+  "item.body_stone.tool.string.4": "  +0.45%伤害，最大生命; +0.1%暴击",
+  "item.body_stone.tool.string.5": "  +1%护甲",
+  "item.body_stone.tool.string.6": "  +2%挖掘速度",
+  "item.body_stone.tool.string.7": "  +1%抗击退",
+  "item.body_stone.tool.string.8": "  +0.15%速度，近战伤害，攻速",
+
+
+  "item.moonstone.luck_ring":"幸运魔戒",
+  "item.luck_ring.tool.string.1":"每5级经验",
+  "item.luck_ring.tool.string.2": "+1 幸运",
+
+  "item.moonstone.luck_stone":"幸运石头",
+  "item.luck_stone.tool.string.1":"每10幸运：",
+  "item.luck_stone.tool.string.2": "+1 抢夺和时运",
+
+  "moonstone.difficulty.name.god_loot_a": "异变",
+  "moonstone.difficulty.name.god_loot_b": "神创",
+  "moonstone.difficulty.name.god_loot_c": "未知",
+  "entity.moonstone.blood_bat": "暗影蝠",
+
+  "enchantment.moonstone.terror": "恐怖",
+  "enchantment.moonstone.threat": "威胁",
+
+  "item.moonstone.cell_compress":"致命基因压缩",
+  "item.moonstone.cell_preferential":"择优进化论",
+  "item.moonstone.cell_flu":"病毒性流感",
+  "item.moonstone.cell_constant":"常量因子激增",
+  "item.moonstone.cell_chromosome":"染色体结构变异",
+  "moonstone.curse.name.all.this": "这个物品被",
+  "item.deceased_contract.tool.string": "你可以在箱子里找到被诅咒的饰品",
+  "enchantment.moonstone.malice": "恶意",
+  "moonstone.difficulty.name.god": "类神",
+  "item.blood.tool.string.winds.1": "  50%的速度加成转换成攻击伤害",
+  "item.blood.tool.string.winds.2": "  如果你佩戴了 梦魇之眼 物品，则伤害加倍",
+
+
+  "item.moonstone.zombie_ring": "僵尸召集之戒",
+
+
+  "item.moonstone.probability_stone":"月之石",
+  "item.probability_stone.tool.string.1": "击中生物立即触发所有的斩杀效果，冷却20秒",
+
+  "item.moonstone.as_amout": "七剑修罗·剑阵之章",
+  "item.as_amout.tool.string.1": "攻击时从目标背后发射7把飞剑",
+  "item.as_amout.tool.string.2": "飞剑可以存在20秒",
+
+  "item.as_amout.tool.string.3": "前10秒会尝试攻击生物",
+  "item.as_amout.tool.string.4": "后10秒会尝试飞向玩家",
+
+  "item.as_amout.tool.string.5": "这些飞剑附带10%玩家攻击属性",
+  "item.as_amout.tool.string.6": "若拾取飞剑，则恢复5%最大生命值",
+
+  "item.as_amout.tool.string.7": "冷却5秒",
+
+  "item.moonstone.nine_sword_books": "九剑归一诀",
+
+  "item.moonstone.million": "七剑修罗·万法",
+  "item.million.tool.string.1": "这个盒子里存储了15把飞剑",
+  "item.million.tool.string.2": "每次全力斩击都会召唤3把",
+  "item.million.tool.string.3": "每当飞剑被拾取时都会恢复1把",
+  "item.million.tool.string.4": "每次拾取飞剑都会获得1%的伤害加成",
+  "item.million.tool.string.5": "持续10秒，最多叠加到50%",
+  "item.million.tool.string.6": "Shift",
+  "item.million.tool.string.7": "获得的加成：",
+  "item.million.tool.string.8": "储存的飞剑数量：",
+
+
+  "item.moonstone.twistedamout": "诺克萨斯纹章",
+
+  "item.moonstone.nine_sword_book": "九剑归一诀",
+  "item.nine_sword_book.tool.string.1": "快捷栏内每存在一把剑类武器：",
+  "item.nine_sword_book.tool.string.2": "伤害",
+  "item.nine_sword_book.tool.string.3": "攻速",
+  "item.nine_sword_book.tool.string.4": "速度",
+  "item.nine_sword_book.tool.string.5": "治疗",
+  "item.nine_sword_book.tool.string.6": "飞剑",
+
+  "item.nine_sword_book.tool.string.9": "造成伤害时有5%（x飞剑数量）的概率释放所有飞剑",
+  "item.nine_sword_book.tool.string.10": "飞剑会随着时间缓慢恢复",
+  "item.nine_sword_book.tool.string.11": "飞剑击中后恢复自身1%当前生命值",
+
+  "item.nine_sword_book.tool.string.12": "-25%所有伤害",
+  "item.nine_sword_book.tool.string.13": "-50%最大生命值",
+
+  "moonstone.jei.ectoplasmstone": "开局的随机护身符之一",
+  "moonstone.jei.twistedstone": "开局的随机护身符之一",
+
+  "moonstone.jei.necora.all": "需要佩戴Necora病毒才能发现于地牢，矿井之中",
+  "moonstone.jei.necora.treasure.all": "需要佩戴Necora病毒才能发现于宝藏战利品之中",
+  "moonstone.jei.necora.giant_nightmare.all": "需要佩戴梦魇巨人基因片段后才能发现于宝藏战利品之中",
+
+  "moonstone.jei.necora.bnabush.all": "需要佩戴Necora病毒才能发现于宝藏战利品之中",
+
+  "moonstone.jei.giant": "需要佩戴Necora病毒才能发现于宝藏战利品之中",
+  "moonstone.jei.giant_nightmare": "需要佩戴巨人僵尸基因片段和梦魇之眼再杀死坚守者有概率掉落",
+  "moonstone.jei.cell": "需要佩戴Necora病毒才能发现于宝藏战利品之中，佩戴后将无法再次获得",
+  "moonstone.jei.cell.all": "需要佩戴细胞重生基因佩戴才能发现于宝藏战利品之中",
+  "moonstone.jei.maulice.all": "杀死僵尸有可能掉落",
+  "moonstone.jei.blood": "需要佩戴血之魔盒杀死生物获取",
+
+  "moonstone.jei.bloodvirus.all": "需要佩戴暗影瘟疫才能发现于地牢，矿井之中",
+  "moonstone.jei.bloodvirus": "需要佩戴一个解锁所有药物的医药箱杀死末影龙来获取暗影基因，之后使用暗影基因右键Necora病毒获得暗影瘟疫",
+  "moonstone.jei.bloodvirus.treasure.all": "需要佩戴暗影瘟疫才能发现于宝藏之中",
+  "moonstone.jei.ectoplasm.all": "大部分灵质物品都可以吃，恢复大量饥饿值",
+  "moonstone.jei.ectoplasm.ectoplasmcloub": "可通过杀死生物获取，也可合成",
+  "moonstone.jei.ectoplasm.ectoplasmball": "可通过杀死生物获取，有极高的概率发现于战利品箱子里",
+  "moonstone.jei.loot.all": "有概率发现于战利品箱子里",
+  "moonstone.jei.maxamout": "佩戴三种颜色的符石，然后杀死远古守卫者",
+  "moonstone.jei.pain.all": "发现于下界",
+  "moonstone.jei.nanodoom.all": "发现在古城",
+  "moonstone.jei.wind_and_rain": "同时带上七剑修罗和骤雨然后摸地牢/矿井/宝藏/城市类型箱子",
+  "moonstone.jei.calcification": "： 受到350次伤害，需要佩戴医药箱",
+  "moonstone.jei.masticatory": "： 吃8个金苹果，需要佩戴医药箱",
+  "moonstone.jei.polyphagia": "： 吃个附魔金苹果，需要佩戴医药箱",
+  "moonstone.jei.quadriceps": "： 跳500次，需要佩戴医药箱",
+  "moonstone.jei.reanimation": "： 死掉一次，需要佩戴医药箱",
+
+  "moonstone.jei.nightmare_cube": "： ",
+  "moonstone.jei.nightmare_head":"： ",
+  "moonstone.jei.nightmare_heart": "： ",
+  "moonstone.jei.nightmare_orb":"： ",
+  "moonstone.jei.nightmareanchor": "： ",
+  "moonstone.jei.nightmarecharm":"： ",
+  "moonstone.jei.nightmareeye": "： ",
+  "moonstone.jei.nightmaremoai":"： ",
+  "moonstone.jei.nightmarerotten": "： ",
+  "moonstone.jei.nightmarestone":"： ",
+  "moonstone.jei.nightmaretreasure": "： ",
+  "moonstone.jei.nightmarewater":"： ",
+
+
+  "item.moonstone.owner_blood_eye":"渎圣者",
+  "moonstone.jei.item.moonstone.owner_blood_eye": "它发现于古城，但是需要佩戴封魔烛台才能发现\n\n减少20%血灵增生体的攻击间隔”",
+
+  "item.moonstone.owner_blood_attack_eye":"血灵咒",
+  "moonstone.jei.item.moonstone.owner_blood_attack_eye": "它发现于古城，但是需要佩戴封魔烛台才能发现\n\n增加10%血灵增生体的攻击间隔\n增加20%血灵伤害",
+
+  "item.moonstone.owner_blood_speed_eye":"刻画者",
+  "moonstone.jei.item.moonstone.owner_blood_speed_eye": "它发现于古城，但是需要佩戴封魔烛台才能发现\n\n减少50%血灵增生体的攻击间隔\n增加300%血珠速度\n但是发射的血珠不再会追踪生物",
+
+  "item.moonstone.owner_blood_boom_eye":"苦力",
+  "moonstone.jei.item.moonstone.owner_blood_boom_eye": "它发现于古城，但是需要佩戴封魔烛台才能发现\n\n血球会在击中时爆炸\n减少20%血珠速度\n增加200%血灵增生体的攻击间隔\n每次爆炸都相当于你发起了攻击\n\n我觉得你应该穿点防爆的东西....",
+
+  "item.moonstone.owner_blood_effect_eye":"判官",
+  "moonstone.jei.item.moonstone.owner_blood_effect_eye": "它发现于古城，但是需要佩戴封魔烛台才能发现\n\n血球会在击中时附加大量的负面效果\n减少50%血珠伤害",
+
+  "item.moonstone.owner_blood_earth":"乾坤",
+  "moonstone.jei.item.moonstone.owner_blood_earth": "它发现于古城，但是需要佩戴封魔烛台才能发现\n\n血灵增生体不会再攻击\n但会变成一个超级磁铁，它不仅可以吸引生物和掉落物并且还可以吸引然后吞噬弹射物\n吞噬弹射物恢复主人生命值\n\n你可以用来运送村民或者干什么别的",
+
+  "item.moonstone.owner_blood_vex": "鬼者",
+  "moonstone.jei.item.moonstone.owner_blood_vex": "它发现于古城，但是需要佩戴封魔烛台才能发现\n\n血珠击中后会恢复主人的生命值\n其数值取决于血灵增生体的伤害\n血灵增生体的伤害降低3点",
+
+
+
+  "item.moonstone.nightmare_base": "§4噩梦基座",
+  "item.nightmare_base.tool.string": "攻击伤害,生命值,护甲减少30%",
+  "item.nightmare_base.tool.string.1": "邪念体，血虐之铅，恶意之殇无效化",
+
+  "item.book.tool.string": "看看书里有什么！佩戴后+1饰品栏！",
+  "item.book.tool.string.nine_sword": "剑骨之力",
+  "item.book.tool.string.modi_blood": "血魔霸体",
+  "item.moonstone.nightmare_base_stone": "§4死兆方尖碑",
+  "item.nightmare_base_stone.tool.string": "满生命值时受到的伤害增加300%",
+  "item.nightmare_base_stone.tool.string.1": "但是你可以解锁下列物品",
+  "attribute.name.moonstone.break_speed": "挖掘速度",
+
+  "item.moonstone.end_bone":"§4末世脊骨",
+  "item.end_bone.tool.string": "满血时速度减少50%，受到的伤害减少80%",
+  "item.end_bone.tool.string.1": "满血时受到的伤害会以700%的比例反弹给攻击者",
+
+  "advancements.tooltip.end_bone.text": "获得这个物品",
+  "advancements.tooltip.end_bone.hand": "坚不可摧！",
+
+  "moonstone.jei.item.moonstone.end_bone": "杀死坚守者获取，一个玩家只能获得一个",
+
+
+
+
+  "item.moonstone.nightmare_base_stone_meet": "§4绝望共鸣",
+  "item.nightmare_base_stone_meet.tool.string.1": "强化下列饰品",
+  "item.moonstone.ectoplasmstar.nightmare_base_stone_meet": "幸运值加倍，且每点幸运加2.5%治疗",
+  "item.moonstone.ectoplasmstar.mayhemcrystal": "伤害增幅增加50%",
+  "item.moonstone.ectoplasmstar.maxamout": "所有效果BUFF等级加2",
+  "item.moonstone.ectoplasmstar.maxamout.1": "所有触发概加100%",
+  "item.moonstone.ectoplasmstar.maxamout.2": "反伤效果增加400%",
+
+
+  "item.moonstone.nightmare_base_stone_virus": "§4Nightecora病毒",
+  "item.nightmare_base_stone_virus.tool.string": "伤害增加100%",
+  "item.nightmare_base_stone_virus.tool.string.1": "治疗增加100%",
+  "item.nightmare_base_stone_virus.tool.string.2": "暴击增加100%",
+  "item.nightmare_base_stone_virus.tool.string.3": "受到任意伤害都会额外附加25%最大生命值的惩罚,不受任何加成影响",
+
+  "item.moonstone.nightmare_base_stone_brain": "§4末世之脑",
+  "item.nightmare_base_stone_brain.tool.string": "满血时伤害减少100%",
+  "item.nightmare_base_stone_brain.tool.string.1": "非满血状态伤害提高50%",
+  "item.nightmare_base_stone_brain.tool.string.2": "非满血状态抗性提高50%",
+  "item.moonstone.nightmare_virus":"噩梦之霍乱",
+
+
+
+  "item.moonstone.nightmare_base_black_eye": "§4邪念之窥眸",
+  "item.nightmare_base_black_eye.tool.string": "视力模糊,无药可医",
+  "item.nightmare_base_black_eye.tool.string.1": "但是你可以解锁下列物品",
+
+
+  "item.moonstone.nightmare_base_black_eye_eye": "§4惶恐肉瘤",
+  "item.nightmare_base_black_eye_eye.tool.string": "被注视的生物会无法移动",
+  "item.nightmare_base_black_eye_eye.tool.string.1": "同时他会获得大量负面BUFF",
+  "item.nightmare_base_black_eye_eye.tool.string.2": "当你看向任意生物时，你会获得30%的伤害加成",
+
+  "item.moonstone.nightmare_base_black_eye_red": "§4罪恶之红唇",
+  "item.nightmare_base_black_eye_red.tool.string": "每次杀死生物都会使所有属性增加5%",
+  "item.nightmare_base_black_eye_red.tool.string.1": "最多增加50%",
+  "item.nightmare_base_black_eye_red.tool.string.2": "这些属性会随时间减少",
+
+  "item.moonstone.nightmare_base_reversal":"§4颠倒之物",
+
+  "item.nightmare_base_reversal.tool.string": "每次死亡都会使属性降至0%",
+  "item.nightmare_base_reversal.tool.string.2": "复活后属性以每秒4%的速度逐渐恢复",
+  "item.nightmare_base_reversal.tool.string.3": "中毒对于你来说是致命的",
+
+  "item.moonstone.nightmare_base_reversal_orb": "§4反转球体",
+  "item.nightmare_base_reversal_orb.tool.string": "治疗只会减少生命值",
+  "item.nightmare_base_reversal_orb.tool.string.2": "每隔10秒重置生命值至满血",
+
+  "item.moonstone.nightmare_base_reversal_card": "§4不稳卡片",
+  "item.nightmare_base_reversal_card.tool.string": "每次复活时属性恢复速度减少至2%",
+  "item.nightmare_base_reversal_card.tool.string.2": "但是最多恢复到原先的150%",
+
+  "item.moonstone.nightmare_base_reversal_mysterious": "§4神秘之物",
+  "item.nightmare_base_reversal_mysterious.tool.string": "以减少10%全属性的代价抑制噩梦基座的负面效果",
+
+
+  "moonstone.jei.item.moonstone.nightmare_base.all": "，需要佩戴:",
+
+  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发不死图腾获取：中毒,凋零,缓慢,失明并且着火",
+  "moonstone.jei.item.moonstone.nightmare_base_black_eye_eye": "杀死坚守者",
+  "moonstone.jei.item.moonstone.nightmare_base_black_eye_red": "发现在古城，概率在5%左右",
+
+  "moonstone.jei.item.moonstone.nightmare_base_stone_brain": "杀死僵尸，获取材料，不过这种材料只能获得一个",
+  "moonstone.jei.item.moonstone.nightmare_base_stone_meet": "杀死末影龙",
+  "moonstone.jei.item.moonstone.nightmare_base_stone_virus": "被凋零攻击触发不死图腾",
+
+  "moonstone.jei.item.moonstone.nightmare_base_reversal_card": "杀死末影龙",
+  "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious": "在佩戴反转球体的情况下开古城的箱子，概率100%，但是只能获得一个",
+  "moonstone.jei.item.moonstone.nightmare_base_reversal_orb": "使用颠倒之物的中毒扣血杀死自己",
+
+  "item.moonstone.nightmare_base_redemption":"§4“救赎”",
+  "item.nightmare_base_redemption.tool.string": "增加15%噩梦基座的属性衰败",
+  "advancements.tooltip.nightmare_base_redemption.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption.hand": "谣言",
+
+  "item.moonstone.nightmare_base_redemption_deception":"§4欺骗",
+  "item.nightmare_base_redemption_deception.tool.string": "抵御必死伤害，恢复所有生命值",
+  "item.nightmare_base_redemption_deception.tool.string.1": "并获得7秒的无敌和平息附近生物的怒火，冷却60秒",
+  "advancements.tooltip.nightmare_base_redemption_deception.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption_deception.hand": "尘封的谣言",
+
+
+  "item.moonstone.nightmare_base_redemption_degenerate":"§4堕落",
+  "item.nightmare_base_redemption_degenerate.tool.string": "免疫魔法伤害",
+  "item.nightmare_base_redemption_degenerate.tool.string.1": "免疫坠落伤害",
+  "item.nightmare_base_redemption_degenerate.tool.string.2": "免疫火焰伤害",
+  "advancements.tooltip.nightmare_base_redemption_degenerate.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption_degenerate.hand": "暗影的赞歌",
+
+
+  "item.moonstone.nightmare_base_redemption_down_and_out":"§4落魄",
+  "item.nightmare_base_redemption_down_and_out.tool.string": "减少35%噩梦基座的属性衰败，若减少至负数，则转变成正属性加成",
+  "advancements.tooltip.nightmare_base_redemption_down_and_out.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption_down_and_out.hand": "历史长河",
+
+  "moonstone.jei.item.moonstone.nightmare_base_redemption_deception": "在有不详之兆的情况下杀死100个掠夺者",
+  "moonstone.jei.item.moonstone.nightmare_base_redemption_degenerate": "在有村庄英雄的情况下杀死100个村民",
+  "moonstone.jei.item.moonstone.nightmare_base_redemption_down_and_out": "完成一次失败的袭击",
+
+  "advancements.tooltip.nightmare_base_reversal_card.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_reversal_card.hand": "反转再反转",
+  "advancements.tooltip.nightmare_base_reversal_mysterious.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_reversal_mysterious.hand": "神秘的尸体",
+  "advancements.tooltip.nightmare_base_reversal_orb.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_reversal_orb.hand": "拙劣的演技",
+  "advancements.tooltip.nightmare_base_reversal.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_reversal.hand": "轮回",
+
+
+
+
+
+
+
+
+
+
+
+  "item.moonstone.nightmare_base_fool":"§4愚者之危",
+  "item.nightmare_base_fool.tool.string": "从2件开始，每多佩戴一件饰品都会使生命值减少1%",
+  "item.nightmare_base_fool.tool.string.1": "从5件开始，每多佩戴一件饰品都会使伤害减少2%",
+  "item.nightmare_base_fool.tool.string.2": "伤害和生命值惩罚不高于50%",
+
+  "advancements.tooltip.nightmare_base_fool.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool.hand": "抉择",
+
+  "item.moonstone.nightmare_base_fool_betray":"§4夺舍挂坠",
+  "item.nightmare_base_fool_betray.tool.string": "使附近的部分类型生物主动投靠于你",
+  "item.nightmare_base_fool_betray.tool.string.1": "投靠的生物获得与你一致的正面BUFF",
+  "item.nightmare_base_fool_betray.tool.string.2": "被夺舍侍从的主人将损失10%最大生命值",
+  "item.nightmare_base_fool_betray.tool.string.3": "每夺舍一个目标，冷却增加5秒",
+  "advancements.tooltip.nightmare_base_fool_betray.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool_betray.hand": "为什么会这样",
+
+
+  "item.moonstone.nightmare_base_fool_bone":"§4危险的头骨",
+  "item.nightmare_base_fool_bone.tool.string": "如果一个生物的攻击目标是你",
+  "item.nightmare_base_fool_bone.tool.string.1": "那么你对他的伤害翻倍",
+  "item.nightmare_base_fool_bone.tool.string.2": "并且攻击有30%的概率破除无敌帧",
+  "advancements.tooltip.nightmare_base_fool_bone.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool_bone.hand": "史莱姆有骨头吗",
+
+
+  "item.moonstone.nightmare_base_fool_soul":"§4幽怨之魂",
+  "item.nightmare_base_fool_soul.tool.string": "愚者之危的伤害处罚判定由5提高到14",
+  "item.nightmare_base_fool_soul.tool.string.1": "愚者之危的生命处罚判定由2提高到9",
+  "item.nightmare_base_fool_soul.tool.string.2": "每佩戴一件饰品，治疗增加3%",
+  "item.nightmare_base_fool_soul.tool.string.3": "每佩戴一件噩梦饰品，生命值增加6",
+  "advancements.tooltip.nightmare_base_fool_soul.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool_soul.hand": "历史长河",
+
+  "moonstone.jei.item.moonstone.nightmare_base_fool_betray": "杀死末影龙",
+  "moonstone.jei.item.moonstone.nightmare_base_fool_bone": "杀死坚守者",
+  "moonstone.jei.item.moonstone.nightmare_base_fool_soul": "杀死凋灵",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "item.moonstone.nightmare_base_insight":"§4噩梦洞悉者",
+  "item.nightmare_base_insight.tool.string": "附魔物品的附魔等级减少1级",
+  "item.nightmare_base_insight.tool.string.1": "附魔物品的附魔等级减少50%",
+
+  "advancements.tooltip.nightmare_base_insight.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight.hand": "蹉跎之苦",
+
+  "item.moonstone.nightmare_base_insight_drug":"§4疯狂灵药",
+  "item.nightmare_base_insight_drug.tool.string": "伤害,护甲,生命值提高100%",
+  "item.nightmare_base_insight_drug.tool.string.1": "但是每佩戴一件饰品，此奖励都将减少8%，最低到10%",
+  "advancements.tooltip.nightmare_base_insight_drug.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight_drug.hand": "长生者",
+
+
+  "item.moonstone.nightmare_base_insight_insane":"§4癫狂之石",
+  "item.nightmare_base_insight_insane.tool.string": "当你斩杀生物时",
+  "item.nightmare_base_insight_insane.tool.string.1": "根据死亡的生物的强度恢复生命值",
+  "item.nightmare_base_insight_insane.tool.string.2": "并且下一击的伤害提高150%",
+  "advancements.tooltip.nightmare_base_insight_insane.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight_insane.hand": "战神之石",
+
+
+  "item.moonstone.nightmare_base_insight_collapse":"§4瓦解魔镜",
+  "item.nightmare_base_insight_collapse.tool.string": "通用饰品栏的数量加倍",
+  "advancements.tooltip.nightmare_base_insight_collapse.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight_collapse.hand": "崩解之力",
+
+  "moonstone.jei.item.moonstone.nightmare_base_insight_drug": "完成医药箱的所有任务",
+  "moonstone.jei.item.moonstone.nightmare_base_insight_insane": "死掉或者跳入末地传送门回主世界",
+  "moonstone.jei.item.moonstone.nightmare_base_insight_collapse": "杀死末影龙",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "item.moonstone.nightmare_base_start":"§4噩梦之起始",
+  "item.nightmare_base_start.tool.string": "护甲减少70%",
+  "item.nightmare_base_start.tool.string.1": "每次受伤都会强制减少1点生命值",
+  "advancements.tooltip.nightmare_base_start.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start.hand": "”仙人“",
+
+  "item.moonstone.nightmare_base_start_pod":"§4不灭苞荚",
+  "item.nightmare_base_start_pod.tool.string": "抗性提高20%",
+  "advancements.tooltip.nightmare_base_start_pod.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start_pod.hand": "不灭花，不灭果",
+
+
+  "item.moonstone.nightmare_base_start_egg":"§4起源卵蛋",
+  "item.nightmare_base_start_egg.tool.string": "幸运加10",
+  "item.nightmare_base_start_egg.tool.string.1": "所有伤害加20%",
+  "item.nightmare_base_start_egg.tool.string.2": "治疗加50%",
+
+  "advancements.tooltip.nightmare_base_start_egg.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start_egg.hand": "懒蛋一个",
+
+
+  "item.moonstone.nightmare_base_start_power":"§4愕然的权力",
+  "item.nightmare_base_start_power.tool.string": "每存在一个正面药水状态",
+  "item.nightmare_base_start_power.tool.string.1": "你的所有属性提高2%",
+  "advancements.tooltip.nightmare_base_start_power.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start_power.hand": "崩解之力",
+
+  "moonstone.jei.item.moonstone.nightmare_base_start_power": "杀死坚守者",
+  "moonstone.jei.item.moonstone.nightmare_base_start_egg": "杀死嗅探兽",
+  "moonstone.jei.item.moonstone.nightmare_base_start_pod": "开地牢的箱子，概率25%，只能获取一个",
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "advancements.tooltip.nightmare_base.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base.hand": "起始",
+
+
+  "item.moonstone.nightmare_base_black_eye_heart": "§4死心之胚",
+  "item.nightmare_base_black_eye_heart.tool.string": "附近的生物受到的伤害提高25%",
+  "item.nightmare_base_black_eye_heart.tool.string.1": "他们恢复的生命值会到你身上",
+  "item.nightmare_base_black_eye_heart.tool.string.2": "且他们不再会受到任何治疗",
+  "item.nine_sword_book.tool.string.7": "下一次斩击会造成（快捷栏内所有剑类武器伤害的总和）的生命值",
+  "item.nine_sword_book.tool.string.8": "冷却",
+  "item.nine_sword_book.tool.string.14": "你无法使用非剑类武器",
+  "item.nine_sword_books.tool.string.14": "只能使用剑类武器",
+  "item.nine_sword_book_skill.tool.string.1": "剑仙",
+  "item.nine_sword_book_skill.tool.string.2": "剑神",
+  "item.nine_sword_book_skill.tool.string.3": "剑圣",
+  "item.nine_sword_book_skill.tool.string.4": "剑帝",
+  "item.nine_sword_book_skill.tool.string.5": "剑祖",
+  "sword.moonstone.lvl": "重",
+  "item.nine_sword_book_lvl.tool.string.1": "剑仙",
+  "item.nine_sword_book_lvl.tool.string.2": "修炼-基础",
+  "item.nine_sword_book_lvl.tool.string.4": "修炼-攻伤",
+  "item.nine_sword_book_lvl.tool.string.3": "修炼-攻速",
+  "item.twistedamout.tool.string": "每次攻击都有概率生成一个血球围绕你旋转",
+  "item.twistedamout.tool.string.1": "当血球数量超过8时",
+  "item.twistedamout.tool.string.2": "下一次斩击将造成4倍伤害",
+  "item.twistedamout.tool.string.3": "血球会随着时间的流失而被你吸收",
+  "item.twistedamout.tool.string.4": "每次吸收都会恢复一定的百分比生命值",
+  "item.twistedamout.tool.string.5": "每颗血球提供5%的伤害加成",
+  "item.twistedamout.tool.string.6": "血球爆炸时对3格内的生物造成中毒效果",
+  "item.twistedamout.tool.string.7": "杀死生物后再获得1~3颗血球",
+
+
+  "item.moonstone.nightmare_axe":"混沌战斧",
+
+  "item.nightmare_axe.tool.string": "杀死生物召唤混沌战斧，落下造成300%你的攻击伤害",
+  "item.nightmare_axe.tool.string.1": "附近每有一把混沌战斧：",
+  "item.nightmare_axe.tool.string.2": "+25%伤害",
+  "item.nightmare_axe.tool.string.3": "+25%治疗",
+  "item.nine_sword_book_skill.tool.string.attack_damage": "所有剑类斩击的伤害",
+
+  "item.moonstone.killer": "终结者头骨",
+  "item.killer.tool.string.1": "每损失1%的生命值：",
+  "item.killer.tool.string.2": "+1.25%治疗",
+  "item.killer.tool.string.3": "+0.8%速度",
+  "item.killer.tool.string.4": "+0.75%伤害",
+  "item.killer.tool.string.5": "+0.5%攻速",
+  "item.killer.tool.string.6": "+0.35%护甲",
+  "item.killer.tool.string.7": "现在",
+  "item.killer.tool.string.8": "治疗: ",
+  "item.killer.tool.string.9": "速度: ",
+  "item.killer.tool.string.10": "伤害: ",
+  "item.killer.tool.string.11": "攻速: ",
+  "item.killer.tool.string.12": "护甲: ",
+
+
+  "item.moonstone.twelve_sword":"诸神剑阵",
+
+  "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵",
+  "item.twelve_sword.tool.string.2": "在剑阵附近获得10%~120%的伤害加成",
+  "item.twelve_sword.tool.string.3": "剑阵内的生物会被死界剑坠落攻击",
+  "item.twelve_sword.tool.string.4": "数量取决于你生肖物品的数量",
+
+  "moonstone.twelve.1": "生肖：子",
+  "moonstone.twelve.2": "生肖：丑",
+  "moonstone.twelve.3": "生肖：寅",
+  "moonstone.twelve.4": "生肖：卯",
+  "moonstone.twelve.5": "生肖：辰",
+  "moonstone.twelve.6": "生肖：巳",
+  "moonstone.twelve.7": "生肖：午",
+  "moonstone.twelve.8": "生肖：未",
+  "moonstone.twelve.9": "生肖：申",
+  "moonstone.twelve.10": "生肖：酉",
+  "moonstone.twelve.11": "生肖：戌",
+  "moonstone.twelve.12": "生肖：亥",
+  "item.moonstone.belt":"珠宝腰带",
+
+  "curios.identifier.crystal": "水晶",
+  "curios.identifier.stone": "符石",
+
+
+  "item.moonstone.magnet": "磁铁",
+  "item.magnet.tool.string": "吸引半径8格内的掉落物",
+
+  "item.moonstone.rage_magnet": "狂暴磁铁",
+  "item.rage_magnet.tool.string": "吸引掉落物时恢复生命值",
+
+  "item.moonstone.rage_stone": "下界岩石",
+  "item.rage_stone.tool.string": "将附近掉落物形式的下界岩转换成经验球",
+
+  "item.moonstone.rage_lock": "狂暴锁",
+  "item.rage_lock.tool.string": "-75%治疗",
+  "item.rage_lock.tool.string.1": "+25%满血抗性",
+  "item.rage_lock.tool.string.2": "+10%所有伤害",
+  "item.rage_lock.tool.string.3": "+15%吸血",
+  "item.rage_lock.tool.string.4": "+40%杀戮吸血",
+
+
+  "item.moonstone.rage_eye": "偷盗者的狂暴之眼",
+  "item.rage_eye.tool.string": "手持眼睛左键生物偷取10%基础属性",
+  "item.rage_eye.tool.string.4": "盗取的属性最大值不超过你的25%",
+  "item.moonstone.ytgld_virus": "远古病毒",
+
+
+  "item.moonstone.rage_charm": "狂暴统治者徽章",
+  "item.rage_charm.tool.string": "杀死生物获得属性加成",
+  "item.rage_charm.tool.string.1": "随时间减少",
+  "entity.moonstone.line": "血灵之线",
+  "item.nine_sword_book.tool.string.all": "修炼到[剑帝][剑祖]级别后，属性增长降低22.5%”",
+
+
+  "item.moonstone.rage_crystal":"血怒水晶",
+  "item.moonstone.rage_crystal_big":"大血怒水晶",
+  "item.moonstone.rage_crystal_max":"战神晶体",
+
+
+  "item.moonstone.universe": "万象模板",
+  "item.universe.tool.string": "在物品栏内合成后",
+  "item.universe.tool.string.1": "自动获得该物品的一些特殊能力",
+  "item.universe.tool.string.2": "可以使用3次",
+  "item.universe.tool.string.3": "你与下列物品进行了合成：",
+  "item.universe.tool.null": "空的",
+
+  "attribute.name.moonstone.zombie_attack_damage": "僵尸的伤害",
+
+  "item.moonstone.muscle_conversion": "肌肉转化",
+  "item.muscle_conversion.tool.string": "玩家本体伤害降低20%",
+  "item.muscle_conversion.tool.string.1": "召唤的僵尸继承玩家50%的攻击力",
+  "item.muscle_conversion.tool.string.2": "召唤的僵尸伤害提高30%",
+
+
+  "item.moonstone.skin_glucose_fermentation": "肌糖原酵解",
+  "item.skin_glucose_fermentation.tool.string": "召唤的僵尸被杀死时",
+  "item.skin_glucose_fermentation.tool.string.1": "攻击者会受到基于僵尸50%最大生命值和护甲总和的伤害",
+
+  "item.moonstone.white_blood_cells_are_abruptly_reduced": "白细胞骤减",
+  "item.white_blood_cells_are_abruptly_reduced.tool.string": "召唤的僵尸会将15%恢复的生命值附加的玩家身上",
+  "item.white_blood_cells_are_abruptly_reduced.tool.string.1": "召唤的僵尸不再会恢复生命值",
+  "item.moonstone.the_god_sword": "恶意立方体",
+  "item.god_sword.tool.string": "在你的后面将漂浮神者剑魂",
+  "item.god_sword.tool.string.1": "他会缓慢恢复能量护盾，最大存储12面护盾",
+  "item.god_sword.tool.string.2": "护盾遭受攻击时，消耗能量并对攻击者造成250%的当量伤害并造成大量负面效果",
+  "item.god_sword.tool.string.3": "玩家将获得大量增益效果",
+  "item.god_sword.tool.string.4": "每有一面护盾都将每秒恢复玩家1%的最大生命值",
+  "item.god_sword.tool.string.5": "剑魂会附近目标并每次造成10%玩家攻击属性的伤害",
+  "item.god_sword.tool.string.6": "伤害会逐渐增加，剑魂的激光造成伤害相当于玩家发起了攻击",
+
+  "item.moonstone.the_owner_blood_stone": "连锁血石",
+  "item.the_owner_blood_stone.tool.string": "杀死生物产生血球",
+  "item.the_owner_blood_stone.tool.string.1": "血球将造成125%被杀生物生命值的伤害",
+  "item.the_owner_blood_stone.tool.string.2": "并冲向附近的生物",
+  "item.the_owner_blood_stone.tool.string.3": "血球相当于你发起了一次攻击",
+
+  "item.moonstone.phosphate_bond": "高能磷酸键断裂",
+  "item.phosphate_bond.tool.string": "召唤的僵尸死亡后回复玩家10%最大生命值",
+  "item.phosphate_bond.tool.string.1": "召唤的僵尸最少能承受6次伤害",
+  "item.phosphate_bond.tool.string.2": "召唤的僵尸不会恢复生命值",
+
+
+  "item.moonstone.chemical_compound": "化合物合成",
+  "item.chemical_compound.tool.string": "每存在一只细胞僵尸，治疗增加25%",
+  "item.chemical_compound.tool.string.1": "每存在一只巨型细胞僵尸，伤害提高20%",
+  "item.chemical_compound.tool.string.2": "僵尸受伤有5%的概率使主人受到50%的当量伤害",
+  "item.chemical_compound.tool.string.3": "主人的攻击不会触发",
+
+
+
+  "item.ytgld_virus.tool.string.1": "你真的能主宰世界吗？",
+  "item.ytgld_virus.tool.string.2": "研究点数：",
+  "item.ytgld_virus.tool.string.3":"病毒点数：" ,
+  "item.ytgld_virus.tool.string.4":"这是一个极为危险的病毒" ,
+  "item.ytgld_virus.tool.string.5":"你必须在规定时间内将研究点数达到100%" ,
+  "item.ytgld_virus.tool.string.6": "来解锁终极湮灭基因",
+  "item.ytgld_virus.tool.string.7":"研究点数会影响你的正常生理状态",
+  "item.ytgld_virus.tool.string.8":"病毒也会在你的体内复制影响正常生命体征",
+  "item.ytgld_virus.tool.string.9":"所以你必须与时间赛跑",
+  "item.ytgld_virus.tool.string.10": "已获得研究点数的负面效果：",
+  "item.ytgld_virus.tool.string.11": "生命值:",
+  "item.ytgld_virus.tool.string.12": "护甲值:",
+  "item.ytgld_virus.tool.string.13": "近战伤害:",
+  "item.ytgld_virus.tool.string.14": "病毒带来的负面效果：",
+  "item.ytgld_virus.tool.string.15": "速度:",
+  "item.ytgld_virus.tool.string.16": "治疗:",
+  "item.ytgld_virus.tool.string.17": "抗性:",
+  "item.ytgld_virus.tool.string.18": "攻击速度:",
+  "item.ytgld_virus.tool.string.19":"主宰者啊，为世界带来永恒的终极黑暗吧！" ,
+  "item.ytgld_virus.tool.string.20":"你获得了：" ,
+  "item.ytgld_virus.tool.string.21":  "+300% 对高生命值生物的伤害" ,
+  "item.ytgld_virus.tool.string.22":  "+250% 对怪物的伤害" ,
+  "item.ytgld_virus.tool.string.23":  "+225% 对友好生物的伤害" ,
+  "item.ytgld_virus.tool.string.24":  "+200% 对玩家的伤害" ,
+  "item.ytgld_virus.tool.string.25":  "+150% 护甲" ,
+  "item.ytgld_virus.tool.string.26":  "+100% 击退抗性" ,
+  "item.ytgld_virus.tool.string.27":  "+100% 水下速度" ,
+  "item.ytgld_virus.tool.string.28":  "+80% 生命值" ,
+  "item.ytgld_virus.tool.string.29":  "+70% 攻速" ,
+  "item.ytgld_virus.tool.string.30":  "+65% 治疗" ,
+  "item.ytgld_virus.tool.string.31":  "+20% 速度" ,
+  "item.ytgld_virus.tool.string.32":  "+50% 触及距离" ,
+  "item.ytgld_virus.tool.string.33":  "+25% 攻击距离" ,
+  "item.ytgld_virus.tool.string.34":  "+20% 抗性" ,
+  "item.ytgld_virus.tool.string.35": "每次死亡都会减少1%研究进度",
+  "item.ytgld_virus.tool.string.36": "吃下灵质立方来抑制病毒的复制速度",
+  "item.ytgld_virus.tool.string.eat": "吃下灵质立方来激活病毒！",
+
+
+  "item.ytgld_virus.tool.string.37": "在第一个阶段玩家需要杀死生物来增加点数",
+  "item.ytgld_virus.tool.string.38":"可以食用金苹果来降低病毒的增值速度",
+  "item.ytgld_virus.tool.string.39": "病毒增值速度为100%",
+  "item.ytgld_virus.tool.string.40": "研究点数达到阈值，需要杀死凋零来进化！",
+
+  "item.ytgld_virus.tool.string.41": "在第二个阶段玩家只能杀死亡灵来获取点数",
+  "item.ytgld_virus.tool.string.42":"只可以食用灵质立方来降低病毒的增值速度",
+  "item.ytgld_virus.tool.string.43": "每次死亡都会减少1%的研究点数",
+  "item.ytgld_virus.tool.string.44": "病毒增值速度为150%",
+  "item.ytgld_virus.tool.string.45": "研究点数达到阈值，需要杀死末影龙来进化！",
+
+
+  "item.ytgld_virus.tool.string.46": "这个阶段玩家可以杀死任何生物来获得点数",
+  "item.ytgld_virus.tool.string.47":"玩家不再可以减少病毒增值速度",
+  "item.ytgld_virus.tool.string.48": "来自病毒的所有属性衰败增加50%",
+  "item.ytgld_virus.tool.string.49": "病毒增值速度为200%",
+
+  "item.moonstone.raw": "原始人的愤怒",
+  "item.raw.tool.string": "所有模组的所有饰品无效化",
+
+  "moonstone.nine_sword_books.tool": "你必须使用剑类武器才能造成伤害",
+
+  "item.dnas.tool.string": "提示：使用药物粉碎盒粉碎基因物品",
+  "item.moonstone.undead_blood_charm":"决裁者徽章",
+  "item.undead_blood_charm.tool.string.1": "标记攻击者，每次你恢复生命值都会对他造成150%恢复量的伤害",
+  "item.undead_blood_charm.tool.string.2": "标记对你有仇恨的生物，每次恢复生命都会对他造成50%恢复量的伤害",
+  "item.undead_blood_charm.tool.string.3": "对亡灵造成额外50%的伤害",
+  "item.undead_blood_charm.tool.string.4": "治疗增加50%",
+  "item.undead_blood_charm.tool.string.5": "受到伤害增加40%",
+  "curios.modifiers.crystal": "佩戴水晶时",
+  "curios.modifiers.stone": "佩戴符石后",
+  "item.moonstone.immortal": "§4不朽轮回之印章",
+  "item.immortal.tool.string": "受到攻击有80%的概率规避并反弹50%的伤害给攻击者",
+  "item.immortal.tool.string.1": "如果攻击者生命值大于70%，则反弹150%的伤害并破除无敌帧",
+  "item.immortal.tool.string.2": "每隔5秒对周围生物施加一层枯朽Buff，最多达到5级",
+  "item.immortal.tool.string.3": "被施加的生物每级减少20%抗性,护甲,治疗和5%的伤害,移速,攻速",
+  "item.immortal.tool.string.4": "若你被杀死，则对攻击者造成20%当前生命值的穿透伤害并附加10级枯朽（10秒）",
+  "item.immortal.tool.string.5": "深渊和噩梦物品无效化",
+  "item.immortal.tool.string.6": "传闻掌握生死轮回之力的人...",
+  "item.immortal.tool.string.7": "即可规避因果的反噬...",
+  "item.immortal.tool.string.8": "但...代价是什么？"
+}
+
+
+

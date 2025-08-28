@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/dna",
+  "criteria": {
+    "germ": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:germ"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.germ.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:germ"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.germ"
+    }
+  },
+  "requirements": [
+    [
+      "germ"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+
+    "moonstone:batgene",
+    "moonstone:bloodgene",
+    "moonstone:flygene",
+    "moonstone:heathgene",
+    "moonstone:ragegene",
+    "moonstone:sleepgene",
+
+    "moonstone:ambush",
+    "moonstone:atpoverdose",
+    "moonstone:autolytic",
+    "moonstone:fermentation",
+    "moonstone:putrefactive",
+    "moonstone:regenerative",
+    "moonstone:weak",
+    "moonstone:spore_outbreak",
+    "moonstone:plague_book",
+    "moonstone:exercise_reinforcement",
+    "moonstone:detect",
+    "moonstone:bloodstain",
+    "moonstone:blood_stasis",
+    "moonstone:bone_structure",
+    "moonstone:mummification",
+    "moonstone:tumour",
+    "moonstone:organizational_regeneration"
+  ]
+}

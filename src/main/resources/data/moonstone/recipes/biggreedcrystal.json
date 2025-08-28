@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:greedcrystal"
+    },
+    {
+      "item": "moonstone:greedcrystal"
+    },
+    {
+      "item": "moonstone:ectoplasmcube"
+    }
+  ],
+  "result": {
+    "item": "moonstone:biggreedcrystal",
+    "count": 1
+  }
+}

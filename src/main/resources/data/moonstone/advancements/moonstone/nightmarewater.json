@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/nightmareeye",
+  "criteria": {
+    "nightmarewater": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmarewater"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare.all.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmarewater"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.moonstone.nightmarewater"
+    }
+  },
+  "requirements": [
+    [
+      "nightmarewater"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

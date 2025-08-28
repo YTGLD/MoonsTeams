@@ -1,0 +1,64 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:ytgld_virus",
+
+    "moonstone:nightmareanchor",
+    "moonstone:nightmarecharm",
+    "moonstone:nightmareeye",
+    "moonstone:nightmaremoai",
+    "moonstone:nightmarerotten",
+    "moonstone:nightmarestone",
+    "moonstone:nightmaretreasure",
+    "moonstone:nightmarewater",
+
+    "moonstone:raw",
+    "moonstone:blackeorb",
+    "moonstone:whiteorb",
+
+    "moonstone:bloodvirus",
+    "moonstone:necora",
+    "moonstone:nightmare_base",
+
+    "moonstone:blood_candle",
+    "moonstone:blood_magic_box",
+    "moonstone:blood_sun",
+    "moonstone:the_blood_book",
+    "moonstone:blood_amout",
+    "moonstone:blood_jelly",
+    "moonstone:blood_snake",
+    "moonstone:max_blood_cube",
+    "moonstone:max_eye",
+    "moonstone:the_prison_of_sin",
+
+
+
+    "moonstone:nine_sword_book",
+    "moonstone:nine_sword_books",
+
+
+    "moonstone:universe",
+
+    "moonstone:ectoplasmstone",
+    "moonstone:twistedstone",
+
+    "moonstone:maxamout",
+
+    "moonstone:plague",
+    "moonstone:plagues",
+    "moonstone:wind",
+
+    "moonstone:gorillacake",
+    "moonstone:nightmare_head",
+    "moonstone:nightmare_cube",
+    "moonstone:nano_box",
+
+    "moonstone:soulbook",
+
+    "moonstone:immortal",
+    "moonstone:twelve_sword",
+
+    "moonstone:at_a_book",
+    "moonstone:deceased_contract"
+  ]
+}

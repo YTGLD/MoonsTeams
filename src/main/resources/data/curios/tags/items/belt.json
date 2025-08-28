@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:as_amout",
+    "moonstone:ectoplasmapple",
+    "moonstone:ectoplasmbattery",
+    "moonstone:ectoplasmhorseshoe",
+
+    "moonstone:mbattery",
+    "moonstone:mblock",
+    "moonstone:mshell",
+    "moonstone:battery",
+    "moonstone:nanorobot",
+
+    "moonstone:belt",
+    "moonstone:soulbattery",
+    "moonstone:soulcube",
+
+    "moonstone:ectoplasmtree",
+    "moonstone:doomswoud"
+  ]
+}

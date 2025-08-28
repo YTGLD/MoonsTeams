@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:moonstone/nightmare_base_start",
+  "criteria": {
+    "nightmare_base_start_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmare_base_start_egg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare_base_start_egg.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+     "icon": {
+      "item":"moonstone:nightmare_base_start_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.nightmare_base_start_egg.hand"
+    }
+  },
+  "requirements": [
+    [
+      "nightmare_base_start_egg"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
