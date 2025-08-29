@@ -1702,10 +1702,9 @@
 
 
   "item.moonstone.universe": "万象模板",
-  "item.universe.tool.string": "在物品栏内合成后",
-  "item.universe.tool.string.1": "自动获得该物品的一些特殊能力",
-  "item.universe.tool.string.2": "可以使用3次",
-  "item.universe.tool.string.3": "你与下列物品进行了合成：",
+  "item.universe.tool.string": "每造成1种不同类型的伤害（例如弹射物，荆棘）",
+  "item.universe.tool.string.1": "你都会提高5%的所有伤害",
+  "item.universe.tool.string.2": "+10% 所有伤害",
   "item.universe.tool.null": "空的",
 
   "attribute.name.moonstone.zombie_attack_damage": "僵尸的伤害",
@@ -1812,6 +1811,7 @@
   "item.raw.tool.string": "所有模组的所有饰品无效化",
 
   "moonstone.nine_sword_books.tool": "你必须使用剑类武器才能造成伤害",
+  "effect.moonstone.elements": "元素",
 
   "item.dnas.tool.string": "提示：使用药物粉碎盒粉碎基因物品",
   "item.moonstone.undead_blood_charm":"决裁者徽章",

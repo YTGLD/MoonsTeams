@@ -21,7 +21,6 @@ import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
 import net.minecraft.client.renderer.ShaderInstance;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -40,7 +39,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
 
 @Mod(MoonStoneMod.MODID)
 public class MoonStoneMod {

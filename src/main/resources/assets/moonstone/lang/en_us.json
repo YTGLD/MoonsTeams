@@ -855,6 +855,7 @@
   "effect.moonstone.fear": "fear",
   "effect.moonstone.pain": "pain",
   "effect.moonstone.blood": "blood",
+  "effect.moonstone.elements": "elements",
 
 
   "item.max_sword.tool.string": "Each attack has a probability of generating a blood cell to rotate around you",
@@ -1719,9 +1720,9 @@
   "item.rage_lock.tool.string.4": "+40% killing lifesteal",
 
   "item.moonstone.universe": "Universe Template",
-  "item.universe.tool.string": "Automatically obtains special abilities of this item after synthesis in the inventory",
-  "item.universe.tool.string.1": "Can be used 3 times",
-  "item.universe.tool.string.2": "You have synthesized with the following items:",
+  "item.universe.tool.string": "没造成1中不同类型的伤害（例如弹射物，荆棘）",
+  "item.universe.tool.string.1": "你都会提高5%的所有伤害",
+  "item.universe.tool.string.2": "+10% 所有伤害",
   "item.universe.tool.null": "Empty",
 
   "attribute.name.moonstone.zombie_attack_damage": "Zombie's Damage",

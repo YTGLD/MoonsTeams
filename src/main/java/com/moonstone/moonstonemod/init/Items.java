@@ -40,6 +40,7 @@ import com.moonstone.moonstonemod.item.plague.medicine.med.*;
 import com.moonstone.moonstonemod.item.plague.mobitem.*;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
+import com.moonstone.moonstonemod.q.alchemy_pot;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -371,6 +372,10 @@ public class Items {
     public static final RegistryObject<Item> ytgld_virus =REGISTRY.register("ytgld_virus", ()->{
         return new ytgld_virus();
     });
+    public static final RegistryObject<Item> alchemy_pot =REGISTRY.register("alchemy_pot", alchemy_pot::new );
+
+
+
     public static final RegistryObject<Item> raw =REGISTRY.register("raw",raw::new );
 
     public static final RegistryObject<Item> sword =REGISTRY.register("sword",twelve_sword.sword::new );

@@ -44,6 +44,7 @@ import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
 import com.moonstone.moonstonemod.item.plague.mobitem.dna;
+import com.moonstone.moonstonemod.item.universe;
 import com.moonstone.moonstonemod.item.ytgld_virus;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
 import net.minecraft.ChatFormatting;
@@ -270,6 +271,7 @@ public class NewEvent {
         deceased_contract.attack(event);
         undead_blood_charm.LivingIncomingDamageEvent(event);
         ytgld_virus.LivingHurt(event);
+        universe.attack(event);
         if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get())!=null){
             float lvl = event.getEntity().getEffect(Effects.dead.get()).getAmplifier();
             lvl *= 0.2f;
