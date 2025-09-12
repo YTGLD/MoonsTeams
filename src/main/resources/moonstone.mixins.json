@@ -14,11 +14,18 @@
     "WardenMixin"
   ],
   "client": [
+
+    "LevelRendererMixin",
+    "PostChainMixin",
+
     "client.AbstractContainerScreenMixin",
     "client.GuiGraphicsMixin",
     "client.ItemRendererMixin",
     "client.LevelRendererMixin",
-    "client.LivingEntityRendererMixin"
+    "client.LivingEntityRendererMixin",
+
+    "t.GameRendererMixin",
+    "t.LevelRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

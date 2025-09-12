@@ -156,8 +156,12 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.9.0+1.20.1")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.9.0+1.20.1:api")
+
+
+    runtimeOnly  fg.deobf("top.theillusivec4.curios:curios-forge:5.9.0+1.20.1")
+    compileOnly  fg.deobf("top.theillusivec4.curios:curios-forge:5.9.0+1.20.1:api")
+
+
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE")
 

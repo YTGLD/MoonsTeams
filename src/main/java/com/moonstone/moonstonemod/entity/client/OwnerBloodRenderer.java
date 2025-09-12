@@ -8,6 +8,9 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.owner_blood;
+import com.moonstone.tbl.client.shader.LightSource;
+import com.moonstone.tbl.client.shader.ShaderHelper;
+import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;
@@ -34,7 +37,13 @@ public class OwnerBloodRenderer  extends EntityRenderer<owner_blood> {
         double x = Mth.lerp(p_114487_, entity.xOld, entity.getX());
         double y = Mth.lerp(p_114487_, entity.yOld, entity.getY());
         double z = Mth.lerp(p_114487_, entity.zOld, entity.getZ());
-
+        if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
+            WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
+            ShaderHelper.INSTANCE.require();
+            if (shader != null) {
+                shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 13, 2.7f, 0.2f, 0.2f));
+            }
+        }
         poseStack.pushPose();
         poseStack.translate(entity.getX()-x, entity.getY()-y,entity.getZ() -z);
 

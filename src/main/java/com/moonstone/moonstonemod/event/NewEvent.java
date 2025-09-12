@@ -77,6 +77,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
 import top.theillusivec4.curios.api.event.CurioEquipEvent;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
@@ -89,15 +90,12 @@ public class NewEvent {
     public static final String lootTable = "god_loot";
     public static final String die = "the_die";
     @SubscribeEvent
-    public  void CurioEquipEvent(CurioEquipEvent event){
-        LivingEntity entity = event.getSlotContext().entity();
-        ResourceLocation resourceLocation = ForgeRegistries.ITEMS.getKey(event.getStack().getItem());
-        if (resourceLocation == null)
-            return;
-        if ((resourceLocation.getNamespace().equals(MoonStoneMod.MODID) && entity instanceof ServerPlayer)) {
-            ServerPlayer player = (ServerPlayer)entity;
-            if (player.connection == null) {
-                event.setResult(Event.Result.ALLOW);
+    public  void CurioEquipEvent(CurioAttributeModifierEvent event){
+        if (event.getSlotContext().entity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.raw.get())) {
+                if (!event.getItemStack().is(Items.raw.get())){
+                    event.getModifiers().clear();;
+                }
             }
         }
     }

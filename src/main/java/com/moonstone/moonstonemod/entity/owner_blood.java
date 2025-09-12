@@ -48,7 +48,21 @@ public class owner_blood extends TamableAnimal {
         super.tick();
         this.setNoGravity(true);
 
-
+        {
+            Vec3 playerPos = this.position();
+            int range = 10;
+            List<owner_blood> imperialHematomas = this.level().getEntitiesOfClass(owner_blood.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+            for (owner_blood imperialHematoma : imperialHematomas){
+                if (imperialHematoma.getOwner()!= null &&this.getOwner()!=null) {
+                    if (!imperialHematoma.is(this)){
+                        if (imperialHematoma.getOwner().is(this.getOwner())){
+                            imperialHematoma.discard();
+                            return;
+                        }
+                    }
+                }
+            }
+        }
 
         LivingEntity owner = getOwner(); // 获取主人
         LivingEntity target = getTarget(); // 获取目标

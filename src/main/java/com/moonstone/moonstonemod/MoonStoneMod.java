@@ -20,6 +20,7 @@ import com.moonstone.moonstonemod.entity.client.SwordOfTwelveRenderer;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
+import com.moonstone.tbl.client.event.ClientRegistrationEvents;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -53,6 +54,13 @@ public class MoonStoneMod {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.fc);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigClient.fc);
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        {
+            ClientRegistrationEvents.initClient(modEventBus);
+        }
+
+
+
+
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new AllEvent());
         MinecraftForge.EVENT_BUS.register(new LootEvent());

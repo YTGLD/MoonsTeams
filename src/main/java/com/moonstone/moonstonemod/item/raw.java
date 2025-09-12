@@ -6,9 +6,7 @@ import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.AttReg;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -40,13 +38,13 @@ public class raw extends Item implements ICurioItem  {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
 
         linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid,
-                MoonStoneMod.MODID+":raw", 5, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                MoonStoneMod.MODID+":raw", Config.SERVER.raw .get(), AttributeModifier.Operation.MULTIPLY_TOTAL));
 
         linkedHashMultimap.put(AttReg.heal.get(), new AttributeModifier(uuid,
-                MoonStoneMod.MODID+":raw", 5, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                MoonStoneMod.MODID+":raw",  Config.SERVER.raw .get(), AttributeModifier.Operation.MULTIPLY_TOTAL));
 
         linkedHashMultimap.put(AttReg.all_attack.get(), new AttributeModifier(uuid,
-                MoonStoneMod.MODID+":raw", 5, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                MoonStoneMod.MODID+":raw",  Config.SERVER.raw .get(), AttributeModifier.Operation.MULTIPLY_TOTAL));
 
         return linkedHashMultimap;
     }

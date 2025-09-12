@@ -214,6 +214,9 @@ public class Config {
                 universe2 = BUILDER
                         .comment("万象模板的加伤害加成，单位%")
                         .defineInRange("universe2", 5, 0, 100000);
+                raw = BUILDER
+                        .comment("原始人的愤怒其伤害，治疗和最大生命")
+                        .defineInRange("raw", 5, 0, 100000f);
 
                 BUILDER.pop();
             }
@@ -260,6 +263,9 @@ public class Config {
     private static boolean validateItemName(final Object obj) {
         return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(new ResourceLocation(itemName));
     }
+
+    public   ForgeConfigSpec.DoubleValue raw;
+
     public   ForgeConfigSpec.IntValue universe;
     public   ForgeConfigSpec.IntValue universe2;
 

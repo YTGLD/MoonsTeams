@@ -9,6 +9,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
@@ -40,7 +41,15 @@ public class attack_blood extends ThrowableItemProjectile {
         this.setNoGravity(true);
 
     }
+    @Override
+    public boolean isInWater() {
+        return false;
+    }
 
+    @Override
+    public void move(MoverType type, Vec3 pos) {
+
+    }
     public LivingEntity getTarget() {
         return target;
     }

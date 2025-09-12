@@ -6,8 +6,12 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.entity.necora.cell_zombie;
 import com.moonstone.moonstonemod.entity.necora.nightmare_giant;
+import com.moonstone.tbl.client.shader.LightSource;
+import com.moonstone.tbl.client.shader.ShaderHelper;
+import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -37,9 +41,22 @@ public class CellZombieN extends MobRenderer<nightmare_giant, NModel<nightmare_g
     }
 
     @Override
+    public boolean shouldRender(nightmare_giant p_115468_, Frustum p_115469_, double p_115470_, double p_115471_, double p_115472_) {
+        return true;
+    }
+
+    @Override
     public void render(nightmare_giant nightmareGiant, float p_115456_, float p_115457_, PoseStack p_115458_, MultiBufferSource p_115459_, int p_115460_) {
         super.render(nightmareGiant, p_115456_, p_115457_, p_115458_, p_115459_, p_115460_);
         Vec3 playerPos = nightmareGiant.position();
+        if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
+            WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
+            ShaderHelper.INSTANCE.require();
+            if (shader != null) {
+                shader.addLight(new LightSource(nightmareGiant.getX(), nightmareGiant.getY(), nightmareGiant.getZ(), 12, 1.5f, 0.2f, 1.5f));
+            }
+        }
+
         float range =16;
         List<cell_zombie> entities =
                 nightmareGiant.level().getEntitiesOfClass(cell_zombie.class,

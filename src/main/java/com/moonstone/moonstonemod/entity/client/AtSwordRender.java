@@ -10,9 +10,13 @@ import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.AtSword;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.tbl.client.shader.LightSource;
+import com.moonstone.tbl.client.shader.ShaderHelper;
+import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
@@ -31,12 +35,24 @@ public class AtSwordRender <T extends AtSword> extends EntityRenderer<T> {
     }
 
     @Override
+    public boolean shouldRender(T p_114491_, Frustum p_114492_, double p_114493_, double p_114494_, double p_114495_) {
+        return super.shouldRender(p_114491_, p_114492_, p_114493_, p_114494_, p_114495_);
+    }
+
+    @Override
     public void render(T entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {
         setT(poseStack, entity, bufferSource);
         if (ConfigClient.Client.Shader.get()) {
             MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
         }
         if (entity.isNoGravity()){
+            if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
+                WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
+                ShaderHelper.INSTANCE.require();
+                if (shader != null) {
+                    shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 16, 0.2f, 0.2f, 3));
+                }
+            }
               poseStack.pushPose();
               poseStack.mulPose(Axis.YP.rotationDegrees(entity.tickCount*6));
               poseStack.scale(2,2,2);
@@ -48,6 +64,13 @@ public class AtSwordRender <T extends AtSword> extends EntityRenderer<T> {
               renderSphere1(poseStack, bufferSource, 111, 0.135f);
               poseStack.popPose();
         }else {
+            if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
+                WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
+                ShaderHelper.INSTANCE.require();
+                if (shader != null) {
+                    shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 4, 0.3f, 0.2f, 2));
+                }
+            }
               poseStack.pushPose();
               poseStack.scale(3,3,3);
               poseStack.translate(0, 0.45 - entity.tickCount / 150F, 0);

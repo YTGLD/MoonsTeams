@@ -1,0 +1,27 @@
+{
+  "targets": [
+    "swap"
+  ],
+  "passes": [
+    {
+      "name": "moonstone:light",
+      "intarget": "minecraft:main",
+      "outtarget": "swap",
+      "uniforms": [
+        {"name": "lightPos_X", "values": [ 0 ]},
+        {"name": "lightPos_Y", "values": [ 0 ]},
+        {"name": "lightPos_Z", "values": [ 0 ]}
+      ]
+    },
+    {
+      "name": "moonstone:light",
+      "intarget": "swap",
+      "outtarget": "minecraft:main",
+      "uniforms": [
+        {"name": "lightPos_X", "values": [ 0 ]},
+        {"name": "lightPos_Y", "values": [ 0 ]},
+        {"name": "lightPos_Z", "values": [ 0 ]}
+      ]
+    }
+  ]
+}

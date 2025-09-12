@@ -61,6 +61,7 @@ public class universe extends UnCommonItem implements Die {
                                     }
                                     damage *= l;
                                     event.setAmount(event.getAmount() * (1 + damage));
+                                    System.out.println(event.getAmount());
                                 }
                             }
                         }
