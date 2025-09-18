@@ -1,8 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem;
 
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import net.minecraft.world.entity.ai.attributes.Attribute;

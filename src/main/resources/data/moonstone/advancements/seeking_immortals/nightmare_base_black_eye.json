@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base",
+  "criteria": {
+    "nightmare_base_black_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmare_base_black_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare_base_black_eye.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmare_base_black_eye"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.nightmare_base_black_eye.hand"
+    }
+  },
+  "requirements": [
+    [
+      "nightmare_base_black_eye"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

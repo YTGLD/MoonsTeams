@@ -3,7 +3,6 @@ package com.moonstone.moonstonemod.item.maxitem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;

@@ -2,7 +2,6 @@ package com.moonstone.moonstonemod.mixin;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.item.maxitem.uncommon.plague;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -32,17 +31,6 @@ public class EntityMixin {
                 if (!(sword.getItem() instanceof SwordItem)){
                     player.displayClientMessage(Component.translatable("moonstone.nine_sword_books.tool").withStyle(ChatFormatting.RED), true);
 
-                    cir.setReturnValue(true);
-                }
-            }
-        }
-        if ((Entity) (Object) this instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_redemption_degenerate.get())) {
-                if (p_20122_.is(DamageTypes.MAGIC) ||
-                        p_20122_.is(DamageTypes.FALL) ||
-                        p_20122_.is(DamageTypes.ON_FIRE) ||
-                        p_20122_.is(DamageTypes.LAVA) ||
-                        p_20122_.is(DamageTypes.IN_FIRE)) {
                     cir.setReturnValue(true);
                 }
             }

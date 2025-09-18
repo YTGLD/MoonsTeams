@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "moonstone:greedcrystal"
+    },
+    "B": {
+      "item": "moonstone:ectoplasmcube"
+    },
+    "C": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    " A ",
+    "B B",
+    " C "
+  ],
+  "result": {
+    "item": "moonstone:mblock",
+    "count": 1
+  }
+}

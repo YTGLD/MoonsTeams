@@ -91,7 +91,6 @@ public class Tab {
                 b.accept(new ItemStack(Items.mother_cell.get()));
                 b.accept(new ItemStack(Items.disgusting_cells.get()));
                 b.accept(new ItemStack(Items.slime.get()));
-                b.accept(new ItemStack(Items.apple.get()));
                 b.accept(new ItemStack(Items.calcification.get()));
                 b.accept(new ItemStack(Items.masticatory.get()));
                 b.accept(new ItemStack(Items.polyphagia.get()));
@@ -157,7 +156,6 @@ public class Tab {
                 b.accept(new ItemStack(Items.evil_mob.get()));
                 b.accept(new ItemStack(Items.malice_die.get()));
                 b.accept(new ItemStack(Items.god_lead.get()));
-                b.accept(new ItemStack(Items.immortal.get()));
                 b.accept(new ItemStack(Items.nine_sword_books.get()));
                 b.accept(new ItemStack(Items.the_heart.get()));
                 b.accept(new ItemStack(Items.probability_stone.get()));
@@ -229,38 +227,6 @@ public class Tab {
                 b.accept(new ItemStack(Items.nightmare_heart.get()));
                 b.accept(new ItemStack(Items.nightmare_head.get()));
                 b.accept(new ItemStack(Items.nightmare_cube.get()));
-                b.accept(new ItemStack(Items.nightmare_base.get()));
-                b.accept(new ItemStack(Items.nightmare_base_black_eye.get()));
-                b.accept(new ItemStack(Items.nightmare_base_black_eye_eye.get()));
-                b.accept(new ItemStack(Items.nightmare_base_black_eye_heart.get()));
-                b.accept(new ItemStack(Items.nightmare_base_black_eye_red.get()));
-                b.accept(new ItemStack(Items.nightmare_base_stone.get()));
-                b.accept(new ItemStack(Items.nightmare_base_stone_meet.get()));
-                b.accept(new ItemStack(Items.nightmare_base_stone_virus.get()));
-                b.accept(new ItemStack(Items.nightmare_base_stone_brain.get()));
-                b.accept(new ItemStack(Items.end_bone.get()));
-                b.accept(new ItemStack(Items.nightmare_virus.get()));
-                b.accept(new ItemStack(Items.nightmare_base_reversal.get()));
-                b.accept(new ItemStack(Items.nightmare_base_reversal_orb.get()));
-                b.accept(new ItemStack(Items.nightmare_base_reversal_card.get()));
-                b.accept(new ItemStack(Items.nightmare_base_reversal_mysterious.get()));
-                b.accept(new ItemStack(Items.nightmare_base_redemption.get()));
-                b.accept(new ItemStack(Items.nightmare_base_redemption_deception.get()));
-                b.accept(new ItemStack(Items.nightmare_base_redemption_degenerate.get()));
-                b.accept(new ItemStack(Items.nightmare_base_redemption_down_and_out.get()));
-                b.accept(new ItemStack(Items.nightmare_base_fool.get()));
-                b.accept(new ItemStack(Items.nightmare_base_fool_soul.get()));
-                b.accept(new ItemStack(Items.nightmare_base_fool_betray.get()));
-                b.accept(new ItemStack(Items.nightmare_base_fool_bone.get()));
-                b.accept(new ItemStack(Items.nightmare_base_insight.get()));
-                b.accept(new ItemStack(Items.nightmare_base_insight_drug.get()));
-                b.accept(new ItemStack(Items.nightmare_base_insight_insane.get()));
-                b.accept(new ItemStack(Items.nightmare_base_insight_collapse.get()));
-                b.accept(new ItemStack(Items.nightmare_base_start.get()));
-                b.accept(new ItemStack(Items.nightmare_base_start_pod.get()));
-                b.accept(new ItemStack(Items.nightmare_base_start_egg.get()));
-                b.accept(new ItemStack(Items.nightmare_base_start_power.get()));
-
 
                 b.accept(new ItemStack(Items.magiceye.get()));
                 b.accept(new ItemStack(Items.magicstone.get()));

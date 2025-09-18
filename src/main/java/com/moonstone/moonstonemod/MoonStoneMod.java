@@ -21,12 +21,14 @@ import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
 import com.moonstone.tbl.client.event.ClientRegistrationEvents;
+import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -40,6 +42,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 import java.io.IOException;
+import java.util.function.Function;
 
 @Mod(MoonStoneMod.MODID)
 public class MoonStoneMod {
@@ -50,10 +53,18 @@ public class MoonStoneMod {
     public static final String MODID = "moonstone";
     public static final Logger LOGGER = LogUtils.getLogger();
     public MoonStoneMod() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        {
+            MinecraftForge.EVENT_BUS.register(new com.ytgld.seeking_immortals.event.old.NewEvent());
+            MinecraftForge.EVENT_BUS.register(new com.ytgld.seeking_immortals.event.old.AdvancementEvt());
+            com.ytgld.seeking_immortals.init.Effects.REGISTRY.register(modEventBus);
+            com.ytgld.seeking_immortals.init.Items.REGISTRY.register(modEventBus);
+
+            com.ytgld.seeking_immortals.init.Tab.TABS.register(modEventBus);
+        }
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.fc);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigClient.fc);
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         {
             ClientRegistrationEvents.initClient(modEventBus);
         }
@@ -68,7 +79,6 @@ public class MoonStoneMod {
         MinecraftForge.EVENT_BUS.register(new Tool());
         MinecraftForge.EVENT_BUS.register(new LootTableEvent());
         MinecraftForge.EVENT_BUS.register(new NewEvent());
-        MinecraftForge.EVENT_BUS.register(new AdvancementEvt());
         MinecraftForge.EVENT_BUS.register(new BookEvt());
         MinecraftForge.EVENT_BUS.register(new TextEvt());
         MinecraftForge.EVENT_BUS.register(new ZombieEvent());
@@ -94,6 +104,52 @@ public class MoonStoneMod {
         gen.addProvider(event.includeServer(),
                 new MoonRecipeProvider(packOutput));
 
+    }
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void RegisterClientTooltipComponentFactoriesEvent(RegisterClientTooltipComponentFactoriesEvent event){
+            event.register(ToolTip.class, Function.identity());
+        }
+        @SubscribeEvent
+        public static void EntityRenderersEvent(RegisterShadersEvent event) {
+            try {
+
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"rendertype_gateway"),
+                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_gateway);
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"rendertype_mls"),
+                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_mls);
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID, "rendertype_ging"),
+                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_ging);
+
+
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"trail"),
+                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_trail);
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"eye"),
+                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_EYE);
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"snake"),
+                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShader_snake);
+
+                event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                        new ResourceLocation(MODID,"p_blood"),
+                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_p_blood);
+
+            }catch (IOException exception){
+                exception.printStackTrace();
+            }
+        }
     }
     @Mod.EventBusSubscriber(
             modid = MODID,

@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_stone",
+  "criteria": {
+    "end_bone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:end_bone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.end_bone.text"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:end_bone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.end_bone.hand"
+    }
+  },
+  "requirements": [
+    [
+      "end_bone"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

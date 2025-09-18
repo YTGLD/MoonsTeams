@@ -4,13 +4,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.nightmare.Nightmare;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.extend.SuperNightmare;
-import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.SpawnUtil;
@@ -145,28 +142,11 @@ public class Handler {
             Optional<ICuriosItemHandler> curiosItemHandlerOptional = CuriosApi.getCuriosInventory(entity).resolve();
             if (curiosItemHandlerOptional.isPresent()) {
                 ICuriosItemHandler curiosItemHandler = curiosItemHandlerOptional.get();
-                if (!curiosItemHandler.isEquipped(Items.nightmare_base.get())) {
-                    if (!Config.SERVER.canUse.get()) {
-                        if (curio instanceof SuperNightmare) {
-                            return false;
-                        }
-                    }
-                }
                 if (!curiosItemHandler.isEquipped(Items.nightmareeye.get())) {
                     if (!Config.SERVER.canUseAbyss.get()) {
                         if (curio instanceof Nightmare) {
                             return false;
                         }
-                    }
-                }
-                if (curiosItemHandler.isEquipped(Items.immortal.get())) {
-                    if (curio instanceof nightmare) {
-                        return false;
-                    }
-                }
-                if (curiosItemHandler.isEquipped(Items.nightmare_base.get())) {
-                    if (curio == Items.evil_mob.get() || curio == Items.god_lead.get() || curio == Items.malice_die.get()) {
-                        return false;
                     }
                 }
                 if (curiosItemHandler.isEquipped(Items.maxamout.get())) {

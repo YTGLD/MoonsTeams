@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/root",
+  "criteria": {
+    "immortal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:immortal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.immortal.text"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:immortal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.immortal.hand"
+    }
+  },
+  "requirements": [
+    [
+      "immortal"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

@@ -4,7 +4,6 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.book;
 import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.init.moonstoneitem.BloodItem;
-import com.moonstone.moonstonemod.item.*;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
 import com.moonstone.moonstonemod.item.BloodVirus.botton;
 import com.moonstone.moonstonemod.item.BloodVirus.catalyzer;
@@ -18,28 +17,24 @@ import com.moonstone.moonstonemod.item.blood.*;
 import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
 import com.moonstone.moonstonemod.item.blood.magic.the_blood_book;
 import com.moonstone.moonstonemod.item.blood.magic.undead_blood_charm;
+import com.moonstone.moonstonemod.item.*;
 import com.moonstone.moonstonemod.item.decorated.deceased_contract;
 import com.moonstone.moonstonemod.item.ectoplasm.*;
 import com.moonstone.moonstonemod.item.ectoplasm.soul.soulbattery;
 import com.moonstone.moonstonemod.item.ectoplasm.soul.soulcube;
 import com.moonstone.moonstonemod.item.maulice.*;
-import com.moonstone.moonstonemod.item.maxitem.book.at_a_book;
-import com.moonstone.moonstonemod.item.maxitem.fortunecrystal;
 import com.moonstone.moonstonemod.item.maxitem.*;
-import com.moonstone.moonstonemod.item.maxitem.maxamout;
-import com.moonstone.moonstonemod.item.maxitem.mayhemcrystal;
+import com.moonstone.moonstonemod.item.maxitem.book.at_a_book;
 import com.moonstone.moonstonemod.item.maxitem.rage.*;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.common.*;
 import com.moonstone.moonstonemod.item.maxitem.uncommon.magnet;
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.item.nanodoom.*;
 import com.moonstone.moonstonemod.item.nightmare.*;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.end_bone;
 import com.moonstone.moonstonemod.item.plague.dna_box;
 import com.moonstone.moonstonemod.item.plague.medicine.med.*;
 import com.moonstone.moonstonemod.item.plague.mobitem.*;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
 import com.moonstone.moonstonemod.q.alchemy_pot;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -146,8 +141,6 @@ public class Items {
     public static final RegistryObject<Item> ragegene =REGISTRY.register("ragegene", com.moonstone.moonstonemod.item.BloodVirus.ragegene::new);
     public static final RegistryObject<Item> sleepgene =REGISTRY.register("sleepgene", com.moonstone.moonstonemod.item.BloodVirus.sleepgene::new);
     public static final RegistryObject<Item> medicinebox =REGISTRY.register("medicinebox",medicinebox::new);
-    public static final RegistryObject<Item> apple =REGISTRY.register("apple",apple::new);
-
 
 
 
@@ -302,45 +295,7 @@ public class Items {
 
 
 
-    public static final RegistryObject<Item> nightmare_base =REGISTRY.register("nightmare_base", nightmare_base::new);
-
-    public static final RegistryObject<Item> nightmare_base_black_eye_eye =REGISTRY.register("nightmare_base_black_eye_eye", com.moonstone.moonstonemod.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_eye::new);
-    public static final RegistryObject<Item> nightmare_base_black_eye_heart =REGISTRY.register("nightmare_base_black_eye_heart", com.moonstone.moonstonemod.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_heart::new);
-
-    public static final RegistryObject<Item> nightmare_base_black_eye_red =REGISTRY.register("nightmare_base_black_eye_red", com.moonstone.moonstonemod.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_red::new);
-    public static final RegistryObject<Item> nightmare_base_stone =REGISTRY.register("nightmare_base_stone", nightmare_base_stone::new);
-    public static final RegistryObject<Item> nightmare_base_stone_meet =REGISTRY.register("nightmare_base_stone_meet", com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_meet::new);
-
-    public static final RegistryObject<Item> nightmare_base_stone_virus =REGISTRY.register("nightmare_base_stone_virus", com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_virus::new);
-    public static final RegistryObject<Item> nightmare_base_stone_brain =REGISTRY.register("nightmare_base_stone_brain", com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_brain::new);
-    public static final RegistryObject<Item> nightmare_base_black_eye =REGISTRY.register("nightmare_base_black_eye", nightmare_base_black_eye::new);
-
-    public static final RegistryObject<Item> nightmare_virus =REGISTRY.register("nightmare_virus", com.moonstone.moonstonemod.item.nightmare.super_nightmare.extend.nightmare_virus::new);
-    public static final RegistryObject<Item> nightmare_base_reversal =REGISTRY.register("nightmare_base_reversal", nightmare_base_reversal::new);
-
-    public static final RegistryObject<Item> nightmare_base_reversal_orb =REGISTRY.register("nightmare_base_reversal_orb", com.moonstone.moonstonemod.item.nightmare.super_nightmare.reversal.nightmare_base_reversal_orb::new);
-    public static final RegistryObject<Item> nightmare_base_reversal_card =REGISTRY.register("nightmare_base_reversal_card", com.moonstone.moonstonemod.item.nightmare.super_nightmare.reversal.nightmare_base_reversal_card::new);
-    public static final RegistryObject<Item> nightmare_base_reversal_mysterious =REGISTRY.register("nightmare_base_reversal_mysterious", com.moonstone.moonstonemod.item.nightmare.super_nightmare.reversal.nightmare_base_reversal_mysterious::new);
-
-    public static final RegistryObject<Item> nightmare_base_redemption =REGISTRY.register("nightmare_base_redemption", nightmare_base_redemption::new);
-    public static final RegistryObject<Item> nightmare_base_redemption_deception =REGISTRY.register("nightmare_base_redemption_deception", com.moonstone.moonstonemod.item.nightmare.super_nightmare.redemption.nightmare_base_redemption_deception::new);
-    public static final RegistryObject<Item> nightmare_base_redemption_degenerate =REGISTRY.register("nightmare_base_redemption_degenerate", com.moonstone.moonstonemod.item.nightmare.super_nightmare.redemption.nightmare_base_redemption_degenerate::new);
-    public static final RegistryObject<Item> nightmare_base_redemption_down_and_out =REGISTRY.register("nightmare_base_redemption_down_and_out", com.moonstone.moonstonemod.item.nightmare.super_nightmare.redemption.nightmare_base_redemption_down_and_out::new);
-    public static final RegistryObject<Item> nightmare_base_fool =REGISTRY.register("nightmare_base_fool", nightmare_base_fool::new);
-    public static final RegistryObject<Item> nightmare_base_fool_soul =REGISTRY.register("nightmare_base_fool_soul", com.moonstone.moonstonemod.item.nightmare.super_nightmare.fool.nightmare_base_fool_soul::new);
-    public static final RegistryObject<Item> nightmare_base_fool_bone =REGISTRY.register("nightmare_base_fool_bone", com.moonstone.moonstonemod.item.nightmare.super_nightmare.fool.nightmare_base_fool_bone::new);
-    public static final RegistryObject<Item> nightmare_base_fool_betray =REGISTRY.register("nightmare_base_fool_betray", com.moonstone.moonstonemod.item.nightmare.super_nightmare.fool.nightmare_base_fool_betray::new);
-    public static final RegistryObject<Item> nightmare_base_insight =REGISTRY.register("nightmare_base_insight", nightmare_base_insight::new);
-    public static final RegistryObject<Item> nightmare_base_insight_drug =REGISTRY.register("nightmare_base_insight_drug", com.moonstone.moonstonemod.item.nightmare.super_nightmare.insight.nightmare_base_insight_drug::new);
-    public static final RegistryObject<Item> nightmare_base_insight_insane =REGISTRY.register("nightmare_base_insight_insane", com.moonstone.moonstonemod.item.nightmare.super_nightmare.insight.nightmare_base_insight_insane::new);
-    public static final RegistryObject<Item> nightmare_base_insight_collapse =REGISTRY.register("nightmare_base_insight_collapse", com.moonstone.moonstonemod.item.nightmare.super_nightmare.insight.nightmare_base_insight_collapse::new);
-    public static final RegistryObject<Item> nightmare_base_start =REGISTRY.register("nightmare_base_start", nightmare_base_start::new);
-    public static final RegistryObject<Item> nightmare_base_start_pod =REGISTRY.register("nightmare_base_start_pod", com.moonstone.moonstonemod.item.nightmare.super_nightmare.start.nightmare_base_start_pod::new);
-    public static final RegistryObject<Item> nightmare_base_start_egg =REGISTRY.register("nightmare_base_start_egg", com.moonstone.moonstonemod.item.nightmare.super_nightmare.start.nightmare_base_start_egg::new);
-
-    public static final RegistryObject<Item> nightmare_base_start_power =REGISTRY.register("nightmare_base_start_power", com.moonstone.moonstonemod.item.nightmare.super_nightmare.start.nightmare_base_start_power::new);
     public static final RegistryObject<Item> dna_box =REGISTRY.register("dna_box", dna_box::new);
-    public static final RegistryObject<Item> immortal =REGISTRY.register("immortal", immortal::new);
     public static final RegistryObject<Item> killer =REGISTRY.register("killer", killer::new);
     public static final RegistryObject<Item> nightmare_axe =REGISTRY.register("nightmare_axe", nightmare_axe::new);
 
@@ -385,7 +340,7 @@ public class Items {
     public static final RegistryObject<Item> god_sword_ =REGISTRY.register("god_sword",twelve_sword.god_sword::new );
     public static final RegistryObject<Item> belt =REGISTRY.register("belt",belt::new );
     public static final RegistryObject<Item> twelve_sword_ =REGISTRY.register("twelve_sword", twelve_sword::new);
-    public static final RegistryObject<Item> end_bone =REGISTRY.register("end_bone", end_bone::new);
+
 
     public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.moonstoneitem.gorillacake::new);
 

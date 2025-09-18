@@ -8,7 +8,6 @@ import com.moonstone.moonstonemod.entity.other.nightmare_entity;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
-import com.moonstone.moonstonemod.moonstoneitem.INightmare;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;

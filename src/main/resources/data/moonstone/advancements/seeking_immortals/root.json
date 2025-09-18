@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "root": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmare_base"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/end_stone_bricks.png",
+    "description": {
+      "text": "§4Nightmare"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmare_base"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "§4Nightmare"
+    }
+  },
+  "requirements": [
+    [
+      "root"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

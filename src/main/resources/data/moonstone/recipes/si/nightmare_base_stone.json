@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:nightmare_base_black_eye_eye"
+    },
+    {
+      "item": "moonstone:nightmare_base_black_eye_heart"
+    },
+    {
+      "item": "moonstone:nightmare_base_black_eye_red"
+    }
+  ],
+  "result": {
+    "item": "moonstone:nightmare_base_stone"
+  }
+}

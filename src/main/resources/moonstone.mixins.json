@@ -11,19 +11,27 @@
     "ItemStackMixin",
     "LivingEntityMixin",
     "PlayerMixin",
-    "WardenMixin"
+    "WardenMixin",
+    "si.mixin.EnchantmentMenuMixin",
+    "si.mixin.EntityMixin",
+    "si.mixin.LivingEntityMixin",
+    "si.mixin.MobEffectInstanceMixin"
   ],
   "client": [
-
     "LevelRendererMixin",
     "PostChainMixin",
-
     "client.AbstractContainerScreenMixin",
     "client.GuiGraphicsMixin",
     "client.ItemRendererMixin",
     "client.LevelRendererMixin",
     "client.LivingEntityRendererMixin",
-
+    "si.mixin.client.AbstractContainerScreenMixin",
+    "si.mixin.client.AdvancementWidgetMixin",
+    "si.mixin.client.ATabMixin",
+    "si.mixin.client.ChestRendererMixin",
+    "si.mixin.client.GameRendererMixin",
+    "si.mixin.client.GuiGraphicsMixin",
+    "si.mixin.client.LivingEntityRendererMixin",
     "t.GameRendererMixin",
     "t.LevelRendererMixin"
   ],

@@ -3,8 +3,6 @@ package com.moonstone.moonstonemod.entity.bloodvruis;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.entity.necora.small_zombie;
-import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;

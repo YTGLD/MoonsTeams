@@ -1,7 +1,6 @@
 package com.moonstone.moonstonemod.event;
 
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.DNAItems;
@@ -13,33 +12,21 @@ import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.gia
 import com.moonstone.moonstonemod.item.TheNecora.small.enhancemen;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.blood.*;
-import com.moonstone.moonstonemod.item.blood.magic.undead_blood_charm;
-import com.moonstone.moonstonemod.item.decorated.deceased_contract;
-import com.moonstone.moonstonemod.item.maxitem.*;
 import com.moonstone.moonstonemod.item.blood.magic.blood_magic_box;
 import com.moonstone.moonstonemod.item.blood.magic.blood_sun;
+import com.moonstone.moonstonemod.item.blood.magic.undead_blood_charm;
+import com.moonstone.moonstonemod.item.decorated.deceased_contract;
 import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_book;
 import com.moonstone.moonstonemod.item.maxitem.book.nine_sword_books;
+import com.moonstone.moonstonemod.item.maxitem.god_lead;
+import com.moonstone.moonstonemod.item.maxitem.malice_die;
 import com.moonstone.moonstonemod.item.maxitem.rage.rage_charm;
 import com.moonstone.moonstonemod.item.maxitem.rage.rage_lock;
 import com.moonstone.moonstonemod.item.maxitem.rage.rage_magnet;
+import com.moonstone.moonstonemod.item.maxitem.twelve_sword;
 import com.moonstone.moonstonemod.item.nanodoom.as_amout;
 import com.moonstone.moonstonemod.item.nanodoom.million;
 import com.moonstone.moonstonemod.item.nightmare.*;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.*;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.extend.SuperNightmare;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_eye;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_heart;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_red;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.fool.nightmare_base_fool_bone;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.insight.nightmare_base_insight_insane;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.redemption.nightmare_base_redemption_deception;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.reversal.nightmare_base_reversal_orb;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.start.nightmare_base_start_pod;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.end_bone;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_brain;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_meet;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_virus;
 import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
@@ -51,8 +38,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
@@ -61,9 +46,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
@@ -73,32 +55,17 @@ import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
-import top.theillusivec4.curios.api.event.CurioEquipEvent;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.Map;
 
-import static com.moonstone.moonstonemod.MoonStoneMod.LOGGER;
-
 public class NewEvent {
     public static final String lootTable = "god_loot";
     public static final String die = "the_die";
-    @SubscribeEvent
-    public  void CurioEquipEvent(CurioAttributeModifierEvent event){
-        if (event.getSlotContext().entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.raw.get())) {
-                if (!event.getItemStack().is(Items.raw.get())){
-                    event.getModifiers().clear();;
-                }
-            }
-        }
-    }
+
     @SubscribeEvent
     public  void RightClickItem(PlayerInteractEvent.RightClickItem event){
         max_blood_cube.RightClickItem(event);
@@ -113,8 +80,6 @@ public class NewEvent {
         pain_candle.Heal(event);
         nightmare_head.LivingHealEvent(event);
         pain_ring.Heal(event);
-        nightmare_base_black_eye_heart.heal(event);
-        nightmare_base_reversal_orb.LivingHealEvent(event);
         nightmare_axe.heals(event);
         undead_blood_charm.LivingHealEvent(event);
         rage_lock.LivingHealEvent(event);
@@ -160,15 +125,6 @@ public class NewEvent {
     public void Night(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
         Player player = event.getEntity();
-        if (stack.getItem() instanceof SuperNightmare){
-            if (!Handler.hascurio(player,Items.nightmare_base.get())) {
-                event.getToolTip().add(1, Component.literal(""));
-                event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(ChatFormatting.DARK_RED));
-            }else {
-                event.getToolTip().add(1, Component.literal(""));
-                event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
-            }
-        }
         if (stack.getItem() instanceof Nightmare){
             if (!Handler.hascurio(player,Items.nightmareeye.get())) {
                 event.getToolTip().add(1, Component.literal(""));
@@ -178,61 +134,8 @@ public class NewEvent {
                 event.getToolTip().add(1, Component.translatable("moonstone.nightmare.name").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
             }
         }
-
-        if (Handler.hascurio(player,Items.nightmare_base_stone_meet.get())){
-            if (stack.is(Items.ectoplasmstar.get())){
-                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.nightmare_base_stone_meet").withStyle(ChatFormatting.DARK_RED));
-            }
-            if (stack.is(Items.mayhemcrystal.get())){
-                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.mayhemcrystal").withStyle(ChatFormatting.DARK_RED));
-
-            }
-            if (stack.is(Items.maxamout.get())){
-                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.maxamout").withStyle(ChatFormatting.DARK_RED));
-                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.maxamout.1").withStyle(ChatFormatting.DARK_RED));
-                event.getToolTip().add(Component.translatable("item.moonstone.ectoplasmstar.maxamout.2").withStyle(ChatFormatting.DARK_RED));
-            }
-        }
-
     }
-    @OnlyIn(Dist.CLIENT)
-    @SubscribeEvent
-    public void RenderTooltipEven4t(RenderTooltipEvent.Color tooltipEvent){
-        ItemStack stack =  tooltipEvent.getItemStack();
-        if (stack.is(Items.ectoplasmstar.get())){
-            if (stack.getTag()!=null){
-                if (stack.getTag().getBoolean(nightmare_base_stone_meet.curse)){
-                    tooltipEvent.setBorderEnd(0xFFff70b2);
-                    tooltipEvent.setBorderStart(0xFFff70b2);
 
-                    tooltipEvent.setBackgroundEnd(0xFF230613);
-                    tooltipEvent.setBackgroundStart(0xFF230613);
-                }
-            }
-        }
-        if (stack.is(Items.mayhemcrystal.get())){
-            if (stack.getTag()!=null){
-                if (stack.getTag().getBoolean(nightmare_base_stone_meet.curse)){
-                    tooltipEvent.setBorderEnd(0xFFff70b2);
-                    tooltipEvent.setBorderStart(0xFFff70b2);
-
-                    tooltipEvent.setBackgroundEnd(0xFF230613);
-                    tooltipEvent.setBackgroundStart(0xFF230613); }
-            }
-        }
-        if (stack.is(Items.maxamout.get())){
-            if (stack.getTag()!=null){
-                if (stack.getTag().getBoolean(nightmare_base_stone_meet.curse)){
-                    tooltipEvent.setBorderEnd(0xFFff70b2);
-                    tooltipEvent.setBorderStart(0xFFff70b2);
-
-                    tooltipEvent.setBackgroundEnd(0xFF230613);
-                    tooltipEvent.setBackgroundStart(0xFF230613);
-
-                }
-            }
-        }
-    }
     @SubscribeEvent
     public void LivingHurtEvent(LivingHurtEvent event){
         nightmare_heart.NigH(event);
@@ -249,34 +152,17 @@ public class NewEvent {
         million.hurt(event);
         nine_sword_book.att(event);
         nine_sword_books.att(event);
-        nightmare_base_fool_bone.attLook(event);
-        nightmare_base_black_eye_eye.attLook(event);
-        nightmare_base_black_eye_heart.hurt(event);
-        nightmare_base_insight_insane.damage(event);
-        nightmare_base_start_pod.damage(event);
-        nightmare_base_stone_brain.hurts(event);
-        nightmare_base_stone_virus.aVoid(event);
-        nightmare_base_stone.LivingHurtEvent(event);
+
         dna.hur(event);
         god_lead.hurtS(event);
         malice_die.att(event);
         nightmare_axe.att(event);
-        nightmare_base_redemption_deception.LivingIncomingDamageEvent(event);
-        immortal.hEvt(event);
-        end_bone.hurts(event);
         twelve_sword.att(event);
         rage_lock.LivingIncomingDamageEvent(event);
         deceased_contract.attack(event);
         undead_blood_charm.LivingIncomingDamageEvent(event);
         ytgld_virus.LivingHurt(event);
         universe.attack(event);
-        if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get())!=null){
-            float lvl = event.getEntity().getEffect(Effects.dead.get()).getAmplifier();
-            lvl *= 0.2f;
-            event.setAmount(event.getAmount()*(1+lvl));
-
-        }
-
 
 
         if (event.getSource().getEntity() instanceof Player living) {
@@ -315,11 +201,8 @@ public class NewEvent {
         blood_magic_box.Did(event);
         nine_sword_book.die(event);
         blood_sun.Did(event);
-        nightmare_base_black_eye_red.kill(event);
-        nightmare_base_insight_insane.LivingDeathEvents(event);
         dna.dieD(event);
         nightmare_axe.Nig(event);
-        immortal.livDead(event);
         rage_charm.die(event);
         rage_lock.LivingDeathEvent(event);
         deceased_contract.Did(event);

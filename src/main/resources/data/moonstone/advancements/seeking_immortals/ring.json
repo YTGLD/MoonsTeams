@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_insight",
+  "criteria": {
+    "ring": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:ring"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.ring.text"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:ring"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.ring.hand"
+    }
+  },
+  "requirements": [
+    [
+      "ring"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

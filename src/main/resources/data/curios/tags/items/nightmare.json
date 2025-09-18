@@ -5,30 +5,54 @@
     "moonstone:nightmare_base_black_eye_eye",
     "moonstone:nightmare_base_black_eye_heart",
     "moonstone:nightmare_base_black_eye_red",
+
     "moonstone:nightmare_base_stone",
     "moonstone:nightmare_base_stone_meet",
     "moonstone:nightmare_base_stone_virus",
     "moonstone:nightmare_base_stone_brain",
+
     "moonstone:nightmare_base_reversal",
     "moonstone:nightmare_base_reversal_orb",
     "moonstone:nightmare_base_reversal_card",
     "moonstone:nightmare_base_reversal_mysterious",
+
     "moonstone:nightmare_base_redemption",
     "moonstone:nightmare_base_redemption_deception",
     "moonstone:nightmare_base_redemption_degenerate",
     "moonstone:nightmare_base_redemption_down_and_out",
+
     "moonstone:nightmare_base_fool",
     "moonstone:nightmare_base_fool_soul",
     "moonstone:nightmare_base_fool_bone",
     "moonstone:nightmare_base_fool_betray",
+
     "moonstone:nightmare_base_insight",
     "moonstone:nightmare_base_insight_drug",
     "moonstone:nightmare_base_insight_insane",
     "moonstone:nightmare_base_insight_collapse",
+
     "moonstone:nightmare_base_start",
     "moonstone:nightmare_base_start_pod",
     "moonstone:nightmare_base_start_egg",
     "moonstone:nightmare_base_start_power",
-    "moonstone:end_bone"
+    "moonstone:wolf",
+
+    "moonstone:tricky_puppets",
+    "moonstone:end_bone",
+    "moonstone:candle",
+    "moonstone:apple",
+    "moonstone:ring",
+    "moonstone:hypocritical_self_esteem",
+
+    "moonstone:falling_immortals",
+
+    "moonstone:disintegrating_stone",
+
+    "moonstone:blood_god",
+    "moonstone:lead",
+
+    "moonstone:defend_against_runestone",
+    "moonstone:revive_runestone",
+    "moonstone:strengthen_runestone"
   ]
 }

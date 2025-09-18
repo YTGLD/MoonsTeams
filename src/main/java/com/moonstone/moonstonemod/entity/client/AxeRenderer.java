@@ -38,7 +38,7 @@ public class AxeRenderer<T extends axe> extends EntityRenderer<T> {
     }
     @Override
     public boolean shouldRender(T p_114491_, Frustum p_114492_, double p_114493_, double p_114494_, double p_114495_) {
-        return super.shouldRender(p_114491_, p_114492_, p_114493_, p_114494_, p_114495_);
+        return true;
     }
     @Override
     public void render(T entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {

@@ -1,7 +1,7 @@
 package com.moonstone.moonstonemod.mixin.client;
 
-import com.moonstone.moonstonemod.client.renderer.IAbstractContainerScreen;
 import com.moonstone.moonstonemod.client.renderer.GuiHandler;
+import com.moonstone.moonstonemod.client.renderer.IAbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -11,14 +11,11 @@ import net.minecraft.world.inventory.Slot;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Mixin(AbstractContainerScreen.class)
 public abstract class AbstractContainerScreenMixin <T extends AbstractContainerMenu> extends Screen implements IAbstractContainerScreen {

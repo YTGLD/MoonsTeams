@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:nightmare_base_start_pod"
+    },
+    {
+      "item": "moonstone:nightmare_base_start_egg"
+    },
+    {
+      "item": "moonstone:nightmare_base_start_power"
+    }
+  ],
+  "result": {
+    "item": "moonstone:nightmare_base_black_eye"
+  }
+}

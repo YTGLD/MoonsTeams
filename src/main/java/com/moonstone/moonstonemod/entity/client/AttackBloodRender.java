@@ -8,7 +8,6 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.attack_blood;
-import com.moonstone.moonstonemod.entity.owner_blood;
 import com.moonstone.tbl.client.shader.LightSource;
 import com.moonstone.tbl.client.shader.ShaderHelper;
 import com.moonstone.tbl.client.shader.postprocessing.WorldShader;

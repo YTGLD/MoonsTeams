@@ -28,7 +28,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class owner_blood extends TamableAnimal {
     public owner_blood(EntityType<? extends owner_blood> p_21803_, Level p_21804_) {

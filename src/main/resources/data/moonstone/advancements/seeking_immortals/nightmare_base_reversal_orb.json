@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_reversal_mysterious",
+  "criteria": {
+    "nightmare_base_reversal_orb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmare_base_reversal_orb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare_base_reversal_orb.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmare_base_reversal_orb"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.nightmare_base_reversal_orb.hand"
+    }
+  },
+  "requirements": [
+    [
+      "nightmare_base_reversal_orb"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

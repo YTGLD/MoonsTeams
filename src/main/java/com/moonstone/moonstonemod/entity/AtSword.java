@@ -1,8 +1,8 @@
 package com.moonstone.moonstonemod.entity;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import com.moonstone.moonstonemod.init.Effects;
 import com.moonstone.moonstonemod.init.EntityTs;
+import com.ytgld.seeking_immortals.init.Effects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;

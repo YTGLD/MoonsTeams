@@ -4,12 +4,12 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.event.AdvancementEvt;
 import com.moonstone.moonstonemod.event.BookEvt;
 import com.moonstone.moonstonemod.event.NewEvent;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
 import com.moonstone.moonstonemod.moonstoneitem.Iplague;
+import com.ytgld.seeking_immortals.event.old.AdvancementEvt;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -27,8 +27,12 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class DungeonLoot extends LootModifier {
@@ -119,10 +123,6 @@ public class DungeonLoot extends LootModifier {
                     }
                 }
                 if (idSting.contains("dungeon") || idSting.contains("mineshaft") || idSting.contains("city")||idSting.contains("treasure")) {
-                    AdvancementEvt.addLoot(generatedLoot,entity,5);
-                    AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(generatedLoot,entity);
-                    AdvancementEvt.nightmare_base_start_pod(generatedLoot,entity);
-
                     addLoot(generatedLoot, random, Items.deceased_contract.get(), entity, List.of(
 
                             BookItems.bone_structure.get(),
@@ -312,7 +312,64 @@ public class DungeonLoot extends LootModifier {
                 BookEvt.addLvl(itemStack,Mth.nextInt(RandomSource.create(),1,3000),Mth.nextInt(RandomSource.create(),0,3000));
             }
         }
+        ResourceLocation s = context.getQueriedLootTableId();
+        String idSting = String.valueOf(s);
+        Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
+
+        if (idSting.contains("chests/")) {
+            if (idSting.contains("ancient")) {
+                AdvancementEvt.addLoot(generatedLoot, entity, 5);
+                AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(generatedLoot, entity);
+
+            }
+        }
+        if (idSting.contains("chests/")){
+            if (idSting.contains("dungeon")||idSting.contains("mansion")){
+                this.give(generatedLoot,entity,10,"defend_against_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.defend_against_runestone.get());
+                this.give(generatedLoot,entity,10,"revive_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.revive_runestone.get());
+                this.give(generatedLoot,entity,10,"strengthen_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.strengthen_runestone.get());
+            }
+        }
+
+        if (idSting.contains("chests/")) {
+            if (idSting.contains("dungeon")) {
+                AdvancementEvt.nightmare_base_start_pod(generatedLoot, entity);
+            }
+            if (idSting.contains("mansion")) {
+                AdvancementEvt.tricky_puppets(generatedLoot, entity);
+            }
+        }
         return generatedLoot;
+    }
+    public void give(ObjectArrayList<ItemStack> generatedLoot,
+                     Entity entity,
+                     int lv,String name,
+                     Item must,
+                     Item give){
+        if (entity instanceof Player player ){
+            if (com.ytgld.seeking_immortals.Handler.hascurio(player, must)) {
+                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                        ICurioStacksHandler stacksHandler = entry.getValue();
+                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                            ItemStack stack = stackHandler.getStackInSlot(i);
+                            if (stack.is(must)) {
+                                if (Mth.nextInt(RandomSource.create(), 1, 100) <= lv) {
+                                    if (stack.getTag() != null) {
+                                        if (!stack.getTag().getBoolean(name)) {
+                                            generatedLoot.add(new ItemStack(give));
+                                            stack.getTag().putBoolean(name, true);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
     }
     @Override
     public Codec<? extends IGlobalLootModifier> codec() {

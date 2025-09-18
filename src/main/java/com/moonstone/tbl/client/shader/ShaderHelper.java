@@ -4,7 +4,6 @@ import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
-import net.minecraft.server.packs.resources.ResourceProvider;
 
 import javax.annotation.Nullable;
 

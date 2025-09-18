@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "moonstone:nightmare_virus"
+    }
+  ],
+  "result": {
+    "item": "moonstone:nightmare_base_stone_brain"
+  }
+}

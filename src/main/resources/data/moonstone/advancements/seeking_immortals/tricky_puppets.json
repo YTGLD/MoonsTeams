@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_black_eye",
+  "criteria": {
+    "tricky_puppets": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:tricky_puppets"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.tricky_puppets.text"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:tricky_puppets"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.tricky_puppets.hand"
+    }
+  },
+  "requirements": [
+    [
+      "tricky_puppets"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

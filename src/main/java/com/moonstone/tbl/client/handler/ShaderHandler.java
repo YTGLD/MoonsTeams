@@ -3,17 +3,13 @@ package com.moonstone.tbl.client.handler;
 import com.all.ILevelRender;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.tbl.client.shader.ShaderHelper;
 import com.moonstone.tbl.client.shader.postprocessing.DiffBlitDepth;
 import com.moonstone.tbl.common.MoonstoneTBL;
-import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.server.packs.resources.ResourceProvider;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 
 import javax.annotation.Nullable;
@@ -82,7 +78,7 @@ public class ShaderHandler {
 	/**
 	 * Composite new depth buffer for worldShader
 	 */
-	public static void onPreRenderDebug(PoseStack poseStack, MultiBufferSource buffer, Camera camera) {
+	public static void onPreRenderDebug() {
 		// Fast & Fancy only
 		if (Minecraft.getInstance().levelRenderer instanceof ILevelRender levelRender) {
 			if (!ShaderHelper.INSTANCE.canUseShaders() || levelRender.moonstone1_21_1$transparencyChain() != null)
@@ -93,11 +89,15 @@ public class ShaderHandler {
             ShaderHandler.diffBlitDepth.AfterTarget.copyDepthFrom(Minecraft.getInstance().getMainRenderTarget());
         }
         RenderSystem.enableDepthTest();
-		ShaderHandler.diffBlitDepth.process(Minecraft.getInstance().getDeltaFrameTime());
+		if (ShaderHandler.diffBlitDepth != null) {
+			ShaderHandler.diffBlitDepth.process(Minecraft.getInstance().getDeltaFrameTime());
+		}
 		// Set worldShader depth to diffBlitDepth output
         if (ShaderHelper.INSTANCE.getWorldShader() != null) {
-            ShaderHelper.INSTANCE.getWorldShader().getDepthBuffer().copyDepthFrom(ShaderHandler.diffBlitDepth.Output);
-        }
+			if (ShaderHandler.diffBlitDepth != null) {
+				ShaderHelper.INSTANCE.getWorldShader().getDepthBuffer().copyDepthFrom(ShaderHandler.diffBlitDepth.Output);
+			}
+		}
         // Clean up
 		Minecraft.getInstance().getMainRenderTarget().bindWrite(false);
 	}

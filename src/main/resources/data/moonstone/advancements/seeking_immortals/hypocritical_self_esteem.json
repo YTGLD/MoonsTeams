@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_redemption",
+  "criteria": {
+    "hypocritical_self_esteem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:hypocritical_self_esteem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.hypocritical_self_esteem.text"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:hypocritical_self_esteem"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.hypocritical_self_esteem.hand"
+    }
+  },
+  "requirements": [
+    [
+      "hypocritical_self_esteem"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

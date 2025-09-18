@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_reversal",
+  "criteria": {
+    "candle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:candle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.candle.text"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:candle"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.candle.hand"
+    }
+  },
+  "requirements": [
+    [
+      "candle"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

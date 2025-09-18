@@ -4,28 +4,20 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.glow.Red_glow;
-import com.moonstone.moonstonemod.client.renderer.IAbstractContainerScreen;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
 import com.moonstone.moonstonemod.item.necora;
-import com.moonstone.moonstonemod.item.nightmare.nightmareeye;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.nightmare_base;
 import com.moonstone.moonstonemod.moonstoneitem.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,7 +32,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.ArrayList;
 import java.util.List;
 @OnlyIn(Dist.CLIENT)
 @Mixin(GuiGraphics.class)
@@ -69,34 +60,6 @@ public abstract class GuiGraphicsMixin {
 //
 //                }
 //            }
-
-
-
-            if (stack.getItem() instanceof nightmare_base){
-
-
-
-                float[][] positions = {
-                        {x - 8/10f, y - 8/10f},
-                        {x + 24/10f, y - 8/10f},
-                        {x - 8/10f, y + 24/10f},
-                        {x + 24/10f, y + 24/10f},
-                        {x + 56/10f, y - 8/10f},
-                        {x + 56/10f, y + 24/10f},
-                        {x - 8/10f, y + 56/10f},
-                        {x + 24/10f, y + 56/10f},
-                        {x + 5/10f, y + 5/10f}
-                };
-                double[] alphaFactors = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
-                for (int i = 0; i < 9; i++) {
-                    float s = (float) Math.sin((double) tickCount / 50 * alphaFactors[i]);
-                    if (s < 0) {
-                        s = -s;
-                    }
-                    float red = 1 - (i/10f);
-                    Red_glow.blit(guiGraphics, new ResourceLocation(MoonStoneMod.MODID, "textures/gui/necora_red.png"), positions[i][0]-6, positions[i][1]-6, 0, 0, 24, 24, 24, 24, red, 0, 1, s);
-                }
-            }
 
             if (stack.getItem() instanceof necora necora) {
                 float s = (float) Math.sin((double) tickCount / 20);

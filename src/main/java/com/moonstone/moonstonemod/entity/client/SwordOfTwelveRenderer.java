@@ -10,9 +10,13 @@ import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.SwordOfTwelve;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.tbl.client.shader.LightSource;
+import com.moonstone.tbl.client.shader.ShaderHelper;
+import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
@@ -29,6 +33,10 @@ public class SwordOfTwelveRenderer <T extends SwordOfTwelve> extends EntityRende
     public SwordOfTwelveRenderer(EntityRendererProvider.Context p_173917_) {
         super(p_173917_);
     }
+    @Override
+    public boolean shouldRender(T p_114491_, Frustum p_114492_, double p_114493_, double p_114494_, double p_114495_) {
+        return true;
+    }
 
     @Override
     public void render(T entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {
@@ -36,6 +44,13 @@ public class SwordOfTwelveRenderer <T extends SwordOfTwelve> extends EntityRende
 
         if (ConfigClient.Client.Shader.get()) {
             MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
+        }
+        if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
+            WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
+            ShaderHelper.INSTANCE.require();
+            if (shader != null) {
+                shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 4, 0.3f, 0.2f, 2));
+            }
         }
         poseStack.pushPose();
         poseStack.scale(3,3,3);

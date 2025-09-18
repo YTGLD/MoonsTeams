@@ -2,10 +2,7 @@ package com.moonstone.moonstonemod.item.maxitem;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_meet;
 import com.moonstone.moonstonemod.moonstoneitem.Iwar;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -22,27 +19,12 @@ public class mayhemcrystal extends UnCommonItem  implements Iwar, Die {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                if (stack.getTag() != null) {
-                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,true);
-                }else {
-                    stack.getOrCreateTag();
-                }
-            }
         }
     }
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            if (!Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                if (stack.getTag() != null) {
-                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,false);
-                }else {
-                    stack.getOrCreateTag();
-                }
-
-            }
         }
     }
     @Override
@@ -50,9 +32,6 @@ public class mayhemcrystal extends UnCommonItem  implements Iwar, Die {
 
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         float s  = 0.3f;
-        if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_stone_meet.get())){
-            s*=1.5f;
-        }
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid,"uuid", s, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }

@@ -3,10 +3,6 @@ package com.moonstone.moonstonemod.item.ectoplasm;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.moonstone.moonstonemod.Handler;
-import com.moonstone.moonstonemod.init.AttReg;
-import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_meet;
 import com.moonstone.moonstonemod.moonstoneitem.ectoplasm;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -26,13 +22,6 @@ public class ectoplasmstar extends ectoplasm {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                if (stack.getTag() != null) {
-                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,true);
-                }else {
-                    stack.getOrCreateTag();
-                }
-            }
             slotContext.entity().getAttributes().addTransientAttributeModifiers(att(player));
             slotContext.entity().getAttributes().addTransientAttributeModifiers(att2(player));
         }
@@ -41,14 +30,6 @@ public class ectoplasmstar extends ectoplasm {
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-
-            if (!Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                if (stack.getTag() != null) {
-                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,false);
-                }else {
-                    stack.getOrCreateTag();
-                }
-            }
             slotContext.entity().getAttributes().removeAttributeModifiers(att(player));
             slotContext.entity().getAttributes().removeAttributeModifiers(att2(player));
         }
@@ -57,10 +38,6 @@ public class ectoplasmstar extends ectoplasm {
     public Multimap<Attribute, AttributeModifier> att(Player player){
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         int s = 20;
-        if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-            s*=2;
-        }
-
         modifierMultimap.put(Attributes.LUCK, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s, AttributeModifier.Operation.ADDITION));
         return modifierMultimap;
     }
@@ -72,10 +49,6 @@ public class ectoplasmstar extends ectoplasm {
             s=max;
         }
         s /= 100;
-        if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-            modifierMultimap.put(AttReg.heal.get(), new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"), "sss", s*2.5f, AttributeModifier.Operation.MULTIPLY_BASE));
-        }
-
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s/2, AttributeModifier.Operation.MULTIPLY_BASE));
         modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;

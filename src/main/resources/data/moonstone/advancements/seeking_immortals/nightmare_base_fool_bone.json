@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_fool_betray",
+  "criteria": {
+    "nightmare_base_fool_bone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:nightmare_base_fool_bone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.nightmare_base_fool_bone.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:nightmare_base_fool_bone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.nightmare_base_fool_bone.hand"
+    }
+  },
+  "requirements": [
+    [
+      "nightmare_base_fool_bone"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

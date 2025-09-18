@@ -1,8 +1,6 @@
 package com.moonstone.moonstonemod.crafting;
 
 import com.moonstone.moonstonemod.MoonStoneMod;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.minecraftforge.registries.DeferredRegister;

@@ -2,11 +2,8 @@ package com.moonstone.moonstonemod.item.maxitem;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.event.TextEvt;
-import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.moonstonemod.item.nightmare.super_nightmare.stone.nightmare_base_stone_meet;
 import com.moonstone.moonstonemod.moonstoneitem.UnCommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -32,15 +29,6 @@ public class maxamout extends UnCommonItem implements TextEvt.Twelve {
                 player.removeEffect(MobEffects.DIG_SLOWDOWN);
             }
         }
-        if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                if (stack.getTag() != null) {
-                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,true);
-                }else {
-                    stack.getOrCreateTag();
-                }
-            }
-        }
     }
 
 
@@ -57,13 +45,6 @@ public class maxamout extends UnCommonItem implements TextEvt.Twelve {
             player.getAttributes().removeAttributeModifiers(swim(player, stack));
         }
         if (slotContext.entity() instanceof Player player) {
-            if (!Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                if (stack.getTag() != null) {
-                    stack.getTag().putBoolean(nightmare_base_stone_meet.curse,false);
-                }else {
-                    stack.getOrCreateTag();
-                }
-            }
         }
     }
     @Override

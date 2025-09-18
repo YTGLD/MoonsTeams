@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {"item": "moonstone:ectoplasmcloub"},
+    {"item": "moonstone:ectoplasmcloub"},
+    {"item": "moonstone:ectoplasmcloub"},
+    {"item": "moonstone:ectoplasmcloub"},
+    {"item": "moonstone:ectoplasmcloub"},
+    {"item": "moonstone:ectoplasmcloub"},
+
+    {"item": "moonstone:ectoplasmcube"},
+    {"item": "moonstone:ectoplasmcube"},
+
+    {"item": "minecraft:gold_block"}
+  ],
+  "result": {
+    "count": 1,
+    "item": "moonstone:warcrystal"
+  }
+}

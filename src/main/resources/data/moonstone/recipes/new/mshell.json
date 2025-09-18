@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {"item": "moonstone:ectoplasmcube"},
+    {"item": "moonstone:ectoplasmcube"},
+    {"item": "minecraft:nautilus_shell"},
+    {"item": "moonstone:greedcrystal"}
+  ],
+  "result": {
+    "count": 1,
+    "item": "moonstone:mshell"
+  }
+}

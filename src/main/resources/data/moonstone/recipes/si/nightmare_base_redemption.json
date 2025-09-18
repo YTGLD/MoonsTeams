@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:nightmare_base_reversal_orb"
+    },
+    {
+      "item": "moonstone:nightmare_base_reversal_card"
+    },
+    {
+      "item": "moonstone:nightmare_base_reversal_mysterious"
+    }
+  ],
+  "result": {
+    "item": "moonstone:nightmare_base_redemption"
+  }
+}
