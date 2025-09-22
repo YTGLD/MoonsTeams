@@ -45,7 +45,7 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("RETURN"), method = "canBeAffected", cancellable = true)
     private void canBeAffected(MobEffectInstance effectInstance, CallbackInfoReturnable<Boolean> cir){
         LivingEntity living = (LivingEntity) (Object) this;
-        if (Handler.hascurio(living, Items.nightmare_base_black_eye.get())) {
+        if (Handler.hascurio(living, Items.nightmare_base_black_eye.get())||Handler.hascurio(living, Items.the_divine_fall_ring.get())) {
             if (effectInstance.getEffect()==(MobEffects.BLINDNESS)||effectInstance.getEffect() ==(MobEffects.DARKNESS)) {
                 cir.setReturnValue(false);
             }

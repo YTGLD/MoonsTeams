@@ -312,31 +312,33 @@ public class DungeonLoot extends LootModifier {
                 BookEvt.addLvl(itemStack,Mth.nextInt(RandomSource.create(),1,3000),Mth.nextInt(RandomSource.create(),0,3000));
             }
         }
-        ResourceLocation s = context.getQueriedLootTableId();
-        String idSting = String.valueOf(s);
-        Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
+        if (!Config.SERVER.allLoot.get()) {
+            ResourceLocation s = context.getQueriedLootTableId();
+            String idSting = String.valueOf(s);
+            Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
 
-        if (idSting.contains("chests/")) {
-            if (idSting.contains("ancient")) {
-                AdvancementEvt.addLoot(generatedLoot, entity, 5);
-                AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(generatedLoot, entity);
+            if (idSting.contains("chests/")) {
+                if (idSting.contains("ancient")) {
+                    AdvancementEvt.addLoot(generatedLoot, entity, 5);
+                    AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(generatedLoot, entity);
 
+                }
             }
-        }
-        if (idSting.contains("chests/")){
-            if (idSting.contains("dungeon")||idSting.contains("mansion")){
-                this.give(generatedLoot,entity,10,"defend_against_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.defend_against_runestone.get());
-                this.give(generatedLoot,entity,10,"revive_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.revive_runestone.get());
-                this.give(generatedLoot,entity,10,"strengthen_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.strengthen_runestone.get());
+            if (idSting.contains("chests/")) {
+                if (idSting.contains("dungeon") || idSting.contains("mansion")) {
+                    this.give(generatedLoot, entity, 10, "defend_against_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.defend_against_runestone.get());
+                    this.give(generatedLoot, entity, 10, "revive_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.revive_runestone.get());
+                    this.give(generatedLoot, entity, 10, "strengthen_runestone", com.ytgld.seeking_immortals.init.Items.nightmare_base.get(), com.ytgld.seeking_immortals.init.Items.strengthen_runestone.get());
+                }
             }
-        }
 
-        if (idSting.contains("chests/")) {
-            if (idSting.contains("dungeon")) {
-                AdvancementEvt.nightmare_base_start_pod(generatedLoot, entity);
-            }
-            if (idSting.contains("mansion")) {
-                AdvancementEvt.tricky_puppets(generatedLoot, entity);
+            if (idSting.contains("chests/")) {
+                if (idSting.contains("dungeon")) {
+                    AdvancementEvt.nightmare_base_start_pod(generatedLoot, entity);
+                }
+                if (idSting.contains("mansion")) {
+                    AdvancementEvt.tricky_puppets(generatedLoot, entity);
+                }
             }
         }
         return generatedLoot;

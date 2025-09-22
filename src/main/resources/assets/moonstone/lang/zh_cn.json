@@ -2004,6 +2004,32 @@
   "item.wolf.tool.string.3": "每次受伤都会转移到它们身上，若单位死亡则物品进入5秒冷却",
   "moonstone.item.kill": "你还没有佩戴它没有杀死过生物",
 
+  "effect.moonstone.blade": "锋芒",
+  "effect.moonstone.hidden": "隐藏",
+
+  "item.moonstone.hidden_blade":"归隐刀锋之刃",
+  "item.hidden_blade.tool.string.1": "受击时发动猛烈反击",
+  "item.hidden_blade.tool.string.2": "受击后的3秒内暴击伤害翻倍",
+  "item.hidden_blade.tool.string.3": "造成非暴击伤害时攻速逐渐增加",
+  "item.hidden_blade.tool.string.4": "造成暴击伤害时伤害逐渐增加",
+
+  "item.moonstone.bone_or_god":"血祭神颅",
+  "item.bone_or_god.tool.string.2": "宠物攻击会附加10%主人的面板伤害",
+  "item.bone_or_god.tool.string.3":"宠物伤害提高200%",
+  "item.bone_or_god.tool.string.4": "宠物抗性提高50%",
+  "item.bone_or_god.tool.string.5":"若宠附加的物没有攻击目标，则缓慢恢复生命值",
+
+  "item.moonstone.the_divine_fall_ring":"神陨·天启之戒",
+  "item.the_divine_fall_ring.tool.string.1": "带上它 你将免疫黑暗",
+  "item.the_divine_fall_ring.tool.string.2": "带上它 你将免疫失明",
+  "item.the_divine_fall_ring.tool.string.3": "增加百分之百经验掉落",
+  "item.the_divine_fall_ring.tool.string.4": "增加十的伤害 生命 护甲",
+  "item.the_divine_fall_ring.tool.string.5": "复活时给予十秒无敌",
+  "item.the_divine_fall_ring.tool.string.6": "增加百分之五十治疗",
+  "item.the_divine_fall_ring.tool.string.7": "生命值越低 各方面属性越高",
+
+  "advancements.tooltip.hidden_blade.text": "获得这个物品",
+  "advancements.tooltip.hidden_blade.hand": "未知的刀锋",
   "advancements.tooltip.wolf.text": "获得这个物品",
   "advancements.tooltip.wolf.hand": "一叶孤舟",
   "moonstone.jei.item.moonstone.wolf": "让你的狼杀死监守者"

@@ -134,13 +134,6 @@ public class ytgld_virus extends TheNecoraIC {
             }
         }
         if (event.getEntity() instanceof Player player){
-            if (Config.SERVER.giveYtgld.get()) {
-                if (!player.getTags().contains("YtgldV")) {
-                    player.addItem(new ItemStack(Items.ytgld_virus.get()));
-                    player.addTag("YtgldV");
-                }
-            }
-
 
 
             if (Handler.hascurio(player, Items.ytgld_virus.get())) {

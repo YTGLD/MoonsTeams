@@ -1,0 +1,41 @@
+{
+  "parent": "moonstone:seeking_immortals/nightmare_base_insight_insane",
+  "criteria": {
+    "hidden_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "moonstone:hidden_blade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.tooltip.hidden_blade.text"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "moonstone:hidden_blade"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.tooltip.hidden_blade.hand"
+    }
+  },
+  "requirements": [
+    [
+      "hidden_blade"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

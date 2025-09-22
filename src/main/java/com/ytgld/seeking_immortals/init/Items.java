@@ -1,6 +1,7 @@
 package com.ytgld.seeking_immortals.init;
 
 import com.ytgld.seeking_immortals.SeekingImmortalsMod;
+import com.ytgld.seeking_immortals.item.fall.the_divine_fall_ring;
 import com.ytgld.seeking_immortals.item.nightmare.immortal;
 import com.ytgld.seeking_immortals.item.nightmare.base.*;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_eye;
@@ -11,10 +12,7 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool.apple;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool.nightmare_base_fool_betray;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool.nightmare_base_fool_bone;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool.nightmare_base_fool_soul;
-import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight.nightmare_base_insight_collapse;
-import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight.nightmare_base_insight_drug;
-import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight.nightmare_base_insight_insane;
-import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight.ring;
+import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight.*;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.*;
 import com.ytgld.seeking_immortals.item.nightmare.*;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.redemption.hypocritical_self_esteem;
@@ -80,6 +78,7 @@ public class Items {
     public static final RegistryObject<Item> wolf =REGISTRY.register("wolf", wolf::new);
     public static final RegistryObject<Item> hypocritical_self_esteem =REGISTRY.register("hypocritical_self_esteem", hypocritical_self_esteem::new);
     public static final RegistryObject<Item> falling_immortals =REGISTRY.register("falling_immortals", falling_immortals::new);
+    public static final RegistryObject<Item> bone_or_god =REGISTRY.register("bone_or_god", bone_or_god::new);
 
     public static final RegistryObject<Item> revive_runestone =REGISTRY.register("revive_runestone", revive_runestone::new);
     public static final RegistryObject<Item> disintegrating_stone =REGISTRY.register("disintegrating_stone", disintegrating_stone::new);
@@ -90,5 +89,7 @@ public class Items {
 
     public static final RegistryObject<Item> nightmare_base_start_power =REGISTRY.register("nightmare_base_start_power", nightmare_base_start_power::new);
     public static final RegistryObject<Item> tricky_puppets =REGISTRY.register("tricky_puppets", tricky_puppets::new);
+    public static final RegistryObject<Item> hidden_blade =REGISTRY.register("hidden_blade", hidden_blade::new);
+    public static final RegistryObject<Item> the_divine_fall_ring =REGISTRY.register("the_divine_fall_ring", the_divine_fall_ring::new);
 
 }

@@ -50,7 +50,7 @@ public class AtSwordRender <T extends AtSword> extends EntityRenderer<T> {
                 WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
                 ShaderHelper.INSTANCE.require();
                 if (shader != null) {
-                    shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 16, 0.2f, 0.2f, 3));
+                    shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 24, 1.25f, 2, 5));
                 }
             }
               poseStack.pushPose();

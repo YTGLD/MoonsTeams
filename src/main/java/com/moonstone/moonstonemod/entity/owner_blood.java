@@ -67,21 +67,16 @@ public class owner_blood extends TamableAnimal {
         LivingEntity target = getTarget(); // 获取目标
         Vec3 currentPos = this.position();
 
-        if ( target != null) {
-            Vec3 targetPos = target.position().add(0, 0.5, 0);
-            Vec3 direction = targetPos.subtract(currentPos).normalize();
-            this.setDeltaMovement(direction.x * (0.075f + 0.5), direction.y * (0.075f + 0.5), direction.z * (0.075f + 0.5));
-        }
         if (owner != null){
             double desiredDistance = 2; // 设置想要保持的距离
-            Vec3 targetPos = owner.position().add(0, 3, 0); // 获取玩家位置并抬高
+            Vec3 targetPos = owner.position().add(0, 3, 1); // 获取玩家位置并抬高
 
             Vec3 forward = owner.getLookAngle(); // 获取玩家的朝向向量
             Vec3 direction = forward.scale(-1).normalize(); // 计算背后的方向（逆向）
 
             Vec3 newTargetPos = targetPos.add(direction.scale(desiredDistance)); // 计算新的目标位置
 
-            this.setDeltaMovement(newTargetPos.subtract(currentPos).normalize().scale(0.15f)); // 设置对象的运动速度
+            this.setDeltaMovement(newTargetPos.subtract(currentPos).normalize().scale(0.5f)); // 设置对象的运动速度
         }
 
         if (this.getOwner() != null) {
@@ -246,6 +241,11 @@ public class owner_blood extends TamableAnimal {
                         player.heal(4);
                     }
                 }
+            }
+        }
+        if ( target != null) {
+            if (currentPos.distanceTo(target.position()) > 30) {
+                this.setTarget(null);
             }
         }
     }

@@ -1,10 +1,7 @@
 package com.ytgld.seeking_immortals.init;
 
 import com.ytgld.seeking_immortals.SeekingImmortalsMod;
-import com.ytgld.seeking_immortals.effect.blood;
-import com.ytgld.seeking_immortals.effect.dead;
-import com.ytgld.seeking_immortals.effect.invulnerable;
-import com.ytgld.seeking_immortals.effect.life;
+import com.ytgld.seeking_immortals.effect.*;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,4 +14,6 @@ public class Effects {
     public static final RegistryObject<MobEffect> blood  =REGISTRY.register("blood",()->new blood());
     public static final RegistryObject<MobEffect> life  =REGISTRY.register("life",()->new life());
 
+    public static final RegistryObject<MobEffect> hidden  =REGISTRY.register("hidden",()->new hidden());
+    public static final RegistryObject<MobEffect> blade  =REGISTRY.register("blade",()->new blade());
 }

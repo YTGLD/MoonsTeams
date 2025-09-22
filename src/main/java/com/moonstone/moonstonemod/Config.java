@@ -238,7 +238,7 @@ public class Config {
                         .defineInRange("universe", 200, 0, 100000);
                 universe2 = BUILDER
                         .comment("万象模板的加伤害加成，单位%")
-                        .defineInRange("universe2", 5, 0, 100000);
+                        .defineInRange("universe2", 10, 0, 100000);
                 raw = BUILDER
                         .comment("原始人的愤怒其伤害，治疗和最大生命")
                         .defineInRange("raw", 5, 0, 100000f);

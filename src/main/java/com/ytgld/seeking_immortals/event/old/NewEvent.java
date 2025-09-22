@@ -6,6 +6,7 @@ import com.ytgld.seeking_immortals.SeekingImmortalsMod;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
+import com.ytgld.seeking_immortals.item.fall.the_divine_fall_ring;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
 import com.ytgld.seeking_immortals.item.nightmare.base.*;
 import com.ytgld.seeking_immortals.item.nightmare.falling_immortals;
@@ -18,6 +19,7 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye.nightmare_
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye.nightmare_base_black_eye_red;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool.apple;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool.nightmare_base_fool_bone;
+import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight.hidden_blade;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight.nightmare_base_insight_insane;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.redemption.nightmare_base_redemption_deception;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.reversal.candle;
@@ -91,6 +93,7 @@ public class NewEvent {
 
     @SubscribeEvent
     public void LivingHurtEvent(LivingHurtEvent event) {
+        hidden_blade.hurt_cit(event);
         lead.hurtOfBlood(event);
         falling_immortals.damage(event);
         apple.damage(event);
@@ -113,6 +116,7 @@ public class NewEvent {
         wolf.attack(event);
         revive_runestone.hurt(event);
         defend_against_runestone.hurt(event);
+        bone_or_god.hurt(event);
         if (event.getEntity().hasEffect(Effects.dead.get()) && event.getEntity().getEffect(Effects.dead.get()) != null) {
             float lvl = event.getEntity().getEffect(Effects.dead.get()).getAmplifier();
             lvl *= 0.2f;
@@ -147,6 +151,10 @@ public class NewEvent {
         }
 
 
+    }
+    @SubscribeEvent
+    public void exp(LivingExperienceDropEvent event) {
+        the_divine_fall_ring.exp(event);
     }
     @SubscribeEvent
     public void LivingDamageEvent(LivingDamageEvent event){
@@ -192,7 +200,7 @@ public class NewEvent {
             float attack = (float) event.getEntity().getAttribute(AttReg.cit.get()).getValue();
             event.setDamageModifier(event.getDamageModifier()*(attack));
         }
-
+        hidden_blade.cit(event);
     }
     @SubscribeEvent
     public void soulbattery(PlayerEvent.BreakSpeed event) {
@@ -221,16 +229,18 @@ public class NewEvent {
                     "key.keyboard.left.shift").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
         }
         if (!Handler.hascurio(event.getEntity(), Items.nightmare_base.get())) {
-            if (event.getItemStack().getItem() instanceof SuperNightmare) {
-                List<Component> toolTip = event.getToolTip();
-                Random random = new Random();
-                for (int i = 0; i < toolTip.size(); i++) {
-                    int randomLength = random.nextInt(25) + 1;
-                    StringBuilder randomString = new StringBuilder();
-                    for (int j = 0; j < randomLength; j++) {
-                        randomString.append("§ka");
+            if (!Config.SERVER.canUse.get()) {
+                if (event.getItemStack().getItem() instanceof SuperNightmare) {
+                    List<Component> toolTip = event.getToolTip();
+                    Random random = new Random();
+                    for (int i = 0; i < toolTip.size(); i++) {
+                        int randomLength = random.nextInt(25) + 1;
+                        StringBuilder randomString = new StringBuilder();
+                        for (int j = 0; j < randomLength; j++) {
+                            randomString.append("§ka");
+                        }
+                        toolTip.set(i, Component.literal(randomString.toString()).withStyle(ChatFormatting.DARK_RED));
                     }
-                    toolTip.set(i, Component.literal(randomString.toString()).withStyle(ChatFormatting.DARK_RED));
                 }
             }
         }
@@ -238,14 +248,16 @@ public class NewEvent {
             ItemStack stack = event.getItemStack();
             Player player = event.getEntity();
             if (stack.getItem() instanceof SuperNightmare) {
-                if (!Handler.hascurio(player, Items.nightmare_base.get())) {
-                    event.getToolTip().add(1, Component.literal(""));
-                    event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name.1").withStyle(ChatFormatting.DARK_RED));
-                    event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(ChatFormatting.DARK_RED));
-                } else {
-                    event.getToolTip().add(1, Component.literal(""));
-                    event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name.1").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
-                    event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
+                if (!Config.SERVER.canUse.get()) {
+                    if (!Handler.hascurio(player, Items.nightmare_base.get())) {
+                        event.getToolTip().add(1, Component.literal(""));
+                        event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name.1").withStyle(ChatFormatting.DARK_RED));
+                        event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(ChatFormatting.DARK_RED));
+                    } else {
+                        event.getToolTip().add(1, Component.literal(""));
+                        event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name.1").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
+                        event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
+                    }
                 }
             }
         }

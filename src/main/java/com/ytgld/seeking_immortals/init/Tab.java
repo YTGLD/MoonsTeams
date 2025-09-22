@@ -17,8 +17,10 @@ public class Tab {
             .icon(()->new ItemStack(Items.nightmare_base.get()))
             .title(Component.translatable("itemGroup.moonstone"))
             .displayItems((a,b)->{
+                b.accept(new ItemStack(Items.the_divine_fall_ring.get()));
                 b.accept(new ItemStack(Items.immortal.get()));
                 b.accept(new ItemStack(Items.falling_immortals.get()));
+                b.accept(new ItemStack(Items.bone_or_god.get()));
                 b.accept(new ItemStack(Items.blood_god.get()));
                 b.accept(new ItemStack(Items.lead.get()));
 
@@ -70,6 +72,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.nightmare_base_insight_insane.get()));
                 b.accept(new ItemStack(Items.nightmare_base_insight_collapse.get()));
                 b.accept(new ItemStack(Items.ring.get()));
+                b.accept(new ItemStack(Items.hidden_blade.get()));
 
 
                 b.accept(new ItemStack(Items.nightmare_base_start.get()));

@@ -5,6 +5,9 @@ import com.ytgld.seeking_immortals.SeekingImmortalsMod;
 import com.ytgld.seeking_immortals.item.nightmare.Terror;
 import com.ytgld.seeking_immortals.renderer.Light;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -54,18 +57,9 @@ public class nightmare extends Item implements ICurioItem, INightmare, Terror {
     @Override
     public @NotNull Component getName(@NotNull ItemStack stack) {
         Component component = super.getName(stack);
-        @Nullable Map<Integer, Component> map = this.describe(stack);
-        if (map != null) {
-            Integer integer = map.keySet().stream().toList().get(this.nowLevel(stack)-1);
-            if (integer!=-1) {
-                return map.get(integer).copy().append(component);
-            }else {
-                return component;
-            }
-        }
-
-
-        return component;
+        MutableComponent co = component.copy();
+        co.setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFFF0000)));
+        return co;
     }
     @Override
     @Nullable

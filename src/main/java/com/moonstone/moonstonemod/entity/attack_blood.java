@@ -34,7 +34,7 @@ public class attack_blood extends ThrowableItemProjectile {
     public boolean boom = false;
     public boolean effect = false;
     public boolean isPlayer = false;
-    public float speeds = 0.175f;
+    public float speeds = 0.5f;
     public float maxTime = 200;
     public attack_blood(EntityType<? extends attack_blood> entityType, Level level) {
         super(entityType, level);
@@ -169,7 +169,7 @@ public class attack_blood extends ThrowableItemProjectile {
                         this.setDeltaMovement(direction.x * (0.125f + s), direction.y * (0.125f + s), direction.z * (0.125f + s));
                     }
                 } else {
-                    if (this.tickCount < 5) {
+                    if (this.tickCount == 1) {
                         Vec3 targetPos = target.position().add(0, 0.5, 0);
                         Vec3 currentPos = this.position();
                         Vec3 direction = targetPos.subtract(currentPos).normalize();

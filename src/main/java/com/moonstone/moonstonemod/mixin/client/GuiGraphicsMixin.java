@@ -53,15 +53,7 @@ public abstract class GuiGraphicsMixin {
         GuiGraphics guiGraphics = (GuiGraphics) (Object) this;
         if (p_283524_ != null) {
             int tickCount = p_283524_.tickCount;
-            Minecraft minecraft = this.minecraft;
-
-//            if (minecraft.screen instanceof IAbstractContainerScreen screen){
-//                if (screen.isHasItem()) {
-//
-//                }
-//            }
-
-            if (stack.getItem() instanceof necora necora) {
+            if (stack.getItem() instanceof necora) {
                 float s = (float) Math.sin((double) tickCount / 20);
                 if (s < 0) {
                     s = 0;

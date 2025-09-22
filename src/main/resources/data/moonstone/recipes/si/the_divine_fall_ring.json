@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:nightmare_base"
+    }
+  ],
+  "result": {
+    "item": "moonstone:the_divine_fall_ring",
+    "count": 1
+  }
+}
