@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -24,14 +25,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
-public class killer extends Item implements ICurioItem, Blood , TextEvt.Twelve {
-    public killer() {
-        super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
-
-
-
-    }
-
+public class killer extends TheNecoraIC {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (stack.getTag()==null){

@@ -5,6 +5,7 @@ import com.moonstone.moonstonemod.entity.blood;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -22,10 +23,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class blood_magic_box extends Item implements ICurioItem, Blood {
-    public blood_magic_box() {
-        super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
-    }
+public class blood_magic_box extends TheNecoraIC {
 
     public static void Did(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player){

@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -33,10 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class the_prison_of_sin extends Item implements ICurioItem, Blood {
-    public the_prison_of_sin() {
-        super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
-    }
+public class the_prison_of_sin extends TheNecoraIC {
     public static void LivingDeathEvent(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.the_prison_of_sin.get())){

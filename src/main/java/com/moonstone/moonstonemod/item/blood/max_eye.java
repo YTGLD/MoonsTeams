@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.blood;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -24,11 +25,8 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 import java.util.List;
 import java.util.Map;
 
-public class max_eye extends Item implements ICurioItem, Blood {
+public class max_eye extends TheNecoraIC {
     public static final String blood="MaxBlood";
-    public max_eye() {
-        super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
-    }
 
     public static void Die(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player){

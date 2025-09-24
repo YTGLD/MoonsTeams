@@ -6,6 +6,7 @@ import com.moonstone.moonstonemod.entity.attack_blood;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
@@ -34,14 +35,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public class max_blood_cube extends Item implements ICurioItem, Blood {
-    public max_blood_cube() {
-        super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
-
-
-
-    }
-
+public class max_blood_cube extends TheNecoraIC {
     public static final String slowing = "Slowing";
     public static final int slowingMax = 100;
 

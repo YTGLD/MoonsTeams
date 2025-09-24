@@ -5,6 +5,7 @@ import com.moonstone.moonstonemod.entity.line;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -20,15 +21,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class blood_amout extends Item implements ICurioItem, Blood {
-    public blood_amout() {
-        super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
-    }
-
-
-
-
-
+public class blood_amout extends TheNecoraIC {
     public static void Hurt(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
             if (event.getSource().getEntity()!=null&& Handler.hascurio(player, Items.blood_amout.get())){

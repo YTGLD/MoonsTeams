@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.entity.owner_blood;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -27,11 +28,8 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import java.util.List;
 import java.util.UUID;
 
-public class blood_candle extends Item implements ICurioItem, Blood {
+public class blood_candle extends TheNecoraIC {
 
-    public blood_candle() {
-        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
-    }
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {

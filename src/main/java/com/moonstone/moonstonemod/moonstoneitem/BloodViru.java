@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.moonstoneitem;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
+import com.ytgld.seeking_immortals.renderer.Light;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -26,5 +27,9 @@ public class BloodViru extends TheNecoraIC implements ICurioItem {
     @Override
     public ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, int lootingLevel, boolean recentlyHit, ItemStack stack) {
         return ICurio.DropRule.ALWAYS_KEEP;
+    }
+    @Override
+    public int color(ItemStack stack) {
+        return Light.ARGB.color(255,255,10,255);
     }
 }

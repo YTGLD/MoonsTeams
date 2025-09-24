@@ -2,11 +2,13 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.client.renderer.MRender;
+import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.ytgld.seeking_immortals.Handler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
-import com.ytgld.seeking_immortals.renderer.MRender;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -31,6 +33,7 @@ public class tricky_puppets extends nightmare implements SuperNightmare {
                             @NotNull MultiBufferSource vertexConsumers,
                             @NotNull BlockEntity ownerBlood) {
 
+        MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
         BlockPos playerPos = ownerBlood.getBlockPos();
         Vec3 playerVec = new Vec3(playerPos.getX(), playerPos.getY(), playerPos.getZ());
 
@@ -72,7 +75,7 @@ public class tricky_puppets extends nightmare implements SuperNightmare {
 
         int stacks = 20; // 垂直方向的分割数
         int slices = 20; // 水平方向的分割数
-        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(MRender.Bluer);
+        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(MRender.out_nig_cansee);
         for (int i = 0; i < stacks; ++i) {
             float phi0 = (float) Math.PI * ((i + 0) / (float) stacks);
             float phi1 = (float) Math.PI * ((i + 1) / (float) stacks);

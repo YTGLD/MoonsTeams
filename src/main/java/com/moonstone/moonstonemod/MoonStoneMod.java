@@ -116,45 +116,6 @@ public class MoonStoneMod {
         public static void RegisterClientTooltipComponentFactoriesEvent(RegisterClientTooltipComponentFactoriesEvent event){
             event.register(ToolTip.class, Function.identity());
         }
-        @SubscribeEvent
-        public static void EntityRenderersEvent(RegisterShadersEvent event) {
-            try {
-
-
-                event.registerShader(new ShaderInstance(event.getResourceProvider(),
-                        new ResourceLocation(MODID,"rendertype_gateway"),
-                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_gateway);
-
-                event.registerShader(new ShaderInstance(event.getResourceProvider(),
-                        new ResourceLocation(MODID,"rendertype_mls"),
-                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_mls);
-
-                event.registerShader(new ShaderInstance(event.getResourceProvider(),
-                        new ResourceLocation(MODID, "rendertype_ging"),
-                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_ging);
-
-
-
-                event.registerShader(new ShaderInstance(event.getResourceProvider(),
-                        new ResourceLocation(MODID,"trail"),
-                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_trail);
-
-                event.registerShader(new ShaderInstance(event.getResourceProvider(),
-                        new ResourceLocation(MODID,"eye"),
-                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_EYE);
-
-                event.registerShader(new ShaderInstance(event.getResourceProvider(),
-                        new ResourceLocation(MODID,"snake"),
-                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShader_snake);
-
-                event.registerShader(new ShaderInstance(event.getResourceProvider(),
-                        new ResourceLocation(MODID,"p_blood"),
-                        DefaultVertexFormat.POSITION_TEX_COLOR), com.ytgld.seeking_immortals.renderer.MRender::setShaderInstance_p_blood);
-
-            }catch (IOException exception){
-                exception.printStackTrace();
-            }
-        }
     }
     @Mod.EventBusSubscriber(
             modid = MODID,

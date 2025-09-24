@@ -22,23 +22,12 @@ public class MRender extends RenderType {
     private static ShaderInstance ShaderInstance_trail;
     public static ShaderInstance meteorTrailShader;
 
-    protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_meteorTrailShader = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_meteorTrailShader);
 
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_gateway);
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_MLS = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_mls);
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_ging = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_ging);
 
     protected static final RenderStateShard.ShaderStateShard RENDER_STATE_SHARD_trail = new RenderStateShard.ShaderStateShard(MRender::getShaderInstance_trail);
-    public static final RenderType METEOR_TRAIL = create("meteor_trail",
-            DefaultVertexFormat.POSITION_COLOR_TEX, VertexFormat.Mode.QUADS, 256, false, false,
-            RenderType.CompositeState.builder()
-                    .setShaderState(RENDER_STATE_SHARD_meteorTrailShader)
-                    .setTextureState(new RenderStateShard.TextureStateShard(new ResourceLocation(MoonStoneMod.MODID, "textures/ging.png"), false, false))
-                    .setTransparencyState(TRANSLUCENT_TRANSPARENCY)
-                    .setCullState(NO_CULL)
-                    .setLightmapState(LIGHTMAP)
-                    .setOverlayState(OVERLAY)
-                    .createCompositeState(false));
     public static final RenderType TRAIL =
             create("lines",
                     DefaultVertexFormat.POSITION_COLOR_NORMAL,
@@ -111,6 +100,24 @@ public class MRender extends RenderType {
                                             false).add(new ResourceLocation(MoonStoneMod.MODID,"textures/ging.png"),
                                             false, false).build()).createCompositeState(false));
 
+    public static final RenderType out_nig_cansee =
+            create("out_nig_cansee",
+                    DefaultVertexFormat.POSITION,
+                    VertexFormat.Mode.QUADS,
+                    256,
+                    false,
+                    false,
+                    RenderType.CompositeState.builder()
+                            .setShaderState(RENDER_STATE_SHARD)
+                            .setTransparencyState(RenderStateShard.TRANSLUCENT_TRANSPARENCY)
+                            .setDepthTestState(RenderStateShard.NO_DEPTH_TEST)
+                            .setTextureState(RenderStateShard.
+                                    MultiTextureStateShard.builder().
+                                    add(new ResourceLocation(MoonStoneMod.MODID,"textures/ging.png"),
+                                            false,
+                                            false).add(new ResourceLocation(MoonStoneMod.MODID,"textures/ging.png"),
+                                            false, false).build()).createCompositeState(false));
+
 
     private static final RenderType GING =
             create("ging",
@@ -153,9 +160,7 @@ public class MRender extends RenderType {
     public static RenderType getMls() {
         return MLS;
     }
-    public static RenderType getMeteorTrail() {
-        return METEOR_TRAIL;
-    }
+
     public static RenderType ging() {
         return GING;
     }
@@ -205,9 +210,6 @@ public class MRender extends RenderType {
 
     public static ShaderInstance getShaderInstance_gateway() {
         return ShaderInstance_gateway;
-    }
-    public static ShaderInstance getShaderInstance_meteorTrailShader() {
-        return meteorTrailShader;
     }
     public static void setShaderInstance_gateway(ShaderInstance instance) {
         ShaderInstance_gateway = instance;

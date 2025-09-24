@@ -4,6 +4,7 @@ import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
+import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -26,10 +27,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class undead_blood_charm extends Item implements ICurioItem, Blood {
-    public undead_blood_charm() {
-        super(new Properties().stacksTo(1).durability(1000000000).rarity(Rarity.UNCOMMON));
-    }
+public class undead_blood_charm extends TheNecoraIC {
 
     public static void LivingIncomingDamageEvent(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
