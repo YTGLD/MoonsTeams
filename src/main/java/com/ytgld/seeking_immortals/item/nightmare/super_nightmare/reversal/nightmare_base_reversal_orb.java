@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.reversal;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -17,7 +17,7 @@ import java.util.List;
 public class nightmare_base_reversal_orb extends nightmare implements SuperNightmare {
     public static void LivingHealEvent(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.nightmare_base_reversal_orb.get())){
+            if (SIHandler.hascurio(player, Items.nightmare_base_reversal_orb.get())){
                 if (player.getHealth() > 10){
                     if (event.getAmount() > player.getHealth()){
                         player.setHealth(1);

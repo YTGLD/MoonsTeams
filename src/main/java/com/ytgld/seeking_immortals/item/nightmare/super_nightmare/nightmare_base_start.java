@@ -3,7 +3,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
@@ -12,7 +12,6 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNi
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -64,7 +63,7 @@ public class nightmare_base_start extends nightmare implements SuperNightmare , 
 
     public static void damage(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_start.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_start.get())) {
                 if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_start.get())){
                     if (player.getHealth()>10) {
                         player.setHealth(player.getHealth() - 1);
@@ -78,7 +77,7 @@ public class nightmare_base_start extends nightmare implements SuperNightmare , 
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (Handler.hascurio(slotContext.entity(), this))
+        if (SIHandler.hascurio(slotContext.entity(), this))
             slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
     }
 

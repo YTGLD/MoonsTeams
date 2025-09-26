@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -55,7 +55,7 @@ public class tricky_puppets extends nightmare implements SuperNightmare {
                     for (LivingEntity entity : entities){
                         if (entity instanceof Player player) {
 
-                            if (Handler.hascurio(player, Items.tricky_puppets.get())) {
+                            if (SIHandler.hascurio(player, Items.tricky_puppets.get())) {
                                 double distance = playerVec.distanceTo(Vec3.atLowerCornerOf(player.blockPosition()));
                                 float alp = Math.max(0, 1 - (float) distance / range);
 

@@ -3,7 +3,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.start;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -55,7 +55,7 @@ public class wolf extends nightmare implements SuperNightmare {
 
     public static void kill(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.wolf.get())){
+            if (SIHandler.hascurio(player, Items.wolf.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -67,8 +67,8 @@ public class wolf extends nightmare implements SuperNightmare {
                                 CompoundTag compoundTag = stack.getTag();
                                 if ( compoundTag!= null) {
                                     String string = BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString();
-                                    if (compoundTag.getString(string).isEmpty()){
-                                        compoundTag.putString(string,string);
+                                    if (!compoundTag.getBoolean(string)){
+                                        compoundTag.putBoolean(string,true);
                                     }
                                 }else {
                                     stack.getOrCreateTag();
@@ -82,7 +82,7 @@ public class wolf extends nightmare implements SuperNightmare {
     }
     public static void attack(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.wolf.get())){
+            if (SIHandler.hascurio(player, Items.wolf.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -94,10 +94,8 @@ public class wolf extends nightmare implements SuperNightmare {
                                 CompoundTag compoundTag = stack.getTag();
                                 if (compoundTag!= null) {
                                     String string = BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString();
-                                    if (compoundTag.getString(string).isEmpty()) {
-                                        if (string.contains(compoundTag.getString(string))) {
-                                            event.setAmount(event.getAmount()*1.25f);
-                                        }
+                                    if (!string.isEmpty()&&compoundTag.getBoolean(string)) {
+                                        event.setAmount(event.getAmount()*1.25f);
                                     }
                                 }else {
                                     stack.getOrCreateTag();
@@ -109,7 +107,7 @@ public class wolf extends nightmare implements SuperNightmare {
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.wolf.get())){
+            if (SIHandler.hascurio(player, Items.wolf.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

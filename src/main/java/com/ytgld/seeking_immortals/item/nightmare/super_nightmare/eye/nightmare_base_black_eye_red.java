@@ -2,7 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -30,7 +30,7 @@ public class nightmare_base_black_eye_red extends nightmare implements SuperNigh
 
     public static void kill(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_black_eye_red.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_red.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -55,14 +55,15 @@ public class nightmare_base_black_eye_red extends nightmare implements SuperNigh
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         super.onEquip(slotContext,prevStack,stack);
-        if (Handler.hascurio(slotContext.entity(), this)) {
-            slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack));
+        if (!slotContext.entity().level().isClientSide) {
+            if (SIHandler.hascurio(slotContext.entity(), this)) {
+                slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack));
+            }
         }
     }
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        stack.setDamageValue(stack.getDamageValue() + 1);
         if (stack.getTag() == null) {
             stack.getOrCreateTag();
         } else {

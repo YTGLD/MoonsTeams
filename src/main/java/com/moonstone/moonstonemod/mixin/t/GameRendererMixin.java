@@ -16,7 +16,6 @@ public abstract class GameRendererMixin {
 	}
 	@Inject(method = "renderLevel", at = @At("TAIL"))
 	public void renderLevel(float f, long p_109091_, PoseStack p_109092_, CallbackInfo ci) {
-		ShaderHandler.renderWorldShader(f);
 	}
 
 }

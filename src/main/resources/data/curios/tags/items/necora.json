@@ -25,6 +25,15 @@
     "moonstone:bone_structure",
     "moonstone:mummification",
     "moonstone:tumour",
-    "moonstone:organizational_regeneration"
+    "moonstone:organizational_regeneration",
+
+
+
+    "moonstone:god_ambush",
+    "moonstone:god_atpoverdose",
+    "moonstone:god_putrefactive",
+    "moonstone:god_fermentation",
+    "moonstone:god_autolytic",
+    "moonstone:god_regenerative"
   ]
 }

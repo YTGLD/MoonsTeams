@@ -3,7 +3,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
 import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
@@ -112,7 +112,7 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare, Al
                 dam++;
             }
             int j = 5;
-            if (Handler.hascurio(living, Items.nightmare_base_fool_soul.get())) {
+            if (SIHandler.hascurio(living, Items.nightmare_base_fool_soul.get())) {
                 j += 9;
             }
             dam -= j;
@@ -149,7 +149,7 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare, Al
                 health++;
             }
             int j = 2;
-            if (Handler.hascurio(living, Items.nightmare_base_fool_soul.get())) {
+            if (SIHandler.hascurio(living, Items.nightmare_base_fool_soul.get())) {
                 j += 7;
             }
             health -= j;

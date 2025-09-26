@@ -3,7 +3,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.base.blood_god;
 import com.ytgld.seeking_immortals.item.nightmare.base.lead;
@@ -26,8 +26,6 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
-import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.*;
 
@@ -44,13 +42,13 @@ public class nightmare_base extends nightmare {
         slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
 
         if (slotContext.entity() instanceof Player player) {
-            int kill = Handler.getTagNumber(stack, blood_god.giveName_kill);
-            int heal = Handler.getTagNumber(stack,blood_god.giveName_heal);
-            int damage = Handler.getTagNumber(stack,blood_god.giveName_damage);
+            int kill = SIHandler.getTagNumber(stack, blood_god.giveName_kill);
+            int heal = SIHandler.getTagNumber(stack,blood_god.giveName_heal);
+            int damage = SIHandler.getTagNumber(stack,blood_god.giveName_damage);
             if (stack.getTag()!=null) {
 
                 if (!stack.getTag().getBoolean(lead.gangBoolean)){
-                    if (Handler.getTagNumber(stack, lead.dieGive) > 200) {
+                    if (SIHandler.getTagNumber(stack, lead.dieGive) > 200) {
                         player.addItem(new ItemStack(Items.lead.get()));
                         stack.getTag().putBoolean(lead.gangBoolean,true);
                     }
@@ -108,13 +106,13 @@ public class nightmare_base extends nightmare {
     public  Multimap<Attribute, AttributeModifier> gets(SlotContext slotContext) {
          Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         float s = -0.3f;
-        if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_reversal_mysterious.get())) {
+        if (SIHandler.hascurio(slotContext.entity(), Items.nightmare_base_reversal_mysterious.get())) {
             s = 0;
         }
-        if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_redemption_down_and_out.get())) {
+        if (SIHandler.hascurio(slotContext.entity(), Items.nightmare_base_redemption_down_and_out.get())) {
             s += 0.35f;
         }
-        if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_redemption.get())) {
+        if (SIHandler.hascurio(slotContext.entity(), Items.nightmare_base_redemption.get())) {
 
             double ssa = Config.SERVER.nightmare_base_redemption.get();
             ssa/= 100f;

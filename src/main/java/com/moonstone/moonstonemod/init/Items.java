@@ -9,6 +9,7 @@ import com.moonstone.moonstonemod.item.BloodVirus.botton;
 import com.moonstone.moonstonemod.item.BloodVirus.catalyzer;
 import com.moonstone.moonstonemod.item.BloodVirus.flygene;
 import com.moonstone.moonstonemod.item.TheNecora.autolytic;
+import com.moonstone.moonstonemod.item.TheNecora.god.*;
 import com.moonstone.moonstonemod.item.TheNecora.small.*;
 import com.moonstone.moonstonemod.item.amout.ectoplasmstone;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
@@ -330,6 +331,12 @@ public class Items {
     public static final RegistryObject<Item> alchemy_pot =REGISTRY.register("alchemy_pot", alchemy_pot::new );
 
 
+    public static final RegistryObject<Item> god_ambush =REGISTRY.register("god_ambush", GodAmbush::new );
+    public static final RegistryObject<Item> god_atpoverdose =REGISTRY.register("god_atpoverdose", GodAtpoverdose::new );
+    public static final RegistryObject<Item> god_putrefactive =REGISTRY.register("god_putrefactive", GodPutrefactive::new );
+    public static final RegistryObject<Item> god_fermentation =REGISTRY.register("god_fermentation", GodFermentation::new );
+    public static final RegistryObject<Item> god_autolytic =REGISTRY.register("god_autolytic", GodAutolytic::new );
+    public static final RegistryObject<Item> god_regenerative =REGISTRY.register("god_regenerative", GodRegenerative::new );
 
     public static final RegistryObject<Item> raw =REGISTRY.register("raw",raw::new );
 

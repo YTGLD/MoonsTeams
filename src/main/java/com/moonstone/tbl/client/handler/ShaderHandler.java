@@ -57,7 +57,8 @@ public class ShaderHandler {
 
                 if (ShaderHelper.INSTANCE.getWorldShader() != null) {
                     ShaderHelper.INSTANCE.getWorldShader().updateMatrices(event);
-                }
+					ShaderHandler.renderWorldShader(event.getPartialTick());
+				}
             }
 		}
 	}
@@ -102,26 +103,6 @@ public class ShaderHandler {
 		Minecraft.getInstance().getMainRenderTarget().bindWrite(false);
 	}
 
-	/**
-	 * Sets base buffer for cutting out translucent render batch
-	 */
-	public static void onPreTranslucentBatch() {
-		// Set base buffer and cleanup
-        if (ShaderHandler.diffBlitDepth != null) {
-            ShaderHandler.diffBlitDepth.Base.copyDepthFrom(Minecraft.getInstance().getMainRenderTarget());
-        }
-        Minecraft.getInstance().getMainRenderTarget().bindWrite(false);
-	}
-
-	/**
-	 * Sets before buffer for cutting out translucent render batch
-	 */
-	public static void onPostTranslucentBatch() {
-        if (ShaderHandler.diffBlitDepth != null) {
-            ShaderHandler.diffBlitDepth.BeforeTarget.copyDepthFrom(Minecraft.getInstance().getMainRenderTarget());
-        }
-        Minecraft.getInstance().getMainRenderTarget().bindWrite(false);
-	}
 	public static void resize(int width, int height) {
 		// Depth differential blit targets
 		if (ShaderHandler.diffBlitDepth != null) {

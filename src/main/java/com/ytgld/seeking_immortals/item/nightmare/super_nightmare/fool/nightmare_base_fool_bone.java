@@ -1,7 +1,7 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool;
 
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -21,7 +21,7 @@ public class nightmare_base_fool_bone extends nightmare implements SuperNightmar
 
     public static void attLook(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_fool_bone.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_fool_bone.get())) {
                 if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_fool_bone.get())) {
                     if (event.getEntity() instanceof Mob mob) {
                         if (mob.getTarget() != null && mob.getTarget().is(player)) {

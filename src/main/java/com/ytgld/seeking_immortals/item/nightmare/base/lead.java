@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.base;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
 import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
@@ -17,7 +17,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -70,7 +69,7 @@ public class lead  extends nightmare implements SuperNightmare, AllTip {
     public static void hurtOfBlood(LivingHurtEvent event){
         if (!event.getSource().is(DamageTypes.GENERIC_KILL)) {
             if (event.getEntity() instanceof Player player) {
-                if (Handler.hascurio(player,Items.lead.get())) {
+                if (SIHandler.hascurio(player,Items.lead.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

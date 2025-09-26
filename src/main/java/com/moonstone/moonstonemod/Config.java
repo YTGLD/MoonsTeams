@@ -23,24 +23,14 @@ public class Config {
     public   ForgeConfigSpec.IntValue blood_god_kill ;
     public   ForgeConfigSpec.IntValue blood_god_heal ;
     public   ForgeConfigSpec.IntValue blood_god_damage ;
-
-
-
     public   ForgeConfigSpec.IntValue Nightecora ;
-
-
     public   ForgeConfigSpec.IntValue nightmare_base_redemption_deception ;
-
     public   ForgeConfigSpec.DoubleValue nightmare_base_fool_bone ;
     public   ForgeConfigSpec.IntValue nightmare_base_insight_drug ;
     public   ForgeConfigSpec.IntValue nightmare_base_insight_drug_2 ;
-
     public   ForgeConfigSpec.IntValue nightmare_base_insight_insane ;
     public   ForgeConfigSpec.IntValue nightmare_base_redemption_deception_time ;
-
-
     public   ForgeConfigSpec.IntValue nightmareBaseMaxItem ;
-
     public final ForgeConfigSpec.BooleanValue nightmare_base_black_eye ;
     public final ForgeConfigSpec.DoubleValue nightmare_base_stone ;
     public final ForgeConfigSpec.DoubleValue nightmare_base_fool ;
@@ -71,11 +61,6 @@ public class Config {
                 killFlySword = BUILDER
                         .comment("关闭飞剑")
                         .define("killFlySword", false);
-
-                giveYtgld = BUILDER
-                        .comment("第一次死亡给予“远古病毒”")
-                        .define("giveYtgld", true);
-
                 canUnequipMoonstoneItem = BUILDER
                         .comment("可以取下月之石的“不可以取下”的物品")
                         .define("Can", false);
@@ -103,33 +88,6 @@ public class Config {
                 giveNightmare = BUILDER
                         .comment("给予玩家噩梦座")
                         .define("giveNightmare", true);
-
-
-                nightmareBaseMaxItem = BUILDER
-                        .comment("“”噩梦基座“给玩家的罪孽数量")
-                        .defineInRange("nig", 3, 0, 7);
-
-                Nightecora = BUILDER
-                        .comment("Nightecora病毒的额外生命值惩罚，单位百分比")
-                        .defineInRange("Nightecora", 25, 0, 100);
-                nightmare_base_redemption_deception = BUILDER
-                        .comment("“欺骗”恢复的生命值，单位百分比")
-                        .defineInRange("nightmare_base_redemption_deception", 100, 0, 100);
-                nightmare_base_redemption_deception_time = BUILDER
-                        .comment("“欺骗”恢复的生命值，单位秒")
-                        .defineInRange("nightmare_base_redemption_deception_time", 7, 0, 100);
-
-                nightmare_base_insight_drug = BUILDER
-                        .comment("疯狂灵药的最大属性加成，单位百分比")
-                        .defineInRange("nightmare_base_insight_drug", 100, 0, 99999);
-
-                nightmare_base_insight_drug_2 = BUILDER
-                        .comment("疯狂灵药的单物品计算的属性衰败，单位百分比")
-                        .defineInRange("nightmare_base_insight_drug_2", 8, 0, 99999);
-
-                nightmare_base_insight_insane = BUILDER
-                        .comment("癫狂之石的杀死生物后获得的伤害加成，单位百分比")
-                        .defineInRange("nightmare_base_insight_insane", 150, 0, 99999);
                 BUILDER.pop();
             }
             {
@@ -363,7 +321,7 @@ public class Config {
                             .comment("“欺骗”恢复的生命值，单位百分比")
                             .defineInRange("nightmare_base_redemption_deception", 100, 0, 100);
                     nightmare_base_redemption_deception_time = BUILDER
-                            .comment("“欺骗”恢复的生命值，单位秒")
+                            .comment("“欺骗”无敌时间，单位秒")
                             .defineInRange("nightmare_base_redemption_deception_time", 7, 0, 100);
 
                     nightmare_base_fool_bone = BUILDER

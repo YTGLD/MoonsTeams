@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.base;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -40,14 +40,14 @@ public class bone_or_god extends nightmare implements SuperNightmare {
     public static void hurt(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof OwnableEntity ownableEntity) {
             if (ownableEntity.getOwner() instanceof Player player) {
-                if (Handler.hascurio(player, Items.bone_or_god.get())) {
+                if (SIHandler.hascurio(player, Items.bone_or_god.get())) {
                     event.setAmount((float) (event.getAmount() * 2 + (player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.1F)));
                 }
             }
         }
         if (event.getEntity() instanceof OwnableEntity ownableEntity) {
             if (ownableEntity.getOwner() instanceof Player player) {
-                if (Handler.hascurio(player, Items.bone_or_god.get())) {
+                if (SIHandler.hascurio(player, Items.bone_or_god.get())) {
                     event.setAmount(event.getAmount() * 0.5F);
                 }
             }

@@ -36,17 +36,15 @@ public class bat_cell extends BloodViru {
     public static void Bat(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player living) {
             if (Handler.hascurio(living,Items.bloodvirus.get())) {
-                if (Handler.hascurio(living, Items.bat_cell.get())) {
-                    if (Handler.hascurio(living, Items.cell_desecrate.get())) {
-                        if (event.getEntity() instanceof Mob mob) {
-                            if (!mob.isInvertedHealAndHarm()) {
-                                event.setAmount(event.getAmount() * 1.4f);
-                            }
+                if (Handler.hascurio(living, Items.cell_desecrate.get())) {
+                    if (event.getEntity() instanceof Mob mob) {
+                        if (!mob.isInvertedHealAndHarm()) {
+                            event.setAmount(event.getAmount() * 1.4f);
                         }
                     }
-                    if (Handler.hascurio(living, Items.cell_doctor.get())) {
-                        living.heal(event.getAmount() / 5);
-                    }
+                }
+                if (Handler.hascurio(living, Items.cell_doctor.get())) {
+                    living.heal(event.getAmount() / 5);
                 }
             }
         }

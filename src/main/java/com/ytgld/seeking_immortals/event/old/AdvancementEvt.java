@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.event.old;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.util.Mth;
@@ -95,7 +95,7 @@ public class AdvancementEvt {
     public void wolf(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Wolf wolf_entity){
             if (wolf_entity.getOwner() instanceof Player player) {
-                if (Handler.hascurio(player, Items.nightmare_base_start.get())) {
+                if (SIHandler.hascurio(player, Items.nightmare_base_start.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -125,7 +125,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void hypocritical_self_esteem(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_redemption.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_redemption.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -174,7 +174,7 @@ public class AdvancementEvt {
                 a++;
             }
             if (a>=10) {
-                if (Handler.hascurio(player, Items.nightmare_base_insight.get())) {
+                if (SIHandler.hascurio(player, Items.nightmare_base_insight.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -200,7 +200,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void apple(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_fool.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_fool.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -234,7 +234,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_start_egg(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_start.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_start.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -264,7 +264,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void end_bone(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_stone.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_stone.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -294,7 +294,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_start_power(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_start.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_start.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -324,7 +324,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_insight(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_insight.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_insight.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -355,7 +355,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_insight_insane(LivingDeathEvent event){
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_insight.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_insight.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -382,7 +382,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_fool(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_fool.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_fool.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -440,7 +440,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_redemption_degenerate(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_redemption.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_redemption.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -469,7 +469,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_redemption_deception(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_redemption.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_redemption.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -498,7 +498,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_reversal_card(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_reversal.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_reversal.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -528,7 +528,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_stone_meet(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_stone.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_stone.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -558,7 +558,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_stone_virus(LivingUseTotemEvent event){
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.nightmare_base_stone.get())){
+            if (SIHandler.hascurio(player, Items.nightmare_base_stone.get())){
                 if (event.getSource().getEntity() instanceof WitherBoss witherBoss) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -587,7 +587,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void nightmare_base_stone_brain(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_stone.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_stone.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -622,7 +622,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void LivingUseTotemEvent(LivingUseTotemEvent event){
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.nightmare_base_black_eye.get())){
+            if (SIHandler.hascurio(player, Items.nightmare_base_black_eye.get())){
                 if (player.hasEffect(MobEffects.POISON)
                         && player.hasEffect(MobEffects.WITHER)
                         && player.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)){
@@ -657,7 +657,7 @@ public class AdvancementEvt {
     @SubscribeEvent
     public void drop(LivingDropsEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.nightmare_base_black_eye.get())){
+            if (SIHandler.hascurio(player,Items.nightmare_base_black_eye.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -688,7 +688,7 @@ public class AdvancementEvt {
                                Entity entity,
                                int lv){
         if (entity instanceof Player player ){
-            if (Handler.hascurio(player,Items.nightmare_base_black_eye.get())) {
+            if (SIHandler.hascurio(player,Items.nightmare_base_black_eye.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -719,7 +719,7 @@ public class AdvancementEvt {
     public static void nightmare_base_reversal_mysteriousLOOT(ObjectArrayList<ItemStack> generatedLoot,
                                Entity entity){
         if (entity instanceof Player player ){
-            if (Handler.hascurio(player,Items.nightmare_base_reversal_orb.get())) {
+            if (SIHandler.hascurio(player,Items.nightmare_base_reversal_orb.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -744,7 +744,7 @@ public class AdvancementEvt {
     public static void nightmare_base_start_pod(ObjectArrayList<ItemStack> generatedLoot,
                                                               Entity entity){
         if (entity instanceof Player player ){
-            if (Handler.hascurio(player,Items.nightmare_base_start.get())) {
+            if (SIHandler.hascurio(player,Items.nightmare_base_start.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -771,7 +771,7 @@ public class AdvancementEvt {
     public static void tricky_puppets(ObjectArrayList<ItemStack> generatedLoot,
                                                 Entity entity){
         if (entity instanceof Player player ){
-            if (Handler.hascurio(player,Items.nightmare_base_black_eye.get())) {
+            if (SIHandler.hascurio(player,Items.nightmare_base_black_eye.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

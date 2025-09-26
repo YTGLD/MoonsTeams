@@ -1,11 +1,12 @@
 package com.ytgld.seeking_immortals.item.nightmare;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.SeekingImmortalsMod;
 import com.ytgld.seeking_immortals.event.old.NewEvent;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.INightmare;
+import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import com.ytgld.seeking_immortals.renderer.Light;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -52,19 +53,13 @@ import java.util.Map;
  * <p>
  * 深渊和噩梦物品无效化
  */
-public class immortal extends Item implements ICurioItem , INightmare ,Terror{
-
-
-    public immortal() {
-        super(new Properties().stacksTo(1)
-                .durability(1000000000).rarity(Rarity.UNCOMMON));
-    }
+public class immortal extends nightmare implements ICurioItem , INightmare ,Terror{
 
     public static void hEvt(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof LivingEntity living){
             if (event.getEntity() instanceof Player player){
                 int lvl = Mth.nextInt(RandomSource.create(),1,100);
-                if (Handler.hascurio(player, Items.immortal.get())){
+                if (SIHandler.hascurio(player, Items.immortal.get())){
                     if (lvl<=80){
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_HIT_PLAYER, SoundSource.NEUTRAL, 1F, 1F);
                         if (living.getHealth()<=living.getMaxHealth()*0.7f){
@@ -83,7 +78,7 @@ public class immortal extends Item implements ICurioItem , INightmare ,Terror{
     public static void livDead(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof LivingEntity living){
             if (event.getEntity() instanceof Player player){
-                if (Handler.hascurio(player, Items.immortal.get())){
+                if (SIHandler.hascurio(player, Items.immortal.get())){
                     living.hurt(living.damageSources().dryOut(),living.getHealth()*0.2f);
                     living.addEffect(new MobEffectInstance(Effects.dead.get(),200,9));
                 }
@@ -140,28 +135,6 @@ public class immortal extends Item implements ICurioItem , INightmare ,Terror{
            tooltip.add(Component.translatable("item.immortal.tool.string.8").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.BOLD));
        }
     }
-
-    @Override
-    public ResourceLocation image(@Nullable LivingEntity entity) {
-        return new ResourceLocation(SeekingImmortalsMod.MODID,"textures/gui/tooltip/fire.png");
-    }
-
-    @Nullable
-    @Override
-    public Map<Integer, Component> describe(ItemStack stack) {
-        return null;
-    }
-
-    @Override
-    public int maxLevel(ItemStack stack) {
-        return 1;
-    }
-
-    @Override
-    public int nowLevel(ItemStack stack) {
-        return 1;
-    }
-
     @Override
     public int color(ItemStack stack) {
         int s = (int) (200 *  Math.sin(NewEvent.time/100))+55;

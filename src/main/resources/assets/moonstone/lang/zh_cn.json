@@ -382,6 +382,7 @@
   "item.necora.tool.string.15": "但是它的大部分基因结构仍然是未解之谜",
 
   "item.heathgene.tool.string": "+10 最大生命值",
+  "item.heathgene.tool.string.1": "+10% 额外生命值",
 
 
 
@@ -911,7 +912,7 @@
   "effect.moonstone.pain": "痛苦",
   "effect.moonstone.blood": "流血",
 
-  "item.moonstone.max_eye": "§4无懈之眼",
+  "item.moonstone.max_eye": "无懈之眼",
   "item.max_eye.tool.string": "杀死生物获得血液",
   "item.max_eye.tool.string.1": "最多储存4点",
   "item.max_eye.tool.string.2": "当你拥有血液时，你将减少90%受到伤害",
@@ -921,27 +922,27 @@
   "item.max_sword.tool.string.6": "血球爆炸时对3格内的生物造成流血效果",
   "item.max_sword.tool.string.7": "杀死生物后再获得1~3颗血球",
 
-  "item.moonstone.max_sword": "§4诺克萨斯纹章",
+  "item.moonstone.max_sword": "诺克萨斯纹章",
   "item.max_sword.tool.string": "每次攻击都有概率生成一个血球围绕你旋转",
   "item.max_sword.tool.string.1": "当血球数量超过8时",
   "item.max_sword.tool.string.2": "下一次斩击将造成4倍伤害",
   "item.max_sword.tool.string.3": "血球会随着时间的流失而被你吸收",
   "item.max_sword.tool.string.4": "每次吸收都会恢复一定的百分比生命值",
 
-  "item.moonstone.max_blood_eye": "§4校准之眼",
+  "item.moonstone.max_blood_eye": "校准之眼",
   "item.max_blood_eye.tool.string": "每次全力攻击都会施加流血（叠加）",
   "item.max_blood_eye.tool.string.1": "当流血层数超过3时",
   "item.max_blood_eye.tool.string.2": "产生一次血爆造成伤害,并清除流血状态",
   "item.max_blood_eye.tool.string.3": "被波及者获得流血，如果状态已存在，则转换成重伤",
   "item.max_blood_eye.tool.string.4": "冷却时间1秒",
 
-  "item.moonstone.blood_amout": "§4血符",
+  "item.moonstone.blood_amout": "血符",
   "item.blood_amout.tool.string": "受伤召唤血灵",
 
   "advancements.tooltip.blood_snake.hand": "血之审判",
   "advancements.tooltip.blood_snake.text": "获得蛇血魔符",
 
-  "item.moonstone.the_prison_of_sin": "§4罪孽囚笼",
+  "item.moonstone.the_prison_of_sin": "罪孽囚笼",
   "item.the_prison_of_sin.tool.string": "自佩戴以来，你杀死了：",
   "item.the_prison_of_sin.tool.string.5": "属性提高了：",
 
@@ -961,22 +962,22 @@
   "advancements.tooltip.the_prison_of_sin.hand": "好奇心害死猫",
   "advancements.tooltip.the_prison_of_sin.text": "获得罪孽囚笼",
 
-  "item.moonstone.blood_snake": "§4蛇血魔符",
+  "item.moonstone.blood_snake": "蛇血魔符",
   "item.blood_snake.tool.string": "杀死生物发射3条会造成150%伤害的血蛇",
   "item.blood_snake.tool.string.1": "血蛇数量会随着生物的最大生命值来增加",
   "item.blood_snake.tool.string.2": "但不超过10条",
   "item.blood_snake.tool.string.3": "-20% 伤害",
 
-  "item.moonstone.max_blood_cube": "§4复仇之骰",
+  "item.moonstone.max_blood_cube": "复仇之骰",
   "item.max_blood_cube.tool.string": "拿着任意物品对准生物潜行并长按右键释放技能",
   "item.max_blood_cube.tool.string.1": "技能期间无法移动",
-  "item.moonstone.blood_magic_box": "§4血之魔盒",
+  "item.moonstone.blood_magic_box": "血之魔盒",
   "item.moonstone.blood": "血球",
   "item.blood_magic_box.tool.string": "杀死生物获得它们的血液",
 
-  "item.moonstone.blood_candle": "§4封魔烛台",
+  "item.moonstone.blood_candle": "封魔烛台",
 
-  "item.moonstone.the_blood_book": "§4封魔录",
+  "item.moonstone.the_blood_book": "封魔录",
   "item.blood_candle.tool.string": "召唤一个巨型血灵增生体协助你作战",
   "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品或右键这个物品",
 
@@ -1013,13 +1014,13 @@
   "item.god_lead.tool.string.2":"如果此生物死亡，那么冷却清除",
   "item.god_lead.tool.string.3":"+150%受到伤害",
 
-  "item.moonstone.evil_blood": "§4渎圣玩偶",
+  "item.moonstone.evil_blood": "渎圣玩偶",
   "item.evil_blood.tool.string": "召唤一个怨念合并体协助你作战",
 
 
   "advancements.tooltip.evil_blood.text": "打开深渊的媒介",
 
-  "item.moonstone.deceased_contract": "§4死灵契约",
+  "item.moonstone.deceased_contract": "死灵契约",
 
   "item.moonstone.blood_stasis": "瘀血",
   "item.blood_stasis.tool.string": "僵尸死亡后恢复召唤者10%的最大生命值",
@@ -1092,7 +1093,7 @@
   "item.moonstone.cell_flu.tool": "使半径（数量）的生物虚弱",
   "item.moonstone.cell_constant.tool": "加（数量）的无敌帧",
 
-  "item.moonstone.blood_sun": "§4血日",
+  "item.moonstone.blood_sun": "血日",
   "item.moonstone.blood_jelly": "血浆果冻",
   "item.blood_sun.tool.string": "杀死生物召唤末日之灵",
   "entity.moonstone.sun": "末日之灵",
@@ -1553,12 +1554,12 @@
 
 
 
-  "item.moonstone.nightmare_base": "§4噩梦基座",
+  "item.moonstone.nightmare_base": "噩梦基座",
   "item.nightmare_base.tool.string": "攻击伤害,生命值,护甲减少30%",
   "item.nightmare_base.tool.string.1": "邪念体，血虐之铅，恶意之殇无效化",
 
 
-  "item.moonstone.nightmare_base_stone": "§4死兆方尖碑",
+  "item.moonstone.nightmare_base_stone": "死兆方尖碑",
   "item.nightmare_base_stone.tool.string": "满生命值时受到的伤害增加500%",
   "item.nightmare_base_stone.tool.string.1": "但是你可以解锁下列物品",
   "item.nightmare_base_stone.tool.string.2": "10秒冷却",
@@ -1566,7 +1567,7 @@
   "advancements.tooltip.immortal.text": "“当你获得了这无与伦比的神力...你会选择去结束一切...还是承受无尽的轮回之苦?”",
   "advancements.tooltip.immortal.hand": "步入轮回",
 
-  "item.moonstone.nightmare_base_stone_meet": "§4绝望共鸣",
+  "item.moonstone.nightmare_base_stone_meet": "绝望共鸣",
   "item.nightmare_base_stone_meet.tool.string.1": "强化下列饰品",
   "item.moonstone.ectoplasmstar.nightmare_base_stone_meet": "幸运值加倍，且每点幸运加2.5%治疗",
   "item.moonstone.ectoplasmstar.mayhemcrystal": "伤害增幅增加50%",
@@ -1575,13 +1576,13 @@
   "item.moonstone.ectoplasmstar.maxamout.2": "反伤效果增加400%",
 
 
-  "item.moonstone.nightmare_base_stone_virus": "§4Nightecora病毒",
+  "item.moonstone.nightmare_base_stone_virus": "Nightecora病毒",
   "item.nightmare_base_stone_virus.tool.string": "伤害增加100%",
   "item.nightmare_base_stone_virus.tool.string.1": "治疗增加100%",
   "item.nightmare_base_stone_virus.tool.string.2": "暴击增加100%",
   "item.nightmare_base_stone_virus.tool.string.3": "受到任意伤害都会额外附加10%最大生命值的惩罚,不受任何加成影响",
 
-  "item.moonstone.nightmare_base_stone_brain": "§4末世之脑",
+  "item.moonstone.nightmare_base_stone_brain": "末世之脑",
   "item.nightmare_base_stone_brain.tool.string": "满血时伤害减少100%",
   "item.nightmare_base_stone_brain.tool.string.1": "非满血状态伤害提高50%",
   "item.nightmare_base_stone_brain.tool.string.2": "非满血状态抗性提高50%",
@@ -1589,7 +1590,7 @@
 
 
 
-  "item.moonstone.candle": "§4邪异古烛",
+  "item.moonstone.candle": "邪异古烛",
   "item.candle.tool.string": "满生命值时受到的伤害增加1000%",
   "item.candle.tool.string.1": "但是始终保留1点生命值",
   "item.candle.tool.string.2": "根据满生命值时受到的伤害获得无敌保护",
@@ -1601,7 +1602,7 @@
   "advancements.tooltip.candle.hand": "永恒的痛苦",
   "moonstone.jei.item.moonstone.candle": "合成获取",
 
-  "item.moonstone.apple": "§4倾斜异果",
+  "item.moonstone.apple": "倾斜异果",
   "item.apple.tool.string": "最大生命值固定为30",
   "item.apple.tool.string.1": "受到的伤害固定为2",
   "item.apple.tool.string.2": "攻击伤害固定为10",
@@ -1611,36 +1612,36 @@
   "moonstone.jei.item.moonstone.apple": "杀死血量大于自身30倍最大生命值的生物获取，一个玩家只能获得一个",
 
 
-  "item.moonstone.nightmare_base_black_eye": "§4邪念之窥眸",
+  "item.moonstone.nightmare_base_black_eye": "邪念之窥眸",
   "item.nightmare_base_black_eye.tool.string": "看向生物视力模糊，随时间恢复",
   "item.nightmare_base_black_eye.tool.string.1": "但是你可以解锁下列物品",
 
 
-  "item.moonstone.nightmare_base_black_eye_eye": "§4惶恐肉瘤",
+  "item.moonstone.nightmare_base_black_eye_eye": "惶恐肉瘤",
   "item.nightmare_base_black_eye_eye.tool.string": "被注视的生物会无法移动",
   "item.nightmare_base_black_eye_eye.tool.string.1": "同时他会获得大量负面BUFF",
   "item.nightmare_base_black_eye_eye.tool.string.2": "当你看向任意生物时，你会获得100%的伤害加成",
 
-  "item.moonstone.nightmare_base_black_eye_red": "§4罪恶之红唇",
+  "item.moonstone.nightmare_base_black_eye_red": "罪恶之红唇",
   "item.nightmare_base_black_eye_red.tool.string": "每次杀死生物都会使所有属性增加5%",
   "item.nightmare_base_black_eye_red.tool.string.1": "最多增加50%",
   "item.nightmare_base_black_eye_red.tool.string.2": "这些属性会随时间减少",
 
-  "item.moonstone.nightmare_base_reversal":"§4颠倒之物",
+  "item.moonstone.nightmare_base_reversal":"颠倒之物",
 
   "item.nightmare_base_reversal.tool.string": "每次死亡都会使属性降至0%",
   "item.nightmare_base_reversal.tool.string.2": "复活后属性以每秒4%的速度逐渐恢复",
   "item.nightmare_base_reversal.tool.string.3": "中毒对于你来说是致命的",
 
-  "item.moonstone.nightmare_base_reversal_orb": "§4反转球体",
+  "item.moonstone.nightmare_base_reversal_orb": "反转球体",
   "item.nightmare_base_reversal_orb.tool.string": "治疗只会减少生命值",
   "item.nightmare_base_reversal_orb.tool.string.2": "每隔10秒重置生命值至满血",
 
-  "item.moonstone.nightmare_base_reversal_card": "§4不稳卡片",
+  "item.moonstone.nightmare_base_reversal_card": "不稳卡片",
   "item.nightmare_base_reversal_card.tool.string": "每次复活时属性恢复速度减少至2%",
   "item.nightmare_base_reversal_card.tool.string.2": "但是最多恢复到原先的150%",
 
-  "item.moonstone.nightmare_base_reversal_mysterious": "§4神秘之物",
+  "item.moonstone.nightmare_base_reversal_mysterious": "神秘之物",
   "item.nightmare_base_reversal_mysterious.tool.string": "以减少10%全属性的代价抑制噩梦基座的负面效果",
 
 
@@ -1659,19 +1660,19 @@
   "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious": "在佩戴反转球体的情况下开古城的箱子，概率100%，但是只能获得一个",
   "moonstone.jei.item.moonstone.nightmare_base_reversal_orb": "使用颠倒之物的中毒扣血杀死自己",
 
-  "item.moonstone.nightmare_base_redemption":"§4“救赎”",
+  "item.moonstone.nightmare_base_redemption":"“救赎”",
   "item.nightmare_base_redemption.tool.string": "增加15%噩梦基座的属性衰败",
   "advancements.tooltip.nightmare_base_redemption.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_redemption.hand": "谣言",
 
-  "item.moonstone.nightmare_base_redemption_deception":"§4欺骗",
+  "item.moonstone.nightmare_base_redemption_deception":"欺骗",
   "item.nightmare_base_redemption_deception.tool.string": "抵御必死伤害，恢复所有生命值",
   "item.nightmare_base_redemption_deception.tool.string.1": "并获得7秒的无敌和平息附近生物的怒火，冷却60秒",
   "advancements.tooltip.nightmare_base_redemption_deception.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_redemption_deception.hand": "尘封的谣言",
 
 
-  "item.moonstone.nightmare_base_redemption_degenerate":"§4堕落",
+  "item.moonstone.nightmare_base_redemption_degenerate":"堕落",
   "item.nightmare_base_redemption_degenerate.tool.string": "免疫魔法伤害",
   "item.nightmare_base_redemption_degenerate.tool.string.1": "免疫坠落伤害",
   "item.nightmare_base_redemption_degenerate.tool.string.2": "免疫火焰伤害",
@@ -1679,7 +1680,7 @@
   "advancements.tooltip.nightmare_base_redemption_degenerate.hand": "暗影的赞歌",
 
 
-  "item.moonstone.nightmare_base_redemption_down_and_out":"§4落魄",
+  "item.moonstone.nightmare_base_redemption_down_and_out":"落魄",
   "item.nightmare_base_redemption_down_and_out.tool.string": "减少35%噩梦基座的属性衰败，若减少至负数，则转变成正属性加成",
   "advancements.tooltip.nightmare_base_redemption_down_and_out.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_redemption_down_and_out.hand": "历史长河",
@@ -1703,7 +1704,7 @@
 
 
 
-  "item.moonstone.nightmare_base_black_eye_heart": "§4死心之胚",
+  "item.moonstone.nightmare_base_black_eye_heart": "死心之胚",
   "item.nightmare_base_black_eye_heart.tool.string": "附近的生物受到的伤害提高25%",
   "item.nightmare_base_black_eye_heart.tool.string.1": "他们恢复的生命值会到你身上",
   "item.nightmare_base_black_eye_heart.tool.string.2": "且他们不再会受到任何治疗",
@@ -1714,7 +1715,7 @@
 
 
 
-  "item.moonstone.nightmare_base_fool":"§4愚者之危",
+  "item.moonstone.nightmare_base_fool":"愚者之危",
   "item.nightmare_base_fool.tool.string": "从2件开始，每多佩戴一件饰品都会使生命值减少1%",
   "item.nightmare_base_fool.tool.string.1": "从5件开始，每多佩戴一件饰品都会使伤害减少2%",
   "item.nightmare_base_fool.tool.string.2": "伤害和生命值惩罚不高于50%",
@@ -1722,7 +1723,7 @@
   "advancements.tooltip.nightmare_base_fool.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_fool.hand": "抉择",
 
-  "item.moonstone.nightmare_base_fool_betray":"§4夺舍挂坠",
+  "item.moonstone.nightmare_base_fool_betray":"夺舍挂坠",
   "item.nightmare_base_fool_betray.tool.string": "使附近的部分类型生物主动投靠于你",
   "item.nightmare_base_fool_betray.tool.string.1": "投靠的生物获得与你一致的正面BUFF",
   "item.nightmare_base_fool_betray.tool.string.2": "被夺舍侍从的主人将损失10%最大生命值",
@@ -1731,7 +1732,7 @@
   "advancements.tooltip.nightmare_base_fool_betray.hand": "为什么会这样",
 
 
-  "item.moonstone.nightmare_base_fool_bone":"§4危险的头骨",
+  "item.moonstone.nightmare_base_fool_bone":"危险的头骨",
   "item.nightmare_base_fool_bone.tool.string": "如果一个生物的攻击目标是你",
   "item.nightmare_base_fool_bone.tool.string.1": "那么你对他的伤害翻倍",
   "item.nightmare_base_fool_bone.tool.string.2": "并且攻击有30%的概率破除无敌帧",
@@ -1739,7 +1740,7 @@
   "advancements.tooltip.nightmare_base_fool_bone.hand": "史莱姆有骨头吗",
 
 
-  "item.moonstone.nightmare_base_fool_soul":"§4幽怨之魂",
+  "item.moonstone.nightmare_base_fool_soul":"幽怨之魂",
   "item.nightmare_base_fool_soul.tool.string": "愚者之危的伤害处罚判定由5提高到14",
   "item.nightmare_base_fool_soul.tool.string.1": "愚者之危的生命处罚判定由2提高到9",
   "item.nightmare_base_fool_soul.tool.string.2": "每佩戴一件饰品，治疗增加3%",
@@ -1766,7 +1767,7 @@
 
 
 
-  "item.moonstone.immortal": "§4不朽轮回之印章",
+  "item.moonstone.immortal": "不朽轮回之印章",
   "item.immortal.tool.string": "受到攻击有80%的概率规避并反弹50%的伤害给攻击者",
   "item.immortal.tool.string.1": "如果攻击者生命值大于70%，则反弹150%的伤害并破除无敌帧",
   "item.immortal.tool.string.2": "每隔5秒对周围生物施加一层枯朽Buff，最多达到5级",
@@ -1779,7 +1780,7 @@
 
 
 
-  "item.moonstone.ring": "§4灵念药戒",
+  "item.moonstone.ring": "灵念药戒",
   "item.ring.tool.string": "永恒的力量,抗性.生命恢复,急迫,生命提升",
   "item.ring.tool.string.1": "每获得一种3级及以上的药水状态",
   "item.ring.tool.string.2": "减少10%药水持续时间",
@@ -1792,14 +1793,14 @@
 
 
 
-  "item.moonstone.nightmare_base_insight":"§4噩梦洞悉者",
+  "item.moonstone.nightmare_base_insight":"噩梦洞悉者",
   "item.nightmare_base_insight.tool.string": "附魔台附魔等级减少1级",
   "item.nightmare_base_insight.tool.string.1": "附魔台附魔等级减少50%",
 
   "advancements.tooltip.nightmare_base_insight.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_insight.hand": "蹉跎之苦",
 
-  "item.moonstone.nightmare_base_insight_drug":"§4疯狂灵药",
+  "item.moonstone.nightmare_base_insight_drug":"疯狂灵药",
   "item.nightmare_base_insight_drug.tool.string": "伤害,护甲,生命值提高100%",
   "item.nightmare_base_insight_drug.tool.string.1": "但是每佩戴一件饰品，此奖励都将减少8%",
   "advancements.tooltip.nightmare_base_insight_drug.text": "获得这个物品",
@@ -1809,7 +1810,7 @@
   "advancements.tooltip.nightmare_base.text": "最好是佩戴它",
 
 
-  "item.moonstone.nightmare_base_insight_insane":"§4癫狂之石",
+  "item.moonstone.nightmare_base_insight_insane":"癫狂之石",
   "item.nightmare_base_insight_insane.tool.string": "当你斩杀生物时",
   "item.nightmare_base_insight_insane.tool.string.1": "根据死亡的生物的强度恢复生命值",
   "item.nightmare_base_insight_insane.tool.string.2": "并且下一击的伤害提高150%",
@@ -1818,7 +1819,7 @@
 
 
 
-  "item.moonstone.tricky_puppets":"§4诡响木偶",
+  "item.moonstone.tricky_puppets":"诡响木偶",
   "item.tricky_puppets.tool.string": "允许你标记半径20格内的容器方块",
   "item.tricky_puppets.tool.string.1": "被标记的方块会随着你与其距离的减少而发出光照",
   "item.tricky_puppets.tool.string.2": "你可以穿透方块看到它们",
@@ -1830,7 +1831,7 @@
 
 
 
-  "item.moonstone.end_bone":"§4末世脊骨",
+  "item.moonstone.end_bone":"末世脊骨",
   "item.end_bone.tool.string": "满血时速度减少50%，受到的伤害减少80%",
   "item.end_bone.tool.string.1": "满血时受到的伤害会以700%的比例反弹给攻击者",
 
@@ -1845,7 +1846,7 @@
 
 
 
-  "item.moonstone.nightmare_base_insight_collapse":"§4瓦解魔镜",
+  "item.moonstone.nightmare_base_insight_collapse":"瓦解魔镜",
   "item.nightmare_base_insight_collapse.tool.string": "通用饰品栏的数量加倍",
   "advancements.tooltip.nightmare_base_insight_collapse.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_insight_collapse.hand": "崩解之力",
@@ -1867,20 +1868,20 @@
 
 
 
-  "item.moonstone.nightmare_base_start":"§4噩梦之起始",
+  "item.moonstone.nightmare_base_start":"噩梦之起始",
   "item.nightmare_base_start.tool.string": "护甲无效化",
   "item.nightmare_base_start.tool.string.1": "每次受伤都会强制减少1点生命值",
   "item.nightmare_base_start.tool.string.2": "生命值低于10点时不会触发",
   "advancements.tooltip.nightmare_base_start.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_start.hand": "”仙人“",
 
-  "item.moonstone.nightmare_base_start_pod":"§4不灭苞荚",
+  "item.moonstone.nightmare_base_start_pod":"不灭苞荚",
   "item.nightmare_base_start_pod.tool.string": "抗性提高20%",
   "advancements.tooltip.nightmare_base_start_pod.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_start_pod.hand": "不灭花，不灭果",
 
 
-  "item.moonstone.nightmare_base_start_egg":"§4起源卵蛋",
+  "item.moonstone.nightmare_base_start_egg":"起源卵蛋",
   "item.nightmare_base_start_egg.tool.string": "幸运加10",
   "item.nightmare_base_start_egg.tool.string.1": "所有伤害加20%",
   "item.nightmare_base_start_egg.tool.string.2": "治疗加50%",
@@ -1889,7 +1890,7 @@
   "advancements.tooltip.nightmare_base_start_egg.hand": "懒蛋一个",
 
 
-  "item.moonstone.nightmare_base_start_power":"§4愕然的权力",
+  "item.moonstone.nightmare_base_start_power":"愕然的权力",
   "item.nightmare_base_start_power.tool.string": "每存在一个正面药水状态",
   "item.nightmare_base_start_power.tool.string.1": "你的所有属性提高2%",
   "advancements.tooltip.nightmare_base_start_power.text": "获得这个物品",
@@ -1905,15 +1906,15 @@
   "moonstone.jei.item.moonstone.nightmare_base_start_egg": "杀死嗅探兽",
   "moonstone.jei.item.moonstone.nightmare_base_start_pod": "开地牢的箱子，概率25%，只能获取一个",
   "itemGroup.moonstone": "月之石：噩梦之章",
-  "curios.identifier.nightmare": "§4噩梦之槽",
-  "curios.modifiers.nightmare": "§4接受噩梦洗礼时",
+  "curios.identifier.nightmare": "噩梦之槽",
+  "curios.modifiers.nightmare": "接受噩梦洗礼时",
   "moonstone.jei.nightmare": ": Requires wearing nightmare eye to be found in dungeons and mines",
 
   "moonstone.super_nightmare.name": "只有佩戴噩梦基座的人",
   "moonstone.super_nightmare.name.1": "才可以使用这个物品",
   "item.nightmareeye.tool.string.2": "不可取下",
 
-  "item.moonstone.hypocritical_self_esteem":"§4虚伪的自尊",
+  "item.moonstone.hypocritical_self_esteem":"虚伪的自尊",
   "item.hypocritical_self_esteem.tool.string": "附近每存在一个实体你都会获得下列加强",
   "item.hypocritical_self_esteem.tool.string.1": "如果你承受了邪念之窥眸的诅咒..那么：",
   "item.hypocritical_self_esteem.tool.string.2": "   撕咬附近的生物，每0.5秒造成20%你的面板伤害",
@@ -1940,7 +1941,7 @@
   "advancements.tooltip.nightmare_base_stone_virus.text": "获得Nightecora病毒",
   "advancements.tooltip.nightmare_base_stone_virus.hand": "融合体",
 
-  "item.moonstone.falling_immortals":"§4坠仙",
+  "item.moonstone.falling_immortals":"坠仙",
 
   "item.falling_immortals.tool.string.1":"你将不再受到任何形式的属性加成和减少",
   "item.falling_immortals.tool.string.2":"伤害固定为15",
@@ -1952,22 +1953,22 @@
   "advancements.tooltip.falling_immortals.text": "获得这个物品",
   "advancements.tooltip.falling_immortals.hand": "希望之火的熄灭",
 
-  "item.moonstone.disintegrating_stone":"§4裂天石",
+  "item.moonstone.disintegrating_stone":"裂天石",
   "item.disintegrating_stone.tool.string": "此物品的属性会随着你安装模组的数量的增加而增加",
   "item.disintegrating_stone.tool.string.1": "来自任何模组的饰品都可能无效化",
   "item.disintegrating_stone.tool.string.2": "上限为1800%",
 
 
-  "item.moonstone.defend_against_runestone":"§4抵御符石",
+  "item.moonstone.defend_against_runestone":"抵御符石",
   "item.defend_against_runestone.tool.string.1": "受击时有概率获得抗性II",
   "item.defend_against_runestone.tool.string.2": "攻击时有概率对目标造成虚弱II",
 
 
-  "item.moonstone.revive_runestone":"§4复苏符石",
+  "item.moonstone.revive_runestone":"复苏符石",
   "item.revive_runestone.tool.string.1": "受伤有概率吸收伤害",
   "item.revive_runestone.tool.string.2": "攻击有概率吸取生命",
 
-  "item.moonstone.strengthen_runestone":"§4强化符石",
+  "item.moonstone.strengthen_runestone":"强化符石",
   "item.strengthen_runestone.tool.string.1": "攻击有概率获得力量II",
   "item.strengthen_runestone.tool.string.2": "受伤有概率反弹伤害",
 
@@ -1976,7 +1977,7 @@
   "moonstone.jei.item.moonstone.strengthen_runestone": "发现在地牢和矿井，概率10%，一个玩家只能获得一个",
   "effect.moonstone.invulnerable": "无懈可击",
 
-  "item.moonstone.blood_god":"§4神血祖符",
+  "item.moonstone.blood_god":"神血祖符",
   "item.blood_god.tool.string.1": "增加25%最大生命值",
   "item.blood_god.tool.string.2": "增加40%生命恢复",
   "item.blood_god.tool.string.3": "饮用药水的速度增加25%",
@@ -1987,7 +1988,7 @@
   "item.blood_god.tool.string.8": "30秒冷却",
   "moonstone.jei.item.moonstone.blood_god": "需要500击杀数，5000治疗量，10000造成伤害获取",
 
-  "item.moonstone.lead":"§4罡风重铅",
+  "item.moonstone.lead":"罡风重铅",
   "item.lead.tool.string.1" : "连续受到伤害时逐渐提高抗性",
   "item.lead.tool.string.2" :"每次提升3%，但不超过30%",
   "item.lead.tool.string.3" : "若10秒未受到伤害",
@@ -1997,7 +1998,7 @@
   "item.lead.tool.string.7" : "护体结界崩碎时对攻击者造成伤害",
   "moonstone.jei.item.moonstone.lead": "死亡200次",
 
-  "item.moonstone.wolf":"§4孤狼",
+  "item.moonstone.wolf":"孤狼",
   "item.wolf.tool.string": "每杀死一种生物都会增加你1点生命和护甲",
   "item.wolf.tool.string.1": "你对曾被你杀死的生物造成额外25%的伤害",
   "item.wolf.tool.string.2": "标记附近被你巡抚的单位",
@@ -2027,6 +2028,20 @@
   "item.the_divine_fall_ring.tool.string.5": "复活时给予十秒无敌",
   "item.the_divine_fall_ring.tool.string.6": "增加百分之五十治疗",
   "item.the_divine_fall_ring.tool.string.7": "生命值越低 各方面属性越高",
+
+  "moonstone.jei.god_dna": "使用两个“类神的基因序列”的相同DNA物品合成",
+  "item.moonstone.god_ambush": "漂流发酵",
+  "item.god_ambush.tool.string": "增加10%抗性",
+  "item.moonstone.god_atpoverdose": "ATP过量",
+  "item.moonstone.god_putrefactive": "腐败抗性",
+  "item.god_putrefactive.tool.string": "食用食物获得大量增益BUFF",
+  "item.god_putrefactive.tool.string.1": "食用食物恢复10%最大生命值",
+  "item.moonstone.god_fermentation": "埋伏性狩猎",
+  "item.moonstone.god_autolytic": "自溶性抑制",
+  "item.moonstone.god_regenerative": "再生活性化",
+  "item.god_regenerative.tool.string": "每隔0.75秒恢复1点生命值",
+
+
 
   "advancements.tooltip.hidden_blade.text": "获得这个物品",
   "advancements.tooltip.hidden_blade.hand": "未知的刀锋",

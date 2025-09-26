@@ -3,7 +3,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.event.old.AdvancementEvt;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
@@ -75,7 +75,7 @@ public class nightmare_base_reversal extends nightmare implements SuperNightmare
 
     public static void LivingDeathEvent(LivingDeathEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_reversal.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_reversal.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -120,7 +120,7 @@ public class nightmare_base_reversal extends nightmare implements SuperNightmare
             }
         }
         if (stack.getTag() != null) {
-            if (!Handler.hascurio(slotContext.entity(), Items.nightmare_base_reversal_card.get())) {
+            if (!SIHandler.hascurio(slotContext.entity(), Items.nightmare_base_reversal_card.get())) {
                 if (stack.getTag().getInt(att) >= 4) {
                     if (slotContext.entity() instanceof Player player && !player.getCooldowns().isOnCooldown(stack.getItem())) {
                         stack.getTag().putInt(att, stack.getTag().getInt(att) - 4);

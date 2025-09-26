@@ -16,6 +16,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import top.theillusivec4.curios.api.SlotContext;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,8 +26,9 @@ public class heathgene extends BloodViru {
         super.appendHoverText(stack, level, tooltip, flags);
         if (Screen.hasShiftDown()) {
             tooltip.add(Component.translatable("item.heathgene.tool.string").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("item.heathgene.tool.string.1").withStyle(ChatFormatting.RED));
         } else {
-            tooltip.add(Component.translatable("Shift").withStyle(ChatFormatting.DARK_RED));
+            tooltip.add(Component.translatable("key.keyboard.left.shift").withStyle(ChatFormatting.DARK_RED));
         }
     }
 
@@ -39,6 +41,11 @@ public class heathgene extends BloodViru {
         );
 
         return modifierMultimap;
+    }
+
+    @Override
+    public List<Component> getAttributesTooltip(List<Component> tooltips, ItemStack stack) {
+        return new ArrayList<>();
     }
 
     @Override

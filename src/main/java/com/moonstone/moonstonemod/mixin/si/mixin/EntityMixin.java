@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.mixin.si.mixin;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
 import net.minecraft.world.damagesource.DamageSource;
@@ -25,7 +25,7 @@ public abstract class EntityMixin {
             if (player.hasEffect(Effects.invulnerable.get())){
                 cir.setReturnValue(true);
             }
-            if (Handler.hascurio(player, Items.nightmare_base_redemption_degenerate.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_redemption_degenerate.get())) {
                 if (p_20122_.is(DamageTypes.MAGIC) ||
                         p_20122_.is(DamageTypes.FALL) ||
                         p_20122_.is(DamageTypes.ON_FIRE) ||

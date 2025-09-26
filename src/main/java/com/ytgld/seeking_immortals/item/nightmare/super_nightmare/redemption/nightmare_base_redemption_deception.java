@@ -1,7 +1,7 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.redemption;
 
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -25,7 +25,7 @@ public class nightmare_base_redemption_deception extends nightmare implements Su
 
     public static void LivingHurtEvent(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_redemption_deception.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_redemption_deception.get())) {
                 if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_redemption_deception.get())) {
                     if (event.getAmount() > player.getHealth()) {
 

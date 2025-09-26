@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.base;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -25,7 +25,7 @@ public class revive_runestone  extends nightmare implements SuperNightmare {
     public static void hurt (LivingHurtEvent event){
         if (event.getEntity() instanceof Player player) {
             if (!player.getCooldowns().isOnCooldown(Items.revive_runestone.get())) {
-                if (Handler.hascurio(player, Items.revive_runestone.get())) {
+                if (SIHandler.hascurio(player, Items.revive_runestone.get())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
                         player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
                         player.getCooldowns().addCooldown(Items.revive_runestone.get(), 10);
@@ -35,7 +35,7 @@ public class revive_runestone  extends nightmare implements SuperNightmare {
         }
         if (event.getSource().getEntity() instanceof Player player) {
             if (event.getEntity() instanceof LivingEntity) {
-                if (Handler.hascurio(player, Items.revive_runestone.get())) {
+                if (SIHandler.hascurio(player, Items.revive_runestone.get())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
                         player.heal(2);
                     }

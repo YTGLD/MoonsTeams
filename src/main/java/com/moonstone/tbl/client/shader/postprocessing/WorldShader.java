@@ -59,11 +59,7 @@ public class WorldShader extends PostChain implements AutoCloseable {;
 		this.lightSourceAmountUniform = this.getUniform(WORLD_INDEX, "u_lightSourcesAmount");
 
 		this.depthBuffer = this.getTempTarget("s_diffuse_depth");
-
-        Warp gasWarpEffect = new Warp(textureManager, resourceProvider, screenTarget);
-
-		Minecraft.getInstance().getTextureManager().register(GAS_PARTICLE_TEXTURE, new GLTextureObjectWrapper(gasWarpEffect.gasTextureTarget.getColorTextureId()));
-	}
+}
 
 	public void cleanUp() {
 		clearLights();

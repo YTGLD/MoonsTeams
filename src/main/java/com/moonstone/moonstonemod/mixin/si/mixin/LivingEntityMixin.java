@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.mixin.si.mixin;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
 import net.minecraft.core.Holder;
@@ -45,7 +45,7 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("RETURN"), method = "canBeAffected", cancellable = true)
     private void canBeAffected(MobEffectInstance effectInstance, CallbackInfoReturnable<Boolean> cir){
         LivingEntity living = (LivingEntity) (Object) this;
-        if (Handler.hascurio(living, Items.nightmare_base_black_eye.get())||Handler.hascurio(living, Items.the_divine_fall_ring.get())) {
+        if (SIHandler.hascurio(living, Items.nightmare_base_black_eye.get())|| SIHandler.hascurio(living, Items.the_divine_fall_ring.get())) {
             if (effectInstance.getEffect()==(MobEffects.BLINDNESS)||effectInstance.getEffect() ==(MobEffects.DARKNESS)) {
                 cir.setReturnValue(false);
             }

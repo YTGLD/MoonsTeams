@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.stone;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -17,7 +17,7 @@ public class nightmare_base_stone_brain extends nightmare implements SuperNightm
 
     public static void hurts(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_stone_brain.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_stone_brain.get())) {
                 if (player.getHealth() >= player.getMaxHealth()) {
                     event.setAmount(0);
                 } else {
@@ -26,7 +26,7 @@ public class nightmare_base_stone_brain extends nightmare implements SuperNightm
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_stone_brain.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_stone_brain.get())) {
                 if (!(player.getHealth() >= player.getMaxHealth())) {
                     event.setAmount(event.getAmount()*0.75f);
                 }

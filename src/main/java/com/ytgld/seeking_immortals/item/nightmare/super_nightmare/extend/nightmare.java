@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.SeekingImmortalsMod;
 import com.ytgld.seeking_immortals.item.nightmare.Terror;
 import com.ytgld.seeking_immortals.renderer.Light;
@@ -25,8 +25,7 @@ import java.util.Map;
 public class nightmare extends Item implements ICurioItem, INightmare, Terror {
     public nightmare() {
 
-        super(new Properties().stacksTo(1)
-                .durability(1000000000).rarity(Rarity.UNCOMMON));
+        super(new Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     @Override
@@ -38,7 +37,7 @@ public class nightmare extends Item implements ICurioItem, INightmare, Terror {
 
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (Handler.hascurio(slotContext.entity(),this)){
+        if (SIHandler.hascurio(slotContext.entity(),this)){
             return false;
         }
         return true;

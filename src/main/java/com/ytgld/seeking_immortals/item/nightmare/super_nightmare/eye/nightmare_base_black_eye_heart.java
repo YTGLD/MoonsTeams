@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -30,7 +30,7 @@ public class nightmare_base_black_eye_heart extends nightmare implements SuperNi
                                 playerPos.z + range));
         for (Player player : entities) {
             if (!event.getEntity().is(player)) {
-                if (Handler.hascurio(player, Items.nightmare_base_black_eye_heart.get())) {
+                if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_heart.get())) {
                     player.heal(event.getAmount());
                     event.setAmount(0);
                 }
@@ -51,7 +51,7 @@ public class nightmare_base_black_eye_heart extends nightmare implements SuperNi
                                 playerPos.z + range));
         for (Player player : entities) {
             if (!event.getEntity().is(player)) {
-                if (Handler.hascurio(player, Items.nightmare_base_black_eye_heart.get())) {
+                if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_heart.get())) {
                     event.setAmount(event.getAmount() * 1.25f);
                 }
             }

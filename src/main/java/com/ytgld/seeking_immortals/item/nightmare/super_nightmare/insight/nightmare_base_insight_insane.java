@@ -1,7 +1,7 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight;
 
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -18,7 +18,7 @@ import java.util.List;
 public class nightmare_base_insight_insane extends nightmare implements SuperNightmare {
     public static void LivingDeathEvents(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_insight_insane.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_insight_insane.get())) {
                 player.heal(event.getEntity().getMaxHealth() / 10);
                 player.getCooldowns().addCooldown(Items.nightmare_base_insight_insane.get(), 200);
             }
@@ -27,7 +27,7 @@ public class nightmare_base_insight_insane extends nightmare implements SuperNig
 
     public static void damage(LivingHurtEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_insight_insane.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_insight_insane.get())) {
                 if (player.getCooldowns().isOnCooldown(Items.nightmare_base_insight_insane.get())) {
                     event.setAmount(event.getAmount() * (1 + (Config.SERVER.nightmare_base_insight_insane.get() / 100f)));
                     player.getCooldowns().addCooldown(Items.nightmare_base_insight_insane.get(), 0);

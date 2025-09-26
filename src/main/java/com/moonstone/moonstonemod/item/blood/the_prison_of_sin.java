@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.UUID;
 
 public class the_prison_of_sin extends TheNecoraIC {
+    public static final String killNameAndSize = "killNameAndSize";
     public static void LivingDeathEvent(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.the_prison_of_sin.get())){
@@ -53,6 +54,14 @@ public class the_prison_of_sin extends TheNecoraIC {
                                     String name = event.getEntity().getEncodeId();
 
                                     if (stack.getTag().getString(name).isEmpty()) {
+                                        int size = stack.getTag().getAllKeys().size();
+                                        float incrementFactor = 1.0f;
+                                        for (int ia = 0; ia < size; ia++) {
+                                            incrementFactor *= 0.99f;
+                                        }
+                                        stack.getTag().putFloat(killNameAndSize,
+                                                stack.getTag().getFloat(killNameAndSize)+incrementFactor);
+
                                         stack.getTag().putString(name, name);
                                     }
                                 }
@@ -96,24 +105,14 @@ public class the_prison_of_sin extends TheNecoraIC {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         float s = 110;
-        float incrementFactor = 1.0f;
         if (stack.getTag()!=null){
-            int size = stack.getTag().getAllKeys().size();
-            for (int i = 0; i < size; i++) {
-                incrementFactor *= 0.99f;
-            }
-            if (incrementFactor < 0f) {
-                incrementFactor = 0f;
-            }
-
-
-            s += size * incrementFactor;
-
+            s+=stack.getTag().getFloat(killNameAndSize);
         }
-        s -= 100;
-        s /= 100;
+        s-=100f;
+        s/=100f;
         for (Attribute attribute : BuiltInRegistries.ATTRIBUTE) {
-            modifierMultimap.put(attribute, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"), "name", s, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(attribute, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),
+                    "name", s, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         return modifierMultimap;
     }
@@ -128,45 +127,20 @@ public class the_prison_of_sin extends TheNecoraIC {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level p_41422_, List<Component> pTooltipComponents, TooltipFlag p_41424_) {
         if (pStack.getTag() != null) {
-            if (Screen.hasShiftDown()) {
-                if (pStack.getTag() != null) {
-                    pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
-
-                    pTooltipComponents.add(Component.translatable(""));
-                    if (pStack.getTag() != null) {
-                        for (String s : pStack.getTag().getAllKeys()) {
-                            pTooltipComponents.add(Component.translatable(s).withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
-                        }
-                        pTooltipComponents.add(Component.translatable(""));
-                    }
-                } else {
-                    pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.6").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
-                }
-            } else {
+            {
                 pTooltipComponents.add(Component.translatable(""));
                 pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.1").withStyle(ChatFormatting.RED));
                 pTooltipComponents.add(Component.translatable(""));
                 pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.2").withStyle(ChatFormatting.RED));
                 pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.3").withStyle(ChatFormatting.RED));
                 pTooltipComponents.add(Component.translatable(""));
-                pTooltipComponents.add(Component.translatable("key.keyboard.left.shift").withStyle(ChatFormatting.RED));
-                pTooltipComponents.add(Component.translatable(""));
-                float incrementFactor = 1.0f;
                 float s = 110;
                 if (pStack.getTag()!=null){
-                    int size = pStack.getTag().getAllKeys().size();
-                    for (int i = 0; i < size; i++) {
-                        incrementFactor *= 0.99f;
-                    }
-                    if (incrementFactor < 0f) {
-                        incrementFactor = 0f;
-                    }
-
-
-                    s += (size * incrementFactor);
-
+                    s+=pStack.getTag().getFloat(killNameAndSize);
                 }
-                pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.5").append(String.valueOf(s-100)).append("%").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
+                s-=100f;
+                s/=100f;
+                pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.5").append(String.valueOf(s*100)).append("%").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
             }
         } else {
             pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.7").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));

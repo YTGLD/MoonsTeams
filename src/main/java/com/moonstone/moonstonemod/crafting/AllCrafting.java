@@ -14,4 +14,39 @@ public class AllCrafting {
                     ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
                             new UniverseCrafting(category, resourceLocation)));
 
+    public static final RegistryObject<RecipeSerializer<RecipeGodDNA>> DNA =
+            REGISTRY.register("dna",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new RecipeGodDNA(category,resourceLocation)));
+
+
+
+
+
+
+
+    public static final RegistryObject<RecipeSerializer<RecipeGodAmbush>> RecipeGodDNA =
+            REGISTRY.register("god_ambush",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new RecipeGodAmbush(category,resourceLocation)));
+    public static final RegistryObject<RecipeSerializer<RecipeGodAtpoverdose>> RecipeGodAtpoverdose =
+            REGISTRY.register("god_atpoverdose",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new RecipeGodAtpoverdose(category,resourceLocation)));
+    public static final RegistryObject<RecipeSerializer<RecipeGodPutrefactive>> RecipeGodPutrefactive =
+            REGISTRY.register("god_putrefactive",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new RecipeGodPutrefactive(category,resourceLocation)));
+    public static final RegistryObject<RecipeSerializer<RecipeGodFermentation>> RecipeGodFermentation =
+            REGISTRY.register("god_fermentation",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new RecipeGodFermentation(category,resourceLocation)));
+    public static final RegistryObject<RecipeSerializer<RecipeGodAutolytic>> RecipeGodAutolytic =
+            REGISTRY.register("god_autolytic",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new RecipeGodAutolytic(category,resourceLocation)));
+    public static final RegistryObject<RecipeSerializer<RecipeGodRegenerative>> RecipeGodRegenerative =
+            REGISTRY.register("god_regenerative",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new RecipeGodRegenerative(category,resourceLocation)));
 }

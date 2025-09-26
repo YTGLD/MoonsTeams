@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.TheNecora;
 
+import com.moonstone.moonstonemod.item.TheNecora.god.CanUPLevel;
 import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -10,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class putrefactive extends TheNecoraIC {
+public class putrefactive extends TheNecoraIC implements CanUPLevel {
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

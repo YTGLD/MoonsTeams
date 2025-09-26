@@ -1,6 +1,6 @@
 package com.moonstone.moonstonemod.mixin.si.mixin;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -26,7 +26,7 @@ public abstract class MobEffectInstanceMixin {
     @Inject(at = @At("RETURN"), method = "tick")
     public void tick(LivingEntity entity, Runnable onExpirationRunnable, CallbackInfoReturnable<Boolean> cir){
         if (entity instanceof Player player) {
-            if (Handler.hascurio(player, Items.ring.get())) {
+            if (SIHandler.hascurio(player, Items.ring.get())) {
                 if (duration==1){
                     if (this.getEffect().isBeneficial()) {
                         duration--;

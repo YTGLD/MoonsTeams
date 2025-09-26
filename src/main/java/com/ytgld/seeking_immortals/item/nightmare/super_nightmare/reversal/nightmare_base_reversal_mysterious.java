@@ -2,7 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.reversal;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
@@ -37,7 +37,7 @@ public class nightmare_base_reversal_mysterious extends nightmare implements Sup
         if (slotContext.entity() instanceof Player player) {
             CompoundTag tag = stack.getTag();
             if (tag != null) {
-                if (Handler.hascurio(slotContext.entity(), this)) {
+                if (SIHandler.hascurio(slotContext.entity(), this)) {
                     player.getAttributes().addTransientAttributeModifiers(this.getAttributeModifiers());
                 }
             } else {

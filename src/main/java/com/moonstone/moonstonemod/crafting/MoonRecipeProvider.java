@@ -17,7 +17,16 @@ public class MoonRecipeProvider extends VanillaRecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput) {
-        SpecialRecipeBuilder.special(AllCrafting.UniverseCrafting.get())
-                .save(recipeOutput,"universe");
+
+        SpecialRecipeBuilder.special(AllCrafting.RecipeGodDNA.get()).save(recipeOutput, "god_ambush");
+        SpecialRecipeBuilder.special(AllCrafting.RecipeGodAtpoverdose.get()).save(recipeOutput, "god_atpoverdose");
+        SpecialRecipeBuilder.special(AllCrafting.RecipeGodPutrefactive.get()).save(recipeOutput, "god_putrefactive");
+        SpecialRecipeBuilder.special(AllCrafting.RecipeGodFermentation.get()).save(recipeOutput, "god_fermentation");
+        SpecialRecipeBuilder.special(AllCrafting.RecipeGodAutolytic.get()).save(recipeOutput, "god_autolytic");
+        SpecialRecipeBuilder.special(AllCrafting.RecipeGodRegenerative.get()).save(recipeOutput, "god_regenerative");
+
+
+        SpecialRecipeBuilder.special(AllCrafting.DNA.get()).save(recipeOutput, "dna");
+
     }
 }

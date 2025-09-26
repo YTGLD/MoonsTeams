@@ -2,7 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
 import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
@@ -30,7 +30,7 @@ public class nightmare_base_insight extends nightmare implements SuperNightmare,
         return Optional.of(new ToolTip(this,stack));
     }
     public static void exp(LivingExperienceDropEvent event){
-        if (Handler.hascurio(event.getAttackingPlayer(),Items.nightmare_base_insight.get())){
+        if (SIHandler.hascurio(event.getAttackingPlayer(),Items.nightmare_base_insight.get())){
             event.setDroppedExperience(event.getDroppedExperience()*2);
         }
     }

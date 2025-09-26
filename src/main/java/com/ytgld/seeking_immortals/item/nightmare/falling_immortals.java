@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -43,7 +43,7 @@ public class falling_immortals extends nightmare implements SuperNightmare {
     public static void dieEqItem(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (event.getEntity() instanceof WitherBoss) {
-                if (Handler.hascurio(player, Items.apple.get()) && player.getMainHandItem().is(net.minecraft.world.item.Items.ENDER_EYE)) {
+                if (SIHandler.hascurio(player, Items.apple.get()) && player.getMainHandItem().is(net.minecraft.world.item.Items.ENDER_EYE)) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -54,7 +54,7 @@ public class falling_immortals extends nightmare implements SuperNightmare {
                                 if (stack.is( Items.apple.get())) {
                                     stack.shrink(1);
                                 }
-                                if (stack.isEmpty()&&!Handler.hascurio(player, Items.falling_immortals.get())){
+                                if (stack.isEmpty()&&!SIHandler.hascurio(player, Items.falling_immortals.get())){
                                     if (stacksHandler.getIdentifier().equals("nightmare")) {
 
                                         stackHandler.setStackInSlot(i, Items.falling_immortals.get().getDefaultInstance());
@@ -72,12 +72,12 @@ public class falling_immortals extends nightmare implements SuperNightmare {
     }
     public static void damage(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.falling_immortals.get())) {
+            if (SIHandler.hascurio(player, Items.falling_immortals.get())) {
                 event.setAmount(15);
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.falling_immortals.get())) {
+            if (SIHandler.hascurio(player, Items.falling_immortals.get())) {
                 event.setAmount(2);
             }
         }

@@ -2,7 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.start;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -32,7 +32,7 @@ public class nightmare_base_start_egg extends nightmare implements SuperNightmar
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         super.onEquip(slotContext,prevStack,stack);
-        if (Handler.hascurio(slotContext.entity(), this)) {
+        if (SIHandler.hascurio(slotContext.entity(), this)) {
             slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers());
         }
     }

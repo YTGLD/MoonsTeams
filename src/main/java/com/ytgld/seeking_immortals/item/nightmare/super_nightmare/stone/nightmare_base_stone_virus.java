@@ -3,7 +3,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.stone;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -26,7 +26,7 @@ public class nightmare_base_stone_virus extends nightmare implements SuperNightm
 
     public static void h(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_stone_virus.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_stone_virus.get())) {
                 player.setHealth(player.getHealth() - player.getMaxHealth() * (Config.SERVER.Nightecora.get() / 100f));
             }
         }
@@ -45,7 +45,7 @@ public class nightmare_base_stone_virus extends nightmare implements SuperNightm
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         super.onEquip(slotContext,prevStack,stack);
-        if (Handler.hascurio(slotContext.entity(), this)) {
+        if (SIHandler.hascurio(slotContext.entity(), this)) {
             slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers());
         }
     }

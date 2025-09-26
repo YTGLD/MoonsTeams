@@ -2,7 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.stone;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -24,7 +24,7 @@ import java.util.UUID;
 public class end_bone  extends nightmare implements SuperNightmare {
     public static void hurts(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.end_bone.get())) {
+            if (SIHandler.hascurio(player, Items.end_bone.get())) {
                 if (player.getHealth() >= player.getMaxHealth()){
                     if ( event.getSource().getEntity() instanceof LivingEntity living) {
                         living.hurt(living.damageSources().dryOut(), event.getAmount() * 0.7f);

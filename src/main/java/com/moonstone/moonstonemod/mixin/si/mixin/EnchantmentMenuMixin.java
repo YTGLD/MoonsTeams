@@ -2,7 +2,7 @@ package com.moonstone.moonstonemod.mixin.si.mixin;
 
 
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
@@ -38,7 +38,7 @@ public abstract class EnchantmentMenuMixin {
     @Inject(at = @At("HEAD"), method = "clickMenuButton")
     public void moonstone$clickMenuButton(Player player, int p_39466_, CallbackInfoReturnable<Boolean> cir) {
         ItemStack itemstack = enchantSlots.getItem(0);
-        if (Handler.hascurio(player, Items.nightmare_base_insight.get())) {
+        if (SIHandler.hascurio(player, Items.nightmare_base_insight.get())) {
             EnchantmentMenu container = (EnchantmentMenu) (Object) this;
             access.execute((level, pos) -> {
                 List<EnchantmentInstance> rolledEnchantments = getEnchantmentList(itemstack, p_39466_, container.costs[p_39466_]);

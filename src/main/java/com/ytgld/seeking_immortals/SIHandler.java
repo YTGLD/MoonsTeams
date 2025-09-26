@@ -11,7 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.CuriosApi;
 
-public class Handler {
+public class SIHandler {
     public static int getTagNumber(ItemStack must, String name){
         CompoundTag tag = must.getTag();
         if (tag != null){

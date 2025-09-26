@@ -1,7 +1,7 @@
 package com.ytgld.seeking_immortals.event.old;
 
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.SeekingImmortalsMod;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.init.Effects;
@@ -35,8 +35,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -171,7 +169,9 @@ public class NewEvent {
         if (!player.getTags().contains(SeekingImmortalsMod.MODID+"nightmare")) {
 
             if (!Config.SERVER.eqNightmareBase.get()) {
-                player.addItem(Items.nightmare_base.get().getDefaultInstance());
+                if (Config.SERVER.giveNightmare.get()) {
+                    player.addItem(Items.nightmare_base.get().getDefaultInstance());
+                }
             }else {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -228,7 +228,7 @@ public class NewEvent {
             event.getToolTip().add(1, Component.translatable(
                     "key.keyboard.left.shift").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
         }
-        if (!Handler.hascurio(event.getEntity(), Items.nightmare_base.get())) {
+        if (!SIHandler.hascurio(event.getEntity(), Items.nightmare_base.get())) {
             if (!Config.SERVER.canUse.get()) {
                 if (event.getItemStack().getItem() instanceof SuperNightmare) {
                     List<Component> toolTip = event.getToolTip();
@@ -249,7 +249,7 @@ public class NewEvent {
             Player player = event.getEntity();
             if (stack.getItem() instanceof SuperNightmare) {
                 if (!Config.SERVER.canUse.get()) {
-                    if (!Handler.hascurio(player, Items.nightmare_base.get())) {
+                    if (!SIHandler.hascurio(player, Items.nightmare_base.get())) {
                         event.getToolTip().add(1, Component.literal(""));
                         event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name.1").withStyle(ChatFormatting.DARK_RED));
                         event.getToolTip().add(1, Component.translatable("moonstone.super_nightmare.name").withStyle(ChatFormatting.DARK_RED));

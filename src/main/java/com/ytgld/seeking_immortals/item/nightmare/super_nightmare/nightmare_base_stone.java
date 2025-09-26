@@ -4,7 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.init.AttReg;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
 import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
@@ -30,11 +30,11 @@ public class nightmare_base_stone extends nightmare implements SuperNightmare, A
 
     public static void LivingHurtEvent(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_stone.get())) {
-                if (Handler.hascurio(player,Items.candle.get())){
+            if (SIHandler.hascurio(player, Items.nightmare_base_stone.get())) {
+                if (SIHandler.hascurio(player,Items.candle.get())){
                     return;
                 }
-                if (Handler.hascurio(player, Items.blood_god.get())) {
+                if (SIHandler.hascurio(player, Items.blood_god.get())) {
                     return;
                 }
                 if (player.getHealth() >= player.getMaxHealth()) {

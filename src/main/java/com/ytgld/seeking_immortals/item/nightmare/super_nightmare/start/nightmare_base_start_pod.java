@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.start;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -16,7 +16,7 @@ import java.util.List;
 public class nightmare_base_start_pod extends nightmare implements SuperNightmare {
     public static void damage(LivingHurtEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_start_pod.get())) {
+            if (SIHandler.hascurio(player, Items.nightmare_base_start_pod.get())) {
                 event.setAmount(event.getAmount() * 0.8f);
             }
         }

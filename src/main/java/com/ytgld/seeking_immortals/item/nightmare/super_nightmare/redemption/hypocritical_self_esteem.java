@@ -2,7 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.redemption;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -55,7 +55,7 @@ public class hypocritical_self_esteem extends nightmare implements SuperNightmar
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (!player.level().isClientSide) {
-                if (Handler.hascurio(player,Items.hypocritical_self_esteem.get())) {
+                if (SIHandler.hascurio(player,Items.hypocritical_self_esteem.get())) {
 
                     player.getAttributes().addTransientAttributeModifiers(this.Head(stack));
                     int size = 0;
@@ -74,7 +74,7 @@ public class hypocritical_self_esteem extends nightmare implements SuperNightmar
                     for (LivingEntity living : entities) {
                         size = entities.size();
 
-                        if (Handler.hascurio(player, Items.nightmare_base_black_eye.get())) {
+                        if (SIHandler.hascurio(player, Items.nightmare_base_black_eye.get())) {
                             if (!living.is(player)&&living.isAlive()) {
                                 if (living.tickCount % 10 == 0) {
                                     int l = entities.size() + 1;

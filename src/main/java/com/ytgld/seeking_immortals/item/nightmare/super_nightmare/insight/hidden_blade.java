@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -38,9 +38,9 @@ public class hidden_blade extends nightmare implements SuperNightmare {
 
     public static void hurt_cit(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.hidden_blade.get())){
+            if (SIHandler.hascurio(player, Items.hidden_blade.get())){
                 if (event.getSource().getEntity() instanceof LivingEntity living) {
-                    if (Handler.hascurio(living,Items.hidden_blade.get())){
+                    if (SIHandler.hascurio(living,Items.hidden_blade.get())){
                         return;
                     }
                 }
@@ -53,10 +53,10 @@ public class hidden_blade extends nightmare implements SuperNightmare {
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.hidden_blade.get())) {
+            if (SIHandler.hascurio(player, Items.hidden_blade.get())) {
                 if (!player.getCooldowns().isOnCooldown(Items.hidden_blade.get())) {
                     if (event.getEntity() instanceof LivingEntity) {
-                        if (Handler.hascurio(event.getEntity(),Items.hidden_blade.get())){
+                        if (SIHandler.hascurio(event.getEntity(),Items.hidden_blade.get())){
                             return;
                         }
                     }
@@ -75,9 +75,9 @@ public class hidden_blade extends nightmare implements SuperNightmare {
     }
     public static void cit(CriticalHitEvent event){
         if (event.getEntity() instanceof Player){
-            if (Handler.hascurio(event.getEntity(), Items.hidden_blade.get())) {
+            if (SIHandler.hascurio(event.getEntity(), Items.hidden_blade.get())) {
                 if (event.getTarget() instanceof LivingEntity living) {
-                    if (Handler.hascurio(living,Items.hidden_blade.get())){
+                    if (SIHandler.hascurio(living,Items.hidden_blade.get())){
                         return;
                     }
                 }

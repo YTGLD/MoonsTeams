@@ -103,6 +103,15 @@ public class Tab {
                 b.accept(new ItemStack(Items.putrefactive.get()));
                 b.accept(new ItemStack(Items.regenerative.get()));
 
+                b.accept(new ItemStack(Items.god_ambush.get()));
+                b.accept(new ItemStack(Items.god_atpoverdose.get()));
+                b.accept(new ItemStack(Items.god_putrefactive.get()));
+                b.accept(new ItemStack(Items.god_fermentation.get()));
+                b.accept(new ItemStack(Items.god_autolytic.get()));
+                b.accept(new ItemStack(Items.god_regenerative.get()));
+
+
+
 
                 b.accept(new ItemStack(Items.bloodvirus.get()));
                 b.accept(new ItemStack(Items.botton.get()));

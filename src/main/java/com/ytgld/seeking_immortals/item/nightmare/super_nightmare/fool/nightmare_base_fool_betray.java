@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
@@ -25,7 +25,7 @@ public class nightmare_base_fool_betray extends nightmare implements SuperNightm
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(slotContext.entity(), this)) {
+            if (SIHandler.hascurio(slotContext.entity(), this)) {
                 if (!player.getCooldowns().isOnCooldown(this)) {
                     Vec3 playerPos = player.position().add(0, 0.75, 0);
                     float range = 10;

@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.reversal;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -20,7 +20,7 @@ public class candle  extends nightmare implements SuperNightmare {
 
     public static void hurt(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.candle.get())){
+            if (SIHandler.hascurio(player, Items.candle.get())){
                 if (!player.getCooldowns().isOnCooldown(Items.candle.get())) {
 
                     if (player.getHealth() >= player.getMaxHealth()) {
@@ -44,7 +44,7 @@ public class candle  extends nightmare implements SuperNightmare {
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.candle.get())){
+            if (SIHandler.hascurio(player, Items.candle.get())){
                 if (player.invulnerableTime>0){
                     event.setAmount(event.getAmount()*1.2f);
                 }
@@ -53,7 +53,7 @@ public class candle  extends nightmare implements SuperNightmare {
     }
     public static void heal(LivingHealEvent event){
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.candle.get())){
+            if (SIHandler.hascurio(player, Items.candle.get())){
                 if (player.invulnerableTime>0){
                     event.setAmount(event.getAmount()*2);
                 }

@@ -1,6 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool;
 
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -19,12 +19,12 @@ import java.util.List;
 public class apple extends nightmare implements SuperNightmare {
     public static void damage(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.apple.get())) {
+            if (SIHandler.hascurio(player, Items.apple.get())) {
                 event.setAmount(10);
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.apple.get())) {
+            if (SIHandler.hascurio(player, Items.apple.get())) {
                 event.setAmount(2);
             }
         }

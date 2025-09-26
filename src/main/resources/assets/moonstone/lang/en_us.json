@@ -435,6 +435,7 @@
   "item.evilmug.tool.string.2": "And you can extract your own blood",
   "item.evilmug.tool.string.3": "Drink！",
   "item.heathgene.tool.string": "+10 heath",
+  "item.heathgene.tool.string.1": "+10% heath",
 
   "item.maxamout.tool.string": "Attacks weaken enemies",
   "item.maxamout.tool.string.1": "Reduce damage taken by 15%",
@@ -1162,6 +1163,7 @@
   "advancements.tooltip.blood_sun.text": "",
   "item.moonstone.medicinebox.tool": "",
   "moonstone.difficulty.name.all": " DNA",
+  "moonstone.difficulty.name.true_god": "神化",
 
   "moonstone.curse.name.all.this": "this item is",
   "moonstone.curse.name.meet": "meet",
@@ -2005,6 +2007,18 @@
   "advancements.tooltip.hidden_blade.text": "Obtain this item",
   "advancements.tooltip.hidden_blade.hand": "Unknown Blade",
 
+  "moonstone.jei.god_dna": "Synthesize by using two identical 'God-like gene sequences' DNA items",
+  "item.moonstone.god_ambush": "Drift Fermentation",
+  "item.god_ambush.tool.string": "Increases 10% resistance",
+  "item.moonstone.god_atpoverdose": "ATP Overdose",
+  "item.moonstone.god_putrefactive": "Putrefactive Resistance",
+  "item.god_putrefactive.tool.string": "Eating food gains significant benefit buffs",
+  "item.god_putrefactive.tool.string.1": "Eating food restores 10% of max health",
+  "item.moonstone.god_fermentation": "Ambush Hunting",
+  "item.moonstone.god_autolytic": "Autolysis Inhibition",
+
+  "item.moonstone.god_regenerative": "Regenerative Vitalization",
+  "item.god_regenerative.tool.string": "Restores 1 health point every 0.75 seconds",
   "effect.moonstone.blade": "edge",
   "effect.moonstone.hidden": "hidden"
 }

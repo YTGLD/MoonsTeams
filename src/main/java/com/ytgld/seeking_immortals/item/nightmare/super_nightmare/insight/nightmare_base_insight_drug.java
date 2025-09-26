@@ -3,7 +3,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.insight;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
@@ -27,7 +27,7 @@ import java.util.UUID;
 public class nightmare_base_insight_drug extends nightmare implements SuperNightmare {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (Handler.hascurio(slotContext.entity(), this))
+        if (SIHandler.hascurio(slotContext.entity(), this))
             slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
     }
 

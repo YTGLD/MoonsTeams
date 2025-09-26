@@ -1,7 +1,7 @@
 package com.ytgld.seeking_immortals.item.nightmare.base;
 
 import com.google.common.collect.Multimap;
-import com.ytgld.seeking_immortals.Handler;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
@@ -17,7 +17,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
@@ -25,7 +24,6 @@ import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.event.entity.living.LivingHealEvent;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
@@ -80,7 +78,7 @@ public class blood_god  extends nightmare implements SuperNightmare, AllTip {
     public static void hurtOfBlood(LivingEntityUseItemEvent.Start event){
         if (event.getItem().getUseAnimation() == UseAnim.DRINK) {
             if (event.getEntity() instanceof Player player) {
-                if (Handler.hascurio(player,Items.blood_god.get())) {
+                if (SIHandler.hascurio(player,Items.blood_god.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -117,7 +115,7 @@ public class blood_god  extends nightmare implements SuperNightmare, AllTip {
     public static void hurtOfBlood(LivingDamageEvent event){
         if (!event.getSource().is(DamageTypes.GENERIC_KILL)) {
             if (event.getEntity() instanceof Player player){
-                if (Handler.hascurio(player,Items.blood_god.get())) {
+                if (SIHandler.hascurio(player,Items.blood_god.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

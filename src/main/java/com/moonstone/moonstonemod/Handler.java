@@ -164,6 +164,36 @@ public class Handler {
                         return true;
                     }
                 }
+                if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()
+                        && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.god_ambush.get())) {
+                    if (curio == Items.ambush.get()) {
+                        return true;
+                    }
+                }
+                if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()
+                        && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.god_putrefactive.get())) {
+                    if (curio == Items.putrefactive.get()) {
+                        return true;
+                    }
+                }
+                if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()
+                        && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.god_fermentation.get())) {
+                    if (curio == Items.fermentation.get()) {
+                        return true;
+                    }
+                }
+                if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()
+                        && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.god_autolytic.get())) {
+                    if (curio == Items.autolytic.get()) {
+                        return true;
+                    }
+                }
+                if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()
+                        && CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.god_regenerative.get())) {
+                    if (curio == Items.regenerative.get()) {
+                        return true;
+                    }
+                }
                 List<SlotResult> find = findCurios(entity, curio);
                 for (SlotResult slotResult : find) {
                     if (slotResult.stack().is(curio)) {

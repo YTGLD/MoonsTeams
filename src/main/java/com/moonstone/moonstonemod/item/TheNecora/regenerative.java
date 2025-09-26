@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.TheNecora;
 
+import com.moonstone.moonstonemod.item.TheNecora.god.CanUPLevel;
 import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -12,7 +13,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class regenerative extends TheNecoraIC {
+public class regenerative extends TheNecoraIC implements CanUPLevel {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {

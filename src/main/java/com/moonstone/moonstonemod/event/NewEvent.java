@@ -9,6 +9,8 @@ import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.IBattery;
 import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
 import com.moonstone.moonstonemod.item.TheNecora.bnabush.giant_nightmare_dna.giant_boom_cell;
+import com.moonstone.moonstonemod.item.TheNecora.god.GodAmbush;
+import com.moonstone.moonstonemod.item.TheNecora.god.GodPutrefactive;
 import com.moonstone.moonstonemod.item.TheNecora.small.enhancemen;
 import com.moonstone.moonstonemod.item.amout.twistedamout;
 import com.moonstone.moonstonemod.item.blood.*;
@@ -65,7 +67,17 @@ import java.util.Map;
 public class NewEvent {
     public static final String lootTable = "god_loot";
     public static final String die = "the_die";
+    @SubscribeEvent
+    public void ItemTooltipEvent(ItemTooltipEvent event){
+        ItemStack stack = event.getItemStack();
+        if (stack.getTag() !=null) {
+            if (stack.getTag().getBoolean(EquippedEvt.isGod)) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.true_god").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFFF4040)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
 
+            }
+        }
+    }
     @SubscribeEvent
     public  void RightClickItem(PlayerInteractEvent.RightClickItem event){
         max_blood_cube.RightClickItem(event);
@@ -73,6 +85,7 @@ public class NewEvent {
     @SubscribeEvent
     public  void necora(LivingEntityUseItemEvent.Finish event){
         medicinebox.necora(event);
+        GodPutrefactive.eat(event);
     }
     @SubscribeEvent
     public void LivingHealEvent(LivingHealEvent event) {
@@ -164,7 +177,7 @@ public class NewEvent {
         ytgld_virus.LivingHurt(event);
         universe.attack(event);
 
-
+        GodAmbush.LivingIncomingDamageEvent(event);
         if (event.getSource().getEntity() instanceof Player living) {
             if  (Handler.hascurio(living,Items.probability_stone.get())) {
                 if (!living.getCooldowns().isOnCooldown(Items.probability_stone.get())) {

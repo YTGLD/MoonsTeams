@@ -9,6 +9,7 @@ import com.moonstone.moonstonemod.event.NewEvent;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
 import com.moonstone.moonstonemod.moonstoneitem.Iplague;
+import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.event.old.AdvancementEvt;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.nbt.CompoundTag;
@@ -349,7 +350,7 @@ public class DungeonLoot extends LootModifier {
                      Item must,
                      Item give){
         if (entity instanceof Player player ){
-            if (com.ytgld.seeking_immortals.Handler.hascurio(player, must)) {
+            if (SIHandler.hascurio(player, must)) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
