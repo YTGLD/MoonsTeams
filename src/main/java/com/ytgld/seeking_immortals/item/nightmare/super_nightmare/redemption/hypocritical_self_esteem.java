@@ -121,7 +121,7 @@ public class hypocritical_self_esteem extends nightmare implements SuperNightmar
             tooltip.add(Component.literal("+5%").withStyle(ChatFormatting.RED).append(Component.translatable("attribute.name.generic.attack_damage").withStyle(ChatFormatting.RED)));
             tooltip.add(Component.literal("+5%").withStyle(ChatFormatting.RED).append(Component.translatable("attribute.name.generic.armor").withStyle(ChatFormatting.RED)));
             tooltip.add(Component.literal("+5%").withStyle(ChatFormatting.RED).append(Component.translatable("attribute.name.generic.attack_speed").withStyle(ChatFormatting.RED)));
-            tooltip.add(Component.literal("+5%").withStyle(ChatFormatting.RED).append(Component.translatable("attrib.seeking_immortals.critical").withStyle(ChatFormatting.RED)));
+            tooltip.add(Component.literal("+5%").withStyle(ChatFormatting.RED).append(Component.translatable("attrib.moonstone.critical").withStyle(ChatFormatting.RED)));
             tooltip.add(Component.literal(""));
             tooltip.add(Component.translatable("item.hypocritical_self_esteem.tool.string.1").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDC143C))));
             tooltip.add(Component.translatable("item.hypocritical_self_esteem.tool.string.2").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFff4789))));

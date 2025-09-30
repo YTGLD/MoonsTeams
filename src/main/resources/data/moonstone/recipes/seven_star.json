@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "moonstone:rage_eye"
+    },
+    {
+      "item": "moonstone:soulbook"
+    },
+    {
+      "item": "moonstone:ectoplasmprism"
+    }
+  ],
+  "result": {
+    "item": "moonstone:seven_star",
+    "count": 1
+  }
+}

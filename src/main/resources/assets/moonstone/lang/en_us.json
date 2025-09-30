@@ -2017,6 +2017,26 @@
   "item.moonstone.god_fermentation": "Ambush Hunting",
   "item.moonstone.god_autolytic": "Autolysis Inhibition",
 
+  "item.moonstone.seven_star":"七星炼体诀",
+  "item.moonstone.seven_star.string.1": "一星——神陨：\n   免疫负面状态，但是杀死凋零后此星消亡",
+  "item.moonstone.seven_star.string.2": "二星——苍戮：\n   增加30%伤害和护甲，但是杀死高于400点生命值的生物后此星消亡",
+  "item.moonstone.seven_star.string.3": "三星——天屠：\n   受到致命伤害时恢复50%生命值，但是死亡真正死亡10次后此星消亡",
+  "item.moonstone.seven_star.string.4": "四星——刑阎：\n   减少90%村民交易的价格，但是交易超过100次后此星消亡",
+  "item.moonstone.seven_star.string.5": "五星——血煞：\n   增加25%所有速度和100%跳跃高度，但是使用鞘翅或类似物品后此星消亡",
+  "item.moonstone.seven_star.string.6": "六星——天神：\n   宠物没有攻击目标时无敌且恢复生命，但是损失30只宠物后此星消亡",
+  "item.moonstone.seven_star.string.7": "七星——诛圣：\n   获得6级的时运和抢夺等级，但是累计消亡5星后，此星消亡",
+  "item.moonstone.seven_star.string.8": "此法诀会在七星全灭时消失",
+  "effect.moonstone.meet": "增生",
+
+
+  "item.moonstone.meet_heart":"增生之心",
+  "item.meet_heart.tool.string": "拾取飞行中的血球获得额外生命值",
+  "item.meet_heart.tool.string.1": "若未能获得血液，则获得持续饥饿",
+
+  "item.moonstone.big_heart":"巨型心脏",
+  "item.big_heart.tool.string": "最大生命值的正负修正增加50%",
+
+
   "item.moonstone.god_regenerative": "Regenerative Vitalization",
   "item.god_regenerative.tool.string": "Restores 1 health point every 0.75 seconds",
   "effect.moonstone.blade": "edge",

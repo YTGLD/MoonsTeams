@@ -1076,6 +1076,9 @@ public class AllEvent {
                         if (event.getSource().getEntity() != null) {
                             if (Config.SERVER.openDamageForAttacker.get()) {
                                 float s = 0.2f;
+                                if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.nightmare_base_stone_meet.get())) {
+                                    s*=5f;
+                                }
 
                                 living.hurt(living.damageSources().magic(), event.getAmount() * s);
                                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.THORNS_HIT, SoundSource.NEUTRAL, 1F, 1F);
@@ -1086,7 +1089,9 @@ public class AllEvent {
 
                 event.setAmount(event.getAmount() * 0.85f);
                 float s  = 1;
-
+                if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.nightmare_base_stone_meet.get())){
+                    s+=2;
+                }
                 if (Mth.nextInt(RandomSource.create(),1, (int) (5/s)) == 1){
                     player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 20, (int) (2+s)));
                 }
@@ -1095,6 +1100,9 @@ public class AllEvent {
         if (event.getSource().getDirectEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.maxamout.get())) {
                 float w  = 1;
+                if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.nightmare_base_stone_meet.get())){
+                    w+=2;
+                }
                 event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, (int) (0+w)));
                 float s =event.getAmount() / 20;
                 if (s>5){
@@ -1102,6 +1110,9 @@ public class AllEvent {
                 }
                 player.heal(s);
                 float ss  = 1;
+                if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.nightmare_base_stone_meet.get())){
+                    ss+=2;
+                }
                 if (Mth.nextInt(RandomSource.create(), 1, (int) (12/ss)) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, (int) (0+ss)));
                     event.getEntity().knockback(0.2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));

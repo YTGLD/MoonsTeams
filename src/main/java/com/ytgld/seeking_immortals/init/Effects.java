@@ -16,4 +16,5 @@ public class Effects {
 
     public static final RegistryObject<MobEffect> hidden  =REGISTRY.register("hidden",()->new hidden());
     public static final RegistryObject<MobEffect> blade  =REGISTRY.register("blade",()->new blade());
+    public static final RegistryObject<MobEffect> meet  =REGISTRY.register("meet",()->new meet());
 }

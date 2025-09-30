@@ -31,11 +31,14 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.stone.nightmar
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.stone.nightmare_base_stone_virus;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -50,9 +53,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class NewEvent {
 
@@ -121,26 +122,6 @@ public class NewEvent {
             event.setAmount(event.getAmount() * (1 + lvl));
 
         }
-        if (event.getAmount() > Integer.MAX_VALUE) {
-            event.setAmount(Integer.MAX_VALUE);
-        }
-        CuriosApi.getCuriosInventory(event.getEntity()).ifPresent(handler -> {
-            Map<String, ICurioStacksHandler> curios = handler.getCurios();
-            for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                ICurioStacksHandler stacksHandler = entry.getValue();
-                IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                    ItemStack stack = stackHandler.getStackInSlot(i);
-                    if (BuiltInRegistries.ITEM.getKey(stack.getItem()).getNamespace().equals(SeekingImmortalsMod.MODID)) {
-
-                        float s = event.getAmount();
-                        if (s > Integer.MAX_VALUE) {
-                            event.setAmount(Integer.MAX_VALUE);
-                        }
-                    }
-                }
-            }
-        });
         if (event.getSource().getEntity() instanceof LivingEntity living) {
             if (living.getAttribute(AttReg.all_attack.get()) != null) {
                 float attack = (float) living.getAttribute(AttReg.all_attack.get()).getValue();
@@ -173,25 +154,59 @@ public class NewEvent {
                     player.addItem(Items.nightmare_base.get().getDefaultInstance());
                 }
             }else {
+                CuriosApi.getCuriosInventory(player).ifPresent(curiosItemHandler -> {
+                    curiosItemHandler.addPermanentSlotModifier(
+                            "nightmare",
+                            UUID.fromString("66867e94-dc9e-4263-8d24-a854f7025a98"),
+                            "nightmare_base_slot_add",Config.SERVER.nightmareBaseMaxItem.get()+1, AttributeModifier.Operation.ADDITION);
+                });
+                Random random = new Random();
+                ArrayList<Item> items = new ArrayList<>(List.of(
+                        Items.nightmare_base_stone.get(),
+                        Items.nightmare_base_reversal.get(),
+                        Items.nightmare_base_black_eye.get(),
+                        Items.nightmare_base_redemption.get(),
+                        Items.nightmare_base_fool.get(),
+                        Items.nightmare_base_insight.get(),
+                        Items.nightmare_base_start.get()
+                ));
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
-                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
-                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                        ICurioStacksHandler stacksHandler = entry.getValue();
-                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                            ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.isEmpty()) {
-                                stackHandler.setStackInSlot(i, Items.nightmare_base.get().getDefaultInstance());
-                                break;
+                            Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                            int maxItemsToPlace = Config.SERVER.nightmareBaseMaxItem.get();
+                            int itemsPlaced = 0;
+                            boolean placedNightmareBase = false;
+                            for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                                ICurioStacksHandler stacksHandler = entry.getValue();
+                                IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                                for (int i = stacksHandler.getSlots() - 1; i >= 0; i--) {
+                                    ItemStack stack = stackHandler.getStackInSlot(i);
+                                    if (stack.isEmpty() && !placedNightmareBase) {
+                                        ItemStack nig = Items.nightmare_base.get().getDefaultInstance();
+                                        CompoundTag compoundTag = new CompoundTag();
+                                        compoundTag.putBoolean("canDo", true);
+                                        nig.setTag(compoundTag);
+                                        stackHandler.setStackInSlot(i, nig);
+                                        placedNightmareBase = true;
+                                    } else if (stack.isEmpty() && !items.isEmpty() && itemsPlaced < maxItemsToPlace) {
+                                        if (stacksHandler.getIdentifier().equals("nightmare")) {
+                                            int index = random.nextInt(items.size());
+                                            Item selectedItem = items.remove(index);
+                                            stackHandler.setStackInSlot(i, selectedItem.getDefaultInstance());
+                                            itemsPlaced++;
+                                        }
+                                    }
+                                    if (itemsPlaced >= maxItemsToPlace) {
+                                        break;
+                                    }
+                                }
+                                if (itemsPlaced >= maxItemsToPlace) {
+                                    break;
+                                }
                             }
                         }
-                        break;
-                    }
-                });
+                );
             }
-
             player.addTag(SeekingImmortalsMod.MODID+"nightmare");
-
         }
     }
     @SubscribeEvent

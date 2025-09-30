@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.mixin;
+package com.moonstone.moonstonemod.mixin.other;
 
 import com.moonstone.moonstonemod.item.nanodoom.buyme.wind_and_rain;
 import com.moonstone.moonstonemod.moonstoneitem.IBattery;

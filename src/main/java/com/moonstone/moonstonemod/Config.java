@@ -39,6 +39,8 @@ public class Config {
     public final ForgeConfigSpec.IntValue nightmare_base_reversal ;
     public final ForgeConfigSpec.IntValue nightmare_base_start ;
     public final ForgeConfigSpec.IntValue give_nightmare_base_insight_drug ;
+
+
     public Config(ForgeConfigSpec.Builder BUILDER){
         plague_speed = BUILDER
                 .comment("The growth rate of plague research sites")
@@ -247,7 +249,7 @@ public class Config {
                     {
                         BUILDER.push("其他");
                         eqNightmareBase = BUILDER
-                                .comment("开局自动佩戴噩梦基座")
+                                .comment("开局自动佩戴噩梦基座和所有附属罪孽")
                                 .define("eqNightmareBase", false);
                         BUILDER.pop();
 
@@ -339,6 +341,7 @@ public class Config {
                     nightmare_base_insight_insane = BUILDER
                             .comment("癫狂之石的杀死生物后获得的伤害加成，单位百分比")
                             .defineInRange("nightmare_base_insight_insane", 30, 0, 99999);
+
                     BUILDER.pop();
 
                 }

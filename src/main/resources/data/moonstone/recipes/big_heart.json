@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key":
+  {
+    "A":
+    {
+      "item": "moonstone:blood"
+    },
+    "B":
+    {
+      "item": "moonstone:meet_heart"
+    }
+  },
+  "result": {
+    "item": "moonstone:big_heart",
+    "count": 1
+  }
+}

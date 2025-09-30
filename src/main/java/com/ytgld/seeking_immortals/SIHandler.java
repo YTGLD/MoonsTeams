@@ -19,12 +19,7 @@ public class SIHandler {
         }
         return 0;
     }
-    public static void addTagNumber(ItemStack must, String name, Player player,int giveNumber){
-        CompoundTag tag = must.getTag();
-        if (tag != null) {
-            tag.putInt(name, tag.getInt(name) + giveNumber);
-        }
-    }
+
     public static boolean hascurio(LivingEntity entity, Item curio) {
         if (CuriosApi.getCuriosInventory(entity).resolve().isPresent()) {
             if (CuriosApi.getCuriosInventory(entity).resolve().get().isEquipped(Items.the_divine_fall_ring.get())) {

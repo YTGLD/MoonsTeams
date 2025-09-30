@@ -85,7 +85,6 @@ public class MoonStoneMod {
 
         AllCrafting.REGISTRY.register(modEventBus);
         DNAItems.REGISTRY.register(modEventBus);
-        Effects.REGISTRY.register(modEventBus);
         LootReg.REGISTRY.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
         MSound.REGISTRY.register(modEventBus);

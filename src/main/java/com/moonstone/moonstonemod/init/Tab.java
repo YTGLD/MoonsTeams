@@ -149,6 +149,11 @@ public class Tab {
             .icon(()->new ItemStack(Items.ectoplasmball.get()))
             .title(Component.translatable("itemGroup.tabmoonstone"))
             .displayItems((a,b)->{
+                b.accept(new ItemStack(Items.big_heart.get()));
+                b.accept(new ItemStack(Items.meet_heart.get()));
+
+
+                b.accept(new ItemStack(Items.seven_star.get()));
                 b.accept(new ItemStack(Items.raw.get()));
                 b.accept(new ItemStack(Items.book.get()));
                 b.accept(new ItemStack(Items.ytgld_virus.get()));

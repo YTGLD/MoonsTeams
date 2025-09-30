@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.mixin;
+package com.moonstone.moonstonemod.mixin.other;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
@@ -16,15 +16,21 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static com.moonstone.moonstonemod.item.seven_star.jumpInv;
+
 @Mixin(Entity.class)
 public class EntityMixin {
     @Inject(at = @At("RETURN"), method = "isInvulnerableTo", cancellable = true)
     public void mhead(DamageSource p_20122_, CallbackInfoReturnable<Boolean> cir) {
        if (p_20122_.getEntity() instanceof Player player){
+
            if (Handler.hascurio(player, Items.mhead.get())){
                cir.setReturnValue(true);
            }
        }
+        if ((Entity) (Object) this instanceof Player player) {
+            jumpInv(p_20122_, player, cir);
+        }
         if (p_20122_.getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.nine_sword_books.get())){
                 ItemStack sword = player.getItemInHand(InteractionHand.MAIN_HAND);

@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.entity;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
+import com.moonstone.moonstonemod.item.blood.meet_heart;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -115,6 +116,7 @@ public class blood extends ThrowableItemProjectile {
                 }
             }
 
+            meet_heart.addEffectMeet(entity);
             this.discard();
         }
     }

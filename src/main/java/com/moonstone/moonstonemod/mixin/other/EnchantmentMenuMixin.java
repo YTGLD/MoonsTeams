@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.mixin;
+package com.moonstone.moonstonemod.mixin.other;
 
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;

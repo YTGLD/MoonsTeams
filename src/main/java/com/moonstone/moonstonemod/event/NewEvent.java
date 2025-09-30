@@ -4,7 +4,6 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.DNAItems;
-import com.moonstone.moonstonemod.init.Effects;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.IBattery;
 import com.moonstone.moonstonemod.item.BloodVirus.dna.bat_cell;
@@ -33,6 +32,7 @@ import com.moonstone.moonstonemod.item.pain.pain_candle;
 import com.moonstone.moonstonemod.item.pain.pain_ring;
 import com.moonstone.moonstonemod.item.pain.the_pain_stone;
 import com.moonstone.moonstonemod.item.plague.mobitem.dna;
+import com.moonstone.moonstonemod.item.seven_star;
 import com.moonstone.moonstonemod.item.universe;
 import com.moonstone.moonstonemod.item.ytgld_virus;
 import com.moonstone.moonstonemod.moonstoneitem.extend.medicinebox;
@@ -49,14 +49,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.event.entity.living.LivingHealEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.CriticalHitEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.living.*;
+import net.minecraftforge.event.entity.player.*;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
@@ -67,6 +61,25 @@ import java.util.Map;
 public class NewEvent {
     public static final String lootTable = "god_loot";
     public static final String die = "the_die";
+
+
+
+    @SubscribeEvent
+    public void killWither(LivingDeathEvent event) {
+        seven_star.killWither(event);
+        seven_star.killHealth(event);
+        seven_star.dieNumber(event);
+    }
+    @SubscribeEvent
+    public void killWither(LivingDamageEvent event) {
+        seven_star.LivingDamageEventPre(event);
+    }
+
+    @SubscribeEvent
+    public void killWither(TradeWithVillagerEvent event) {
+        seven_star.villagerDrop(event);
+    }
+
     @SubscribeEvent
     public void ItemTooltipEvent(ItemTooltipEvent event){
         ItemStack stack = event.getItemStack();

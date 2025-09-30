@@ -1,4 +1,4 @@
-package com.moonstone.moonstonemod.mixin;
+package com.moonstone.moonstonemod.mixin.other;
 
 import com.all.ILevelRender;
 import net.minecraft.client.renderer.LevelRenderer;

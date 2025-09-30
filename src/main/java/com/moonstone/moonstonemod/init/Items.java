@@ -337,6 +337,9 @@ public class Items {
     public static final RegistryObject<Item> god_fermentation =REGISTRY.register("god_fermentation", GodFermentation::new );
     public static final RegistryObject<Item> god_autolytic =REGISTRY.register("god_autolytic", GodAutolytic::new );
     public static final RegistryObject<Item> god_regenerative =REGISTRY.register("god_regenerative", GodRegenerative::new );
+    public static final RegistryObject<Item> seven_star =REGISTRY.register("seven_star",seven_star::new );
+    public static final RegistryObject<Item> meet_heart =REGISTRY.register("meet_heart",meet_heart::new );
+    public static final RegistryObject<Item> big_heart =REGISTRY.register("big_heart",big_heart::new );
 
     public static final RegistryObject<Item> raw =REGISTRY.register("raw",raw::new );
 
