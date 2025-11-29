@@ -73,6 +73,9 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare, Al
             if (player.isCreative()){
                 return true;
             }
+            if (Config.SERVER.canUnequipMoonstoneItem.get()) {
+                return true;
+            }
         }
         return false;
     }

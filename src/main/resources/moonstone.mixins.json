@@ -17,7 +17,8 @@
     "si.mixin.EnchantmentMenuMixin",
     "si.mixin.EntityMixin",
     "si.mixin.LivingEntityMixin",
-    "si.mixin.MobEffectInstanceMixin"
+    "si.mixin.MobEffectInstanceMixin",
+    "si.mixin.ServerLevelMixin"
   ],
   "client": [
     "client.AbstractContainerScreenMixin",
@@ -33,9 +34,7 @@
     "si.mixin.client.ChestRendererMixin",
     "si.mixin.client.GameRendererMixin",
     "si.mixin.client.GuiGraphicsMixin",
-    "si.mixin.client.LivingEntityRendererMixin",
-    "t.GameRendererMixin",
-    "t.LevelRendererMixin"
+    "si.mixin.client.LivingEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -18,6 +18,8 @@ public class Config {
         fc = specPair.getRight();
     }
     public   ForgeConfigSpec.BooleanValue eqNightmareBase ;
+    public   ForgeConfigSpec.BooleanValue disFallRing ;
+    public ForgeConfigSpec.ConfigValue<List<? extends String>> disItemOfNightmare ;
 
 
     public   ForgeConfigSpec.IntValue blood_god_kill ;
@@ -251,6 +253,19 @@ public class Config {
                         eqNightmareBase = BUILDER
                                 .comment("开局自动佩戴噩梦基座和所有附属罪孽")
                                 .define("eqNightmareBase", false);
+
+                        disFallRing = BUILDER
+                                .comment("禁止使用噩梦基座合成天启之戒")
+                                .define("disFallRing", false);
+
+                        disItemOfNightmare = BUILDER
+                                .comment("禁止获取的救赎物品")
+                                .defineList("disItemOfNightmare",
+                                        List.of(),
+
+                                        s->s instanceof String);
+
+
                         BUILDER.pop();
 
                     }
@@ -259,7 +274,6 @@ public class Config {
                         give_nightmare_base_insight_drug = BUILDER
                                 .comment("疯狂灵药获取时要求的药水数量")
                                 .defineInRange("give_nightmare_base_insight_drug", 9,1,100);
-
                         blood_god_kill = BUILDER.comment("神血祖符需要的击杀数")
                                 .defineInRange("blood_god_kill", 500,1,Integer.MAX_VALUE);
                         blood_god_heal = BUILDER.comment("神血祖符需要的治疗量")

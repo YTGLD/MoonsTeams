@@ -57,6 +57,9 @@ public class nightmare_base_start extends nightmare implements SuperNightmare , 
             if (player.isCreative()){
                 return true;
             }
+            if (Config.SERVER.canUnequipMoonstoneItem.get()) {
+                return true;
+            }
         }
         return false;
     }

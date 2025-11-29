@@ -21,17 +21,22 @@ public class ConfigClient {
                 .define("MaxAmout", true);
         Shader = BUILDER
                 .comment("Do you want to enable the post rendering system")
-                .define("RenderBackEnds", true);
+                .define("Shader", true);
+        showDisplayNightmareTip = BUILDER
+                .comment("在不佩戴噩梦基座的情况下显示噩梦物品的描述")
+                .define("showDisplayNightmareTip", false);
 
 
         BUILDER.pop();
 
         BUILDER.build();
     }
+    public   ForgeConfigSpec.BooleanValue showDisplayNightmareTip ;
 
     public   ForgeConfigSpec.BooleanValue MaxAmout ;
 
     public   ForgeConfigSpec.BooleanValue Shader ;
 
+    public   ForgeConfigSpec.BooleanValue Shader2 ;
 
 }

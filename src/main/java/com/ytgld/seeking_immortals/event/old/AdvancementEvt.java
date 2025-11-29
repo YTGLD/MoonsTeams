@@ -19,6 +19,7 @@ import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -34,6 +35,12 @@ import java.util.List;
 import java.util.Map;
 
 public class AdvancementEvt {
+    public static void giveItem(Player player, ItemStack item){
+        ItemEntity entity = new ItemEntity(player.level(),player.getX(),player.getY(),player.getZ(),item);
+        entity.setNoPickUpDelay();
+        entity.setGlowingTag(true);
+        player.level().addFreshEntity(entity);
+    }
 
     public static final String nightmare_base_black_eye_heart = "nightmare_base_black_eye_heart";
     public static final String nightmare_base_black_eye_eye = "nightmare_base_black_eye_eye";
@@ -185,7 +192,7 @@ public class AdvancementEvt {
                                 if (stack.is(Items.nightmare_base_insight.get())) {
                                     if (stack.getTag() != null) {
                                         if (!stack.getTag().getBoolean(ring)) {
-                                            player.addItem(new ItemStack(Items.ring.get()));
+                                            giveItem(player,new ItemStack(Items.ring.get()));
                                             stack.getTag().putBoolean(ring, true);
                                         }
                                     }
@@ -366,7 +373,7 @@ public class AdvancementEvt {
                             if (stack.is(Items.nightmare_base_insight.get())) {
                                 if (stack.getTag() != null) {
                                     if (!stack.getTag().getBoolean(nightmare_base_insight_insane)) {
-                                        player.addItem(new ItemStack(Items.nightmare_base_insight_insane.get()));
+                                        giveItem(player,new ItemStack(Items.nightmare_base_insight_insane.get()));
                                         stack.getTag().putBoolean(nightmare_base_insight_insane, true);
                                     }
 
@@ -454,7 +461,7 @@ public class AdvancementEvt {
                                         if (stack.getTag().getInt(nightmare_base_redemption_degenerate)<100) {
                                             stack.getTag().putInt(nightmare_base_redemption_degenerate, stack.getTag().getInt(nightmare_base_redemption_degenerate)+1);
                                         }else if (stack.getTag().getInt(nightmare_base_redemption_degenerate) == 100){
-                                            player.addItem(new ItemStack(Items.nightmare_base_redemption_degenerate.get()));
+                                            giveItem(player,new ItemStack(Items.nightmare_base_redemption_degenerate.get()));
                                             stack.getTag().putInt(nightmare_base_redemption_degenerate, stack.getTag().getInt(nightmare_base_redemption_degenerate)+1);
                                         }
                                     }
@@ -483,7 +490,7 @@ public class AdvancementEvt {
                                         if (stack.getTag().getInt(nightmare_base_redemption_deception)<100) {
                                             stack.getTag().putInt(nightmare_base_redemption_deception, stack.getTag().getInt(nightmare_base_redemption_deception)+1);
                                         }else if (stack.getTag().getInt(nightmare_base_redemption_deception) == 100){
-                                            player.addItem(new ItemStack(Items.nightmare_base_redemption_deception.get()));
+                                            giveItem(player,new ItemStack(Items.nightmare_base_redemption_deception.get()));
                                             stack.getTag().putInt(nightmare_base_redemption_deception, stack.getTag().getInt(nightmare_base_redemption_deception)+1);
                                         }
                                     }
@@ -559,7 +566,7 @@ public class AdvancementEvt {
     public void nightmare_base_stone_virus(LivingUseTotemEvent event){
         if (event.getEntity() instanceof Player player){
             if (SIHandler.hascurio(player, Items.nightmare_base_stone.get())){
-                if (event.getSource().getEntity() instanceof WitherBoss witherBoss) {
+                if (event.getSource().getEntity() instanceof WitherBoss) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -570,7 +577,7 @@ public class AdvancementEvt {
                                 if (stack.is(Items.nightmare_base_stone.get())) {
                                     if (stack.getTag() != null) {
                                         if (!stack.getTag().getBoolean(nightmare_base_stone_virus)) {
-                                            player.addItem(new ItemStack(Items.nightmare_base_stone_virus.get()));
+                                            giveItem(player,new ItemStack(Items.nightmare_base_stone_virus.get()));
                                             stack.getTag().putBoolean(nightmare_base_stone_virus, true);
                                         }
                                     }
@@ -638,7 +645,7 @@ public class AdvancementEvt {
                                         if (stack.getTag() != null) {
                                             if (!stack.getTag().getBoolean(nightmare_base_black_eye_heart)){
 
-                                                player.addItem(new ItemStack(Items.nightmare_base_black_eye_heart.get()));
+                                                giveItem(player,new ItemStack(Items.nightmare_base_black_eye_heart.get()));
 
                                                 stack.getTag().putBoolean(nightmare_base_black_eye_heart,true);
                                             }

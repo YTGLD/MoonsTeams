@@ -10,9 +10,6 @@ import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.SwordOfTwelve;
 import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.tbl.client.shader.LightSource;
-import com.moonstone.tbl.client.shader.ShaderHelper;
-import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -44,13 +41,6 @@ public class SwordOfTwelveRenderer <T extends SwordOfTwelve> extends EntityRende
 
         if (ConfigClient.Client.Shader.get()) {
             MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
-        }
-        if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
-            WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
-            ShaderHelper.INSTANCE.require();
-            if (shader != null) {
-                shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 4, 0.3f, 0.2f, 2));
-            }
         }
         poseStack.pushPose();
         poseStack.scale(3,3,3);

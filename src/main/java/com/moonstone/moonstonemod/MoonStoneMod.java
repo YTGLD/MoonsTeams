@@ -20,7 +20,6 @@ import com.moonstone.moonstonemod.entity.client.SwordOfTwelveRenderer;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
-import com.moonstone.tbl.client.event.ClientRegistrationEvents;
 import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.data.DataGenerator;
@@ -38,12 +37,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 import java.io.IOException;
-import java.util.UUID;
 import java.util.function.Function;
 
 @Mod(MoonStoneMod.MODID)
@@ -106,11 +103,6 @@ public class MoonStoneMod {
     }
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
-        @SubscribeEvent
-        public static void clientSetup(final FMLClientSetupEvent event) {
-            IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-            ClientRegistrationEvents.initClient(modEventBus);
-        }
         @SubscribeEvent
         public static void RegisterClientTooltipComponentFactoriesEvent(RegisterClientTooltipComponentFactoriesEvent event){
             event.register(ToolTip.class, Function.identity());

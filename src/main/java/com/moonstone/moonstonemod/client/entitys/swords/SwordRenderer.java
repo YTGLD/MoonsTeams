@@ -27,7 +27,11 @@ public class SwordRenderer <T extends ThrowableItemProjectile> extends EntityRen
 
     public void render(T p_113839_, float p_113840_, float p_113841_, PoseStack p_113842_, MultiBufferSource p_113843_, int p_113844_) {
 
+        double x = Mth.lerp(p_113841_, p_113839_.xOld, p_113839_.getX());
+        double y = Mth.lerp(p_113841_, p_113839_.yOld, p_113839_.getY());
+        double z = Mth.lerp(p_113841_, p_113839_.zOld, p_113839_.getZ());
         p_113842_.pushPose();
+        p_113842_.translate(p_113839_.getX()-x, p_113839_.getY()-y,p_113839_.getZ() -z);
 
         setTRed(p_113842_,p_113839_,p_113843_);
         setT(p_113842_,p_113839_,p_113843_);

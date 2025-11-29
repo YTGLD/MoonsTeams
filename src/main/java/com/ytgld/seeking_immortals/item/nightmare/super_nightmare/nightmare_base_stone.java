@@ -129,6 +129,9 @@ public class nightmare_base_stone extends nightmare implements SuperNightmare, A
             if (player.isCreative()){
                 return true;
             }
+            if (Config.SERVER.canUnequipMoonstoneItem.get()) {
+                return true;
+            }
         }
         return false;
     }

@@ -33,6 +33,8 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.*;
 
+import static com.ytgld.seeking_immortals.event.old.AdvancementEvt.giveItem;
+
 public class nightmare_base_reversal extends nightmare implements SuperNightmare, AllTip {
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
@@ -66,6 +68,9 @@ public class nightmare_base_reversal extends nightmare implements SuperNightmare
                 return true;
             }
             if (player.isCreative()){
+                return true;
+            }
+            if (Config.SERVER.canUnequipMoonstoneItem.get()) {
                 return true;
             }
         }
@@ -111,7 +116,7 @@ public class nightmare_base_reversal extends nightmare implements SuperNightmare
                 if (stack.getTag() != null) {
                     if (!stack.getTag().getBoolean(AdvancementEvt.nightmare_base_reversal_orb)) {
                         if (slotContext.entity() instanceof Player player) {
-                            player.addItem(new ItemStack(Items.nightmare_base_reversal_orb.get()));
+                            giveItem(player,new ItemStack(Items.nightmare_base_reversal_orb.get()));
                         }
                         stack.getTag().putBoolean(AdvancementEvt.nightmare_base_reversal_orb, true);
                     }

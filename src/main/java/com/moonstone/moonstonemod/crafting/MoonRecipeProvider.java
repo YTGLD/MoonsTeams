@@ -24,6 +24,7 @@ public class MoonRecipeProvider extends VanillaRecipeProvider {
         SpecialRecipeBuilder.special(AllCrafting.RecipeGodFermentation.get()).save(recipeOutput, "god_fermentation");
         SpecialRecipeBuilder.special(AllCrafting.RecipeGodAutolytic.get()).save(recipeOutput, "god_autolytic");
         SpecialRecipeBuilder.special(AllCrafting.RecipeGodRegenerative.get()).save(recipeOutput, "god_regenerative");
+        SpecialRecipeBuilder.special(AllCrafting.DoNightmareBaseRecipe.get()).save(recipeOutput, "do_nightmare_base");
 
 
         SpecialRecipeBuilder.special(AllCrafting.DNA.get()).save(recipeOutput, "dna");

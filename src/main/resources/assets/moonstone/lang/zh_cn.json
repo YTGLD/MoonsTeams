@@ -1300,6 +1300,7 @@
   "item.book.tool.string": "看看书里有什么！佩戴后+1饰品栏！",
   "item.book.tool.string.nine_sword": "剑骨之力",
   "item.book.tool.string.modi_blood": "血魔霸体",
+  "item.nine_sword_book.tool.string.7": "下一次攻击将造成等于快速栏中所有剑武器伤害总和的伤害",
   "item.nine_sword_book.tool.string.8": "冷却",
   "item.nine_sword_book.tool.string.14": "你无法使用非剑类武器",
   "item.nine_sword_books.tool.string.14": "只能使用剑类武器",

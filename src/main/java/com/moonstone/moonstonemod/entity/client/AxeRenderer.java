@@ -9,9 +9,6 @@ import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.axe;
 import com.moonstone.moonstonemod.init.Items;
-import com.moonstone.tbl.client.shader.LightSource;
-import com.moonstone.tbl.client.shader.ShaderHelper;
-import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -45,13 +42,6 @@ public class AxeRenderer<T extends axe> extends EntityRenderer<T> {
         setT(poseStack, entity, bufferSource);
         if (ConfigClient.Client.Shader.get()) {
             MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
-        }
-        if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
-            WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
-            ShaderHelper.INSTANCE.require();
-            if (shader != null) {
-                shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 8, 1.5f, 0.2f, 1.5f));
-            }
         }
         {
             Vec3 playerPos = entity.position();

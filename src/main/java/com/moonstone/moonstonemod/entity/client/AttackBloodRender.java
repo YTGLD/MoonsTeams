@@ -8,9 +8,6 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.attack_blood;
-import com.moonstone.tbl.client.shader.LightSource;
-import com.moonstone.tbl.client.shader.ShaderHelper;
-import com.moonstone.tbl.client.shader.postprocessing.WorldShader;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;
@@ -36,15 +33,6 @@ public class AttackBloodRender extends EntityRenderer<attack_blood> {
     public void render(attack_blood entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {
         if (ConfigClient.Client.Shader.get()) {
             MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
-        }
-        if (entity.canSee) {
-            if (ShaderHelper.INSTANCE.isWorldShaderActive()) {
-                WorldShader shader = ShaderHelper.INSTANCE.getWorldShader();
-                ShaderHelper.INSTANCE.require();
-                if (shader != null) {
-                    shader.addLight(new LightSource(entity.getX(), entity.getY(), entity.getZ(), 4, 1.25f, 0.2f, 0.2f));
-                }
-            }
         }
         double x = Mth.lerp(p_114487_, entity.xOld, entity.getX());
         double y = Mth.lerp(p_114487_, entity.yOld, entity.getY());

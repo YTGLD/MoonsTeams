@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
 public class SnakeRenderer<T extends snake> extends EntityRenderer<T> {
@@ -18,7 +19,13 @@ public class SnakeRenderer<T extends snake> extends EntityRenderer<T> {
 
     @Override
     public void render(T entity, float p_114486_, float p_114487_, PoseStack poseStack, MultiBufferSource bufferSource, int p_114490_) {
+        double x = Mth.lerp(p_114487_, entity.xOld, entity.getX());
+        double y = Mth.lerp(p_114487_, entity.yOld, entity.getY());
+        double z = Mth.lerp(p_114487_, entity.zOld, entity.getZ());
+        poseStack.pushPose();
+        poseStack.translate(entity.getX()-x, entity.getY()-y,entity.getZ() -z);
         setT(poseStack, entity, bufferSource);
+        poseStack.popPose();
 
         super.render(entity, p_114486_, p_114487_, poseStack, bufferSource, p_114490_);
     }

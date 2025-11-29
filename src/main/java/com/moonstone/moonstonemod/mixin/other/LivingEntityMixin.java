@@ -4,6 +4,8 @@ import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.event.NewEvent;
 import com.moonstone.moonstonemod.init.Items;
+import com.ytgld.seeking_immortals.init.Effects;
+import net.minecraft.core.Holder;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffect;
@@ -12,12 +14,14 @@ import net.minecraft.world.entity.Attackable;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -37,18 +41,30 @@ public abstract class LivingEntityMixin  extends Entity implements Attackable, n
         super(p_19870_, p_19871_);
     }
 
-    @Shadow public abstract ItemStack getItemInHand(InteractionHand p_21121_);
-
-    @Shadow protected abstract void setLivingEntityFlag(int p_21156_, boolean p_21157_);
-
-    @Shadow public abstract Vec3 handleRelativeFrictionAndCalculateMovement(Vec3 p_21075_, float p_21076_);
-
     @Shadow public abstract boolean hasEffect(MobEffect p_21024_);
 
     @Shadow @Nullable public abstract MobEffectInstance getEffect(MobEffect p_21125_);
 
-    @Shadow public abstract boolean shouldDiscardFriction();
 
+    @Shadow @Final private AttributeMap attributes;
+
+    @Inject(at = @At("RETURN"), method = "getAttributeValue(Lnet/minecraft/world/entity/ai/attributes/Attribute;)D", cancellable = true)
+    private void getAttributeValue(Attribute attribute, CallbackInfoReturnable<Double> cir) {
+        LivingEntity living = (LivingEntity) (Object) this;
+        if (living.hasEffect(Effects.debilitating.get())) {
+            if (attribute == Attributes.MAX_HEALTH){
+                AttributeInstance at = attributes.getInstance(Attributes.MAX_HEALTH);
+                if (at!=null) {
+                    for (AttributeModifier attributeModifier : at.getModifiers()) {
+                        if (attributeModifier!=null) {
+                            cir.setReturnValue(attribute.getDefaultValue()+attributeModifier.getAmount()*1.5f);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
     @Inject(at = @At("RETURN"), method = "getMaxHealth", cancellable = true)
     public void getMaxHealth(CallbackInfoReturnable<Float> cir) {
         if ((LivingEntity) (Object) this instanceof Player player){

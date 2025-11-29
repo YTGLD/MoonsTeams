@@ -1,6 +1,7 @@
-// 1.20.1	2025-09-26T13:31:17.9467756	Recipes
+// 1.20.1	2025-11-29T19:03:23.8127437	Recipes
 9c2a152a663ea8e4947d8b2b17a0452b0b8b913d data/minecraft/advancements/recipes/root.json
 3835e5c85fe9672bf97b0303b68ee51f150e91ea data/minecraft/recipes/dna.json
+cf9d409182ced420d863c2c616876b494981c19c data/minecraft/recipes/do_nightmare_base.json
 6569452e74993b10e5866780e8ef7e613cbcefc0 data/minecraft/recipes/god_ambush.json
 78463feb49bf451f209a3b5f1165a80662448ef2 data/minecraft/recipes/god_atpoverdose.json
 63ead58aee87c63b89e4b37bcdb7d601e7360693 data/minecraft/recipes/god_autolytic.json

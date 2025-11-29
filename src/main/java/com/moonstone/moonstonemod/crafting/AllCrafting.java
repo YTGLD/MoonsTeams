@@ -18,6 +18,10 @@ public class AllCrafting {
             REGISTRY.register("dna",
                     ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
                             new RecipeGodDNA(category,resourceLocation)));
+    public static final RegistryObject<RecipeSerializer<DoNightmareBaseRecipe>> DoNightmareBaseRecipe =
+            REGISTRY.register("nightmare_bass",
+                    ()-> new SimpleCraftingRecipeSerializer<>((resourceLocation ,category)->
+                            new DoNightmareBaseRecipe(category,resourceLocation)));
 
 
 

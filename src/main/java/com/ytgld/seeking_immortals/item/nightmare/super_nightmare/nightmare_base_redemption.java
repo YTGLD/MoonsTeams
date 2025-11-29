@@ -1,6 +1,7 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.event.old.AdvancementEvt;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.AllTip;
@@ -23,6 +24,8 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.*;
+
+import static com.ytgld.seeking_immortals.event.old.AdvancementEvt.giveItem;
 
 public class nightmare_base_redemption extends nightmare implements SuperNightmare, AllTip {
     @Override
@@ -55,6 +58,9 @@ public class nightmare_base_redemption extends nightmare implements SuperNightma
             if (player.isCreative()){
                 return true;
             }
+            if (Config.SERVER.canUnequipMoonstoneItem.get()) {
+                return true;
+            }
         }
         return false;
     }
@@ -68,7 +74,7 @@ public class nightmare_base_redemption extends nightmare implements SuperNightma
             if (player.level() instanceof ServerLevel serverLevel) {
                 if (serverLevel.getRaidAt(player.blockPosition()) != null && serverLevel.getRaidAt(player.blockPosition()).isLoss()) {
                     if (stack.getTag() != null && !stack.getTag().getBoolean(AdvancementEvt.nightmare_base_redemption_down_and_out)) {
-                        player.addItem(new ItemStack(Items.nightmare_base_redemption_down_and_out.get()));
+                        giveItem(player,new ItemStack(Items.nightmare_base_redemption_down_and_out.get()));
                         stack.getTag().putBoolean(AdvancementEvt.nightmare_base_redemption_down_and_out, true);
                     }
                 }

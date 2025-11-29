@@ -24,6 +24,8 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.*;
 
+import static com.ytgld.seeking_immortals.event.old.AdvancementEvt.giveItem;
+
 public class nightmare_base_insight extends nightmare implements SuperNightmare, AllTip {
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
@@ -59,6 +61,9 @@ public class nightmare_base_insight extends nightmare implements SuperNightmare,
             if (player.isCreative()){
                 return true;
             }
+            if (Config.SERVER.canUnequipMoonstoneItem.get()) {
+                return true;
+            }
         }
         return false;
     }
@@ -85,7 +90,7 @@ public class nightmare_base_insight extends nightmare implements SuperNightmare,
                         a++;
                     }
                     if (a >= Config.SERVER.give_nightmare_base_insight_drug.get()) {
-                        player.addItem(new ItemStack(Items.nightmare_base_insight_drug.get()));
+                        giveItem(player,new ItemStack(Items.nightmare_base_insight_drug.get()));
                         stack.getTag().putBoolean("give_nightmare_base_insight_drug",true);
                     }
                 }

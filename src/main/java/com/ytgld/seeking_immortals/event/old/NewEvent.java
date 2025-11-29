@@ -1,6 +1,7 @@
 package com.ytgld.seeking_immortals.event.old;
 
 import com.moonstone.moonstonemod.Config;
+import com.moonstone.moonstonemod.ConfigClient;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.SeekingImmortalsMod;
 import com.moonstone.moonstonemod.init.AttReg;
@@ -243,18 +244,20 @@ public class NewEvent {
             event.getToolTip().add(1, Component.translatable(
                     "key.keyboard.left.shift").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F))));
         }
-        if (!SIHandler.hascurio(event.getEntity(), Items.nightmare_base.get())) {
-            if (!Config.SERVER.canUse.get()) {
-                if (event.getItemStack().getItem() instanceof SuperNightmare) {
-                    List<Component> toolTip = event.getToolTip();
-                    Random random = new Random();
-                    for (int i = 0; i < toolTip.size(); i++) {
-                        int randomLength = random.nextInt(25) + 1;
-                        StringBuilder randomString = new StringBuilder();
-                        for (int j = 0; j < randomLength; j++) {
-                            randomString.append("§ka");
+        if (ConfigClient.Client.showDisplayNightmareTip.get()) {
+            if (!SIHandler.hascurio(event.getEntity(), Items.nightmare_base.get())) {
+                if (!Config.SERVER.canUse.get()) {
+                    if (event.getItemStack().getItem() instanceof SuperNightmare) {
+                        List<Component> toolTip = event.getToolTip();
+                        Random random = new Random();
+                        for (int i = 0; i < toolTip.size(); i++) {
+                            int randomLength = random.nextInt(25) + 1;
+                            StringBuilder randomString = new StringBuilder();
+                            for (int j = 0; j < randomLength; j++) {
+                                randomString.append("§ka");
+                            }
+                            toolTip.set(i, Component.literal(randomString.toString()).withStyle(ChatFormatting.DARK_RED));
                         }
-                        toolTip.set(i, Component.literal(randomString.toString()).withStyle(ChatFormatting.DARK_RED));
                     }
                 }
             }

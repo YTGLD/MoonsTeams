@@ -29,6 +29,8 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.*;
 
+import static com.ytgld.seeking_immortals.event.old.AdvancementEvt.giveItem;
+
 public class nightmare_base extends nightmare {
 
     @Override
@@ -49,7 +51,7 @@ public class nightmare_base extends nightmare {
 
                 if (!stack.getTag().getBoolean(lead.gangBoolean)){
                     if (SIHandler.getTagNumber(stack, lead.dieGive) > 200) {
-                        player.addItem(new ItemStack(Items.lead.get()));
+                        giveItem(player,new ItemStack(Items.lead.get()));
                         stack.getTag().putBoolean(lead.gangBoolean,true);
                     }
                 }
@@ -59,7 +61,7 @@ public class nightmare_base extends nightmare {
                     if (kill >= Config.SERVER.blood_god_kill.get()
                             && heal >= Config.SERVER.blood_god_heal.get()
                             && damage >= Config.SERVER.blood_god_damage.get()) {
-                        player.addItem(new ItemStack(Items.blood_god.get()));
+                        giveItem(player,new ItemStack(Items.blood_god.get()));
                         stack.getTag().putBoolean(blood_god.give_End,true);
                     }
                 }
@@ -132,6 +134,9 @@ public class nightmare_base extends nightmare {
                 return true;
             }
             if (player.isCreative()){
+                return true;
+            }
+            if (Config.SERVER.canUnequipMoonstoneItem.get()) {
                 return true;
             }
         }
