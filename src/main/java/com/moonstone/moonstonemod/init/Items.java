@@ -350,6 +350,7 @@ public class Items {
     public static final RegistryObject<Item> god_sword_ =REGISTRY.register("god_sword",twelve_sword.god_sword::new );
     public static final RegistryObject<Item> belt =REGISTRY.register("belt",belt::new );
     public static final RegistryObject<Item> twelve_sword_ =REGISTRY.register("twelve_sword", twelve_sword::new);
+    public static final RegistryObject<Item> soul_apple =REGISTRY.register("soul_apple", soul_apple::new);
 
 
     public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.moonstoneitem.gorillacake::new);

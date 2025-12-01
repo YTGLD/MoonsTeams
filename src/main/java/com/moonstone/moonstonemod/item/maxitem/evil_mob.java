@@ -3,9 +3,11 @@ package com.moonstone.moonstonemod.item.maxitem;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
@@ -26,19 +28,8 @@ public class evil_mob extends CommonItem implements Die {
         p_41423_.add(Component.translatable("item.evil_mob.tool.string.1").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF483D8B))));
         p_41423_.add(Component.literal(""));
         p_41423_.add(Component.translatable("item.evil_mob.tool.string.2").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF483D8B))));
-        p_41423_.add(Component.translatable("item.nightmareeye.tool.string.2").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFF483D8B))));
+        p_41423_.add(Component.translatable("item.evil_mob.tool.string.4").withStyle(ChatFormatting.RED));
     }
-
-    @Override
-    public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
-            if (player.isCreative()){
-                return true;
-            }
-        }
-        return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
-    }
-
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         var s = super.getAttributeModifiers(slotContext, uuid, stack);

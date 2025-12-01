@@ -17,6 +17,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -24,6 +25,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -150,14 +152,20 @@ public class nightmare_base_reversal extends nightmare implements SuperNightmare
         slotContext.entity().getAttributes().removeAttributeModifiers(geta(stack));
     }
 
+    public UUID uuid = UUID.fromString("1258f484-ab92-4326-8e95-24c989338b1b");
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "nightmare",
-                        uuid, 3, AttributeModifier.Operation.ADDITION);
-
-        return linkedHashMultimap;
+    public void inventoryTick(ItemStack p_41404_, Level p_41405_, Entity p_41406_, int p_41407_, boolean p_41408_) {
+        AttributeModifier attributeModifier =  new AttributeModifier(uuid, this.getDescriptionId(), 1, AttributeModifier.Operation.ADDITION);
+        if (p_41406_ instanceof Player player) {
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("nightmare").ifPresent(stacks -> {
+                for (UUID uuid : stacks.getModifiers().keySet()){
+                    if (uuid == this.uuid){
+                        return;
+                    }
+                }
+                stacks.addPermanentModifier(attributeModifier);
+            }));
+        }
     }
     public Multimap<Attribute, AttributeModifier> geta(ItemStack stack) {
         Multimap<Attribute, AttributeModifier> get = HashMultimap.create();

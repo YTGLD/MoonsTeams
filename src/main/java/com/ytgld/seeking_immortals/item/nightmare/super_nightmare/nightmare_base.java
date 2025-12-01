@@ -21,6 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
@@ -158,7 +159,7 @@ public class nightmare_base extends nightmare {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
         CuriosApi
                 .addSlotModifier(linkedHashMultimap, "nightmare",
-                        uuid, 3, AttributeModifier.Operation.ADDITION);
+                        uuid, 7, AttributeModifier.Operation.ADDITION);
 
         return linkedHashMultimap;
     }

@@ -12,6 +12,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
@@ -97,14 +99,25 @@ public class nightmare_base_redemption extends nightmare implements SuperNightma
         pTooltipComponents.add(Component.translatable("item.nightmareeye.tool.string.2").withStyle(ChatFormatting.DARK_RED));
 
     }
+    public UUID uuid = UUID.fromString("53b25143-6fef-4b26-9dca-80ff22373591");
+    @Override
+    public void inventoryTick(ItemStack p_41404_, Level p_41405_, Entity p_41406_, int p_41407_, boolean p_41408_) {
+        AttributeModifier attributeModifier =  new AttributeModifier(uuid, this.getDescriptionId(), 1, AttributeModifier.Operation.ADDITION);
+        if (p_41406_ instanceof Player player) {
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("nightmare").ifPresent(stacks -> {
+                for (UUID uuid : stacks.getModifiers().keySet()){
+                    if (uuid == this.uuid){
+                        return;
+                    }
+                }
+                stacks.addPermanentModifier(attributeModifier);
+            }));
+        }
+    }
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "nightmare",
-                        uuid, 3, AttributeModifier.Operation.ADDITION);
-
         linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid,"asd", 10, AttributeModifier.Operation.ADDITION));
         linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid,"asd", 10, AttributeModifier.Operation.ADDITION));
         linkedHashMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid,"asd", 10, AttributeModifier.Operation.ADDITION));

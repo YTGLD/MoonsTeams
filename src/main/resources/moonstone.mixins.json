@@ -17,8 +17,7 @@
     "si.mixin.EnchantmentMenuMixin",
     "si.mixin.EntityMixin",
     "si.mixin.LivingEntityMixin",
-    "si.mixin.MobEffectInstanceMixin",
-    "si.mixin.ServerLevelMixin"
+    "si.mixin.MobEffectInstanceMixin"
   ],
   "client": [
     "client.AbstractContainerScreenMixin",

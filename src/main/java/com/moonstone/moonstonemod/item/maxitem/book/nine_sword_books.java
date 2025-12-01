@@ -173,13 +173,6 @@ public class nine_sword_books extends BookSkill implements IDoom {
         }
     }
 
-    @Override
-    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (Handler.hascurio(slotContext.entity(),Items.the_blood_book.get())){
-            return false;
-        }
-        return !Handler.hascurio(slotContext.entity(),this);
-    }
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {

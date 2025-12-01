@@ -1,14 +1,18 @@
 package com.ytgld.seeking_immortals.event.old;
 
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
+import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.sniffer.Sniffer;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
@@ -29,14 +33,48 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AdvancementEvt {
     public static void giveItem(Player player, ItemStack item){
         ItemEntity entity = new ItemEntity(player.level(),player.getX(),player.getY(),player.getZ(),item);
+
+        Set<String> blacklist = new HashSet<>();
+        for (String  s : Config.SERVER.disItemOfNightmare.get()){
+            String[] parts = s.split(":");
+            if (parts.length > 0) {
+                blacklist.add(parts[0]+":"+parts[1]);
+            }
+        }
+        if  (blacklist.contains(BuiltInRegistries.ITEM.getKey(entity.getItem().getItem()).toString())) {
+            entity.setItem(ItemStack.EMPTY);
+        }
+        entity.setNoPickUpDelay();
+        entity.setGlowingTag(true);
+        AttributeModifier attributeModifier =  new AttributeModifier(UUID.randomUUID(), item.getItem().asItem().getDescriptionId(), 1, AttributeModifier.Operation.ADDITION);
+        CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("nightmare").ifPresent(stacks -> {
+            stacks.addPermanentModifier(attributeModifier);
+        }));
+
+        player.level().addFreshEntity(entity);
+    }
+    public static void giveItemEntity(Player player, ItemEntity entity){
+
+        Set<String> blacklist = new HashSet<>();
+        for (String  s : Config.SERVER.disItemOfNightmare.get()){
+            String[] parts = s.split(":");
+            if (parts.length > 0) {
+                blacklist.add(parts[0]+":"+parts[1]);
+            }
+        }
+        if  (blacklist.contains(BuiltInRegistries.ITEM.getKey(entity.getItem().getItem()).toString())) {
+            entity.setItem(ItemStack.EMPTY);
+        }
+        AttributeModifier attributeModifier =  new AttributeModifier(UUID.randomUUID(), entity.getItem().getItem().getDescriptionId(), 1, AttributeModifier.Operation.ADDITION);
+        CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("nightmare").ifPresent(stacks -> {
+            stacks.addPermanentModifier(attributeModifier);
+        }));
+
         entity.setNoPickUpDelay();
         entity.setGlowingTag(true);
         player.level().addFreshEntity(entity);
@@ -114,7 +152,7 @@ public class AdvancementEvt {
                                     if (stack.getTag() != null) {
                                         if (event.getEntity() instanceof Warden warden) {
                                             if (!stack.getTag().getBoolean(wolf)) {
-                                                event.getDrops().add(new ItemEntity(warden.level(), warden.getX(), warden.getY(), warden.getZ(),
+                                                giveItemEntity(player,new ItemEntity(warden.level(), warden.getX(), warden.getY(), warden.getZ(),
                                                         new ItemStack(Items.wolf.get())));
                                                 stack.getTag().putBoolean(wolf, true);
                                             }
@@ -146,7 +184,7 @@ public class AdvancementEvt {
                                         if (player.getMainHandItem().isEmpty()&&player.hasEffect(MobEffects.WITHER)) {
                                             if (!stack.getTag().getBoolean(hypocritical_self_esteem)) {
 
-                                                event.getDrops().add(new ItemEntity(enderDragon.level(), enderDragon.getX(), enderDragon.getY(), enderDragon.getZ(),
+                                                giveItemEntity(player,new ItemEntity(enderDragon.level(), enderDragon.getX(), enderDragon.getY(), enderDragon.getZ(),
                                                         new ItemStack(Items.hypocritical_self_esteem.get())));
 
                                                 stack.getTag().putBoolean(hypocritical_self_esteem, true);
@@ -222,7 +260,7 @@ public class AdvancementEvt {
                                         if (warden.getMaxHealth()>=player.getMaxHealth()*30){
                                             if (!stack.getTag().getBoolean(apple)) {
 
-                                                event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                                giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                         new ItemStack(Items.apple.get())));
 
                                                 stack.getTag().putBoolean(apple, true);
@@ -254,7 +292,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof Sniffer warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_start_egg)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_start_egg.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_start_egg, true);
@@ -284,7 +322,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof Warden warden) {
                                         if (!stack.getTag().getBoolean(end_bone)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.end_bone.get())));
 
                                             stack.getTag().putBoolean(end_bone, true);
@@ -314,7 +352,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof Warden warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_start_power)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_start_power.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_start_power, true);
@@ -344,7 +382,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof EnderDragon warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_insight_collapse)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_insight_collapse.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_insight_collapse, true);
@@ -402,7 +440,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof EnderDragon warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_fool_betray)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_fool_betray.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_fool_betray, true);
@@ -415,7 +453,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof Warden warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_fool_bone)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_fool_bone.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_fool_bone, true);
@@ -428,7 +466,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof WitherBoss warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_fool_soul)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_fool_soul.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_fool_soul, true);
@@ -486,12 +524,14 @@ public class AdvancementEvt {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.nightmare_base_redemption.get())) {
                                 if (stack.getTag() != null) {
-                                    if (event.getEntity() instanceof Raider raider) {
-                                        if (stack.getTag().getInt(nightmare_base_redemption_deception)<100) {
-                                            stack.getTag().putInt(nightmare_base_redemption_deception, stack.getTag().getInt(nightmare_base_redemption_deception)+1);
-                                        }else if (stack.getTag().getInt(nightmare_base_redemption_deception) == 100){
-                                            giveItem(player,new ItemStack(Items.nightmare_base_redemption_deception.get()));
-                                            stack.getTag().putInt(nightmare_base_redemption_deception, stack.getTag().getInt(nightmare_base_redemption_deception)+1);
+                                    if (player.hasEffect(MobEffects.BAD_OMEN)) {
+                                        if (event.getEntity() instanceof Raider raider) {
+                                            if (stack.getTag().getInt(nightmare_base_redemption_deception) < 100) {
+                                                stack.getTag().putInt(nightmare_base_redemption_deception, stack.getTag().getInt(nightmare_base_redemption_deception) + 1);
+                                            } else if (stack.getTag().getInt(nightmare_base_redemption_deception) == 100) {
+                                                giveItem(player, new ItemStack(Items.nightmare_base_redemption_deception.get()));
+                                                stack.getTag().putInt(nightmare_base_redemption_deception, stack.getTag().getInt(nightmare_base_redemption_deception) + 1);
+                                            }
                                         }
                                     }
                                 }
@@ -518,7 +558,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof EnderDragon warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_reversal_card)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_reversal_card.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_reversal_card, true);
@@ -548,7 +588,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof EnderDragon warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_stone_meet)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_stone_meet.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_stone_meet, true);
@@ -607,7 +647,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof Zombie warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_stone_brain)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_virus.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_stone_brain, true);
@@ -677,7 +717,7 @@ public class AdvancementEvt {
                                     if (event.getEntity() instanceof Warden warden) {
                                         if (!stack.getTag().getBoolean(nightmare_base_black_eye_eye)) {
 
-                                            event.getDrops().add(new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
+                                            giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),
                                                     new ItemStack(Items.nightmare_base_black_eye_eye.get())));
 
                                             stack.getTag().putBoolean(nightmare_base_black_eye_eye, true);

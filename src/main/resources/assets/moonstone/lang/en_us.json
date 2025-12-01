@@ -988,6 +988,7 @@
   "item.evil_mob.tool.string.1": "Allow you to use and discover corresponding items without wearing Abyss Eye or Necrora virus",
   "item.evil_mob.tool.string.2": "null",
   "item.evil_mob.tool.string.3": "null",
+  "item.evil_mob.tool.string.4": "与Necora病毒，深渊之眼，暗影瘟疫无法相同佩戴",
   "item.god_lead.tool.string.1": "When fatally injured, the damage is transferred to nearby creatures (cool down for 10 seconds)",
   "item.god_lead.tool.string.2": "If this organism dies, then cool it down and clear it",
   "item.god_lead.tool.string.3": "+150% injured",
@@ -2028,6 +2029,9 @@
   "item.moonstone.seven_star.string.8": "此法诀会在七星全灭时消失",
   "effect.moonstone.meet": "增生",
   "effect.moonstone.debilitating": "衰弱",
+
+  "item.moonstone.soul_apple": "灵魂之果",
+  "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
 
 
   "item.moonstone.meet_heart":"增生之心",

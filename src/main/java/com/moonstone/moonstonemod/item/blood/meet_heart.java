@@ -45,9 +45,11 @@ public class meet_heart extends TheNecoraIC {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (!slotContext.entity().hasEffect(Effects.meet.get())) {
-            if (slotContext.entity().tickCount % 30 ==1) {
-                slotContext.entity().addEffect(new MobEffectInstance(MobEffects.HUNGER, 100, 2,false,false));
+        if (!slotContext.entity().level().isClientSide) {
+            if (!slotContext.entity().hasEffect(Effects.meet.get())) {
+                if (slotContext.entity().tickCount % 30 == 1) {
+                    slotContext.entity().addEffect(new MobEffectInstance(MobEffects.HUNGER, 100, 2, false, false));
+                }
             }
         }
     }

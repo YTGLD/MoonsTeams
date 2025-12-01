@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+
+    "moonstone:nightmare_base",
+
     "moonstone:nightmare_base_black_eye",
     "moonstone:nightmare_base_black_eye_eye",
     "moonstone:nightmare_base_black_eye_heart",

@@ -12,6 +12,7 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightma
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -20,6 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootContext;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -193,15 +195,21 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare, Al
         pTooltipComponents.add(Component.translatable("item.nightmareeye.tool.string.2").withStyle(ChatFormatting.DARK_RED));
 
     }
-
+    public UUID uuid = UUID.fromString("21fdc9b7-f3c0-4e5a-8f0d-4451d887c9a5");
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "nightmare",
-                        uuid, 3, AttributeModifier.Operation.ADDITION);
-
-        return linkedHashMultimap;
+    public void inventoryTick(ItemStack p_41404_, Level p_41405_, Entity p_41406_, int p_41407_, boolean p_41408_) {
+        AttributeModifier attributeModifier =  new AttributeModifier(uuid, this.getDescriptionId(), 1, AttributeModifier.Operation.ADDITION);
+        if (p_41406_ instanceof Player player) {
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("nightmare").ifPresent(stacks -> {
+                for (UUID uuid : stacks.getModifiers().keySet()){
+                    if (uuid == this.uuid){
+                        return;
+                    }
+                }
+                stacks.addPermanentModifier(attributeModifier);
+            }));
+        }
     }
+
 }
 

@@ -9,12 +9,14 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNi
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
@@ -59,15 +61,22 @@ public class nightmare_base_black_eye extends nightmare implements SuperNightmar
         return false;
     }
 
+    public UUID uuid = UUID.fromString("c5a945fe-ee27-4bef-8195-1a17ef0e9b88");
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "nightmare",
-                        uuid, 3, AttributeModifier.Operation.ADDITION);
-
-        return linkedHashMultimap;
+    public void inventoryTick(ItemStack p_41404_, Level p_41405_, Entity p_41406_, int p_41407_, boolean p_41408_) {
+        AttributeModifier attributeModifier =  new AttributeModifier(uuid, this.getDescriptionId(), 1, AttributeModifier.Operation.ADDITION);
+        if (p_41406_ instanceof Player player) {
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> handler.getStacksHandler("nightmare").ifPresent(stacks -> {
+                for (UUID uuid : stacks.getModifiers().keySet()){
+                    if (uuid == this.uuid){
+                        return;
+                    }
+                }
+                stacks.addPermanentModifier(attributeModifier);
+            }));
+        }
     }
+
 
     //白天会视力模糊
 

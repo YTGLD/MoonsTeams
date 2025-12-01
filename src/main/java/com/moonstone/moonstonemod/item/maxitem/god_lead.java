@@ -34,26 +34,27 @@ public class god_lead extends CommonItem implements Die {
 
     public static void hurtS(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.god_lead.get())) {
-                if (!event.getSource().is(DamageTypes.DRY_OUT)) {
-                    if (!player.getCooldowns().isOnCooldown(Items.god_lead.get())) {
-                        event.setAmount(event.getAmount() * 2.5f);
-                        if (event.getAmount() > player.getHealth()) {
-                            Vec3 playerPos = player.position().add(0, 0.75, 0);
-                            int range = 12;
-                            List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-                            for (LivingEntity living : entities) {
-                                if (!living.is(player)) {
-                                    living.hurt(living.damageSources().dryOut(), event.getAmount());
-                                    living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0));
-                                    if (!living.isDeadOrDying()) {
-                                        player.getCooldowns().addCooldown(Items.god_lead.get(), 200);
+            if (!event.getSource().is(DamageTypes.DRY_OUT)) {
+                if (Handler.hascurio(player, Items.god_lead.get())) {
+                    if (!event.getSource().is(DamageTypes.DRY_OUT)) {
+                        if (!player.getCooldowns().isOnCooldown(Items.god_lead.get())) {
+                            event.setAmount(event.getAmount() * 2.5f);
+                            if (event.getAmount() > player.getHealth()) {
+                                Vec3 playerPos = player.position().add(0, 0.75, 0);
+                                int range = 12;
+                                List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
+                                for (LivingEntity living : entities) {
+                                    if (!living.is(player)&& !(living instanceof Player)) {
+                                        living.hurt(living.damageSources().dryOut(), event.getAmount());
+                                        living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0));
+                                        if (!living.isDeadOrDying()) {
+                                            player.getCooldowns().addCooldown(Items.god_lead.get(), 200);
+                                        }
+                                        break;
                                     }
-
-                                    break;
                                 }
+                                event.setAmount(0);
                             }
-                            event.setAmount(0);
                         }
                     }
                 }
