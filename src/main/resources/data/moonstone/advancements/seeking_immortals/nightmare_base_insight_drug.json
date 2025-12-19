@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.nightmare_base_insight_drug.text"
+      "translate": "moonstone.jei.item.moonstone.nightmare_base_insight_drug"
     },
     "frame": "task",
     "hidden": false,

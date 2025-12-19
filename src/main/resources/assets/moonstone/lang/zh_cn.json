@@ -1608,7 +1608,6 @@
   "item.apple.tool.string.1": "受到的伤害固定为2",
   "item.apple.tool.string.2": "攻击伤害固定为10",
 
-  "advancements.tooltip.apple.text": "获得这个物品",
   "advancements.tooltip.apple.hand": "倾斜的天平",
   "moonstone.jei.item.moonstone.apple": "杀死血量大于自身30倍最大生命值的生物获取，一个玩家只能获得一个",
 
@@ -1662,15 +1661,42 @@
   "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious": "在佩戴反转球体的情况下开古城的箱子，概率100%，但是只能获得一个",
   "moonstone.jei.item.moonstone.nightmare_base_reversal_orb": "使用颠倒之物的中毒扣血杀死自己",
 
+  "advancements.tooltip.nightmare_base_reversal_card.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_reversal_mysterious.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_reversal_orb.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_reversal.text": "获得这个物品",
+  "advancements.tooltip.end_bone.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start_egg.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start_pod.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_start_power.text": "获得这个物品",
+  "advancements.tooltip.hypocritical_self_esteem.text": "获得这个物品",
+  "advancements.tooltip.falling_immortals.text": "获得这个物品",
+  "advancements.tooltip.wolf.text": "获得这个物品",
+  "advancements.tooltip.hidden_blade.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight_collapse.text": "获得这个物品",
+  "advancements.tooltip.tricky_puppets.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight_insane.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_insight_drug.text": "获得这个物品",
+  "advancements.tooltip.ring.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool_bone.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool_soul.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool_betray.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_fool.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption_deception.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption_degenerate.text": "获得这个物品",
+  "advancements.tooltip.nightmare_base_redemption_down_and_out.text": "获得这个物品",
+  "advancements.tooltip.apple.text": "获得这个物品",
+
   "item.moonstone.nightmare_base_redemption":"“救赎”",
   "item.nightmare_base_redemption.tool.string": "增加15%噩梦基座的属性衰败",
-  "advancements.tooltip.nightmare_base_redemption.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_redemption.hand": "谣言",
 
   "item.moonstone.nightmare_base_redemption_deception":"欺骗",
   "item.nightmare_base_redemption_deception.tool.string": "抵御必死伤害，恢复所有生命值",
   "item.nightmare_base_redemption_deception.tool.string.1": "并获得7秒的无敌和平息附近生物的怒火，冷却60秒",
-  "advancements.tooltip.nightmare_base_redemption_deception.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_redemption_deception.hand": "尘封的谣言",
 
 
@@ -1678,27 +1704,20 @@
   "item.nightmare_base_redemption_degenerate.tool.string": "免疫魔法伤害",
   "item.nightmare_base_redemption_degenerate.tool.string.1": "免疫坠落伤害",
   "item.nightmare_base_redemption_degenerate.tool.string.2": "免疫火焰伤害",
-  "advancements.tooltip.nightmare_base_redemption_degenerate.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_redemption_degenerate.hand": "暗影的赞歌",
 
 
   "item.moonstone.nightmare_base_redemption_down_and_out":"落魄",
   "item.nightmare_base_redemption_down_and_out.tool.string": "减少35%噩梦基座的属性衰败，若减少至负数，则转变成正属性加成",
-  "advancements.tooltip.nightmare_base_redemption_down_and_out.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_redemption_down_and_out.hand": "历史长河",
 
   "moonstone.jei.item.moonstone.nightmare_base_redemption_deception": "在有不详之兆的情况下杀死100个掠夺者",
   "moonstone.jei.item.moonstone.nightmare_base_redemption_degenerate": "在有村庄英雄的情况下杀死100个村民",
   "moonstone.jei.item.moonstone.nightmare_base_redemption_down_and_out": "完成一次失败的袭击",
-
-  "advancements.tooltip.nightmare_base_reversal_card.text": "获得这个物品",
-  "advancements.tooltip.nightmare_base_reversal_card.hand": "反转再反转",
-  "advancements.tooltip.nightmare_base_reversal_mysterious.text": "获得这个物品",
-  "advancements.tooltip.nightmare_base_reversal_mysterious.hand": "神秘的尸体",
-  "advancements.tooltip.nightmare_base_reversal_orb.text": "获得这个物品",
-  "advancements.tooltip.nightmare_base_reversal_orb.hand": "拙劣的演技",
-  "advancements.tooltip.nightmare_base_reversal.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_reversal.hand": "轮回",
+  "advancements.tooltip.nightmare_base_reversal_orb.hand": "拙劣的演技",
+  "advancements.tooltip.nightmare_base_reversal_mysterious.hand": "神秘的尸体",
+  "advancements.tooltip.nightmare_base_reversal_card.hand": "反转再反转",
 
 
 
@@ -1722,7 +1741,6 @@
   "item.nightmare_base_fool.tool.string.1": "从5件开始，每多佩戴一件饰品都会使伤害减少2%",
   "item.nightmare_base_fool.tool.string.2": "伤害和生命值惩罚不高于50%",
 
-  "advancements.tooltip.nightmare_base_fool.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_fool.hand": "抉择",
 
   "item.moonstone.nightmare_base_fool_betray":"夺舍挂坠",
@@ -1730,7 +1748,6 @@
   "item.nightmare_base_fool_betray.tool.string.1": "投靠的生物获得与你一致的正面BUFF",
   "item.nightmare_base_fool_betray.tool.string.2": "被夺舍侍从的主人将损失10%最大生命值",
   "item.nightmare_base_fool_betray.tool.string.3": "每夺舍一个目标，冷却增加5秒",
-  "advancements.tooltip.nightmare_base_fool_betray.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_fool_betray.hand": "为什么会这样",
 
 
@@ -1738,7 +1755,6 @@
   "item.nightmare_base_fool_bone.tool.string": "如果一个生物的攻击目标是你",
   "item.nightmare_base_fool_bone.tool.string.1": "那么你对他的伤害翻倍",
   "item.nightmare_base_fool_bone.tool.string.2": "并且攻击有30%的概率破除无敌帧",
-  "advancements.tooltip.nightmare_base_fool_bone.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_fool_bone.hand": "史莱姆有骨头吗",
 
 
@@ -1747,7 +1763,6 @@
   "item.nightmare_base_fool_soul.tool.string.1": "愚者之危的生命处罚判定由2提高到9",
   "item.nightmare_base_fool_soul.tool.string.2": "每佩戴一件饰品，治疗增加3%",
   "item.nightmare_base_fool_soul.tool.string.3": "每佩戴一件噩梦饰品，生命值增加6",
-  "advancements.tooltip.nightmare_base_fool_soul.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_fool_soul.hand": "历史长河",
 
   "moonstone.jei.item.moonstone.nightmare_base_fool_betray": "杀死末影龙",
@@ -1789,23 +1804,18 @@
   "item.ring.tool.string.3": "任何药水效果结束，你将恢复4点生命值",
   "item.ring.tool.string.4": "若药水状态为负面，则恢复10%最大生命值",
 
-  "advancements.tooltip.ring.text": "获得这个物品",
   "advancements.tooltip.ring.hand": "一寸光阴一寸金",
   "moonstone.jei.item.moonstone.ring": "获得超过10种负面BUFF的情况下触发不死图腾，一个玩家只能获得一个",
-
-
 
   "item.moonstone.nightmare_base_insight":"噩梦洞悉者",
   "item.nightmare_base_insight.tool.string": "附魔台附魔等级减少1级",
   "item.nightmare_base_insight.tool.string.1": "附魔台附魔等级减少50%",
 
-  "advancements.tooltip.nightmare_base_insight.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_insight.hand": "蹉跎之苦",
 
   "item.moonstone.nightmare_base_insight_drug":"疯狂灵药",
   "item.nightmare_base_insight_drug.tool.string": "伤害,护甲,生命值提高100%",
   "item.nightmare_base_insight_drug.tool.string.1": "但是每佩戴一件饰品，此奖励都将减少8%",
-  "advancements.tooltip.nightmare_base_insight_drug.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_insight_drug.hand": "长生者",
 
   "advancements.tooltip.nightmare_base.hand": "噩梦基座",
@@ -1816,7 +1826,6 @@
   "item.nightmare_base_insight_insane.tool.string": "当你斩杀生物时",
   "item.nightmare_base_insight_insane.tool.string.1": "根据死亡的生物的强度恢复生命值",
   "item.nightmare_base_insight_insane.tool.string.2": "并且下一击的伤害提高150%",
-  "advancements.tooltip.nightmare_base_insight_insane.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_insight_insane.hand": "战神之石",
 
 
@@ -1826,7 +1835,6 @@
   "item.tricky_puppets.tool.string.1": "被标记的方块会随着你与其距离的减少而发出光照",
   "item.tricky_puppets.tool.string.2": "你可以穿透方块看到它们",
 
-  "advancements.tooltip.tricky_puppets.text": "获得这个物品",
   "advancements.tooltip.tricky_puppets.hand": "咯咯吱吱",
 
   "moonstone.jei.item.moonstone.tricky_puppets": "发现于林地府邸，概率75%，一个玩家只能获得一个",
@@ -1837,20 +1845,14 @@
   "item.end_bone.tool.string": "满血时速度减少50%，受到的伤害减少80%",
   "item.end_bone.tool.string.1": "满血时受到的伤害会以700%的比例反弹给攻击者",
 
-  "advancements.tooltip.end_bone.text": "获得这个物品",
   "advancements.tooltip.end_bone.hand": "坚不可摧！",
 
   "moonstone.jei.item.moonstone.end_bone": "杀死坚守者获取，一个玩家只能获得一个",
 
 
 
-
-
-
-
   "item.moonstone.nightmare_base_insight_collapse":"瓦解魔镜",
   "item.nightmare_base_insight_collapse.tool.string": "通用饰品栏的数量加倍",
-  "advancements.tooltip.nightmare_base_insight_collapse.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_insight_collapse.hand": "崩解之力",
 
   "moonstone.jei.item.moonstone.nightmare_base_insight_drug": "玩家身上存在9种不同的正面药水状态时给予",
@@ -1874,12 +1876,10 @@
   "item.nightmare_base_start.tool.string": "护甲无效化",
   "item.nightmare_base_start.tool.string.1": "每次受伤都会强制减少1点生命值",
   "item.nightmare_base_start.tool.string.2": "生命值低于10点时不会触发",
-  "advancements.tooltip.nightmare_base_start.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_start.hand": "”仙人“",
 
   "item.moonstone.nightmare_base_start_pod":"不灭苞荚",
   "item.nightmare_base_start_pod.tool.string": "抗性提高20%",
-  "advancements.tooltip.nightmare_base_start_pod.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_start_pod.hand": "不灭花，不灭果",
 
 
@@ -1888,14 +1888,12 @@
   "item.nightmare_base_start_egg.tool.string.1": "所有伤害加20%",
   "item.nightmare_base_start_egg.tool.string.2": "治疗加50%",
 
-  "advancements.tooltip.nightmare_base_start_egg.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_start_egg.hand": "懒蛋一个",
 
 
   "item.moonstone.nightmare_base_start_power":"愕然的权力",
   "item.nightmare_base_start_power.tool.string": "每存在一个正面药水状态",
   "item.nightmare_base_start_power.tool.string.1": "你的所有属性提高2%",
-  "advancements.tooltip.nightmare_base_start_power.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_start_power.hand": "崩解之力",
   "attrib.moonstone.critical": "暴击",
 
@@ -1904,7 +1902,7 @@
   "attribute.name.moonstone.heal": "治疗",
   "attribute.name.moonstone.dig": "挖掘速度",
 
-  "moonstone.jei.item.moonstone.nightmare_base_start_power": "杀死坚守者",
+  "moonstone.jei.item.moonstone.nightmare_base_start_power": "杀死坚守者（斩下古城典狱者的枷锁之拳，令其施加于万物的黑暗，反转为滋养自身的权柄。）",
   "moonstone.jei.item.moonstone.nightmare_base_start_egg": "杀死嗅探兽",
   "moonstone.jei.item.moonstone.nightmare_base_start_pod": "开地牢的箱子，概率25%，只能获取一个",
   "itemGroup.moonstone": "月之石：噩梦之章",
@@ -1922,7 +1920,6 @@
   "item.hypocritical_self_esteem.tool.string.2": "   撕咬附近的生物，每0.5秒造成20%你的面板伤害",
   "item.hypocritical_self_esteem.tool.string.3": "   每多一个目标，伤害提高20%",
   "item.hypocritical_self_esteem.tool.string.4": "   每次撕咬都会吸取生命值并对目标造成削弱",
-  "advancements.tooltip.hypocritical_self_esteem.text": "获得这个物品",
   "advancements.tooltip.hypocritical_self_esteem.hand": "不要摧毁弱者的自尊",
   "moonstone.jei.item.moonstone.hypocritical_self_esteem": "在存在凋零状态的情况下，使用空手给末影龙最后一击，一个玩家只能获得一个",
 
@@ -1952,7 +1949,7 @@
   "item.falling_immortals.tool.string.5":"受到伤害固定为2",
   "item.falling_immortals.tool.string.6":"护甲固定为10",
   "moonstone.jei.item.moonstone.falling_immortals": "在佩戴倾斜异果的情况下主手手持末影之眼杀死凋零获取（实际上它会直接替换倾斜异果为坠仙）",
-  "advancements.tooltip.falling_immortals.text": "获得这个物品",
+
   "advancements.tooltip.falling_immortals.hand": "希望之火的熄灭",
 
   "item.moonstone.disintegrating_stone":"裂天石",
@@ -2058,10 +2055,7 @@
 
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
-
-  "advancements.tooltip.hidden_blade.text": "获得这个物品",
   "advancements.tooltip.hidden_blade.hand": "未知的刀锋",
-  "advancements.tooltip.wolf.text": "获得这个物品",
   "advancements.tooltip.wolf.hand": "一叶孤舟",
   "moonstone.jei.item.moonstone.wolf": "让你的狼杀死监守者"
 }

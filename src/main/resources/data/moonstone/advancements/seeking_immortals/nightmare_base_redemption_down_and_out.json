@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.nightmare_base_redemption_down_and_out.text"
+      "translate": "moonstone.jei.item.moonstone.nightmare_base_redemption_down_and_out"
     },
     "frame": "task",
     "hidden": false,

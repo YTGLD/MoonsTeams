@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.end_bone.text"
+      "translate": "moonstone.jei.item.moonstone.end_bone"
     },
     "frame": "goal",
     "hidden": false,

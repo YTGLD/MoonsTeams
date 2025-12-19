@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.hypocritical_self_esteem.text"
+      "translate": "moonstone.jei.item.moonstone.hypocritical_self_esteem"
     },
     "frame": "goal",
     "hidden": false,

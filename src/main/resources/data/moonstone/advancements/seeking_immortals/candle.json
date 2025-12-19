@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.candle.text"
+      "translate": "moonstone.jei.item.moonstone.candle"
     },
     "frame": "goal",
     "hidden": false,

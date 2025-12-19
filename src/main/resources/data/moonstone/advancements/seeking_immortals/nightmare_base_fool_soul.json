@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.nightmare_base_fool_soul.text"
+      "translate": "moonstone.jei.item.moonstone.nightmare_base_fool_soul"
     },
     "frame": "task",
     "hidden": false,

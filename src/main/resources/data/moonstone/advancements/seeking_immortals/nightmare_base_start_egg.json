@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.nightmare_base_start_egg.text"
+      "translate": "moonstone.jei.item.moonstone.nightmare_base_start_egg"
     },
     "frame": "task",
     "hidden": false,

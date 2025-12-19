@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.nightmare_base_reversal_mysterious.text"
+      "translate": "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious"
     },
     "frame": "task",
     "hidden": false,

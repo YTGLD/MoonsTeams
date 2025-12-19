@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.tooltip.nightmare_base_stone_meet.text"
+      "translate": "moonstone.jei.item.moonstone.nightmare_base_stone_meet"
     },
     "frame": "task",
     "hidden": false,
