@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.blood;
 
+import com.all.IRedItem;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
@@ -25,7 +26,7 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 import java.util.List;
 import java.util.Map;
 
-public class max_eye extends TheNecoraIC {
+public class max_eye extends TheNecoraIC implements IRedItem {
     public static final String blood="MaxBlood";
 
     public static void Die(LivingDeathEvent event){

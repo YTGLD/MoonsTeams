@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 
+import com.all.INightItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
@@ -28,7 +29,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.*;
 
-public class nightmare_base_start extends nightmare implements SuperNightmare , AllTip {
+public class nightmare_base_start extends nightmare implements SuperNightmare , AllTip, INightItem {
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
         return Optional.of(new ToolTip(this,stack));

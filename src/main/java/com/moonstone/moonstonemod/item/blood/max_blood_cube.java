@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.blood;
 
+import com.all.IRedItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.entity.attack_blood;
@@ -35,7 +36,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public class max_blood_cube extends TheNecoraIC {
+public class max_blood_cube extends TheNecoraIC implements IRedItem {
     public static final String slowing = "Slowing";
     public static final int slowingMax = 100;
 

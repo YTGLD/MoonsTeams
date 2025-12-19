@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
+import com.all.IBlueItem;
 import com.moonstone.moonstonemod.moonstoneitem.Doom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -9,7 +10,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class thedoomstone extends Doom {
+public class thedoomstone extends Doom implements IBlueItem {
 
 
     @Override

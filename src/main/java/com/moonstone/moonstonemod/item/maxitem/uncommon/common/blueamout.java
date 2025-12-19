@@ -1,5 +1,7 @@
 package com.moonstone.moonstonemod.item.maxitem.uncommon.common;
 
+import com.all.IBlueItem;
+import com.all.IGreedyItem;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -9,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class blueamout extends CommonItem {
+public class blueamout extends CommonItem implements IBlueItem {
 
 
     @Override

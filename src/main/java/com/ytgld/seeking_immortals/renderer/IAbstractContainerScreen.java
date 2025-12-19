@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IAbstractContainerScreen {
     List<Vec2> seekingImmortals$xy();
+    Integer moons1_20_1__$color();
 }

@@ -26,6 +26,9 @@ public abstract class LivingEntityMixin {
         if (living.hasEffect(Effects.life.get())){
             cir.setReturnValue(30f);
         }
+        if (living.hasEffect(Effects.life_apple.get())){
+            cir.setReturnValue(30f);
+        }
     }
 
     @Inject(at = @At("RETURN"), method = "getArmorValue", cancellable = true)

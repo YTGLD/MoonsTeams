@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.blood.magic;
 
+import com.all.IRedItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.entity.owner_blood;
@@ -28,7 +29,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import java.util.List;
 import java.util.UUID;
 
-public class blood_candle extends TheNecoraIC {
+public class blood_candle extends TheNecoraIC implements IRedItem {
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {

@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.blood.magic;
 
+import com.all.IRedItem;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
@@ -27,7 +28,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class undead_blood_charm extends TheNecoraIC {
+public class undead_blood_charm extends TheNecoraIC implements IRedItem {
 
     public static void LivingIncomingDamageEvent(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player){

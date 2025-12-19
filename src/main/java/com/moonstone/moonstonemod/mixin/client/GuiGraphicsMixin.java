@@ -1,13 +1,15 @@
 package com.moonstone.moonstonemod.mixin.client;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.all.IGUILight;
+import com.mojang.blaze3d.vertex.*;
+import com.moonstone.moonstonemod.ConfigClient;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.glow.Red_glow;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
 import com.moonstone.moonstonemod.item.necora;
 import com.moonstone.moonstonemod.moonstoneitem.*;
+import com.ytgld.seeking_immortals.MGuiGraphics;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,6 +17,7 @@ import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,6 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.joml.Vector2ic;
 import org.spongepowered.asm.mixin.Final;
@@ -48,9 +52,32 @@ public abstract class GuiGraphicsMixin {
     @Shadow @Deprecated protected abstract void flushIfUnmanaged();
     @Shadow public abstract PoseStack pose();
     @Shadow @Final private Minecraft minecraft;
-    @Inject(at = {@At("RETURN")}, method = {"renderItem(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;III)V"})
-    public void ca$renderItemDecorations(LivingEntity p_283524_, Level p_282461_, ItemStack stack, int x, int y, int p_282425_, CallbackInfo ci) {
+
+    @Shadow public abstract MultiBufferSource.BufferSource bufferSource();
+
+    @Inject(at = {@At("TAIL")}, method = {"renderItem(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;IIII)V"})
+    public void ca$renderItemDecorations(LivingEntity p_283524_, Level p_281754_, ItemStack stack, int x, int y, int p_283260_, int p_281995_, CallbackInfo ci) {
         GuiGraphics guiGraphics = (GuiGraphics) (Object) this;
+        if (stack.getItem() instanceof IGUILight iguiLight) {
+            if (ConfigClient.Client.ItemGui.get()) {
+                ResourceLocation resourceLocation = iguiLight.img();
+                int color = iguiLight.guiColor(stack);
+                float as = ((color >> 24) & 0xFF) / 255f;
+                float rs = ((color >> 16) & 0xFF) / 255f;
+                float gs = ((color >> 8) & 0xFF) / 255f;
+                float bs = (color & 0xFF) / 255f;
+                guiGraphics.pose().pushPose();
+
+                guiGraphics.pose().translate(0, 0, 250);
+
+                MGuiGraphics.blit(guiGraphics, resourceLocation, x + iguiLight.posOffset().x, y + iguiLight.posOffset().y, 0, 0,
+                        16, 16, 16, 16,
+                        rs, gs, bs, as);
+                guiGraphics.pose().popPose();
+            }
+        }
+
+
         if (p_283524_ != null) {
             int tickCount = p_283524_.tickCount;
             if (stack.getItem() instanceof necora) {
@@ -518,6 +545,12 @@ public abstract class GuiGraphicsMixin {
         this.moonstone$fillGradient_mls(vertexconsumer, p_286535_, p_286839_, p_286242_, p_286856_, p_286706_, p_286809_, p_286833_);
         this.flushIfUnmanaged();
     }
+
+    @Inject(at = @At(value = "RETURN"), method = "renderItem(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;IIII)V")
+    public void IGUILight(LivingEntity p_282619_, Level p_281754_, ItemStack p_281675_, int x, int y, int p_283260_, int p_281995_, CallbackInfo ci) {
+
+    }
+
 
     @Unique
     private void moonstone$fillGradient_mls(VertexConsumer p_286862_, int p_283414_, int p_281397_, int p_283587_, int p_281521_, int p_283505_, int p_283131_, int p_282949_) {

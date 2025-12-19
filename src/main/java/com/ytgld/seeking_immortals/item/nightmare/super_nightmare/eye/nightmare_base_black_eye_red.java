@@ -2,6 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -21,9 +22,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class nightmare_base_black_eye_red extends nightmare implements SuperNightmare {
     public static final String aty = "NightmareRed";
@@ -78,11 +77,21 @@ public class nightmare_base_black_eye_red extends nightmare implements SuperNigh
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(ItemStack stack) {
         Multimap<Attribute, AttributeModifier> get = HashMultimap.create();
         if (stack.getTag() != null) {
+            Set<String> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.allAttributeModify.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add(parts[0] + ":" + parts[1]);
+                }
+            }
             double as = stack.getTag().getInt(aty) / 100f;
-
             for (Holder<Attribute> attribute : BuiltInRegistries.ATTRIBUTE.asHolderIdMap()) {
-
-                get.put(attribute.get(), new AttributeModifier(UUID.fromString("2f07bdec-29b3-4c35-b03c-7c7edefec40e"), "", as, AttributeModifier.Operation.MULTIPLY_BASE));
+                if (attribute != null) {
+                    String attributeId = Config.getRegisteredName(attribute);
+                    if (!blacklist.contains(attributeId)) {
+                        get.put(attribute.get(), new AttributeModifier(UUID.fromString("2f07bdec-29b3-4c35-b03c-7c7edefec40e"), "", as, AttributeModifier.Operation.MULTIPLY_BASE));
+                    }
+                }
             }
         }
         return get;

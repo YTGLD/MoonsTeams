@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem.uncommon.common;
 
+import com.all.IRedItem;
 import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import net.minecraft.ChatFormatting;
@@ -10,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class redamout extends CommonItem  implements TextEvt.Twelve{
+public class redamout extends CommonItem  implements TextEvt.Twelve , IRedItem {
 
 
 

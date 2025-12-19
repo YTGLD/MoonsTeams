@@ -1,12 +1,18 @@
 package com.moonstone.moonstonemod;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = MoonStoneMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
@@ -16,6 +22,23 @@ public class Config {
         final Pair<Config, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(Config::new);
         SERVER = specPair.getLeft();
         fc = specPair.getRight();
+    }
+
+    public static Set<String> blacklist() {
+        Set<String> blacklist = new HashSet<>();
+        for (String aaa : Config.SERVER.allAttributeModify.get()) {
+            String[] parts = aaa.split(":");
+            if (parts.length > 0) {
+                blacklist.add(parts[0] + ":" + parts[1]);
+                return blacklist;
+            }
+        }
+        return blacklist;
+    }
+    public static String getRegisteredName(Holder<Attribute> attribute) {
+        return attribute.unwrapKey().map((p_316542_) -> {
+            return p_316542_.location().toString();
+        }).orElse("[unregistered]");
     }
     public   ForgeConfigSpec.BooleanValue eqNightmareBase ;
     public   ForgeConfigSpec.BooleanValue disFallRing ;
@@ -42,22 +65,28 @@ public class Config {
     public final ForgeConfigSpec.IntValue nightmare_base_start ;
     public final ForgeConfigSpec.IntValue give_nightmare_base_insight_drug ;
 
+    public ForgeConfigSpec.ConfigValue<List<? extends String>>  allAttributeModify;
 
     public Config(ForgeConfigSpec.Builder BUILDER){
         plague_speed = BUILDER
-                .comment("The growth rate of plague research sites")
+                .comment("远古病毒研究点的增长速度")
                 .defineInRange("GrowthSpeed", 0.1, 0, 100);
         plague_pain = BUILDER
-                .comment("The corrosion speed of the plague")
+                .comment("远古病毒的腐蚀速度")
                 .defineInRange("CorrosionSpeed", 0.01, 0, 100);
 
         the_pain_stone = BUILDER
-                .comment("What is this value, divide the damage by (“2” is “/2”)")
+                .comment("这个伤害数值是多少")
                 .defineInRange("Int", 2, 1, 1000);
 
         nine_sword = BUILDER
-                .comment("The maximum amount of damage that can be dealt")
+                .comment("最大伤害")
                 .defineInRange("Nine Sword Books", 256D, 0, 5120);
+        allAttributeModify = BUILDER
+                .comment("增加全属性的物品其属性黑名单")
+                .defineList("allAttributeModify",
+                        List.of("forge:entity_gravity"),
+                        s->s instanceof String);
 
         {
             {
@@ -108,8 +137,6 @@ public class Config {
                         .defineInRange("pain_ring_", 100f, 0, 999999);
                 BUILDER.pop();
             }
-
-
             {
                 BUILDER.push("一般物品");
 
@@ -245,7 +272,6 @@ public class Config {
                 BUILDER.pop();
             }
             {
-
                 {
                     BUILDER.push("噩梦");
                     {

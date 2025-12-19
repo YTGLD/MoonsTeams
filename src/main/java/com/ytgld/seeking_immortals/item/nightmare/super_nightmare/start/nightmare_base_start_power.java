@@ -2,6 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.start;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -17,9 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import top.theillusivec4.curios.api.SlotContext;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class nightmare_base_start_power extends nightmare implements SuperNightmare {
     @Override
@@ -35,7 +34,7 @@ public class nightmare_base_start_power extends nightmare implements SuperNightm
     }
 
     public  Multimap<Attribute, AttributeModifier> gets(SlotContext slotContext) {
-         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
+        Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         LivingEntity living = slotContext.entity();
         List<Integer> integersHealth = new ArrayList<>();
         for (MobEffectInstance effect : living.getActiveEffects()) {
@@ -45,13 +44,24 @@ public class nightmare_base_start_power extends nightmare implements SuperNightm
             }
         }
         float att = 0;
-        for (int i : integersHealth) {
+        for (int ignored : integersHealth) {
             att += 2;
         }
         att /= 100;
-
+        Set<String> blacklist = new HashSet<>();
+        for (String aaa : Config.SERVER.allAttributeModify.get()) {
+            String[] parts = aaa.split(":");
+            if (parts.length > 0) {
+                blacklist.add(parts[0] + ":" + parts[1]);
+            }
+        }
         for (Holder<Attribute> attribute : BuiltInRegistries.ATTRIBUTE.asHolderIdMap()) {
-            linkedHashMultimap.put(attribute.get(), new AttributeModifier(UUID.fromString("6a4b481b-b838-41bb-bb54-f3567ba123c7"),"as", att, AttributeModifier.Operation.MULTIPLY_BASE));
+            if (attribute != null) {
+                String attributeId = Config.getRegisteredName(attribute);
+                if (!blacklist.contains(attributeId)) {
+                    linkedHashMultimap.put(attribute.get(), new AttributeModifier(UUID.fromString("6a4b481b-b838-41bb-bb54-f3567ba123c7"),"as", att, AttributeModifier.Operation.MULTIPLY_BASE));
+                }
+            }
         }
 
         return linkedHashMultimap;

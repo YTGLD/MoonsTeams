@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 
+import com.all.INightItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
@@ -21,6 +22,7 @@ import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -28,9 +30,9 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.*;
 
-public class nightmare_base_stone extends nightmare implements SuperNightmare, AllTip {
+public class nightmare_base_stone extends nightmare implements SuperNightmare, AllTip, INightItem {
 
-    public static void LivingHurtEvent(LivingHurtEvent event) {
+    public static void LivingHurtEvent(LivingDamageEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (SIHandler.hascurio(player, Items.nightmare_base_stone.get())) {
                 if (SIHandler.hascurio(player,Items.candle.get())){

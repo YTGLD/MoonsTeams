@@ -1,4 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem.rage;
 
-public interface RAGE {
+import com.all.IYellowItem;
+
+public interface RAGE extends IYellowItem {
 }

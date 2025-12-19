@@ -2,6 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.reversal;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
@@ -17,7 +18,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import top.theillusivec4.curios.api.SlotContext;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public class nightmare_base_reversal_mysterious extends nightmare implements SuperNightmare {
@@ -25,9 +28,20 @@ public class nightmare_base_reversal_mysterious extends nightmare implements Sup
     public  Multimap<Attribute, AttributeModifier> getAttributeModifiers() {
          Multimap<Attribute, AttributeModifier> get = HashMultimap.create();
         double as = -0.1f;
-
+        Set<String> blacklist = new HashSet<>();
+        for (String aaa : Config.SERVER.allAttributeModify.get()) {
+            String[] parts = aaa.split(":");
+            if (parts.length > 0) {
+                blacklist.add(parts[0] + ":" + parts[1]);
+            }
+        }
         for (Holder<Attribute> attribute : BuiltInRegistries.ATTRIBUTE.asHolderIdMap()) {
-            get.put(attribute.get(), new AttributeModifier(UUID.fromString("e8ecafcf-b8b6-425a-b3fa-31171a122b48"),"s", as, AttributeModifier.Operation.MULTIPLY_BASE));
+            if (attribute != null) {
+                String attributeId = Config.getRegisteredName(attribute);
+                if (!blacklist.contains(attributeId)) {
+                    get.put(attribute.get(), new AttributeModifier(UUID.fromString("e8ecafcf-b8b6-425a-b3fa-31171a122b48"),"s", as, AttributeModifier.Operation.MULTIPLY_BASE));
+                }
+            }
         }
         return get;
     }

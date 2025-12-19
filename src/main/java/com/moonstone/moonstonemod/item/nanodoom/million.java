@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
+import com.all.IBlueItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
@@ -40,7 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class million extends Doom  implements TextEvt.Twelve{
+public class million extends Doom  implements TextEvt.Twelve, IBlueItem {
     public static final String sizeLvl = "swordSize";
     public static final String attackLvl = "attackLvlSize";
     public static final String allAttackTime = "allAttackTime";

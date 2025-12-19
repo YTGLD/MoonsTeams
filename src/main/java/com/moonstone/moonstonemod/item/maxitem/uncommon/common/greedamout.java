@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem.uncommon.common;
 
+import com.all.IGreedyItem;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -9,7 +10,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class greedamout extends CommonItem {
+public class greedamout extends CommonItem implements IGreedyItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {

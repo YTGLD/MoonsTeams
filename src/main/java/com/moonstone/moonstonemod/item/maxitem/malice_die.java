@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem;
 
+import com.all.IBlueItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Handler;
@@ -28,7 +29,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class malice_die extends CommonItem implements Die {
+public class malice_die extends CommonItem implements Die , IBlueItem {
     /*
       	如果附近生物的攻击目标是你，那么每增加一个生物：
       	+10%伤害

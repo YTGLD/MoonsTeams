@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 
+import com.all.INightItem;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
@@ -28,7 +29,7 @@ import java.util.*;
 
 import static com.ytgld.seeking_immortals.event.old.AdvancementEvt.giveItem;
 
-public class nightmare_base_insight extends nightmare implements SuperNightmare, AllTip {
+public class nightmare_base_insight extends nightmare implements SuperNightmare, AllTip, INightItem {
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
         return Optional.of(new ToolTip(this,stack));

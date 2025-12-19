@@ -39,7 +39,7 @@ public abstract class AbstractContainerScreenMixin <T extends AbstractContainerM
 
 
     @Override
-    public boolean isHasItem() {
+    public boolean moons1_20_1__$isHasItem() {
         if (GuiHandler.getCurrentlyRenderingSlot()!=null){
             if (GuiHandler.getCurrentlyRenderingSlot().getItem().isEmpty()) {
                 return true;

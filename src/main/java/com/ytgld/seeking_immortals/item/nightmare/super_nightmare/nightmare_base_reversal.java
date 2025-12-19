@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 
+import com.all.INightItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
@@ -26,6 +27,7 @@ import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -37,7 +39,7 @@ import java.util.*;
 
 import static com.ytgld.seeking_immortals.event.old.AdvancementEvt.giveItem;
 
-public class nightmare_base_reversal extends nightmare implements SuperNightmare, AllTip {
+public class nightmare_base_reversal extends nightmare implements SuperNightmare, AllTip, INightItem {
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
         return Optional.of(new ToolTip(this,stack));
@@ -133,6 +135,8 @@ public class nightmare_base_reversal extends nightmare implements SuperNightmare
                         stack.getTag().putInt(att, stack.getTag().getInt(att) - 4);
                         player.getCooldowns().addCooldown(stack.getItem(), 20);
                     }
+                } else if (stack.getTag().getInt(att) < 0) {
+                    stack.getTag().putInt(att, 0);
                 }
             } else {
                 if (stack.getTag().getInt(att) >= -46) {
@@ -173,9 +177,21 @@ public class nightmare_base_reversal extends nightmare implements SuperNightmare
         if (stack.getTag() != null) {
             double as = -stack.getTag().getInt(att);
             as /= 100;
+            Set<String> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.allAttributeModify.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add(parts[0] + ":" + parts[1]);
+                }
+            }
             for (Holder<Attribute> attribute : BuiltInRegistries.ATTRIBUTE.asHolderIdMap()) {
-                if (attribute != (Attributes.MAX_HEALTH)) {
-                    get.put(attribute.get(), new AttributeModifier(UUID.fromString("59c51eea-e27e-410d-aaef-286f2ce555a5"),"a", as, AttributeModifier.Operation.MULTIPLY_BASE));
+                if (attribute != null) {
+                    String attributeId = Config.getRegisteredName(attribute);
+                    if (!blacklist.contains(attributeId)) {
+                        if (attribute != (Attributes.MAX_HEALTH)) {
+                            get.put(attribute.get(), new AttributeModifier(UUID.fromString("59c51eea-e27e-410d-aaef-286f2ce555a5"), "a", as, AttributeModifier.Operation.MULTIPLY_BASE));
+                        }
+                    }
                 }
             }
         }

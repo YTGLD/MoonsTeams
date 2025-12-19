@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.fall;
 
+import com.all.IYellowItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.init.AttReg;
@@ -24,6 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.phys.Vec2;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.SlotContext;
@@ -31,7 +33,12 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class the_divine_fall_ring extends FallItem {
+public class the_divine_fall_ring extends FallItem implements IYellowItem {
+    @Override
+    public Vec2 posOffset() {
+        return new Vec2(-4,4);
+    }
+
     public static final String uDead = "undead";
     public static void exp(LivingExperienceDropEvent event) {
         if (event.getAttackingPlayer() instanceof Player) {

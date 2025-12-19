@@ -8,7 +8,10 @@ import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +21,9 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.SlotContext;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public class nightmarerotten extends nightmare  implements Nightmare {
@@ -29,13 +34,26 @@ public class nightmarerotten extends nightmare  implements Nightmare {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers() {
         Multimap<Attribute, AttributeModifier> get = HashMultimap.create();
         double as  = (Config.SERVER.nightmarerotten.get()/100f);
-
-        for (Attribute attribute : ForgeRegistries.ATTRIBUTES){
-
-            get.put(attribute, new AttributeModifier(UUID.fromString("1dd34f6b-f553-3906-92e2-e13f78ae2b51"), MoonStoneMod.MODID +":nightmarerotten", as, AttributeModifier.Operation.MULTIPLY_BASE));
+        Set<String> blacklist = new HashSet<>();
+        for (String aaa : Config.SERVER.allAttributeModify.get()) {
+            String[] parts = aaa.split(":");
+            if (parts.length > 0) {
+                blacklist.add(parts[0] + ":" + parts[1]);
+            }
         }
+        for (Holder<Attribute> attribute : BuiltInRegistries.ATTRIBUTE.asHolderIdMap()) {
+            if (attribute != null) {
+                String attributeId = Config.getRegisteredName(attribute);
+                if (!blacklist.contains(attributeId)) {
+                    get.put(attribute.get(), new AttributeModifier(UUID.fromString("1dd34f6b-f553-3906-92e2-e13f78ae2b51"), "a", as, AttributeModifier.Operation.MULTIPLY_BASE
+                    ));
+                }
+            }
+        }
+
         return get;
     }
+
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){

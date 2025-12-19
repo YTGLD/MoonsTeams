@@ -71,30 +71,6 @@ public abstract class LivingEntityMixin  extends Entity implements Attackable, n
             if (Handler.hascurio(player, Items.nightmare_head.get())){
                 cir.setReturnValue(8f);
             }
-            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
-                Map<String, ICurioStacksHandler> curios = handler.getCurios();
-                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                    ICurioStacksHandler stacksHandler = entry.getValue();
-                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                        ItemStack stack = stackHandler.getStackInSlot(i);
-                        if (stack.getTag()!=null){
-                            if (stack.getTag().getBoolean(Difficulty.EASY.getKey())){
-                                cir.setReturnValue(cir.getReturnValue()+0.175f);
-                            }
-                            if (stack.getTag().getBoolean(Difficulty.NORMAL.getKey())){
-                                cir.setReturnValue(cir.getReturnValue()+0.33f);
-                            }
-                            if (stack.getTag().getBoolean(Difficulty.HARD.getKey())){
-                                cir.setReturnValue(cir.getReturnValue()+0.5f);
-                            }
-                            if (stack.getTag().getBoolean(NewEvent.lootTable)){
-                                cir.setReturnValue(cir.getReturnValue()+0.66f);
-                            }
-                        }
-                    }
-                }
-            });
         }
     }
     @Inject(at = @At("RETURN"), method = "canStandOnFluid", cancellable = true)

@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem.uncommon.common;
 
+import com.all.IGreedyItem;
 import com.moonstone.moonstonemod.moonstoneitem.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -11,7 +12,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class greedcrystal extends CommonItem {
+public class greedcrystal extends CommonItem implements IGreedyItem {
     @Override
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
         return 1;

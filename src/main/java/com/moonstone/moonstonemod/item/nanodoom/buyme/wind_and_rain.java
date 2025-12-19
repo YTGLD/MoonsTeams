@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom.buyme;
 
+import com.all.IBlueItem;
 import com.moonstone.moonstonemod.moonstoneitem.Perhaps;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -9,7 +10,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class wind_and_rain extends Perhaps {
+public class wind_and_rain extends Perhaps implements IBlueItem {
     public static final String wind = "WindAndRain";
 
     @Override

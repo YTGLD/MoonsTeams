@@ -92,18 +92,23 @@ public class NewEvent {
     }
 
     @SubscribeEvent
+    public void LivingHurtEvent(LivingDamageEvent event) {
+        apple.damage(event);
+        nightmare_base_stone.LivingHurtEvent(event);
+
+    }
+    @SubscribeEvent
     public void LivingHurtEvent(LivingHurtEvent event) {
         hidden_blade.hurt_cit(event);
         lead.hurtOfBlood(event);
         falling_immortals.damage(event);
-        apple.damage(event);
+
         nightmare_base_stone_virus.h(event);
         strengthen_runestone.hurt(event);
         strengthen_runestone.hurt(event);
         strengthen_runestone.hurt(event);
         nightmare_base_black_eye_eye.attLook(event);
         nightmare_base_black_eye_heart.hurt(event);
-        nightmare_base_stone.LivingHurtEvent(event);
         nightmare_base_stone_brain.hurts(event);
         nightmare_base_redemption_deception.LivingHurtEvent(event);
         nightmare_base_fool_bone.attLook(event);

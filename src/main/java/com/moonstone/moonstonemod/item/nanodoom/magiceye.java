@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
+import com.all.IBlueItem;
 import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.moonstoneitem.Doom;
 import net.minecraft.ChatFormatting;
@@ -14,7 +15,7 @@ import top.theillusivec4.curios.api.type.capability.ICurio;
 
 import java.util.List;
 
-public class magiceye extends Doom  implements TextEvt.Twelve{
+public class magiceye extends Doom  implements TextEvt.Twelve, IBlueItem {
 
     @NotNull
     @Override

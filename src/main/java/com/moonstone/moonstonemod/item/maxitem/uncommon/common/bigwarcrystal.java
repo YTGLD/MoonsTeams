@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem.uncommon.common;
 
+import com.all.IYellowItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.MoonStoneMod;
@@ -14,7 +15,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.UUID;
 
-public class bigwarcrystal extends CommonItem implements Iwar  , TextEvt.Twelve{
+public class bigwarcrystal extends CommonItem implements Iwar  , TextEvt.Twelve, IYellowItem {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();

@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.blood;
 
+import com.all.IRedItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.event.TextEvt;
@@ -25,7 +26,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
-public class killer extends TheNecoraIC {
+public class killer extends TheNecoraIC implements IRedItem {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (stack.getTag()==null){

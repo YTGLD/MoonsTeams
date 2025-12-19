@@ -1,9 +1,12 @@
 package com.moonstone.moonstonemod.client.renderer;
 
 import com.mojang.blaze3d.pipeline.RenderTarget;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
@@ -11,6 +14,10 @@ import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.OptionalDouble;
+import java.util.function.Function;
+
+import static org.lwjgl.opengl.GL11C.GL_LEQUAL;
+import static org.lwjgl.opengl.GL11C.GL_LESS;
 
 public class MRender extends RenderType {
     public MRender(String p_173178_, VertexFormat p_173179_, VertexFormat.Mode p_173180_, int p_173181_, boolean p_173182_, boolean p_173183_, Runnable p_173184_, Runnable p_173185_) {
@@ -214,4 +221,37 @@ public class MRender extends RenderType {
     public static void setShaderInstance_gateway(ShaderInstance instance) {
         ShaderInstance_gateway = instance;
     }
+
+
+    public static final TransparencyStateShard UNIFIED_TRANSPARENCY_STATE = new TransparencyStateShard("unified_transparency", () -> {
+        RenderSystem.enableDepthTest();
+        RenderSystem.enableBlend();
+        RenderSystem.blendFuncSeparate(
+                GlStateManager.SourceFactor.SRC_ALPHA,
+                GlStateManager.DestFactor.ONE,
+                GlStateManager.SourceFactor.ONE,
+                GlStateManager.DestFactor.ZERO
+        );
+        RenderSystem.depthFunc(GL_LESS);
+        RenderSystem.depthMask(false);
+
+    }, () -> {
+        RenderSystem.disableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.depthMask(true);
+        RenderSystem.depthFunc(GL_LEQUAL);
+        RenderSystem.disableDepthTest();
+    });
+
+
+    public static final Function<ResourceLocation, RenderType> GUI = Util.memoize((p_286155_) -> {
+        RenderType.CompositeState rendertype$compositestate = RenderType.CompositeState.builder()
+                .setShaderState(RENDERTYPE_ITEM_ENTITY_TRANSLUCENT_CULL_SHADER).setTextureState(new RenderStateShard.TextureStateShard(p_286155_,
+                        false, false)).setTransparencyState(UNIFIED_TRANSPARENCY_STATE).setOutputState(ITEM_ENTITY_TARGET)
+                .setLightmapState(LIGHTMAP).setOverlayState(OVERLAY).setWriteMaskState(RenderStateShard.COLOR_DEPTH_WRITE)
+                .createCompositeState(true);
+        return create("item_entity_translucent_cull", DefaultVertexFormat.NEW_ENTITY,
+                VertexFormat.Mode.QUADS, 256, true, true, rendertype$compositestate);
+    });
+
 }

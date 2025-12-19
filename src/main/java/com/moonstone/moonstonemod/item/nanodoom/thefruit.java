@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
+import com.all.IBlueItem;
 import com.moonstone.moonstonemod.moonstoneitem.IDoom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -17,7 +18,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import java.util.List;
 import java.util.UUID;
 
-public class thefruit extends Item implements IDoom {
+public class thefruit extends Item implements IDoom, IBlueItem {
     public thefruit() {
         super(new Properties().stacksTo(1).rarity(Rarity.create("thefruit", ChatFormatting.AQUA)).food(
                 new FoodProperties.Builder().alwaysEat().nutrition(10).saturationMod(10).build()));

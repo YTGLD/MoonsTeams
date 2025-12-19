@@ -80,54 +80,49 @@ public abstract class GuiGraphicsMixin implements IGuiGraphics {
     @Override
     public  void seekingImmortals$addW( ItemStack stack) {
         GuiGraphics guiGraphics = (GuiGraphics) (Object) this;
-        if (stack.getItem() instanceof Terror terror) {
-            if (terror.maxLevel(stack)!=0&&terror.nowLevel(stack)!=0) {
-                if (terror.nowLevel(stack) >= terror.maxLevel(stack)) {
-                    guiGraphics.pose().pushPose();
-                    if (this.minecraft.screen instanceof IAbstractContainerScreen iAbstractContainerScreen) {
-                        List<Vec2> xy = iAbstractContainerScreen.seekingImmortals$xy();
-                        if (xy != null) {
-                            for (int i = 1; i < xy.size(); i++) {
-                                Vec2 prevPos = xy.get(i - 1);
-                                Vec2 currPos = xy.get(i);
-                                if (prevPos.x != 0 && prevPos.y != 0 && currPos.x != 0 && currPos.y != 0) {
-                                    float alpha = (float) (i) / (float) (xy.size());
-                                    Vec2 adjustedPrevPos = new Vec2(prevPos.x, prevPos.y);
-                                    Vec2 adjustedCurrPos = new Vec2(currPos.x, currPos.y);
-                                    guiGraphics.pose().pushPose();
-                                    guiGraphics.pose().translate(prevPos.x, prevPos.y, 0);
-                                    guiGraphics.pose().scale(alpha, alpha, alpha);
-                                    guiGraphics.pose().translate(-prevPos.x, -prevPos.y, 0);
 
-                                    if (terror.color(stack) == 0) {
-                                        MGuiGraphics.blit(guiGraphics, terror.image(null),
-                                                adjustedCurrPos.x - 12, adjustedCurrPos.y - 12,
-                                                0, 0, 24, 24, 24, 24,
-                                                (alpha), 0.25f, alpha / 2f, alpha);
-                                    } else {
-                                        int color = terror.color(stack);
-                                        int as = (color >> 24) & 0xFF;
-                                        int rs = (color >> 16) & 0xFF;
-                                        int gs = (color >> 8) & 0xFF;
-                                        int bs = color & 0xFF;
-                                        float a = as / 255f;
-                                        float r = rs / 255f;
-                                        float g = gs / 255f;
-                                        float b = bs / 255f;
-                                        MGuiGraphics.blit(guiGraphics, terror.image(null),
-                                                adjustedCurrPos.x - 12, adjustedCurrPos.y - 12,
-                                                0, 0, 24, 24, 24, 24,
-                                                r, g, b * alpha, alpha);
-                                    }
-                                    guiGraphics.pose().popPose();
-                                }
-                            }
+        guiGraphics.pose().pushPose();
+        if (this.minecraft.screen instanceof IAbstractContainerScreen iAbstractContainerScreen) {
+            List<Vec2> xy = iAbstractContainerScreen.seekingImmortals$xy();
+            if (xy != null) {
+                for (int i = 1; i < xy.size(); i++) {
+                    Vec2 prevPos = xy.get(i - 1);
+                    Vec2 currPos = xy.get(i);
+                    if (prevPos.x != 0 && prevPos.y != 0 && currPos.x != 0 && currPos.y != 0) {
+                        float alpha = (float) (i) / (float) (xy.size());
+                        Vec2 adjustedPrevPos = new Vec2(prevPos.x, prevPos.y);
+                        Vec2 adjustedCurrPos = new Vec2(currPos.x, currPos.y);
+                        guiGraphics.pose().pushPose();
+                        guiGraphics.pose().translate(prevPos.x, prevPos.y, 0);
+                        guiGraphics.pose().scale(alpha, alpha, alpha);
+                        guiGraphics.pose().translate(-prevPos.x, -prevPos.y, 0);
+
+                        if (iAbstractContainerScreen.moons1_20_1__$color() == 0) {
+                            MGuiGraphics.blit(guiGraphics, new ResourceLocation(SeekingImmortalsMod.MODID,"textures/gui/tooltip/fire.png"),
+                                    adjustedCurrPos.x - 12, adjustedCurrPos.y - 12,
+                                    0, 0, 24, 24, 24, 24,
+                                    (alpha), 0.25f, alpha / 2f, alpha);
+                        } else {
+                            int color = iAbstractContainerScreen.moons1_20_1__$color();
+                            int as = (color >> 24) & 0xFF;
+                            int rs = (color >> 16) & 0xFF;
+                            int gs = (color >> 8) & 0xFF;
+                            int bs = color & 0xFF;
+                            float a = as / 255f;
+                            float r = rs / 255f;
+                            float g = gs / 255f;
+                            float b = bs / 255f;
+                            MGuiGraphics.blit(guiGraphics,new ResourceLocation(SeekingImmortalsMod.MODID,"textures/gui/tooltip/fire.png"),
+                                    adjustedCurrPos.x - 12, adjustedCurrPos.y - 12,
+                                    0, 0, 24, 24, 24, 24,
+                                    r, g, b * alpha, alpha);
                         }
+                        guiGraphics.pose().popPose();
                     }
-                    guiGraphics.pose().popPose();
                 }
             }
         }
+        guiGraphics.pose().popPose();
     }
 
 

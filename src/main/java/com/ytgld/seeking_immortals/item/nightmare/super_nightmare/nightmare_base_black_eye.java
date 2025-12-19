@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare;
 
+import com.all.INightItem;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.init.Items;
@@ -17,16 +18,22 @@ import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec2;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.*;
 
-public class nightmare_base_black_eye extends nightmare implements SuperNightmare, AllTip {
+public class nightmare_base_black_eye extends nightmare implements SuperNightmare, AllTip, INightItem {
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
         return Optional.of(new ToolTip(this,stack));
+    }
+
+    @Override
+    public Vec2 posOffset() {
+        return new Vec2(0,-3);
     }
 
     @Override

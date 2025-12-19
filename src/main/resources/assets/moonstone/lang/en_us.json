@@ -1945,6 +1945,7 @@
 
   "effect.moonstone.invulnerable": "invulnerable",
   "effect.moonstone.life": "life",
+  "effect.moonstone.life_apple": "锁血",
 
   "item.moonstone.nightmare_base_start_egg":"Origin Egg",
   "item.nightmare_base_start_egg.tool.string": "Luck +10",

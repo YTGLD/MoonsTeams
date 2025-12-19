@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
+import com.all.IBlueItem;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.as_sword;
@@ -32,7 +33,7 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 import java.util.List;
 import java.util.Map;
 
-public class as_amout  extends Doom  implements TextEvt.Twelve{
+public class as_amout  extends Doom  implements TextEvt.Twelve, IBlueItem {
     public static void hurt(LivingHurtEvent event){
         if (event.getSource().getDirectEntity() instanceof Player player ){
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {

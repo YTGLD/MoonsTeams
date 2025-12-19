@@ -13,6 +13,7 @@ public class Effects {
     public static final RegistryObject<MobEffect> invulnerable  =REGISTRY.register("invulnerable",()->new invulnerable());
     public static final RegistryObject<MobEffect> blood  =REGISTRY.register("blood",()->new blood());
     public static final RegistryObject<MobEffect> life  =REGISTRY.register("life",()->new life());
+    public static final RegistryObject<MobEffect> life_apple  =REGISTRY.register("life_apple",()->new life_apple());
 
     public static final RegistryObject<MobEffect> hidden  =REGISTRY.register("hidden",()->new hidden());
     public static final RegistryObject<MobEffect> blade  =REGISTRY.register("blade",()->new blade());

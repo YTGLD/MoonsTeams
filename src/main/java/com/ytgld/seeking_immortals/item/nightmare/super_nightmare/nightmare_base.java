@@ -154,16 +154,6 @@ public class nightmare_base extends nightmare {
         }
     }
 
-    @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
-        CuriosApi
-                .addSlotModifier(linkedHashMultimap, "nightmare",
-                        uuid, 7, AttributeModifier.Operation.ADDITION);
-
-        return linkedHashMultimap;
-    }
-
 
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {

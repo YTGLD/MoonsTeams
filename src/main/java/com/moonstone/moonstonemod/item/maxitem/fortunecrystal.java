@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem;
 
+import com.all.IGreedyItem;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.event.TextEvt;
 import com.moonstone.moonstonemod.init.Items;
@@ -16,27 +17,11 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class fortunecrystal extends UnCommonItem implements TextEvt.Twelve, Die {
+public class fortunecrystal extends UnCommonItem implements TextEvt.Twelve, Die, IGreedyItem {
 
     @Override
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
         return 3;
-    }
-    @Override
-    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.greedcrystal.get())){
-                return false;
-            }
-            if (Handler.hascurio(player, Items.biggreedcrystal.get())){
-                return false;
-            }
-            if (Handler.hascurio(player,this)){
-                return false;
-            }
-        }
-
-        return true;
     }
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {

@@ -1578,9 +1578,9 @@
 
 
   "item.moonstone.nightmare_base_stone_virus": "Nightecora病毒",
-  "item.nightmare_base_stone_virus.tool.string": "伤害增加100%",
-  "item.nightmare_base_stone_virus.tool.string.1": "治疗增加100%",
-  "item.nightmare_base_stone_virus.tool.string.2": "暴击增加100%",
+  "item.nightmare_base_stone_virus.tool.string": "伤害增加33%",
+  "item.nightmare_base_stone_virus.tool.string.1": "治疗增加33%",
+  "item.nightmare_base_stone_virus.tool.string.2": "暴击增加33%",
   "item.nightmare_base_stone_virus.tool.string.3": "受到任意伤害都会额外附加10%最大生命值的惩罚,不受任何加成影响",
 
   "item.moonstone.nightmare_base_stone_brain": "末世之脑",
@@ -1649,6 +1649,7 @@
   "moonstone.jei.item.moonstone.nightmare_base.all": "，需要佩戴:",
   "effect.moonstone.life": "锁血",
 
+  "effect.moonstone.life_apple": "锁血",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发不死图腾获取：中毒,凋零,缓慢并且着火",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_eye": "杀死坚守者",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_red": "发现在古城，概率在5%左右",
@@ -2019,7 +2020,7 @@
   "item.bone_or_god.tool.string.2": "宠物攻击会附加10%主人的面板伤害",
   "item.bone_or_god.tool.string.3":"宠物伤害提高200%",
   "item.bone_or_god.tool.string.4": "宠物抗性提高50%",
-  "item.bone_or_god.tool.string.5":"若宠附加的物没有攻击目标，则缓慢恢复生命值",
+  "item.bone_or_god.tool.string.5":"若宠附近没有攻击目标，则缓慢恢复生命值",
 
   "item.moonstone.the_divine_fall_ring":"神陨·天启之戒",
   "item.the_divine_fall_ring.tool.string.1": "带上它 你将免疫黑暗",

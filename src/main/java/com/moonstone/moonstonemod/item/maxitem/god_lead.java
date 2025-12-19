@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.maxitem;
 
+import com.all.IYellowItem;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class god_lead extends CommonItem implements Die {
+public class god_lead extends CommonItem implements Die, IYellowItem {
 
     /*
     受到致命伤害时，伤害转移到附近的生物身上(冷却10秒)

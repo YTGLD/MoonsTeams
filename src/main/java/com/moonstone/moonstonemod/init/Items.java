@@ -6,6 +6,7 @@ import com.moonstone.moonstonemod.entity.necora.small_zombie;
 import com.moonstone.moonstonemod.init.moonstoneitem.BloodItem;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
 import com.moonstone.moonstonemod.item.BloodVirus.botton;
+import com.moonstone.moonstonemod.item.maxitem.uncommon.*;
 import com.moonstone.moonstonemod.item.BloodVirus.catalyzer;
 import com.moonstone.moonstonemod.item.BloodVirus.flygene;
 import com.moonstone.moonstonemod.item.TheNecora.autolytic;
@@ -351,6 +352,8 @@ public class Items {
     public static final RegistryObject<Item> belt =REGISTRY.register("belt",belt::new );
     public static final RegistryObject<Item> twelve_sword_ =REGISTRY.register("twelve_sword", twelve_sword::new);
     public static final RegistryObject<Item> soul_apple =REGISTRY.register("soul_apple", soul_apple::new);
+    public static final RegistryObject<Item> luck_ring =REGISTRY.register("luck_ring", luck_ring::new);
+    public static final RegistryObject<Item> luck_stone =REGISTRY.register("luck_stone", luck_stone::new);
 
 
     public static final RegistryObject<Item> gorillacake =REGISTRY.register("gorillacake", com.moonstone.moonstonemod.moonstoneitem.gorillacake::new);

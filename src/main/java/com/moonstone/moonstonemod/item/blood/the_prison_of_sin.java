@@ -2,12 +2,14 @@ package com.moonstone.moonstonemod.item.blood;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
 import com.moonstone.moonstonemod.moonstoneitem.extend.TheNecoraIC;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
@@ -30,9 +32,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class the_prison_of_sin extends TheNecoraIC {
     public static final String killNameAndSize = "killNameAndSize";
@@ -108,12 +108,25 @@ public class the_prison_of_sin extends TheNecoraIC {
         if (stack.getTag()!=null){
             s+=stack.getTag().getFloat(killNameAndSize);
         }
+        Set<String> blacklist = new HashSet<>();
+        for (String aaa : Config.SERVER.allAttributeModify.get()) {
+            String[] parts = aaa.split(":");
+            if (parts.length > 0) {
+                blacklist.add(parts[0] + ":" + parts[1]);
+            }
+        }
         s-=100f;
         s/=100f;
-        for (Attribute attribute : BuiltInRegistries.ATTRIBUTE) {
-            modifierMultimap.put(attribute, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),
-                    "name", s, AttributeModifier.Operation.MULTIPLY_BASE));
+        for (Holder<Attribute> attribute : BuiltInRegistries.ATTRIBUTE.asHolderIdMap()) {
+            if (attribute != null) {
+                String attributeId = Config.getRegisteredName(attribute);
+                if (!blacklist.contains(attributeId)) {
+                    modifierMultimap.put(attribute.get(), new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),
+                            "name", s, AttributeModifier.Operation.MULTIPLY_BASE));
+                }
+            }
         }
+
         return modifierMultimap;
     }
     public Multimap<Attribute, AttributeModifier> Health() {

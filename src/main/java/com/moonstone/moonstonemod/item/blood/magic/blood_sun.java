@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.item.blood.magic;
 
+import com.all.IRedItem;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.entity.sun;
 import com.moonstone.moonstonemod.init.EntityTs;
@@ -21,7 +22,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class blood_sun extends TheNecoraIC {
+public class blood_sun extends TheNecoraIC implements IRedItem {
 
     public static void Did(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player){

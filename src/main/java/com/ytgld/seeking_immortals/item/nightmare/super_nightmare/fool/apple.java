@@ -11,13 +11,14 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
 public class apple extends nightmare implements SuperNightmare {
-    public static void damage(LivingHurtEvent event){
+    public static void damage(LivingDamageEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (SIHandler.hascurio(player, Items.apple.get())) {
                 event.setAmount(10);
@@ -32,7 +33,7 @@ public class apple extends nightmare implements SuperNightmare {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        slotContext.entity().addEffect(new MobEffectInstance(Effects.life.get(),100,0,false,false));
+        slotContext.entity().addEffect(new MobEffectInstance(Effects.life_apple.get(),100,0,false,false));
     }
 
     @Override

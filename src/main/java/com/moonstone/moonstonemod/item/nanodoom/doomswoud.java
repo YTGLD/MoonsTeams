@@ -1,5 +1,7 @@
 package com.moonstone.moonstonemod.item.nanodoom;
 
+import com.all.IBlueItem;
+import com.all.IGreedyItem;
 import com.moonstone.moonstonemod.moonstoneitem.Doom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -14,7 +16,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class doomswoud extends Doom {
+public class doomswoud extends Doom implements IBlueItem {
     public static String canFlySword = "canFlySword";
     public boolean overrideOtherStackedOnMe(ItemStack me, ItemStack Other, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {

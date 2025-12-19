@@ -26,11 +26,17 @@ public class ConfigClient {
                 .comment("在不佩戴噩梦基座的情况下显示噩梦物品的描述")
                 .define("showDisplayNightmareTip", false);
 
+        ItemGui = BUILDER
+                .comment("显示物品的GUI叠加层（发光）")
+                .define("ItemGui_", false);
+
 
         BUILDER.pop();
 
         BUILDER.build();
     }
+    public   ForgeConfigSpec.BooleanValue ItemGui ;
+
     public   ForgeConfigSpec.BooleanValue showDisplayNightmareTip ;
 
     public   ForgeConfigSpec.BooleanValue MaxAmout ;
