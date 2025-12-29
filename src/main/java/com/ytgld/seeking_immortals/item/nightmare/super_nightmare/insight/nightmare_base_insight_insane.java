@@ -41,7 +41,8 @@ public class nightmare_base_insight_insane extends nightmare implements SuperNig
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
         pTooltipComponents.add(Component.translatable("item.nightmare_base_insight_insane.tool.string").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_insight_insane.tool.string.1").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_insight_insane.tool.string.2").withStyle(ChatFormatting.DARK_RED));
+        int v = Config.SERVER.nightmare_base_insight_insane.get();
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_insight_insane.tool.string.2",v).withStyle(ChatFormatting.DARK_RED));
     }
 }
 

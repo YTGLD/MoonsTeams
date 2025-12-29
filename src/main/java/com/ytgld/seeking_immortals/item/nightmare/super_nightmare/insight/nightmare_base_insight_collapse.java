@@ -27,7 +27,7 @@ public class nightmare_base_insight_collapse extends nightmare implements SuperN
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
         CuriosApi
-                .addSlotModifier(linkedHashMultimap, "curio", uuid, 2, AttributeModifier.Operation.ADDITION);
+                .addSlotModifier(linkedHashMultimap, "curio", uuid, 2, AttributeModifier.Operation.MULTIPLY_TOTAL);
         return linkedHashMultimap;
 
     }

@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye;
 
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -29,7 +30,8 @@ public class nightmare_base_black_eye_eye extends nightmare implements SuperNigh
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
         pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_eye.tool.string").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_eye.tool.string.1").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_eye.tool.string.2").withStyle(ChatFormatting.DARK_RED));
+        float s  = Config.SERVER.nightmare_base_black_eye_eye.get();
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_eye.tool.string.2",s).withStyle(ChatFormatting.DARK_RED));
     }
 
     public static void attLook(LivingHurtEvent event) {
@@ -38,7 +40,9 @@ public class nightmare_base_black_eye_eye extends nightmare implements SuperNigh
                 Entity entity = getPlayerLookTarget(player.level(), player);
                 if (entity instanceof LivingEntity living0) {
                     if (living0.is(event.getEntity())) {
-                        event.setAmount(event.getAmount() * 1.2f);
+                        float s  = Config.SERVER.nightmare_base_black_eye_eye.get();
+                        s/=100f;
+                        event.setAmount(event.getAmount() * s);
                     }
                 }
             }

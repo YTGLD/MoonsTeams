@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.redemption;
 
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
@@ -13,7 +14,8 @@ public class nightmare_base_redemption_down_and_out extends nightmare implements
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_redemption_down_and_out.tool.string").withStyle(ChatFormatting.DARK_RED));
+        float v = Config.SERVER.nightmare_base_redemption_down_and_out.get();
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_redemption_down_and_out.tool.string",v).withStyle(ChatFormatting.DARK_RED));
     }
 }
 

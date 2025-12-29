@@ -45,7 +45,8 @@ public class nightmare_base_start_power extends nightmare implements SuperNightm
         }
         float att = 0;
         for (int ignored : integersHealth) {
-            att += 2;
+            float ssa =(float) (double)Config.SERVER.nightmare_base_start_power.get();
+            att += ssa;
         }
         att /= 100;
         Set<String> blacklist = new HashSet<>();
@@ -71,8 +72,9 @@ public class nightmare_base_start_power extends nightmare implements SuperNightm
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
+        float ssa =(float) (double)Config.SERVER.nightmare_base_start_power.get();
         pTooltipComponents.add(Component.translatable("item.nightmare_base_start_power.tool.string").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_start_power.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_start_power.tool.string.1",ssa).withStyle(ChatFormatting.DARK_RED));
     }
 }
 

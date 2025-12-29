@@ -34,9 +34,11 @@ public class nightmare_base_stone_virus extends nightmare implements SuperNightm
 
     public  Multimap<Attribute, AttributeModifier> getAttributeModifiers() {
          Multimap<Attribute, AttributeModifier> attributeModifiers = HashMultimap.create();
-        attributeModifiers.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("fbec47ce-171e-4eeb-afb0-8ed4a7387030"),"a", 0.33f, AttributeModifier.Operation.MULTIPLY_BASE));
-        attributeModifiers.put(AttReg.heal.get(), new AttributeModifier(UUID.fromString("fbec47ce-171e-4eeb-afb0-8ed4a7387030"),"a", 0.33f, AttributeModifier.Operation.MULTIPLY_BASE));
-        attributeModifiers.put(AttReg.cit.get(), new AttributeModifier(UUID.fromString("fbec47ce-171e-4eeb-afb0-8ed4a7387030"),"a", 0.33f, AttributeModifier.Operation.MULTIPLY_BASE));
+        float v = Config.SERVER.nightmare_base_stone_virus.get();
+        v/=100f;
+        attributeModifiers.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("fbec47ce-171e-4eeb-afb0-8ed4a7387030"),"a", v, AttributeModifier.Operation.MULTIPLY_BASE));
+        attributeModifiers.put(AttReg.heal.get(), new AttributeModifier(UUID.fromString("fbec47ce-171e-4eeb-afb0-8ed4a7387030"),"a", v, AttributeModifier.Operation.MULTIPLY_BASE));
+        attributeModifiers.put(AttReg.cit.get(), new AttributeModifier(UUID.fromString("fbec47ce-171e-4eeb-afb0-8ed4a7387030"),"a", v, AttributeModifier.Operation.MULTIPLY_BASE));
 
         return attributeModifiers;
 
@@ -59,9 +61,10 @@ public class nightmare_base_stone_virus extends nightmare implements SuperNightm
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_stone_virus.tool.string").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_stone_virus.tool.string.1").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_stone_virus.tool.string.2").withStyle(ChatFormatting.DARK_RED));
+        float v = Config.SERVER.nightmare_base_stone_virus.get();
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_stone_virus.tool.string",v).withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_stone_virus.tool.string.1",v).withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_stone_virus.tool.string.2",v).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_stone_virus.tool.string.3").withStyle(ChatFormatting.DARK_RED));
     }
 

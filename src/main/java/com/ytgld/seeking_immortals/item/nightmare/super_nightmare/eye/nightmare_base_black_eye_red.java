@@ -39,8 +39,9 @@ public class nightmare_base_black_eye_red extends nightmare implements SuperNigh
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.nightmare_base_black_eye_red.get())) {
                                 if (stack.getTag() != null) {
-                                    if (stack.getTag().getInt(aty) < 50) {
-                                        stack.getTag().putInt(aty, stack.getTag().getInt(aty) + 5);
+                                    float s  = Config.SERVER.nightmare_base_black_eye_red.get();
+                                    if (stack.getTag().getInt(aty) < s) {
+                                        stack.getTag().putInt(aty, stack.getTag().getInt(aty) + 3);
                                     }
                                 }
                             }
@@ -101,7 +102,8 @@ public class nightmare_base_black_eye_red extends nightmare implements SuperNigh
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
         pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_red.tool.string").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_red.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+        float s  = Config.SERVER.nightmare_base_black_eye_red.get();
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_red.tool.string.1",s).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_red.tool.string.2").withStyle(ChatFormatting.DARK_RED));
     }
 

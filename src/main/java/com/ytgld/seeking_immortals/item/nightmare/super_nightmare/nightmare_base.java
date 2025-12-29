@@ -113,7 +113,8 @@ public class nightmare_base extends nightmare {
             s = 0;
         }
         if (SIHandler.hascurio(slotContext.entity(), Items.nightmare_base_redemption_down_and_out.get())) {
-            s += 0.35f;
+            float ssa = Config.SERVER.nightmare_base_redemption_down_and_out.get();
+            s += ssa/100f;
         }
         if (SIHandler.hascurio(slotContext.entity(), Items.nightmare_base_redemption.get())) {
 

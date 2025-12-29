@@ -2,6 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.moonstone.moonstonemod.ConfigClient;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
@@ -25,6 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -33,7 +35,9 @@ public class tricky_puppets extends nightmare implements SuperNightmare {
                             @NotNull MultiBufferSource vertexConsumers,
                             @NotNull BlockEntity ownerBlood) {
 
-        MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
+        if (ConfigClient.Client.Shader.get()) {
+            MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
+        }
         BlockPos playerPos = ownerBlood.getBlockPos();
         Vec3 playerVec = new Vec3(playerPos.getX(), playerPos.getY(), playerPos.getZ());
 
@@ -54,8 +58,7 @@ public class tricky_puppets extends nightmare implements SuperNightmare {
                 if (blockState.getBlock() instanceof AbstractChestBlock<?>) {
                     for (LivingEntity entity : entities){
                         if (entity instanceof Player player) {
-
-                            if (SIHandler.hascurio(player, Items.tricky_puppets.get())) {
+                            if (player.getTags().contains("tricky_puppetsLook")) {
                                 double distance = playerVec.distanceTo(Vec3.atLowerCornerOf(player.blockPosition()));
                                 float alp = Math.max(0, 1 - (float) distance / range);
 
@@ -107,6 +110,21 @@ public class tricky_puppets extends nightmare implements SuperNightmare {
             }
         }
     }
+
+    @Override
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            player.addTag("tricky_puppetsLook");
+        }
+    }
+
+    @Override
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            player.removeTag("tricky_puppetsLook");
+        }
+    }
+
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);

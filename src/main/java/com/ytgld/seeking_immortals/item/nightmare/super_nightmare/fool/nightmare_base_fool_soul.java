@@ -2,6 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.fool;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -58,7 +59,8 @@ public class nightmare_base_fool_soul extends nightmare implements SuperNightmar
         });
         float health = 0;
         for (int ignored : integersHealth) {
-            health += 1;
+            float ssa = Config.SERVER.nightmare_base_fool_soul.get();
+            health += ssa;
         }
         linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("d536cf86-388b-46fc-bfee-669277a0ebcf"),"s", health, AttributeModifier.Operation.ADDITION));
         return linkedHashMultimap;
@@ -83,7 +85,8 @@ public class nightmare_base_fool_soul extends nightmare implements SuperNightmar
         });
         float health = 0;
         for (int ignored : integersHealth) {
-            health++;
+            float ssa = Config.SERVER.nightmare_base_fool_soul2.get();
+            health+=ssa;
         }
         health /= 100;
         health *= 1;
@@ -94,10 +97,12 @@ public class nightmare_base_fool_soul extends nightmare implements SuperNightmar
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
+        float ssa = Config.SERVER.nightmare_base_fool_soul.get();
+        float heal = Config.SERVER.nightmare_base_fool_soul2.get();
         pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_soul.tool.string").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_soul.tool.string.1").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_soul.tool.string.2").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_soul.tool.string.3").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_soul.tool.string.2",heal).withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_soul.tool.string.3",ssa).withStyle(ChatFormatting.DARK_RED));
     }
 }
 

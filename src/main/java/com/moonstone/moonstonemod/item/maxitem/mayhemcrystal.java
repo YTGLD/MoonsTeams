@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.item.maxitem;
 import com.all.IRedItem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.moonstoneitem.Iwar;
@@ -25,7 +26,7 @@ public class mayhemcrystal extends UnCommonItem  implements Iwar, Die , IRedItem
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         float s  = 0.3f;
         if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_stone_meet.get())) {
-            s*=1.5f;
+            s*= (float) (Config.SERVER.nightmare_base_stone_meet1.get()/100f);
         }
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid,"uuid", s, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;

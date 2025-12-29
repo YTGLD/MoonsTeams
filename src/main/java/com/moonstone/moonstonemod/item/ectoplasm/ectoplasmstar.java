@@ -57,7 +57,8 @@ public class ectoplasmstar extends ectoplasm {
         }
         s /= 100;
         if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-            modifierMultimap.put(AttReg.heal.get(), new AttributeModifier(UUID.fromString("3eda944a-b435-4a3c-a8b5-89f52d2dae82"),"as", s*2.5f, AttributeModifier.Operation.MULTIPLY_BASE));
+            modifierMultimap.put(AttReg.heal.get(), new AttributeModifier(UUID.fromString("3eda944a-b435-4a3c-a8b5-89f52d2dae82"),
+                    "as", s*Config.SERVER.nightmare_base_stone_meet2.get(), AttributeModifier.Operation.MULTIPLY_BASE));
         }
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s/2, AttributeModifier.Operation.MULTIPLY_BASE));
         modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(UUID.fromString("00000000-0000-3005-998f-50309b7cf9e8"),"as", s, AttributeModifier.Operation.MULTIPLY_BASE));

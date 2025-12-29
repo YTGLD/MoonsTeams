@@ -28,7 +28,7 @@ public class nightmare_base_fool_bone extends nightmare implements SuperNightmar
                             if (Mth.nextInt(RandomSource.create(), 1, 100) <= 30) {
                                 mob.invulnerableTime = 0;
                             }
-                            event.setAmount(event.getAmount() * (Config.SERVER.nightmare_base_fool_bone.get().floatValue()));
+                            event.setAmount(event.getAmount() * (1+(Config.SERVER.nightmare_base_fool_bone.get().floatValue()/100f)));
                             player.getCooldowns().addCooldown(Items.nightmare_base_fool_bone.get(),20);
                         }
                     }
@@ -41,7 +41,8 @@ public class nightmare_base_fool_bone extends nightmare implements SuperNightmar
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
         pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_bone.tool.string").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_bone.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+        float v  = Config.SERVER.nightmare_base_fool_bone.get().floatValue();
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_bone.tool.string.1",v).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_fool_bone.tool.string.2").withStyle(ChatFormatting.DARK_RED));
     }
 }

@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.reversal;
 
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -45,8 +46,10 @@ public class candle  extends nightmare implements SuperNightmare {
         }
         if (event.getSource().getEntity() instanceof Player player) {
             if (SIHandler.hascurio(player, Items.candle.get())){
+                float v = Config.SERVER.candle.get();
+                v/=100;
                 if (player.invulnerableTime>0){
-                    event.setAmount(event.getAmount()*1.2f);
+                    event.setAmount(event.getAmount()*v);
                 }
             }
         }
@@ -64,6 +67,7 @@ public class candle  extends nightmare implements SuperNightmare {
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
+        float v = Config.SERVER.candle.get();
         pTooltipComponents.add(Component.translatable("item.candle.tool.string").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.candle.tool.string.1").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.literal(""));
@@ -71,8 +75,8 @@ public class candle  extends nightmare implements SuperNightmare {
         pTooltipComponents.add(Component.translatable("item.candle.tool.string.3").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.literal(""));
         pTooltipComponents.add(Component.translatable("item.candle.tool.string.4").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.candle.tool.string.5").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.candle.tool.string.5",v).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.literal(""));
         pTooltipComponents.add(Component.translatable("item.candle.tool.string.6").withStyle(ChatFormatting.LIGHT_PURPLE));
-        }
+    }
 }

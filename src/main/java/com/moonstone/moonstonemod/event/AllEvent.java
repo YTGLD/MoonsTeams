@@ -1090,7 +1090,7 @@ public class AllEvent {
                 event.setAmount(event.getAmount() * 0.85f);
                 float s  = 1;
                 if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.nightmare_base_stone_meet.get())){
-                    s+=2;
+                    s+=Config.SERVER.nightmare_base_stone_meet3.get();
                 }
                 if (Mth.nextInt(RandomSource.create(),1, (int) (5/s)) == 1){
                     player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 20, (int) (2+s)));
@@ -1101,7 +1101,7 @@ public class AllEvent {
             if (Handler.hascurio(player, Items.maxamout.get())) {
                 float w  = 1;
                 if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.nightmare_base_stone_meet.get())){
-                    w+=2;
+                    w+=Config.SERVER.nightmare_base_stone_meet3.get();
                 }
                 event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, (int) (0+w)));
                 float s =event.getAmount() / 20;
@@ -1111,7 +1111,7 @@ public class AllEvent {
                 player.heal(s);
                 float ss  = 1;
                 if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.nightmare_base_stone_meet.get())){
-                    ss+=2;
+                    ss+=Config.SERVER.nightmare_base_stone_meet3.get();
                 }
                 if (Mth.nextInt(RandomSource.create(), 1, (int) (12/ss)) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, (int) (0+ss)));

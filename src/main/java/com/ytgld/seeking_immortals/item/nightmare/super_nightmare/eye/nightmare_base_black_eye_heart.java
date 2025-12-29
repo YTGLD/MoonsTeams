@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.eye;
 
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -52,7 +53,9 @@ public class nightmare_base_black_eye_heart extends nightmare implements SuperNi
         for (Player player : entities) {
             if (!event.getEntity().is(player) && !(event.getEntity() instanceof Player)) {
                 if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_heart.get())) {
-                    event.setAmount(event.getAmount() * 1.25f);
+                    float v = Config.SERVER.nightmare_base_black_eye_heart.get();
+                    v/=100f;
+                    event.setAmount(event.getAmount() * v);
                 }
             }
         }
@@ -61,7 +64,8 @@ public class nightmare_base_black_eye_heart extends nightmare implements SuperNi
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-        pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_heart.tool.string").withStyle(ChatFormatting.DARK_RED));
+        int v = Config.SERVER.nightmare_base_black_eye_heart.get();
+        pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_heart.tool.string",v).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_heart.tool.string.1").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.nightmare_base_black_eye_heart.tool.string.2").withStyle(ChatFormatting.DARK_RED));
     }
