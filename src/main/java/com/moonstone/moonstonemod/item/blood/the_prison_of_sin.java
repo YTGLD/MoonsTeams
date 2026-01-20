@@ -55,12 +55,11 @@ public class the_prison_of_sin extends TheNecoraIC {
 
                                     if (stack.getTag().getString(name).isEmpty()) {
                                         int size = stack.getTag().getAllKeys().size();
-                                        float incrementFactor = 1.0f;
-                                        for (int ia = 0; ia < size; ia++) {
-                                            incrementFactor *= 0.99f;
-                                        }
+                                        float incrementFactor = (float) Math.sqrt(size);
+                                        float s = (float)(double) Config.SERVER.the_prison_of_sin2.get();
+                                        incrementFactor*=s;
                                         stack.getTag().putFloat(killNameAndSize,
-                                                stack.getTag().getFloat(killNameAndSize)+incrementFactor);
+                                                incrementFactor);
 
                                         stack.getTag().putString(name, name);
                                     }
@@ -75,9 +74,7 @@ public class the_prison_of_sin extends TheNecoraIC {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-
         slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack));
-        slotContext.entity().getAttributes().addTransientAttributeModifiers(Health());
     }
 
 
@@ -92,13 +89,10 @@ public class the_prison_of_sin extends TheNecoraIC {
         if (stack.getTag()==null) {
             stack.getOrCreateTag();
         }
-
-        stack.setDamageValue(stack.getDamageValue()+1);
     }
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        slotContext.entity().getAttributes().removeAttributeModifiers(Health());
         slotContext.entity().getAttributes().removeAttributeModifiers(getAttributeModifiers(stack));
     }
 
@@ -106,7 +100,11 @@ public class the_prison_of_sin extends TheNecoraIC {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
         float s = 110;
         if (stack.getTag()!=null){
-            s+=stack.getTag().getFloat(killNameAndSize);
+            float is =stack.getTag().getFloat(killNameAndSize);;
+            if (is>Config.SERVER.the_prison_of_sin3.get()){
+                is=(float) (double)Config.SERVER.the_prison_of_sin3.get();
+            }
+            s+=is;
         }
         Set<String> blacklist = new HashSet<>();
         for (String aaa : Config.SERVER.allAttributeModify.get()) {
@@ -129,38 +127,54 @@ public class the_prison_of_sin extends TheNecoraIC {
 
         return modifierMultimap;
     }
-    public Multimap<Attribute, AttributeModifier> Health() {
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),"name", -0.80, AttributeModifier.Operation.MULTIPLY_BASE));
-        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(UUID.fromString("63489016-3661-38ec-acb6-3029cde6f29c"),"name", -0.80, AttributeModifier.Operation.MULTIPLY_BASE));
-
+        float s = (float)(double) Config.SERVER.the_prison_of_sin4.get();
+        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid,
+                "name", -s, AttributeModifier.Operation.MULTIPLY_BASE));
+        modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid,
+                "name", -s, AttributeModifier.Operation.MULTIPLY_BASE));
         return modifierMultimap;
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level p_41422_, List<Component> pTooltipComponents, TooltipFlag p_41424_) {
         if (pStack.getTag() != null) {
-            {
+            pTooltipComponents.add(Component.translatable(""));
+            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.1").withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable(""));
+            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.2").withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.3").withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable(""));
+            float s = 110;
+            if (pStack.getTag() != null) {
+                float is =pStack.getTag().getFloat(killNameAndSize);;
+                if (is>Config.SERVER.the_prison_of_sin3.get()){
+                    is=(float) (double)Config.SERVER.the_prison_of_sin3.get();
+                }
+                s+=is;
+            }
+            s -= 100f;
+            s /= 100f;
+            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.5").append(String.valueOf(s * 100)).append("%").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
+        } else {
+
+            if (Config.SERVER.the_prison_of_sin.get()) {
                 pTooltipComponents.add(Component.translatable(""));
                 pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.1").withStyle(ChatFormatting.RED));
                 pTooltipComponents.add(Component.translatable(""));
                 pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.2").withStyle(ChatFormatting.RED));
                 pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.3").withStyle(ChatFormatting.RED));
                 pTooltipComponents.add(Component.translatable(""));
-                float s = 110;
-                if (pStack.getTag()!=null){
-                    s+=pStack.getTag().getFloat(killNameAndSize);
-                }
-                s-=100f;
-                s/=100f;
-                pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.5").append(String.valueOf(s*100)).append("%").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
+                pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.5").append(String.valueOf(0)).append("%").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
+            }else {
+                pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.7").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
+                pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.8").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
+                pTooltipComponents.add(Component.translatable(""));
+                pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.6").withStyle(ChatFormatting.RED));
+                pTooltipComponents.add(Component.translatable(""));
             }
-        } else {
-            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.7").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
-            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.8").withStyle(ChatFormatting.DARK_RED).withStyle(ChatFormatting.ITALIC));
-            pTooltipComponents.add(Component.translatable(""));
-            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.6").withStyle(ChatFormatting.RED));
-            pTooltipComponents.add(Component.translatable(""));
         }
     }
 }

@@ -2,6 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.stone;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Items;
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNightmare;
@@ -27,7 +28,8 @@ public class end_bone  extends nightmare implements SuperNightmare {
             if (SIHandler.hascurio(player, Items.end_bone.get())) {
                 if (player.getHealth() >= player.getMaxHealth()){
                     if ( event.getSource().getEntity() instanceof LivingEntity living) {
-                        living.hurt(living.damageSources().dryOut(), event.getAmount() * 0.7f);
+                        float s  = (float)(double) Config.SERVER.end_bone.get();
+                        living.hurt(living.damageSources().dryOut(), event.getAmount() * s);
                     }
                     event.setAmount(event.getAmount()*0.2f);
                 }
@@ -51,8 +53,10 @@ public class end_bone  extends nightmare implements SuperNightmare {
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
+        float s  = (float)(double) Config.SERVER.end_bone.get();
+        s*=100f;
         pTooltipComponents.add(Component.translatable("item.end_bone.tool.string").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.end_bone.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.end_bone.tool.string.1",s).withStyle(ChatFormatting.DARK_RED));
     }
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(LivingEntity living) {
         Multimap<Attribute, AttributeModifier> attributeModifiers = HashMultimap.create();

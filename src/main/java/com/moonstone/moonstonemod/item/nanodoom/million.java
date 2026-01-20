@@ -105,37 +105,41 @@ public class million extends Doom  implements TextEvt.Twelve, IBlueItem {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.million.get())&&!player.getCooldowns().isOnCooldown(Items.million.get())) {
-                                if (!stack.getTag().getBoolean(canFlySword))
-                                if (player.getAttackStrengthScale(1) >= 1) {
-                                    if (stack.getTag() != null) {
+                                if (stack.getTag() == null){
+                                    stack.getOrCreateTag();
+                                }
+                                if (!stack.getTag().getBoolean(canFlySword)) {
+                                    if (player.getAttackStrengthScale(1) >= 1) {
+                                        if (stack.getTag() != null) {
 
-                                        if (stack.getTag().getInt(sizeLvl) >= 3) {
+                                            if (stack.getTag().getInt(sizeLvl) >= 3) {
 
-                                            player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.AMBIENT, 2, 2);
+                                                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.AMBIENT, 2, 2);
 
-                                            LivingEntity target = event.getEntity();
+                                                LivingEntity target = event.getEntity();
 
-                                            for (int j = 0; j < 3; j++) {
-                                                float lvl = Mth.nextFloat(RandomSource.create(), -0.6f, 0.6f);
+                                                for (int j = 0; j < 3; j++) {
+                                                    float lvl = Mth.nextFloat(RandomSource.create(), -0.6f, 0.6f);
 
-                                                as_sword as_sword = new as_sword(EntityTs.as_sword.get(), player.level());
-                                                as_sword.setPos(target.position().x, target.position().y + 1, target.position().z);
-                                                Vec3 forward = player.getLookAngle();
-                                                double speed = 0.25;
+                                                    as_sword as_sword = new as_sword(EntityTs.as_sword.get(), player.level());
+                                                    as_sword.setPos(target.position().x, target.position().y + 1, target.position().z);
+                                                    Vec3 forward = player.getLookAngle();
+                                                    double speed = 0.25;
 
-                                                as_sword.setDeltaMovement(forward.add(lvl, lvl, lvl).x * speed, forward.add(lvl, lvl, lvl).y * speed, forward.add(lvl, lvl, lvl).z * speed);
+                                                    as_sword.setDeltaMovement(forward.add(lvl, lvl, lvl).x * speed, forward.add(lvl, lvl, lvl).y * speed, forward.add(lvl, lvl, lvl).z * speed);
 
-                                                as_sword.setOwner(player);
+                                                    as_sword.setOwner(player);
 
-                                                player.level().addFreshEntity(as_sword);
-                                                as_sword.setTarget(target);
+                                                    player.level().addFreshEntity(as_sword);
+                                                    as_sword.setTarget(target);
 
-                                                if (stack.getTag().getInt(sizeLvl) > 0) {
-                                                    stack.getTag().putInt(sizeLvl, stack.getTag().getInt(sizeLvl) - 1);
+                                                    if (stack.getTag().getInt(sizeLvl) > 0) {
+                                                        stack.getTag().putInt(sizeLvl, stack.getTag().getInt(sizeLvl) - 1);
+                                                    }
+                                                    player.getCooldowns().addCooldown(Items.million.get(), 50);
+
+
                                                 }
-                                                player.getCooldowns().addCooldown(Items.million.get(),10);
-
-
                                             }
                                         }
                                     }

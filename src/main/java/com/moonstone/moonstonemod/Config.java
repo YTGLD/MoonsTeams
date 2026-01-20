@@ -51,6 +51,10 @@ public class Config {
     public final ForgeConfigSpec.IntValue nightmare_base_reversal ;
     public final ForgeConfigSpec.IntValue nightmare_base_start ;
     public final ForgeConfigSpec.IntValue give_nightmare_base_insight_drug ;
+    public  final ForgeConfigSpec.BooleanValue the_prison_of_sin;
+    public  final ForgeConfigSpec.DoubleValue the_prison_of_sin2;
+    public  final ForgeConfigSpec.DoubleValue the_prison_of_sin3;
+    public  final ForgeConfigSpec.DoubleValue the_prison_of_sin4;
 
     public ForgeConfigSpec.ConfigValue<List<? extends String>>  allAttributeModify;
 
@@ -126,6 +130,19 @@ public class Config {
             }
             {
                 BUILDER.push("一般物品");
+
+                the_prison_of_sin = BUILDER
+                        .comment("显示罪孽囚笼的描述（会在不佩戴的情况下显示具体的信息）")
+                        .define("the_prison_of_sin", false);
+                the_prison_of_sin2 = BUILDER
+                        .comment("罪孽囚笼的属性增长倍数")
+                        .defineInRange("the_prison_of_sin2", 4.5f,0,9999f);
+                the_prison_of_sin3 = BUILDER
+                        .comment("罪孽囚笼的属性增长最大值，单位是“%”，（因为默认罪孽囚笼给予了10%，所以应该比默认值高10%）")
+                        .defineInRange("the_prison_of_sin3", 100,0,10000000f);
+                the_prison_of_sin4 = BUILDER
+                        .comment("罪孽囚笼的生命值和护甲的属性衰败")
+                        .defineInRange("the_prison_of_sin4", 0.8,0,10000000f);
 
 
                 openDamageForAttacker = BUILDER
@@ -326,6 +343,9 @@ public class Config {
                         nightmare_base_redemption = BUILDER
                                 .comment("属性衰败比例")
                                 .defineInRange("nightmare_base_redemption", 15, 0, 100);
+                        nightmare_base_redemption_power = BUILDER
+                                .comment("正面属性加成")
+                                .defineInRange("nightmare_base_redemption_power", 10f, 0, 100);
                         BUILDER.pop();
 
                         BUILDER.push("颠倒之物");
@@ -338,6 +358,7 @@ public class Config {
                         nightmare_base_start = BUILDER
                                 .comment("护甲值的处罚")
                                 .defineInRange("nightmare_base_start", 100, 0, 100);
+
                         BUILDER.pop();
                     }
                     BUILDER.pop();
@@ -424,13 +445,16 @@ public class Config {
 
                         nightmare_base_stone_meet1 = BUILDER
                                 .comment("绝望共鸣 混乱水晶的伤害加成")
-                                .defineInRange("nightmare_base_stone_meet1", 150f, 0, 99999);
+                                .defineInRange("nightmare_base_stone_meet1_", 150f, 0, 99999);
                         nightmare_base_stone_meet2 = BUILDER
                                 .comment("绝望共鸣幸运的治疗")
-                                .defineInRange("nightmare_base_stone_meet2", 2.5, 0, 99999);
+                                .defineInRange("nightmare_base_stone_meet2_", 2.5, 0, 99999);
                         nightmare_base_stone_meet3 = BUILDER
                                 .comment("绝望共鸣药水效果加成等级")
-                                .defineInRange("nightmare_base_stone_meet3", 2f, 0, 99999);
+                                .defineInRange("nightmare_base_stone_meet3_", 2f, 0, 99999);
+                        end_bone = BUILDER
+                                .comment("末世脊骨的反伤")
+                                .defineInRange("end_bone", 0.7f, 0, 99999);
 
                     }
                     BUILDER.pop();
@@ -459,6 +483,8 @@ public class Config {
     public   ForgeConfigSpec.IntValue nightmare_base_start_egg2;
     public   ForgeConfigSpec.DoubleValue nightmare_base_start_power;
     public   ForgeConfigSpec.IntValue candle;
+    public   ForgeConfigSpec.DoubleValue nightmare_base_redemption_power;
+    public   ForgeConfigSpec.DoubleValue end_bone;
 
     private static boolean validateItemName(final Object obj) {
         return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(new ResourceLocation(itemName));

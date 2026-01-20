@@ -624,11 +624,7 @@ public class AllEvent {
                                 if (stack.getTag() != null) {
                                     if (!stack.getTag().getBoolean(doomswoud.canFlySword)){
                                         if (!player.getCooldowns().isOnCooldown(Items.doomswoud.get())){
-                                            float speed = player.getSpeed();
-                                            speed/=0.1f;
-                                            int a = (int) (speed - 1) * 5;
-                                            a += 2;
-                                            for (int p = 0;p<a;p++) {
+                                            for (int p = 0;p<2;p++) {
                                                 float s  = (float) Math.sin(p);
                                                 if (s <= 0){
                                                     s = 0.12f;
@@ -638,7 +634,7 @@ public class AllEvent {
                                                 item.setOwner(player);
                                                 item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
                                                 player.level().addFreshEntity(item);
-                                                player.getCooldowns().addCooldown(Items.doomswoud.get(), 20);
+                                                player.getCooldowns().addCooldown(Items.doomswoud.get(), 40);
                                             }
                                         }
                                     }
@@ -664,20 +660,22 @@ public class AllEvent {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.is(Items.doomswoud.get()) ){
-                                if (stack.getTag() != null) {
-                                    if (!stack.getTag().getBoolean(doomswoud.canFlySword)){
+                                if (!player.getCooldowns().isOnCooldown(Items.doomswoud.get())) {
+                                    if (stack.getTag() != null) {
+                                        if (!stack.getTag().getBoolean(doomswoud.canFlySword)) {
 
-                                        for (int p = 0; p < 4; p++) {
-                                            float s = (float) Math.sin(p);
-                                            if (s <= 0) {
-                                                s = 0.12f;
+                                            for (int p = 0; p < 4; p++) {
+                                                float s = (float) Math.sin(p);
+                                                if (s <= 0) {
+                                                    s = 0.12f;
+                                                }
+                                                suddenrain item = new suddenrain(EntityTs.suddenrain.get(), player.level());
+                                                item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
+                                                item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f), s / 1.5f, Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f));
+                                                item.setOwner(player);
+                                                player.level().addFreshEntity(item);
+                                                player.getCooldowns().addCooldown(Items.doomswoud.get(), 50);
                                             }
-                                            suddenrain item = new suddenrain(EntityTs.suddenrain.get(), player.level());
-                                            item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
-                                            item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f), s / 1.5f, Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f));
-                                            item.setOwner(player);
-                                            player.level().addFreshEntity(item);
-                                            player.getCooldowns().addCooldown(Items.doomswoud.get(), 50);
                                         }
                                     }
                                 }

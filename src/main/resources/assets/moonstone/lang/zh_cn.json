@@ -950,7 +950,7 @@
   "item.the_prison_of_sin.tool.string.1": "-80% 护甲，最大生命值",
 
   "item.the_prison_of_sin.tool.string.2": "+10% 全部属性",
-  "item.the_prison_of_sin.tool.string.3": "每杀死1种不同的生物，此奖励都将增加1%",
+  "item.the_prison_of_sin.tool.string.3": "每杀死1种不同的生物，此奖励都将有所增加",
 
   "item.the_prison_of_sin.tool.string.4": "无法取下",
 
@@ -1571,7 +1571,7 @@
   "item.moonstone.nightmare_base_stone_meet": "绝望共鸣",
   "item.nightmare_base_stone_meet.tool.string.1": "强化下列饰品",
   "item.moonstone.ectoplasmstar.nightmare_base_stone_meet": "幸运值加倍，且每点幸运加%d治疗",
-  "item.moonstone.ectoplasmstar.mayhemcrystal": "伤害增幅增加%d%%",
+  "item.moonstone.ectoplasmstar.mayhemcrystal": "伤害增幅增加至%d%%",
   "item.moonstone.ectoplasmstar.maxamout": "所有效果BUFF等级加%d",
   "item.moonstone.ectoplasmstar.maxamout.1": "所有触发概加200%",
   "item.moonstone.ectoplasmstar.maxamout.2": "反伤效果增加400%",
@@ -1746,7 +1746,7 @@
   "item.nightmare_base_fool_soul.tool.string": "愚者之危的伤害处罚判定由5提高到14",
   "item.nightmare_base_fool_soul.tool.string.1": "愚者之危的生命处罚判定由2提高到9",
   "item.nightmare_base_fool_soul.tool.string.2": "每佩戴一件饰品，治疗增加%d%%",
-  "item.nightmare_base_fool_soul.tool.string.3": "每佩戴一件噩梦饰品，生命值增加%d%",
+  "item.nightmare_base_fool_soul.tool.string.3": "每佩戴一件噩梦饰品，生命值增加%d",
   "advancements.tooltip.nightmare_base_fool_soul.text": "获得这个物品",
   "advancements.tooltip.nightmare_base_fool_soul.hand": "历史长河",
 
@@ -1835,7 +1835,7 @@
 
   "item.moonstone.end_bone":"末世脊骨",
   "item.end_bone.tool.string": "满血时速度减少50%，受到的伤害减少80%",
-  "item.end_bone.tool.string.1": "满血时受到的伤害会以700%的比例反弹给攻击者",
+  "item.end_bone.tool.string.1": "满血时受到的伤害会以%d%%的比例反弹给攻击者",
 
   "advancements.tooltip.end_bone.text": "获得这个物品",
   "advancements.tooltip.end_bone.hand": "坚不可摧！",

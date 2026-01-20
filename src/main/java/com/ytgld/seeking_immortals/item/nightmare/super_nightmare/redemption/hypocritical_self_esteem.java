@@ -81,7 +81,8 @@ public class hypocritical_self_esteem extends nightmare implements SuperNightmar
                                     if (l > 10) {
                                         l = 10;
                                     }
-                                    living.hurt(living.damageSources().playerAttack(player), (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * (0.2f * (l)));
+                                    living.hurt(living.damageSources().dryOut(),
+                                            (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * (0.2f * (l)));
 
                                     living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2, false, false));
                                     living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0, false, false));

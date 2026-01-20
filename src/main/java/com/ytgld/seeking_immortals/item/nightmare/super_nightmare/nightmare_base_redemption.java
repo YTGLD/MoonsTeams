@@ -119,9 +119,10 @@ public class nightmare_base_redemption extends nightmare implements SuperNightma
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = com.google.common.collect.LinkedHashMultimap.create();
-        linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid,"asd", 10, AttributeModifier.Operation.ADDITION));
-        linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid,"asd", 10, AttributeModifier.Operation.ADDITION));
-        linkedHashMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid,"asd", 10, AttributeModifier.Operation.ADDITION));
+        float c  = (float) (double)Config.SERVER.nightmare_base_redemption_power.get();
+        linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid,"asd", c, AttributeModifier.Operation.ADDITION));
+        linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid,"asd", c, AttributeModifier.Operation.ADDITION));
+        linkedHashMultimap.put(Attributes.ARMOR, new AttributeModifier(uuid,"asd", c, AttributeModifier.Operation.ADDITION));
         return linkedHashMultimap;
     }
 }

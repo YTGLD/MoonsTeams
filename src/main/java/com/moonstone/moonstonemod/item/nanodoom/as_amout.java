@@ -53,8 +53,6 @@ public class as_amout  extends Doom  implements TextEvt.Twelve, IBlueItem {
                                     }
 
                                     if (Handler.hascurio(player, Items.as_amout.get())){
-
-
                                         if (!player.getCooldowns().isOnCooldown(Items.as_amout.get())) {
                                             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.AMBIENT, 2, 2);
 
