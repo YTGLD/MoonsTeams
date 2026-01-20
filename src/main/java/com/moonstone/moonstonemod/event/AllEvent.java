@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.event;
 import com.google.common.collect.Lists;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.LoveCharm;
 import com.moonstone.moonstonemod.entity.necora.cell_slime;
 import com.moonstone.moonstonemod.entity.necora.cell_zombie;
 import com.moonstone.moonstonemod.entity.other.flysword;
@@ -10,6 +11,7 @@ import com.moonstone.moonstonemod.entity.other.suddenrain;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.init.MSound;
+import com.moonstone.moonstonemod.init.MyFriends;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Blood;
 import com.moonstone.moonstonemod.init.moonstoneitem.i.Die;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
@@ -27,6 +29,7 @@ import com.moonstone.moonstonemod.item.nanodoom.doomswoud;
 import com.moonstone.moonstonemod.item.nanodoom.thefruit;
 import com.moonstone.moonstonemod.item.plague.mobitem.dna;
 import com.moonstone.moonstonemod.moonstoneitem.*;
+import com.ytgld.seeking_immortals.renderer.Light;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -80,6 +83,30 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 import java.util.*;
 
 public class AllEvent {
+    public Set<UUID> setUUID = new HashSet<>();
+    @SubscribeEvent
+    public void setUUIDPlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
+        setUUID.add(UUID.fromString("3cc7f94f-5dfc-46a2-9fa3-6be4f46d0cba"));
+        setUUID.add(UUID.fromString("081c4a0e-d3d6-4a5b-9dec-3c03c92cdc8e"));
+        setUUID.add(UUID.fromString("00000000-0000-3005-998f-5030997cf9c8"));
+        setUUID.add(UUID.fromString("70f68910-6833-401b-988b-30ceeb675b60"));
+        setUUID.add(UUID.fromString("5939a1ab-6e04-4511-af2e-2817cdda3089"));
+
+
+        if (event.getEntity() != null) {
+            Player player = event.getEntity();
+            if (setUUID.contains(player.getUUID())) {
+                if (!player.getTags().contains("YtgldAndMyFriends")) {
+                    ItemStack stack = MyFriends.LoveCharm.get().getDefaultInstance();
+                    CompoundTag compoundTag = new CompoundTag();
+                    compoundTag.putString(LoveCharm.name, player.getDisplayName().getString());
+                    stack.setTag(compoundTag);
+                    player.addItem(stack);
+                    player.addTag("YtgldAndMyFriends");
+                }
+            }
+        }
+    }
     private int shield = 1;
     private int Kidney = 100;
      private float clientSideAttackTime = 0;
@@ -2378,6 +2405,11 @@ public class AllEvent {
         if (stack.getItem() instanceof IEctoplasm) {
             tooltipEvent.setBorderStart(0xFF87CEFA);
             tooltipEvent.setBorderEnd(0xFFF8F8FF);
+        }
+        if (stack.is(MyFriends.LoveCharm.get())) {
+            tooltipEvent.setBorderStart(Light.ARGB.color(255,250,150,50));
+            tooltipEvent.setBorderEnd(Light.ARGB.color(255,250,150,50));
+
         }
         if (stack.getItem() instanceof Die) {
             tooltipEvent.setBorderStart(0XFF8B658B);

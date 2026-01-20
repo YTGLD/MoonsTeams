@@ -20,11 +20,18 @@ import com.moonstone.moonstonemod.entity.client.SwordOfTwelveRenderer;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
+import com.sun.jna.platform.win32.COM.util.ComThread;
 import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
@@ -32,6 +39,7 @@ import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -41,6 +49,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 import java.util.function.Function;
 
 @Mod(MoonStoneMod.MODID)
@@ -88,12 +99,15 @@ public class MoonStoneMod {
         AttReg.REGISTRY.register(modEventBus);
         BookItems.REGISTRY.register(modEventBus);
         modEventBus.addListener(this::gatherData);
-
+        MyFriends.REGISTRY.register(modEventBus);
 
         Particles.PARTICLE_TYPES.register(modEventBus);
         Items.REGISTRY.register(modEventBus);
         Tab.TABS.register(modEventBus);
     }
+
+
+
     public void gatherData(GatherDataEvent event){
         DataGenerator gen = event.getGenerator();
         PackOutput packOutput = gen.getPackOutput();
