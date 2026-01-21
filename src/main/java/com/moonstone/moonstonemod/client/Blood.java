@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -27,7 +28,7 @@ public class Blood {
                  @NotNull MultiBufferSource vertexConsumers,
                  int light,
                  @NotNull Entity entity) {
-        if (entity instanceof LivingEntity living) {
+        if (entity instanceof Player living) {
             if (Handler.hascurio(living, Items.twistedamout.get())) {
                 if (ConfigClient.Client.Shader.get()) {
                     MoonPost.renderEffectForNextTick(MoonStoneMod.POST);

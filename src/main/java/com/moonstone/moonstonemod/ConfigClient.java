@@ -21,7 +21,7 @@ public class ConfigClient {
                 .define("MaxAmout", true);
         Shader = BUILDER
                 .comment("Do you want to enable the post rendering system")
-                .define("Shader", true);
+                .define("Shader_", false);
         showDisplayNightmareTip = BUILDER
                 .comment("在不佩戴噩梦基座的情况下显示噩梦物品的描述")
                 .define("showDisplayNightmareTip", false);
@@ -29,6 +29,10 @@ public class ConfigClient {
         ItemGui = BUILDER
                 .comment("显示物品的GUI叠加层（发光）")
                 .define("ItemGui_", false);
+
+        entityModel = BUILDER
+                .comment("启用模组的自定义模型（对于佩戴在身上可以显示的类型）")
+                .define("entityModel", false);
 
 
         BUILDER.pop();
@@ -43,6 +47,6 @@ public class ConfigClient {
 
     public   ForgeConfigSpec.BooleanValue Shader ;
 
-    public   ForgeConfigSpec.BooleanValue Shader2 ;
+    public   ForgeConfigSpec.BooleanValue entityModel ;
 
 }

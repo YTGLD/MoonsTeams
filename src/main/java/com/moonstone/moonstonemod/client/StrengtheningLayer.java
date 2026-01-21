@@ -50,51 +50,52 @@ public class StrengtheningLayer<T extends LivingEntity, M extends EntityModel<T>
                        @NotNull Entity entity,
                        float limbAngle, float limbDistance,
                        float tickDelta, float animationProgress,
-                       float headYaw, float headPitch) {
-
-
-        new Sword(matrices,vertexConsumers,light,entity);
-        new orb(matrices, vertexConsumers, light, entity);
-        new Blood(matrices, vertexConsumers, light, entity);
-        if (entity instanceof nightmare_giant){
-            if (ConfigClient.Client.Shader.get()) {
-                MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
-            }
-            matrices.pushPose();
-            renderCircle3(matrices, vertexConsumers, light,0.33f);
-            matrices.popPose();
-        }
-        if (entity instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_head.get())) {
-
+                       float headYaw, float headPitch
+    ) {
+        if (ConfigClient.Client.entityModel.get()) {
+            new Sword(matrices, vertexConsumers, light, entity);
+            new orb(matrices, vertexConsumers, light, entity);
+            new Blood(matrices, vertexConsumers, light, entity);
+            if (entity instanceof nightmare_giant) {
+                if (ConfigClient.Client.Shader.get()) {
+                    MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
+                }
                 matrices.pushPose();
-                Nig(matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch);
-                matrices.popPose();
-
-                matrices.pushPose();
-                Nig3(matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch);
-                matrices.popPose();
-
-                matrices.pushPose();
-                renderCircle3(matrices, vertexConsumers, light, 0.2f);
+                renderCircle3(matrices, vertexConsumers, light, 0.33f);
                 matrices.popPose();
             }
-        }
-        if (entity instanceof Player player) {
-            if (Handler.hascurio(player,Items.nightmare_cube.get())){
-                if (!player.getCooldowns().isOnCooldown(Items.nightmare_cube.get())){
-                    new BlackCube(matrices, vertexConsumers, light, entity);
+            if (entity instanceof Player player) {
+                if (Handler.hascurio(player, Items.nightmare_head.get())) {
+
+                    matrices.pushPose();
+                    Nig(matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch);
+                    matrices.popPose();
+
+                    matrices.pushPose();
+                    Nig3(matrices, vertexConsumers, light, entity, limbAngle, limbDistance, tickDelta, animationProgress, headYaw, headPitch);
+                    matrices.popPose();
+
+                    matrices.pushPose();
+                    renderCircle3(matrices, vertexConsumers, light, 0.2f);
+                    matrices.popPose();
                 }
             }
-        }
-        if (entity instanceof red_entity entity1) {
-            new CircleCube(matrices, vertexConsumers, light, entity);
-        }
-        if (entity instanceof test_e entity1) {
-            new CircleCubeBoom(matrices, vertexConsumers, light, entity);
-        }
-        if (entity instanceof test_blood entity1) {
-            new CircleCubeBlood(matrices, vertexConsumers, light, entity);
+            if (entity instanceof Player player) {
+                if (Handler.hascurio(player, Items.nightmare_cube.get())) {
+                    if (!player.getCooldowns().isOnCooldown(Items.nightmare_cube.get())) {
+                        new BlackCube(matrices, vertexConsumers, light, entity);
+                    }
+                }
+            }
+            if (entity instanceof red_entity entity1) {
+                new CircleCube(matrices, vertexConsumers, light, entity);
+            }
+            if (entity instanceof test_e entity1) {
+                new CircleCubeBoom(matrices, vertexConsumers, light, entity);
+            }
+            if (entity instanceof test_blood entity1) {
+                new CircleCubeBlood(matrices, vertexConsumers, light, entity);
+            }
         }
     }
     public void gorillacake(@NotNull PoseStack matrices,

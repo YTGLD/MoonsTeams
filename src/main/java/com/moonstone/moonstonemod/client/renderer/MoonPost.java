@@ -4,6 +4,7 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.blaze3d.pipeline.RenderTarget;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.moonstone.moonstonemod.ConfigClient;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.PostChain;
@@ -65,6 +66,9 @@ public class MoonPost {
     }
 
     public static void renderEffectForNextTick(ResourceLocation resourceLocation) {
+        if (!ConfigClient.Client.Shader.get()){
+            return;
+        }
         PostEffect effect = postEffects.get(resourceLocation);
         if (effect != null) {
             effect.setEnabled(true);

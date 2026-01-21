@@ -91,7 +91,7 @@ public class AllEvent {
         setUUID.add(UUID.fromString("00000000-0000-3005-998f-5030997cf9c8"));
         setUUID.add(UUID.fromString("70f68910-6833-401b-988b-30ceeb675b60"));
         setUUID.add(UUID.fromString("5939a1ab-6e04-4511-af2e-2817cdda3089"));
-
+        setUUID.add(UUID.fromString("66b8e3c0-c0f9-47ec-b016-aaa61d112c76"));
 
         if (event.getEntity() != null) {
             Player player = event.getEntity();
