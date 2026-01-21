@@ -3,6 +3,7 @@ package com.moonstone.moonstonemod.mixin.other;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.event.NewEvent;
+import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
 import com.ytgld.seeking_immortals.init.Effects;
 import net.minecraft.core.Holder;
@@ -65,14 +66,6 @@ public abstract class LivingEntityMixin  extends Entity implements Attackable, n
         }
 
     }
-    @Inject(at = @At("RETURN"), method = "getMaxHealth", cancellable = true)
-    public void getMaxHealth(CallbackInfoReturnable<Float> cir) {
-        if ((LivingEntity) (Object) this instanceof Player player){
-            if (Handler.hascurio(player, Items.nightmare_head.get())){
-                cir.setReturnValue(8f);
-            }
-        }
-    }
     @Inject(at = @At("RETURN"), method = "canStandOnFluid", cancellable = true)
     public void canStandOnFluid(FluidState fluidState, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
@@ -87,31 +80,14 @@ public abstract class LivingEntityMixin  extends Entity implements Attackable, n
             }
         }
     }
-    @Inject(at = @At("RETURN"), method = "canBeSeenByAnyone", cancellable = true)
-    public void mhead(CallbackInfoReturnable<Boolean> cir) {
-        LivingEntity living = (LivingEntity) (Object) this;
-        if (living instanceof Player player) {
-            if (Handler.hascurio(player, Items.mhead.get())) {
-                cir.setReturnValue(false);
-            }
-        }
-    }
     @Inject(at = @At("RETURN"), method = "travel")
     public void moonstone$travel(Vec3 p_21280_, CallbackInfo ci) {
-        LivingEntity player = (LivingEntity) (Object) this;
-
-        if (player.isSprinting()) {
-            if (Handler.hascurio(player, Items.flygene.get())) {
-                player.moveRelative((float) (player.getSpeed() * Config.SERVER.flygene_speed.get()), p_21280_);
-                if (!player.onGround()) {
-                    player.moveRelative((float) (player.getSpeed() * Config.SERVER.flygene_speed.get()), p_21280_);
-                }
-            }
-            if (Handler.hascurio(player, Items.bloodvirus.get())) {
-                player.moveRelative((float) (player.getSpeed() * Config.SERVER.bloodvirus_speed.get()), p_21280_);
-            }
-            if (Handler.hascurio(player, Items.motor.get())) {
-                player.moveRelative((float) (player.getSpeed() * Config.SERVER.motor_speed.get()), p_21280_);
+        LivingEntity living = (LivingEntity) (Object) this;
+        if (living instanceof Player player) {
+            float speed = (float) player.getAttributeValue(AttReg.speed.get());
+            speed-=1f;
+            if (player.isSprinting()) {
+                player.moveRelative(player.getSpeed()*speed,p_21280_);
             }
         }
     }

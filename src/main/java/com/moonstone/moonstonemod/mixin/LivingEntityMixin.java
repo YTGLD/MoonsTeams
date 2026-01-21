@@ -18,7 +18,9 @@ public class LivingEntityMixin {
     @Inject(at = @At("RETURN"), method = "canBeAffected", cancellable = true)
     private void canBeAffected(MobEffectInstance effectInstance, CallbackInfoReturnable<Boolean> cir){
         LivingEntity living = (LivingEntity) (Object) this;
-        seven_star.canHasEffect(living,effectInstance,cir);
+        if (living instanceof Player) {
+            seven_star.canHasEffect(living, effectInstance, cir);
+        }
     }
     @Inject(at = @At("RETURN"), method = "die")
     public void moonstone$travel(DamageSource damageSource, CallbackInfo ci) {
@@ -29,15 +31,11 @@ public class LivingEntityMixin {
             }
         }
     }
-    @Inject(at = @At("RETURN"), method = "travel")
-    public void moonstone$travel(Vec3 vec3, CallbackInfo ci) {
-        LivingEntity living = (LivingEntity) (Object) this;
-        seven_star.speedADD(vec3,living);
-    }
     @Inject(at = @At("RETURN"), method = "getJumpPower", cancellable = true)
     public void moonstone$travel(CallbackInfoReturnable<Float> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
-        seven_star.speedADD(cir,living);
-
+        if (living instanceof Player) {
+            seven_star.speedADD(cir, living);
+        }
     }
 }

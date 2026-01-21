@@ -30,7 +30,9 @@ public class AttReg {
     public static final RegistryObject<Attribute> hurt  =REGISTRY.register("hurt", ()->{
         return new RangedAttribute("attribute.name.moonstone.hurt", 1.0d, 0.0D, 1024.0D).setSyncable(true);
     });
-
+    public static final RegistryObject<Attribute> speed  =REGISTRY.register("speed", ()->{
+        return new RangedAttribute("attribute.name.moonstone.speed", 1.0d, 0.0D, 1024.0D).setSyncable(true);
+    });
 
     public static final RegistryObject<Attribute> zombie_attack_damage = REGISTRY.register("zombie_attack_damage",()->{
         return new RangedAttribute("attribute.name.moonstone.zombie_attack_damage", 1, -1024, 1024).setSyncable(true);
@@ -45,6 +47,7 @@ public class AttReg {
         event.add(EntityType.PLAYER , AttReg.hurt.get(),1);
         event.add(EntityType.PLAYER , AttReg.break_speed.get(),1);
         event.add(EntityType.PLAYER , AttReg.zombie_attack_damage.get(),1);
+        event.add(EntityType.PLAYER , AttReg.speed.get(),1);
 
     }
 }

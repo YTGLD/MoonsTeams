@@ -2,8 +2,10 @@ package com.moonstone.moonstonemod.item;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
+import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.item.BloodVirus.batskill;
 import com.moonstone.moonstonemod.moonstoneitem.BloodViru;
@@ -75,8 +77,10 @@ public class bloodvirus extends BloodViru {
 
         CuriosApi
                 .addSlotModifier(multimap, "dna", uuid, 2, AttributeModifier.Operation.ADDITION);
+        multimap.put(AttReg.speed.get(), new AttributeModifier(uuid, "aa", Config.SERVER.bloodvirus_speed.get(), AttributeModifier.Operation.MULTIPLY_BASE));
         return multimap;
     }
+
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {

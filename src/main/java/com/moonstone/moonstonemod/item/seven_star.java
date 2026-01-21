@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
+import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.ectoplasm;
 import com.ytgld.seeking_immortals.init.Effects;
@@ -359,29 +360,6 @@ public class seven_star extends ectoplasm {
             dieStar(stack,bloodEvil);
         }
     }
-
-    /**
-     * ——血煞：增加25%所有速度和100%跳跃高度，但是使用鞘翅或类似物品后此星消亡
-     */
-    public static void speedADD(Vec3 vec3, LivingEntity entity){
-        if (Handler.hascurio(entity,Items.seven_star.get())){
-            CuriosApi.getCuriosInventory(entity).ifPresent(handler -> {
-                Map<String, ICurioStacksHandler> curios = handler.getCurios();
-                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                    ICurioStacksHandler stacksHandler = entry.getValue();
-                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                        ItemStack stack = stackHandler.getStackInSlot(i);
-                        if (stack.is(Items.seven_star.get())) {
-                            if (hasEffectStar(stack, bloodEvil)) {
-                                entity.moveRelative((float) (entity.getSpeed() * 0.25), vec3);
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    }
     /**
      * ——血煞：增加25%所有速度和100%跳跃高度，但是使用鞘翅或类似物品后此星消亡
      */
@@ -555,6 +533,7 @@ public class seven_star extends ectoplasm {
         }
     }
 
+
     @Override
     public void appendHoverText(ItemStack stack, Level context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if (hasEffectStar(stack, theGodsFell)) {
@@ -611,6 +590,9 @@ public class seven_star extends ectoplasm {
         Multimap<Attribute, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         CuriosApi
                 .addSlotModifier(linkedHashMultimap, "curio", id, 1, AttributeModifier.Operation.ADDITION);
+        if (hasEffectStar(stack, bloodEvil)) {
+            linkedHashMultimap.put(AttReg.speed.get(), new AttributeModifier(id, "aa", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
+        }
         return linkedHashMultimap;
     }
 }

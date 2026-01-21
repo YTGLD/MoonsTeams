@@ -762,24 +762,15 @@ public class AllEvent {
     public void thefruitLivingTickEvent(LivingEvent.LivingTickEvent event){
         if (event.getEntity() instanceof Player player){
 
-            /*
-            CuriosApi.getCuriosInventory(player).ifPresent((handler)->{
-                for (AttributeModifier attributeModifier : handler.getModifiers().values()){
-                    if (attributeModifier.equals(com.moonstone.moonstonemod.item.gorillacake.attributeModifier())){
-                        player.getPersistentData().putBoolean(gorillacake.gorillacake,true);
+            if (!player.getPersistentData().getBoolean(thefruit.thefruit)) {
+                CuriosApi.getCuriosInventory(player).ifPresent((handler) -> {
+                    for (AttributeModifier attributeModifier : handler.getModifiers().values()) {
+                        if (attributeModifier.equals(thefruit.attributeModifier())) {
+                            player.getPersistentData().putBoolean(thefruit.thefruit, true);
+                        }
                     }
-                }
-            });
-
-
-             */
-            CuriosApi.getCuriosInventory(player).ifPresent((handler)->{
-                for (AttributeModifier attributeModifier : handler.getModifiers().values()){
-                    if (attributeModifier.equals(thefruit.attributeModifier())){
-                        player.getPersistentData().putBoolean(thefruit.thefruit,true);
-                    }
-                }
-            });
+                });
+            }
 
             if (player.getPersistentData().getBoolean(thefruit.thefruit)){
                 if (player.hasEffect(MobEffects.DARKNESS)) {
