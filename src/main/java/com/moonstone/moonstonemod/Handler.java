@@ -8,6 +8,8 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.SpawnUtil;
@@ -25,15 +27,28 @@ import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
 import javax.annotation.Nonnull;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 
 import static com.moonstone.moonstonemod.event.AllEvent.*;
 
 public class Handler {
-
+    public static boolean inBlackList(LivingEntity living){
+        if (living != null){
+            ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());
+            Set<ResourceLocation> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.attackTarget.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                }
+            }
+            if (blacklist.contains(name)){
+                return true;
+            }
+        }
+        return  false;
+    }
     public static <T extends TamableAnimal> void trySpawnMob(LivingEntity player, EntityType<T> p_216404_, MobSpawnType p_216405_, ServerLevel p_216406_, BlockPos p_216407_, int p_216408_, int p_216409_, int p_216410_, SpawnUtil.Strategy p_216411_) {
         BlockPos.MutableBlockPos blockpos$mutableblockpos = p_216407_.mutable();
 

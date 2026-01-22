@@ -95,13 +95,13 @@ public class NewEvent {
     public void LivingHurtEvent(LivingDamageEvent event) {
         apple.damage(event);
         nightmare_base_stone.LivingHurtEvent(event);
+        falling_immortals.damage(event);
 
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingHurtEvent event) {
         hidden_blade.hurt_cit(event);
         lead.hurtOfBlood(event);
-        falling_immortals.damage(event);
 
         nightmare_base_stone_virus.h(event);
         strengthen_runestone.hurt(event);

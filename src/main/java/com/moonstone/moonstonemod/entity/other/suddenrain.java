@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
@@ -19,7 +20,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class suddenrain extends ThrowableItemProjectile {
     public int age = 0;
@@ -81,7 +84,16 @@ public class suddenrain extends ThrowableItemProjectile {
 
         for (LivingEntity entity : entities) {
             ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
-
+            Set<ResourceLocation> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.attackTarget.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                }
+            }
+            if (blacklist.contains(name)){
+                return;
+            }
             if (this.getOwner() != null) {
                 if (!name.getNamespace().equals(MoonStoneMod.MODID) && !(entity.is(this.getOwner()))) {
                     double distance = this.distanceToSqr(entity);

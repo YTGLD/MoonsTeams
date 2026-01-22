@@ -257,7 +257,7 @@ public class AdvancementEvt {
                                 if (stack.getTag() != null) {
                                     if (event.getEntity() instanceof LivingEntity) {
                                         LivingEntity warden = event.getEntity();
-                                        if (warden.getMaxHealth()>=player.getMaxHealth()*30){
+                                        if (warden.getMaxHealth()>=player.getMaxHealth()*Config.SERVER.apple_give.get()){
                                             if (!stack.getTag().getBoolean(apple)) {
 
                                                 giveItemEntity(player,new ItemEntity(warden.level(),warden.getX(),warden.getY(),warden.getZ(),

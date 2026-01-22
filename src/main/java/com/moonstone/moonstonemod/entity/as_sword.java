@@ -26,9 +26,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class as_sword extends ThrowableItemProjectile {
     public as_sword(EntityType<? extends as_sword> entityType, Level level) {
@@ -86,6 +84,9 @@ public class as_sword extends ThrowableItemProjectile {
     }
 
     public void setTarget(LivingEntity target) {
+        if (Handler.inBlackList(target)){
+            return;
+        }
         this.target = target;
     }
 
@@ -213,6 +214,16 @@ public class as_sword extends ThrowableItemProjectile {
 
         for (LivingEntity entity : entities) {
             ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
+            Set<ResourceLocation> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.attackTarget.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                }
+            }
+            if (blacklist.contains(name)){
+                return;
+            }
             if (this.getOwner() != null) {
                 if (!(entity instanceof OwnableEntity tamableAnimal
                         && tamableAnimal.getOwner() != null

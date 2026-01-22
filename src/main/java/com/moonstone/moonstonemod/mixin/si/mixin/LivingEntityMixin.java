@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.mixin.si.mixin;
 
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
@@ -27,7 +28,7 @@ public abstract class LivingEntityMixin {
             cir.setReturnValue(30f);
         }
         if (living.hasEffect(Effects.life_apple.get())){
-            cir.setReturnValue(30f);
+            cir.setReturnValue(Float.valueOf(Config.SERVER.apple_health.get()));
         }
     }
 

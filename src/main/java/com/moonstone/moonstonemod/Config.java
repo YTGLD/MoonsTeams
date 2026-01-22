@@ -57,6 +57,7 @@ public class Config {
     public  final ForgeConfigSpec.DoubleValue the_prison_of_sin4;
 
     public ForgeConfigSpec.ConfigValue<List<? extends String>>  allAttributeModify;
+    public ForgeConfigSpec.ConfigValue<List<? extends String>>  attackTarget;
 
     public Config(ForgeConfigSpec.Builder BUILDER){
         plague_speed = BUILDER
@@ -77,6 +78,11 @@ public class Config {
                 .comment("增加全属性的物品其属性黑名单")
                 .defineList("allAttributeModify",
                         List.of("forge:entity_gravity"),
+                        s->s instanceof String);
+        attackTarget = BUILDER
+                .comment("飞剑，血灵一类生物的攻击目标黑名单")
+                .defineList("attackTarget",
+                        List.of("minecraft:player","minecraft:pig"),
                         s->s instanceof String);
 
         {
@@ -456,6 +462,20 @@ public class Config {
                                 .comment("末世脊骨的反伤")
                                 .defineInRange("end_bone", 0.7f, 0, 99999);
 
+
+                        apple_health = BUILDER
+                                .comment("倾斜异果生命")
+                                .defineInRange("apple_health", 30, 1, 99999);
+                        apple_damage = BUILDER
+                                .comment("倾斜异果的伤害")
+                                .defineInRange("apple_health", 10, 1, 99999);
+                        apple_hurt = BUILDER
+                                .comment("倾斜异果受伤")
+                                .defineInRange("apple_health", 2,1, 99999);
+                        apple_give = BUILDER
+                                .comment("倾斜异果的给予倍数")
+                                .defineInRange("apple_health", 30, 1, 99999);
+
                     }
                     BUILDER.pop();
                 }
@@ -485,6 +505,10 @@ public class Config {
     public   ForgeConfigSpec.IntValue candle;
     public   ForgeConfigSpec.DoubleValue nightmare_base_redemption_power;
     public   ForgeConfigSpec.DoubleValue end_bone;
+    public   ForgeConfigSpec.IntValue apple_health;
+    public   ForgeConfigSpec.IntValue apple_hurt;
+    public   ForgeConfigSpec.IntValue apple_damage;
+    public   ForgeConfigSpec.IntValue apple_give;
 
     private static boolean validateItemName(final Object obj) {
         return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(new ResourceLocation(itemName));

@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.entity;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.EntityTs;
 import com.ytgld.seeking_immortals.init.Effects;
@@ -23,7 +24,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class AtSword extends SwordOfTwelve{
 
@@ -147,6 +150,16 @@ public class AtSword extends SwordOfTwelve{
 
         for (LivingEntity entity : entities) {
             ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
+            Set<ResourceLocation> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.attackTarget.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                }
+            }
+            if (blacklist.contains(name)){
+                return;
+            }
             if (this.getOwner() != null) {
                 if (!(entity instanceof OwnableEntity tamableAnimal
                         && tamableAnimal.getOwner() != null

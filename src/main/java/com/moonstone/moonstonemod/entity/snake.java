@@ -1,5 +1,7 @@
 package com.moonstone.moonstonemod.entity;
 
+import com.moonstone.moonstonemod.Config;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -17,7 +19,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class snake  extends TamableAnimal {
 
@@ -178,7 +182,20 @@ public class snake  extends TamableAnimal {
 
 
         for (LivingEntity entity : entities) {
+            if (Handler.inBlackList(entity)){
+                return;
+            }
             ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
+            Set<ResourceLocation> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.attackTarget.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                }
+            }
+            if (blacklist.contains(name)){
+                return;
+            }
             if (this.getOwner() != null) {
                 if (!name.getNamespace().equals(MoonStoneMod.MODID) && !(entity.is(this.getOwner()))) {
                     double distance = this.distanceToSqr(entity);

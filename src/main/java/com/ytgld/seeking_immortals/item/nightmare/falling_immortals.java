@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -70,7 +71,7 @@ public class falling_immortals extends nightmare implements SuperNightmare {
             }
         }
     }
-    public static void damage(LivingHurtEvent event){
+    public static void damage(LivingDamageEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (SIHandler.hascurio(player, Items.falling_immortals.get())) {
                 event.setAmount(15);
@@ -78,7 +79,12 @@ public class falling_immortals extends nightmare implements SuperNightmare {
         }
         if (event.getEntity() instanceof Player player) {
             if (SIHandler.hascurio(player, Items.falling_immortals.get())) {
-                event.setAmount(2);
+                if (!player.getCooldowns().isOnCooldown(Items.falling_immortals.get())) {
+                    event.setAmount(2);
+                    player.getCooldowns().addCooldown(Items.falling_immortals.get(),20);
+                }else {
+                    event.setAmount(0);
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.moonstone.moonstonemod.entity;
 
+import com.moonstone.moonstonemod.Config;
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.EntityTs;
@@ -27,7 +28,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class owner_blood extends TamableAnimal {
     public owner_blood(EntityType<? extends owner_blood> p_21803_, Level p_21804_) {
@@ -107,7 +110,9 @@ public class owner_blood extends TamableAnimal {
             if (this.getTarget() == null) {
                 ResourceLocation entity = BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType());
                 if (!entity.getNamespace().equals(MoonStoneMod.MODID)) {
-                    this.setTarget(mob);
+                    if (!Handler.inBlackList(mob)) {
+                        this.setTarget(mob);
+                    }
                 }
             }
         }
@@ -251,8 +256,18 @@ public class owner_blood extends TamableAnimal {
     }
     private boolean isMoon(LivingEntity living){
         if (living != null){
-            ResourceLocation entity = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());
-            return !entity.getNamespace().equals(MoonStoneMod.MODID);
+            ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());
+            Set<ResourceLocation> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.attackTarget.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                }
+            }
+            if (blacklist.contains(name)){
+                return false;
+            }
+            return !name.getNamespace().equals(MoonStoneMod.MODID);
         }
         return  true;
     }

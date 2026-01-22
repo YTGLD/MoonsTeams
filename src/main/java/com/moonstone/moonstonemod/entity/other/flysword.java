@@ -1,6 +1,7 @@
 package com.moonstone.moonstonemod.entity.other;
 
 import com.moonstone.moonstonemod.Config;
+import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.init.DamageTps;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -10,6 +11,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -20,7 +22,9 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class flysword extends ThrowableItemProjectile {
     public int age = 0;
@@ -77,8 +81,20 @@ public class flysword extends ThrowableItemProjectile {
         LivingEntity closestEntity = null;
 
         for (LivingEntity entity : entities) {
+            if (Handler.inBlackList(entity)){
+                return;
+            }
             ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
-
+            Set<ResourceLocation> blacklist = new HashSet<>();
+            for (String aaa : Config.SERVER.attackTarget.get()) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                }
+            }
+            if (blacklist.contains(name)){
+                return;
+            }
             if (this.getOwner() != null) {
                 if (!name.getNamespace().equals(MoonStoneMod.MODID) && !(entity.is(this.getOwner()))) {
                     double distance = this.distanceToSqr(entity);

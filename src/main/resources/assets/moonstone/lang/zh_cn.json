@@ -1604,9 +1604,9 @@
   "moonstone.jei.item.moonstone.candle": "合成获取",
 
   "item.moonstone.apple": "倾斜异果",
-  "item.apple.tool.string": "最大生命值固定为30",
-  "item.apple.tool.string.1": "受到的伤害固定为2",
-  "item.apple.tool.string.2": "攻击伤害固定为10",
+  "item.apple.tool.string": "最大生命值固定为%d",
+  "item.apple.tool.string.1": "受到的伤害固定为%d",
+  "item.apple.tool.string.2": "攻击伤害固定为%d",
 
   "advancements.tooltip.apple.text": "获得这个物品",
   "advancements.tooltip.apple.hand": "倾斜的天平",
