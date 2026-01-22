@@ -1,5 +1,6 @@
 package com.ytgld.seeking_immortals.item.nightmare;
 
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.ytgld.seeking_immortals.init.Effects;
 import com.ytgld.seeking_immortals.init.Items;
@@ -74,13 +75,13 @@ public class falling_immortals extends nightmare implements SuperNightmare {
     public static void damage(LivingDamageEvent event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (SIHandler.hascurio(player, Items.falling_immortals.get())) {
-                event.setAmount(15);
+                event.setAmount(Config.SERVER.falling_immortals_damage.get());
             }
         }
         if (event.getEntity() instanceof Player player) {
             if (SIHandler.hascurio(player, Items.falling_immortals.get())) {
                 if (!player.getCooldowns().isOnCooldown(Items.falling_immortals.get())) {
-                    event.setAmount(2);
+                    event.setAmount(Config.SERVER.falling_immortals_hurt.get());
                     player.getCooldowns().addCooldown(Items.falling_immortals.get(),20);
                 }else {
                     event.setAmount(0);
@@ -98,10 +99,10 @@ public class falling_immortals extends nightmare implements SuperNightmare {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
         pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.1").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.literal(""));
-        pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.2").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.2",Config.SERVER.falling_immortals_damage.get()).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.3").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.4").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.5").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.4",Config.SERVER.falling_immortals_health.get()).withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.5",Config.SERVER.falling_immortals_hurt.get()).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.6").withStyle(ChatFormatting.DARK_RED));
 
     }

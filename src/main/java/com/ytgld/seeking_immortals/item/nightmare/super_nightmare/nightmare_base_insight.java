@@ -112,6 +112,8 @@ public class nightmare_base_insight extends nightmare implements SuperNightmare,
         pTooltipComponents.add(Component.translatable("item.moonstone.nightmare_base_insight_collapse").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.moonstone.nightmare_base_insight_insane").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.moonstone.nightmare_base_insight_drug").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.ring").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.hidden_blade").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.literal(""));
         pTooltipComponents.add(Component.translatable("item.nightmareeye.tool.string.2").withStyle(ChatFormatting.DARK_RED));
 

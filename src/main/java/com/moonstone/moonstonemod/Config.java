@@ -463,18 +463,28 @@ public class Config {
                                 .defineInRange("end_bone", 0.7f, 0, 99999);
 
 
+                        falling_immortals_health = BUILDER
+                           .comment("坠仙的生命")
+                           .defineInRange("falling_immortals_health", 30, 1, 99999);
+                        falling_immortals_damage = BUILDER
+                           .comment("坠仙的伤害")
+                           .defineInRange("falling_immortals_damage", 15, 1, 99999);
+                        falling_immortals_hurt = BUILDER
+                                .comment("坠仙的受伤")
+                                .defineInRange("falling_immortals_hurt", 2,1, 99999);
+
                         apple_health = BUILDER
                                 .comment("倾斜异果生命")
                                 .defineInRange("apple_health", 30, 1, 99999);
                         apple_damage = BUILDER
                                 .comment("倾斜异果的伤害")
-                                .defineInRange("apple_health", 10, 1, 99999);
+                                .defineInRange("apple_damage", 10, 1, 99999);
                         apple_hurt = BUILDER
                                 .comment("倾斜异果受伤")
-                                .defineInRange("apple_health", 2,1, 99999);
+                                .defineInRange("apple_hurt", 2,1, 99999);
                         apple_give = BUILDER
                                 .comment("倾斜异果的给予倍数")
-                                .defineInRange("apple_health", 30, 1, 99999);
+                                .defineInRange("apple_give", 30, 1, 99999);
 
                     }
                     BUILDER.pop();
@@ -509,6 +519,10 @@ public class Config {
     public   ForgeConfigSpec.IntValue apple_hurt;
     public   ForgeConfigSpec.IntValue apple_damage;
     public   ForgeConfigSpec.IntValue apple_give;
+
+    public   ForgeConfigSpec.IntValue falling_immortals_health;
+    public   ForgeConfigSpec.IntValue falling_immortals_hurt;
+    public   ForgeConfigSpec.IntValue falling_immortals_damage;
 
     private static boolean validateItemName(final Object obj) {
         return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(new ResourceLocation(itemName));

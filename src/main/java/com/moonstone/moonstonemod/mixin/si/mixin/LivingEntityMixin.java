@@ -25,7 +25,7 @@ public abstract class LivingEntityMixin {
     private void SeekingImmortalscreateAttributes(CallbackInfoReturnable<Float> cir){
         LivingEntity living = (LivingEntity) (Object) this;
         if (living.hasEffect(Effects.life.get())){
-            cir.setReturnValue(30f);
+            cir.setReturnValue(Float.valueOf(Config.SERVER.falling_immortals_health.get()));
         }
         if (living.hasEffect(Effects.life_apple.get())){
             cir.setReturnValue(Float.valueOf(Config.SERVER.apple_health.get()));
