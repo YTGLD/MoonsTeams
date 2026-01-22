@@ -30,11 +30,16 @@ import java.util.List;
 public class ring extends nightmare implements SuperNightmare {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,1000000,2,false,false));
-        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION,1000000,2,false,false));
-        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,1000000,2,false,false));
-        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,1000000,2,false,false));
-        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST,1000000,2,false,false));
+
+    }
+
+    @Override
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,1000000000,2,false,false));
+        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.REGENERATION,1000000000,2,false,false));
+        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,1000000000,2,false,false));
+        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,1000000000,2,false,false));
+        slotContext.entity().addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST,1000000000,2,false,false));
     }
 
     @Override
@@ -54,8 +59,6 @@ public class ring extends nightmare implements SuperNightmare {
         pTooltipComponents.add(Component.translatable("item.ring.tool.string.1").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.ring.tool.string.2").withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.literal(""));
-        pTooltipComponents.add(Component.translatable("item.ring.tool.string.3").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.ring.tool.string.4").withStyle(ChatFormatting.DARK_RED));
-    }
+      }
 
 }

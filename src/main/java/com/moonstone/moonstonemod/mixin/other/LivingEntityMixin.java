@@ -70,12 +70,7 @@ public abstract class LivingEntityMixin  extends Entity implements Attackable, n
     public void canStandOnFluid(FluidState fluidState, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
         if (living instanceof Player player) {
-            if (Handler.hascurio(player,Items.evilcandle.get())){
-                if (fluidState.is(Fluids.LAVA)) {
-                    cir.setReturnValue(true);
-                }
-            }
-            if (Handler.hascurio(player,Items.ambush.get())){
+            if (player.getPersistentData().getBoolean("canStandOnFluidTrue")){
                 cir.setReturnValue(true);
             }
         }

@@ -23,17 +23,24 @@ public abstract class MobEffectInstanceMixin {
 
     @Shadow public abstract MobEffect getEffect();
 
+    @Shadow
+    public abstract boolean isInfiniteDuration();
+
     @Inject(at = @At("RETURN"), method = "tick")
     public void tick(LivingEntity entity, Runnable onExpirationRunnable, CallbackInfoReturnable<Boolean> cir){
         if (entity instanceof Player player) {
             if (SIHandler.hascurio(player, Items.ring.get())) {
-                if (duration==1){
-                    if (this.getEffect().isBeneficial()) {
-                        duration--;
-                        player.heal(4);
-                    }else {
-                        duration--;
-                        player.heal(player.getMaxHealth()*0.1f);
+                if (player.getCooldowns().isOnCooldown(Items.ring.get())) {
+                    if (duration == 1) {
+                        if (this.getEffect().isBeneficial()) {
+                            duration--;
+                            player.heal(4);
+                            player.getCooldowns().addCooldown(Items.ring.get(),50);
+                        } else {
+                            duration--;
+                            player.heal(player.getMaxHealth() * 0.1f);
+                            player.getCooldowns().addCooldown(Items.ring.get(),50);
+                        }
                     }
                 }
                 List<Integer> integers = new ArrayList<>();
@@ -55,8 +62,10 @@ public abstract class MobEffectInstanceMixin {
                 }
 
 
-                if (player.tickCount % 20 - f == 0){
-                    duration-=20;
+                if (!isInfiniteDuration() && duration != 0) {
+                    if (player.tickCount % 20 - f == 0) {
+                        duration -= 20;
+                    }
                 }
             }
         }

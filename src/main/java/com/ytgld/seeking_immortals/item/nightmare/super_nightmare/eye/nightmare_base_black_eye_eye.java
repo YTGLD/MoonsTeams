@@ -7,6 +7,7 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNi
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -42,7 +43,7 @@ public class nightmare_base_black_eye_eye extends nightmare implements SuperNigh
                     if (living0.is(event.getEntity())) {
                         float s  = Config.SERVER.nightmare_base_black_eye_eye.get();
                         s/=100f;
-                        event.setAmount(event.getAmount() * s);
+                        event.setAmount(event.getAmount() * (1 + s));
                     }
                 }
             }
@@ -53,11 +54,15 @@ public class nightmare_base_black_eye_eye extends nightmare implements SuperNigh
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         Entity entity = getPlayerLookTarget(slotContext.entity().level(), slotContext.entity());
         if (entity instanceof LivingEntity living0) {
-            living0.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 30, 3));
-            living0.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 30, 2));
-            living0.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 5));
-            living0.addEffect(new MobEffectInstance(MobEffects.GLOWING, 30, 3));
-            living0.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 30, 3));
+            if (living0.level() instanceof ServerLevel) {
+                if (!(living0 instanceof Player)) {
+                    living0.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 30, 3));
+                    living0.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 30, 2));
+                    living0.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 5));
+                    living0.addEffect(new MobEffectInstance(MobEffects.GLOWING, 30, 3));
+                    living0.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 30, 3));
+                }
+            }
         }
     }
 
