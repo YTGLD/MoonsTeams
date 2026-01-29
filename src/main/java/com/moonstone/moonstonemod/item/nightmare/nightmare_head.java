@@ -98,7 +98,7 @@ public class nightmare_head extends nightmare  implements Nightmare {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifierMultimap = HashMultimap.create();
-        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, "aa", 0.8f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, "aa", -0.75f, AttributeModifier.Operation.MULTIPLY_TOTAL));
         return modifierMultimap;
     }
 
