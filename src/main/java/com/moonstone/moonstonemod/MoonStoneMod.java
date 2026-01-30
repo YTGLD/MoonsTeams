@@ -8,6 +8,7 @@ import com.moonstone.moonstonemod.client.entitys.swords.AsSwordRender;
 import com.moonstone.moonstonemod.client.entitys.swords.SwordRenderer;
 import com.moonstone.moonstonemod.client.entitys.zomb.ganit.CellZombieG;
 import com.moonstone.moonstonemod.client.entitys.zomb.slime.ZombieRenderer;
+import com.moonstone.moonstonemod.client.particle.RedOrbPart;
 import com.moonstone.moonstonemod.client.particle.blue;
 import com.moonstone.moonstonemod.client.particle.popr;
 import com.moonstone.moonstonemod.client.particle.red;
@@ -133,6 +134,7 @@ public class MoonStoneMod {
             event.registerSpriteSet(Particles.gold.get(), red.Provider::new);
             event.registerSpriteSet(Particles.blue.get(), blue.Provider::new);
             event.registerSpriteSet(Particles.popr.get(), popr.Provider::new);
+            event.registerSpriteSet(Particles.redOrb.get(), RedOrbPart.Provider::new);
         }
 
         @SubscribeEvent

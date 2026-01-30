@@ -14,6 +14,7 @@ public class Particles {
     public static final RegistryObject<SimpleParticleType> gold;
     public static final RegistryObject<SimpleParticleType> blue;
     public static final RegistryObject<SimpleParticleType> popr;
+    public static final RegistryObject<SimpleParticleType> redOrb;
 
     static {
         PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MoonStoneMod.MODID);
@@ -27,6 +28,8 @@ public class Particles {
         popr = PARTICLE_TYPES.register("popr", ()->{
             return new SimpleParticleType(false);
         });
-
+        redOrb = PARTICLE_TYPES.register("red_orb", ()->{
+            return new SimpleParticleType(false);
+        });
     }
 }

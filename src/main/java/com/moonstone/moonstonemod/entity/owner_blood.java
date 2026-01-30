@@ -79,7 +79,7 @@ public class owner_blood extends TamableAnimal {
 
             Vec3 newTargetPos = targetPos.add(direction.scale(desiredDistance)); // 计算新的目标位置
 
-            this.setDeltaMovement(newTargetPos.subtract(currentPos).normalize().scale(0.5f)); // 设置对象的运动速度
+            this.teleportTo(newTargetPos.x, newTargetPos.y, newTargetPos.z);
         }
 
         if (this.getOwner() != null) {
@@ -98,7 +98,7 @@ public class owner_blood extends TamableAnimal {
         }
         trailPositions.add(new Vec3(this.getX(), this.getY(), this.getZ()));
 
-        if (trailPositions.size() > 120) {
+        if (trailPositions.size() > 150) {
             trailPositions.remove(0);
         }
 

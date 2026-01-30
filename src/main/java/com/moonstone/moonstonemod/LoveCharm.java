@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.ytgld.seeking_immortals.event.old.NewEvent;
 import com.ytgld.seeking_immortals.renderer.Light;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -9,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -19,6 +19,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
@@ -31,6 +32,19 @@ import java.util.UUID;
 public class LoveCharm extends Item implements ICurioItem {
     public LoveCharm() {
         super(new Properties().rarity(Rarity.create("love", ChatFormatting.GOLD)));
+    }
+
+    @Override
+    public @NotNull Component getName(@NotNull ItemStack stack) {
+        Component component = super.getName(stack);
+        MutableComponent co = component.copy();
+        int b = (int) (255 * Math.sin(NewEvent.time / 50));
+        if (b < 0) {
+            b = 0;
+        }
+
+        co.setStyle(Style.EMPTY.withColor(TextColor.fromRgb(Light.ARGB.color(255,255,255,b))));
+        return co;
     }
 
     @Override
