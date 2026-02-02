@@ -1,8 +1,18 @@
 package com.moonstone.moonstonemod.client.particle;
 
 import com.all.MSParticleRenderType;
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.BufferBuilder;
+import com.mojang.blaze3d.vertex.Tesselator;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.CrashReport;
+import net.minecraft.CrashReportCategory;
+import net.minecraft.ReportedException;
+import net.minecraft.client.Camera;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -30,13 +40,19 @@ public class RedOrbPart   extends TextureSheetParticle {
     }
 
     @Override
+    public void render(VertexConsumer p_107678_, Camera p_107679_, float p_107680_) {
+        super.render(p_107678_, p_107679_, p_107680_);
+
+    }
+
+    @Override
     protected int getLightColor(float p_107249_) {
         return 255;
     }
 
     @Override
     public @NotNull ParticleRenderType getRenderType() {
-        return MSParticleRenderType.MSParticleRenderType;
+        return MSParticleRenderType.mMSParticleRenderType;
     }
     @OnlyIn(Dist.CLIENT)
     public record Provider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {

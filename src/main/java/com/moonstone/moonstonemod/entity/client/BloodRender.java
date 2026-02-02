@@ -3,19 +3,16 @@ package com.moonstone.moonstonemod.entity.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.moonstone.moonstonemod.ConfigClient;
-import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.MoonStoneMod;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.client.renderer.MoonPost;
 import com.moonstone.moonstonemod.entity.blood;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class BloodRender extends EntityRenderer<blood> {
@@ -30,7 +27,6 @@ public class BloodRender extends EntityRenderer<blood> {
         double z = Mth.lerp(p_114487_, entity.zOld, entity.getZ());
         poseStack.pushPose();
         poseStack.translate(entity.getX()-x, entity.getY()-y,entity.getZ() -z);
-        setT(poseStack, entity, bufferSource);
         renderSphere1(poseStack,bufferSource,240,0.15f);
         if (ConfigClient.Client.Shader.get()) {
             MoonPost.renderEffectForNextTick(MoonStoneMod.POST);
@@ -39,25 +35,6 @@ public class BloodRender extends EntityRenderer<blood> {
         super.render(entity, p_114486_, p_114487_, poseStack, bufferSource, p_114490_);
     }
 
-
-    private void setT(PoseStack matrices,
-                      blood entity,
-                      MultiBufferSource vertexConsumers)
-    {
-        matrices.pushPose();
-
-        for (int i = 1; i < entity.getTrailPositions().size(); i++){
-            Vec3 prevPos = entity.getTrailPositions().get(i - 1);
-            Vec3 currPos = entity.getTrailPositions().get(i);
-            Vec3 adjustedPrevPos = new Vec3(prevPos.x - entity.getX(), prevPos.y - entity.getY(), prevPos.z - entity.getZ());
-            Vec3 adjustedCurrPos = new Vec3(currPos.x - entity.getX(), currPos.y - entity.getY(), currPos.z - entity.getZ());
-
-            float alpha = (float)(i) / (float)(entity.getTrailPositions().size());
-
-            Handler.renderBlood(matrices, vertexConsumers, adjustedPrevPos, adjustedCurrPos, alpha, RenderType.lightning(),0.1f);
-        }
-        matrices.popPose();
-    }
 
     public void renderSphere1(@NotNull PoseStack matrices, @NotNull MultiBufferSource vertexConsumers, int light, float s) {
         {int stacks = 20; // 垂直方向的分割数

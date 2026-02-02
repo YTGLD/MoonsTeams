@@ -55,10 +55,6 @@ public class ring extends nightmare implements SuperNightmare {
     public void appendHoverText(ItemStack stack, net.minecraft.world.level.Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
         pTooltipComponents.add(Component.translatable("item.ring.tool.string").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.literal(""));
-        pTooltipComponents.add(Component.translatable("item.ring.tool.string.1").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.translatable("item.ring.tool.string.2").withStyle(ChatFormatting.DARK_RED));
-        pTooltipComponents.add(Component.literal(""));
-      }
+    }
 
 }

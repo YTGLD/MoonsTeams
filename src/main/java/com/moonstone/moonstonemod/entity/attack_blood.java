@@ -189,21 +189,6 @@ public class attack_blood extends ThrowableItemProjectile {
         }
         if (canSee) {
             trailPositions.add(new Vec3(this.getX(), this.getY(), this.getZ()));
-            if (level().isClientSide()) {
-                Vec3 vec3 = getDeltaMovement();
-
-                float speedMax = 10000;
-
-                float xx = (float) (vec3.x / 2f);
-                float yy = (float) (vec3.y / 2f);
-                float zz = (float) (vec3.z / 2f);
-                if (xx > speedMax) {xx = speedMax;}
-                if (yy > speedMax) {yy = speedMax;}
-                if (zz > speedMax) {zz = speedMax;}
-
-
-                this.level().addParticle(Particles.redOrb.get(),getX(),getY(),getZ(),xx,yy,zz);
-            }
 
         }
         if (!trailPositions.isEmpty()) {

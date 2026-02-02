@@ -9,9 +9,6 @@ import com.moonstone.moonstonemod.client.entitys.swords.SwordRenderer;
 import com.moonstone.moonstonemod.client.entitys.zomb.ganit.CellZombieG;
 import com.moonstone.moonstonemod.client.entitys.zomb.slime.ZombieRenderer;
 import com.moonstone.moonstonemod.client.particle.RedOrbPart;
-import com.moonstone.moonstonemod.client.particle.blue;
-import com.moonstone.moonstonemod.client.particle.popr;
-import com.moonstone.moonstonemod.client.particle.red;
 import com.moonstone.moonstonemod.client.renderer.MRender;
 import com.moonstone.moonstonemod.crafting.AllCrafting;
 import com.moonstone.moonstonemod.crafting.MoonRecipeProvider;
@@ -21,18 +18,11 @@ import com.moonstone.moonstonemod.entity.client.SwordOfTwelveRenderer;
 import com.moonstone.moonstonemod.event.*;
 import com.moonstone.moonstonemod.init.*;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
-import com.sun.jna.platform.win32.COM.util.ComThread;
 import com.ytgld.seeking_immortals.item.nightmare.ToolTip;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
@@ -40,7 +30,6 @@ import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -50,9 +39,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
 import java.util.function.Function;
 
 @Mod(MoonStoneMod.MODID)
@@ -131,9 +117,6 @@ public class MoonStoneMod {
     public static class Client {
         @SubscribeEvent
         public static void registerFactories(RegisterParticleProvidersEvent event) {
-            event.registerSpriteSet(Particles.gold.get(), red.Provider::new);
-            event.registerSpriteSet(Particles.blue.get(), blue.Provider::new);
-            event.registerSpriteSet(Particles.popr.get(), popr.Provider::new);
             event.registerSpriteSet(Particles.redOrb.get(), RedOrbPart.Provider::new);
         }
 

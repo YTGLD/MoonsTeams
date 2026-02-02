@@ -106,7 +106,7 @@ public class nightmare_entity extends cell_zombie {
                             if (!Handler.hascurio(livingentity, Items.nightmare_heart.get())) {
                                 if (!livingentity.is(this)) {
                                     if (this.tickCount % 20 == 0) {
-                                        serverLevel.sendParticles(Particles.gold.get(), this.getX() + d0 * d4, this.getEyeY() + 0.75 + d1 * d4, this.getZ() + d2 * d4, 2, 0.0D, 0.0D, 0.0D, 0);
+
                                     }
                                 }
                             }

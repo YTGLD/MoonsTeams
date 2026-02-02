@@ -137,6 +137,8 @@ public class nightmare_head extends nightmare  implements Nightmare {
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("item.nightmare_head.tool.string").withStyle(ChatFormatting.DARK_RED));
         tooltip.add(Component.translatable(""));
+        tooltip.add(Component.translatable("item.nightmare_head.tool.string.1").withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("item.nightmare_head.tool.string.2").withStyle(ChatFormatting.DARK_RED));
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("item.nightmare_head.tool.string.3").withStyle(ChatFormatting.DARK_RED));

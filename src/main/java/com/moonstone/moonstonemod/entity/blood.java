@@ -2,6 +2,7 @@ package com.moonstone.moonstonemod.entity;
 
 import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.Items;
+import com.moonstone.moonstonemod.init.Particles;
 import com.moonstone.moonstonemod.init.moonstoneitem.BookItems;
 import com.moonstone.moonstonemod.item.blood.meet_heart;
 import net.minecraft.sounds.SoundEvents;
@@ -10,6 +11,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
@@ -23,15 +25,12 @@ import java.util.List;
 
 public class blood extends ThrowableItemProjectile {
     private LivingEntity target;
-    private final List<Vec3> trailPositions = new ArrayList<>();
+
 
     public blood(EntityType<? extends blood> entityType, Level level) {
         super(entityType, level);
         this.setNoGravity(true);
 
-    }
-    public List<Vec3> getTrailPositions() {
-        return trailPositions;
     }
 
     @Override
@@ -59,9 +58,8 @@ public class blood extends ThrowableItemProjectile {
         super.tick();
 
         if (!this.getTags().contains("Blood")) {
-            if (this.tickCount % 100 == 0) {
-                this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ELYTRA_FLYING, SoundSource.NEUTRAL, 0.31F, 0.31F);
-            }
+
+
             if (target == null || !target.isAlive()) {
                 findNewTarget();
             }
@@ -69,10 +67,26 @@ public class blood extends ThrowableItemProjectile {
             float s = this.tickCount / 500f;
             if (target != null) {
                 if (this.tickCount > 25) {
-                    Vec3 targetPos = target.position().add(0, 0.5, 0);
+
+                    Vec3 targetPos = target.position().add(0, 0, 0); // 将 Y 坐标增加 heightOffset
+
                     Vec3 currentPos = this.position();
                     Vec3 direction = targetPos.subtract(currentPos).normalize();
-                    this.setDeltaMovement(direction.x * (0.005f + s), direction.y * (0.005f + s), direction.z * (0.005f + s));
+
+                    Vec3 currentDirection = this.getDeltaMovement().normalize();
+
+                    double angle = Math.acos(currentDirection.dot(direction)) * (180.0 / Math.PI);
+
+                    if (angle > 15) {
+                        double angleLimit = Math.toRadians(15); // 将5度转为弧度
+
+                        Vec3 limitedDirection = currentDirection.scale(Math.cos(angleLimit)) // 计算缩放因子
+                                .add(direction.normalize().scale(Math.sin(angleLimit))); // 根据目标方向进行调整
+
+                        this.setDeltaMovement(limitedDirection.x * 0.5f, limitedDirection.y * 0.5f, limitedDirection.z * 0.5f);
+                    } else {
+                        this.setDeltaMovement(direction.x *0.5f, direction.y * 0.5f, direction.z * 0.5f);
+                    }
                 }
             }
         } else {
@@ -81,11 +95,16 @@ public class blood extends ThrowableItemProjectile {
             }
         }
 
-        trailPositions.add(new Vec3(this.getX(), this.getY(), this.getZ()));
+        Vec3 vec3 = getDeltaMovement();
 
-        if (trailPositions.size() > 50) {
-            trailPositions.remove(0);
-        }
+        float speedMax = 10000;
+
+        float xx = (float) (vec3.x / 2.2f);
+        float yy = (float) (vec3.y / 2.2f);
+        float zz = (float) (vec3.z / 2.2f);
+        if (xx > speedMax) {xx = speedMax;}
+        if (yy > speedMax) {yy = speedMax;}
+        if (zz > speedMax) {zz = speedMax;}
 
         this.setNoGravity(true);
         this.setYRot(0);
@@ -96,7 +115,7 @@ public class blood extends ThrowableItemProjectile {
     public void playerTouch(@NotNull Player entity) {
         if (this.tickCount > 20) {
             super.playerTouch(entity);
-            entity.addItem(new ItemStack(Items.blood.get()));
+            entity.level().addFreshEntity(new ItemEntity(entity.level(),entity.getX(),entity.getY(),entity.getZ(),new ItemStack(Items.blood.get())));
             this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_DEPLETE.get(), SoundSource.NEUTRAL, 1.45f, 1.45f);
 
             if (Handler.hascurio(entity, Items.deceased_contract.get())){

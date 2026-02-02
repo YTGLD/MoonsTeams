@@ -77,6 +77,10 @@ public class nightmare_base_fool extends nightmare implements SuperNightmare, Al
                     && CuriosApi.getCuriosInventory(player).resolve().get().isEquipped(Items.immortal.get())){
                 return true;
             }
+            if (CuriosApi.getCuriosInventory(player).resolve().isPresent()
+                    && CuriosApi.getCuriosInventory(player).resolve().get().isEquipped(Items.the_divine_fall_ring.get())){
+                return true;
+            }
             if (player.isCreative()){
                 return true;
             }
