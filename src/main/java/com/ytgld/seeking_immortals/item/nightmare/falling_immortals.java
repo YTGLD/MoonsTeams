@@ -104,6 +104,8 @@ public class falling_immortals extends nightmare implements SuperNightmare {
         pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.4",Config.SERVER.falling_immortals_health.get()).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.5",Config.SERVER.falling_immortals_hurt.get()).withStyle(ChatFormatting.DARK_RED));
         pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.6").withStyle(ChatFormatting.DARK_RED));
+        pTooltipComponents.add(Component.literal(""));
+        pTooltipComponents.add(Component.translatable("item.falling_immortals.tool.string.7").withStyle(ChatFormatting.DARK_RED));
 
     }
 }

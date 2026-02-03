@@ -1880,6 +1880,7 @@
   "item.falling_immortals.tool.string.4":"Max health is fixed at 30",
   "item.falling_immortals.tool.string.5":"Damage taken is fixed at 2",
   "item.falling_immortals.tool.string.6":"Armor is fixed at 10",
+  "item.falling_immortals.tool.string.7":"你每秒最多受到一次伤害",
 
   "moonstone.jei.item.moonstone.falling_immortals": "在佩戴倾斜异果的情况下主手手持末影之眼杀死凋零获取（实际上它会直接替换倾斜异果为坠仙）",
   "advancements.tooltip.falling_immortals.text": "Obtain this item",

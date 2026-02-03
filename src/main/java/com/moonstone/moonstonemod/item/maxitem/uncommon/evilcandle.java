@@ -16,13 +16,17 @@ public class evilcandle extends UnCommonItem  implements TextEvt.Twelve{
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            player.getPersistentData().putBoolean("canStandOnFluidTrue",true);
+            if (!player.level().isClientSide()) {
+                player.getPersistentData().putBoolean("canStandOnFluidTrue", true);
+            }
         }
     }
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            player.getPersistentData().putBoolean("canStandOnFluidTrue",false);
+            if (!player.level().isClientSide()) {
+                player.getPersistentData().putBoolean("canStandOnFluidTrue", false);
+            }
         }
     }
     @Override
