@@ -175,9 +175,11 @@ public class wolf extends nightmare implements SuperNightmare {
         if (compoundTag!=null) {
             int a = compoundTag.size();
             attributeModifiers.put(Attributes.MAX_HEALTH,
-                    new AttributeModifier(UUID.fromString("da37c59b-11ef-4c2f-8eb8-ca8cfe9b69c4"),"a", a, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(UUID.fromString("da37c59b-11ef-4c2f-8eb8-ca8cfe9b69c4"),"a",
+                            a, AttributeModifier.Operation.ADDITION));
             attributeModifiers.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(UUID.fromString("da37c59b-11ef-4c2f-8eb8-ca8cfe9b69c4"),"a", a/2F, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(UUID.fromString("da37c59b-11ef-4c2f-8eb8-ca8cfe9b69c4"),"a",
+                            (a/2F) / 80f, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         return attributeModifiers;
 
@@ -195,7 +197,7 @@ public class wolf extends nightmare implements SuperNightmare {
 
         if (stack.getTag()!=null){
             pTooltipComponents.add(Component.translatable("effect.minecraft.health_boost").append(" : ").append(String.valueOf(stack.getTag().size())).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFff4789))));
-            pTooltipComponents.add(Component.translatable("effect.minecraft.strength").append(" : ").append(String.valueOf(stack.getTag().size()/2F)).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFff4789))));
+            pTooltipComponents.add(Component.translatable("effect.minecraft.strength").append(" : ").append(String.valueOf(stack.getTag().size()/2F)).append("%").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFff4789))));
         }else {
             pTooltipComponents.add(Component.translatable("moonstone.item.kill").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFff4789))));
         }

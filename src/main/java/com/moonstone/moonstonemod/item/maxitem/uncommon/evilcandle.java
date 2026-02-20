@@ -17,7 +17,7 @@ public class evilcandle extends UnCommonItem  implements TextEvt.Twelve{
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
-                player.getPersistentData().putBoolean("canStandOnFluidTrue", true);
+                player.addTag("canStandOnFluidTrue");
             }
         }
     }
@@ -25,7 +25,7 @@ public class evilcandle extends UnCommonItem  implements TextEvt.Twelve{
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
-                player.getPersistentData().putBoolean("canStandOnFluidTrue", false);
+                player.removeTag("canStandOnFluidTrue");
             }
         }
     }

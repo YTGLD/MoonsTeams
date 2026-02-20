@@ -94,18 +94,6 @@ public class blood extends ThrowableItemProjectile {
                 this.discard();
             }
         }
-
-        Vec3 vec3 = getDeltaMovement();
-
-        float speedMax = 10000;
-
-        float xx = (float) (vec3.x / 2.2f);
-        float yy = (float) (vec3.y / 2.2f);
-        float zz = (float) (vec3.z / 2.2f);
-        if (xx > speedMax) {xx = speedMax;}
-        if (yy > speedMax) {yy = speedMax;}
-        if (zz > speedMax) {zz = speedMax;}
-
         this.setNoGravity(true);
         this.setYRot(0);
         this.setXRot(0);

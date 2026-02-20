@@ -2300,7 +2300,12 @@ public class AllEvent {
                                 playerPos.z + range));
                         for (LivingEntity livingEntity : entities) {
                             if (!livingEntity.is(player)) {
-                                livingEntity.hurt(livingEntity.damageSources().magic(), livingEntity.getMaxHealth() / 50);
+                                float damage = livingEntity.getMaxHealth() / 50;
+                                if (damage > player.getMaxHealth() * 10) {
+                                    damage = player.getMaxHealth() * 10;
+                                }
+                                livingEntity.hurt(livingEntity.damageSources().magic(),
+                                        damage);
                             }
                         }
                     }

@@ -142,8 +142,6 @@ public class the_prison_of_sin extends TheNecoraIC {
     public void appendHoverText(ItemStack pStack, @Nullable Level p_41422_, List<Component> pTooltipComponents, TooltipFlag p_41424_) {
         if (pStack.getTag() != null) {
             pTooltipComponents.add(Component.translatable(""));
-            pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.1").withStyle(ChatFormatting.RED));
-            pTooltipComponents.add(Component.translatable(""));
             pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.2").withStyle(ChatFormatting.RED));
             pTooltipComponents.add(Component.translatable("item.the_prison_of_sin.tool.string.3").withStyle(ChatFormatting.RED));
             pTooltipComponents.add(Component.translatable(""));

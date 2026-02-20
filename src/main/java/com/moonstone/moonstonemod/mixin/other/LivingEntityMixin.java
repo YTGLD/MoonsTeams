@@ -71,7 +71,7 @@ public abstract class LivingEntityMixin  extends Entity implements Attackable, n
         LivingEntity living = (LivingEntity) (Object) this;
         if (living instanceof Player player) {
             if(!player.level().isClientSide()) {
-                if (player.getPersistentData().getBoolean("canStandOnFluidTrue")) {
+                if (player.getTags().contains("canStandOnFluidTrue")) {
                     cir.setReturnValue(true);
                 }
             }

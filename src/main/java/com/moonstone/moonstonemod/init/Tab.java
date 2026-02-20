@@ -218,6 +218,7 @@ public class Tab {
                 b.accept(new ItemStack(Items.ectoplasmsoul.get()));
                 b.accept(new ItemStack(Items.ectoplasmtree.get()));
                 b.accept(new ItemStack(Items.ectoplasmstone.get()));
+                b.accept(new ItemStack(Items.beacon.get()));
 
                 b.accept(new ItemStack(Items.mbattery.get()));
                 b.accept(new ItemStack(Items.mblock.get()));

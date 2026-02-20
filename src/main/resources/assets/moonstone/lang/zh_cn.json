@@ -2001,7 +2001,7 @@
   "moonstone.jei.item.moonstone.lead": "死亡200次",
 
   "item.moonstone.wolf":"孤狼",
-  "item.wolf.tool.string": "每杀死一种生物都会增加你1点生命和护甲",
+  "item.wolf.tool.string": "每杀死一种生物都会增加一定的生命和伤害",
   "item.wolf.tool.string.1": "你对曾被你杀死的生物造成额外25%的伤害",
   "item.wolf.tool.string.2": "标记附近被你巡抚的单位",
   "item.wolf.tool.string.3": "每次受伤都会转移到它们身上，若单位死亡则物品进入5秒冷却",

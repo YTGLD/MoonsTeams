@@ -7,6 +7,7 @@ import com.moonstone.moonstonemod.Handler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.moonstone.moonstonemod.init.Items;
 import com.moonstone.moonstonemod.moonstoneitem.nightmare;
+import com.ytgld.seeking_immortals.init.Effects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -74,6 +75,10 @@ public class nightmare_head extends nightmare  implements Nightmare {
     public static void headHurt(LivingHurtEvent event){
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player,Items.nightmare_head.get())) {
+                if (player.hasEffect(Effects.life.get())
+                        ||player.hasEffect(Effects.life_apple.get())){
+                    return;
+                }
                 if (event.getSource() != null ){
                     if (event.getSource().getEntity() instanceof LivingEntity living) {
                         if (Config.SERVER.openDamageForAttacker.get()) {
@@ -112,6 +117,19 @@ public class nightmare_head extends nightmare  implements Nightmare {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity().hasEffect(Effects.life.get())
+                ||slotContext.entity().hasEffect(Effects.life_apple.get())){
+            if (slotContext.entity() instanceof Player player) {
+                player.displayClientMessage(Component.translatable("moonstone.life.error").withStyle(ChatFormatting.RED), true);
+            }
+        }
+        addHealth(slotContext, stack);
+    }
+    public void addHealth(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity().hasEffect(Effects.life.get())
+                ||slotContext.entity().hasEffect(Effects.life_apple.get())){
+            return;
+        }
         if (!slotContext.entity().level().isClientSide
                 &&slotContext.entity().tickCount % 100 == 0){
             if (Handler.hascurio(slotContext.entity(),Items.nightmareeye.get())) {
@@ -121,13 +139,19 @@ public class nightmare_head extends nightmare  implements Nightmare {
         }
     }
 
-
       @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             if (player.isCreative()){
                 return true;
             }
+            if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.apple.get())){
+                return true;
+            }
+            if (Handler.hascurio(player, com.ytgld.seeking_immortals.init.Items.falling_immortals.get())){
+                return true;
+            }
+
         }
         return com.moonstone.moonstonemod.Config.SERVER.canUnequipMoonstoneItem.get();
     }
@@ -152,6 +176,7 @@ public class nightmare_head extends nightmare  implements Nightmare {
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("item.nightmare_head.tool.string.7").withStyle(ChatFormatting.DARK_RED));
         tooltip.add(Component.translatable(""));
+        tooltip.add(Component.translatable("moonstone.life.error").withStyle(ChatFormatting.LIGHT_PURPLE));
 
     }
 }
