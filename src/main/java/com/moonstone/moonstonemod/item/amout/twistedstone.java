@@ -51,7 +51,7 @@ public class twistedstone extends ThePain {
         if (!stack.isEmpty()) {
             if (stack.hasTag()) {
                 tooltip.add(Component.translatable("attribute.name.generic.attack_damage").append(Component.literal(String.valueOf(stack.getOrCreateTag().getInt(
-                                "double_stone_moonstone_tw")))).withStyle(ChatFormatting.GOLD));
+                                "double_stone_moonstone_tw"))).append("%")).withStyle(ChatFormatting.GOLD));
             }
         }
     }

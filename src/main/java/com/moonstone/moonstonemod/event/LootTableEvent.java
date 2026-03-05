@@ -96,10 +96,6 @@ public class LootTableEvent {
 
                         .add(LootItem.lootTableItem(Items.as_amout.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-
-                        .add(LootItem.lootTableItem(Items.germ.get()).setWeight(1))
-                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-
                         .add(LootItem.lootTableItem(Items.magnet.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
@@ -228,10 +224,6 @@ public class LootTableEvent {
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .add(LootItem.lootTableItem(Items.rage_crystal.get()).setWeight(1))
-                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-
-
-                        .add(LootItem.lootTableItem(Items.killer.get()).setWeight(1))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 
                         .add(LootItem.lootTableItem(Items.magnet.get()).setWeight(1))

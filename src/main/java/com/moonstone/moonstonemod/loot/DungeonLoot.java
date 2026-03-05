@@ -322,7 +322,13 @@ public class DungeonLoot extends LootModifier {
                 if (idSting.contains("ancient")) {
                     AdvancementEvt.addLoot(generatedLoot, entity, 5);
                     AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(generatedLoot, entity);
-
+                    if (entity instanceof Player player) {
+                        if (Handler.hascurio(player,Items.dna.get()) && !Handler.hascurio(player,Items.germ.get())){
+                            if (Mth.nextInt(RandomSource.create(),1,33) == 1) {
+                                generatedLoot.add(new ItemStack(Items.germ.get()));
+                            }
+                        }
+                    }
                 }
             }
             if (idSting.contains("chests/")) {

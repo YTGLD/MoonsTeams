@@ -2,6 +2,7 @@ package com.ytgld.seeking_immortals.item.nightmare.super_nightmare.redemption;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.moonstone.moonstonemod.Config;
 import com.ytgld.seeking_immortals.SIHandler;
 import com.moonstone.moonstonemod.init.AttReg;
 import com.ytgld.seeking_immortals.init.Items;
@@ -9,9 +10,11 @@ import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.SuperNi
 import com.ytgld.seeking_immortals.item.nightmare.super_nightmare.extend.nightmare;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,7 +30,9 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import top.theillusivec4.curios.api.SlotContext;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 
@@ -77,21 +82,31 @@ public class hypocritical_self_esteem extends nightmare implements SuperNightmar
                         if (SIHandler.hascurio(player, Items.nightmare_base_black_eye.get())) {
                             if (!living.is(player)&&living.isAlive()) {
                                 if (living.tickCount % 10 == 0) {
-                                    int l = entities.size() + 1;
-                                    if (l > 10) {
-                                        l = 10;
+                                    ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());
+                                    Set<ResourceLocation> blacklist = new HashSet<>();
+                                    for (String aaa : Config.SERVER.attackTarget.get()) {
+                                        String[] parts = aaa.split(":");
+                                        if (parts.length > 0) {
+                                            blacklist.add( new ResourceLocation(parts[0],parts[1]));
+                                        }
                                     }
-                                    living.hurt(living.damageSources().dryOut(),
-                                            (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * (0.2f * (l)));
+                                    if (!blacklist.contains(name)){
+                                        int l = entities.size() + 1;
+                                        if (l > 10) {
+                                            l = 10;
+                                        }
+                                        living.hurt(living.damageSources().dryOut(),
+                                                (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * (0.2f * (l)));
 
-                                    living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2, false, false));
-                                    living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0, false, false));
-                                    living.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 300, 1, false, false));
-                                    living.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 2, false, false));
-                                    living.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 3, false, false));
-                                    living.invulnerableTime = 0;
-                                    player.heal(2);
-                                    break;
+                                        living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2, false, false));
+                                        living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0, false, false));
+                                        living.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 300, 1, false, false));
+                                        living.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 2, false, false));
+                                        living.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 3, false, false));
+                                        living.invulnerableTime = 0;
+                                        player.heal(2);
+                                        break;
+                                    }
                                 }
                             }
                         }

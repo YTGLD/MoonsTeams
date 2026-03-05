@@ -1909,7 +1909,7 @@
   "moonstone.jei.item.moonstone.nightmare_base_start_pod": "开地牢的箱子，概率25%，只能获取一个",
   "itemGroup.moonstone": "月之石：噩梦之章",
   "curios.identifier.nightmare": "噩梦之槽",
-  "curios.modifiers.nightmare": "接受噩梦洗礼时",
+  "curios.modifiers.nightmare": "佩戴物品时：",
   "moonstone.jei.nightmare": ": Requires wearing nightmare eye to be found in dungeons and mines",
 
   "moonstone.super_nightmare.name": "只有佩戴噩梦基座的人",

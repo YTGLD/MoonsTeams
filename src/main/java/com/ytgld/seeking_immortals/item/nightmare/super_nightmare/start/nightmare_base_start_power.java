@@ -22,15 +22,19 @@ import java.util.*;
 
 public class nightmare_base_start_power extends nightmare implements SuperNightmare {
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (SIHandler.hascurio(slotContext.entity(), this)) {
-            slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (!slotContext.entity().level().isClientSide) {
+            if (SIHandler.hascurio(slotContext.entity(), this)) {
+                slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
+            }
         }
     }
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        slotContext.entity().getAttributes().removeAttributeModifiers(gets(slotContext));
+        if (!slotContext.entity().level().isClientSide) {
+            slotContext.entity().getAttributes().removeAttributeModifiers(gets(slotContext));
+        }
     }
 
     public  Multimap<Attribute, AttributeModifier> gets(SlotContext slotContext) {

@@ -69,13 +69,11 @@ public class germ extends TheNecoraIC implements ICurioItem {
         }
     }
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){
             player.getAttributes().addTransientAttributeModifiers(this.getAttributeModifiers(player, stack));
-            stack.getOrCreateTag().putInt(lvl, stack.getOrCreateTag().getInt(lvl));
         }
     }
-
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player){

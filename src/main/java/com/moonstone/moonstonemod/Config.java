@@ -486,6 +486,12 @@ public class Config {
                                 .comment("倾斜异果的给予倍数")
                                 .defineInRange("apple_give", 30, 1, 99999);
 
+                        hypocritical_self_esteem = BUILDER
+                                .comment("虚伪的自尊的撕咬黑名单")
+                                .defineList("hypocritical_self_esteem",
+                                        List.of("minecraft:player","minecraft:pig"),
+                                        s->s instanceof String);
+
                     }
                     BUILDER.pop();
                 }
@@ -495,6 +501,7 @@ public class Config {
             BUILDER.build();
         }
     }
+    public   ForgeConfigSpec.ConfigValue<List<? extends String>> hypocritical_self_esteem;
     public   ForgeConfigSpec.IntValue nightmare_base_black_eye_eye;
     public   ForgeConfigSpec.IntValue nightmare_base_insight_insane ;
     public   ForgeConfigSpec.DoubleValue nightmare_base_fool_bone ;
