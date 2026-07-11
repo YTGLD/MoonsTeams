@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_all",
+	"model": {
+    "type": "minecraft:model",
+		"all": "minecraft:block/netherite_block"
+	}
+}

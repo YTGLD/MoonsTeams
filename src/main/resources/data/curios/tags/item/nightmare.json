@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:nightmare_base",
+    "moonstone:nightmare_base_black_eye",
+    "moonstone:nightmare_base_fool",
+    "moonstone:nightmare_base_insight",
+    "moonstone:nightmare_base_redemption",
+    "moonstone:nightmare_base_reversal",
+    "moonstone:nightmare_base_start",
+    "moonstone:nightmare_base_stone"
+  ]
+}

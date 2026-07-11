@@ -1,0 +1,14 @@
+{
+  "chest_item.config.NightmareBaseFool": "属性衰败",
+  "chest_item.config.NightmareBaseItem": "开局基于几个物品",
+  "chest_item.config.NightmareBaseItemReversal": "属性减少的值的黑名单",
+  "chest_item.config.NightmareBaseItemReversal2": "死亡时跌的属性",
+  "chest_item.config.NightmareBaseStart": "治疗",
+  "chest_item.config.NightmareBaseStone": "伤害倍数",
+  "chest_item.configuration.NightmareBaseFool": "愚者之危",
+  "chest_item.configuration.NightmareBaseItem": "噩梦基座",
+  "chest_item.configuration.NightmareBaseItemReversal": "颠倒之物",
+  "chest_item.configuration.NightmareBaseItemReversal2": "颠倒之物2",
+  "chest_item.configuration.NightmareBaseStart": "噩梦之起始",
+  "chest_item.configuration.NightmareBaseStone": "死兆方尖碑"
+}
