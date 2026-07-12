@@ -1,15 +1,28 @@
 package com.ytgld.moonstone;
 
 import com.mojang.blaze3d.pipeline.RenderPipeline;
+import com.ytgld.moonstone.enttiy.CellGiant;
+import com.ytgld.moonstone.enttiy.EntityTs;
+import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.DataReg;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
+import net.minecraft.util.SpawnUtil;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
@@ -19,6 +32,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+
+import static com.ytgld.moonstone.event.AllEvent.*;
 
 public class Handler {
 
@@ -62,4 +77,30 @@ public class Handler {
         return CuriosApi.getCuriosInventory(livingEntity).map(inv -> inv.findCurios(filter))
                 .orElse(Collections.emptyList());
     }
+    public static void trySpawnMob(Player player,EntityType<CellGiant> cellGiantEntityType, Vec3 position) {
+        CellGiant cellGiant = new CellGiant(cellGiantEntityType,player.level());
+        cellGiant.setOwner(player);
+        cellGiant.setPos(player.position());
+        if (Handler.hascurio(player, Items.bone_cell.get())) {
+            cellGiant.addTag(Bone_Giant);
+        }
+        if (Handler.hascurio(player, Items.parasitic_cell.get())) {
+            cellGiant.addTag(Parasitic_cell_Giant);
+        }
+        if (Handler.hascurio(player, Items.disgusting_cells.get())) {
+            cellGiant.addTag(Disgusting__cell_Giant);
+        }
+        if (Handler.hascurio(player, Items.bone_cell.get())) {
+            cellGiant.addTag(Bone_Giant);
+        }
+        if (Handler.hascurio(player, Items.parasitic_cell.get())) {
+            cellGiant.addTag(Parasitic_cell_Giant);
+        }
+        if (Handler.hascurio(player, Items.disgusting_cells.get())) {
+            cellGiant.addTag(Disgusting__cell_Giant);
+        }
+        player.level().addFreshEntity(cellGiant);
+    }
+
+
 }

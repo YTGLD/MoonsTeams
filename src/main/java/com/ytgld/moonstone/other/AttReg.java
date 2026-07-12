@@ -21,11 +21,14 @@ public class AttReg {
     public static final DeferredHolder<Attribute, ?> cit = REGISTRY.register("cit", () -> {
         return new RangedAttribute("attribute.name.chest_item.cit", 1, -1024, 1024).setSyncable(true);
     });
-
+    public static final DeferredHolder<Attribute, ?> speed = REGISTRY.register("speed", () -> {
+        return new RangedAttribute("attribute.name.chest_item.speed", 1, -1024, 1024).setSyncable(true);
+    });
     @SubscribeEvent
     public static void EntityAttributeCreationEvent(EntityAttributeModificationEvent event) {
         event.add(EntityType.PLAYER, AttReg.heal, 1);
         event.add(EntityType.PLAYER, AttReg.cit, 1);
+        event.add(EntityType.PLAYER, AttReg.speed, 1);
 
     }
 }

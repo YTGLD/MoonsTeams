@@ -5,6 +5,7 @@ import com.mojang.blaze3d.pipeline.BlendFunction;
 import com.mojang.blaze3d.pipeline.ColorTargetState;
 import com.mojang.blaze3d.pipeline.DepthStencilState;
 import com.mojang.blaze3d.pipeline.RenderPipeline;
+import com.mojang.blaze3d.platform.CompareOp;
 import com.mojang.blaze3d.platform.DestFactor;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
@@ -18,8 +19,10 @@ import net.minecraft.client.renderer.rendertype.OutputTarget;
 import net.minecraft.client.renderer.rendertype.RenderSetup;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Util;
 
 import java.util.Optional;
+import java.util.function.BiFunction;
 
 import static com.mojang.blaze3d.platform.SourceFactor.ONE;
 import static com.mojang.blaze3d.platform.SourceFactor.SRC_ALPHA;
@@ -37,7 +40,6 @@ public class MRender {
         }
         return Minecraft.getInstance().getMainRenderTarget();
     });
-
     public static  RenderType renderTypeOutline = RenderType.create(
             "end_gateway",
             RenderSetup.builder(RenderPipeline.builder(END_PORTAL_SNIPPET).withLocation("pipeline/end_gateway")

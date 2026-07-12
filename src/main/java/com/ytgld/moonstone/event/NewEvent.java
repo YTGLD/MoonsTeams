@@ -8,6 +8,12 @@ import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmApple;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmHorseshoe;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmShild;
 import com.ytgld.moonstone.item.ms.maulice.*;
+import com.ytgld.moonstone.item.ms.necora.Necora;
+import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBoom;
+import com.ytgld.moonstone.item.ms.necora.dnabush.small.Cell;
+import com.ytgld.moonstone.item.ms.necora.dna.Fermentation;
+import com.ytgld.moonstone.item.ms.necora.dna.god.GodAmbush;
+import com.ytgld.moonstone.item.ms.necora.dna.god.GodPutrefactive;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
@@ -26,11 +32,19 @@ import com.ytgld.moonstone.item.si.nightmare.stone.EndBone;
 import com.ytgld.moonstone.item.si.nightmare.stone.StoneBrain;
 import com.ytgld.moonstone.item.si.nightmare.stone.StoneVirus;
 import com.ytgld.moonstone.other.AttReg;
+import com.ytgld.moonstone.other.DataReg;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 
 public class NewEvent {
 
@@ -63,6 +77,9 @@ public class NewEvent {
         MShell.LivingHurtEvent(event);
         UndeadBloodCharm.LivingIncomingDamageEvent(event);
         MaxEye.A(event);
+        GodAmbush.LivingIncomingDamageEvent(event);
+        Fermentation.fermentation(event);
+        CellBoom.Boom(event);
 
 
         Apple.damage(event);
@@ -75,6 +92,12 @@ public class NewEvent {
     }
 
     @SubscribeEvent
+    public  void eat(LivingEntityUseItemEvent.Finish event){
+        GodPutrefactive.eat(event);
+        Necora.necora(event);
+    }
+
+    @SubscribeEvent
     public void LivingHurtEvent(LivingDeathEvent event) {
         NightmareBaseItemReversal.LivingDeathEvent(event);
         BlackEyeRed.kill(event);
@@ -82,6 +105,8 @@ public class NewEvent {
         Wolf.kill(event);
         BloodMagicBox.Did(event);
         MaxEye.Die(event);
+
+        Cell.evil(event);
         PrisonOfSin.LivingDeathEvent(event);
     }
 
@@ -126,5 +151,37 @@ public class NewEvent {
     @SubscribeEvent
     public void LivingExperienceDropEvent(LivingKnockBackEvent event) {
         MRing.LivingExperienceDropEvent(event);
+    }
+    @SubscribeEvent
+    public void BatteryName(ItemTooltipEvent event){
+        ItemStack stack = event.getItemStack();
+        CompoundTag  compoundTag =  stack.get(DataReg.tag);
+        if (compoundTag !=null) {
+            if (compoundTag.getBooleanOr(Difficulty.PEACEFUL.getSerializedName(),false)) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.peaceful").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+
+            }
+            if (compoundTag.getBooleanOr(Difficulty.EASY.getSerializedName(),false))  {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.easy").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+
+            }
+            if (compoundTag.getBooleanOr(Difficulty.NORMAL.getSerializedName(),false)) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.normal").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+
+            }
+            if (compoundTag.getBooleanOr(Difficulty.HARD.getSerializedName(),false)) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.hard").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+            }
+            if (compoundTag.getBooleanOr(EquippedEvt.lootTable,false)) {
+                event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.god").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))
+                        .append(Component.translatable("moonstone.difficulty.name.all").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFDEB887)))));
+            }
+
+        }
+
     }
 }

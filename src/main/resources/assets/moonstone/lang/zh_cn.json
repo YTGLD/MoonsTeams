@@ -158,9 +158,11 @@
   "curios.identifier.necora": "异种基因",
   "curios.identifier.man": "玩家基因",
   "curios.identifier.ncrdna": "基因片段",
-  "curios.identifier.dna": "分段基因组",
+  "curios.identifier.dnabush": "分段基因组",
+  "curios.identifier.dna": "基因",
   "curios.modifiers.ncrdna": "佩戴时",
   "curios.modifiers.medicine": "佩戴时",
+  "curios.modifiers.dnabush": "分段基因组",
 
   "item.nightmarestone.tool.string": "你的身上每存在一个负面效果：",
   "item.nightmarestone.tool.string.1": "+4％伤害、移速、护甲",

@@ -4,6 +4,8 @@ import com.ytgld.moonstone.config.ModLanguageProvider;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
 import com.ytgld.moonstone.enttiy.render.AttackBloodsRender;
+import com.ytgld.moonstone.enttiy.render.CellGiantRender;
+import com.ytgld.moonstone.enttiy.render.CellZombieRenderer;
 import com.ytgld.moonstone.enttiy.render.OwnerBloodRender;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
 import net.neoforged.api.distmarker.Dist;
@@ -35,6 +37,8 @@ public class MoonstoneClient {
     public static void RegisterRenderPipelinesEvent(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(EntityTs.owner_blood_.get(), OwnerBloodRender::new);
         event.registerEntityRenderer(EntityTs.attack_blood_.get(), AttackBloodsRender::new);
+        event.registerEntityRenderer(EntityTs.cell_giant.get(), CellGiantRender::new);
+        event.registerEntityRenderer(EntityTs.cell_zombie.get(), CellZombieRenderer::new);
     }
     @SubscribeEvent // on the mod event bus
     public static void gatherData(GatherDataEvent.Client event) {

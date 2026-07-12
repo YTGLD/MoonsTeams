@@ -221,6 +221,7 @@
   "curios.identifier.necora": "DNA",
   "curios.identifier.ncrdna": "ncr dna",
   "curios.identifier.dna": "dna",
+  "curios.identifier.dnabush": "分段基因组",
 
   "curios.identifier.crystal": "crystal",
   "curios.identifier.stone": "stone",
@@ -232,6 +233,7 @@
   "curios.modifiers.medicine": "medicine",
   "curios.modifiers.zombie": "zombie",
   "curios.identifier.zombie": "zombie",
+  "curios.modifiers.dnabush": "分段基因组",
 
   "item.moonstone.germ": "germ",
   "item.moonstone.fungus": "fungus",

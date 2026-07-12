@@ -23,9 +23,17 @@ public class EntityTs {
     public static final DeferredHolder<EntityType<?>, EntityType<OwnerBlood>> owner_blood_ = REGISTRY.register("owner_blood", () ->
             EntityType.Builder.of(OwnerBlood::new, MobCategory.MISC).sized(0.01f, 0.01f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(Moonstone.MODID, "owner_blood"))));
+    public static final DeferredHolder<EntityType<?>, EntityType<CellZombie>> cell_zombie = REGISTRY.register("cell_zombie", () ->
+            EntityType.Builder.of(CellZombie::new, MobCategory.MISC).sized(0.8f, 1.8f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(Moonstone.MODID, "cell_zombie"))));
+    public static final DeferredHolder<EntityType<?>, EntityType<CellGiant>> cell_giant = REGISTRY.register("cell_giant", () ->
+            EntityType.Builder.of(CellGiant::new, MobCategory.MISC).sized(1.25f, 2.2f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(Moonstone.MODID, "cell_giant"))));
 
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){
         event.put(owner_blood_.get(), Zombie.createAttributes().build());
+        event.put(cell_zombie.get(), Zombie.createAttributes().build());
+        event.put(cell_giant.get(), CellGiant.createAttributes().build());
     }
 }

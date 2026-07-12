@@ -2,6 +2,8 @@ package com.ytgld.moonstone;
 
 import com.mojang.logging.LogUtils;
 import com.ytgld.moonstone.config.Config;
+import com.ytgld.moonstone.crafting.AllCrafting;
+import com.ytgld.moonstone.crafting.MoonRecipeProvider;
 import com.ytgld.moonstone.effect.Effects;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.event.AdvancementEvt;
@@ -10,12 +12,17 @@ import com.ytgld.moonstone.event.loot.Loots;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.data.internal.NeoForgeRecipeProvider;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
@@ -32,11 +39,18 @@ public class Moonstone {
         Effects.REGISTRY.register(modEventBus);
         Loots.LOOT.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
+        AllCrafting.REGISTRY.register(modEventBus);
 
         Items.TabChestItem.CREATIVE_MODE_TABS.register(modEventBus);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.fc);
 
+        modEventBus.addListener(this::gatherData);
+
         NeoForge.EVENT_BUS.register(new NewEvent());
         NeoForge.EVENT_BUS.register(new AdvancementEvt());
+
+    }
+    public void gatherData(GatherDataEvent.Client event) {
+        event.createProvider(MoonRecipeProvider.Runner::new);
     }
 }

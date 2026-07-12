@@ -8,6 +8,18 @@ import com.ytgld.moonstone.item.ms.ectoplasm.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulBattery;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulCube;
 import com.ytgld.moonstone.item.ms.maulice.*;
+import com.ytgld.moonstone.item.ms.necora.dnabush.*;
+import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.BoneCell;
+import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.DisgustingCells;
+import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.MotherCell;
+import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.ParasiticCell;
+import com.ytgld.moonstone.item.ms.necora.dnabush.me.Air;
+import com.ytgld.moonstone.item.ms.necora.dnabush.me.Motor;
+import com.ytgld.moonstone.item.ms.necora.dnabush.me.Watergen;
+import com.ytgld.moonstone.item.ms.necora.dnabush.small.*;
+import com.ytgld.moonstone.item.ms.necora.dna.*;
+import com.ytgld.moonstone.item.ms.necora.dna.god.*;
+import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
@@ -152,10 +164,79 @@ public class Items {
     public static final DeferredItem<@NotNull Item> owner_blood_effect_eye =register("owner_blood_effect_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
     public static final DeferredItem<@NotNull Item> owner_blood_vex =register("owner_blood_vex",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
     public static final DeferredItem<@NotNull Item> owner_blood_earth =register("owner_blood_earth",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> necora =register("necora",(identifier)->new Necora(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+
+    public static final DeferredItem<@NotNull Item> ambush =register("ambush",(identifier)->new Ambush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> atpoverdose =register("atpoverdose",(identifier)->new Atpoverdose(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> autolytic =register("autolytic",(identifier)->new Autolytic(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> fermentation =register("fermentation",(identifier)->new Fermentation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> putrefactive =register("putrefactive",(identifier)->new Putrefactive(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> regenerative =register("regenerative",(identifier)->new Regenerative(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> GodAmbush =register("god_ambush",(identifier)->new GodAmbush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> GodAtpoverdose =register("god_atpoverdose",(identifier)->new GodAtpoverdose(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> GodAutolytic =register("god_autolytic",(identifier)->new GodAutolytic(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> GodFermentation =register("god_fermentation",(identifier)->new GodFermentation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> GodPutrefactive =register("god_putrefactive",(identifier)->new GodPutrefactive(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> GodRegenerative =register("god_regenerative",(identifier)->new GodRegenerative(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+
+    public static final DeferredItem<@NotNull Item> air =register("air",(identifier)->new Air(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> motor =register("motor",(identifier)->new Motor(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> watergen =register("watergen",(identifier)->new Watergen(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> adrenaline =register("adrenaline",(identifier)->new Adrenaline(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> cell =register("cell",(identifier)->new Cell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> cell_blood =register("cell_blood",(identifier)->new CellBlood(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> cell_boom =register("cell_boom",(identifier)->new CellBoom(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> cell_calcification =register("cell_calcification",(identifier)->new cell_calcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> cell_mummy =register("cell_mummy",(identifier)->new cell_mummy(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> giant =register("giant",(identifier)->new Biant(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> giant_nightmare =register("giant_nightmare",(identifier)->new GianNnightmare(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+
+    public static final DeferredItem<@NotNull Item> bone_cell =register("bone_cell",(identifier)->new BoneCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> disgusting_cells =register("disgusting_cells",(identifier)->new DisgustingCells(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> mother_cell =register("mother_cell",(identifier)->new MotherCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> parasitic_cell =register("parasitic_cell",(identifier)->new ParasiticCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
 
 
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
+        public static final DeferredHolder<CreativeModeTab, CreativeModeTab> dna = CREATIVE_MODE_TABS.register(Moonstone.MODID + "_dna", () -> CreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.tabmoonstone.necora"))
+                .icon(() -> necora.asItem().getDefaultInstance())
+                .displayItems((parameters, output) -> {
+                    output.accept(necora);
+                    output.accept(ambush);
+                    output.accept(atpoverdose);
+                    output.accept(autolytic);
+                    output.accept(fermentation);
+                    output.accept(putrefactive);
+                    output.accept(regenerative);
+                    output.accept(GodAmbush);
+                    output.accept(GodAtpoverdose);
+                    output.accept(GodAutolytic);
+                    output.accept(GodFermentation);
+                    output.accept(GodPutrefactive);
+                    output.accept(GodRegenerative);
+
+                    output.accept(air);
+                    output.accept(motor);
+                    output.accept(watergen);
+                    output.accept(adrenaline);
+                    output.accept(cell);
+                    output.accept(cell_blood);
+                    output.accept(cell_boom);
+                    output.accept(cell_calcification);
+                    output.accept(cell_mummy);
+                    output.accept(giant);
+                    output.accept(giant_nightmare);
+
+                    output.accept(bone_cell);
+                    output.accept(disgusting_cells);
+                    output.accept(mother_cell);
+                    output.accept(parasitic_cell);
+
+
+                }).build());
+
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> common = CREATIVE_MODE_TABS.register(Moonstone.MODID + "_common", () -> CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup.tabmoonstone"))
                 .icon(() -> ectoplasmball.asItem().getDefaultInstance())

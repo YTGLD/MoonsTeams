@@ -2,13 +2,18 @@ package com.ytgld.moonstone.mixin;
 
 import com.ytgld.moonstone.effect.Effects;
 import com.ytgld.moonstone.item.si.nightmare.fool.Apple;
+import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
@@ -26,7 +31,26 @@ public abstract class LivingEntityMixin {
             cir.setReturnValue((float) Apple.ConfigItem.intValue.getAsDouble());
         }
     }
-
+    @Inject(at = @At("RETURN"), method = "canStandOnFluid", cancellable = true)
+    public void canStandOnFluid(FluidState fluidState, CallbackInfoReturnable<Boolean> cir) {
+        LivingEntity living = (LivingEntity) (Object) this;
+        if (living instanceof Player player) {
+            if (player.entityTags().contains("canStandOnFluidTrue")) {
+                cir.setReturnValue(true);
+            }
+        }
+    }
+    @Inject(at = @At("RETURN"), method = "travel")
+    public void moonstone$travel(Vec3 p_21280_, CallbackInfo ci) {
+        LivingEntity living = (LivingEntity) (Object) this;
+        if (living instanceof Player player) {
+            float speed = (float) player.getAttributeValue(AttReg.speed);
+            speed-=1f;
+            if (player.isSprinting()) {
+                player.moveRelative(player.getSpeed()*speed,p_21280_);
+            }
+        }
+    }
     @Inject(at = @At("RETURN"), method = "getArmorValue", cancellable = true)
     private void getArmorValue(CallbackInfoReturnable<Integer> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
