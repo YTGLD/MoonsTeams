@@ -9,7 +9,12 @@ public class Config {
     public static ModConfigSpec fc = BUILDER.getRight();
     public Config(ModConfigSpec.Builder builder) {
         for (RegisterItemConfig registerItemConfig : ConfigPluginFinder.getModPlugins()) {
-            registerItemConfig.config(builder);
+            String name = registerItemConfig.theCategory();
+            if (!name.isEmpty()) {
+                builder.push(name);
+                registerItemConfig.config(builder);
+                builder.pop();
+            }
         }
     }
 }

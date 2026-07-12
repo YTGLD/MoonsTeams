@@ -3,12 +3,15 @@ package com.ytgld.moonstone.item.nightmare.base;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
+import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.nightmare.AllTip;
 import com.ytgld.moonstone.item.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.nightmare.ToolTip;
+import com.ytgld.moonstone.item.nightmare.reversal.ReversalCard;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -16,6 +19,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -47,16 +52,14 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
     }
     @ConfigPlugin
     public static class ConfigItem implements RegisterItemConfig {
-        public static ModConfigSpec.ConfigValue<List<? extends String>> intValue ;
+        public static ModConfigSpec.ConfigValue<List<String>> intValue ;
         public static ModConfigSpec.IntValue intValue2;
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            builder.push("NightmareBaseItemReversal");
             intValue =  builder.translation("chest_item.config.NightmareBaseItemReversal")
-                    .define("number",new ArrayList<>());
+                    .define("NightmareBaseItemReversal",new ArrayList<>(List.of("minecraft:max_health")));
             intValue2 =  builder.translation("chest_item.config.NightmareBaseItemReversal2")
-                    .defineInRange("number2",3,0,100);
-            builder.pop();
+                    .defineInRange("NightmareBaseItemReversal2",3,0,100);
         }
 
         @Override
@@ -117,26 +120,50 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (!slotContext.entity().level().isClientSide()) {
-            if (slotContext.entity().tickCount>=20) {
+            if (slotContext.entity().tickCount >= 20) {
                 slotContext.entity().getAttributes().addTransientAttributeModifiers(geta(stack));
-            }else {
+            } else {
                 slotContext.entity().invulnerableTime = 200;
             }
         }
-        if (stack.get(DataReg.tag) != null) {
-            if (stack.get(DataReg.tag).getIntOr(att,0) >= 4) {
-                if (slotContext.entity() instanceof Player player && !player.getCooldowns().isOnCooldown(stack.getItem().getDefaultInstance())) {
-                    stack.get(DataReg.tag).putInt(att, stack.get(DataReg.tag).getIntOr(att,0) - 4);
-                    player.getCooldowns().addCooldown(stack.getItem().getDefaultInstance(), 20);
+        if (slotContext.entity().hasEffect(MobEffects.POISON)) {
+
+            if (slotContext.entity().getHealth() <= 1) {
+                if (stack.get(DataReg.tag) != null) {
+                    if (!stack.get(DataReg.tag).getBooleanOr(AdvancementEvt.nightmare_base_reversal_orb,false)) {
+                        if (slotContext.entity() instanceof Player player) {
+                            AdvancementEvt. giveItem(player, new ItemStack(InitItems.nightmare_base_reversal_orb.get()));
+                        }
+                        stack.get(DataReg.tag).putBoolean(AdvancementEvt.nightmare_base_reversal_orb, true);
+                    }
                 }
-            } else if (stack.get(DataReg.tag).getIntOr(att,0) < 0) {
-                stack.get(DataReg.tag).putInt(att, 0);
+                slotContext.entity().hurt(slotContext.entity().damageSources().genericKill(), 1000000f);
+            }
+        }
+        if (stack.get(DataReg.tag) != null) {
+            if (!SIHandler.hascurio(slotContext.entity(), InitItems.nightmare_base_reversal_card.get())) {
+                if (stack.get(DataReg.tag).getIntOr(att,0) >= 4) {
+                    if (slotContext.entity() instanceof Player player && !player.getCooldowns().isOnCooldown(stack.getItem().getDefaultInstance())) {
+                        stack.get(DataReg.tag).putInt(att, stack.get(DataReg.tag).getIntOr(att,0) - 4);
+                        player.getCooldowns().addCooldown(stack.getItem().getDefaultInstance(), 20);
+                    }
+                } else if (stack.get(DataReg.tag).getIntOr(att,0) < 0) {
+                    stack.get(DataReg.tag).putInt(att, 0);
+                }
+            } else {
+                float v = ReversalCard.ConfigItem.intValue.getAsInt() / 100f;
+                if (stack.get(DataReg.tag).getIntOr(att,0) >= -v) {
+                    if (slotContext.entity() instanceof Player player && !player.getCooldowns().isOnCooldown(stack.getItem().getDefaultInstance())) {
+                        stack.get(DataReg.tag).putInt(att, stack.get(DataReg.tag).getIntOr(att,0) - 2);
+                        player.getCooldowns().addCooldown(stack.getItem().getDefaultInstance(), 20);
+                    }
+                }
             }
         } else {
             stack.set(DataReg.tag,new CompoundTag());
         }
-    }
 
+    }
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         slotContext.entity().getAttributes().removeAttributeModifiers(geta(stack));

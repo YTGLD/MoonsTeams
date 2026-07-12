@@ -43,10 +43,8 @@ public class NightmareBaseStart extends NightmareBase implements AllTip {
         public static ModConfigSpec.IntValue intValue ;
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            builder.push("NightmareBaseStart");
             intValue =  builder.translation("chest_item.config.NightmareBaseStart")
-                    .defineInRange("number",50,0,Integer.MAX_VALUE);
-            builder.pop();
+                    .defineInRange("NightmareBaseStart",50,0,Integer.MAX_VALUE);
         }
 
         @Override

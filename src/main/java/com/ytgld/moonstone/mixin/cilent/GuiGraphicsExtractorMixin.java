@@ -2,6 +2,8 @@ package com.ytgld.moonstone.mixin.cilent;
 
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.nightmare.NightmareBase;
+import com.ytgld.moonstone.item.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.Light;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.client.gui.Font;
@@ -42,8 +44,8 @@ public abstract class GuiGraphicsExtractorMixin {
 
     @Inject(at = @At(value = "RETURN"),method = "tooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;Lnet/minecraft/world/item/ItemStack;)V")
     public void ytgld$ClientTooltipPositioner(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, Identifier background, ItemStack tooltipStack, CallbackInfo ci) {
-        if (tooltipStack.getItem() instanceof ItemBase itemBase) {
-            RenderTooltipEvent.Pre preEvent = ClientHooks.onRenderTooltipPre(tooltipStack,  (GuiGraphicsExtractor) (Object) this, x, y, this.guiWidth(), this.guiHeight(), components, font, positioner);
+        if (tooltipStack.getItem() instanceof NightmareSmall || tooltipStack.getItem() instanceof NightmareBase) {
+            RenderTooltipEvent.Pre preEvent = ClientHooks.onRenderTooltipPre(tooltipStack, (GuiGraphicsExtractor) (Object) this, x, y, this.guiWidth(), this.guiHeight(), components, font, positioner);
             if (!preEvent.isCanceled()) {
                 font = preEvent.getFont();
                 x = preEvent.getX();

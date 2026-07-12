@@ -44,10 +44,8 @@ public class NightmareBaseStone extends NightmareBase implements AllTip {
         public static ModConfigSpec.IntValue intValue ;
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            builder.push("NightmareBaseStone");
             intValue =  builder.translation("chest_item.config.NightmareBaseStone")
-                    .defineInRange("number",5,0,Integer.MAX_VALUE);
-            builder.pop();
+                    .defineInRange("NightmareBaseStone",5,0,Integer.MAX_VALUE);
         }
 
         @Override
@@ -63,6 +61,9 @@ public class NightmareBaseStone extends NightmareBase implements AllTip {
     }
     public static void LivingHurtEvent(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, InitItems.candle.asItem())) {
+                return;
+            }
             if (Handler.hascurio(player, InitItems.nightmare_base_stone.get())) {
 
                 if (player.getHealth() >= player.getMaxHealth()) {

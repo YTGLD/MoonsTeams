@@ -7,6 +7,7 @@ import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.nightmare.NightmareBase;
+import com.ytgld.moonstone.item.nightmare.redemption.RedemptionDownAndOut;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
@@ -41,10 +42,8 @@ public class NightmareBaseItem extends NightmareBase {
         public static ModConfigSpec.IntValue intValue ;
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            builder.push("NightmareBaseItem");
             intValue =  builder.translation("chest_item.config.NightmareBaseItem")
-                    .defineInRange("number",5,0,Integer.MAX_VALUE);
-            builder.pop();
+                    .defineInRange("NightmareBaseItem",5,0,Integer.MAX_VALUE);
         }
 
         @Override
@@ -93,6 +92,12 @@ public class NightmareBaseItem extends NightmareBase {
     public  Multimap<Holder<Attribute>, AttributeModifier> gets(SlotContext slotContext) {
          Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         float s = -0.3f;
+        if (Handler.hascurio(slotContext.entity(), InitItems.nightmare_base_redemption_down_and_out.asItem())) {
+            s += (float) (RedemptionDownAndOut.ConfigItem.intValue.getAsDouble() / 100F);
+        }
+        if (Handler.hascurio(slotContext.entity(), InitItems.nightmare_base_reversal_mysterious.asItem())) {
+            s = 0;
+        }
         linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(Identifier.parse(this.descriptionId), s, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         linkedHashMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(Identifier.parse(this.descriptionId), s, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         linkedHashMultimap.put(Attributes.ARMOR, new AttributeModifier(Identifier.parse(this.descriptionId), s, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));

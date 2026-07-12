@@ -50,10 +50,8 @@ public class NightmareBaseFool extends NightmareBase implements AllTip {
         public static ModConfigSpec.DoubleValue intValue ;
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            builder.push("NightmareBaseFool");
             intValue =  builder.translation("chest_item.config.NightmareBaseFool")
-                    .defineInRange("number",0.5f,0,Integer.MAX_VALUE);
-            builder.pop();
+                    .defineInRange("NightmareBaseFool",0.5f,0,Integer.MAX_VALUE);
         }
 
         @Override

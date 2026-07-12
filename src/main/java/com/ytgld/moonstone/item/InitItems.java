@@ -2,13 +2,34 @@ package com.ytgld.moonstone.item;
 
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.nightmare.base.*;
+import com.ytgld.moonstone.item.nightmare.eye.BlackEyeEye;
+import com.ytgld.moonstone.item.nightmare.eye.BlackEyeHeart;
+import com.ytgld.moonstone.item.nightmare.eye.BlackEyeRed;
+import com.ytgld.moonstone.item.nightmare.eye.TrickyPuppets;
+import com.ytgld.moonstone.item.nightmare.fool.Apple;
+import com.ytgld.moonstone.item.nightmare.fool.FoolBetray;
+import com.ytgld.moonstone.item.nightmare.fool.FoolBone;
+import com.ytgld.moonstone.item.nightmare.fool.FoolSoul;
+import com.ytgld.moonstone.item.nightmare.insight.*;
+import com.ytgld.moonstone.item.nightmare.redemption.HypocriticalSelfEsteem;
+import com.ytgld.moonstone.item.nightmare.redemption.RedemptionDeception;
+import com.ytgld.moonstone.item.nightmare.redemption.RedemptionDegenerate;
+import com.ytgld.moonstone.item.nightmare.redemption.RedemptionDownAndOut;
+import com.ytgld.moonstone.item.nightmare.reversal.Candle;
+import com.ytgld.moonstone.item.nightmare.reversal.ReversalCard;
+import com.ytgld.moonstone.item.nightmare.reversal.ReversalMysterious;
+import com.ytgld.moonstone.item.nightmare.reversal.ReversalOrb;
+import com.ytgld.moonstone.item.nightmare.start.StartEgg;
+import com.ytgld.moonstone.item.nightmare.start.StartPod;
+import com.ytgld.moonstone.item.nightmare.start.StartPower;
+import com.ytgld.moonstone.item.nightmare.start.Wolf;
+import com.ytgld.moonstone.item.nightmare.stone.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -27,6 +48,43 @@ public class InitItems {
     public static final DeferredItem<@NotNull Item> nightmare_base_start  = register("nightmare_base_start", (Identifier)-> new NightmareBaseStart(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
     public static final DeferredItem<@NotNull Item> nightmare_base_stone  = register("nightmare_base_stone", (Identifier)-> new NightmareBaseStone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
 
+    public static final DeferredItem<@NotNull Item> end_bone  = register("end_bone", (Identifier)-> new EndBone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_stone_brain  = register("nightmare_base_stone_brain", (Identifier)-> new StoneBrain(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_stone_meet  = register("nightmare_base_stone_meet", (Identifier)-> new StoneMeat(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_stone_virus  = register("nightmare_base_stone_virus", (Identifier)-> new StoneVirus(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> NightmareVirus_  = register("nightmare_virus", (Identifier)-> new NightmareVirus(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+
+    public static final DeferredItem<@NotNull Item> nightmare_base_black_eye_eye  = register("nightmare_base_black_eye_eye", (Identifier)-> new BlackEyeEye(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_black_eye_heart  = register("nightmare_base_black_eye_heart", (Identifier)-> new BlackEyeHeart(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_black_eye_red  = register("nightmare_base_black_eye_red", (Identifier)-> new BlackEyeRed(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> tricky_puppets  = register("tricky_puppets", (Identifier)-> new TrickyPuppets(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+
+
+    public static final DeferredItem<@NotNull Item> nightmare_base_redemption_deception  = register("nightmare_base_redemption_deception", (Identifier)-> new RedemptionDeception(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> hypocritical_self_esteem  = register("hypocritical_self_esteem", (Identifier)-> new HypocriticalSelfEsteem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_redemption_down_and_out  = register("nightmare_base_redemption_down_and_out", (Identifier)-> new RedemptionDownAndOut(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_redemption_degenerate  = register("nightmare_base_redemption_degenerate", (Identifier)-> new RedemptionDegenerate(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_insight_insane  = register("nightmare_base_insight_insane", (Identifier)-> new InsightInsane(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> ring  = register("ring", (Identifier)-> new Ring(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_insight_drug  = register("nightmare_base_insight_drug", (Identifier)-> new InsightDrug(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_insight_collapse  = register("nightmare_base_insight_collapse", (Identifier)-> new InsightCollapse(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> hidden_blade  = register("hidden_blade", (Identifier)-> new HiddenBlade(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+
+    public static final DeferredItem<@NotNull Item> candle  = register("candle", (Identifier)-> new Candle(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_reversal_card  = register("nightmare_base_reversal_card", (Identifier)-> new ReversalCard(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_reversal_mysterious  = register("nightmare_base_reversal_mysterious", (Identifier)-> new ReversalMysterious(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_reversal_orb  = register("nightmare_base_reversal_orb", (Identifier)-> new ReversalOrb(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+
+    public static final DeferredItem<@NotNull Item> apple  = register("apple", (Identifier)-> new Apple(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_fool_betray  = register("nightmare_base_fool_betray", (Identifier)-> new FoolBetray(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_fool_bone  = register("nightmare_base_fool_bone", (Identifier)-> new FoolBone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_fool_soul  = register("nightmare_base_fool_soul", (Identifier)-> new FoolSoul(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+
+    public static final DeferredItem<@NotNull Item> nightmare_base_start_egg  = register("nightmare_base_start_egg", (Identifier)-> new StartEgg(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_start_pod  = register("nightmare_base_start_pod", (Identifier)-> new StartPod(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_base_start_power  = register("nightmare_base_start_power", (Identifier)-> new StartPower(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+    public static final DeferredItem<@NotNull Item> wolf  = register("wolf", (Identifier)-> new Wolf(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,Identifier))));
+
     public static class TabChestItem{
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> tab = CREATIVE_MODE_TABS.register(Moonstone.MODID, () -> CreativeModeTab.builder()
@@ -41,6 +99,46 @@ public class InitItems {
                     output.accept(nightmare_base_reversal);
                     output.accept(nightmare_base_start);
                     output.accept(nightmare_base_stone);
+
+                    output.accept(end_bone);
+                    output.accept(nightmare_base_stone_brain);
+                    output.accept(nightmare_base_stone_meet);
+                    output.accept(nightmare_base_stone_virus);
+                    output.accept(NightmareVirus_);
+
+                    output.accept(nightmare_base_black_eye_eye);
+                    output.accept(nightmare_base_black_eye_heart);
+                    output.accept(nightmare_base_black_eye_red);
+                    output.accept(tricky_puppets);
+
+                    output.accept(nightmare_base_redemption_deception);
+                    output.accept(hypocritical_self_esteem);
+                    output.accept(nightmare_base_redemption_down_and_out);
+                    output.accept(nightmare_base_redemption_degenerate);
+                    output.accept(nightmare_base_insight_insane);
+
+                    output.accept(ring);
+                    output.accept(nightmare_base_insight_drug);
+                    output.accept(nightmare_base_insight_collapse);
+                    output.accept(hidden_blade);
+
+
+                    output.accept(candle);
+                    output.accept(nightmare_base_reversal_card);
+                    output.accept(nightmare_base_reversal_mysterious);
+                    output.accept(nightmare_base_reversal_orb);
+
+                    output.accept(apple);
+                    output.accept(nightmare_base_fool_betray);
+                    output.accept(nightmare_base_fool_bone);
+                    output.accept(nightmare_base_fool_soul);
+
+                    output.accept(nightmare_base_start_egg);
+                    output.accept(nightmare_base_start_pod);
+                    output.accept(nightmare_base_start_power);
+                    output.accept(wolf);
+
+
                 }).build());
 
     }
