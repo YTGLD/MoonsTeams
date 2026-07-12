@@ -10,7 +10,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 public class Hidden extends MobEffect {
     public Hidden() {
         super(MobEffectCategory.HARMFUL, 0xffff0000);
-        this.addAttributeModifier(Attributes.ATTACK_SPEED, Identifier.fromNamespaceAndPath(Moonstone.MODID,"hidden"),0.05f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+        this.addAttributeModifier(Attributes.ATTACK_SPEED, Identifier.fromNamespaceAndPath(Moonstone.MODID, "hidden"), 0.05f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 }
 

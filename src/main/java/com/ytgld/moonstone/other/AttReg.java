@@ -15,16 +15,17 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class AttReg {
     public static final DeferredRegister<Attribute> REGISTRY = DeferredRegister.create(BuiltInRegistries.ATTRIBUTE, Moonstone.MODID);
 
-    public static final DeferredHolder<Attribute,?> heal = REGISTRY.register("heal",()->{
+    public static final DeferredHolder<Attribute, ?> heal = REGISTRY.register("heal", () -> {
         return new RangedAttribute("attribute.name.chest_item.heal", 1, -1024, 1024).setSyncable(true);
     });
-    public static final DeferredHolder<Attribute,?> cit = REGISTRY.register("cit",()->{
+    public static final DeferredHolder<Attribute, ?> cit = REGISTRY.register("cit", () -> {
         return new RangedAttribute("attribute.name.chest_item.cit", 1, -1024, 1024).setSyncable(true);
     });
+
     @SubscribeEvent
-    public static void EntityAttributeCreationEvent(EntityAttributeModificationEvent event){
-        event.add(EntityType.PLAYER , AttReg.heal,1);
-        event.add(EntityType.PLAYER , AttReg.cit,1);
+    public static void EntityAttributeCreationEvent(EntityAttributeModificationEvent event) {
+        event.add(EntityType.PLAYER, AttReg.heal, 1);
+        event.add(EntityType.PLAYER, AttReg.cit, 1);
 
     }
 }

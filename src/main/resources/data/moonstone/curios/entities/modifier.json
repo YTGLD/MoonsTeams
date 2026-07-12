@@ -3,6 +3,8 @@
     "player"
   ],
   "slots": [
-    "nightmare"
+    "nightmare",
+    "curio",
+    "charm"
   ]
 }

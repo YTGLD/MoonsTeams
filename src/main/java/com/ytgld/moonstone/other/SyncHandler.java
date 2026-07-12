@@ -6,7 +6,7 @@ import net.neoforged.neoforge.attachment.AttachmentSyncHandler;
 import net.neoforged.neoforge.attachment.IAttachmentHolder;
 import org.jetbrains.annotations.Nullable;
 
-public class SyncHandler  implements AttachmentSyncHandler<Float> {
+public class SyncHandler implements AttachmentSyncHandler<Float> {
 
     @Override
     public void write(RegistryFriendlyByteBuf buf, Float attachment, boolean initialSync) {

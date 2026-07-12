@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 public class Loots {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT = DeferredRegister.create(NeoForgeRegistries.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Moonstone.MODID);
 
-    public static final DeferredHolder<MapCodec<? extends IGlobalLootModifier>,?> LOOT_chest = LOOT.register("loot",(Identifier)->{
+    public static final DeferredHolder<MapCodec<? extends IGlobalLootModifier>, ?> LOOT_chest = LOOT.register("loot", (Identifier) -> {
         return ChestLoot.CODEC.get();
     });
 }

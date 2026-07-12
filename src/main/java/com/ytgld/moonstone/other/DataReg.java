@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class DataReg {
     public static final DeferredRegister<DataComponentType<?>> REGISTRY = DeferredRegister.create(BuiltInRegistries.DATA_COMPONENT_TYPE, Moonstone.MODID);
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<CompoundTag>> tag =
-            REGISTRY.register("tag",()-> DataComponentType.<CompoundTag>builder().persistent(CompoundTag.CODEC).build());
+            REGISTRY.register("tag", () -> DataComponentType.<CompoundTag>builder().persistent(CompoundTag.CODEC).build());
 }
 
 

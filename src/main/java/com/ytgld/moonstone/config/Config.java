@@ -7,6 +7,7 @@ public class Config {
     private static final Pair<Config, ModConfigSpec> BUILDER = new ModConfigSpec.Builder().configure(Config::new);
     public static Config config = BUILDER.getKey();
     public static ModConfigSpec fc = BUILDER.getRight();
+
     public Config(ModConfigSpec.Builder builder) {
         for (RegisterItemConfig registerItemConfig : ConfigPluginFinder.getModPlugins()) {
             String name = registerItemConfig.theCategory();

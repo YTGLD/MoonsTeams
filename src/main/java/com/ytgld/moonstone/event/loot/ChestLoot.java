@@ -40,15 +40,16 @@ public class ChestLoot extends LootModifier {
         String idSting = String.valueOf(s);
         if (idSting.contains("chests/")) {
             if (entity != null) {
-                AdvancementEvt.addLoot(objectArrayList,entity,20);
-                AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(objectArrayList,entity);
-                AdvancementEvt.nightmare_base_start_pod(objectArrayList,entity);
-                AdvancementEvt.tricky_puppets(objectArrayList,entity);
+                AdvancementEvt.addLoot(objectArrayList, entity, 20);
+                AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(objectArrayList, entity);
+                AdvancementEvt.nightmare_base_start_pod(objectArrayList, entity);
+                AdvancementEvt.tricky_puppets(objectArrayList, entity);
 
             }
         }
         return objectArrayList;
     }
+
     @Override
     public @NotNull MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();

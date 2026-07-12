@@ -17,12 +17,13 @@ public class IntAndStringSyncHandler implements AttachmentSyncHandler<IntAndStri
     public boolean sendToPlayer(IAttachmentHolder holder, ServerPlayer to) {
         return holder == to;
     }
+
     @Override
     public void write(RegistryFriendlyByteBuf buf, ISClass attachment, boolean initialSync) {
         buf.writeInt(attachment.map.size());
         for (Map.Entry<String, Integer> entry : attachment.map.entrySet()) {
             buf.writeUtf(entry.getKey());
-            buf.writeInt(entry.getValue()); 
+            buf.writeInt(entry.getValue());
         }
     }
 
@@ -49,6 +50,7 @@ public class IntAndStringSyncHandler implements AttachmentSyncHandler<IntAndStri
             ).apply(instance, ISClass::new)
     );
 
-    public record ISClass(HashMap<String , Integer> map){}
+    public record ISClass(HashMap<String, Integer> map) {
+    }
 }
 

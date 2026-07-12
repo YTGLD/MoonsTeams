@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:soulbattery",
+    "moonstone:beacon",
+    "moonstone:ectoplasmapple",
+    "moonstone:ectoplasmbattery",
+    "moonstone:soulcube",
+    "moonstone:ectoplasmhorseshoe",
+    "moonstone:ectoplasmshild",
+    "moonstone:ectoplasmsoul"
+  ]
+}

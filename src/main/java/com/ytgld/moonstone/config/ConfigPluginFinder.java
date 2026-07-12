@@ -13,6 +13,7 @@ public class ConfigPluginFinder {
     private ConfigPluginFinder() {
 
     }
+
     public static List<RegisterItemConfig> getModPlugins() {
         return getInstances(ConfigPlugin.class, RegisterItemConfig.class);
     }
