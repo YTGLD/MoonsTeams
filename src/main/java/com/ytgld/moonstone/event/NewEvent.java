@@ -1,8 +1,13 @@
 package com.ytgld.moonstone.event;
 
+import com.ytgld.moonstone.item.ms.blood.MaxEye;
+import com.ytgld.moonstone.item.ms.blood.PrisonOfSin;
+import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
+import com.ytgld.moonstone.item.ms.blood.magic.UndeadBloodCharm;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmApple;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmHorseshoe;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmShild;
+import com.ytgld.moonstone.item.ms.maulice.*;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
@@ -53,6 +58,12 @@ public class NewEvent {
         StartPod.damage(event);
         EctoplasmHorseshoe.hurt(event);
         EctoplasmShild.hurt(event);
+        Brain.brainLHurt(event);
+        MKidney.brainLHurt(event);
+        MShell.LivingHurtEvent(event);
+        UndeadBloodCharm.LivingIncomingDamageEvent(event);
+        MaxEye.A(event);
+
 
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);
@@ -69,12 +80,16 @@ public class NewEvent {
         BlackEyeRed.kill(event);
         InsightInsane.LivingDeathEvents(event);
         Wolf.kill(event);
+        BloodMagicBox.Did(event);
+        MaxEye.Die(event);
+        PrisonOfSin.LivingDeathEvent(event);
     }
 
     @SubscribeEvent
     public void exp(LivingExperienceDropEvent event) {
         NightmareBaseInsight.exp(event);
         DivineFallRing.exp(event);
+        MOrb.LivingExperienceDropEvent(event);
 
     }
 
@@ -94,6 +109,8 @@ public class NewEvent {
         }
         ReversalOrb.LivingHealEvent(event);
         BlackEyeHeart.heal(event);
+        MRing.LivingExperienceDropEvent(event);
+        UndeadBloodCharm.LivingHealEvent(event);
     }
 
     @SubscribeEvent
@@ -105,5 +122,9 @@ public class NewEvent {
             }
         }
         HiddenBlade.cit(event);
+    }
+    @SubscribeEvent
+    public void LivingExperienceDropEvent(LivingKnockBackEvent event) {
+        MRing.LivingExperienceDropEvent(event);
     }
 }

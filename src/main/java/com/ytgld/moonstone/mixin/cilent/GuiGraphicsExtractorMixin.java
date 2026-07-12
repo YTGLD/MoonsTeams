@@ -3,7 +3,9 @@ package com.ytgld.moonstone.mixin.cilent;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.item.ms.Ectoplasm;
+import com.ytgld.moonstone.item.ms.MLS;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.Light;
@@ -73,6 +75,16 @@ public abstract class GuiGraphicsExtractorMixin {
                 if (tooltipStack.getItem() instanceof Ectoplasm ectoplasm){
                     this.pose.pushMatrix();
                     ectoplasm.renderBack((GuiGraphicsExtractor) (Object) this, l, i1, i, j);
+                    this.pose.popMatrix();
+                }
+                if (tooltipStack.getItem() instanceof MLS mls){
+                    this.pose.pushMatrix();
+                    mls.renderBack((GuiGraphicsExtractor) (Object) this, l, i1, i, j);
+                    this.pose.popMatrix();
+                }
+                if (tooltipStack.getItem() instanceof BloodItem bloodItem){
+                    this.pose.pushMatrix();
+                    bloodItem.renderBack((GuiGraphicsExtractor) (Object) this, l, i1, i, j);
                     this.pose.popMatrix();
                 }
             }

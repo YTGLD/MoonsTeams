@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:mbox",
+    "moonstone:mblock",
+    "moonstone:brain",
+    "moonstone:mhead"
+
+  ]
+}

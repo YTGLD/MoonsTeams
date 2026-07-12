@@ -1,9 +1,13 @@
 package com.ytgld.moonstone.item;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.ms.BloodItem;
+import com.ytgld.moonstone.item.ms.blood.*;
+import com.ytgld.moonstone.item.ms.blood.magic.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulBattery;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulCube;
+import com.ytgld.moonstone.item.ms.maulice.*;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
@@ -109,6 +113,47 @@ public class Items {
     public static final DeferredItem<@NotNull Item> ectoplasmstar = register("ectoplasmstar", (Identifier) -> new EctoplasmStar(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> ectoplasmtree = register("ectoplasmtree", (Identifier) -> new EctoplasmtTee(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
 
+
+    public static final DeferredItem<@NotNull Item> brain = register("brain", (Identifier) -> new Brain(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> mblock = register("mblock", (Identifier) -> new MBlock(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> mbox = register("mbox", (Identifier) -> new MBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> mbattery = register("mbattery", (Identifier) -> new MBattery(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> mbottle = register("mbottle", (Identifier) -> new MBottle(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> meye = register("meye", (Identifier) -> new MEye(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+
+
+    public static final DeferredItem<@NotNull Item> mhead = register("mhead", (Identifier) -> new MHead(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> mkidney = register("mkidney", (Identifier) -> new MKidney(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> morb = register("morb", (Identifier) -> new MOrb(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> mring = register("mring", (Identifier) -> new MRing(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> mshell = register("mshell", (Identifier) -> new MShell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+
+
+    public static final DeferredItem<@NotNull Item> blood_candle = register("blood_candle", (Identifier) -> new BloodCandle(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> blood_magic_box = register("blood_magic_box", (Identifier) -> new BloodMagicBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> the_blood_book = register("the_blood_book", (Identifier) -> new TheBloodBook(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> undead_blood_charm = register("undead_blood_charm", (Identifier) -> new UndeadBloodCharm(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> blood_amout = register("blood_amout", (Identifier) -> new BloodAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> blood_jelly = register("blood_jelly", (Identifier) -> new BloodJelly(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> blood_snake = register("blood_snake", (Identifier) -> new BloodSnake(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> killer = register("killer", (Identifier) -> new Killer(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> max_eye = register("max_eye", (Identifier) -> new MaxEye(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> the_prison_of_sin = register("the_prison_of_sin", (Identifier) -> new PrisonOfSin(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+
+    public static final DeferredItem<@NotNull Item> blood = register("blood", (Identifier) -> new BloodItem(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+
+
+
+
+    public static final DeferredItem<@NotNull Item> owner_blood_eye =register("owner_blood_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_attack_eye =register("owner_blood_attack_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_speed_eye =register("owner_blood_speed_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_boom_eye =register("owner_blood_boom_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_effect_eye =register("owner_blood_effect_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_vex =register("owner_blood_vex",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_earth =register("owner_blood_earth",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+
+
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> common = CREATIVE_MODE_TABS.register(Moonstone.MODID + "_common", () -> CreativeModeTab.builder()
@@ -129,6 +174,31 @@ public class Items {
                     output.accept(ectoplasmsoul);
                     output.accept(ectoplasmstar);
                     output.accept(ectoplasmtree);
+
+
+                    output.accept(brain);
+                    output.accept(mbattery);
+                    output.accept(mblock);
+                    output.accept(mbottle);
+                    output.accept(mbox);
+                    output.accept(meye);
+                    output.accept(mhead);
+                    output.accept(mkidney);
+                    output.accept(morb);
+                    output.accept(mring);
+                    output.accept(mshell);
+
+                    output.accept(blood_candle);
+                    output.accept(blood_magic_box);
+                    output.accept(the_blood_book);
+                    output.accept(undead_blood_charm);
+                    output.accept(blood_amout);
+                    output.accept(blood_jelly);
+                    output.accept(blood_snake);
+                    output.accept(killer);
+                    output.accept(max_eye);
+                    output.accept(the_prison_of_sin);
+                    output.accept(blood);
                 }).build());
 
 

@@ -1,9 +1,11 @@
 package com.ytgld.moonstone;
 
 import com.mojang.blaze3d.pipeline.RenderPipeline;
+import com.ytgld.moonstone.other.DataReg;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -20,6 +22,11 @@ import java.util.function.Predicate;
 
 public class Handler {
 
+    public static void stackCreateTag(ItemStack stack){
+        if (stack.get(DataReg.tag) == null){
+            stack.set(DataReg.tag,new CompoundTag());
+        }
+    }
 
 
     public static void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height

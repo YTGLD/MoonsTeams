@@ -13,6 +13,7 @@
     "requireAnnotations": true
   },
   "client": [
-    "cilent.GuiGraphicsExtractorMixin"
+    "cilent.GuiGraphicsExtractorMixin",
+    "cilent.LevelRendererMixin"
   ]
 }
