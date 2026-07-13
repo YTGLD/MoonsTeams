@@ -10,6 +10,10 @@
 
     "moonstone:god_lead",
     "moonstone:evil_mob",
-    "moonstone:malice_die"
+    "moonstone:malice_die",
+
+    "moonstone:the_heart",
+    "moonstone:ectoplasmtree"
+
   ]
 }

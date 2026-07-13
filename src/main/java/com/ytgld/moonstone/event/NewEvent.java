@@ -172,7 +172,6 @@ public class NewEvent {
     @SubscribeEvent
     public void effect(EntityTickEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            player.getData(CuriosRegistry.INVENTORY.get()).resetInventory();
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                 Map<String, ICurioStacksHandler> curios = handler.getCurios();
                 for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

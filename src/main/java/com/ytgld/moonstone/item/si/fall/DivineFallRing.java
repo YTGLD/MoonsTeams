@@ -80,6 +80,7 @@ public class DivineFallRing extends FallItem {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext,stack);
         if (!slotContext.entity().level().isClientSide()) {
             if (slotContext.entity().tickCount >= 20) {
             } else {

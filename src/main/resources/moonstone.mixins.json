@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "EntityMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "WardenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
