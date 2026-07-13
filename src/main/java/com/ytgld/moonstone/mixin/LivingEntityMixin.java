@@ -24,15 +24,17 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("RETURN"), method = "getMaxHealth", cancellable = true)
     private void SeekingImmortalscreateAttributes(CallbackInfoReturnable<Float> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
-        if (living.hasEffect(Effects.life)) {
-            cir.setReturnValue(30F);
-        }
-        if (living.hasEffect(Effects.life_apple)) {
-            cir.setReturnValue((float) Apple.ConfigItem.intValue.getAsDouble());
+        if (living instanceof Player player) {
+            if (living.hasEffect(Effects.life)) {
+                cir.setReturnValue(30F);
+            }
+            if (living.hasEffect(Effects.life_apple)) {
+                cir.setReturnValue((float) Apple.ConfigItem.intValue.getAsDouble());
+            }
         }
     }
     @Inject(at = @At("RETURN"), method = "canStandOnFluid", cancellable = true)
-    public void canStandOnFluid(FluidState fluidState, CallbackInfoReturnable<Boolean> cir) {
+    public void canStandOnFluid(FluidState fluid, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
         if (living instanceof Player player) {
             if (player.entityTags().contains("canStandOnFluidTrue")) {
@@ -54,24 +56,30 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("RETURN"), method = "getArmorValue", cancellable = true)
     private void getArmorValue(CallbackInfoReturnable<Integer> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
-        if (living.hasEffect(Effects.life)) {
-            cir.setReturnValue(10);
+        if (living instanceof Player player) {
+            if (living.hasEffect(Effects.life)) {
+                cir.setReturnValue(10);
+            }
         }
     }
 
     @Inject(at = @At("RETURN"), method = "getAttributeValue(Lnet/minecraft/core/Holder;)D", cancellable = true)
     private void getAttributeValue(Holder<Attribute> attribute, CallbackInfoReturnable<Double> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
-        if (living.hasEffect(Effects.life)) {
-            cir.setReturnValue(this.getAttributeBaseValue(attribute));
+        if (living instanceof Player player) {
+            if (living.hasEffect(Effects.life)) {
+                cir.setReturnValue(this.getAttributeBaseValue(attribute));
+            }
         }
     }
 
     @Inject(at = @At("RETURN"), method = "getAttributeValue", cancellable = true)
     private void getAttributeValue2(Holder<Attribute> attribute, CallbackInfoReturnable<Double> cir) {
         LivingEntity living = (LivingEntity) (Object) this;
-        if (living.hasEffect(Effects.life)) {
-            cir.setReturnValue(this.getAttributeBaseValue(attribute));
+        if (living instanceof Player player) {
+            if (living.hasEffect(Effects.life)) {
+                cir.setReturnValue(this.getAttributeBaseValue(attribute));
+            }
         }
     }
 }

@@ -15,10 +15,7 @@ import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BadgeOfTheDead;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BlueAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.GreedAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.RedAmout;
-import com.ytgld.moonstone.item.ms.nanodoom.AsAmout;
-import com.ytgld.moonstone.item.ms.nanodoom.MagicEye;
-import com.ytgld.moonstone.item.ms.nanodoom.RineSword;
-import com.ytgld.moonstone.item.ms.nanodoom.SevenSword;
+import com.ytgld.moonstone.item.ms.nanodoom.*;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBoom;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.Cell;
@@ -101,6 +98,7 @@ public class NewEvent {
         MagicEye.damage(event);
         SevenSword.doomeyeLivingKnockBackEvent(event);
         RineSword.suddenrainLLivingHurtEvent(event);
+        Million.hurt(event);
 
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);

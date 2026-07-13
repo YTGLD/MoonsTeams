@@ -85,8 +85,24 @@ public class FlySword extends Entity {
 
 
         if (target != null && target.isAlive()) {
+            if (tickCount > 200 && owner!=null) {
 
-            if (tickCount > 30) {
+                Vec3 targetPos = owner.position();
+
+                Vec3 direction =
+                        targetPos.subtract(position())
+                                .normalize();
+
+                setDeltaMovement(
+                        direction.scale(1.22)
+                );
+                for (LivingEntity entity : entities){
+                    if (entity.is(owner)) {
+                        this.discard();
+                    }
+                }
+            }
+            if (tickCount > 30 && tickCount < 200) {
 
                 Vec3 targetPos = target.position();
 
@@ -130,7 +146,6 @@ public class FlySword extends Entity {
                 }
             }
         }
-
 
         //轨迹
         if(canSee){

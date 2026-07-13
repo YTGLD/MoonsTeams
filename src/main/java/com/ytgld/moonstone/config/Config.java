@@ -13,7 +13,11 @@ public class Config {
             String name = registerItemConfig.theCategory();
             if (!name.isEmpty()) {
                 builder.push(name);
-                registerItemConfig.config(builder);
+                for (RegisterItemConfig.CIString theLanguageProvider : registerItemConfig.theLanguageProvider()) {
+                    builder.push(theLanguageProvider.doIt());
+                    registerItemConfig.config(builder);
+                    builder.pop();
+                }
                 builder.pop();
             }
         }
