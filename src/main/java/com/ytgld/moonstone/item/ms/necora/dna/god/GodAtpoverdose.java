@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.dna.god;
 
 import com.ytgld.moonstone.Moonstone;
-import com.ytgld.moonstone.item.ms.necora.GodDNA;
+import com.ytgld.moonstone.item.ms.GodDNA;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;

@@ -39,7 +39,7 @@ public class EndBone extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.EndBone")
+            intValue = builder.translation("moonstone.config.EndBone")
                     .defineInRange("EndBone", 7f, 0, Integer.MAX_VALUE);
         }
 

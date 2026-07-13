@@ -32,7 +32,7 @@ public class Candle extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.Candle")
+            intValue = builder.translation("moonstone.config.Candle")
                     .defineInRange("Candle", 50, 0, 1000);
         }
 

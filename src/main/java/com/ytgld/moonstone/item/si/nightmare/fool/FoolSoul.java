@@ -42,9 +42,9 @@ public class FoolSoul extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.FoolSoul")
+            intValue = builder.translation("moonstone.config.FoolSoul")
                     .defineInRange("FoolSoul", 2f, 0, 1000);
-            intValue2 = builder.translation("chest_item.config.FoolSoul2")
+            intValue2 = builder.translation("moonstone.config.FoolSoul2")
                     .defineInRange("FoolSoul2", 4f, 0, 1000);
         }
 

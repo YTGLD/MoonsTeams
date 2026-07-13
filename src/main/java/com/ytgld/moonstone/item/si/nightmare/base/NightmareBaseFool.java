@@ -46,7 +46,7 @@ public class NightmareBaseFool extends NightmareBase implements AllTip {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.NightmareBaseFool")
+            intValue = builder.translation("moonstone.config.NightmareBaseFool")
                     .defineInRange("NightmareBaseFool", 0.5f, 0, Integer.MAX_VALUE);
         }
 

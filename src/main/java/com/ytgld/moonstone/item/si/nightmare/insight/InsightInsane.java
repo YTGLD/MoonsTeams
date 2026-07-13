@@ -29,7 +29,7 @@ public class InsightInsane extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.InsightInsane")
+            intValue = builder.translation("moonstone.config.InsightInsane")
                     .defineInRange("InsightInsane", 50f, 0, Integer.MAX_VALUE);
         }
 

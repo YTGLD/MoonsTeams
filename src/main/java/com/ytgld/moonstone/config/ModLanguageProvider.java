@@ -14,8 +14,8 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         for (RegisterItemConfig registerItemConfig : ConfigPluginFinder.getModPlugins()) {
             for (RegisterItemConfig.CIString theLanguageProvider : registerItemConfig.theLanguageProvider()) {
-                add("chest_item.configuration." + theLanguageProvider.path(), theLanguageProvider.doIt());
-                add("chest_item.config." + theLanguageProvider.path(), theLanguageProvider.doName());
+                add("moonstone.configuration." + theLanguageProvider.path(), theLanguageProvider.doIt());
+                add("moonstone.config." + theLanguageProvider.path(), theLanguageProvider.doIt() + theLanguageProvider.doName());
             }
         }
     }

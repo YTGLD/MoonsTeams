@@ -46,9 +46,9 @@ public class BlackEyeRed extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.BlackEyeRed")
+            intValue = builder.translation("moonstone.config.BlackEyeRed")
                     .defineInRange("BlackEyeRed", 20f, 0, Integer.MAX_VALUE);
-            intValue2 = builder.translation("chest_item.config.BlackEyeRed2")
+            intValue2 = builder.translation("moonstone.config.BlackEyeRed2")
                     .define("BlackEyeRed2", new ArrayList<>());
         }
 

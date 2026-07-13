@@ -1,6 +1,5 @@
-package com.ytgld.moonstone.item.ms.necora;
+package com.ytgld.moonstone.item.ms;
 
-import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;

@@ -40,9 +40,9 @@ public class StartPower extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.StartPower")
+            intValue = builder.translation("moonstone.config.StartPower")
                     .define("StartPower", new ArrayList<>(List.of("minecraft:max_health")));
-            intValue2 = builder.translation("chest_item.config.StartPower2")
+            intValue2 = builder.translation("moonstone.config.StartPower2")
                     .defineInRange("StartPower2", 2, 0, 100);
         }
 

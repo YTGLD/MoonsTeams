@@ -4,7 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.item.Items;
-import com.ytgld.moonstone.item.ms.necora.GodDNA;
+import com.ytgld.moonstone.item.ms.GodDNA;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;

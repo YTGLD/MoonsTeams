@@ -107,24 +107,6 @@ public class Necora extends TheNecora {
                         , SlotTypePredicate.builder().withId("necora").build())
         ), true);
     }
-
-    @Override
-    public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
-            if (player.isCreative()){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
-    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player) {
-            return !Handler.hascurio(player, stack.getItem());
-        }
-        return true;
-    }
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

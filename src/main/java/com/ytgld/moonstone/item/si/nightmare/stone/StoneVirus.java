@@ -40,9 +40,9 @@ public class StoneVirus extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.StoneVirus")
+            intValue = builder.translation("moonstone.config.StoneVirus")
                     .defineInRange("StoneVirus", 33f, 0, Integer.MAX_VALUE);
-            intValue2 = builder.translation("chest_item.config.StoneVirus2")
+            intValue2 = builder.translation("moonstone.config.StoneVirus2")
                     .defineInRange("StoneVirus2", 10f, 0, Integer.MAX_VALUE);
         }
 

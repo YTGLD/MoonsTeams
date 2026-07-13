@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "moonstone:ectoplasmcloub",
+    "B": "moonstone:ectoplasmprism"
+  },
+  "pattern": [
+    "ABA",
+    "A A",
+    "A A"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:ectoplasmhorseshoe"
+  }
+}

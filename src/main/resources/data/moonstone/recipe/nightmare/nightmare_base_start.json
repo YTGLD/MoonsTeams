@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:nightmare_base_insight_drug",
+    "moonstone:nightmare_base_insight_insane",
+    "moonstone:nightmare_base_insight_collapse"
+  ],
+  "result": {
+    "id": "moonstone:nightmare_base_start"
+  }
+}

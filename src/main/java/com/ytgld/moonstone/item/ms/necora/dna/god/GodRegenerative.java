@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.ms.necora.dna.god;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.moonstone.item.ms.necora.GodDNA;
+import com.ytgld.moonstone.item.ms.GodDNA;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;

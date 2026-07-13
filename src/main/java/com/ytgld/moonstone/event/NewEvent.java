@@ -1,5 +1,8 @@
 package com.ytgld.moonstone.event;
 
+import com.ytgld.moonstone.ItemBase;
+import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.MaxEye;
 import com.ytgld.moonstone.item.ms.blood.PrisonOfSin;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
@@ -46,6 +49,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -53,10 +58,28 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.CuriosCapability;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
+import top.theillusivec4.curios.impl.CuriosRegistry;
+
+import java.util.Map;
 
 public class NewEvent {
 
     public static float time = 0;
+
+    @SubscribeEvent
+    public  void PlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
+        Player player = event.getEntity();
+        if (!player.entityTags().contains(Moonstone.MODID+"nightmare")) {
+            player.addItem(Items.NightmareBaseItem_.get().getDefaultInstance());
+            player.addTag(Moonstone.MODID+"nightmare");
+        }
+    }
 
     @SubscribeEvent
     public void tick(ClientTickEvent.Pre event) {
@@ -146,7 +169,27 @@ public class NewEvent {
         NightmareBaseBlackEye.exp(event);
         DivineFallRing.exp(event);
     }
-
+    @SubscribeEvent
+    public void effect(EntityTickEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
+            player.getData(CuriosRegistry.INVENTORY.get()).resetInventory();
+            CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                    ICurioStacksHandler stacksHandler = entry.getValue();
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (stack.getItem() instanceof ItemBase) {
+                            if (stack.get(DataReg.tag) == null) {
+                                stack.set(DataReg.tag,new CompoundTag());
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
     @SubscribeEvent
     public void exp(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {

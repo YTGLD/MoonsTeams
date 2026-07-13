@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:ectoplasmcube",
+    "moonstone:ectoplasmcube",
+    "moonstone:ectoplasmcube",
+    "minecraft:diamond"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:ectoplasmprism"
+  }
+}

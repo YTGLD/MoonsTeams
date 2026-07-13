@@ -15,10 +15,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.SpawnUtil;
-import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -81,6 +78,7 @@ public class Handler {
         CellGiant cellGiant = new CellGiant(cellGiantEntityType,player.level());
         cellGiant.setOwner(player);
         cellGiant.setPos(player.position());
+        cellGiant.setPose(Pose.EMERGING);
         if (Handler.hascurio(player, Items.bone_cell.get())) {
             cellGiant.addTag(Bone_Giant);
         }

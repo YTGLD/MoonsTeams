@@ -41,7 +41,7 @@ public class ReversalMysterious extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.ReversalMysterious")
+            intValue = builder.translation("moonstone.config.ReversalMysterious")
                     .define("ReversalMysterious", new ArrayList<>(List.of("")));
         }
 

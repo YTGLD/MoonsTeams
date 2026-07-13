@@ -30,12 +30,11 @@ public class RedAmout extends CommonItem implements TextEvt.Twelve{
 
     public static void redamout(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.redamout.get())) {
+            if (Handler.hascurio(player, Items.redamout.get()) || Handler.hascurio(player,Items.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 100, 1));
                     event.getEntity().knockback(0.2, Mth.sin(player.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(player.getYRot() * ((float) Math.PI / 180F)));
-                        event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.RED_WOOL.defaultBlockState()));
-
+                    event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.RED_WOOL.defaultBlockState()));
                 }
             }
         }

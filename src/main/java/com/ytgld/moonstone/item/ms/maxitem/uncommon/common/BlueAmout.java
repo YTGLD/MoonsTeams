@@ -29,7 +29,7 @@ public class BlueAmout extends CommonItem   {
 
     public static void blueamout(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.blueamout.get())) {
+            if (Handler.hascurio(player, Items.blueamout.get()) || Handler.hascurio(player,Items.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 100, 1));
                         event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.BLUE_WOOL.defaultBlockState()));
@@ -37,7 +37,7 @@ public class BlueAmout extends CommonItem   {
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.blueamout.get())) {
+            if (Handler.hascurio(player, Items.blueamout.get()) || Handler.hascurio(player,Items.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
                         event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.BLUE_WOOL.defaultBlockState()));

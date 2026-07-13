@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:warcrystal",
+    "moonstone:warcrystal",
+    "moonstone:ectoplasmcube"
+  ],
+  "result": {
+    "id": "moonstone:bigwarcrystal",
+    "count": 1
+  }
+}

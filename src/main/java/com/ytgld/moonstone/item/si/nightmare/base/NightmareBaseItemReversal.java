@@ -56,9 +56,9 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.NightmareBaseItemReversal")
+            intValue = builder.translation("moonstone.config.NightmareBaseItemReversal")
                     .define("NightmareBaseItemReversal", new ArrayList<>(List.of("minecraft:max_health")));
-            intValue2 = builder.translation("chest_item.config.NightmareBaseItemReversal2")
+            intValue2 = builder.translation("moonstone.config.NightmareBaseItemReversal2")
                     .defineInRange("NightmareBaseItemReversal2", 3, 0, 100);
         }
 

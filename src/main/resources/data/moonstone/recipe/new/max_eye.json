@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": "moonstone:ectoplasmprism",
+    "B": "minecraft:obsidian",
+    "C": "moonstone:blood",
+    "D": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    "A A",
+    "BCB",
+    "BDB"
+  ],
+  "result": {
+    "id": "moonstone:max_eye",
+    "count": 1
+  }
+}

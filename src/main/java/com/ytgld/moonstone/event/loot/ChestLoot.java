@@ -8,9 +8,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.event.EquippedEvt;
-import com.ytgld.moonstone.event.NewEvent;
 import com.ytgld.moonstone.item.Items;
-import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.other.DataReg;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.nbt.CompoundTag;
@@ -32,7 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Random;
 
 public class ChestLoot extends LootModifier {
     public static final Supplier<MapCodec<ChestLoot>> CODEC = Suppliers.memoize(() ->
@@ -54,6 +51,17 @@ public class ChestLoot extends LootModifier {
                 AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(objectArrayList, entity);
                 AdvancementEvt.nightmare_base_start_pod(objectArrayList, entity);
                 AdvancementEvt.tricky_puppets(objectArrayList, entity);
+                addLoot(objectArrayList, lootContext.getRandom(), Items.blood_candle.get(), entity, List.of(
+                        Items.owner_blood_eye.get(),
+                        Items.owner_blood_attack_eye.get(),
+                        Items.owner_blood_speed_eye.get(),
+                        Items.owner_blood_effect_eye.get(),
+                        Items.owner_blood_boom_eye.get(),
+                        Items.owner_blood_vex.get(),
+                        Items.owner_blood_earth.get()
+                ), 12,lootContext);
+
+
 
                 addLoot(objectArrayList, lootContext.getRandom(), Items.necora.get(), entity, List.of(
                         Items.ambush.get(),
@@ -61,9 +69,17 @@ public class ChestLoot extends LootModifier {
                         Items.autolytic.get(),
                         Items.fermentation.get(),
                         Items.putrefactive.get(),
-                        Items.regenerative.get()
-
-                ), 100,lootContext);
+                        Items.regenerative.get(),
+                        Items.adrenaline.get(),
+                        Items.cell_mummy.get(),
+                        Items.cell_boom.get(),
+                        Items.cell_calcification.get(),
+                        Items.cell_blood.get(),
+                        Items.bone_cell.get(),
+                        Items.parasitic_cell.get(),
+                        Items.mother_cell.get(),
+                        Items.disgusting_cells.get()
+                ), 20,lootContext);
 
             }
         }

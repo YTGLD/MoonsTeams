@@ -37,7 +37,7 @@ public class RedemptionDeception extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.RedemptionDeception")
+            intValue = builder.translation("moonstone.config.RedemptionDeception")
                     .defineInRange("RedemptionDeception", 1f, 0, Integer.MAX_VALUE);
         }
 

@@ -30,9 +30,9 @@ public class Brain extends MLS {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.Brain")
+            intValue = builder.translation("moonstone.config.Brain")
                     .defineInRange("Brain", 5F, 0, Integer.MAX_VALUE);
-            intValue2 = builder.translation("chest_item.config.Brain2")
+            intValue2 = builder.translation("moonstone.config.Brain2")
                     .defineInRange("Brain2", 2f, 0, Integer.MAX_VALUE);
         }
 

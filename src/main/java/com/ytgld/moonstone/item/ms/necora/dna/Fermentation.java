@@ -34,9 +34,9 @@ public class Fermentation extends TheNecora implements CanUPLevel {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.Fermentation")
+            intValue = builder.translation("moonstone.config.Fermentation")
                     .defineInRange("Fermentation", 0.3f, 0, Integer.MAX_VALUE);
-            intValue2 = builder.translation("chest_item.config.Fermentation2")
+            intValue2 = builder.translation("moonstone.config.Fermentation2")
                     .defineInRange("Fermentation2", 3f, 0, Integer.MAX_VALUE);
         }
 
@@ -55,7 +55,7 @@ public class Fermentation extends TheNecora implements CanUPLevel {
     }
     public static void fermentation(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player){
-            if (NecoraHandler.has(player, Items.fermentation.get())){
+            if (NecoraHandler.has(player, Items.fermentation.get()) || Handler.hascurio(player, GodFermentation.asItem())){
                 if (player.getCooldowns().isOnCooldown(Items.fermentation.get().getDefaultInstance())){
                     event.setNewDamage(event.getNewDamage() * ConfigItem.intValue.get().floatValue());
                 }else {

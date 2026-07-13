@@ -24,7 +24,7 @@ public class RedemptionDownAndOut extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.RedemptionDownAndOut")
+            intValue = builder.translation("moonstone.config.RedemptionDownAndOut")
                     .defineInRange("RedemptionDownAndOut", 35F, 0, Integer.MAX_VALUE);
         }
 

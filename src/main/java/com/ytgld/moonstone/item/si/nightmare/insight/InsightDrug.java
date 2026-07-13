@@ -41,9 +41,9 @@ public class InsightDrug extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.InsightDrug")
+            intValue = builder.translation("moonstone.config.InsightDrug")
                     .defineInRange("InsightDrug", 60f, 0, 1000);
-            intValue2 = builder.translation("chest_item.config.InsightDrug2")
+            intValue2 = builder.translation("moonstone.config.InsightDrug2")
                     .defineInRange("InsightDrug2", 5f, 0, 1000);
         }
 

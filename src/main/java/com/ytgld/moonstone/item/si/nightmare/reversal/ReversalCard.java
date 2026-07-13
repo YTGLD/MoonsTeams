@@ -24,7 +24,7 @@ public class ReversalCard extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.ReversalCard")
+            intValue = builder.translation("moonstone.config.ReversalCard")
                     .defineInRange("ReversalCard", 50, 0, 1000);
         }
 

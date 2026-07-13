@@ -33,11 +33,11 @@ public class Apple extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.Apple")
+            intValue = builder.translation("moonstone.config.Apple")
                     .defineInRange("Apple", 30f, 0, 1000);
-            intValue2 = builder.translation("chest_item.config.Apple2")
+            intValue2 = builder.translation("moonstone.config.Apple2")
                     .defineInRange("Apple2", 2f, 0, 1000);
-            intValue3 = builder.translation("chest_item.config.Apple3")
+            intValue3 = builder.translation("moonstone.config.Apple3")
                     .defineInRange("Apple3", 10f, 0, 1000);
         }
 

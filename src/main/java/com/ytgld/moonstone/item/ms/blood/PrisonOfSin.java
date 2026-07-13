@@ -50,15 +50,15 @@ public class PrisonOfSin extends BloodItem {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("chest_item.config.PrisonOfSin")
+            intValue = builder.translation("moonstone.config.PrisonOfSin")
                     .defineInRange("PrisonOfSin", 4.5f, 0, Integer.MAX_VALUE);
-            intValue2 = builder.translation("chest_item.config.PrisonOfSin2")
+            intValue2 = builder.translation("moonstone.config.PrisonOfSin2")
                     .defineInRange("PrisonOfSin2", 100F, 0, Integer.MAX_VALUE);
 
-            intValue3 = builder.translation("chest_item.config.PrisonOfSin3")
+            intValue3 = builder.translation("moonstone.config.PrisonOfSin3")
                     .defineInRange("PrisonOfSin3", 0.8F, 0, Integer.MAX_VALUE);
 
-            intValue4 = builder.translation("chest_item.config.PrisonOfSin4")
+            intValue4 = builder.translation("moonstone.config.PrisonOfSin4")
                     .define("PrisonOfSin4", new ArrayList<>(List.of("minecraft:max_health")));
         }
 

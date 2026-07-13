@@ -119,12 +119,12 @@ public class Items {
     public static final DeferredItem<@NotNull Item> soulcube = register("soulcube", (Identifier) -> new SoulCube(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> beacon = register("beacon", (Identifier) -> new Beacon(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> ectoplasmapple = register("ectoplasmapple", (Identifier) -> new EctoplasmApple(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
-    public static final DeferredItem<@NotNull Item> ectoplasmball = register("ectoplasmball", (Identifier) -> new EctoplasmBall(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> ectoplasmball = register("ectoplasmball", (Identifier) -> new EctoplasmBall(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> ectoplasmbattery = register("ectoplasmbattery", (Identifier) -> new EctoplasmBattery(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
-    public static final DeferredItem<@NotNull Item> ectoplasmcloub = register("ectoplasmcloub", (Identifier) -> new EctoplasmCloub(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
-    public static final DeferredItem<@NotNull Item> ectoplasmcube = register("ectoplasmcube", (Identifier) -> new EctoplasmCube(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> ectoplasmcloub = register("ectoplasmcloub", (Identifier) -> new EctoplasmCloub(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> ectoplasmcube = register("ectoplasmcube", (Identifier) -> new EctoplasmCube(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> ectoplasmhorseshoe = register("ectoplasmhorseshoe", (Identifier) -> new EctoplasmHorseshoe(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
-    public static final DeferredItem<@NotNull Item> ectoplasmprism = register("ectoplasmprism", (Identifier) -> new EctoplasmPrism(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
+    public static final DeferredItem<@NotNull Item> ectoplasmprism = register("ectoplasmprism", (Identifier) -> new EctoplasmPrism(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> ectoplasmshild = register("ectoplasmshild", (Identifier) -> new EctoplasmShild(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> ectoplasmsoul = register("ectoplasmsoul", (Identifier) -> new EctoplasmSoul(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> ectoplasmstar = register("ectoplasmstar", (Identifier) -> new EctoplasmStar(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
@@ -161,14 +161,13 @@ public class Items {
 
 
 
-
-    public static final DeferredItem<@NotNull Item> owner_blood_eye =register("owner_blood_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_attack_eye =register("owner_blood_attack_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_speed_eye =register("owner_blood_speed_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_boom_eye =register("owner_blood_boom_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_effect_eye =register("owner_blood_effect_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_vex =register("owner_blood_vex",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_earth =register("owner_blood_earth",(identifier)->new  BloodItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_eye =register("owner_blood_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_attack_eye =register("owner_blood_attack_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_speed_eye =register("owner_blood_speed_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_boom_eye =register("owner_blood_boom_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_effect_eye =register("owner_blood_effect_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_vex =register("owner_blood_vex",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_earth =register("owner_blood_earth",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
     public static final DeferredItem<@NotNull Item> necora =register("necora",(identifier)->new Necora(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
 
     public static final DeferredItem<@NotNull Item> ambush =register("ambush",(identifier)->new Ambush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
@@ -278,7 +277,6 @@ public class Items {
                     output.accept(cell_calcification);
                     output.accept(cell_mummy);
                     output.accept(giant);
-                    output.accept(giant_nightmare);
 
                     output.accept(bone_cell);
                     output.accept(disgusting_cells);
@@ -331,8 +329,15 @@ public class Items {
                     output.accept(max_eye);
                     output.accept(the_prison_of_sin);
                     output.accept(blood);
+                    output.accept(blood);
 
-
+                    output.accept(owner_blood_eye);
+                    output.accept(owner_blood_attack_eye);
+                    output.accept(owner_blood_speed_eye);
+                    output.accept(owner_blood_boom_eye);
+                    output.accept(owner_blood_effect_eye);
+                    output.accept(owner_blood_vex);
+                    output.accept(owner_blood_earth);
 
                     output.accept(badgeofthedead);
                     output.accept(battery);
