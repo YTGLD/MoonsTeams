@@ -73,6 +73,7 @@ public class RineSword extends Doom  {
                                                 FlySword item = new FlySword(EntityTs.flysword.get(),player.level());
                                                 item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
                                                 item.setOwner(player);
+                                                item.setTarget(event.getEntity());
                                                 item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
                                                 player.level().addFreshEntity(item);
                                                 player.getCooldowns().addCooldown(doomswoud.get().getDefaultInstance(), 40);
@@ -113,6 +114,7 @@ public class RineSword extends Doom  {
                                                 item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
                                                 item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f), s / 1.5f, Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f));
                                                 item.setOwner(player);
+                                                item.setTarget(event.getEntity());
                                                 player.level().addFreshEntity(item);
                                                 player.getCooldowns().addCooldown(doomswoud.get().getDefaultInstance(), 50);
                                             }

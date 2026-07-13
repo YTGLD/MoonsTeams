@@ -15,6 +15,7 @@ import com.ytgld.moonstone.item.ms.maulice.*;
 import com.ytgld.moonstone.item.ms.maxitem.Maxamout;
 import com.ytgld.moonstone.item.ms.maxitem.TheHeart;
 import com.ytgld.moonstone.item.ms.maxitem.TwelveSword;
+import com.ytgld.moonstone.item.ms.maxitem.uncommon.EvilCandle;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BadgeOfTheDead;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BlueAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.GreedAmout;
@@ -124,6 +125,7 @@ public class NewEvent {
         RineSword.suddenrainLLivingHurtEvent(event);
         Million.hurt(event);
         Beacon.beacon(event);
+        EvilCandle.fire(event);
 
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);

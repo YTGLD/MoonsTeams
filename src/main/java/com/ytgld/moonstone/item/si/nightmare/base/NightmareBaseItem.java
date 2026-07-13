@@ -40,6 +40,15 @@ public class NightmareBaseItem extends NightmareBase {
         slotContext.entity().getAttributes().removeAttributeModifiers(gets(slotContext));
     }
 
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext, stack);
+        if (!slotContext.entity().level().isClientSide()) {
+            slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
+
+        }
+    }
+
     @ConfigPlugin
     public static class ConfigItem implements RegisterItemConfig {
         public static ModConfigSpec.IntValue intValue;

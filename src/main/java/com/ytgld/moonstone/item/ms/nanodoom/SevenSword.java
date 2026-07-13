@@ -11,6 +11,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
@@ -55,38 +56,41 @@ public class SevenSword extends Doom {
     public static void doomeyeLivingKnockBackEvent(LivingDamageEvent.Pre event){
         if (event.getEntity() instanceof Player player){
             if (Handler.hascurio(player, doomeye.get())){
-                CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
-                    Map<String, ICurioStacksHandler> curios = handler.getCurios();
-                    for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
-                        ICurioStacksHandler stacksHandler = entry.getValue();
-                        IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                        for (int i = 0; i < stacksHandler.getSlots(); i++) {
-                            ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(doomeye.get()) ){
-                                if (stack.get(DataReg.tag) != null) {
-                                    if (!stack.get(DataReg.tag).getBooleanOr(SevenSword.canFlySword,false)){
-                                        if (!player.getCooldowns().isOnCooldown(doomeye.get().getDefaultInstance())){
-                                            for (int p = 0 ;p < 7 ;p++){
-                                                float s  = (float) Math.sin(p);
-                                                if (s <= 0){
-                                                    s = 0.12f;
+                if (event.getSource().getEntity() instanceof LivingEntity livingEntity) {
+                    CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
+                        Map<String, ICurioStacksHandler> curios = handler.getCurios();
+                        for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
+                            ICurioStacksHandler stacksHandler = entry.getValue();
+                            IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                            for (int i = 0; i < stacksHandler.getSlots(); i++) {
+                                ItemStack stack = stackHandler.getStackInSlot(i);
+                                if (stack.is(doomeye.get())) {
+                                    if (stack.get(DataReg.tag) != null) {
+                                        if (!stack.get(DataReg.tag).getBooleanOr(SevenSword.canFlySword, false)) {
+                                            if (!player.getCooldowns().isOnCooldown(doomeye.get().getDefaultInstance())) {
+                                                for (int p = 0; p < 7; p++) {
+                                                    float s = (float) Math.sin(p);
+                                                    if (s <= 0) {
+                                                        s = 0.12f;
+                                                    }
+                                                    FlySword item = new FlySword(EntityTs.flysword.get(), player.level());
+                                                    item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
+                                                    item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f), s / 1.5f, Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f));
+                                                    item.setNoGravity(true);
+                                                    item.setOwner(player);
+                                                    item.setTarget(livingEntity);
+                                                    item.addTag(FlySword);
+                                                    player.level().addFreshEntity(item);
+                                                    player.getCooldowns().addCooldown(doomeye.get().getDefaultInstance(), 40);
                                                 }
-                                                FlySword item = new FlySword(EntityTs.flysword.get(),player.level());
-                                                item.teleportTo(player.getX()+ Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
-                                                item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
-                                                item.setNoGravity(true);
-                                                item.setOwner(player);
-                                                item.addTag(FlySword);
-                                                player.level().addFreshEntity(item);
-                                                player.getCooldowns().addCooldown(doomeye.get().getDefaultInstance(), 40);
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
-                });
+                    });
+                }
 
 
 

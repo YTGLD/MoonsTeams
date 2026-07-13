@@ -29,16 +29,18 @@ public class Beacon extends Ectoplasm {
                 Collection<MobEffectInstance> collection  = player.getActiveEffects();
                 if (!collection.isEmpty()) {
                     if (event.getSource().getEntity() != null) {
-                        AreaEffectCloud areaeffectcloud = new AreaEffectCloud(event.getSource().getEntity().level(), event.getSource().getEntity().getX(), event.getSource().getEntity().getY(), event.getSource().getEntity().getZ());
-                        areaeffectcloud.setRadius(2.5F);
-                        areaeffectcloud.setRadiusOnUse(-0.5F);
-                        areaeffectcloud.setWaitTime(10);
-                        areaeffectcloud.setDuration(areaeffectcloud.getDuration() / 2);
-                        areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
+                        AreaEffectCloud cloud = new AreaEffectCloud(event.getSource().getEntity().level(), event.getSource().getEntity().getX(), event.getSource().getEntity().getY(), event.getSource().getEntity().getZ());
+                        cloud.setRadius(2.5F);
+                        cloud.setRadiusOnUse(-0.5F);
+                        cloud.setWaitTime(10);
+                        cloud.setDuration(300);
+                        cloud.setPotionDurationScale(0.25F);
+                        cloud.setRadiusPerTick(-cloud.getRadius() / cloud.getDuration());
+
                         for(MobEffectInstance mobeffectinstance : collection) {
-                            areaeffectcloud.addEffect(new MobEffectInstance(mobeffectinstance));
+                            cloud.addEffect(new MobEffectInstance(mobeffectinstance));
                         }
-                        event.getSource().getEntity().level().addFreshEntity(areaeffectcloud);
+                        event.getSource().getEntity().level().addFreshEntity(cloud);
                         player.removeAllEffects();
                     }
                 }

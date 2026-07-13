@@ -36,6 +36,9 @@ public class FlySword extends Entity {
         this.noPhysics = true;
     }
 
+    public boolean alwaysAttack(){
+        return false;
+    }
 
     private LivingEntity target;
     private final List<Vec3> trailPositions = new ArrayList<>();
@@ -58,13 +61,25 @@ public class FlySword extends Entity {
         for (LivingEntity entity : entities) {
             if (this.getOwner() != null) {
                 if (!entity.is(this.getOwner()) && this.getOwner() instanceof Player player) {
-                    if (this.tickCount > 10 && coll <= 0) {
-                        if (player.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
-                            entity.invulnerableTime = 0;
-                            entity.knockback(0.1f, Mth.nextFloat(RandomSource.create(), -0.1f, 0.1f), Mth.nextFloat(RandomSource.create(), -0.1f, 0.1f));
-                            entity.hurt(entity.damageSources().magic(),
-                                    (float) (0.3f + player.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * 0.07f));
-                            coll = 20;
+                    if (alwaysAttack()) {
+                        if (this.tickCount > 10 && coll <= 0) {
+                            if (player.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
+                                entity.invulnerableTime = 0;
+                                entity.knockback(0.1f, Mth.nextFloat(RandomSource.create(), -0.1f, 0.1f), Mth.nextFloat(RandomSource.create(), -0.1f, 0.1f));
+                                entity.hurt(entity.damageSources().magic(),
+                                        (float) (0.3f + player.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * 0.07f));
+                                coll = 20;
+                            }
+                        }
+                    }else {
+                        if (this.tickCount > 10) {
+                            if (player.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
+                                entity.invulnerableTime = 0;
+                                entity.knockback(0.1f, Mth.nextFloat(RandomSource.create(), -0.1f, 0.1f), Mth.nextFloat(RandomSource.create(), -0.1f, 0.1f));
+                                entity.hurt(entity.damageSources().magic(),
+                                        (float) (0.3f + player.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * 0.07f));
+                                this.discard();
+                            }
                         }
                     }
                 }
@@ -94,7 +109,7 @@ public class FlySword extends Entity {
                                 .normalize();
 
                 setDeltaMovement(
-                        direction.scale(1.22)
+                        direction.scale(0.58f)
                 );
                 for (LivingEntity entity : entities){
                     if (entity.is(owner)) {
@@ -135,13 +150,13 @@ public class FlySword extends Entity {
 
 
                     setDeltaMovement(
-                            newDir.scale(1.22)
+                            newDir.scale(0.58f)
                     );
 
                 } else {
 
                     setDeltaMovement(
-                            direction.scale(1.22)
+                            direction.scale(0.58f)
                     );
                 }
             }

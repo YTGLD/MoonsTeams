@@ -57,26 +57,24 @@ public class Cell extends TheNecora {
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player,Items.necora.get())) {
-                if (Handler.hascurio(player, Items.giant.get())) {
-                    if (!player.getCooldowns().isOnCooldown(Items.giant.get().getDefaultInstance())) {
-                        if (player.level() instanceof ServerLevel p_222881_) {
-                            if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
-                                if (Handler.hascurio(player, Items.mother_cell.get())) {
-                                    if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
-                                        Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
-                                    }
-                                    for (int i = 0; i < 2; i++) {
-                                        CellZombie cell_zombie = new CellZombie(EntityTs.cell_zombie.get(), player.level());
-                                        cell_zombie.setOwner(player);
-                                        cell_zombie.setPos(player.position());
-                                        player.level().addFreshEntity(cell_zombie);
-                                    }
+            if (Handler.hascurio(player, Items.giant.get())) {
+                if (!player.getCooldowns().isOnCooldown(Items.giant.get().getDefaultInstance())) {
+                    if (player.level() instanceof ServerLevel p_222881_) {
+                        if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
+                            if (Handler.hascurio(player, Items.mother_cell.get())) {
+                                if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                                    Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
                                 }
-                                Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
-                                player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
-                                player.getCooldowns().addCooldown(Items.giant.get().getDefaultInstance(), 600);
+                                for (int i = 0; i < 2; i++) {
+                                    CellZombie cell_zombie = new CellZombie(EntityTs.cell_zombie.get(), player.level());
+                                    cell_zombie.setOwner(player);
+                                    cell_zombie.setPos(player.position());
+                                    player.level().addFreshEntity(cell_zombie);
+                                }
                             }
+                            Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
+                            player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                            player.getCooldowns().addCooldown(Items.giant.get().getDefaultInstance(), 600);
                         }
                     }
                 }
