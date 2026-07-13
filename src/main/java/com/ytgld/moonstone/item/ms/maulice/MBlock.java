@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.item.ms.maulice;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.event.TextEvt;
 import com.ytgld.moonstone.item.ms.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
-public class MBlock extends MLS {
+public class MBlock extends MLS implements TextEvt.Twelve{
     public MBlock(Properties properties) {
         super(properties);
     }

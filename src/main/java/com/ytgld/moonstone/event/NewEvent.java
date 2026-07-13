@@ -8,6 +8,17 @@ import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmApple;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmHorseshoe;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmShild;
 import com.ytgld.moonstone.item.ms.maulice.*;
+import com.ytgld.moonstone.item.ms.maxitem.Maxamout;
+import com.ytgld.moonstone.item.ms.maxitem.TheHeart;
+import com.ytgld.moonstone.item.ms.maxitem.TwelveSword;
+import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BadgeOfTheDead;
+import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BlueAmout;
+import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.GreedAmout;
+import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.RedAmout;
+import com.ytgld.moonstone.item.ms.nanodoom.AsAmout;
+import com.ytgld.moonstone.item.ms.nanodoom.MagicEye;
+import com.ytgld.moonstone.item.ms.nanodoom.RineSword;
+import com.ytgld.moonstone.item.ms.nanodoom.SevenSword;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBoom;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.Cell;
@@ -80,7 +91,16 @@ public class NewEvent {
         GodAmbush.LivingIncomingDamageEvent(event);
         Fermentation.fermentation(event);
         CellBoom.Boom(event);
-
+        GreedAmout.greedamout(event);
+        BlueAmout.blueamout(event);
+        RedAmout.redamout(event);
+        BadgeOfTheDead.badgeofthedead(event);
+        TwelveSword.att(event);
+        AsAmout.hurt(event);
+        Maxamout.maxamout(event);
+        MagicEye.damage(event);
+        SevenSword.doomeyeLivingKnockBackEvent(event);
+        RineSword.suddenrainLLivingHurtEvent(event);
 
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);
@@ -105,6 +125,8 @@ public class NewEvent {
         Wolf.kill(event);
         BloodMagicBox.Did(event);
         MaxEye.Die(event);
+        RineSword.suddenrainLivingDeathEvent(event);
+
 
         Cell.evil(event);
         PrisonOfSin.LivingDeathEvent(event);
@@ -117,7 +139,10 @@ public class NewEvent {
         MOrb.LivingExperienceDropEvent(event);
 
     }
-
+    @SubscribeEvent
+    public void the_heart(LivingDropsEvent event) {
+        TheHeart.the_heart(event);
+    }
     @SubscribeEvent
     public void effect(MobEffectEvent.Applicable event) {
         NightmareBaseBlackEye.exp(event);

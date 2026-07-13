@@ -8,6 +8,8 @@ import com.ytgld.moonstone.effect.Effects;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.event.NewEvent;
+import com.ytgld.moonstone.event.TextEvt;
+import com.ytgld.moonstone.event.loot.LootTableEvent;
 import com.ytgld.moonstone.event.loot.Loots;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.AttReg;
@@ -48,6 +50,8 @@ public class Moonstone {
 
         NeoForge.EVENT_BUS.register(new NewEvent());
         NeoForge.EVENT_BUS.register(new AdvancementEvt());
+        NeoForge.EVENT_BUS.register(new TextEvt());
+        NeoForge.EVENT_BUS.register(new LootTableEvent());
 
     }
     public void gatherData(GatherDataEvent.Client event) {

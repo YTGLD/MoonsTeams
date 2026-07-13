@@ -54,6 +54,7 @@ public class ItemBase extends Item implements ICurioItem {
         }
     }
 
+
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         ICurioItem.super.onUnequip(slotContext, newStack, stack);

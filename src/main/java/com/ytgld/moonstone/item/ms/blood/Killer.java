@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item.ms.blood;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.event.TextEvt;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
@@ -22,7 +23,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class Killer extends BloodItem {
+public class Killer extends BloodItem implements TextEvt.Twelve{
     public Killer(Properties properties) {
         super(properties);
     }

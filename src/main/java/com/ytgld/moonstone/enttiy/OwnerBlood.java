@@ -37,6 +37,9 @@ public class OwnerBlood extends TamableAnimal {
     public void die(@NotNull DamageSource p_21809_) {
 
     }
+    protected boolean isAffectedByBlocks() {
+        return !this.isRemoved();
+    }
     private final List<Vec3> trailPositions = new ArrayList<>();
     public List<Vec3> getTrailPositions() {
         return trailPositions;

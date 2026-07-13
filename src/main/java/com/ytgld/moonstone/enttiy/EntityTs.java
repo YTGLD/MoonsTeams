@@ -30,6 +30,22 @@ public class EntityTs {
             EntityType.Builder.of(CellGiant::new, MobCategory.MISC).sized(1.25f, 2.2f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(Moonstone.MODID, "cell_giant"))));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<AtSword>> at_sword_entity = REGISTRY.register("as_sword_entity", () ->
+            EntityType.Builder.of(AtSword::new, MobCategory.MISC).sized(0.1f, 1.8f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(Moonstone.MODID, "as_sword_entity"))));
+    public static final DeferredHolder<EntityType<?>, EntityType<SwordOfTwelve>> sword = REGISTRY.register("sword", () ->
+            EntityType.Builder.of(SwordOfTwelve::new, MobCategory.MISC).sized(0.1f, 0.1f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(Moonstone.MODID, "sword"))));
+
+
+    public static final DeferredHolder<EntityType<?>, EntityType<FlySword>> flysword = REGISTRY.register("flysword", () ->
+            EntityType.Builder.of(FlySword::new, MobCategory.MISC).sized(0.1f, 1.8f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(Moonstone.MODID, "flysword"))));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<SmallSword>> as_sword = REGISTRY.register("as_sword", () ->
+            EntityType.Builder.of(SmallSword::new, MobCategory.MISC).sized(0.1f, 0.1f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(Moonstone.MODID, "as_sword"))));
+
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){
         event.put(owner_blood_.get(), Zombie.createAttributes().build());

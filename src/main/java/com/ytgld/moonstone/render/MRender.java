@@ -15,6 +15,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.blockentity.AbstractEndPortalRenderer;
+import net.minecraft.client.renderer.rendertype.LayeringTransform;
 import net.minecraft.client.renderer.rendertype.OutputTarget;
 import net.minecraft.client.renderer.rendertype.RenderSetup;
 import net.minecraft.client.renderer.rendertype.RenderType;
@@ -69,6 +70,22 @@ public class MRender {
                             VertexFormat.Mode.QUADS)
                     .withDepthStencilState(DepthStencilState.DEFAULT).build()
             ).setOutputTarget(outline2).sortOnUpload().createRenderSetup()
+    );
+    public static final RenderType lines = RenderType.create(
+            "lines",
+            RenderSetup.builder(RenderPipeline.builder(RenderPipeline.builder(MATRICES_FOG_SNIPPET, GLOBALS_SNIPPET).
+                            withVertexShader("core/rendertype_lines").withFragmentShader("core/rendertype_lines").
+                            withColorTargetState(new ColorTargetState(new BlendFunction(
+                                    SRC_ALPHA,
+                                    DestFactor.ONE,
+                                    ONE,
+                                    DestFactor.ZERO))).withCull(false).
+                            withVertexFormat(DefaultVertexFormat.POSITION_COLOR_NORMAL_LINE_WIDTH,
+                                    VertexFormat.Mode.LINES).withDepthStencilState(DepthStencilState.DEFAULT)
+                            .buildSnippet()).withLocation("pipeline/lines").build())
+                    .setLayeringTransform(LayeringTransform.VIEW_OFFSET_Z_LAYERING)
+                    .setOutputTarget(OutputTarget.ITEM_ENTITY_TARGET)
+                    .createRenderSetup()
     );
     public static RenderType notOutline = RenderType.create(
             "lightning", RenderSetup.builder(RenderPipeline.builder(MATRICES_FOG_SNIPPET).withLocation("pipeline/lightning")

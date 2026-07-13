@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.item.ms.ectoplasm;
 
 import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.event.TextEvt;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.Ectoplasm;
 import com.ytgld.moonstone.other.DataReg;
@@ -19,7 +20,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class EctoplasmShild extends Ectoplasm {
+public class EctoplasmShild extends Ectoplasm implements TextEvt.Twelve {
 
     public EctoplasmShild(Properties properties) {
         super(properties);
