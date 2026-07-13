@@ -54,7 +54,6 @@ public class MKidney extends MLS {
                         event.setNewDamage(0);
                     } else {
                         player.getPersistentData().getIntOr("mkidney",100);
-
                         event.setNewDamage(event.getNewDamage() + player.getMaxHealth() / 3);
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_DEACTIVATE, SoundSource.NEUTRAL, 1, 1);
                         player.getCooldowns().addCooldown(Items.mkidney.get().getDefaultInstance(), 200);

@@ -119,9 +119,11 @@ public class HypocriticalSelfEsteem extends NightmareSmall {
                                     Identifier name = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());
                                     Set<Identifier> blacklist = new HashSet<>();
                                     for (String aaa : ConfigItem.intValue.get()) {
-                                        String[] parts = aaa.split(":");
-                                        if (parts.length > 0) {
-                                            blacklist.add(Identifier.fromNamespaceAndPath(parts[0], parts[1]));
+                                        if (!aaa.isEmpty()) {
+                                            String[] parts = aaa.split(":");
+                                            if (parts.length > 0) {
+                                                blacklist.add(Identifier.fromNamespaceAndPath(parts[0], parts[1]));
+                                            }
                                         }
                                     }
                                     if (!blacklist.contains(name)) {

@@ -1,6 +1,8 @@
 package com.ytgld.moonstone.mixin;
 
+import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.effect.Effects;
+import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.si.nightmare.fool.Apple;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.core.Holder;
@@ -8,9 +10,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -30,15 +34,6 @@ public abstract class LivingEntityMixin {
             }
             if (living.hasEffect(Effects.life_apple)) {
                 cir.setReturnValue((float) Apple.ConfigItem.intValue.getAsDouble());
-            }
-        }
-    }
-    @Inject(at = @At("RETURN"), method = "canStandOnFluid", cancellable = true)
-    public void canStandOnFluid(FluidState fluid, CallbackInfoReturnable<Boolean> cir) {
-        LivingEntity living = (LivingEntity) (Object) this;
-        if (living instanceof Player player) {
-            if (player.entityTags().contains("canStandOnFluidTrue")) {
-                cir.setReturnValue(true);
             }
         }
     }

@@ -23,7 +23,7 @@ public class Beacon extends Ectoplasm {
         super(properties);
     }
 
-    public static void beacon(LivingDamageEvent.Post event){
+    public static void beacon(LivingDamageEvent.Pre event){
         if (event.getEntity() instanceof Player player){
             if (Handler.hascurio(player, Items.beacon.get())){
                 Collection<MobEffectInstance> collection  = player.getActiveEffects();

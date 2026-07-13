@@ -26,6 +26,8 @@ import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
+import static com.ytgld.moonstone.event.AllEvent.*;
+
 public class Cell extends TheNecora {
     public Cell(Properties properties) {
         super(properties);
@@ -48,6 +50,7 @@ public class Cell extends TheNecora {
     }
 
     public static void evil(LivingDeathEvent event) {
+        sumZ(event);
         if ((event.getEntity() instanceof Player player)) {
             if (Handler.hascurio(player, Items.cell_boom.get())) {
                 player.level().explode(null, player.getX(), player.getY(), player.getZ(), 5.5f, true, Level.ExplosionInteraction.MOB);
@@ -56,28 +59,57 @@ public class Cell extends TheNecora {
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player,Items.necora.get())) {
                 if (Handler.hascurio(player, Items.giant.get())) {
-                    if (!Handler.hascurio(player, Items.giant_nightmare.get())) {
-                        if (!player.getCooldowns().isOnCooldown(Items.giant.get().getDefaultInstance())) {
-                            if (player.level() instanceof ServerLevel p_222881_) {
-                                if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
-                                    if (Handler.hascurio(player, Items.mother_cell.get())) {
-                                        if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
-                                            Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
-                                        }
-                                        for (int i = 0; i < 2; i++) {
-                                            CellZombie cell_zombie = new CellZombie(EntityTs.cell_zombie.get(), player.level());
-                                            cell_zombie.setOwner(player);
-                                            cell_zombie.setPos(player.position());
-                                            player.level().addFreshEntity(cell_zombie);
-                                        }
+                    if (!player.getCooldowns().isOnCooldown(Items.giant.get().getDefaultInstance())) {
+                        if (player.level() instanceof ServerLevel p_222881_) {
+                            if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
+                                if (Handler.hascurio(player, Items.mother_cell.get())) {
+                                    if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+                                        Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
                                     }
-                                    Handler.trySpawnMob(player, EntityTs.cell_giant.get(),event.getEntity().position());
-                                    player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
-                                    player.getCooldowns().addCooldown(Items.giant.get().getDefaultInstance(), 600);
+                                    for (int i = 0; i < 2; i++) {
+                                        CellZombie cell_zombie = new CellZombie(EntityTs.cell_zombie.get(), player.level());
+                                        cell_zombie.setOwner(player);
+                                        cell_zombie.setPos(player.position());
+                                        player.level().addFreshEntity(cell_zombie);
+                                    }
                                 }
+                                Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
+                                player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                                player.getCooldowns().addCooldown(Items.giant.get().getDefaultInstance(), 600);
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    public static void sumZ(LivingDeathEvent event){
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player,Items.cell.get())){
+                if (player.getCooldowns().isOnCooldown(Items.cell.get().getDefaultInstance())){
+                    return;
+                }
+                if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
+                    CellZombie z = new CellZombie(EntityTs.cell_zombie.get(), player.level());
+                    z.teleportTo(event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+                    z.setOwner(player);
+                    if (Handler.hascurio(player, Items.adrenaline.get())) {
+                        z.addTag(DamageCell);
+                    }
+                    if (Handler.hascurio(player, Items.cell_mummy.get())) {
+                        z.addTag(muMMY);
+                    }
+                    if (Handler.hascurio(player, Items.cell_boom.get())) {
+                        z.addTag(boom);
+                    }
+                    if (Handler.hascurio(player, Items.cell_calcification.get())) {
+                        z.addTag(calcification);
+                    }
+                    if (Handler.hascurio(player, Items.cell_blood.get())) {
+                        z.addTag(cb_blood);
+                    }
+                    player.level().addFreshEntity(z);
+                    player.getCooldowns().addCooldown(Items.cell.get().getDefaultInstance(),100);
                 }
             }
         }

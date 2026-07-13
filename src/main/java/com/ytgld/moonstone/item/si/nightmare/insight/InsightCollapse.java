@@ -31,7 +31,7 @@ public class InsightCollapse extends NightmareSmall {
         return new CurioAttributeModifiers(List.of(
                 new CurioAttributeModifiers.Entry(SlotAttribute.getOrCreate("curio"),
                         new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID, this.descriptionId),
-                                2, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                                2, AttributeModifier.Operation.ADD_VALUE)
                         , SlotTypePredicate.builder().withId("curio").build())
         ), true);
     }

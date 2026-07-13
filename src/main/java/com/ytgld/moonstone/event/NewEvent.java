@@ -7,6 +7,7 @@ import com.ytgld.moonstone.item.ms.blood.MaxEye;
 import com.ytgld.moonstone.item.ms.blood.PrisonOfSin;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
 import com.ytgld.moonstone.item.ms.blood.magic.UndeadBloodCharm;
+import com.ytgld.moonstone.item.ms.ectoplasm.Beacon;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmApple;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmHorseshoe;
 import com.ytgld.moonstone.item.ms.ectoplasm.EctoplasmShild;
@@ -122,6 +123,7 @@ public class NewEvent {
         SevenSword.doomeyeLivingKnockBackEvent(event);
         RineSword.suddenrainLLivingHurtEvent(event);
         Million.hurt(event);
+        Beacon.beacon(event);
 
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);
@@ -136,6 +138,10 @@ public class NewEvent {
     public  void eat(LivingEntityUseItemEvent.Finish event){
         GodPutrefactive.eat(event);
         Necora.necora(event);
+    }
+    @SubscribeEvent
+    public void target(LivingChangeTargetEvent event){
+        MHead.target(event);
     }
 
     @SubscribeEvent

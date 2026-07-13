@@ -5,6 +5,8 @@
   "mixins": [
     "EntityMixin",
     "LivingEntityMixin",
+    "ModMixin",
+    "LiquidBlockMixin",
     "WardenMixin"
   ],
   "injectors": {
