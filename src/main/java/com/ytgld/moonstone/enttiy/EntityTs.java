@@ -39,7 +39,7 @@ public class EntityTs {
 
 
     public static final DeferredHolder<EntityType<?>, EntityType<FlySword>> flysword = REGISTRY.register("flysword", () ->
-            EntityType.Builder.of(FlySword::new, MobCategory.MISC).sized(0.1f, 1.8f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
+            EntityType.Builder.of(FlySword::new, MobCategory.MISC).sized(0.1f, 0.1f).clientTrackingRange(50).build(ResourceKey.create(Registries.ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(Moonstone.MODID, "flysword"))));
 
     public static final DeferredHolder<EntityType<?>, EntityType<SmallSword>> as_sword = REGISTRY.register("as_sword", () ->

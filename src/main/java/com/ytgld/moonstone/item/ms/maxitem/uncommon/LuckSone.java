@@ -13,7 +13,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class LuckSone extends CommonItem  {
+public class LuckSone extends CommonItem {
 
     public LuckSone(Properties properties) {
         super(properties);
@@ -22,8 +22,8 @@ public class LuckSone extends CommonItem  {
     @Override
     public int getLootingLevel(SlotContext slotContext, @org.jspecify.annotations.Nullable LootContext lootContext, ItemStack stack) {
         int s = 0;
-        if (slotContext.entity() instanceof Player player){
-            s = (int) player.getLuck()/10;
+        if (slotContext.entity() instanceof Player player) {
+            s = (int) player.getLuck() / 10;
         }
         return s;
     }
@@ -31,8 +31,8 @@ public class LuckSone extends CommonItem  {
     @Override
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
         int s = 0;
-        if (slotContext.entity() instanceof Player player){
-            s = (int) player.getLuck()/10;
+        if (slotContext.entity() instanceof Player player) {
+            s = (int) player.getLuck() / 10;
         }
         return s;
     }

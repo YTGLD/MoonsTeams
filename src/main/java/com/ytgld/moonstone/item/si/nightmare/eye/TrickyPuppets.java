@@ -24,8 +24,8 @@ public class TrickyPuppets extends NightmareSmall {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         if (slotContext.entity() instanceof Player player) {
             player.removeTag("tricky_puppetsLook");
         }

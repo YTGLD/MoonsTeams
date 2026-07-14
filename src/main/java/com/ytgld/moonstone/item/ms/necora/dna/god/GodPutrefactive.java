@@ -23,24 +23,24 @@ import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 
 import java.util.List;
 
-public class GodPutrefactive  extends GodDNA {
+public class GodPutrefactive extends GodDNA {
 
 
     public GodPutrefactive(Properties properties) {
         super(properties);
     }
 
-    public static void eat(LivingEntityUseItemEvent.Finish event){
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.GodPutrefactive.get())){
-                if (event.getItem().getUseAnimation() == ItemUseAnimation.EAT){
-                    player.addEffect(new MobEffectInstance(MobEffects.HASTE,600,1));
-                    player.addEffect(new MobEffectInstance(MobEffects.SPEED,600,1));
+    public static void eat(LivingEntityUseItemEvent.Finish event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.GodPutrefactive.get())) {
+                if (event.getItem().getUseAnimation() == ItemUseAnimation.EAT) {
+                    player.addEffect(new MobEffectInstance(MobEffects.HASTE, 600, 1));
+                    player.addEffect(new MobEffectInstance(MobEffects.SPEED, 600, 1));
 
-                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,480,1));
-                    player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE,480,1));
+                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 480, 1));
+                    player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 480, 1));
 
-                    player.addEffect(new MobEffectInstance(MobEffects.STRENGTH,300,1));
+                    player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 300, 1));
                 }
             }
         }
@@ -49,7 +49,7 @@ public class GodPutrefactive  extends GodDNA {
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
 
-        Multimap<Holder<Attribute>, AttributeModifier>modifierMultimap = HashMultimap.create();
+        Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
 
 
         modifierMultimap.put(AttReg.heal, new AttributeModifier(identifier(), 0.25f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));

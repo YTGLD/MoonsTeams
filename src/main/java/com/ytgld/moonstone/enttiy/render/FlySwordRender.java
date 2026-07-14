@@ -50,6 +50,7 @@ public class FlySwordRender extends EntityRenderer<FlySword, FlySwordState> {
     }
     public void submit(FlySwordState state, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, CameraRenderState camera) {
         var entity = state.entity;
+
         double x = Mth.lerp(state.partialTick, entity.xOld, entity.getX());
         double y = Mth.lerp(state.partialTick, entity.yOld, entity.getY());
         double z = Mth.lerp(state.partialTick, entity.zOld, entity.getZ());

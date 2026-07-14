@@ -4,6 +4,7 @@ import com.ytgld.moonstone.config.ModLanguageProvider;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
 import com.ytgld.moonstone.enttiy.render.*;
+import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -12,6 +13,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -41,6 +43,10 @@ public class MoonstoneClient {
 
         event.registerEntityRenderer(EntityTs.flysword.get(), FlySwordRender::new);
         event.registerEntityRenderer(EntityTs.as_sword.get(), FlySwordRender::new);
+    }
+    @SubscribeEvent
+    public static void registerBindings(RegisterKeyMappingsEvent event) {
+        event.register(Keys.KEY_MAPPING_LAZY_R);
     }
     @SubscribeEvent // on the mod event bus
     public static void gatherData(GatherDataEvent.Client event) {

@@ -18,6 +18,7 @@ public class MShell extends MLS {
     public MShell(Properties properties) {
         super(properties);
     }
+
     public static void LivingHurtEvent(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.mshell.get())) {
@@ -34,6 +35,7 @@ public class MShell extends MLS {
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

@@ -24,7 +24,7 @@ public class GodAutolytic extends GodDNA {
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
-            modifierMultimap.put(AttReg.heal, new AttributeModifier(identifier(), 0.33, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        modifierMultimap.put(AttReg.heal, new AttributeModifier(identifier(), 0.33, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         return modifierMultimap;
     }
 

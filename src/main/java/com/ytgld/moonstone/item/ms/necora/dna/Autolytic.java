@@ -25,7 +25,7 @@ public class Autolytic extends TheNecora implements CanUPLevel {
         if (flags.hasShiftDown()) {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.autolytic.tool.string").withStyle(ChatFormatting.RED));
-        }else {
+        } else {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("-[SHIFT]").withStyle(ChatFormatting.DARK_RED));
             tooltip.add(Component.translatable(""));

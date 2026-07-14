@@ -17,12 +17,13 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
 
-public class MagicEye extends Doom  implements TextEvt.Twelve {
+public class MagicEye extends Doom implements TextEvt.Twelve {
 
     public MagicEye(Properties properties) {
         super(properties);
     }
-    public static void damage(LivingDamageEvent.Pre event){
+
+    public static void damage(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.magiceye.get())) {
                 Vec3 playerPos = event.getEntity().position().add(0, 0.75, 0);
@@ -38,6 +39,7 @@ public class MagicEye extends Doom  implements TextEvt.Twelve {
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

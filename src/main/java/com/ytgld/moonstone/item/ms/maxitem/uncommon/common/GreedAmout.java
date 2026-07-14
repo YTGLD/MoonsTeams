@@ -27,16 +27,16 @@ public class GreedAmout extends CommonItem {
     }
 
     public static void greedamout(LivingDamageEvent.Pre event) {
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.greedamout.get()) || Handler.hascurio(player,Items.maxamout.asItem())) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.greedamout.get()) || Handler.hascurio(player, Items.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 0));
                     event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.GREEN_WOOL.defaultBlockState()));
                 }
             }
         }
-        if (event.getSource().getDirectEntity() instanceof Player player){
-            if (Handler.hascurio(player,Items.greedamout.get()) || Handler.hascurio(player,Items.maxamout.asItem())) {
+        if (event.getSource().getDirectEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.greedamout.get()) || Handler.hascurio(player, Items.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     event.getEntity().level().levelEvent(2001, new BlockPos((int) event.getEntity().getX(), (int) (event.getEntity().getY() + 1), (int) event.getEntity().getZ()), Block.getId(Blocks.GREEN_WOOL.defaultBlockState()));
                     player.heal(4);
@@ -45,6 +45,7 @@ public class GreedAmout extends CommonItem {
         }
 
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

@@ -137,18 +137,14 @@ public class AttackBlood extends Entity {
     }
     @Override
     public void tick() {
-        super.tick();
+        tickCount ++;
         this.noPhysics = true;
         this.move(
                 MoverType.SELF,
                 this.getDeltaMovement()
         );
 
-        tickCount ++;
-        if (canSee) {
-            attack();
 
-        }
 
         if (canSee) {
             if (boom && tickCount >= maxTime) {
@@ -213,6 +209,11 @@ public class AttackBlood extends Entity {
         this.setNoGravity(true);
         this.setYRot(0);
         this.setXRot(0);
+
+        if (canSee) {
+            attack();
+        }
+        super.tick();
     }
 
     public Entity owner;

@@ -15,6 +15,7 @@ public class Thedoomstone extends Doom {
     public Thedoomstone(Properties properties) {
         super(properties);
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

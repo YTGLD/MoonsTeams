@@ -127,14 +127,13 @@ public class PrisonOfSin extends BloodItem {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext, stack);
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         Handler.stackCreateTag(stack);
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         slotContext.entity().getAttributes().removeAttributeModifiers(getAttributeModifiers(stack));
     }
 
@@ -143,7 +142,6 @@ public class PrisonOfSin extends BloodItem {
         float s = 110;
         if (stack.get(DataReg.tag) != null) {
             float is = stack.get(DataReg.tag).getFloatOr(killNameAndSize, 0);
-            ;
             if (is > ConfigItem.intValue2.get()) {
                 is = (float) (double) ConfigItem.intValue2.get();
             }
@@ -166,10 +164,11 @@ public class PrisonOfSin extends BloodItem {
         }
         return modifierMultimap;
     }
+
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity entity) {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
-        float s = (float)(double) ConfigItem.intValue3.get().floatValue();
+        float s = (float) (double) ConfigItem.intValue3.get().floatValue();
         modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(identifier(), -s, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(identifier(), -s, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         return modifierMultimap;
@@ -185,7 +184,6 @@ public class PrisonOfSin extends BloodItem {
             float s = 110;
             if (pStack.get(DataReg.tag) != null) {
                 float is = pStack.get(DataReg.tag).getFloatOr(killNameAndSize, 0);
-                ;
                 if (is > ConfigItem.intValue2.get()) {
                     is = (float) (double) ConfigItem.intValue2.get();
                 }

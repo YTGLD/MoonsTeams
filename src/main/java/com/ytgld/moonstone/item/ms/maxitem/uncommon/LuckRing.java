@@ -33,12 +33,13 @@ public class LuckRing extends CommonItem {
                 s = 100;
             }
             modifierMultimap.put(Attributes.LUCK, new AttributeModifier(identifier(),
-                                s,
-                                AttributeModifier.Operation.ADD_VALUE));
+                    s,
+                    AttributeModifier.Operation.ADD_VALUE));
 
         }
         return modifierMultimap;
     }
+
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);

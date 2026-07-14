@@ -1,8 +1,8 @@
 {
 
   "curios.modifiers.dna": "植入DNA时",
-  "key.moonstone.y": "技能",
-  "key.categories.moonstone.moonstone_category": "Moonstone",
+  "key.moonstone.r": "技能",
+  "key.category.moonstone.moonstone": "月之石",
   "moonstone.book.error": "你需要安装帕秋莉手册",
   "curios.modifiers.necora": "佩戴时",
   "itemGroup.tabmoonstone": "月之石",
@@ -274,6 +274,7 @@
 
   "item.catalyzer.tool.string": "右键使用可感染一些特殊物品",
 
+  "item.moonstone.key": "绑定按键：%d",
 
   "item.batskill.tool.string": "攻击有15％的概率召唤3只蝙蝠",
   "item.batskill.tool.string.1": "并且在半径12格内",
@@ -980,8 +981,8 @@
   "item.moonstone.blood_candle": "封魔烛台",
 
   "item.moonstone.the_blood_book": "封魔录",
-  "item.blood_candle.tool.string": "召唤一个巨型血灵增生体协助你作战",
-  "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品或右键这个物品",
+  "item.blood_candle.tool.string": "按下绑定按键召唤一个巨型血灵增生体协助你作战",
+  "item.blood_candle.tool.string.1": "如果丢失/失踪，请重新佩戴此物品或按下快捷键",
 
 
   "item.blood_candle.tool.string.2": "血灵增生体的攻击会造成基于你10%最大生命值和攻击属性的伤害",
@@ -2062,7 +2063,7 @@
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",
-
+  "item.obsidianring.tool": "免疫击退",
   "advancements.tooltip.hidden_blade.text": "获得这个物品",
   "advancements.tooltip.hidden_blade.hand": "未知的刀锋",
   "advancements.tooltip.wolf.text": "获得这个物品",

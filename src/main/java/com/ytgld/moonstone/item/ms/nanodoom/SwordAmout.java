@@ -77,8 +77,8 @@ public class SwordAmout extends Doom {
         }
     }
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        stack.getOrCreateTag().putString("a","a");
+public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext,stack);        stack.getOrCreateTag().putString("a","a");
         bolt bolt = new bolt(EntityTs.bolt.get(),slotContext.entity().level());
 
         if (stack.getOrCreateTag().getInt(attack_size)>10){

@@ -2,9 +2,11 @@ package com.ytgld.moonstone.event;
 
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.MaxEye;
 import com.ytgld.moonstone.item.ms.blood.PrisonOfSin;
+import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
 import com.ytgld.moonstone.item.ms.blood.magic.UndeadBloodCharm;
 import com.ytgld.moonstone.item.ms.ectoplasm.Beacon;
@@ -46,6 +48,7 @@ import com.ytgld.moonstone.item.si.nightmare.stone.StoneBrain;
 import com.ytgld.moonstone.item.si.nightmare.stone.StoneVirus;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
+import com.ytgld.moonstone.other.Light;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -229,6 +232,12 @@ public class NewEvent {
     public void BatteryName(ItemTooltipEvent event){
         ItemStack stack = event.getItemStack();
         CompoundTag  compoundTag =  stack.get(DataReg.tag);
+        if (event.getItemStack().getItem() instanceof BloodCandle candle) {
+            event.getToolTip().add(1, Component.literal(""));
+            event.getToolTip().add(1, Component.translatable("item.moonstone.key", Keys.KEY_MAPPING_LAZY_R.getKey().getDisplayName()).withStyle(Style.EMPTY
+                    .withColor(Light.ARGB.color(255,255,0,0))));
+
+        }
         if (compoundTag !=null) {
             if (compoundTag.getBooleanOr(Difficulty.PEACEFUL.getSerializedName(),false)) {
                 event.getToolTip().add(1, Component.translatable("moonstone.difficulty.name.peaceful").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFCD853F)))

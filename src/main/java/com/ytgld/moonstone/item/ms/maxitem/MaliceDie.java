@@ -50,13 +50,13 @@ public class MaliceDie extends UnCommonItem {
         super(properties);
     }
 
-    public static void att(LivingDamageEvent.Pre event){
-        if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.malice_die.get())){
+    public static void att(LivingDamageEvent.Pre event) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.malice_die.get())) {
                 Vec3 playerPos = player.position().add(0, 0.75, 0);
                 int range = 24;
                 List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
-                for (LivingEntity living : entities){
+                for (LivingEntity living : entities) {
                     if (living instanceof Mob mob) {
                         mob.setTarget(player);
                     }
@@ -67,10 +67,10 @@ public class MaliceDie extends UnCommonItem {
 
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
-                if (Handler.hascurio(player,Items.malice_die.get())) {
+                if (Handler.hascurio(player, Items.malice_die.get())) {
                     int size = 0;
                     Vec3 playerPos = player.position().add(0, 0.75, 0);
                     int range = 24;
@@ -85,7 +85,7 @@ public class MaliceDie extends UnCommonItem {
                     if (stack.get(DataReg.tag) != null) {
                         stack.get(DataReg.tag).putInt(MALICE_DIE, size);
                     } else {
-                        stack.set(DataReg.tag,new CompoundTag());
+                        stack.set(DataReg.tag, new CompoundTag());
                     }
                 }
             }
@@ -98,40 +98,41 @@ public class MaliceDie extends UnCommonItem {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         slotContext.entity().getAttributes().removeAttributeModifiers(this.Head(stack));
     }
-    private Multimap<Holder<Attribute>, AttributeModifier> Head(ItemStack stack){
+
+    private Multimap<Holder<Attribute>, AttributeModifier> Head(ItemStack stack) {
         Multimap<Holder<Attribute>, AttributeModifier> multimap = HashMultimap.create();
-        if (stack.get(DataReg.tag)!=null) {
-            float s = stack.get(DataReg.tag).getIntOr(MALICE_DIE,0);//1 == 100%
+        if (stack.get(DataReg.tag) != null) {
+            float s = stack.get(DataReg.tag).getIntOr(MALICE_DIE, 0);//1 == 100%
             if (s > 18) {
-                s=18;
+                s = 18;
             }
             s /= 100f;//0.01 = 1%
             multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(),
-                                s*10*0.33f,
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                    s * 10 * 0.33f,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
             multimap.put(AttReg.heal, new AttributeModifier(identifier(),
-                                s*9*0.33f,
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                    s * 9 * 0.33f,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
             multimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(identifier(),
-                                s*8*0.33f,
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                    s * 8 * 0.33f,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
             multimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(identifier(),
-                                s*7*0.33f,
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                    s * 7 * 0.33f,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
             multimap.put(Attributes.ARMOR, new AttributeModifier(identifier(),
-                                s*6*0.33f,
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                    s * 6 * 0.33f,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
             multimap.put(AttReg.cit, new AttributeModifier(identifier(),
-                                s*5*0.33f,
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                    s * 5 * 0.33f,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
         }
         return multimap;

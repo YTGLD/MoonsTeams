@@ -3,7 +3,10 @@ package com.ytgld.moonstone.enttiy;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
+import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -24,9 +27,13 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class OwnerBlood extends TamableAnimal {
     public OwnerBlood(EntityType<? extends OwnerBlood> p_21803_, Level p_21804_) {
@@ -85,13 +92,6 @@ public class OwnerBlood extends TamableAnimal {
             if (this.getOwner() instanceof Player player){
                 if (!Handler.hascurio(player, Items.blood_candle.get())){
                     this.discard();
-                }
-                if (!player.entityTags().contains("HasBlood")){
-                    this.discard();
-                }
-                if (player.getCooldowns().isOnCooldown(Items.blood_candle.get().getDefaultInstance())){
-                    this.discard();
-
                 }
             }
         }
@@ -250,6 +250,7 @@ public class OwnerBlood extends TamableAnimal {
                 this.setTarget(null);
             }
         }
+        clear();
     }
     private boolean isMoon(LivingEntity living){
         if (living != null){
@@ -257,6 +258,23 @@ public class OwnerBlood extends TamableAnimal {
             return !name.getNamespace().equals(Moonstone.MODID);
         }
         return  true;
+    }
+    public boolean canLive = true;
+    private void clear(){
+        if (canLive) {
+            if (this.getOwner() != null && this.getOwner() instanceof Player player) {
+                if (!player.level().isClientSide()) {
+                    canLive = true;
+                    CompoundTag compoundTag = player.getPersistentData();
+                    if (!compoundTag.getBooleanOr(BloodCandle.hasOwnerBlood, false)) {
+                        canLive = false;
+                    }
+                }
+            }
+        }
+        if (!canLive){
+            this.discard();
+        }
     }
     private void playRemoveOneSound(Entity p_186343_) {
         p_186343_.playSound(SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), 0.8F, 0.8F + p_186343_.level().getRandom().nextFloat() * 0.4F);

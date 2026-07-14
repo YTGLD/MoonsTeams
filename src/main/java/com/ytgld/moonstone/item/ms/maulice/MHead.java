@@ -24,10 +24,10 @@ public class MHead extends MLS {
         pTooltipComponents.add(Component.translatable("item.mhead.tool.string.1").withStyle(ChatFormatting.DARK_GREEN));
     }
 
-    public static void target(LivingChangeTargetEvent event){
+    public static void target(LivingChangeTargetEvent event) {
         if (event.getNewAboutToBeSetTarget() instanceof Player player) {
             if (Handler.hascurio(player, Items.mhead.asItem())) {
-                if (player.getLastHurtMob()!=null) {
+                if (player.getLastHurtMob() != null) {
                     if (player.getLastHurtMob().is(event.getEntity())) {
                         return;
                     }

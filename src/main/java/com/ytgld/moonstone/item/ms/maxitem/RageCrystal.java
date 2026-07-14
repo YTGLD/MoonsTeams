@@ -19,10 +19,10 @@ public class RageCrystal extends UnCommonItem {
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
-            modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(), 0.05f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-            modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(identifier(), 0.05f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-            return modifierMultimap;
-        }
+        modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(), 0.05f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(identifier(), 0.05f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        return modifierMultimap;
+    }
 }
 
 

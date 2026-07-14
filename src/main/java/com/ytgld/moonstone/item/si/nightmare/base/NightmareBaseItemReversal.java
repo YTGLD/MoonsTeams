@@ -119,7 +119,7 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (!slotContext.entity().level().isClientSide()) {
             if (slotContext.entity().tickCount >= 20) {
                 slotContext.entity().getAttributes().addTransientAttributeModifiers(geta(stack));
@@ -167,8 +167,8 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         slotContext.entity().getAttributes().removeAttributeModifiers(geta(stack));
     }
 

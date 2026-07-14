@@ -30,17 +30,16 @@ public class MEye extends MLS {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-
-        if (slotContext.entity() instanceof Player player){
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
             Vec3 playerPos = player.position().add(0, 0.75, 0);
             int range = 10;
             List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
 
-            for (LivingEntity living : entities){
+            for (LivingEntity living : entities) {
                 if (!living.is(player)) {
-                    if (living instanceof Mob mob){
-                        if (mob.isInvertedHealAndHarm()){
+                    if (living instanceof Mob mob) {
+                        if (mob.isInvertedHealAndHarm()) {
                             living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 30, 1));
                         }
                     }
@@ -58,6 +57,7 @@ public class MEye extends MLS {
                         , SlotTypePredicate.builder().withId("charm").build())
         ), true);
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

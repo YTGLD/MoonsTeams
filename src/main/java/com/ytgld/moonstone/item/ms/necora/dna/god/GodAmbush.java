@@ -19,13 +19,14 @@ public class GodAmbush extends GodDNA {
         super(properties);
     }
 
-    public static void LivingIncomingDamageEvent(LivingDamageEvent.Pre event){
-        if (event.getEntity() instanceof Player player){
+    public static void LivingIncomingDamageEvent(LivingDamageEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.GodAmbush.get())) {
-                event.setNewDamage(event.getNewDamage()*0.9f);
+                event.setNewDamage(event.getNewDamage() * 0.9f);
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack pStack, Level pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
@@ -34,7 +35,7 @@ public class GodAmbush extends GodDNA {
             pTooltipComponents.add(Component.translatable("item.ambush.tool.string").withStyle(ChatFormatting.RED));
             pTooltipComponents.add(Component.literal(""));
             pTooltipComponents.add(Component.translatable("item.god_ambush.tool.string").withStyle(ChatFormatting.RED));
-        }else {
+        } else {
             pTooltipComponents.add(Component.translatable("key.keyboard.left.shift").withStyle(ChatFormatting.DARK_RED));
         }
     }

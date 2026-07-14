@@ -37,8 +37,8 @@ public class AsAmout extends Doom implements TextEvt.Twelve {
         super(properties);
     }
 
-    public static void hurt(LivingDamageEvent.Pre event){
-        if (event.getSource().getDirectEntity() instanceof Player player ){
+    public static void hurt(LivingDamageEvent.Pre event) {
+        if (event.getSource().getDirectEntity() instanceof Player player) {
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                 Map<String, ICurioStacksHandler> curios = handler.getCurios();
                 for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -46,10 +46,10 @@ public class AsAmout extends Doom implements TextEvt.Twelve {
                     IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
-                        if (stack.is(Items.as_amout.get()) ){
+                        if (stack.is(Items.as_amout.get())) {
                             if (stack.get(DataReg.tag) != null) {
-                                if (!stack.get(DataReg.tag).getBooleanOr(canFlySword,false)){
-                                    if (Handler.hascurio(player, Items.as_amout.get())){
+                                if (!stack.get(DataReg.tag).getBooleanOr(canFlySword, false)) {
+                                    if (Handler.hascurio(player, Items.as_amout.get())) {
                                         if (!player.getCooldowns().isOnCooldown(Items.as_amout.get().getDefaultInstance())) {
                                             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.AMBIENT, 2, 2);
 
@@ -69,7 +69,7 @@ public class AsAmout extends Doom implements TextEvt.Twelve {
                                                 player.level().addFreshEntity(as_sword);
                                                 as_sword.setTarget(target);
 
-                                                player.getCooldowns().addCooldown(Items.as_amout.get().getDefaultInstance(),100);
+                                                player.getCooldowns().addCooldown(Items.as_amout.get().getDefaultInstance(), 100);
                                             }
 
                                         }
@@ -84,15 +84,17 @@ public class AsAmout extends Doom implements TextEvt.Twelve {
 
         }
     }
+
     public static String canFlySword = "canFlySword";
+
     public boolean overrideOtherStackedOnMe(ItemStack me, ItemStack Other, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
             if (Other.isEmpty()) {
                 if (me.get(DataReg.tag) == null) {
-                    me.set(DataReg.tag,new CompoundTag());
+                    me.set(DataReg.tag, new CompoundTag());
                 }
                 CompoundTag tag = me.get(DataReg.tag);
-                boolean c = tag.getBooleanOr(canFlySword,false); // 假设"canFlySword"是一个字符串常量
+                boolean c = tag.getBooleanOr(canFlySword, false); // 假设"canFlySword"是一个字符串常量
                 tag.putBoolean(canFlySword, !c);
                 return true;
             }
@@ -116,13 +118,13 @@ public class AsAmout extends Doom implements TextEvt.Twelve {
         p_41423_.add(Component.literal(""));
         p_41423_.add(Component.translatable("item.as_amout.tool.string.7").withStyle(ChatFormatting.GOLD));
         p_41423_.add(Component.translatable("item.moonstone.tool.string.sword").withStyle(ChatFormatting.GOLD));
-        if (p_41421_.get(DataReg.tag)!=null){
-            if (!p_41421_.get(DataReg.tag).getBooleanOr(canFlySword,false)){
+        if (p_41421_.get(DataReg.tag) != null) {
+            if (!p_41421_.get(DataReg.tag).getBooleanOr(canFlySword, false)) {
                 p_41423_.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
-            }else {
+            } else {
                 p_41423_.add(Component.translatable("item.moonstone.tooltips.on").withStyle(ChatFormatting.GOLD));
             }
-        }else {
+        } else {
             p_41423_.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
         }
     }

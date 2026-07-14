@@ -95,14 +95,14 @@ public class NightmareBaseStart extends NightmareBase implements AllTip {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (Handler.hascurio(slotContext.entity(), this))
             slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         slotContext.entity().getAttributes().removeAttributeModifiers(gets(slotContext));
     }
 

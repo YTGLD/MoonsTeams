@@ -89,13 +89,16 @@ public class NightmareBaseStone extends NightmareBase implements AllTip {
     public static final String uDead = "undead";
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (stack.get(DataReg.tag) == null) {
             stack.set(DataReg.tag, new CompoundTag());
         }
         if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
                 float lv = player.getHealth() / player.getMaxHealth();
+                if (lv > 1) {
+                    lv = 1;
+                }
                 lv *= 100;
                 int now = (int) (100 - (lv));
                 if (stack.get(DataReg.tag) == null) {
@@ -114,8 +117,8 @@ public class NightmareBaseStone extends NightmareBase implements AllTip {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         slotContext.entity().getAttributes().removeAttributeModifiers(ad(stack));
     }
 

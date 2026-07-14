@@ -30,6 +30,7 @@ public class MBox extends MLS {
         modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(identifier(), 8, AttributeModifier.Operation.ADD_VALUE));
         return modifierMultimap;
     }
+
     @Override
     public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
         return new CurioAttributeModifiers(List.of(

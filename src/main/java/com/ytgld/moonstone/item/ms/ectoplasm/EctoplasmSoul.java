@@ -18,7 +18,7 @@ public class EctoplasmSoul extends Ectoplasm {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity().tickCount % 20 == 0) {
             slotContext.entity().addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0, false, false));
         }

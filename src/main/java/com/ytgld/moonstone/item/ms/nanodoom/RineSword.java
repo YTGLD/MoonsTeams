@@ -3,7 +3,6 @@ package com.ytgld.moonstone.item.ms.nanodoom;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.FlySword;
-import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.Doom;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -29,7 +28,7 @@ import java.util.Map;
 
 import static com.ytgld.moonstone.item.Items.doomswoud;
 
-public class RineSword extends Doom  {
+public class RineSword extends Doom {
     public static String canFlySword = "canFlySword";
 
     public RineSword(Properties properties) {
@@ -40,10 +39,10 @@ public class RineSword extends Doom  {
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
             if (Other.isEmpty()) {
                 if (me.get(DataReg.tag) == null) {
-                    me.set(DataReg.tag,new CompoundTag());
+                    me.set(DataReg.tag, new CompoundTag());
                 }
                 CompoundTag tag = me.get(DataReg.tag);
-                boolean canFlySword = tag.getBooleanOr(RineSword.canFlySword,false); // 假设"canFlySword"是一个字符串常量
+                boolean canFlySword = tag.getBooleanOr(RineSword.canFlySword, false); // 假设"canFlySword"是一个字符串常量
                 tag.putBoolean(RineSword.canFlySword, !canFlySword);
                 return true;
             }
@@ -51,9 +50,9 @@ public class RineSword extends Doom  {
         return false;
     }
 
-    public static void suddenrainLLivingHurtEvent(LivingDamageEvent.Pre event){
-        if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, doomswoud.get())){
+    public static void suddenrainLLivingHurtEvent(LivingDamageEvent.Pre event) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, doomswoud.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -61,20 +60,20 @@ public class RineSword extends Doom  {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(doomswoud.get()) ){
-                                if (stack.get(  DataReg.tag) != null) {
-                                    if (!stack.get( DataReg.tag).getBooleanOr(SevenSword.canFlySword,false)){
-                                        if (!player.getCooldowns().isOnCooldown(doomswoud.get().getDefaultInstance())){
-                                            for (int p = 0;p<2;p++) {
-                                                float s  = (float) Math.sin(p);
-                                                if (s <= 0){
+                            if (stack.is(doomswoud.get())) {
+                                if (stack.get(DataReg.tag) != null) {
+                                    if (!stack.get(DataReg.tag).getBooleanOr(SevenSword.canFlySword, false)) {
+                                        if (!player.getCooldowns().isOnCooldown(doomswoud.get().getDefaultInstance())) {
+                                            for (int p = 0; p < 2; p++) {
+                                                float s = (float) Math.sin(p);
+                                                if (s <= 0) {
                                                     s = 0.12f;
                                                 }
-                                                FlySword item = new FlySword(EntityTs.flysword.get(),player.level());
-                                                item.teleportTo(player.getX()+Mth.nextFloat(RandomSource.create(), -s,s),player.getY()+2+s,player.getZ()+Mth.nextFloat(RandomSource.create(), -s,s));
+                                                FlySword item = new FlySword(EntityTs.flysword.get(), player.level());
+                                                item.teleportTo(player.getX() + Mth.nextFloat(RandomSource.create(), -s, s), player.getY() + 2 + s, player.getZ() + Mth.nextFloat(RandomSource.create(), -s, s));
                                                 item.setOwner(player);
                                                 item.setTarget(event.getEntity());
-                                                item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f),s/1.5f,Mth.nextFloat(RandomSource.create(), -s/1.5f,s/1.5f));
+                                                item.setDeltaMovement(Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f), s / 1.5f, Mth.nextFloat(RandomSource.create(), -s / 1.5f, s / 1.5f));
                                                 player.level().addFreshEntity(item);
                                                 player.getCooldowns().addCooldown(doomswoud.get().getDefaultInstance(), 40);
                                             }
@@ -90,8 +89,8 @@ public class RineSword extends Doom  {
         }
     }
 
-    public static void suddenrainLivingDeathEvent(LivingDeathEvent event){
-        if (event.getSource().getDirectEntity() instanceof Player player){
+    public static void suddenrainLivingDeathEvent(LivingDeathEvent event) {
+        if (event.getSource().getDirectEntity() instanceof Player player) {
             if (Handler.hascurio(player, doomswoud.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -100,10 +99,10 @@ public class RineSword extends Doom  {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(doomswoud.get()) ){
+                            if (stack.is(doomswoud.get())) {
                                 if (!player.getCooldowns().isOnCooldown(doomswoud.get().getDefaultInstance())) {
-                                    if (stack.get(  DataReg.tag) != null) {
-                                        if (!stack.get( DataReg.tag).getBooleanOr(SevenSword.canFlySword,false)) {
+                                    if (stack.get(DataReg.tag) != null) {
+                                        if (!stack.get(DataReg.tag).getBooleanOr(SevenSword.canFlySword, false)) {
 
                                             for (int p = 0; p < 4; p++) {
                                                 float s = (float) Math.sin(p);
@@ -139,13 +138,13 @@ public class RineSword extends Doom  {
         tooltip.add(Component.translatable("item.doomswoud.tool.string.2").withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("item.moonstone.tool.string.sword").withStyle(ChatFormatting.GOLD));
-        if (stack.get(DataReg.tag)!=null){
-            if (!stack.get(DataReg.tag).getBooleanOr(canFlySword,false)){
+        if (stack.get(DataReg.tag) != null) {
+            if (!stack.get(DataReg.tag).getBooleanOr(canFlySword, false)) {
                 tooltip.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
-            }else {
+            } else {
                 tooltip.add(Component.translatable("item.moonstone.tooltips.on").withStyle(ChatFormatting.GOLD));
             }
-        }else {
+        } else {
             tooltip.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
         }
     }

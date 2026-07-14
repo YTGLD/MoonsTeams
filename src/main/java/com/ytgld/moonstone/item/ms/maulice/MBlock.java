@@ -19,10 +19,11 @@ import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
-public class MBlock extends MLS implements TextEvt.Twelve{
+public class MBlock extends MLS implements TextEvt.Twelve {
     public MBlock(Properties properties) {
         super(properties);
     }
+
     @Override
     public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
         return new CurioAttributeModifiers(List.of(

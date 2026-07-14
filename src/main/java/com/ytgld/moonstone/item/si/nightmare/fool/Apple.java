@@ -72,7 +72,7 @@ public class Apple extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         slotContext.entity().addEffect(new MobEffectInstance(Effects.life_apple, 100, 0, false, false));
     }
 

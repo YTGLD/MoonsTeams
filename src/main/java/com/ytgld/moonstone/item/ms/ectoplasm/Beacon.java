@@ -23,10 +23,10 @@ public class Beacon extends Ectoplasm {
         super(properties);
     }
 
-    public static void beacon(LivingDamageEvent.Pre event){
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.beacon.get())){
-                Collection<MobEffectInstance> collection  = player.getActiveEffects();
+    public static void beacon(LivingDamageEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.beacon.get())) {
+                Collection<MobEffectInstance> collection = player.getActiveEffects();
                 if (!collection.isEmpty()) {
                     if (event.getSource().getEntity() != null) {
                         AreaEffectCloud cloud = new AreaEffectCloud(event.getSource().getEntity().level(), event.getSource().getEntity().getX(), event.getSource().getEntity().getY(), event.getSource().getEntity().getZ());
@@ -37,7 +37,7 @@ public class Beacon extends Ectoplasm {
                         cloud.setPotionDurationScale(0.25F);
                         cloud.setRadiusPerTick(-cloud.getRadius() / cloud.getDuration());
 
-                        for(MobEffectInstance mobeffectinstance : collection) {
+                        for (MobEffectInstance mobeffectinstance : collection) {
                             cloud.addEffect(new MobEffectInstance(mobeffectinstance));
                         }
                         event.getSource().getEntity().level().addFreshEntity(cloud);
@@ -47,9 +47,9 @@ public class Beacon extends Ectoplasm {
             }
         }
     }
+
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext, stack);
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
     }
 
     @Override

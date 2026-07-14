@@ -22,7 +22,7 @@ public class Regenerative extends TheNecora implements CanUPLevel {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.getCooldowns().isOnCooldown(this.getDefaultInstance())) {
                 player.heal(1);
@@ -37,7 +37,7 @@ public class Regenerative extends TheNecora implements CanUPLevel {
         if (flags.hasShiftDown()) {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.regenerative.tool.string").withStyle(ChatFormatting.RED));
-        }else {
+        } else {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("-[SHIFT]").withStyle(ChatFormatting.DARK_RED));
             tooltip.add(Component.translatable("item.regenerative.tool.string.1").withStyle(ChatFormatting.RED));

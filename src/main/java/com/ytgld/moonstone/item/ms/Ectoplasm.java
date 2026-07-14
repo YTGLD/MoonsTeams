@@ -18,17 +18,18 @@ public class Ectoplasm extends CommonItem {
     @Override
     public Component getName(ItemStack itemStack) {
         Component component = super.getName(itemStack);
-        return component.copy().withStyle(Style.EMPTY.withColor(Light.ARGB.color(255,180,240,255)));
+        return component.copy().withStyle(Style.EMPTY.withColor(Light.ARGB.color(255, 180, 240, 255)));
     }
+
     public static final String ITEMCategoryEctoplasm = "Ectoplasm";
 
-    public void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height){
-        Handler.renderBack(guiGraphics,x,y,width,height,
-                Identifier.fromNamespaceAndPath(Moonstone.MODID,"tooltip/all/frame"),
-                Identifier.fromNamespaceAndPath(Moonstone.MODID,"tooltip/all/background"),
+    public void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height) {
+        Handler.renderBack(guiGraphics, x, y, width, height,
+                Identifier.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/frame"),
+                Identifier.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/background"),
 
-                Light.ARGB.color(255,100,150,255),
-                Light.ARGB.color(255,19,24,25)
+                Light.ARGB.color(255, 100, 150, 255),
+                Light.ARGB.color(255, 19, 24, 25)
         );
     }
 }

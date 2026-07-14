@@ -35,7 +35,7 @@ public class EctoplasmHorseshoe extends Ectoplasm {
         return modifierMultimap;
     }
 
-    public static void hurt(LivingDamageEvent.Pre event){
+    public static void hurt(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.ectoplasmhorseshoe.get())) {
                 if (event.getSource().is(DamageTypes.FALL)) {
@@ -49,6 +49,7 @@ public class EctoplasmHorseshoe extends Ectoplasm {
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

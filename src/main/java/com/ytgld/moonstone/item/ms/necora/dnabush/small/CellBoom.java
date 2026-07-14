@@ -21,15 +21,16 @@ public class CellBoom extends TheNecora {
         super(properties);
     }
 
-    public static void Boom(LivingDamageEvent.Pre event){
+    public static void Boom(LivingDamageEvent.Pre event) {
         if ((event.getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player, Items.cell_boom.get())){
-                if (event.getSource().is(DamageTypes.EXPLOSION)){
+            if (Handler.hascurio(player, Items.cell_boom.get())) {
+                if (event.getSource().is(DamageTypes.EXPLOSION)) {
                     event.setNewDamage(0);
                 }
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

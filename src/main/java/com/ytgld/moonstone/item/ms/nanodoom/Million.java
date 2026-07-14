@@ -39,7 +39,7 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 import java.util.List;
 import java.util.Map;
 
-public class Million extends Doom  implements TextEvt.Twelve {
+public class Million extends Doom implements TextEvt.Twelve {
     public static final String sizeLvl = "swordSize";
     public static final String attackLvl = "attackLvlSize";
     public static final String allAttackTime = "allAttackTime";
@@ -55,7 +55,7 @@ public class Million extends Doom  implements TextEvt.Twelve {
             if (Other.isEmpty()) {
                 Handler.stackCreateTag(me);
                 CompoundTag tag = me.get(DataReg.tag);
-                boolean c = tag.getBooleanOr(canFlySword,false); // 假设"canFlySword"是一个字符串常量
+                boolean c = tag.getBooleanOr(canFlySword, false); // 假设"canFlySword"是一个字符串常量
                 tag.putBoolean(canFlySword, !c);
                 return true;
             }
@@ -64,30 +64,30 @@ public class Million extends Doom  implements TextEvt.Twelve {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (stack.get(DataReg.tag) != null) {
-            if (stack.get(DataReg.tag).getIntOr(allAttackTime,0)>0){
-                stack.get(DataReg.tag).putInt(allAttackTime,stack.get(DataReg.tag).getIntOr(allAttackTime,0)-1);
+            if (stack.get(DataReg.tag).getIntOr(allAttackTime, 0) > 0) {
+                stack.get(DataReg.tag).putInt(allAttackTime, stack.get(DataReg.tag).getIntOr(allAttackTime, 0) - 1);
             }
 
-            if (stack.get(DataReg.tag).getIntOr(allAttackTime,0)<=0){
-                stack.get(DataReg.tag).putInt(attackLvl,0);
+            if (stack.get(DataReg.tag).getIntOr(allAttackTime, 0) <= 0) {
+                stack.get(DataReg.tag).putInt(attackLvl, 0);
             }
-        }else {
+        } else {
             CompoundTag compoundTag = new CompoundTag();
-            compoundTag.putInt(sizeLvl,15);
-            stack.set(DataReg.tag,compoundTag);
+            compoundTag.putInt(sizeLvl, 15);
+            stack.set(DataReg.tag, compoundTag);
         }
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         slotContext.entity().getAttributes().removeAttributeModifiers(Head(stack));
     }
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-        if (stack.get(DataReg.tag) !=null) {
+        if (stack.get(DataReg.tag) != null) {
             slotContext.entity().getAttributes().addTransientAttributeModifiers(Head(stack));
         }
     }
@@ -102,13 +102,13 @@ public class Million extends Doom  implements TextEvt.Twelve {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.million.get())&&!player.getCooldowns().isOnCooldown(Items.million.get().getDefaultInstance())) {
+                            if (stack.is(Items.million.get()) && !player.getCooldowns().isOnCooldown(Items.million.get().getDefaultInstance())) {
                                 Handler.stackCreateTag(stack);
-                                if (!stack.get(DataReg.tag).getBooleanOr(canFlySword,false)) {
+                                if (!stack.get(DataReg.tag).getBooleanOr(canFlySword, false)) {
                                     if (player.getAttackStrengthScale(1) >= 1) {
                                         if (stack.get(DataReg.tag) != null) {
 
-                                            if (stack.get(DataReg.tag).getIntOr(sizeLvl,0) >= 3) {
+                                            if (stack.get(DataReg.tag).getIntOr(sizeLvl, 0) >= 3) {
 
                                                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.AMBIENT, 2, 2);
 
@@ -129,8 +129,8 @@ public class Million extends Doom  implements TextEvt.Twelve {
                                                     player.level().addFreshEntity(as_sword);
                                                     as_sword.setTarget(target);
 
-                                                    if (stack.get(DataReg.tag).getIntOr(sizeLvl,0) > 0) {
-                                                        stack.get(DataReg.tag).putInt(sizeLvl, stack.get(DataReg.tag).getIntOr(sizeLvl,0) - 1);
+                                                    if (stack.get(DataReg.tag).getIntOr(sizeLvl, 0) > 0) {
+                                                        stack.get(DataReg.tag).putInt(sizeLvl, stack.get(DataReg.tag).getIntOr(sizeLvl, 0) - 1);
                                                     }
                                                     player.getCooldowns().addCooldown(Items.million.get().getDefaultInstance(), 50);
 
@@ -147,11 +147,12 @@ public class Million extends Doom  implements TextEvt.Twelve {
             }
         }
     }
-    private Multimap<Holder<Attribute>, AttributeModifier> Head(ItemStack stack){
+
+    private Multimap<Holder<Attribute>, AttributeModifier> Head(ItemStack stack) {
         Multimap<Holder<Attribute>, AttributeModifier> multimap = HashMultimap.create();
 
         if (stack.get(DataReg.tag) != null) {
-            float dam = stack.get(DataReg.tag).getIntOr(attackLvl,0) / 100f / 2f;
+            float dam = stack.get(DataReg.tag).getIntOr(attackLvl, 0) / 100f / 2f;
             multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(),
                     dam,
                     AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
@@ -175,19 +176,19 @@ public class Million extends Doom  implements TextEvt.Twelve {
         } else {
             pTooltipComponents.add(Component.translatable("item.million.tool.string.6").withStyle(ChatFormatting.GOLD));
             pTooltipComponents.add(Component.literal(""));
-            if (pStack.get(DataReg.tag)!=null) {
-                pTooltipComponents.add(Component.translatable("item.million.tool.string.7").append((pStack.get(DataReg.tag).getIntOr(attackLvl,0)/2) + "%").withStyle(ChatFormatting.YELLOW));
-                pTooltipComponents.add(Component.translatable("item.million.tool.string.8").append(pStack.get(DataReg.tag).getIntOr(sizeLvl,0) + "").withStyle(ChatFormatting.YELLOW));
+            if (pStack.get(DataReg.tag) != null) {
+                pTooltipComponents.add(Component.translatable("item.million.tool.string.7").append((pStack.get(DataReg.tag).getIntOr(attackLvl, 0) / 2) + "%").withStyle(ChatFormatting.YELLOW));
+                pTooltipComponents.add(Component.translatable("item.million.tool.string.8").append(pStack.get(DataReg.tag).getIntOr(sizeLvl, 0) + "").withStyle(ChatFormatting.YELLOW));
             }
         }
         pTooltipComponents.add(Component.translatable("item.moonstone.tool.string.sword").withStyle(ChatFormatting.GOLD));
-        if (pStack.get(DataReg.tag)!=null){
-            if (!pStack.get(DataReg.tag).getBooleanOr(canFlySword,false)){
+        if (pStack.get(DataReg.tag) != null) {
+            if (!pStack.get(DataReg.tag).getBooleanOr(canFlySword, false)) {
                 pTooltipComponents.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
-            }else {
+            } else {
                 pTooltipComponents.add(Component.translatable("item.moonstone.tooltips.on").withStyle(ChatFormatting.GOLD));
             }
-        }else {
+        } else {
             pTooltipComponents.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
         }
     }

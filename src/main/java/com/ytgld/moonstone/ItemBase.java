@@ -45,8 +45,11 @@ public class ItemBase extends Item implements ICurioItem {
         return HashMultimap.create();
     }
 
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+    }
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public final void curioTick(SlotContext slotContext, ItemStack stack) {
+        curioTickUse(slotContext, stack);
         if (!slotContext.entity().level().isClientSide()) {
             if (!getAttributeModifiers(stack, slotContext.entity()).isEmpty()) {
                 slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack, slotContext.entity()));
@@ -54,17 +57,18 @@ public class ItemBase extends Item implements ICurioItem {
         }
     }
 
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
 
+    }
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        ICurioItem.super.onUnequip(slotContext, newStack, stack);
+    public final void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        onUnequipUse(slotContext, newStack, stack);
         if (!slotContext.entity().level().isClientSide()) {
             if (!getAttributeModifiers(stack, slotContext.entity()).isEmpty()) {
                 slotContext.entity().getAttributes().removeAttributeModifiers(getAttributeModifiers(stack, slotContext.entity()));
             }
         }
     }
-
     @Override
     public final void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
         text(itemStack, builder, tooltipFlag);

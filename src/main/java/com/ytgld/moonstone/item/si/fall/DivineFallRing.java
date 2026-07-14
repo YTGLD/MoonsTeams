@@ -79,8 +79,7 @@ public class DivineFallRing extends FallItem {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext,stack);
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (!slotContext.entity().level().isClientSide()) {
             if (slotContext.entity().tickCount >= 20) {
             } else {
@@ -94,7 +93,9 @@ public class DivineFallRing extends FallItem {
 
             if (!player.level().isClientSide()) {
                 float lv = player.getHealth() / player.getMaxHealth();
-
+                if (lv > 1) {
+                    lv = 1;
+                }
                 lv *= 100;
                 int now = (int) (100 - (lv));
                 if (stack.get(DataReg.tag) == null) {
@@ -111,8 +112,8 @@ public class DivineFallRing extends FallItem {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         slotContext.entity().getAttributes().removeAttributeModifiers(ad(stack));
     }
 

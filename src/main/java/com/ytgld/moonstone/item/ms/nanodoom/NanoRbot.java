@@ -19,9 +19,8 @@ public class NanoRbot extends Doom {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext,stack);
-        if (slotContext.entity() instanceof Player player){
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
             ItemStack ss = player.getItemBySlot(EquipmentSlot.MAINHAND);
             if (!ss.isEmpty()) {
                 if (ss.getMaxDamage() != 0) {
@@ -36,6 +35,7 @@ public class NanoRbot extends Doom {
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

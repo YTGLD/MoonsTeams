@@ -28,24 +28,25 @@ public class UndeadBloodCharm extends BloodItem {
         super(properties);
     }
 
-    public static void LivingIncomingDamageEvent(LivingDamageEvent.Pre event){
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.undead_blood_charm.get())){
-                event.setNewDamage(event.getNewDamage()*1.4f);
+    public static void LivingIncomingDamageEvent(LivingDamageEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.undead_blood_charm.get())) {
+                event.setNewDamage(event.getNewDamage() * 1.4f);
             }
         }
-        if (event.getSource().getEntity() instanceof Player player){
+        if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.undead_blood_charm.get())) {
                 if (event.getEntity().isInvertedHealAndHarm()) {
-                    event.setNewDamage(event.getNewDamage()*1.5f);
+                    event.setNewDamage(event.getNewDamage() * 1.5f);
                 }
             }
         }
     }
-    public static void LivingHealEvent(LivingHealEvent event){
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.undead_blood_charm.get())){
-                if (event.getAmount()>0) {
+
+    public static void LivingHealEvent(LivingHealEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.undead_blood_charm.get())) {
+                if (event.getAmount() > 0) {
                     event.setAmount(event.getAmount() * 1.5f);
 
 
@@ -97,7 +98,6 @@ public class UndeadBloodCharm extends BloodItem {
         p_41423_.add(Component.translatable("item.undead_blood_charm.tool.string.4").withStyle(ChatFormatting.RED));
         p_41423_.add(Component.translatable("item.undead_blood_charm.tool.string.5").withStyle(ChatFormatting.RED));
     }
-
 
 
 }

@@ -9,23 +9,21 @@ import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.event.NewEvent;
 import com.ytgld.moonstone.event.TextEvt;
+import com.ytgld.moonstone.event.key.ClientEvent;
+import com.ytgld.moonstone.event.key.UseCuriosHandler;
 import com.ytgld.moonstone.event.loot.LootTableEvent;
 import com.ytgld.moonstone.event.loot.Loots;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.data.internal.NeoForgeRecipeProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import org.slf4j.Logger;
 
 @Mod(Moonstone.MODID)
@@ -47,12 +45,17 @@ public class Moonstone {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.fc);
 
         modEventBus.addListener(this::gatherData);
+        modEventBus.addListener(this::registerPayloadHandler);
 
         NeoForge.EVENT_BUS.register(new NewEvent());
         NeoForge.EVENT_BUS.register(new AdvancementEvt());
         NeoForge.EVENT_BUS.register(new TextEvt());
         NeoForge.EVENT_BUS.register(new LootTableEvent());
+        NeoForge.EVENT_BUS.register(new ClientEvent());
 
+    }
+    private void registerPayloadHandler(final RegisterPayloadHandlersEvent evt) {
+        UseCuriosHandler.register(evt.registrar("1.0"));
     }
     public void gatherData(GatherDataEvent.Client event) {
         event.createProvider(MoonRecipeProvider.Runner::new);

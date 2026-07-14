@@ -1,57 +1,47 @@
 package com.ytgld.moonstone.item.ms.blood.magic;
- import com.ytgld.moonstone.enttiy.EntityTs;
- import com.ytgld.moonstone.enttiy.OwnerBlood;
- import com.ytgld.moonstone.item.ms.BloodItem;
+
+import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.enttiy.EntityTs;
+import com.ytgld.moonstone.enttiy.OwnerBlood;
+import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.ms.BloodItem;
 import net.minecraft.ChatFormatting;
- import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.SlotAccess;
- import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ClickAction;
-import net.minecraft.world.inventory.Slot;
- import net.minecraft.world.item.ItemStack;
- import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
- import top.theillusivec4.curios.api.SlotContext;
 
- import java.util.List;
+import java.util.List;
 
 public class BloodCandle extends BloodItem {
-
     public BloodCandle(Properties properties) {
         super(properties);
     }
 
-    @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player) {
-            player.entityTags().remove("HasBlood");
-        }
-    }
-    public boolean overrideOtherStackedOnMe(ItemStack me, ItemStack Other, Slot p_150744_, ClickAction p_150745_, Player p_150746_, SlotAccess p_150747_) {
-        if (me.getCount() != 1) return false;
-        if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
-            if (Other.isEmpty()){
-                if (p_150746_.entityTags().contains("HasBlood")){
-                    p_150746_.entityTags().remove("HasBlood");
+    public static final String hasOwnerBlood = "hasOwnerBlood";
 
-                    p_150746_.getCooldowns().addCooldown(me.getItem().getDefaultInstance(),20);
-
-                    return true;
-                }
+    public static void event(Player player) {
+        if (Handler.hascurio(player, Items.blood_candle.asItem())) {
+            if (player.level().isClientSide()) {
+                return;
             }
-        }
-        return false;
-    }
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player) {
-            if (!player.entityTags().contains("HasBlood")&&!player.getCooldowns().isOnCooldown(this.getDefaultInstance())){
-                OwnerBlood owner_blood = new OwnerBlood(EntityTs.owner_blood_.get(),player.level());
-                owner_blood.setOwner(player);
-                owner_blood.setPos(player.position());
-                player.level().addFreshEntity(owner_blood);
-                player.entityTags().add("HasBlood");
+            CompoundTag compoundTag = player.getPersistentData();
+            if (!player.getCooldowns().isOnCooldown(Items.blood_candle.asItem().getDefaultInstance())) {
+                if (!compoundTag.getBooleanOr(hasOwnerBlood, false)) {
+                    OwnerBlood EndComing = new OwnerBlood(EntityTs.owner_blood_.get(), player.level());
+                    EndComing.setPos(player.position());
+                    EndComing.setOwner(player);
+                    EndComing.tame(player);
+                    player.level().addFreshEntity(EndComing);
+                    compoundTag.putBoolean(hasOwnerBlood, true);
+                    player.getCooldowns().addCooldown(Items.blood_candle.asItem().getDefaultInstance(), 10);
+                } else {
+                    compoundTag.putBoolean(hasOwnerBlood, false);
+                    player.getCooldowns().addCooldown(Items.blood_candle.asItem().getDefaultInstance(), 10);
+                }
             }
         }
     }

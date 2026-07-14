@@ -83,7 +83,7 @@
 
   "curios.modifiers.necora": "when necora",
   "key.moonstone.y": "skill",
-  "key.categories.moonstone.moonstone_category": "Moonstone",
+  "key.category.moonstone.moonstone": "月之石",
   "moonstone.book.error": "you need patchouli mod",
   "item.moonstone.tool.string.sword": "右键开启或者关闭功能",
   "item.moonstone.tooltips.off": "功能已开启",
@@ -112,6 +112,7 @@
   "moonstone.translation.nightmare": "你感受到了强烈的不安与恐惧",
   "moonstone.translation.nightmare.1": "你真的要佩戴它吗",
   "moonstone.nightmare.name": "这个物品只能在佩戴深渊之眼的情况下使用",
+  "item.moonstone.key": "绑定按键：%d",
   "itemGroup.tabmoonstone": "Moon Stone",
   "itemGroup.tabmoonstone.necora": "Moon Stone:DNA",
   "moonstone.attribute.name.ectoplasm": "ectoplasm",
@@ -331,6 +332,8 @@
   "curios.modifiers.stone": "佩戴符石后",
   "curios.modifiers.ncrdna": "necora",
   "curios.modifiers.dna": "DNA",
+  "key.moonstone.r": "技能",
+  "key.categories.moonstone.moonstone": "月之石",
   "curios.modifiers.medicine": "medicine",
   "curios.modifiers.zombie": "zombie",
   "curios.identifier.zombie": "zombie",
@@ -2112,6 +2115,7 @@
   "item.hidden_blade.tool.string.4": "Damage gradually increases as critical damage is dealt",
   "advancements.tooltip.hidden_blade.text": "Obtain this item",
   "advancements.tooltip.hidden_blade.hand": "Unknown Blade",
+  "item.obsidianring.tool": "免疫击退",
 
   "moonstone.jei.god_dna": "Synthesize by using two identical 'God-like gene sequences' DNA items",
   "item.moonstone.god_ambush": "Drift Fermentation",

@@ -2,10 +2,8 @@ package com.ytgld.moonstone.item.ms.maxitem;
 
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.item.Items;
-import com.ytgld.moonstone.item.ms.UnCommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -40,9 +38,10 @@ public class TheHeart extends BundleItem {
             return Optional.empty();
         }
     }
-    public static void the_heart(LivingDropsEvent event){
+
+    public static void the_heart(LivingDropsEvent event) {
         if ((event.getSource().getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player, Items.the_heart.get())){
+            if (Handler.hascurio(player, Items.the_heart.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -76,6 +75,7 @@ public class TheHeart extends BundleItem {
             }
         }
     }
+
     public void appendHoverText(ItemStack p_150749_, Level p_150750_, List<Component> p_150751_, TooltipFlag p_150752_) {
         p_150751_.add(Component.translatable("item.the_heart.tool.string").withStyle(ChatFormatting.GOLD));
         p_150751_.add(Component.translatable("item.the_heart.tool.string.1").withStyle(ChatFormatting.GOLD));

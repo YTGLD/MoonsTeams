@@ -20,6 +20,7 @@ public class Biant extends TheNecora {
     public Biant(Properties properties) {
         super(properties);
     }
+
     @Override
     public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
         return new CurioAttributeModifiers(List.of(

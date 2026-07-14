@@ -60,8 +60,7 @@ public class NightmareBaseRedemption extends NightmareBase implements AllTip {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext, stack);
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (player.level() instanceof ServerLevel serverLevel) {
                 if (serverLevel.getRaidAt(player.blockPosition()) != null && serverLevel.getRaidAt(player.blockPosition()).isLoss()) {

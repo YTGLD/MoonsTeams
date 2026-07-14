@@ -29,7 +29,7 @@ public class TwelveSword extends UnCommonItem {
         if (event.getSource().getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.twelve_sword.get())) {
                 Vec3 playerPos = player.position();
-                float range =10;
+                float range = 10;
                 List<SwordOfTwelve> entities =
                         player.level().getEntitiesOfClass(SwordOfTwelve.class,
                                 new AABB(playerPos.x - range,
@@ -39,18 +39,18 @@ public class TwelveSword extends UnCommonItem {
                                         playerPos.y + range,
                                         playerPos.z + range));
                 List<Integer> a8 = new ArrayList<>();
-                for (SwordOfTwelve swordOfTwelve : entities){
-                    if (swordOfTwelve.entityTags().contains("SwordOfTwelveOFDamage")){
+                for (SwordOfTwelve swordOfTwelve : entities) {
+                    if (swordOfTwelve.entityTags().contains("SwordOfTwelveOFDamage")) {
                         a8.add(1);
                     }
                 }
 
-                float s  = 0;
-                for (int ignored : a8){
+                float s = 0;
+                for (int ignored : a8) {
                     s++;
                 }
-                s/=10f;
-                event.setNewDamage(event.getNewDamage()*(1+s));
+                s /= 10f;
+                event.setNewDamage(event.getNewDamage() * (1 + s));
             }
         }
     }
@@ -58,9 +58,9 @@ public class TwelveSword extends UnCommonItem {
     @Override
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
         super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
-       p_41423_.add(Component.translatable("item.twelve_sword.tool.string.1").withStyle(ChatFormatting.GOLD));
-       p_41423_.add(Component.translatable("item.twelve_sword.tool.string.4").withStyle(ChatFormatting.GOLD));
-       p_41423_.add(Component.translatable("item.twelve_sword.tool.string.2").withStyle(ChatFormatting.GOLD));
-       p_41423_.add(Component.translatable("item.twelve_sword.tool.string.3").withStyle(ChatFormatting.GOLD));
+        p_41423_.add(Component.translatable("item.twelve_sword.tool.string.1").withStyle(ChatFormatting.GOLD));
+        p_41423_.add(Component.translatable("item.twelve_sword.tool.string.4").withStyle(ChatFormatting.GOLD));
+        p_41423_.add(Component.translatable("item.twelve_sword.tool.string.2").withStyle(ChatFormatting.GOLD));
+        p_41423_.add(Component.translatable("item.twelve_sword.tool.string.3").withStyle(ChatFormatting.GOLD));
     }
 }

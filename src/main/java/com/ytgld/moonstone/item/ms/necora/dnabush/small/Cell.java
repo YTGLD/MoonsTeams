@@ -38,6 +38,7 @@ public class Cell extends TheNecora {
         super.appendHoverText(stack, level, tooltip, flags);
         tooltip.add(Component.translatable("item.cell.tool.string").withStyle(ChatFormatting.DARK_RED));
     }
+
     @Override
     public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
         return new CurioAttributeModifiers(List.of(
@@ -81,10 +82,11 @@ public class Cell extends TheNecora {
             }
         }
     }
-    public static void sumZ(LivingDeathEvent event){
+
+    public static void sumZ(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player,Items.cell.get())){
-                if (player.getCooldowns().isOnCooldown(Items.cell.get().getDefaultInstance())){
+            if (Handler.hascurio(player, Items.cell.get())) {
+                if (player.getCooldowns().isOnCooldown(Items.cell.get().getDefaultInstance())) {
                     return;
                 }
                 if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
@@ -107,7 +109,7 @@ public class Cell extends TheNecora {
                         z.addTag(cb_blood);
                     }
                     player.level().addFreshEntity(z);
-                    player.getCooldowns().addCooldown(Items.cell.get().getDefaultInstance(),100);
+                    player.getCooldowns().addCooldown(Items.cell.get().getDefaultInstance(), 100);
                 }
             }
         }

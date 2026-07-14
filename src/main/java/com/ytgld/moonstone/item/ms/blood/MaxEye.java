@@ -22,15 +22,15 @@ import java.util.List;
 import java.util.Map;
 
 public class MaxEye extends BloodItem {
-    public static final String blood="MaxBlood";
+    public static final String blood = "MaxBlood";
 
     public MaxEye(Properties properties) {
         super(properties);
     }
 
-    public static void Die(LivingDeathEvent event){
-        if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.max_eye.get())){
+    public static void Die(LivingDeathEvent event) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.max_eye.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -39,8 +39,8 @@ public class MaxEye extends BloodItem {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.get(DataReg.tag) != null) {
-                                if (stack.get(DataReg.tag).getFloatOr(blood,0f)<0.5){
-                                    stack.get(DataReg.tag).putFloat(blood,stack.get(DataReg.tag).getFloatOr(blood,0f)+0.1f);
+                                if (stack.get(DataReg.tag).getFloatOr(blood, 0f) < 0.5) {
+                                    stack.get(DataReg.tag).putFloat(blood, stack.get(DataReg.tag).getFloatOr(blood, 0f) + 0.1f);
                                 }
                             }
                         }
@@ -49,9 +49,10 @@ public class MaxEye extends BloodItem {
             }
         }
     }
-    public static void A(LivingDamageEvent.Pre event){
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.max_eye.get())){
+
+    public static void A(LivingDamageEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.max_eye.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -60,9 +61,9 @@ public class MaxEye extends BloodItem {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (stack.get(DataReg.tag) != null) {
-                                if (stack.get(DataReg.tag).getFloatOr(blood,0f)>0){
-                                    stack.get(DataReg.tag).putFloat(blood,stack.get(DataReg.tag).getFloatOr(blood,0f)-0.1f);
-                                    event.setNewDamage(event.getNewDamage()*0.1f);
+                                if (stack.get(DataReg.tag).getFloatOr(blood, 0f) > 0) {
+                                    stack.get(DataReg.tag).putFloat(blood, stack.get(DataReg.tag).getFloatOr(blood, 0f) - 0.1f);
+                                    event.setNewDamage(event.getNewDamage() * 0.1f);
                                 }
                             }
                         }
@@ -71,19 +72,20 @@ public class MaxEye extends BloodItem {
             }
         }
     }
+
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         Handler.stackCreateTag(stack);
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        stack.setDamageValue(stack.getDamageValue()+1);
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        stack.setDamageValue(stack.getDamageValue() + 1);
         Handler.stackCreateTag(stack);
-        if (stack.get(DataReg.tag) != null){
-            if (slotContext.entity() instanceof Player player){
-                if (stack.get(DataReg.tag).getFloatOr(blood,0f)>0) {
-                    stack.get(DataReg.tag).putFloat(blood, stack.get(DataReg.tag).getFloatOr(blood,0f) - 0.001f);
+        if (stack.get(DataReg.tag) != null) {
+            if (slotContext.entity() instanceof Player player) {
+                if (stack.get(DataReg.tag).getFloatOr(blood, 0f) > 0) {
+                    stack.get(DataReg.tag).putFloat(blood, stack.get(DataReg.tag).getFloatOr(blood, 0f) - 0.001f);
                     player.heal(player.getMaxHealth() / 200);
                 }
             }

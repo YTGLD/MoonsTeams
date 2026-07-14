@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class GodFermentation  extends GodDNA {
+public class GodFermentation extends GodDNA {
 
     public GodFermentation(Properties properties) {
         super(properties);
@@ -25,13 +25,14 @@ public class GodFermentation  extends GodDNA {
 
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
-        Multimap<Holder<Attribute>, AttributeModifier>modifierMultimap = HashMultimap.create();
+        Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
 
         modifierMultimap.put(AttReg.cit, new AttributeModifier(identifier(), 0.25f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(), 0.1f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         return modifierMultimap;
 
     }
+
     @Override
     public void appendHoverText(ItemStack pStack, Level pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
