@@ -52,7 +52,7 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
         collector.submitCustomGeometry(poseStack, MRender.renderTypeOutline, (pose, bufferSource) -> {
             setT(pose, entity, bufferSource);
         });
-        if (entity.canSee) {
+        if (entity.canSeeClient) {
             collector.submitCustomGeometry(poseStack, MRender.renderTypeOutline, (pose, bufferSource) -> {
                 renderSphere1(pose, bufferSource, 0, 0.1f);
             });
@@ -61,7 +61,7 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
         collector.submitCustomGeometry(poseStack, MRender.renderType, (pose, bufferSource) -> {
             setT(pose, entity, bufferSource);
         });
-        if (entity.canSee) {
+        if (entity.canSeeClient) {
             collector.submitCustomGeometry(poseStack, MRender.renderType, (pose, bufferSource) -> {
                 renderSphere1(pose, bufferSource, 0, 0.1f);
             });

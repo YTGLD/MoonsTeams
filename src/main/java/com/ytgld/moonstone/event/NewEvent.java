@@ -29,6 +29,11 @@ import com.ytgld.moonstone.item.ms.necora.dnabush.small.Cell;
 import com.ytgld.moonstone.item.ms.necora.dna.Fermentation;
 import com.ytgld.moonstone.item.ms.necora.dna.god.GodAmbush;
 import com.ytgld.moonstone.item.ms.necora.dna.god.GodPutrefactive;
+import com.ytgld.moonstone.item.ms.necora.medicine.MedicineBox;
+import com.ytgld.moonstone.item.ms.necora.medicine.med.Calcification;
+import com.ytgld.moonstone.item.ms.necora.medicine.med.Masticatory;
+import com.ytgld.moonstone.item.ms.necora.medicine.med.Polyphagia;
+import com.ytgld.moonstone.item.ms.necora.medicine.med.Reanimation;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
@@ -54,8 +59,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -66,10 +69,8 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
-import top.theillusivec4.curios.impl.CuriosRegistry;
 
 import java.util.Map;
 
@@ -90,7 +91,10 @@ public class NewEvent {
     public void tick(ClientTickEvent.Pre event) {
         time++;
     }
-
+    @SubscribeEvent
+    public  void PlayerEvent(PlayerEvent.PlayerRespawnEvent event) {
+        MedicineBox.die(event);
+    }
     @SubscribeEvent
     public void LivingHurtEvent(LivingDamageEvent.Pre event) {
         NightmareBaseStone.LivingHurtEvent(event);
@@ -129,20 +133,33 @@ public class NewEvent {
         Million.hurt(event);
         Beacon.beacon(event);
         EvilCandle.fire(event);
+        MedicineBox.LivingDamageEvent(event);
+        Calcification.calcification(event);
 
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);
+        Reanimation.reanimation(event);
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingDamageEvent.Post event) {
         EctoplasmApple.hurt(event);
 
     }
-
+    @SubscribeEvent
+    public  void LivingDamageEvent(LivingEntityUseItemEvent.Start event) {
+        Masticatory.masticatory(event);
+    }
+    @SubscribeEvent
+    public  void LivingJumpEvent(LivingEvent.LivingJumpEvent event){
+        MedicineBox.LivingDamageEvent(event);
+    }
     @SubscribeEvent
     public  void eat(LivingEntityUseItemEvent.Finish event){
         GodPutrefactive.eat(event);
         Necora.necora(event);
+        MedicineBox.apple(event);
+        MedicineBox.LivingDamageEvent(event);
+        Polyphagia.necora(event);
     }
     @SubscribeEvent
     public void target(LivingChangeTargetEvent event){

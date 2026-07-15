@@ -29,6 +29,8 @@ import com.ytgld.moonstone.item.ms.necora.dnabush.me.Air;
 import com.ytgld.moonstone.item.ms.necora.dnabush.me.Motor;
 import com.ytgld.moonstone.item.ms.necora.dnabush.me.Watergen;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.*;
+import com.ytgld.moonstone.item.ms.necora.medicine.med.*;
+import com.ytgld.moonstone.item.ms.necora.medicine.MedicineBox;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
@@ -250,6 +252,15 @@ public class Items {
     public static final DeferredItem<@NotNull Item> at_sword_ = register("at_sword", (identifier) -> new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> sword = register("sword", (identifier) -> new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
+    public static final DeferredItem<@NotNull Item> calcification = register("calcification", (identifier) -> new Calcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> masticatory = register("masticatory", (identifier) -> new Masticatory(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> polyphagia = register("polyphagia", (identifier) -> new Polyphagia(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> quadriceps = register("quadriceps", (identifier) -> new Quadriceps(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> reanimation = register("reanimation", (identifier) -> new Reanimation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> medicinebox = register("medicinebox", (identifier) -> new MedicineBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+
+
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> dna = CREATIVE_MODE_TABS.register(Moonstone.MODID + "_dna", () -> CreativeModeTab.builder()
@@ -285,6 +296,14 @@ public class Items {
                     output.accept(disgusting_cells);
                     output.accept(mother_cell);
                     output.accept(parasitic_cell);
+
+                    output.accept(calcification);
+                    output.accept(masticatory);
+                    output.accept(polyphagia);
+                    output.accept(quadriceps);
+                    output.accept(reanimation);
+                    output.accept(medicinebox);
+
 
 
                 }).build());

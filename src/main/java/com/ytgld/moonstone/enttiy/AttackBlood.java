@@ -81,7 +81,8 @@ public class AttackBlood extends Entity {
     }
     public int live = 50;
 
-    public boolean canSee = true;
+    private boolean canSee = true;
+    public boolean canSeeClient = true;
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
@@ -130,6 +131,7 @@ public class AttackBlood extends Entity {
                             entity.hurt(this.getOwner().damageSources().playerAttack(player), (float) (damages + addDamgae + player.getMaxHealth() / 10 + player.getAttributeValue(Attributes.ATTACK_DAMAGE) / 10));
                             canSee = false;
                         }
+                        canSeeClient = false;
                     }
                 }
             }
@@ -150,10 +152,12 @@ public class AttackBlood extends Entity {
             if (boom && tickCount >= maxTime) {
                 this.level().explode(this.getOwner(), this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
                 canSee = false;
+                canSeeClient =false;
             }
 
             if (this.tickCount > maxTime) {
                 canSee = false;
+                canSeeClient =false;
             }
             if (target != null) {
                 if (!target.isAlive()) {
