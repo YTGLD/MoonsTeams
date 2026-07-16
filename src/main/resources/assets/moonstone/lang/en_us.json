@@ -2147,6 +2147,16 @@
   "item.meet_heart.tool.string": "拾取飞行中的血球获得额外生命值",
   "item.meet_heart.tool.string.1": "若未能获得血液，则获得持续饥饿",
 
+  "item.cell.tool.string.2": "可以按下绑定键来一次召唤多个僵尸，再次按下则回收",
+  "item.cell.tool.string.3": "但是会进入无法召唤僵尸的30秒冷却",
+
+  "item.giant.tool.string.2": "可以按下绑定键来一次召唤多个僵尸，再次按下则回收",
+  "item.giant.tool.string.3": "但是会进入无法召唤僵尸的30秒冷却",
+
+  "item.moonstone.consciousness": "融合意识",
+  "item.consciousness.tool.string.1": "此物品允许你手动攻击来触发血灵增生体的攻击",
+  "item.consciousness.tool.string.2": "每次触发额外生成7个血球，但是血灵增生体不再主动攻击",
+  "key.moonstone.zombie": "释放僵尸/收回",
   "item.moonstone.big_heart":"巨型心脏",
   "item.big_heart.tool.string": "最大生命值的正负修正增加50%",
 

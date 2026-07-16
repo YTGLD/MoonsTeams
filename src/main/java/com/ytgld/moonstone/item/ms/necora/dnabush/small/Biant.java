@@ -1,9 +1,13 @@
 package com.ytgld.moonstone.item.ms.necora.dnabush.small;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.event.key.Keys;
+import com.ytgld.moonstone.item.IKet;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +19,7 @@ import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
-public class Biant extends TheNecora {
+public class Biant extends TheNecora implements IKet {
 
     public Biant(Properties properties) {
         super(properties);
@@ -35,6 +39,18 @@ public class Biant extends TheNecora {
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
-        tooltip.add(Component.translatable("item.giant.tool.string").withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.translatable("item.giant.tool.string.2").withStyle(Style.EMPTY.withColor(0xffff0000)));
+        tooltip.add(Component.translatable("item.giant.tool.string.3").withStyle(Style.EMPTY.withColor(0xffff0000)));
+        tooltip.add(Component.literal("").withStyle(ChatFormatting.DARK_RED));
+
+        if (flags.hasShiftDown()) {
+            tooltip.add(Component.translatable("item.giant.tool.string").withStyle(ChatFormatting.DARK_RED));
+        }else {
+            tooltip.add(Component.translatable("key.keyboard.left.shift").withStyle(ChatFormatting.DARK_RED));
+        }
+    }
+    @Override
+    public KeyMapping theKeyMapping() {
+        return Keys.ZombieC;
     }
 }

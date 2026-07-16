@@ -4,10 +4,7 @@ import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.item.ms.CommonItem;
 import com.ytgld.moonstone.item.ms.blood.*;
-import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
-import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
-import com.ytgld.moonstone.item.ms.blood.magic.TheBloodBook;
-import com.ytgld.moonstone.item.ms.blood.magic.UndeadBloodCharm;
+import com.ytgld.moonstone.item.ms.blood.magic.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulBattery;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulCube;
@@ -260,6 +257,7 @@ public class Items {
     public static final DeferredItem<@NotNull Item> medicinebox = register("medicinebox", (identifier) -> new MedicineBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
+    public static final DeferredItem<@NotNull Item> consciousness = register("consciousness", (identifier) -> new Consciousness(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
@@ -360,6 +358,7 @@ public class Items {
                     output.accept(owner_blood_effect_eye);
                     output.accept(owner_blood_vex);
                     output.accept(owner_blood_earth);
+                    output.accept(consciousness);
 
                     output.accept(badgeofthedead);
                     output.accept(battery);

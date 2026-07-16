@@ -5,6 +5,7 @@ import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
 import com.ytgld.moonstone.enttiy.render.*;
 import com.ytgld.moonstone.event.key.Keys;
+import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,6 +18,7 @@ import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import java.util.function.Function;
 
@@ -31,6 +33,11 @@ public class MoonstoneClient {
     @SubscribeEvent
     public static void RegisterClientTooltipComponentFactoriesEvent(RegisterClientTooltipComponentFactoriesEvent event) {
         event.register(ToolTip.class, Function.identity());
+    }
+
+    @SubscribeEvent
+    public static void emp(PlayerInteractEvent.LeftClickEmpty event){
+        Consciousness.emp(event);
     }
     @SubscribeEvent
     public static void RegisterRenderPipelinesEvent(EntityRenderersEvent.RegisterRenderers event){
@@ -47,6 +54,7 @@ public class MoonstoneClient {
     @SubscribeEvent
     public static void registerBindings(RegisterKeyMappingsEvent event) {
         event.register(Keys.KEY_MAPPING_LAZY_R);
+        event.register(Keys.ZombieC);
     }
     @SubscribeEvent // on the mod event bus
     public static void gatherData(GatherDataEvent.Client event) {

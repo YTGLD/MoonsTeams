@@ -2060,6 +2060,17 @@
   "effect.moonstone.meet": "增生",
   "item.moonstone.love_charm":"朋友的礼物!",
 
+  "item.moonstone.consciousness": "融合意识",
+  "item.consciousness.tool.string.1": "此物品允许你手动攻击来触发血灵增生体的攻击",
+  "item.consciousness.tool.string.2": "每次触发额外生成7个血球，但是血灵增生体不再主动攻击",
+  "key.moonstone.zombie": "释放僵尸/收回",
+
+  "item.cell.tool.string.2": "可以按下绑定键来一次召唤多个僵尸，再次按下则回收",
+  "item.cell.tool.string.3": "但是会进入无法召唤僵尸的30秒冷却",
+
+  "item.giant.tool.string.2": "可以按下绑定键来一次召唤多个僵尸，再次按下则回收",
+  "item.giant.tool.string.3": "但是会进入无法召唤僵尸的30秒冷却",
+
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",

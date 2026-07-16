@@ -2,11 +2,11 @@ package com.ytgld.moonstone.event;
 
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
-import com.ytgld.moonstone.event.key.Keys;
+import com.ytgld.moonstone.event.itemevent.ZombieEventHandler;
+import com.ytgld.moonstone.item.IKet;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.MaxEye;
 import com.ytgld.moonstone.item.ms.blood.PrisonOfSin;
-import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
 import com.ytgld.moonstone.item.ms.blood.magic.UndeadBloodCharm;
 import com.ytgld.moonstone.item.ms.ectoplasm.Beacon;
@@ -25,7 +25,6 @@ import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.RedAmout;
 import com.ytgld.moonstone.item.ms.nanodoom.*;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBoom;
-import com.ytgld.moonstone.item.ms.necora.dnabush.small.Cell;
 import com.ytgld.moonstone.item.ms.necora.dna.Fermentation;
 import com.ytgld.moonstone.item.ms.necora.dna.god.GodAmbush;
 import com.ytgld.moonstone.item.ms.necora.dna.god.GodPutrefactive;
@@ -177,7 +176,7 @@ public class NewEvent {
         RineSword.suddenrainLivingDeathEvent(event);
 
 
-        Cell.evil(event);
+        ZombieEventHandler.theCellZombieGiant(event);
         PrisonOfSin.LivingDeathEvent(event);
     }
 
@@ -191,6 +190,15 @@ public class NewEvent {
     @SubscribeEvent
     public void the_heart(LivingDropsEvent event) {
         TheHeart.the_heart(event);
+    }
+    @SubscribeEvent
+    public void the_heart(EntityTickEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
+            if (player.level().isClientSide()) {
+                return;
+            }
+            ZombieEventHandler.downCooldown(player);
+        }
     }
     @SubscribeEvent
     public void effect(MobEffectEvent.Applicable event) {
@@ -249,9 +257,9 @@ public class NewEvent {
     public void BatteryName(ItemTooltipEvent event){
         ItemStack stack = event.getItemStack();
         CompoundTag  compoundTag =  stack.get(DataReg.tag);
-        if (event.getItemStack().getItem() instanceof BloodCandle candle) {
+        if (event.getItemStack().getItem() instanceof IKet iKet) {
             event.getToolTip().add(1, Component.literal(""));
-            event.getToolTip().add(1, Component.translatable("item.moonstone.key", Keys.KEY_MAPPING_LAZY_R.getKey().getDisplayName()).withStyle(Style.EMPTY
+            event.getToolTip().add(1, Component.translatable("item.moonstone.key", iKet.theKeyMapping().getKey().getDisplayName()).withStyle(Style.EMPTY
                     .withColor(Light.ARGB.color(255,255,0,0))));
 
         }

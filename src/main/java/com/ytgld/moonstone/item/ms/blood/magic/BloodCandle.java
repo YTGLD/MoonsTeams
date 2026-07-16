@@ -3,9 +3,12 @@ package com.ytgld.moonstone.item.ms.blood.magic;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
+import com.ytgld.moonstone.event.key.Keys;
+import com.ytgld.moonstone.item.IKet;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
@@ -16,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class BloodCandle extends BloodItem {
+public class BloodCandle extends BloodItem implements IKet {
     public BloodCandle(Properties properties) {
         super(properties);
     }
@@ -59,7 +62,10 @@ public class BloodCandle extends BloodItem {
             pTooltipComponents.add(Component.literal("Shift").withStyle(ChatFormatting.DARK_RED));
         }
     }
-
+    @Override
+    public KeyMapping theKeyMapping() {
+        return Keys.KEY_MAPPING_LAZY_R;
+    }
 
 }
 
