@@ -29,6 +29,7 @@ import com.ytgld.moonstone.item.ms.necora.dnabush.small.*;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.*;
 import com.ytgld.moonstone.item.ms.necora.medicine.MedicineBox;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
+import com.ytgld.moonstone.item.si.nightmare.*;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeHeart;
@@ -257,6 +258,15 @@ public class Items {
     public static final DeferredItem<@NotNull Item> medicinebox = register("medicinebox", (identifier) -> new MedicineBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
+    public static final DeferredItem<@NotNull Item> blood_god = register("blood_god", (identifier) -> new BloodGod(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> bone_or_god = register("bone_or_god", (identifier) -> new BoneOrGod(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> defend_against_runestone = register("defend_against_runestone", (identifier) -> new DefendAgainstRunestone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> lead = register("lead", (identifier) -> new lead(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> revive_runestone = register("revive_runestone", (identifier) -> new ReviveRunestone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> strengthen_runestone = register("strengthen_runestone", (identifier) -> new StrengthenRunestone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> immortal = register("immortal", (identifier) -> new Immortal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+
     public static final DeferredItem<@NotNull Item> consciousness = register("consciousness", (identifier) -> new Consciousness(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static class TabChestItem {
@@ -457,6 +467,15 @@ public class Items {
                     output.accept(nightmare_base_start_power);
                     output.accept(wolf);
 
+                    output.accept(blood_god);
+                    output.accept(bone_or_god);
+                    output.accept(defend_against_runestone);
+                    output.accept(lead);
+                    output.accept(revive_runestone);
+                    output.accept(strengthen_runestone);
+
+
+                    output.accept(immortal);
                     output.accept(the_divine_fall_ring);
 
                 }).build());

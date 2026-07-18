@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
+    "moonstone:blood_god",
+    "moonstone:bone_or_god",
+    "moonstone:defend_against_runestone",
+    "moonstone:lead",
+    "moonstone:revive_runestone",
+    "moonstone:strengthen_runestone",
+
+
+
     "moonstone:nightmare_base",
     "moonstone:nightmare_base_black_eye",
     "moonstone:nightmare_base_fool",

@@ -34,6 +34,7 @@ import com.ytgld.moonstone.item.ms.necora.medicine.med.Masticatory;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.Polyphagia;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.Reanimation;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
+import com.ytgld.moonstone.item.si.nightmare.*;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeHeart;
@@ -134,10 +135,18 @@ public class NewEvent {
         EvilCandle.fire(event);
         MedicineBox.LivingDamageEvent(event);
         Calcification.calcification(event);
+        BoneOrGod.hurt(event);
+        DefendAgainstRunestone.hurt(event);
+        ReviveRunestone.hurt(event);
+        StrengthenRunestone.hurt(event);
+        lead.hurtOfBlood(event);
+
 
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);
         Reanimation.reanimation(event);
+        BloodGod.hurtOfBlood(event);
+        Immortal.hEvt(event);
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingDamageEvent.Post event) {
@@ -147,6 +156,7 @@ public class NewEvent {
     @SubscribeEvent
     public  void LivingDamageEvent(LivingEntityUseItemEvent.Start event) {
         Masticatory.masticatory(event);
+        BloodGod.hurtOfBlood(event);
     }
     @SubscribeEvent
     public  void LivingJumpEvent(LivingEvent.LivingJumpEvent event){
@@ -175,6 +185,7 @@ public class NewEvent {
         MaxEye.Die(event);
         RineSword.suddenrainLivingDeathEvent(event);
 
+        Immortal.livDead(event);
 
         ZombieEventHandler.theCellZombieGiant(event);
         PrisonOfSin.LivingDeathEvent(event);
