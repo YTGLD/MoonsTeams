@@ -1,7 +1,8 @@
-package com.ytgld.moonstone.item.si.nightmare;
+package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;

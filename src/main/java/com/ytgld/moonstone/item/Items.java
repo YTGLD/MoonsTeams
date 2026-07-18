@@ -29,7 +29,6 @@ import com.ytgld.moonstone.item.ms.necora.dnabush.small.*;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.*;
 import com.ytgld.moonstone.item.ms.necora.medicine.MedicineBox;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
-import com.ytgld.moonstone.item.si.nightmare.*;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeHeart;
@@ -40,6 +39,7 @@ import com.ytgld.moonstone.item.si.nightmare.fool.FoolBetray;
 import com.ytgld.moonstone.item.si.nightmare.fool.FoolBone;
 import com.ytgld.moonstone.item.si.nightmare.fool.FoolSoul;
 import com.ytgld.moonstone.item.si.nightmare.insight.*;
+import com.ytgld.moonstone.item.si.nightmare.other.*;
 import com.ytgld.moonstone.item.si.nightmare.redemption.HypocriticalSelfEsteem;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDeception;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDegenerate;
@@ -266,6 +266,7 @@ public class Items {
     public static final DeferredItem<@NotNull Item> strengthen_runestone = register("strengthen_runestone", (identifier) -> new StrengthenRunestone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> immortal = register("immortal", (identifier) -> new Immortal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
+    public static final DeferredItem<@NotNull Item> dead_drder = register("dead_drder", (identifier) -> new DeadOrder(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static final DeferredItem<@NotNull Item> consciousness = register("consciousness", (identifier) -> new Consciousness(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
@@ -476,6 +477,7 @@ public class Items {
 
 
                     output.accept(immortal);
+                    output.accept(dead_drder);
                     output.accept(the_divine_fall_ring);
 
                 }).build());

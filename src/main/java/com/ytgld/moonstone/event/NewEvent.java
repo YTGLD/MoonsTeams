@@ -34,7 +34,6 @@ import com.ytgld.moonstone.item.ms.necora.medicine.med.Masticatory;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.Polyphagia;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.Reanimation;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
-import com.ytgld.moonstone.item.si.nightmare.*;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeHeart;
@@ -43,6 +42,7 @@ import com.ytgld.moonstone.item.si.nightmare.fool.Apple;
 import com.ytgld.moonstone.item.si.nightmare.fool.FoolBone;
 import com.ytgld.moonstone.item.si.nightmare.insight.HiddenBlade;
 import com.ytgld.moonstone.item.si.nightmare.insight.InsightInsane;
+import com.ytgld.moonstone.item.si.nightmare.other.*;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDeception;
 import com.ytgld.moonstone.item.si.nightmare.reversal.Candle;
 import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalOrb;
@@ -142,6 +142,7 @@ public class NewEvent {
         lead.hurtOfBlood(event);
 
 
+        NightmareShieldHandler.nightmareShield(event);
         Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);
         Reanimation.reanimation(event);
@@ -205,10 +206,10 @@ public class NewEvent {
     @SubscribeEvent
     public void the_heart(EntityTickEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (player.level().isClientSide()) {
-                return;
+            if (!player.level().isClientSide()) {
+                ZombieEventHandler.downCooldown(player);
             }
-            ZombieEventHandler.downCooldown(player);
+            NightmareShieldHandler.tickEntityTickEvent(event);
         }
     }
     @SubscribeEvent

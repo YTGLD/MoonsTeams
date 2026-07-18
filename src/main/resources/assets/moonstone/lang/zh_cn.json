@@ -2071,6 +2071,13 @@
   "item.giant.tool.string.2": "可以按下绑定键来一次召唤多个僵尸，再次按下则回收",
   "item.giant.tool.string.3": "但是会进入无法召唤僵尸的30秒冷却",
 
+  "item.moonstone.dead_drder":"死亡之令",
+  "item.dead_drder.tool.string.1": "给予大量的梦魇护盾",
+  "item.dead_drder.tool.string.2": "梦魇护盾可为你吸收全部伤害",
+
+  "attribute.name.moonstone.nightmare_stronger": "梦魇护盾强度",
+  "attribute.name.moonstone.nightmare_shield": "梦魇护盾容量",
+
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",

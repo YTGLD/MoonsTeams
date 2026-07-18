@@ -36,13 +36,28 @@ public class AttReg {
             "cooldown_zombie", () -> AttachmentType.builder(() -> 0).sync(new IntSyncHandler())
                     .serialize(Codec.INT.fieldOf("cooldown_zombie")).build()
     );
-
+    public static final Supplier<AttachmentType<Float>> nightmareShieldTypeSupplier = ATTACHMENT_TYPES.register(
+            "nightmare_shield", () -> AttachmentType.builder(() -> 0f).sync(new SyncHandler())
+                    .serialize(Codec.FLOAT.fieldOf("nightmare_shield")).build()
+    );
+    public static final DeferredHolder<Attribute,?> nightmare_shield = REGISTRY.register("nightmare_shield",()->{
+        return new RangedAttribute("attribute.name.chest_item.nightmare_shield", 0, -1024, 1024).setSyncable(true);
+    });
+    public static final DeferredHolder<Attribute,?> nightmare_stronger = REGISTRY.register("nightmare_stronger",()->{
+        return new RangedAttribute("attribute.name.chest_item.nightmare_stronger", 1, -1024, 1024).setSyncable(true);
+    });
+    public static final Supplier<AttachmentType<Integer>> nightmareShieldCooldownDataAttachmentType = ATTACHMENT_TYPES.register(
+            "nightmare_shield_cooldown_data", () -> AttachmentType.builder(() -> 0).sync(new IntSyncHandler()).serialize(Codec.INT.
+                    fieldOf("nightmare_shield_cooldown_data")).build()
+    );
 
     @SubscribeEvent
     public static void EntityAttributeCreationEvent(EntityAttributeModificationEvent event) {
         event.add(EntityType.PLAYER, AttReg.heal, 1);
         event.add(EntityType.PLAYER, AttReg.cit, 1);
         event.add(EntityType.PLAYER, AttReg.speed, 1);
+        event.add(EntityType.PLAYER, AttReg.nightmare_shield, 0);
+        event.add(EntityType.PLAYER, AttReg.nightmare_stronger, 1);
 
     }
 }

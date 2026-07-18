@@ -1,8 +1,9 @@
-package com.ytgld.moonstone.item.si.nightmare;
+package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.effect.Effects;
 import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -22,7 +23,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class Immortal extends NightmareSmall{
+public class Immortal extends NightmareSmall {
 
     public Immortal(Properties properties) {
         super(properties);

@@ -2160,6 +2160,13 @@
   "item.moonstone.big_heart":"巨型心脏",
   "item.big_heart.tool.string": "最大生命值的正负修正增加50%",
 
+  "item.moonstone.dead_drder":"死亡之令",
+  "item.dead_drder.tool.string.1": "给予大量的梦魇护盾",
+  "item.dead_drder.tool.string.2": "梦魇护盾可为你吸收全部伤害",
+
+  "attribute.name.moonstone.nightmare_stronger": "梦魇护盾强度",
+  "attribute.name.moonstone.nightmare_shield": "梦魇护盾容量",
+
   "item.moonstone.love_charm":"朋友的礼物!",
   "attribute.name.moonstone.speed":"通用速度",
   "item.moonstone.god_regenerative": "Regenerative Vitalization",

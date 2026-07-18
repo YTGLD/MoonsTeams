@@ -2,21 +2,21 @@ package com.ytgld.moonstone;
 
 import com.ytgld.moonstone.config.ModLanguageProvider;
 import com.ytgld.moonstone.enttiy.EntityTs;
-import com.ytgld.moonstone.enttiy.OwnerBlood;
 import com.ytgld.moonstone.enttiy.render.*;
 import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
+import com.ytgld.moonstone.render.NightmareShieldRenderHandler;
+import net.minecraft.resources.Identifier;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
@@ -29,7 +29,15 @@ public class MoonstoneClient {
 
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
-
+    @SubscribeEvent
+    public static void tick(ClientTickEvent.Pre event) {
+        NightmareShieldRenderHandler.tick(event);
+    }
+    @SubscribeEvent
+    public static void registerOverlays(RegisterGuiLayersEvent event) {
+        event.registerAbove(VanillaGuiLayers.AIR_LEVEL, Identifier.fromNamespaceAndPath(Moonstone.MODID,"nightmare_shield"),
+                (guiGraphics,tracker)-> NightmareShieldRenderHandler.renderShield(guiGraphics));
+    }
     @SubscribeEvent
     public static void RegisterClientTooltipComponentFactoriesEvent(RegisterClientTooltipComponentFactoriesEvent event) {
         event.register(ToolTip.class, Function.identity());
