@@ -2,6 +2,7 @@ package com.ytgld.moonstone;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -23,6 +24,12 @@ import java.util.function.Consumer;
 public class ItemBase extends Item implements ICurioItem {
     public ItemBase(Properties properties) {
         super(properties);
+    }
+    public int color (){
+        return 5592575;
+    }
+    public int colorEQ (){
+        return 16755200;
     }
 
     public Identifier identifier() {

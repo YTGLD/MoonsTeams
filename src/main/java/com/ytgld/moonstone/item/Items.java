@@ -267,6 +267,7 @@ public class Items {
     public static final DeferredItem<@NotNull Item> immortal = register("immortal", (identifier) -> new Immortal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static final DeferredItem<@NotNull Item> dead_drder = register("dead_drder", (identifier) -> new DeadOrder(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> flag_of_protest = register("flag_of_protest", (identifier) -> new FlagOfProtest(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static final DeferredItem<@NotNull Item> consciousness = register("consciousness", (identifier) -> new Consciousness(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
@@ -478,6 +479,7 @@ public class Items {
 
                     output.accept(immortal);
                     output.accept(dead_drder);
+                    output.accept(flag_of_protest);
                     output.accept(the_divine_fall_ring);
 
                 }).build());

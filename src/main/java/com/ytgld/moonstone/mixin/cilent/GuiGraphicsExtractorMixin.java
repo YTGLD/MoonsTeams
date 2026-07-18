@@ -66,8 +66,8 @@ public abstract class GuiGraphicsExtractorMixin {
                 int i1 = vector2ic.y();
                 if (tooltipStack.getItem() instanceof NightmareSmall || tooltipStack.getItem() instanceof NightmareBase) {
                     this.pose.pushMatrix();
-                    chest_item$renderItemBlackShadowTooltipBackground((GuiGraphicsExtractor) (Object) this, l, i1, i, j);
-                    si1_21_4$renderItemBlackShadowTooltipBackground_CHAOS((GuiGraphicsExtractor) (Object) this, l, i1, i, j, 400);
+                    moonstone$renderItemBlackShadowTooltipBackground((GuiGraphicsExtractor) (Object) this, l, i1, i, j);
+                     moonstone$renderItemBlackShadowTooltipBackground_CHAOS((GuiGraphicsExtractor) (Object) this, l, i1, i, j, 400);
                     this.pose.popMatrix();
                 }
                 if (tooltipStack.getItem() instanceof Ectoplasm ectoplasm){
@@ -100,7 +100,7 @@ public abstract class GuiGraphicsExtractorMixin {
     }
 
     @Unique
-    public void si1_21_4$renderItemBlackShadowTooltipBackground_CHAOS(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height, int z) {
+    public void  moonstone$renderItemBlackShadowTooltipBackground_CHAOS(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height, int z) {
         // 左上角
         int topLeftX = x - 3 - 9 + 2;
         int topLeftY = y - 3 - 9;
@@ -133,7 +133,7 @@ public abstract class GuiGraphicsExtractorMixin {
     }
 
     @Unique
-    private void chest_item$renderItemBlackShadowTooltipBackground(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height) {
+    private void moonstone$renderItemBlackShadowTooltipBackground(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height) {
         int i = x - 3 - 9;
         int j = y - 3 - 9;
         int k = width + 3 + 3 + 18;

@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "minecraft:iron_block","minecraft:iron_block",
+    "minecraft:iron_block",
     "#curios:nightmare",
     "minecraft:iron_block",
 

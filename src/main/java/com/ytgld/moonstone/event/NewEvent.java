@@ -1,5 +1,6 @@
 package com.ytgld.moonstone.event;
 
+import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.event.itemevent.ZombieEventHandler;
@@ -54,15 +55,25 @@ import com.ytgld.moonstone.item.si.nightmare.stone.StoneVirus;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
 import com.ytgld.moonstone.other.Light;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.util.AttributeTooltipContext;
+import net.neoforged.neoforge.common.util.AttributeUtil;
+import net.neoforged.neoforge.event.AddAttributeTooltipsEvent;
+import net.neoforged.neoforge.event.GatherSkippedAttributeTooltipsEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
@@ -72,6 +83,8 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class NewEvent {
@@ -94,6 +107,7 @@ public class NewEvent {
     @SubscribeEvent
     public  void PlayerEvent(PlayerEvent.PlayerRespawnEvent event) {
         MedicineBox.die(event);
+        FlagOfProtest.PlayerRespawnEvent(event);
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingDamageEvent.Pre event) {
@@ -264,6 +278,46 @@ public class NewEvent {
     @SubscribeEvent
     public void LivingExperienceDropEvent(LivingKnockBackEvent event) {
         MRing.LivingExperienceDropEvent(event);
+    }
+    @SubscribeEvent
+    public void AddAttributeTooltipsEvent(AddAttributeTooltipsEvent evt) {
+        AttributeTooltipContext context = evt.getContext();
+        ItemStack stack = evt.getStack();
+        GatherSkippedAttributeTooltipsEvent skipped =
+                NeoForge.EVENT_BUS.post(new GatherSkippedAttributeTooltipsEvent(stack, context));
+
+        if (skipped.isSkippingAll()) {
+            return;
+        }
+        List<Component> attributesTooltip = new ArrayList<>();
+        Player player = context.player();
+        if (player != null) {
+            if (stack.getItem() instanceof ItemBase itemBase) {
+                Multimap<Holder<Attribute>, AttributeModifier> attributes = itemBase.getAttributeModifiers(stack, player);
+                if (!attributes.isEmpty()) {
+                    attributes.values().removeIf(modifier -> skipped.isSkipped(modifier.id()));
+                    evt.addTooltipLines(Component.empty());
+
+                    Component eq = Component.translatable("item.modifiers.any").withStyle(Style.EMPTY.withColor(itemBase.colorEQ()));
+                    attributesTooltip.add(eq);
+
+                    AttributeUtil.applyTextFor(
+                            stack,
+                            attributesTooltip::add,
+                            attributes,
+                            AttributeTooltipContext.of(player, context, context.tooltipDisplay(), context.flag()));
+
+
+                    for (Component component : attributesTooltip) {
+                        MutableComponent co = component.copy();
+                        if (!co.contains(eq)) {
+                            co.setStyle(Style.EMPTY.withColor(TextColor.fromRgb(itemBase.color())));
+                        }
+                        evt.addTooltipLines(co);
+                    }
+                }
+            }
+        }
     }
     @SubscribeEvent
     public void BatteryName(ItemTooltipEvent event){

@@ -2078,6 +2078,12 @@
   "attribute.name.moonstone.nightmare_stronger": "梦魇护盾强度",
   "attribute.name.moonstone.nightmare_shield": "梦魇护盾容量",
 
+  "item.moonstone.flag_of_protest": "死亡抗拒",
+  "item.moonstone.flag_of_protest.string.1": "短时间内多次死亡会使你越来越强，最多叠加10层",
+  "item.moonstone.flag_of_protest.string.2": "背包界面右键此物品来激活",
+  "item.moonstone.flag_of_protest.string.3": "激活后可在重生后传送回上一个死亡点",
+  "item.moonstone.flag_of_protest.string.4": "目前状态已激活",
+
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",
