@@ -44,14 +44,8 @@ import com.ytgld.moonstone.item.si.nightmare.redemption.HypocriticalSelfEsteem;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDeception;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDegenerate;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDownAndOut;
-import com.ytgld.moonstone.item.si.nightmare.reversal.Candle;
-import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalCard;
-import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalMysterious;
-import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalOrb;
-import com.ytgld.moonstone.item.si.nightmare.start.StartEgg;
-import com.ytgld.moonstone.item.si.nightmare.start.StartPod;
-import com.ytgld.moonstone.item.si.nightmare.start.StartPower;
-import com.ytgld.moonstone.item.si.nightmare.start.Wolf;
+import com.ytgld.moonstone.item.si.nightmare.reversal.*;
+import com.ytgld.moonstone.item.si.nightmare.start.*;
 import com.ytgld.moonstone.item.si.nightmare.stone.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -268,8 +262,11 @@ public class Items {
 
     public static final DeferredItem<@NotNull Item> dead_drder = register("dead_drder", (identifier) -> new DeadOrder(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> flag_of_protest = register("flag_of_protest", (identifier) -> new FlagOfProtest(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
-
     public static final DeferredItem<@NotNull Item> consciousness = register("consciousness", (identifier) -> new Consciousness(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+    public static final DeferredItem<@NotNull Item> rotten_gourd = register("rotten_gourd", (identifier) -> new RottenGourd(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> supreme_power = register("supreme_power", (identifier) -> new SupremePower(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_clay = register("nightmare_clay", (identifier) -> new NightmareClay(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
@@ -481,6 +478,9 @@ public class Items {
                     output.accept(dead_drder);
                     output.accept(flag_of_protest);
                     output.accept(the_divine_fall_ring);
+                    output.accept(rotten_gourd);
+                    output.accept(supreme_power);
+                    output.accept(nightmare_clay);
 
                 }).build());
 

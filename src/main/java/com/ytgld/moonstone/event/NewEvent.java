@@ -48,8 +48,10 @@ import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDeception;
 import com.ytgld.moonstone.item.si.nightmare.reversal.Candle;
 import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalOrb;
 import com.ytgld.moonstone.item.si.nightmare.start.StartPod;
+import com.ytgld.moonstone.item.si.nightmare.start.SupremePower;
 import com.ytgld.moonstone.item.si.nightmare.start.Wolf;
 import com.ytgld.moonstone.item.si.nightmare.stone.EndBone;
+import com.ytgld.moonstone.item.si.nightmare.stone.NightmareClay;
 import com.ytgld.moonstone.item.si.nightmare.stone.StoneBrain;
 import com.ytgld.moonstone.item.si.nightmare.stone.StoneVirus;
 import com.ytgld.moonstone.other.AttReg;
@@ -75,9 +77,7 @@ import net.neoforged.neoforge.common.util.AttributeUtil;
 import net.neoforged.neoforge.event.AddAttributeTooltipsEvent;
 import net.neoforged.neoforge.event.GatherSkippedAttributeTooltipsEvent;
 import net.neoforged.neoforge.event.entity.living.*;
-import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
-import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.*;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
@@ -99,7 +99,10 @@ public class NewEvent {
             player.addTag(Moonstone.MODID+"nightmare");
         }
     }
-
+    @SubscribeEvent
+    public void sleep(CanPlayerSleepEvent event){
+        SupremePower.sleep(event);
+    }
     @SubscribeEvent
     public void tick(ClientTickEvent.Pre event) {
         time++;
@@ -154,6 +157,7 @@ public class NewEvent {
         ReviveRunestone.hurt(event);
         StrengthenRunestone.hurt(event);
         lead.hurtOfBlood(event);
+        NightmareClay.hurts(event);
 
 
         NightmareShieldHandler.nightmareShield(event);

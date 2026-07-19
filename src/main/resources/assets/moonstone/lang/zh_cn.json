@@ -2084,6 +2084,21 @@
   "item.moonstone.flag_of_protest.string.3": "激活后可在重生后传送回上一个死亡点",
   "item.moonstone.flag_of_protest.string.4": "目前状态已激活",
 
+  "item.moonstone.rotten_gourd": "腐香芦",
+  "item.moonstone.rotten_gourd.string.1": "你的残躯将被轮回的因果无视",
+  "item.moonstone.rotten_gourd.string.2": "因此得以抹去“颠倒之物”的负面诅咒",
+  "item.moonstone.rotten_gourd.string.3": "腐烂的躯体使你游泳速度减半",
+
+  "item.moonstone.supreme_power": "掌权者",
+  "item.moonstone.supreme_power.string.1": "异变的大脑使你的意识格外清醒",
+  "item.moonstone.supreme_power.string.2": "这使得“噩梦之起始”的护甲诅咒降低一半",
+  "item.moonstone.supreme_power.string.3": "过度的清醒使你无法入眠",
+
+  "item.moonstone.nightmare_clay": "梦魇粘土",
+  "item.moonstone.nightmare_clay.string.1": "你的四肢被高强度的梦魇粘土覆盖",
+  "item.moonstone.nightmare_clay.string.2": "几乎完全免疫“死兆方尖碑”的受伤诅咒",
+  "item.moonstone.nightmare_clay.string.3": "但这种粘土极易点燃，这使你受到的火焰类型伤害加倍",
+
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",

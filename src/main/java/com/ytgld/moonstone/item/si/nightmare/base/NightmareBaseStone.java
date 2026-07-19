@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item.si.nightmare.base;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
 import com.ytgld.moonstone.item.Items;
@@ -70,9 +71,11 @@ public class NightmareBaseStone extends NightmareBase implements AllTip {
             if (Handler.hascurio(player, Items.nightmare_base_stone.get())) {
 
                 if (player.getHealth() >= player.getMaxHealth()) {
-
                     double d = ConfigItem.intValue.getAsInt();
-                    event.setNewDamage((float) (event.getNewDamage() * d + 1));
+                    if (SIHandler.hascurio(player, Items.nightmare_clay.get())) {
+                        d /= 100f;
+                    }
+                    event.setNewDamage((float) (event.getNewDamage() * (d + 1)));
 
                     if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_stone.get().getDefaultInstance())) {
                         if (event.getNewDamage() > player.getHealth()) {

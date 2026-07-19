@@ -97,6 +97,9 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
 
     public static void LivingDeathEvent(LivingDeathEvent event) {
         if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.rotten_gourd.asItem())) {
+                return;
+            }
             if (Handler.hascurio(player, Items.nightmare_base_reversal.asItem())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();

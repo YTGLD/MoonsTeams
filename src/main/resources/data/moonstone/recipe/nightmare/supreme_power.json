@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A":  "#curios:nightmare",
+    "B":  "moonstone:brain",
+    "C":  "minecraft:netherite_ingot",
+    "D":  "minecraft:crying_obsidian"
+  },
+  "pattern": [
+    "DCD",
+    "CBC",
+    "DAD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:supreme_power"
+  }
+}
