@@ -267,6 +267,7 @@ public class Items {
     public static final DeferredItem<@NotNull Item> rotten_gourd = register("rotten_gourd", (identifier) -> new RottenGourd(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> supreme_power = register("supreme_power", (identifier) -> new SupremePower(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> nightmare_clay = register("nightmare_clay", (identifier) -> new NightmareClay(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> twistedamout = register("twistedamout", (identifier) -> new TwistedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
@@ -368,6 +369,7 @@ public class Items {
                     output.accept(owner_blood_vex);
                     output.accept(owner_blood_earth);
                     output.accept(consciousness);
+                    output.accept(twistedamout);
 
                     output.accept(badgeofthedead);
                     output.accept(battery);

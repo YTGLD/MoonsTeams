@@ -4,9 +4,12 @@ import com.ytgld.moonstone.config.ModLanguageProvider;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.render.*;
 import com.ytgld.moonstone.event.key.Keys;
+import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
+import com.ytgld.moonstone.render.BloodAmount;
 import com.ytgld.moonstone.render.NightmareShieldRenderHandler;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.Identifier;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,6 +22,7 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 import java.util.function.Function;
 
@@ -26,8 +30,11 @@ import java.util.function.Function;
 @EventBusSubscriber(modid = Moonstone.MODID, value = Dist.CLIENT)
 public class MoonstoneClient {
     public MoonstoneClient(ModContainer container) {
-
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+    }
+    @SubscribeEvent
+    public static void EntityRenderersEvent(EntityRenderersEvent.RegisterLayerDefinitions  event){
+        ICurioRenderer.register(Items.twistedamout.asItem(), BloodAmount::new);
     }
     @SubscribeEvent
     public static void tick(ClientTickEvent.Pre event) {
@@ -42,7 +49,6 @@ public class MoonstoneClient {
     public static void RegisterClientTooltipComponentFactoriesEvent(RegisterClientTooltipComponentFactoriesEvent event) {
         event.register(ToolTip.class, Function.identity());
     }
-
     @SubscribeEvent
     public static void emp(PlayerInteractEvent.LeftClickEmpty event){
         Consciousness.emp(event);

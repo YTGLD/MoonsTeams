@@ -17,6 +17,7 @@ import com.ytgld.moonstone.event.loot.Loots;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.other.AttReg;
+import com.ytgld.moonstone.other.AttRegClient;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
@@ -43,6 +44,7 @@ public class Moonstone {
         Loots.LOOT.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
         AllCrafting.REGISTRY.register(modEventBus);
+        AttRegClient.ATTACHMENT_TYPES.register(modEventBus);
 
         Items.TabChestItem.CREATIVE_MODE_TABS.register(modEventBus);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.fc);

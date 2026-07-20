@@ -55,7 +55,7 @@ public class ItemBase extends Item implements ICurioItem {
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
     }
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public final void curioTick(SlotContext slotContext, ItemStack stack) {
         curioTickUse(slotContext, stack);
         if (!slotContext.entity().level().isClientSide()) {
             if (!getAttributeModifiers(stack, slotContext.entity()).isEmpty()) {

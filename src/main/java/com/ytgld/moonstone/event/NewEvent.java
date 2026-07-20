@@ -8,6 +8,7 @@ import com.ytgld.moonstone.item.IKet;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.MaxEye;
 import com.ytgld.moonstone.item.ms.blood.PrisonOfSin;
+import com.ytgld.moonstone.item.ms.blood.TwistedAmout;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
 import com.ytgld.moonstone.item.ms.blood.magic.UndeadBloodCharm;
 import com.ytgld.moonstone.item.ms.ectoplasm.Beacon;
@@ -158,6 +159,7 @@ public class NewEvent {
         StrengthenRunestone.hurt(event);
         lead.hurtOfBlood(event);
         NightmareClay.hurts(event);
+        TwistedAmout.hurt(event);
 
 
         NightmareShieldHandler.nightmareShield(event);
@@ -203,6 +205,7 @@ public class NewEvent {
         BloodMagicBox.Did(event);
         MaxEye.Die(event);
         RineSword.suddenrainLivingDeathEvent(event);
+        TwistedAmout.die(event);
 
         Immortal.livDead(event);
 

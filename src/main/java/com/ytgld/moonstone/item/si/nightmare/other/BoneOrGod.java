@@ -58,7 +58,7 @@ public class BoneOrGod extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             Vec3 playerPos = player.position().add(0, 0.75, 0);
             float range = 8;

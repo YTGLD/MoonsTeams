@@ -128,7 +128,7 @@ public class BloodGod extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             CompoundTag compoundTag = stack.get(DataReg.tag);
             if (compoundTag != null) {

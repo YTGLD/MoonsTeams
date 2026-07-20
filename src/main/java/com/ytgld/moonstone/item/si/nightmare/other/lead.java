@@ -109,7 +109,7 @@ public class lead  extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         CompoundTag compoundTag = stack.get(DataReg.tag);
         if (slotContext.entity() instanceof Player player) {
             if (compoundTag != null) {
