@@ -30,7 +30,10 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.neoforged.neoforge.event.entity.living.LivingExperienceDropEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.CurioAttributeModifiers;
+import top.theillusivec4.curios.api.SlotAttribute;
 import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
@@ -174,7 +177,15 @@ public class DivineFallRing extends FallItem {
         co.setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFFF0000)));
         return co;
     }
-
+    @Override
+    public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
+        return new CurioAttributeModifiers(List.of(
+                new CurioAttributeModifiers.Entry(SlotAttribute.getOrCreate("nightmare"),
+                        new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID, this.descriptionId),
+                                -2, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                        , SlotTypePredicate.builder().withId("nightmare").build())
+        ), true);
+    }
     public void addTip(List<Component> tooltipComponents, String Z) {
         int red = 255;
         int purple = 255;
