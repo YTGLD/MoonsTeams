@@ -127,6 +127,5 @@ public class MRender {
                                 )
                         )).withVertexFormat(DefaultVertexFormat.POSITION_TEX_COLOR, VertexFormat.Mode.QUADS).buildSnippet()).
                         withLocation("pipeline/gui_textured").build());
-
     }
 }

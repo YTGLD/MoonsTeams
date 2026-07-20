@@ -2,13 +2,20 @@ package com.ytgld.moonstone;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import net.minecraft.ChatFormatting;
+import com.ytgld.moonstone.item.ToolTipImageFormStack;
+import com.ytgld.moonstone.item.ICanHasInItem;
+import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ClickAction;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -19,9 +26,11 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.function.Consumer;
 
-public class ItemBase extends Item implements ICurioItem {
+public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
     public ItemBase(Properties properties) {
         super(properties);
     }
@@ -54,6 +63,29 @@ public class ItemBase extends Item implements ICurioItem {
 
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
     }
+
+    @Override
+    public boolean overrideOtherStackedOnMe(ItemStack self, ItemStack other, Slot slot, ClickAction clickAction, Player player, SlotAccess carriedItem) {
+        if (self.getItem() instanceof ICanHasInItem canHasInItem) {
+            if (canHasInItem.canUSe().contains(other.getItem())) {
+                if (canHasInItem.addItemToStack(self, other.getItem())) {
+                    other.shrink(1);
+                    return true;
+                }
+                return false;
+            }
+        }
+        return super.overrideOtherStackedOnMe(self, other, slot, clickAction, player, carriedItem);
+    }
+
+    @Override
+    public Optional<TooltipComponent> getTooltipImage(ItemStack itemStack) {
+        if (maxSize() > 0){
+            return Optional.of(new ToolTipImageFormStack(this, itemStack));
+        }
+        return super.getTooltipImage(itemStack);
+    }
+
     @Override
     public final void curioTick(SlotContext slotContext, ItemStack stack) {
         curioTickUse(slotContext, stack);
@@ -84,5 +116,15 @@ public class ItemBase extends Item implements ICurioItem {
         for (Component component : components) {
             builder.accept(component);
         }
+    }
+
+    @Override
+    public int maxSize() {
+        return 0;
+    }
+
+    @Override
+    public Set<Item> canUSe() {
+        return Set.of();
     }
 }

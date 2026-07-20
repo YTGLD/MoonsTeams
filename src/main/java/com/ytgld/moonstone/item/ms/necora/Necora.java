@@ -6,6 +6,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -14,13 +15,16 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import top.theillusivec4.curios.api.CurioAttributeModifiers;
 import top.theillusivec4.curios.api.SlotAttribute;
@@ -28,11 +32,52 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
+import java.util.Set;
 
 public class Necora extends TheNecora {
 
     public Necora(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public Set<Item> canUSe() {
+        return Set.of(Items.ambush.asItem(),
+                Items.atpoverdose.asItem(),
+                Items.autolytic.asItem(),
+                Items.fermentation.asItem(),
+                Items.putrefactive.asItem(),
+                Items.regenerative.asItem()
+        );
+    }
+
+    @Override
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
+        var att = super.getAttributeModifiers(stack, livingEntity);
+        modifyAttribute(stack,Items.regenerative.asItem(), AttReg.heal,new AttributeModifier(
+                id(stack),0.1f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+        ),att);
+        modifyAttribute(stack,Items.autolytic.asItem(), NeoForgeMod.SWIM_SPEED,new AttributeModifier(
+                id(stack),0.15f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+        ),att);
+        modifyAttribute(stack,Items.atpoverdose.asItem(), Attributes.MAX_HEALTH,new AttributeModifier(
+                id(stack),4, AttributeModifier.Operation.ADD_VALUE
+        ),att);
+        modifyAttribute(stack,Items.fermentation.asItem(), AttReg.cit,new AttributeModifier(
+                id(stack),0.13, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+        ),att);
+        modifyAttribute(stack,Items.putrefactive.asItem(), Attributes.ARMOR,new AttributeModifier(
+                id(stack),0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+        ),att);
+        modifyAttribute(stack,Items.ambush.asItem(), Attributes.LUCK,new AttributeModifier(
+                id(stack),2, AttributeModifier.Operation.ADD_VALUE
+        ),att);
+        return att;
+    }
+
+    @Override
+    public int maxSize() {
+        return 4;
     }
 
     public static void necora(LivingEntityUseItemEvent.Finish event) {
