@@ -3,11 +3,11 @@
   "ingredients": [
     "moonstone:ectoplasmprism",
 
-    "minecraft:calcification",
-    "minecraft:masticatory",
-    "minecraft:polyphagia",
-    "minecraft:quadriceps",
-    "minecraft:reanimation"
+    "moonstone:calcification",
+    "moonstone:masticatory",
+    "moonstone:polyphagia",
+    "moonstone:quadriceps",
+    "moonstone:reanimation"
   ],
   "result": {
     "count": 1,

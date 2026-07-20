@@ -83,7 +83,7 @@ public class DivineFallRing extends FallItem {
         if (!slotContext.entity().level().isClientSide()) {
             if (slotContext.entity().tickCount >= 20) {
             } else {
-                slotContext.entity().invulnerableTime += 200;
+                slotContext.entity().invulnerableTime = 200;
             }
         }
         if (stack.get(DataReg.tag) == null) {

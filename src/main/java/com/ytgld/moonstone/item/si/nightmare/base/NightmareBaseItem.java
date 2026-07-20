@@ -55,7 +55,7 @@ public class NightmareBaseItem extends NightmareBase {
         @Override
         public void config(ModConfigSpec.Builder builder) {
             intValue = builder.translation("moonstone.config.NightmareBaseItem")
-                    .defineInRange("NightmareBaseItem", 5, 0, Integer.MAX_VALUE);
+                    .defineInRange("NightmareBaseItem", 3, 0, 7);
         }
 
         @Override

@@ -157,7 +157,7 @@ public class OwnerBlood extends TamableAnimal {
             if (Handler.hascurio(player,Items.owner_blood_boom_eye.get())){
                 s*= 3;
             }
-            if (Handler.hascurio(player,Items.the_blood_book.get()) || Handler.hascurio(player,Items.the_blood_book.get())){
+            if (Handler.hascurio(player,Items.the_blood_book.get())){
                 s *= 0.5f;
             }
         }
