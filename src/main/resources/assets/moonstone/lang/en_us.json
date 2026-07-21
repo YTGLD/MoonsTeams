@@ -1,5 +1,4 @@
 {
-
   "moonstone.config.Apple": "锁血果生命",
   "moonstone.config.Apple2": "锁血果2受伤",
   "moonstone.config.Apple3": "锁血果3伤害",
@@ -18,6 +17,10 @@
   "moonstone.config.FoolBone": "危险的头骨伤害",
   "moonstone.config.FoolSoul": "灵魂生命",
   "moonstone.config.FoolSoul2": "灵魂2受伤",
+  "moonstone.config.GodAcidicReflux": "酸性液体逆流属性倍率",
+  "moonstone.config.GodHypertrophy": "蚓状肌强化暴击概率会乘以这个值",
+  "moonstone.config.GodNajaMortis": "眼镜蛇式锁定最大伤害会乘以这个值",
+  "moonstone.config.GodPeptideSurge": "肽合成增强属性倍率",
   "moonstone.config.HypocriticalSelfEsteem": "虚伪自尊黑名单",
   "moonstone.config.InsightDrug": "疯狂药剂属性",
   "moonstone.config.InsightDrug2": "疯狂药剂每次装备物品减少的属性",
@@ -58,6 +61,10 @@
   "moonstone.configuration.FoolBone": "危险的头骨",
   "moonstone.configuration.FoolSoul": "灵魂",
   "moonstone.configuration.FoolSoul2": "灵魂2",
+  "moonstone.configuration.GodAcidicReflux": "酸性液体逆流",
+  "moonstone.configuration.GodHypertrophy": "蚓状肌强化",
+  "moonstone.configuration.GodNajaMortis": "眼镜蛇式锁定",
+  "moonstone.configuration.GodPeptideSurge": "肽合成增强",
   "moonstone.configuration.HypocriticalSelfEsteem": "虚伪自尊",
   "moonstone.configuration.InsightDrug": "疯狂药剂",
   "moonstone.configuration.InsightDrug2": "疯狂药剂",
@@ -2204,6 +2211,26 @@
   "item.moonstone.frontal_lobe": "额叶突变",
   "item.moonstone.high_energy": "ATP高能量",
   "item.moonstone.surge": "肾上腺素激增",
+
+  "item.moonstone.peptide_surge": "肽合成增强",
+  "item.moonstone.god_peptide_surge": "肽合成增强",
+  "item.moonstone.peptide_surge.string.1": "攻击消耗额外的饥饿值",
+  "item.moonstone.peptide_surge.string.2": "并使造成的伤害提高%d%%",
+
+  "item.moonstone.acidic_reflux": "酸性液体逆流",
+  "item.moonstone.god_acidic_reflux": "酸性液体逆流",
+  "item.moonstone.acidic_reflux.string.1": "攻击腐蚀目标护甲",
+  "item.moonstone.acidic_reflux.string.2": "若目标护甲较少或不存在，则造成额外%d%%伤害",
+
+  "item.moonstone.hypertrophy": "蚓状肌强化",
+  "item.moonstone.god_hypertrophy": "蚓状肌强化",
+  "item.moonstone.hypertrophy.string.1": "攻击不会再造成击退",
+  "item.moonstone.hypertrophy.string.2": "攻击有%d%%的概率使伤害翻倍",
+
+  "item.moonstone.naja_mortis": "眼镜蛇式锁定",
+  "item.moonstone.god_naja_mortis": "眼镜蛇式锁定",
+  "item.moonstone.naja_mortis.string.1": "攻击同一个目标时伤害逐渐增加，最多增加%d%%",
+  "item.moonstone.naja_mortis.string.2": "此效果会在击中第二个目标时清除",
 
 
 

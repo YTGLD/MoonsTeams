@@ -59,8 +59,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.function.Function;
 
 public class Items {
@@ -273,6 +271,18 @@ public class Items {
     public static final DeferredItem<@NotNull Item> twistedamout = register("twistedamout", (identifier) -> new TwistedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
+    public static final DeferredItem<@NotNull Item> god_peptide_surge = register("god_peptide_surge", (identifier) -> new GodPeptideSurge(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> peptide_surge = register("peptide_surge", (identifier) -> new GodPeptideSurge.PeptideSurge(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> god_acidic_reflux = register("god_acidic_reflux", (identifier) -> new GodAcidicReflux(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> acidic_reflux = register("acidic_reflux", (identifier) -> new GodAcidicReflux.AcidicReflux(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> god_hypertrophy = register("god_hypertrophy", (identifier) -> new GodHypertrophy(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> hypertrophy = register("hypertrophy", (identifier) -> new GodHypertrophy.Hypertrophy(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> god_naja_mortis = register("god_naja_mortis", (identifier) -> new GodNajaMortis(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> naja_mortis = register("naja_mortis", (identifier) -> new GodNajaMortis.NajaMortis(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+
+
+
     public static final DeferredItem<@NotNull Item> WarmApproachable = register("warm_approachable", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> OceanAffinity = register("ocean_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> EarthAffinity = register("earth_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
@@ -310,6 +320,16 @@ public class Items {
                     output.accept(GodFermentation);
                     output.accept(GodPutrefactive);
                     output.accept(GodRegenerative);
+
+                    output.accept(god_peptide_surge);
+                    output.accept(peptide_surge);
+                    output.accept(god_acidic_reflux);
+                    output.accept(acidic_reflux);
+                    output.accept(god_hypertrophy);
+                    output.accept(hypertrophy);
+                    output.accept(god_naja_mortis);
+                    output.accept(naja_mortis);
+
 
                     output.accept(air);
                     output.accept(motor);

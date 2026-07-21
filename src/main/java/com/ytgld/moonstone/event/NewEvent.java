@@ -26,10 +26,9 @@ import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.GreedAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.RedAmout;
 import com.ytgld.moonstone.item.ms.nanodoom.*;
 import com.ytgld.moonstone.item.ms.necora.Necora;
+import com.ytgld.moonstone.item.ms.necora.dna.god.*;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBoom;
 import com.ytgld.moonstone.item.ms.necora.dna.Fermentation;
-import com.ytgld.moonstone.item.ms.necora.dna.god.GodAmbush;
-import com.ytgld.moonstone.item.ms.necora.dna.god.GodPutrefactive;
 import com.ytgld.moonstone.item.ms.necora.medicine.MedicineBox;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.Calcification;
 import com.ytgld.moonstone.item.ms.necora.medicine.med.Masticatory;
@@ -160,14 +159,17 @@ public class NewEvent {
         lead.hurtOfBlood(event);
         NightmareClay.hurts(event);
         TwistedAmout.hurt(event);
-
+        GodPeptideSurge.damageAttack(event);
+        GodAcidicReflux.damageAttack(event);
+        GodHypertrophy.damageAttack(event);
+        GodNajaMortis.damageAttack(event);
 
         NightmareShieldHandler.nightmareShield(event);
-        Apple.damage(event);
         RedemptionDeception.LivingHurtEvent(event);
         Reanimation.reanimation(event);
         BloodGod.hurtOfBlood(event);
         Immortal.hEvt(event);
+        Apple.damage(event);
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingDamageEvent.Post event) {

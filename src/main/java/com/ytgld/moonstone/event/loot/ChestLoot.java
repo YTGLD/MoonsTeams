@@ -95,7 +95,13 @@ public class ChestLoot extends LootModifier {
                         Items.bone_cell.get(),
                         Items.parasitic_cell.get(),
                         Items.mother_cell.get(),
-                        Items.disgusting_cells.get()
+                        Items.disgusting_cells.get(),
+                        Items.peptide_surge.get(),
+                        Items.acidic_reflux.get(),
+                        Items.hypertrophy.get(),
+                        Items.naja_mortis.get()
+
+
                 ), 20,lootContext);
 
 

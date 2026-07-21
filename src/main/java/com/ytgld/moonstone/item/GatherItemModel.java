@@ -190,6 +190,14 @@ public class GatherItemModel extends ModelProvider {
         itemModels.generateFlatItem(Items.OceanAffinity.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(Items.EarthAffinity.asItem(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(Items.god_peptide_surge.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.peptide_surge.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.god_acidic_reflux.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.acidic_reflux.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.god_hypertrophy.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.hypertrophy.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.god_naja_mortis.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.naja_mortis.asItem(), ModelTemplates.FLAT_ITEM);
 
 
         itemModels.generateFlatItem(Items.calcareous.asItem(), ModelTemplates.FLAT_ITEM);

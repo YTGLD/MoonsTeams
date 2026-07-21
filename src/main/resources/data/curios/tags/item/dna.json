@@ -13,6 +13,16 @@
     "moonstone:god_autolytic",
     "moonstone:god_fermentation",
     "moonstone:god_putrefactive",
-    "moonstone:god_regenerative"
+    "moonstone:god_regenerative",
+
+    "moonstone:god_peptide_surge",
+    "moonstone:peptide_surge",
+    "moonstone:god_acidic_reflux",
+    "moonstone:acidic_reflux",
+    "moonstone:god_hypertrophy",
+    "moonstone:hypertrophy",
+    "moonstone:god_naja_mortis",
+    "moonstone:naja_mortis"
+
   ]
 }
