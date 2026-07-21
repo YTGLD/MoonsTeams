@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:ectoplasmprism",
+    "minecraft:golden_apple"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:necora"
+  }
+}

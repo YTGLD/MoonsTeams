@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "moonstone:ectoplasmball",
+    "B": "minecraft:shield",
+    "C": "moonstone:blueamout",
+    "D": "moonstone:ectoplasmcloub",
+    "E": "moonstone:ectoplasmcube",
+    "F": "moonstone:ectoplasmprism"
+  },
+  "pattern": [
+    "DCD",
+    "ABA",
+    "FEF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:ectoplasmshild"
+  }
+}

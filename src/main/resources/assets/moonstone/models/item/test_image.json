@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "moonstone:item/gorillacake",
+		"particle": "moonstone:item/gorillacake"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 7, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 3]},
+			"faces": {
+				"north": {"uv": [3, 5, 13, 13], "texture": "#0"},
+				"east": {"uv": [3, 5, 13, 13], "texture": "#0"},
+				"south": {"uv": [3, 5, 13, 13], "texture": "#0"},
+				"west": {"uv": [3, 5, 13, 13], "texture": "#0"},
+				"up": {"uv": [5, 2, 11, 8], "texture": "#0"},
+				"down": {"uv": [3, 11, 6, 13], "texture": "#0"}
+			}
+		}
+	]
+}

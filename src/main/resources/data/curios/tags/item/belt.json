@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:mbox",
+    "moonstone:mblock",
+    "moonstone:brain",
+    "moonstone:mhead",
+    "moonstone:battery",
+    "moonstone:evilcandle",
+
+    "moonstone:god_lead",
+    "moonstone:evil_mob",
+    "moonstone:malice_die",
+
+    "moonstone:the_heart",
+    "moonstone:ectoplasmtree"
+
+  ]
+}

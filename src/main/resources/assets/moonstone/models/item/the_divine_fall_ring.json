@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moonstone:item/the_divine_fall_ring"
+  }
+}
