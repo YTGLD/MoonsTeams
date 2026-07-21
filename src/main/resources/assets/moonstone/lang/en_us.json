@@ -2196,6 +2196,15 @@
   "item.moonstone.ocean_affinity": "海洋亲和",
   "item.moonstone.earth_affinity": "土地亲和",
 
+  "moonstone.calcareous.modify":"僵尸/宠物单位增加8点护甲",
+  "moonstone.frontal_lobe.modify":"僵尸/宠物单位增加30%速度",
+  "moonstone.high_energy.modify":"僵尸/宠物单位增加10点生命值且自然恢复",
+  "moonstone.surge.modify":"僵尸/宠物单位造成的伤害提高20%",
+
+  "item.moonstone.calcareous": "钙质化",
+  "item.moonstone.frontal_lobe": "额叶突变",
+  "item.moonstone.high_energy": "ATP高能量",
+  "item.moonstone.surge": "肾上腺素激增",
 
 
 

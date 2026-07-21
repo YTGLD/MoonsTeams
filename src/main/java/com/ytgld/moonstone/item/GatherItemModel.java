@@ -189,5 +189,13 @@ public class GatherItemModel extends ModelProvider {
         itemModels.generateFlatItem(Items.WarmApproachable.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(Items.OceanAffinity.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(Items.EarthAffinity.asItem(), ModelTemplates.FLAT_ITEM);
+
+
+
+        itemModels.generateFlatItem(Items.calcareous.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.frontal_lobe.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.high_energy.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.surge.asItem(), ModelTemplates.FLAT_ITEM);
+
     }
 }

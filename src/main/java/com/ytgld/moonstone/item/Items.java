@@ -277,6 +277,11 @@ public class Items {
     public static final DeferredItem<@NotNull Item> OceanAffinity = register("ocean_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> EarthAffinity = register("earth_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
+    public static final DeferredItem<@NotNull Item> calcareous  = register("calcareous", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> frontal_lobe = register("frontal_lobe", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> high_energy = register("high_energy", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> surge = register("surge", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> dna = CREATIVE_MODE_TABS.register(Moonstone.MODID + "_dna", () -> CreativeModeTab.builder()
@@ -288,6 +293,11 @@ public class Items {
                     output.accept(WarmApproachable);
                     output.accept(OceanAffinity);
                     output.accept(EarthAffinity);
+
+                    output.accept(calcareous);
+                    output.accept(frontal_lobe);
+                    output.accept(high_energy);
+                    output.accept(surge);
 
                     output.accept(ambush);
                     output.accept(atpoverdose);

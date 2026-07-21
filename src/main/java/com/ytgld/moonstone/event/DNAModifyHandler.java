@@ -1,17 +1,21 @@
 package com.ytgld.moonstone.event;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.ItemBase;
+import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ICanHasInItem;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -23,6 +27,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
 import java.util.List;
 
@@ -86,6 +91,13 @@ public class DNAModifyHandler {
         addComponent(stack,Items.reanimation.asItem(),Component.translatable("moonstone.reanimation.modify"),components);
         addComponent(stack,Items.polyphagia.asItem(),Component.translatable("moonstone.polyphagia.modify"),components);
         addComponent(stack,Items.masticatory.asItem(),Component.translatable("moonstone.masticatory.modify"),components);
+
+
+        addComponent(stack,Items.calcareous.asItem(),Component.translatable("moonstone.calcareous.modify"),components);
+        addComponent(stack,Items.frontal_lobe.asItem(),Component.translatable("moonstone.frontal_lobe.modify"),components);
+        addComponent(stack,Items.high_energy.asItem(),Component.translatable("moonstone.high_energy.modify"),components);
+        addComponent(stack,Items.surge.asItem(),Component.translatable("moonstone.surge.modify"),components);
+
     }
 
 
@@ -105,6 +117,49 @@ public class DNAModifyHandler {
                 }
             }
         }
+    }
+    @SubscribeEvent
+    public void eatStart(EntityTickEvent.Pre event) {
+        if (event.getEntity() instanceof LivingEntity livingEntity &&  event.getEntity() instanceof OwnableEntity ownableEntity) {
+            if (ownableEntity.getOwner() instanceof Player player) {
+                livingEntity.getAttributes().addTransientAttributeModifiers(attributeModifierMultimap(player));
+                if (Handler.hasModifyFormItem(player, Items.high_energy.get())){
+                    if (livingEntity.tickCount % 20 == 1) {
+                        livingEntity.heal(1);
+                    }
+                }
+            }
+        }
+    }
+    private static Identifier modifyID(Item item){
+        return Identifier.fromNamespaceAndPath(
+                Moonstone.MODID,item.getDescriptionId() +
+                        "_modify"
+        );
+    }
+    private static Multimap<Holder<Attribute>, AttributeModifier> attributeModifierMultimap (Player player){
+        Multimap<Holder<Attribute>, AttributeModifier> attributeModifierMultimap =  HashMultimap.create();
+        if (Handler.hasModifyFormItem(player, Items.calcareous.get())) {
+            attributeModifierMultimap.put(Attributes.ARMOR,new AttributeModifier(modifyID(
+                    Items.calcareous.get()),
+                    8, AttributeModifier.Operation.ADD_VALUE));
+        }
+        if (Handler.hasModifyFormItem(player, Items.frontal_lobe.get())) {
+            attributeModifierMultimap.put(Attributes.MOVEMENT_SPEED,new AttributeModifier(modifyID(
+                    Items.frontal_lobe.get()),
+                    0.3F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        }
+        if (Handler.hasModifyFormItem(player, Items.high_energy.get())) {
+            attributeModifierMultimap.put(Attributes.MAX_HEALTH,new AttributeModifier(modifyID(
+                    Items.high_energy.get()),
+                    10, AttributeModifier.Operation.ADD_VALUE));
+        }
+        if (Handler.hasModifyFormItem(player, Items.surge.get())) {
+            attributeModifierMultimap.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(modifyID(
+                    Items.surge.get()),
+                    0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        }
+        return attributeModifierMultimap;
     }
     @SubscribeEvent
     public void eatEnt(LivingEntityUseItemEvent.Start event) {
