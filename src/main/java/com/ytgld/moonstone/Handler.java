@@ -1,6 +1,7 @@
 package com.ytgld.moonstone;
 
 import com.ytgld.moonstone.enttiy.CellGiant;
+import com.ytgld.moonstone.item.ICanHasInItem;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.DataReg;
 import com.ytgld.moonstone.render.MRender;
@@ -47,8 +48,8 @@ public class Handler {
             }
         }
         for (ItemStack stack : stacks){
-            if (stack.getItem() instanceof ItemBase itemBase) {
-                if (itemBase.canUSe().contains(target)) {
+            if (stack.getItem() instanceof ItemBase) {
+                if (ICanHasInItem.getAll(stack).contains(target)) {
                     return true;
                 }
             }

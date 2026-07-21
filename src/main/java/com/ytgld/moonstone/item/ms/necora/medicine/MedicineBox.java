@@ -7,6 +7,8 @@ import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -60,6 +62,9 @@ public class MedicineBox extends TheNecora {
     private static void giveItem(Player player,ItemStack stack){
         ItemEntity entity = new ItemEntity(player.level(),player.getX(),player.getY(),player.getZ(),stack);
         entity.setGlowingTag(true);
+        if (Mth.nextInt(player.getRandom(), 0, 100) <= 50) {
+            entity.getItem().setCount(2);
+        }
         player.level().addFreshEntity(entity);
     }
 
@@ -226,6 +231,7 @@ public class MedicineBox extends TheNecora {
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
+        tooltip.add(Component.translatable("item.medicinebox.tool.string.8").withStyle(Style.EMPTY.withColor(0xffff0000)));
         if (flags.hasShiftDown()) {
             tooltip.add(Component.translatable("item.medicinebox.tool.string").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
             tooltip.add(Component.translatable("item.medicinebox.tool.string.1").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
@@ -236,9 +242,6 @@ public class MedicineBox extends TheNecora {
             tooltip.add(Component.translatable("item.medicinebox.tool.string.4").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.BOLD));
             tooltip.add(Component.literal(""));
         }else {
-            tooltip.add(Component.literal(""));
-            tooltip.add(Component.translatable("item.medicinebox.tool.string.8").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable("item.medicinebox.tool.string.9").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.literal(""));
             tooltip.add(Component.literal("Shift").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
         }

@@ -247,11 +247,11 @@ public class Items {
     public static final DeferredItem<@NotNull Item> at_sword_ = register("at_sword", (identifier) -> new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> sword = register("sword", (identifier) -> new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
-    public static final DeferredItem<@NotNull Item> calcification = register("calcification", (identifier) -> new Calcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> masticatory = register("masticatory", (identifier) -> new Masticatory(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> polyphagia = register("polyphagia", (identifier) -> new Polyphagia(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> quadriceps = register("quadriceps", (identifier) -> new Quadriceps(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> reanimation = register("reanimation", (identifier) -> new Reanimation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> calcification = register("calcification", (identifier) -> new Calcification(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> masticatory = register("masticatory", (identifier) -> new Masticatory(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> polyphagia = register("polyphagia", (identifier) -> new Polyphagia(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> quadriceps = register("quadriceps", (identifier) -> new Quadriceps(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> reanimation = register("reanimation", (identifier) -> new Reanimation(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> medicinebox = register("medicinebox", (identifier) -> new MedicineBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
@@ -276,7 +276,6 @@ public class Items {
     public static final DeferredItem<@NotNull Item> WarmApproachable = register("warm_approachable", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> OceanAffinity = register("ocean_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> EarthAffinity = register("earth_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-
     public static final DeferredItem<@NotNull Item> calcareous  = register("calcareous", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> frontal_lobe = register("frontal_lobe", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> high_energy = register("high_energy", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));

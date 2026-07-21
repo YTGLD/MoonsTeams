@@ -51,6 +51,7 @@ public class ChestLoot extends LootModifier {
                 AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(objectArrayList, entity);
                 AdvancementEvt.nightmare_base_start_pod(objectArrayList, entity);
                 AdvancementEvt.tricky_puppets(objectArrayList, entity);
+
                 addLoot(objectArrayList, lootContext.getRandom(), Items.blood_candle.get(), entity, List.of(
                         Items.owner_blood_eye.get(),
                         Items.owner_blood_attack_eye.get(),
@@ -66,6 +67,17 @@ public class ChestLoot extends LootModifier {
                         Items.revive_runestone.get(),
                         Items.strengthen_runestone.get()
                 ), 10,lootContext);
+
+
+                addLoot(objectArrayList, lootContext.getRandom(), Items.medicinebox.get(), entity, List.of(
+                        Items.WarmApproachable.get(),
+                        Items.OceanAffinity.get(),
+                        Items.EarthAffinity.get(),
+                        Items.calcareous.get(),
+                        Items.frontal_lobe.get(),
+                        Items.high_energy.get(),
+                        Items.surge.get()
+                ), 18,lootContext);
 
 
                 addLoot(objectArrayList, lootContext.getRandom(), Items.necora.get(), entity, List.of(
@@ -85,6 +97,7 @@ public class ChestLoot extends LootModifier {
                         Items.mother_cell.get(),
                         Items.disgusting_cells.get()
                 ), 20,lootContext);
+
 
             }
         }

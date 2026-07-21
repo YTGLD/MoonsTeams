@@ -6,6 +6,7 @@ import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ToolTipImageFormStack;
 import com.ytgld.moonstone.item.ICanHasInItem;
 import com.ytgld.moonstone.event.DNAModifyHandler;
+import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -26,10 +27,7 @@ import net.minecraft.world.level.Level;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
@@ -64,7 +62,6 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
     public final Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, Identifier s, ItemStack stack) {
         return HashMultimap.create();
     }
-
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
     }
 
@@ -72,6 +69,10 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
     public boolean overrideOtherStackedOnMe(ItemStack self, ItemStack other, Slot slot, ClickAction clickAction, Player player, SlotAccess carriedItem) {
         if (self.getItem() instanceof ICanHasInItem canHasInItem) {
             if (canHasInItem.canUSe().contains(other.getItem())) {
+                Set<String> set = self.get(DataReg.theSetString.get());
+                if (set == null){
+                    self.set(DataReg.theSetString.get(),new HashSet<>());
+                }
                 if (canHasInItem.addItemToStack(self, other.getItem())) {
                     other.shrink(1);
                     return true;
