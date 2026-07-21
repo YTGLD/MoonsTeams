@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dnabush.me;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -16,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class Motor extends TheNecora {
+public class Motor extends TheNecoraDNABush {
 
     public Motor(Properties properties) {
         super(properties);

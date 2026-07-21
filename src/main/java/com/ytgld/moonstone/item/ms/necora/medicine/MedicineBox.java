@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -23,6 +24,7 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class MedicineBox extends TheNecora {
     public MedicineBox(Properties properties) {
@@ -39,6 +41,21 @@ public class MedicineBox extends TheNecora {
     public static final String blood_eat = "blood_eat";
     public static final String blood_spawn = "blood_spawn";
     public static final String blood_enchant = "blood_enchant";
+
+    @Override
+    public Set<Item> canUSe() {
+        return Set.of(
+                Items.calcification.asItem(),
+                Items.masticatory.asItem(),
+                Items.polyphagia.asItem(),
+                Items.quadriceps.asItem(),
+                Items.reanimation.asItem()
+        );
+    }
+    @Override
+    public int maxSize() {
+        return 3;
+    }
 
     private static void giveItem(Player player,ItemStack stack){
         ItemEntity entity = new ItemEntity(player.level(),player.getX(),player.getY(),player.getZ(),stack);
@@ -212,32 +229,18 @@ public class MedicineBox extends TheNecora {
         if (flags.hasShiftDown()) {
             tooltip.add(Component.translatable("item.medicinebox.tool.string").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
             tooltip.add(Component.translatable("item.medicinebox.tool.string.1").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
-            tooltip.add(Component.translatable(""));
+            tooltip.add(Component.literal(""));
             tooltip.add(Component.translatable("item.medicinebox.tool.string.2").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
             tooltip.add(Component.translatable("item.medicinebox.tool.string.3").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
-            tooltip.add(Component.translatable(""));
+            tooltip.add(Component.literal(""));
             tooltip.add(Component.translatable("item.medicinebox.tool.string.4").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.BOLD));
-            tooltip.add(Component.translatable(""));
-            if (stack.get(DataReg.tag) != null) {
-                if (stack.get(DataReg.tag).getBooleanOr(AllEvent.blood_eat,false) &&
-                        stack.get(DataReg.tag).getBooleanOr(AllEvent.blood_hurt,false) &&
-                        stack.get(DataReg.tag).getBooleanOr(AllEvent.blood_jump,false) &&
-                        stack.get(DataReg.tag).getBooleanOr(AllEvent.blood_spawn,false) &&
-                        stack.get(DataReg.tag).getBooleanOr(AllEvent.blood_enchant,false)) {
-                    tooltip.add(Component.translatable("item.medicinebox.tool.string.5").withStyle(ChatFormatting.DARK_PURPLE).withStyle(ChatFormatting.ITALIC));
-                    tooltip.add(Component.translatable("item.medicinebox.tool.string.6").withStyle(ChatFormatting.DARK_PURPLE).withStyle(ChatFormatting.ITALIC));
-                    tooltip.add(Component.translatable(""));
-                    tooltip.add(Component.translatable("item.medicinebox.tool.string.7").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.BOLD));
-                }
-            }
+            tooltip.add(Component.literal(""));
         }else {
-            tooltip.add(Component.translatable(""));
+            tooltip.add(Component.literal(""));
             tooltip.add(Component.translatable("item.medicinebox.tool.string.8").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("item.medicinebox.tool.string.9").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable(""));
+            tooltip.add(Component.literal(""));
             tooltip.add(Component.literal("Shift").withStyle(ChatFormatting.GOLD).withStyle(ChatFormatting.ITALIC));
         }
-
-
     }
 }

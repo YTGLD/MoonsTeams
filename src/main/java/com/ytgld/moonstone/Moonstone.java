@@ -7,6 +7,7 @@ import com.ytgld.moonstone.crafting.MoonRecipeProvider;
 import com.ytgld.moonstone.effect.Effects;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.event.AdvancementEvt;
+import com.ytgld.moonstone.event.DNAModifyHandler;
 import com.ytgld.moonstone.event.NewEvent;
 import com.ytgld.moonstone.event.TextEvt;
 import com.ytgld.moonstone.event.itemevent.ZombieHandler;
@@ -19,6 +20,7 @@ import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.AttRegClient;
 import com.ytgld.moonstone.other.DataReg;
+import com.ytgld.moonstone.item.GatherItemModel;
 import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -57,6 +59,7 @@ public class Moonstone {
         NeoForge.EVENT_BUS.register(new TextEvt());
         NeoForge.EVENT_BUS.register(new LootTableEvent());
         NeoForge.EVENT_BUS.register(new ClientEvent());
+        NeoForge.EVENT_BUS.register(new DNAModifyHandler());
 
     }
     private void registerPayloadHandler(final RegisterPayloadHandlersEvent evt) {
@@ -67,5 +70,6 @@ public class Moonstone {
     }
     public void gatherData(GatherDataEvent.Client event) {
         event.createProvider(MoonRecipeProvider.Runner::new);
+        event.createProvider(GatherItemModel::new);
     }
 }

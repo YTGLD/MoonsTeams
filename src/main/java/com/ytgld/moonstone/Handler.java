@@ -1,20 +1,13 @@
 package com.ytgld.moonstone;
 
-import com.mojang.blaze3d.pipeline.RenderPipeline;
 import com.ytgld.moonstone.enttiy.CellGiant;
-import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.DataReg;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Mth;
-import net.minecraft.util.SpawnUtil;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -23,11 +16,10 @@ import net.minecraft.world.phys.Vec3;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 
 import javax.annotation.Nonnull;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 
 import static com.ytgld.moonstone.event.AllEvent.*;
@@ -40,6 +32,29 @@ public class Handler {
         }
     }
 
+    public static boolean hasModifyFormItem(Player player,Item target){
+        Set<ItemStack> stacks = new HashSet<>();
+        var inv=  CuriosApi.getCuriosInventory(player);
+        if (inv.isPresent()) {
+            ICuriosItemHandler iCuriosItemHandler =  inv.get();
+            Map<String, ICurioStacksHandler> curioStacksHandlers = iCuriosItemHandler.getCurios();
+            for (ICurioStacksHandler iCurioStacksHandler : curioStacksHandlers.values()){
+                for (int i = 0; i < iCurioStacksHandler.getStacks().getSlots(); i++) {
+                    stacks.add(
+                            iCurioStacksHandler.getStacks().getStackInSlot(i)
+                    );
+                }
+            }
+        }
+        for (ItemStack stack : stacks){
+            if (stack.getItem() instanceof ItemBase itemBase) {
+                if (itemBase.canUSe().contains(target)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     public static void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height
             , Identifier farmer, Identifier back , int colorF,int colorB) {
@@ -65,11 +80,11 @@ public class Handler {
         return false;
     }
 
-    public static List<SlotResult> findCurios(@Nonnull LivingEntity livingEntity, Item item) {
+    private static List<SlotResult> findCurios(@Nonnull LivingEntity livingEntity, Item item) {
         return findCurios(livingEntity, (stack) -> stack.getItem() == item);
     }
 
-    public static List<SlotResult> findCurios(@Nonnull LivingEntity livingEntity,
+    private static List<SlotResult> findCurios(@Nonnull LivingEntity livingEntity,
                                               Predicate<ItemStack> filter) {
         return CuriosApi.getCuriosInventory(livingEntity).map(inv -> inv.findCurios(filter))
                 .orElse(Collections.emptyList());

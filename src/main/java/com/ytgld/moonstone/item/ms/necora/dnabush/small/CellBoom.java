@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dnabush.small;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -14,7 +15,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
 
-public class CellBoom extends TheNecora {
+public class CellBoom extends TheNecoraDNABush {
     public static final String cb = " CellBoom";
 
     public CellBoom(Properties properties) {

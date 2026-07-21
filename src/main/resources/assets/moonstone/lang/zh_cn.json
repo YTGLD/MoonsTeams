@@ -2098,7 +2098,7 @@
   "item.moonstone.nightmare_clay.string.1": "你的四肢被高强度的梦魇粘土覆盖",
   "item.moonstone.nightmare_clay.string.2": "几乎完全免疫“死兆方尖碑”的受伤诅咒",
   "item.moonstone.nightmare_clay.string.3": "但这种粘土极易点燃，这使你受到的火焰类型伤害加倍",
-
+  "moonstone.use.dna.attribute":"此物品可支持嵌入下列物件",
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",

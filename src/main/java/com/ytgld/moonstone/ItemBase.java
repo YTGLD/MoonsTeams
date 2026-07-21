@@ -2,9 +2,11 @@ package com.ytgld.moonstone;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ToolTipImageFormStack;
 import com.ytgld.moonstone.item.ICanHasInItem;
-import com.ytgld.moonstone.other.DataReg;
+import com.ytgld.moonstone.event.DNAModifyHandler;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -31,9 +33,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
-    public ItemBase(Properties properties) {
-        super(properties);
-    }
+    public ItemBase(Properties properties) {super(properties);}
     public int color (){
         return 5592575;
     }
@@ -56,7 +56,11 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
         return HashMultimap.create();
     }
-
+    public Multimap<Holder<Attribute>, AttributeModifier> doStrongerDNAModifiers(ItemStack stack, LivingEntity livingEntity) {
+        Multimap<Holder<Attribute>, AttributeModifier> attributeModifierMultimap = HashMultimap.create();
+        DNAModifyHandler.doStrongerDNAModifiers(this,stack,livingEntity,attributeModifierMultimap);
+        return attributeModifierMultimap;
+    }
     public final Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, Identifier s, ItemStack stack) {
         return HashMultimap.create();
     }
@@ -93,6 +97,9 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
             if (!getAttributeModifiers(stack, slotContext.entity()).isEmpty()) {
                 slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack, slotContext.entity()));
             }
+            if (!doStrongerDNAModifiers(stack, slotContext.entity()).isEmpty()) {
+                slotContext.entity().getAttributes().addTransientAttributeModifiers(doStrongerDNAModifiers(stack, slotContext.entity()));
+            }
         }
     }
 
@@ -106,6 +113,9 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
             if (!getAttributeModifiers(stack, slotContext.entity()).isEmpty()) {
                 slotContext.entity().getAttributes().removeAttributeModifiers(getAttributeModifiers(stack, slotContext.entity()));
             }
+            if (!doStrongerDNAModifiers(stack, slotContext.entity()).isEmpty()) {
+                slotContext.entity().getAttributes().removeAttributeModifiers(doStrongerDNAModifiers(stack, slotContext.entity()));
+            }
         }
     }
     @Override
@@ -115,6 +125,17 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
         appendHoverText(itemStack, null, components, tooltipFlag);
         for (Component component : components) {
             builder.accept(component);
+        }
+        if (maxSize() > 0) {
+            if (tooltipFlag.hasControlDown()) {
+                builder.accept(Component.translatable("key.keyboard.left.control").withStyle(ChatFormatting.GRAY));
+                builder.accept(Component.translatable("moonstone.use.dna.attribute").withStyle(ChatFormatting.GOLD));
+                for (Item item : canUSe()) {
+                    builder.accept(Component.literal("+").append(Component.translatable(item.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+                }
+            } else {
+                builder.accept(Component.translatable("key.keyboard.left.control").withStyle(ChatFormatting.GOLD));
+            }
         }
     }
 

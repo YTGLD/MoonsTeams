@@ -42,7 +42,8 @@ public class Necora extends TheNecora {
 
     @Override
     public Set<Item> canUSe() {
-        return Set.of(Items.ambush.asItem(),
+        return Set.of(
+                Items.ambush.asItem(),
                 Items.atpoverdose.asItem(),
                 Items.autolytic.asItem(),
                 Items.fermentation.asItem(),
@@ -50,31 +51,6 @@ public class Necora extends TheNecora {
                 Items.regenerative.asItem()
         );
     }
-
-    @Override
-    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
-        var att = super.getAttributeModifiers(stack, livingEntity);
-        modifyAttribute(stack,Items.regenerative.asItem(), AttReg.heal,new AttributeModifier(
-                id(stack),0.1f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-        ),att);
-        modifyAttribute(stack,Items.autolytic.asItem(), NeoForgeMod.SWIM_SPEED,new AttributeModifier(
-                id(stack),0.15f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-        ),att);
-        modifyAttribute(stack,Items.atpoverdose.asItem(), Attributes.MAX_HEALTH,new AttributeModifier(
-                id(stack),4, AttributeModifier.Operation.ADD_VALUE
-        ),att);
-        modifyAttribute(stack,Items.fermentation.asItem(), AttReg.cit,new AttributeModifier(
-                id(stack),0.13, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-        ),att);
-        modifyAttribute(stack,Items.putrefactive.asItem(), Attributes.ARMOR,new AttributeModifier(
-                id(stack),0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-        ),att);
-        modifyAttribute(stack,Items.ambush.asItem(), Attributes.LUCK,new AttributeModifier(
-                id(stack),2, AttributeModifier.Operation.ADD_VALUE
-        ),att);
-        return att;
-    }
-
     @Override
     public int maxSize() {
         return 4;

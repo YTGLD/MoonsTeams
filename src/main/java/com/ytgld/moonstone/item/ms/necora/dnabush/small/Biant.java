@@ -4,6 +4,7 @@ import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.IKet;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.network.chat.Component;
@@ -19,12 +20,16 @@ import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
-public class Biant extends TheNecora implements IKet {
+public class Biant extends TheNecoraDNABush implements IKet {
 
     public Biant(Properties properties) {
         super(properties);
     }
 
+    @Override
+    public int maxSize() {
+        return 2;
+    }
     @Override
     public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
         return new CurioAttributeModifiers(List.of(

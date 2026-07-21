@@ -8,6 +8,8 @@ import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.IKet;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.network.chat.Component;
@@ -32,11 +34,15 @@ import java.util.List;
 
 import static com.ytgld.moonstone.event.AllEvent.*;
 
-public class Cell extends TheNecora implements IKet {
+public class Cell extends TheNecoraDNABush implements IKet {
     public Cell(Properties properties) {
         super(properties);
     }
 
+    @Override
+    public int maxSize() {
+        return 2;
+    }
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

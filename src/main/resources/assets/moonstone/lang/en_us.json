@@ -2188,6 +2188,17 @@
   "item.moonstone.flag_of_protest.string.3": "激活后可在重生后传送回上一个死亡点",
   "item.moonstone.flag_of_protest.string.4": "目前状态已激活",
 
+  "moonstone.use.dna.attribute":"此物品可支持嵌入下列物件",
+  "moonstone.reanimation.modify": "允许受到致命伤害后原地复活",
+  "moonstone.polyphagia.modify": "吃下食物恢复6点生命值",
+  "moonstone.masticatory.modify":"进食速度提高25%",
+  "item.moonstone.warm_approachable": "大气亲和",
+  "item.moonstone.ocean_affinity": "海洋亲和",
+  "item.moonstone.earth_affinity": "土地亲和",
+
+
+
+
   "item.moonstone.love_charm":"朋友的礼物!",
   "attribute.name.moonstone.speed":"通用速度",
   "item.moonstone.god_regenerative": "Regenerative Vitalization",

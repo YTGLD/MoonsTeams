@@ -301,27 +301,28 @@ public class NewEvent {
         if (player != null) {
             if (stack.getItem() instanceof ItemBase itemBase) {
                 Multimap<Holder<Attribute>, AttributeModifier> attributes = itemBase.getAttributeModifiers(stack, player);
-                if (!attributes.isEmpty()) {
-                    attributes.values().removeIf(modifier -> skipped.isSkipped(modifier.id()));
-                    evt.addTooltipLines(Component.empty());
-
-                    Component eq = Component.translatable("item.modifiers.any").withStyle(Style.EMPTY.withColor(itemBase.colorEQ()));
+                Multimap<Holder<Attribute>, AttributeModifier> modify = itemBase.doStrongerDNAModifiers(stack, player);
+                attributes.putAll(modify);
+                attributes.values().removeIf(modifier -> skipped.isSkipped(modifier.id()));
+                evt.addTooltipLines(Component.empty());
+                Component eq = Component.translatable("item.modifiers.any").withStyle(Style.EMPTY.withColor(itemBase.colorEQ()));
+                if (!attributes.isEmpty() || !modify.isEmpty()) {
                     attributesTooltip.add(eq);
+                }
 
-                    AttributeUtil.applyTextFor(
-                            stack,
-                            attributesTooltip::add,
-                            attributes,
-                            AttributeTooltipContext.of(player, context, context.tooltipDisplay(), context.flag()));
+                AttributeUtil.applyTextFor(
+                        stack,
+                        attributesTooltip::add,
+                        attributes,
+                        AttributeTooltipContext.of(player, context, context.tooltipDisplay(), context.flag()));
 
-
-                    for (Component component : attributesTooltip) {
-                        MutableComponent co = component.copy();
-                        if (!co.contains(eq)) {
-                            co.setStyle(Style.EMPTY.withColor(TextColor.fromRgb(itemBase.color())));
-                        }
-                        evt.addTooltipLines(co);
+                DNAModifyHandler.modifyComponent(attributesTooltip,stack);
+                for (Component component : attributesTooltip) {
+                    MutableComponent co = component.copy();
+                    if (!co.contains(eq)) {
+                        co.setStyle(Style.EMPTY.withColor(TextColor.fromRgb(itemBase.color())));
                     }
+                    evt.addTooltipLines(co);
                 }
             }
         }

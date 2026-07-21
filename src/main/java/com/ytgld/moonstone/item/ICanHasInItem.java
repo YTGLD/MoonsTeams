@@ -6,7 +6,6 @@ import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
@@ -22,7 +21,7 @@ public interface ICanHasInItem {
                                  Holder<Attribute> attributeHolder,
                                  AttributeModifier modifier,
                                  Multimap<Holder<Attribute>, AttributeModifier> modify){
-        if (hassetItemFormStack(stack, other)) {
+        if (hasSetItemFormStack(stack, other)) {
             modify.put(attributeHolder,modifier);
         }
     }
@@ -53,7 +52,7 @@ public interface ICanHasInItem {
         }
         return hashSet;
     }
-    default boolean hassetItemFormStack(ItemStack stack,Item form){
+    default boolean hasSetItemFormStack(ItemStack stack, Item form){
         Set<String> set = stack.get(DataReg.theSetString.get());
         if (set != null) {
             String identifier = BuiltInRegistries.ITEM.getKey(form).toString();

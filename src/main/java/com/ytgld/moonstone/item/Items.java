@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.item.ms.CommonItem;
+import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.blood.*;
 import com.ytgld.moonstone.item.ms.blood.magic.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.*;
@@ -16,7 +17,7 @@ import com.ytgld.moonstone.item.ms.nanodoom.*;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dna.*;
 import com.ytgld.moonstone.item.ms.necora.dna.god.*;
-import com.ytgld.moonstone.item.ms.necora.dnabush.Adrenaline;
+import com.ytgld.moonstone.item.ms.necora.dnabush.small.Adrenaline;
 import com.ytgld.moonstone.item.ms.necora.dnabush.GianNnightmare;
 import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.BoneCell;
 import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.DisgustingCells;
@@ -58,6 +59,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Function;
 
 public class Items {
@@ -269,6 +272,11 @@ public class Items {
     public static final DeferredItem<@NotNull Item> nightmare_clay = register("nightmare_clay", (identifier) -> new NightmareClay(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> twistedamout = register("twistedamout", (identifier) -> new TwistedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
+
+    public static final DeferredItem<@NotNull Item> WarmApproachable = register("warm_approachable", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> OceanAffinity = register("ocean_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> EarthAffinity = register("earth_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> dna = CREATIVE_MODE_TABS.register(Moonstone.MODID + "_dna", () -> CreativeModeTab.builder()
@@ -276,6 +284,11 @@ public class Items {
                 .icon(() -> necora.asItem().getDefaultInstance())
                 .displayItems((parameters, output) -> {
                     output.accept(necora);
+
+                    output.accept(WarmApproachable);
+                    output.accept(OceanAffinity);
+                    output.accept(EarthAffinity);
+
                     output.accept(ambush);
                     output.accept(atpoverdose);
                     output.accept(autolytic);
@@ -487,7 +500,6 @@ public class Items {
                 }).build());
 
     }
-
     public static DeferredItem<@NotNull Item> register(String name, Function<Identifier, ? extends Item> func) {
         return ITEMS.register(name, func);
     }
