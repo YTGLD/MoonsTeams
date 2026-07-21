@@ -40,10 +40,10 @@ public class SevenSword extends Doom {
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
             if (Other.isEmpty()) {
                 if (me.get(DataReg.tag) == null) {
-                    me.set(DataReg.tag,new CompoundTag());
+                    me.set(DataReg.tag, new CompoundTag());
                 }
                 CompoundTag tag = me.get(DataReg.tag);
-                boolean canFlySword = tag.getBooleanOr(RineSword.canFlySword,false); // 假设"canFlySword"是一个字符串常量
+                boolean canFlySword = tag.getBooleanOr(RineSword.canFlySword, false); // 假设"canFlySword"是一个字符串常量
                 tag.putBoolean(RineSword.canFlySword, !canFlySword);
                 return true;
             }
@@ -51,9 +51,9 @@ public class SevenSword extends Doom {
         return false;
     }
 
-    public static void doomeyeLivingKnockBackEvent(LivingDamageEvent.Pre event){
-        if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, doomeye.get())){
+    public static void doomeyeLivingKnockBackEvent(LivingDamageEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, doomeye.get())) {
                 if (event.getSource().getEntity() instanceof LivingEntity livingEntity) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -91,7 +91,6 @@ public class SevenSword extends Doom {
                 }
 
 
-
             }
         }
     }
@@ -102,13 +101,13 @@ public class SevenSword extends Doom {
         tooltip.add(Component.translatable("item.doomeye.tool.string").withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.translatable(""));
         tooltip.add(Component.translatable("item.moonstone.tool.string.sword").withStyle(ChatFormatting.GOLD));
-        if (stack.get(DataReg.tag)!=null){
-            if (!stack.get(DataReg.tag).getBooleanOr(canFlySword,false)){
+        if (stack.get(DataReg.tag) != null) {
+            if (!stack.get(DataReg.tag).getBooleanOr(canFlySword, false)) {
                 tooltip.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
-            }else {
+            } else {
                 tooltip.add(Component.translatable("item.moonstone.tooltips.on").withStyle(ChatFormatting.GOLD));
             }
-        }else {
+        } else {
             tooltip.add(Component.translatable("item.moonstone.tooltips.off").withStyle(ChatFormatting.GOLD));
         }
     }

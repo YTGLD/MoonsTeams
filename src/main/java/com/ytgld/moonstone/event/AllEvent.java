@@ -26,6 +26,12 @@ public class AllEvent {
     public static final String rage = "ragegene";
     public static final String FlySword = "FlySword";
 
+    public static final String blood_hurt = "blood_hurt";
+    public static  final String blood_jump = "blood_jump";
+    public static  final String blood_eat = "blood_eat";
+    public static  final String blood_spawn = "blood_spawn";
+    public static  final String blood_enchant = "blood_enchant";
+
     public static final String DamageCell = "DamageCell";
     public static final  String muMMY = cell_mummy.Mummy;
     public static final  String boom = CellBoom.cb;

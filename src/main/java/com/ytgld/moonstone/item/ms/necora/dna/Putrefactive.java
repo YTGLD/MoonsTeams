@@ -18,13 +18,14 @@ public class Putrefactive extends TheNecora implements CanUPLevel {
     public Putrefactive(Properties properties) {
         super(properties);
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
         if (flags.hasShiftDown()) {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.putrefactive.tool.string").withStyle(ChatFormatting.RED));
-        }else {
+        } else {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("-[SHIFT]").withStyle(ChatFormatting.DARK_RED));
             tooltip.add(Component.translatable(""));

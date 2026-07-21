@@ -34,8 +34,8 @@ public class GodLead extends CommonItem {
 	+150%受到伤害
      */
 
-    public static void hurtS(LivingDamageEvent.Pre event){
-        if (event.getEntity() instanceof Player player){
+    public static void hurtS(LivingDamageEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
             if (!event.getSource().is(DamageTypes.DRY_OUT)) {
                 if (Handler.hascurio(player, Items.god_lead.get())) {
                     if (!event.getSource().is(DamageTypes.DRY_OUT)) {
@@ -46,7 +46,7 @@ public class GodLead extends CommonItem {
                                 int range = 12;
                                 List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
                                 for (LivingEntity living : entities) {
-                                    if (!living.is(player)&& !(living instanceof Player)) {
+                                    if (!living.is(player) && !(living instanceof Player)) {
                                         living.hurt(living.damageSources().dryOut(), event.getNewDamage());
                                         living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0));
                                         if (!living.isDeadOrDying()) {

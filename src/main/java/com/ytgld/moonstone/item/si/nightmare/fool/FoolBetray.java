@@ -26,7 +26,7 @@ public class FoolBetray extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (SIHandler.hascurio(slotContext.entity(), this)) {
                 if (!player.getCooldowns().isOnCooldown(this.getDefaultInstance())) {

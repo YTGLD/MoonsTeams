@@ -61,6 +61,11 @@ public class ChestLoot extends LootModifier {
                         Items.owner_blood_earth.get()
                 ), 12,lootContext);
 
+                addLoot(objectArrayList, lootContext.getRandom(), Items.NightmareBaseItem_.get(), entity, List.of(
+                        Items.defend_against_runestone.get(),
+                        Items.revive_runestone.get(),
+                        Items.strengthen_runestone.get()
+                ), 10,lootContext);
 
 
                 addLoot(objectArrayList, lootContext.getRandom(), Items.necora.get(), entity, List.of(

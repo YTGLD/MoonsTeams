@@ -27,27 +27,28 @@ public class EctoplasmShild extends Ectoplasm implements TextEvt.Twelve {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         slotContext.entity().addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20, 0, false, false));
         if (stack.get(DataReg.tag) == null) {
             stack.set(DataReg.tag, new CompoundTag());
         }
     }
 
-    public static void hurt(LivingDamageEvent.Pre event){
+    public static void hurt(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.ectoplasmshild.get())) {
                 if (event.getSource().is(DamageTypes.EXPLOSION)) {
                     event.setNewDamage(event.getNewDamage() * 0.7F);
                 }
 
-                player.getPersistentData().getIntOr("EctoplasmShild",player.getPersistentData().getIntOr("EctoplasmShild",0) + 1);
-                if (player.getPersistentData().getIntOr("EctoplasmShild",0) >= 5) {
-                    player.getPersistentData().putInt("EctoplasmShild",0);
+                player.getPersistentData().getIntOr("EctoplasmShild", player.getPersistentData().getIntOr("EctoplasmShild", 0) + 1);
+                if (player.getPersistentData().getIntOr("EctoplasmShild", 0) >= 5) {
+                    player.getPersistentData().putInt("EctoplasmShild", 0);
                 }
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

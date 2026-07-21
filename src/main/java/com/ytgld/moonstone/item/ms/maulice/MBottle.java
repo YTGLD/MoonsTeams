@@ -37,14 +37,15 @@ public class MBottle extends MLS {
 
     @Override
     public int getLootingLevel(SlotContext slotContext, @Nullable LootContext lootContext, ItemStack stack) {
-        if (slotContext.entity().hasEffect(MobEffects.WEAKNESS)){
+        if (slotContext.entity().hasEffect(MobEffects.WEAKNESS)) {
             return 2;
         }
         return 0;
     }
+
     @Override
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
-        if (slotContext.entity().hasEffect(MobEffects.MINING_FATIGUE)){
+        if (slotContext.entity().hasEffect(MobEffects.MINING_FATIGUE)) {
             return 2;
         }
         return 0;

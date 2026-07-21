@@ -1,7 +1,0 @@
-{
-	"parent": "item/generated",
-	"model": {
-    "type": "minecraft:model",
-		"model": "moonstone:item/nightmare_head"
-	}
-}

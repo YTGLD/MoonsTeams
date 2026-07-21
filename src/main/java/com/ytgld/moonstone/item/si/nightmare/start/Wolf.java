@@ -164,15 +164,15 @@ public class Wolf extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (!slotContext.entity().level().isClientSide()) {
             slotContext.entity().getAttributes().addTransientAttributeModifiers(getAttributeModifiers(stack));
         }
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         if (!slotContext.entity().level().isClientSide()) {
             slotContext.entity().getAttributes().removeAttributeModifiers(getAttributeModifiers(stack));
         }

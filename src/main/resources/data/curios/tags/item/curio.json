@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "moonstone:the_divine_fall_ring",
     "moonstone:owner_blood_eye",
     "moonstone:owner_blood_attack_eye",
     "moonstone:owner_blood_speed_eye",
@@ -12,6 +11,7 @@
     "moonstone:blood_magic_box",
 
     "moonstone:necora",
+    "moonstone:immortal",
 
     "moonstone:badgeofthedead",
     "moonstone:blackeorb",
@@ -24,7 +24,8 @@
     "moonstone:obsidianring",
     "moonstone:maxamout",
 
-    "moonstone:twelve_sword"
+    "moonstone:twelve_sword",
+    "moonstone:consciousness"
 
 
   ]

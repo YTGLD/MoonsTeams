@@ -3,11 +3,9 @@ package com.ytgld.moonstone.item;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.item.ms.CommonItem;
+import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.blood.*;
-import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
-import com.ytgld.moonstone.item.ms.blood.magic.BloodMagicBox;
-import com.ytgld.moonstone.item.ms.blood.magic.TheBloodBook;
-import com.ytgld.moonstone.item.ms.blood.magic.UndeadBloodCharm;
+import com.ytgld.moonstone.item.ms.blood.magic.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulBattery;
 import com.ytgld.moonstone.item.ms.ectoplasm.soul.SoulCube;
@@ -19,7 +17,7 @@ import com.ytgld.moonstone.item.ms.nanodoom.*;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dna.*;
 import com.ytgld.moonstone.item.ms.necora.dna.god.*;
-import com.ytgld.moonstone.item.ms.necora.dnabush.Adrenaline;
+import com.ytgld.moonstone.item.ms.necora.dnabush.small.Adrenaline;
 import com.ytgld.moonstone.item.ms.necora.dnabush.GianNnightmare;
 import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.BoneCell;
 import com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna.DisgustingCells;
@@ -29,6 +27,8 @@ import com.ytgld.moonstone.item.ms.necora.dnabush.me.Air;
 import com.ytgld.moonstone.item.ms.necora.dnabush.me.Motor;
 import com.ytgld.moonstone.item.ms.necora.dnabush.me.Watergen;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.*;
+import com.ytgld.moonstone.item.ms.necora.medicine.med.*;
+import com.ytgld.moonstone.item.ms.necora.medicine.MedicineBox;
 import com.ytgld.moonstone.item.si.fall.DivineFallRing;
 import com.ytgld.moonstone.item.si.nightmare.base.*;
 import com.ytgld.moonstone.item.si.nightmare.eye.BlackEyeEye;
@@ -40,18 +40,13 @@ import com.ytgld.moonstone.item.si.nightmare.fool.FoolBetray;
 import com.ytgld.moonstone.item.si.nightmare.fool.FoolBone;
 import com.ytgld.moonstone.item.si.nightmare.fool.FoolSoul;
 import com.ytgld.moonstone.item.si.nightmare.insight.*;
+import com.ytgld.moonstone.item.si.nightmare.other.*;
 import com.ytgld.moonstone.item.si.nightmare.redemption.HypocriticalSelfEsteem;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDeception;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDegenerate;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDownAndOut;
-import com.ytgld.moonstone.item.si.nightmare.reversal.Candle;
-import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalCard;
-import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalMysterious;
-import com.ytgld.moonstone.item.si.nightmare.reversal.ReversalOrb;
-import com.ytgld.moonstone.item.si.nightmare.start.StartEgg;
-import com.ytgld.moonstone.item.si.nightmare.start.StartPod;
-import com.ytgld.moonstone.item.si.nightmare.start.StartPower;
-import com.ytgld.moonstone.item.si.nightmare.start.Wolf;
+import com.ytgld.moonstone.item.si.nightmare.reversal.*;
+import com.ytgld.moonstone.item.si.nightmare.start.*;
 import com.ytgld.moonstone.item.si.nightmare.stone.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -64,6 +59,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Function;
 
 public class Items {
@@ -164,92 +161,126 @@ public class Items {
     public static final DeferredItem<@NotNull Item> blood = register("blood", (Identifier) -> new BloodItem(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, Identifier))));
 
 
+    public static final DeferredItem<@NotNull Item> owner_blood_eye = register("owner_blood_eye", (identifier) -> new BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_attack_eye = register("owner_blood_attack_eye", (identifier) -> new BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_speed_eye = register("owner_blood_speed_eye", (identifier) -> new BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_boom_eye = register("owner_blood_boom_eye", (identifier) -> new BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_effect_eye = register("owner_blood_effect_eye", (identifier) -> new BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_vex = register("owner_blood_vex", (identifier) -> new BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> owner_blood_earth = register("owner_blood_earth", (identifier) -> new BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> necora = register("necora", (identifier) -> new Necora(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
-    public static final DeferredItem<@NotNull Item> owner_blood_eye =register("owner_blood_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_attack_eye =register("owner_blood_attack_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_speed_eye =register("owner_blood_speed_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_boom_eye =register("owner_blood_boom_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_effect_eye =register("owner_blood_effect_eye",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_vex =register("owner_blood_vex",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> owner_blood_earth =register("owner_blood_earth",(identifier)->new  BloodItem(new Item.Properties().stacksTo(8).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> necora =register("necora",(identifier)->new Necora(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> ambush = register("ambush", (identifier) -> new Ambush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> atpoverdose = register("atpoverdose", (identifier) -> new Atpoverdose(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> autolytic = register("autolytic", (identifier) -> new Autolytic(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> fermentation = register("fermentation", (identifier) -> new Fermentation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> putrefactive = register("putrefactive", (identifier) -> new Putrefactive(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> regenerative = register("regenerative", (identifier) -> new Regenerative(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> GodAmbush = register("god_ambush", (identifier) -> new GodAmbush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> GodAtpoverdose = register("god_atpoverdose", (identifier) -> new GodAtpoverdose(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> GodAutolytic = register("god_autolytic", (identifier) -> new GodAutolytic(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> GodFermentation = register("god_fermentation", (identifier) -> new GodFermentation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> GodPutrefactive = register("god_putrefactive", (identifier) -> new GodPutrefactive(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> GodRegenerative = register("god_regenerative", (identifier) -> new GodRegenerative(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
-    public static final DeferredItem<@NotNull Item> ambush =register("ambush",(identifier)->new Ambush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> atpoverdose =register("atpoverdose",(identifier)->new Atpoverdose(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> autolytic =register("autolytic",(identifier)->new Autolytic(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> fermentation =register("fermentation",(identifier)->new Fermentation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> putrefactive =register("putrefactive",(identifier)->new Putrefactive(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> regenerative =register("regenerative",(identifier)->new Regenerative(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> GodAmbush =register("god_ambush",(identifier)->new GodAmbush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> GodAtpoverdose =register("god_atpoverdose",(identifier)->new GodAtpoverdose(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> GodAutolytic =register("god_autolytic",(identifier)->new GodAutolytic(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> GodFermentation =register("god_fermentation",(identifier)->new GodFermentation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> GodPutrefactive =register("god_putrefactive",(identifier)->new GodPutrefactive(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> GodRegenerative =register("god_regenerative",(identifier)->new GodRegenerative(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> air = register("air", (identifier) -> new Air(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> motor = register("motor", (identifier) -> new Motor(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> watergen = register("watergen", (identifier) -> new Watergen(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> adrenaline = register("adrenaline", (identifier) -> new Adrenaline(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cell = register("cell", (identifier) -> new Cell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cell_blood = register("cell_blood", (identifier) -> new CellBlood(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cell_boom = register("cell_boom", (identifier) -> new CellBoom(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cell_calcification = register("cell_calcification", (identifier) -> new cell_calcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cell_mummy = register("cell_mummy", (identifier) -> new cell_mummy(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> giant = register("giant", (identifier) -> new Biant(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> giant_nightmare = register("giant_nightmare", (identifier) -> new GianNnightmare(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
-    public static final DeferredItem<@NotNull Item> air =register("air",(identifier)->new Air(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> motor =register("motor",(identifier)->new Motor(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> watergen =register("watergen",(identifier)->new Watergen(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> adrenaline =register("adrenaline",(identifier)->new Adrenaline(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> cell =register("cell",(identifier)->new Cell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> cell_blood =register("cell_blood",(identifier)->new CellBlood(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> cell_boom =register("cell_boom",(identifier)->new CellBoom(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> cell_calcification =register("cell_calcification",(identifier)->new cell_calcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> cell_mummy =register("cell_mummy",(identifier)->new cell_mummy(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> giant =register("giant",(identifier)->new Biant(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> giant_nightmare =register("giant_nightmare",(identifier)->new GianNnightmare(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> bone_cell = register("bone_cell", (identifier) -> new BoneCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> disgusting_cells = register("disgusting_cells", (identifier) -> new DisgustingCells(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> mother_cell = register("mother_cell", (identifier) -> new MotherCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> parasitic_cell = register("parasitic_cell", (identifier) -> new ParasiticCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
-    public static final DeferredItem<@NotNull Item> bone_cell =register("bone_cell",(identifier)->new BoneCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> disgusting_cells =register("disgusting_cells",(identifier)->new DisgustingCells(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> mother_cell =register("mother_cell",(identifier)->new MotherCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> parasitic_cell =register("parasitic_cell",(identifier)->new ParasiticCell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> badgeofthedead = register("badgeofthedead", (identifier) -> new BadgeOfTheDead(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> battery = register("battery", (identifier) -> new Battery(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> biggreedcrystal = register("biggreedcrystal", (identifier) -> new BigGreedcCystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> bigwarcrystal = register("bigwarcrystal", (identifier) -> new BigWarcrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> blackeorb = register("blackeorb", (identifier) -> new Blackeorb(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> blueamout = register("blueamout", (identifier) -> new BlueAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> greedamout = register("greedamout", (identifier) -> new GreedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> greedcrystal = register("greedcrystal", (identifier) -> new GreedCrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> redamout = register("redamout", (identifier) -> new RedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> warcrystal = register("warcrystal", (identifier) -> new WarCrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> whiteorb = register("whiteorb", (identifier) -> new WhiteOrb(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> evilcandle = register("evilcandle", (identifier) -> new EvilCandle(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> luck_ring = register("luck_ring", (identifier) -> new LuckRing(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> luck_stone = register("luck_stone", (identifier) -> new LuckSone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> magnet = register("magnet", (identifier) -> new Magnet(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> obsidianring = register("obsidianring", (identifier) -> new ObsidianRing(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> evil_mob = register("evil_mob", (identifier) -> new EvilMob(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> fortunecrystal = register("fortunecrystal", (identifier) -> new Fortunecrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> god_lead = register("god_lead", (identifier) -> new GodLead(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> malice_die = register("malice_die", (identifier) -> new MaliceDie(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> maxamout = register("maxamout", (identifier) -> new Maxamout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> mayhemcrystal = register("mayhemcrystal", (identifier) -> new Mayhemcrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> rage_crystal = register("rage_crystal", (identifier) -> new RageCrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> rage_crystal_big = register("rage_crystal_big", (identifier) -> new RageCrystalBig(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> rage_crystal_max = register("rage_crystal_max", (identifier) -> new RageCystalMax(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> the_heart = register("the_heart", (identifier) -> new TheHeart(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> twelve_sword = register("twelve_sword", (identifier) -> new TwelveSword(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
-    public static final DeferredItem<@NotNull Item> badgeofthedead =register("badgeofthedead",(identifier)->new BadgeOfTheDead(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> battery =register("battery",(identifier)->new Battery(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> biggreedcrystal =register("biggreedcrystal",(identifier)->new BigGreedcCystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> bigwarcrystal =register("bigwarcrystal",(identifier)->new BigWarcrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> blackeorb =register("blackeorb",(identifier)->new Blackeorb(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> blueamout =register("blueamout",(identifier)->new BlueAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> greedamout =register("greedamout",(identifier)->new GreedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> greedcrystal =register("greedcrystal",(identifier)->new GreedCrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> redamout =register("redamout",(identifier)->new RedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> warcrystal =register("warcrystal",(identifier)->new WarCrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> whiteorb =register("whiteorb",(identifier)->new WhiteOrb(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> evilcandle =register("evilcandle",(identifier)->new EvilCandle(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> luck_ring =register("luck_ring",(identifier)->new LuckRing(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> luck_stone =register("luck_stone",(identifier)->new LuckSone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> magnet =register("magnet",(identifier)->new Magnet(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> obsidianring =register("obsidianring",(identifier)->new ObsidianRing(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> evil_mob =register("evil_mob",(identifier)->new EvilMob(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> fortunecrystal =register("fortunecrystal",(identifier)->new Fortunecrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> god_lead =register("god_lead",(identifier)->new GodLead(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> malice_die =register("malice_die",(identifier)->new MaliceDie(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> maxamout =register("maxamout",(identifier)->new Maxamout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> mayhemcrystal =register("mayhemcrystal",(identifier)->new Mayhemcrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> rage_crystal =register("rage_crystal",(identifier)->new RageCrystal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> rage_crystal_big =register("rage_crystal_big",(identifier)->new RageCrystalBig(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> rage_crystal_max =register("rage_crystal_max",(identifier)->new RageCystalMax(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> the_heart =register("the_heart",(identifier)->new TheHeart(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> twelve_sword =register("twelve_sword",(identifier)->new TwelveSword(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-
-    public static final DeferredItem<@NotNull Item> as_amout =register("as_amout",(identifier)->new AsAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> doomeye =register("doomeye",(identifier)->new SevenSword(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> doomswoud =register("doomswoud",(identifier)->new RineSword(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> magiceye =register("magiceye",(identifier)->new MagicEye(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> magicstone =register("magicstone",(identifier)->new MagicStone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> million =register("million",(identifier)->new Million(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> nano_box =register("nano_box",(identifier)->new NanoBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> nanocube =register("nanocube",(identifier)->new NanoCube(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> nanorobot =register("nanorobot",(identifier)->new NanoRbot(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> sword_amout =register("sword_amout",(identifier)->new SwordAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> thedoomstone =register("thedoomstone",(identifier)->new Thedoomstone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> thefruit =register("thefruit",(identifier)->new TheFruit(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> wind =register("wind",(identifier)->new Wind(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> as_amout = register("as_amout", (identifier) -> new AsAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> doomeye = register("doomeye", (identifier) -> new SevenSword(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> doomswoud = register("doomswoud", (identifier) -> new RineSword(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> magiceye = register("magiceye", (identifier) -> new MagicEye(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> magicstone = register("magicstone", (identifier) -> new MagicStone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> million = register("million", (identifier) -> new Million(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> nano_box = register("nano_box", (identifier) -> new NanoBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> nanocube = register("nanocube", (identifier) -> new NanoCube(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> nanorobot = register("nanorobot", (identifier) -> new NanoRbot(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> sword_amout = register("sword_amout", (identifier) -> new SwordAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> thedoomstone = register("thedoomstone", (identifier) -> new Thedoomstone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> thefruit = register("thefruit", (identifier) -> new TheFruit(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> wind = register("wind", (identifier) -> new Wind(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
-    public static final DeferredItem<@NotNull Item> god_sword_ =register("god_sword",(identifier)->new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> at_sword_ =register("at_sword",(identifier)->new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
-    public static final DeferredItem<@NotNull Item> sword =register("sword",(identifier)->new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM,identifier))));
+    public static final DeferredItem<@NotNull Item> god_sword_ = register("god_sword", (identifier) -> new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> at_sword_ = register("at_sword", (identifier) -> new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> sword = register("sword", (identifier) -> new CommonItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+    public static final DeferredItem<@NotNull Item> calcification = register("calcification", (identifier) -> new Calcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> masticatory = register("masticatory", (identifier) -> new Masticatory(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> polyphagia = register("polyphagia", (identifier) -> new Polyphagia(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> quadriceps = register("quadriceps", (identifier) -> new Quadriceps(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> reanimation = register("reanimation", (identifier) -> new Reanimation(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> medicinebox = register("medicinebox", (identifier) -> new MedicineBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+
+    public static final DeferredItem<@NotNull Item> blood_god = register("blood_god", (identifier) -> new BloodGod(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> bone_or_god = register("bone_or_god", (identifier) -> new BoneOrGod(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> defend_against_runestone = register("defend_against_runestone", (identifier) -> new DefendAgainstRunestone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> lead = register("lead", (identifier) -> new lead(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> revive_runestone = register("revive_runestone", (identifier) -> new ReviveRunestone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> strengthen_runestone = register("strengthen_runestone", (identifier) -> new StrengthenRunestone(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> immortal = register("immortal", (identifier) -> new Immortal(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+    public static final DeferredItem<@NotNull Item> dead_drder = register("dead_drder", (identifier) -> new DeadOrder(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> flag_of_protest = register("flag_of_protest", (identifier) -> new FlagOfProtest(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> consciousness = register("consciousness", (identifier) -> new Consciousness(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+    public static final DeferredItem<@NotNull Item> rotten_gourd = register("rotten_gourd", (identifier) -> new RottenGourd(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> supreme_power = register("supreme_power", (identifier) -> new SupremePower(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> nightmare_clay = register("nightmare_clay", (identifier) -> new NightmareClay(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> twistedamout = register("twistedamout", (identifier) -> new TwistedAmout(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+
+    public static final DeferredItem<@NotNull Item> WarmApproachable = register("warm_approachable", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> OceanAffinity = register("ocean_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> EarthAffinity = register("earth_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+    public static final DeferredItem<@NotNull Item> calcareous  = register("calcareous", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> frontal_lobe = register("frontal_lobe", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> high_energy = register("high_energy", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> surge = register("surge", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
@@ -258,6 +289,16 @@ public class Items {
                 .icon(() -> necora.asItem().getDefaultInstance())
                 .displayItems((parameters, output) -> {
                     output.accept(necora);
+
+                    output.accept(WarmApproachable);
+                    output.accept(OceanAffinity);
+                    output.accept(EarthAffinity);
+
+                    output.accept(calcareous);
+                    output.accept(frontal_lobe);
+                    output.accept(high_energy);
+                    output.accept(surge);
+
                     output.accept(ambush);
                     output.accept(atpoverdose);
                     output.accept(autolytic);
@@ -286,6 +327,14 @@ public class Items {
                     output.accept(disgusting_cells);
                     output.accept(mother_cell);
                     output.accept(parasitic_cell);
+
+                    output.accept(calcification);
+                    output.accept(masticatory);
+                    output.accept(polyphagia);
+                    output.accept(quadriceps);
+                    output.accept(reanimation);
+                    output.accept(medicinebox);
+
 
 
                 }).build());
@@ -342,6 +391,8 @@ public class Items {
                     output.accept(owner_blood_effect_eye);
                     output.accept(owner_blood_vex);
                     output.accept(owner_blood_earth);
+                    output.accept(consciousness);
+                    output.accept(twistedamout);
 
                     output.accept(badgeofthedead);
                     output.accept(battery);
@@ -440,12 +491,25 @@ public class Items {
                     output.accept(nightmare_base_start_power);
                     output.accept(wolf);
 
+                    output.accept(blood_god);
+                    output.accept(bone_or_god);
+                    output.accept(defend_against_runestone);
+                    output.accept(lead);
+                    output.accept(revive_runestone);
+                    output.accept(strengthen_runestone);
+
+
+                    output.accept(immortal);
+                    output.accept(dead_drder);
+                    output.accept(flag_of_protest);
                     output.accept(the_divine_fall_ring);
+                    output.accept(rotten_gourd);
+                    output.accept(supreme_power);
+                    output.accept(nightmare_clay);
 
                 }).build());
 
     }
-
     public static DeferredItem<@NotNull Item> register(String name, Function<Identifier, ? extends Item> func) {
         return ITEMS.register(name, func);
     }

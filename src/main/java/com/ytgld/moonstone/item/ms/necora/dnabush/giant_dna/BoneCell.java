@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.dnabush.giant_dna;
 
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -9,7 +10,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class BoneCell extends TheNecora {
+public class BoneCell extends TheNecoraDNABush {
     public BoneCell(Properties properties) {
         super(properties);
     }

@@ -58,7 +58,7 @@ public class EctoplasmStar extends Ectoplasm {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             slotContext.entity().getAttributes().addTransientAttributeModifiers(att(player));
             slotContext.entity().getAttributes().addTransientAttributeModifiers(att2(player));
@@ -66,8 +66,8 @@ public class EctoplasmStar extends Ectoplasm {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         if (slotContext.entity() instanceof Player player) {
             slotContext.entity().getAttributes().removeAttributeModifiers(att(player));
             slotContext.entity().getAttributes().removeAttributeModifiers(att2(player));

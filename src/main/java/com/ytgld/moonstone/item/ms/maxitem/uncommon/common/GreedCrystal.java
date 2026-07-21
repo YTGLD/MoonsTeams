@@ -20,6 +20,7 @@ public class GreedCrystal extends CommonItem {
     public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
         return 1;
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

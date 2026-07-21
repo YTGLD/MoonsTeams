@@ -18,9 +18,8 @@ public class NanoCube extends Doom {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext,stack);
-        if (slotContext.entity() instanceof Player player){
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
             if (!player.getCooldowns().isOnCooldown(stack.getItem().getDefaultInstance())) {
                 ItemStack HEAD = player.getItemBySlot(EquipmentSlot.HEAD);
                 if (!HEAD.isEmpty()) {

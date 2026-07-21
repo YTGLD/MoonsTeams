@@ -55,7 +55,7 @@ public class NightmareBaseInsight extends NightmareBase implements AllTip {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (stack.get(DataReg.tag) != null) {
             if (stack.get(DataReg.tag).getBooleanOr("give_nightmare_base_insight_drug", false)) {
                 return;

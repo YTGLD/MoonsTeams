@@ -21,7 +21,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
 
-public class RedAmout extends CommonItem implements TextEvt.Twelve{
+public class RedAmout extends CommonItem implements TextEvt.Twelve {
 
 
     public RedAmout(Properties properties) {
@@ -29,14 +29,15 @@ public class RedAmout extends CommonItem implements TextEvt.Twelve{
     }
 
     public static void redamout(LivingDamageEvent.Pre event) {
-        if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.redamout.get()) || Handler.hascurio(player,Items.maxamout.asItem())) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.redamout.get()) || Handler.hascurio(player, Items.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 100, 1));
                 }
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

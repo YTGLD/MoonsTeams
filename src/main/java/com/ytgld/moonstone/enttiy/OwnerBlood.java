@@ -1,9 +1,11 @@
 package com.ytgld.moonstone.enttiy;
 
+import com.mojang.datafixers.kinds.IdF;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
+import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
@@ -26,9 +28,13 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class OwnerBlood extends TamableAnimal {
     public OwnerBlood(EntityType<? extends OwnerBlood> p_21803_, Level p_21804_) {
@@ -151,50 +157,29 @@ public class OwnerBlood extends TamableAnimal {
             if (Handler.hascurio(player,Items.owner_blood_boom_eye.get())){
                 s*= 3;
             }
-            if (Handler.hascurio(player,Items.the_blood_book.get()) || Handler.hascurio(player,Items.the_blood_book.get())){
+            if (Handler.hascurio(player,Items.the_blood_book.get())){
                 s *= 0.5f;
             }
         }
         if (this.getOwner()!= null &&this.getOwner() instanceof Player player&&this.getTarget()!=null){
             if (this.tickCount % (int) s == 0) {
-                if (!Handler.hascurio(player, Items.owner_blood_earth.get())) {
-                    AttackBlood attackBlood = new AttackBlood(EntityTs.attack_blood_.get(), this.level());
+                if (!Handler.hascurio(player,Items.consciousness.asItem())){
+                    if (!Handler.hascurio(player, Items.owner_blood_earth.get())) {
+                        AttackBlood attackBlood = new AttackBlood(EntityTs.attack_blood_.get(), this.level());
 
-                    attackBlood.setTarget(this.getTarget());
+                        attackBlood.setTarget(this.getTarget());
 
-                    if (Handler.hascurio(player, Items.owner_blood_speed_eye.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
-                        attackBlood.setCannotFollow(false);
-                        attackBlood.setSpeed(attackBlood.getSpeeds() * 4);
+                        addSuperAttackBlood(attackBlood,player);
+
+                        attackBlood.setPos(this.position());
+                        attackBlood.setOwner(this.getOwner());
+
+                        this.level().addFreshEntity(attackBlood);
+
+
+                        playRemoveOneSound(this);
+
                     }
-                    if (Handler.hascurio(player, Items.the_blood_book.get())) {
-                        attackBlood.setSpeed(attackBlood.getSpeeds()*2f);
-                        attackBlood.maxTime = attackBlood.maxTime * 0.25f;
-                        attackBlood.setDamage(attackBlood.getDamages()*3f);
-                        attackBlood.isPlayer = true;
-                    }
-                    if (Handler.hascurio(player, Items.owner_blood_attack_eye.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
-                        attackBlood.setDamage(attackBlood.getDamages() * 1.2f);
-                    }
-                    if (Handler.hascurio(player, Items.owner_blood_effect_eye.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
-                        attackBlood.setEffect(true);
-                    }
-                    if (Handler.hascurio(player, Items.owner_blood_vex.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
-                        attackBlood.setHeal(true);
-                        attackBlood.setDamage(attackBlood.getDamages() - 3);
-                    }
-                    if (Handler.hascurio(player, Items.owner_blood_boom_eye.get())) {
-                        attackBlood.setSpeed(attackBlood.getSpeeds() * 0.8f);
-                        attackBlood.setBoom(true);
-                    }
-
-                    attackBlood.setPos(this.position());
-                    attackBlood.setOwner(this.getOwner());
-
-                    this.level().addFreshEntity(attackBlood);
-
-
-                    playRemoveOneSound(this);
-
                 }
             }
             if (Handler.hascurio(player,Items.owner_blood_earth.get())){
@@ -246,6 +231,33 @@ public class OwnerBlood extends TamableAnimal {
             }
         }
         clear();
+    }
+
+    public static void addSuperAttackBlood(AttackBlood attackBlood,Player player){
+        if (Handler.hascurio(player, Items.owner_blood_speed_eye.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
+            attackBlood.setCannotFollow(false);
+            attackBlood.setSpeed(attackBlood.getSpeeds() * 4);
+        }
+        if (Handler.hascurio(player, Items.the_blood_book.get())) {
+            attackBlood.setSpeed(attackBlood.getSpeeds()*2f);
+            attackBlood.maxTime = attackBlood.maxTime * 0.25f;
+            attackBlood.setDamage(attackBlood.getDamages()*3f);
+            attackBlood.isPlayer = true;
+        }
+        if (Handler.hascurio(player, Items.owner_blood_attack_eye.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
+            attackBlood.setDamage(attackBlood.getDamages() * 1.2f);
+        }
+        if (Handler.hascurio(player, Items.owner_blood_effect_eye.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
+            attackBlood.setEffect(true);
+        }
+        if (Handler.hascurio(player, Items.owner_blood_vex.get()) || Handler.hascurio(player,Items.the_blood_book.get())) {
+            attackBlood.setHeal(true);
+            attackBlood.setDamage(attackBlood.getDamages() - 3);
+        }
+        if (Handler.hascurio(player, Items.owner_blood_boom_eye.get())) {
+            attackBlood.setSpeed(attackBlood.getSpeeds() * 0.8f);
+            attackBlood.setBoom(true);
+        }
     }
     private boolean isMoon(LivingEntity living){
         if (living != null){

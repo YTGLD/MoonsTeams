@@ -30,7 +30,7 @@ public class MKidney extends MLS {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         Handler.stackCreateTag(stack);
     }
 
@@ -43,17 +43,18 @@ public class MKidney extends MLS {
                         , SlotTypePredicate.builder().withId("charm").build())
         ), true);
     }
+
     public static void brainLHurt(LivingDamageEvent.Pre event) {
 
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.mkidney.get())) {
-                int Kidney = player.getPersistentData().getIntOr("mkidney",0);
+                int Kidney = player.getPersistentData().getIntOr("mkidney", 0);
                 if (!player.getCooldowns().isOnCooldown(Items.mkidney.get().getDefaultInstance())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) < Kidney) {
-                        player.getPersistentData().getIntOr("mkidney",Kidney / 2);
+                        player.getPersistentData().getIntOr("mkidney", Kidney / 2);
                         event.setNewDamage(0);
                     } else {
-                        player.getPersistentData().getIntOr("mkidney",100);
+                        player.getPersistentData().getIntOr("mkidney", 100);
                         event.setNewDamage(event.getNewDamage() + player.getMaxHealth() / 3);
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_DEACTIVATE, SoundSource.NEUTRAL, 1, 1);
                         player.getCooldowns().addCooldown(Items.mkidney.get().getDefaultInstance(), 200);
@@ -62,6 +63,7 @@ public class MKidney extends MLS {
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

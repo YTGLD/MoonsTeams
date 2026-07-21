@@ -17,7 +17,10 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -30,8 +33,13 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.neoforged.neoforge.event.entity.living.LivingExperienceDropEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.CurioAttributeModifiers;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotAttribute;
 import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class DivineFallRing extends FallItem {
@@ -79,12 +87,11 @@ public class DivineFallRing extends FallItem {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext,stack);
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (!slotContext.entity().level().isClientSide()) {
             if (slotContext.entity().tickCount >= 20) {
             } else {
-                slotContext.entity().invulnerableTime += 200;
+                slotContext.entity().invulnerableTime = 200;
             }
         }
         if (stack.get(DataReg.tag) == null) {
@@ -113,8 +120,8 @@ public class DivineFallRing extends FallItem {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         slotContext.entity().getAttributes().removeAttributeModifiers(ad(stack));
     }
 
@@ -175,7 +182,6 @@ public class DivineFallRing extends FallItem {
         co.setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFFF0000)));
         return co;
     }
-
     public void addTip(List<Component> tooltipComponents, String Z) {
         int red = 255;
         int purple = 255;

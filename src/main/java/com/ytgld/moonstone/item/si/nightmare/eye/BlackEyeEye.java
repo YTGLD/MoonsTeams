@@ -80,7 +80,7 @@ public class BlackEyeEye extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         Entity entity = getPlayerLookTarget(slotContext.entity().level(), slotContext.entity());
         if (entity instanceof LivingEntity living0) {
             if (living0.level() instanceof ServerLevel) {

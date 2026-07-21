@@ -2147,8 +2147,66 @@
   "item.meet_heart.tool.string": "拾取飞行中的血球获得额外生命值",
   "item.meet_heart.tool.string.1": "若未能获得血液，则获得持续饥饿",
 
+  "item.cell.tool.string.2": "可以按下绑定键来一次召唤多个僵尸，再次按下则回收",
+  "item.cell.tool.string.3": "但是会进入无法召唤僵尸的30秒冷却",
+
+  "item.giant.tool.string.2": "可以按下绑定键来一次召唤多个僵尸，再次按下则回收",
+  "item.giant.tool.string.3": "但是会进入无法召唤僵尸的30秒冷却",
+
+  "item.moonstone.consciousness": "融合意识",
+  "item.consciousness.tool.string.1": "此物品允许你手动攻击来触发血灵增生体的攻击",
+  "item.consciousness.tool.string.2": "每次触发额外生成7个血球，但是血灵增生体不再主动攻击",
+  "key.moonstone.zombie": "释放僵尸/收回",
   "item.moonstone.big_heart":"巨型心脏",
   "item.big_heart.tool.string": "最大生命值的正负修正增加50%",
+
+  "item.moonstone.dead_drder":"死亡之令",
+  "item.dead_drder.tool.string.1": "给予大量的梦魇护盾",
+  "item.dead_drder.tool.string.2": "梦魇护盾可为你吸收全部伤害",
+
+  "attribute.name.moonstone.nightmare_stronger": "梦魇护盾强度",
+  "attribute.name.moonstone.nightmare_shield": "梦魇护盾容量",
+
+  "item.moonstone.rotten_gourd": "腐香芦",
+  "item.moonstone.rotten_gourd.string.1": "你的残躯将被轮回的因果无视",
+  "item.moonstone.rotten_gourd.string.2": "因此得以抹去“颠倒之物”的负面诅咒",
+  "item.moonstone.rotten_gourd.string.3": "腐烂的躯体使你游泳速度减半",
+
+  "item.moonstone.supreme_power": "掌权者",
+  "item.moonstone.supreme_power.string.1": "异变的大脑使你的意识格外清醒",
+  "item.moonstone.supreme_power.string.2": "这使得“噩梦之起始”的护甲诅咒降低一半",
+  "item.moonstone.supreme_power.string.3": "过度的清醒使你无法入眠",
+
+  "item.moonstone.nightmare_clay": "梦魇粘土",
+  "item.moonstone.nightmare_clay.string.1": "你的四肢被高强度的梦魇粘土覆盖",
+  "item.moonstone.nightmare_clay.string.2": "几乎完全免疫“死兆方尖碑”的受伤诅咒",
+  "item.moonstone.nightmare_clay.string.3": "但这种粘土极易点燃，这使你受到的火焰类型伤害加倍",
+
+  "item.moonstone.flag_of_protest": "死亡抗拒",
+  "item.moonstone.flag_of_protest.string.1": "短时间内多次死亡会使你越来越强，最多叠加10层",
+  "item.moonstone.flag_of_protest.string.2": "背包界面右键此物品来激活",
+  "item.moonstone.flag_of_protest.string.3": "激活后可在重生后传送回上一个死亡点",
+  "item.moonstone.flag_of_protest.string.4": "目前状态已激活",
+
+  "moonstone.use.dna.attribute":"此物品可支持嵌入下列物件",
+  "moonstone.reanimation.modify": "允许受到致命伤害后原地复活",
+  "moonstone.polyphagia.modify": "吃下食物恢复6点生命值",
+  "moonstone.masticatory.modify":"进食速度提高25%",
+  "item.moonstone.warm_approachable": "大气亲和",
+  "item.moonstone.ocean_affinity": "海洋亲和",
+  "item.moonstone.earth_affinity": "土地亲和",
+
+  "moonstone.calcareous.modify":"僵尸/宠物单位增加8点护甲",
+  "moonstone.frontal_lobe.modify":"僵尸/宠物单位增加30%速度",
+  "moonstone.high_energy.modify":"僵尸/宠物单位增加10点生命值且自然恢复",
+  "moonstone.surge.modify":"僵尸/宠物单位造成的伤害提高20%",
+
+  "item.moonstone.calcareous": "钙质化",
+  "item.moonstone.frontal_lobe": "额叶突变",
+  "item.moonstone.high_energy": "ATP高能量",
+  "item.moonstone.surge": "肾上腺素激增",
+
+
 
   "item.moonstone.love_charm":"朋友的礼物!",
   "attribute.name.moonstone.speed":"通用速度",

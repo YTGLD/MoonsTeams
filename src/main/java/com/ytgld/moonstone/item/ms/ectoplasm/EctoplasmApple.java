@@ -22,7 +22,8 @@ public class EctoplasmApple extends Ectoplasm {
     public EctoplasmApple(Properties properties) {
         super(properties);
     }
-    public static void hurt(LivingDamageEvent.Post event){
+
+    public static void hurt(LivingDamageEvent.Post event) {
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.ectoplasmapple.get())) {
                 Entity source = event.getSource().getEntity();

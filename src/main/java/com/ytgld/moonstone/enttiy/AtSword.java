@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.enttiy;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.effect.Effects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -22,7 +23,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class AtSword extends SwordOfTwelve{
 

@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class ObsidianRing extends UnCommonItem implements TextEvt.Twelve{
+public class ObsidianRing extends UnCommonItem implements TextEvt.Twelve {
     public ObsidianRing(Properties properties) {
         super(properties);
     }

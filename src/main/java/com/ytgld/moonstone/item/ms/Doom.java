@@ -18,17 +18,18 @@ public class Doom extends CommonItem {
     @Override
     public Component getName(ItemStack itemStack) {
         Component component = super.getName(itemStack);
-        return component.copy().withStyle(Style.EMPTY.withColor(Light.ARGB.color(255,100,150,255)));
+        return component.copy().withStyle(Style.EMPTY.withColor(Light.ARGB.color(255, 100, 150, 255)));
     }
-    public static final String ITEMCategoryDoom= "Doom";
 
-    public void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height){
-        Handler.renderBack(guiGraphics,x,y,width,height,
-                Identifier.fromNamespaceAndPath(Moonstone.MODID,"tooltip/all/frame"),
-                Identifier.fromNamespaceAndPath(Moonstone.MODID,"tooltip/all/background"),
+    public static final String ITEMCategoryDoom = "Doom";
 
-                Light.ARGB.color(255,50,50,255),
-                Light.ARGB.color(255,5,5,25)
+    public void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height) {
+        Handler.renderBack(guiGraphics, x, y, width, height,
+                Identifier.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/frame"),
+                Identifier.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/background"),
+
+                Light.ARGB.color(255, 50, 50, 255),
+                Light.ARGB.color(255, 5, 5, 25)
         );
     }
 }

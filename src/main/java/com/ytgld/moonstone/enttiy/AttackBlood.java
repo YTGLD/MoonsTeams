@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.enttiy;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.Items;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.Identifier;
@@ -11,11 +12,15 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -76,7 +81,8 @@ public class AttackBlood extends Entity {
     }
     public int live = 50;
 
-    public boolean canSee = true;
+    private boolean canSee = true;
+    public boolean canSeeClient = true;
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
@@ -125,6 +131,7 @@ public class AttackBlood extends Entity {
                             entity.hurt(this.getOwner().damageSources().playerAttack(player), (float) (damages + addDamgae + player.getMaxHealth() / 10 + player.getAttributeValue(Attributes.ATTACK_DAMAGE) / 10));
                             canSee = false;
                         }
+                        canSeeClient = false;
                     }
                 }
             }
@@ -132,27 +139,25 @@ public class AttackBlood extends Entity {
     }
     @Override
     public void tick() {
-        super.tick();
+        tickCount ++;
         this.noPhysics = true;
         this.move(
                 MoverType.SELF,
                 this.getDeltaMovement()
         );
 
-        tickCount ++;
-        if (canSee) {
-            attack();
 
-        }
 
         if (canSee) {
             if (boom && tickCount >= maxTime) {
                 this.level().explode(this.getOwner(), this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
                 canSee = false;
+                canSeeClient =false;
             }
 
             if (this.tickCount > maxTime) {
                 canSee = false;
+                canSeeClient =false;
             }
             if (target != null) {
                 if (!target.isAlive()) {
@@ -208,6 +213,11 @@ public class AttackBlood extends Entity {
         this.setNoGravity(true);
         this.setYRot(0);
         this.setXRot(0);
+
+        if (canSee) {
+            attack();
+        }
+        super.tick();
     }
 
     public Entity owner;

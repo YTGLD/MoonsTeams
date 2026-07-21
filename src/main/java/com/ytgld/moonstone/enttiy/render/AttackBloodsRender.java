@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.ytgld.moonstone.HandlerClient;
 import com.ytgld.moonstone.enttiy.AttackBlood;
 import com.ytgld.moonstone.enttiy.state.AttackBloodsState;
+import com.ytgld.moonstone.enttiy.state.AttackBloodsState;
 import com.ytgld.moonstone.other.Light;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -51,7 +52,7 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
         collector.submitCustomGeometry(poseStack, MRender.renderTypeOutline, (pose, bufferSource) -> {
             setT(pose, entity, bufferSource);
         });
-        if (entity.canSee) {
+        if (entity.canSeeClient) {
             collector.submitCustomGeometry(poseStack, MRender.renderTypeOutline, (pose, bufferSource) -> {
                 renderSphere1(pose, bufferSource, 0, 0.1f);
             });
@@ -60,7 +61,7 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
         collector.submitCustomGeometry(poseStack, MRender.renderType, (pose, bufferSource) -> {
             setT(pose, entity, bufferSource);
         });
-        if (entity.canSee) {
+        if (entity.canSeeClient) {
             collector.submitCustomGeometry(poseStack, MRender.renderType, (pose, bufferSource) -> {
                 renderSphere1(pose, bufferSource, 0, 0.1f);
             });

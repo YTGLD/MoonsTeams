@@ -21,9 +21,9 @@ public class Mayhemcrystal extends UnCommonItem {
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
-        float s  = 0.3f;
+        float s = 0.3f;
         if (Handler.hascurio(livingEntity, Items.nightmare_base_stone_meet.get())) {
-            s*= 2;
+            s *= 2;
         }
         modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(), s, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         return modifierMultimap;

@@ -4,6 +4,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.other.Light;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
@@ -23,12 +24,23 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.common.DropRule;
 import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
+import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
 import java.util.List;
 
 public class NightmareBase extends ItemBase implements ICurioItem {
     public NightmareBase(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public int color() {
+        return 0xffff0000;
+    }
+
+    @Override
+    public int colorEQ() {
+        return Light.ARGB.color(255,200,50,100);
     }
 
     @Override
@@ -53,29 +65,29 @@ public class NightmareBase extends ItemBase implements ICurioItem {
         return component.copy().withStyle(Style.EMPTY.withColor(0xffff0000));
     }
 
-
-    @Override
-    public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
-        return new CurioAttributeModifiers(List.of(
-                new CurioAttributeModifiers.Entry(SlotAttribute.getOrCreate("nightmare"),
-                        new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID, this.descriptionId),
-                                1, AttributeModifier.Operation.ADD_VALUE)
-                        , SlotTypePredicate.builder().withId("nightmare").build())
-        ), true);
-    }
-
-    @Override
-    public void inventoryTick(ItemStack itemStack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
-        super.inventoryTick(itemStack, level, owner, slot);
-        AttributeModifier attributeModifier = new AttributeModifier(Identifier.parse(this.descriptionId),
-                1, AttributeModifier.Operation.ADD_VALUE);
-        if (owner instanceof Player player) {
-            CuriosApi.getCuriosInventory(player).flatMap(handler -> handler.getStacksHandler("nightmare"))
-                    .ifPresent(stacks -> {
-                        stacks.addTransientModifier(attributeModifier);
-                    });
-        }
-    }
+//
+//    @Override
+//    public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
+//        return new CurioAttributeModifiers(List.of(
+//                new CurioAttributeModifiers.Entry(SlotAttribute.getOrCreate("nightmare"),
+//                        new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID, this.descriptionId),
+//                                1, AttributeModifier.Operation.ADD_VALUE)
+//                        , SlotTypePredicate.builder().withId("nightmare").build())
+//        ), true);
+//    }
+//
+//    @Override
+//    public void inventoryTick(ItemStack itemStack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
+//        super.inventoryTick(itemStack, level, owner, slot);
+//        AttributeModifier attributeModifier = new AttributeModifier(Identifier.parse(this.descriptionId),
+//                1, AttributeModifier.Operation.ADD_VALUE);
+//        if (owner instanceof Player player) {
+//            CuriosApi.getCuriosInventory(player).flatMap(handler -> handler.getStacksHandler("nightmare"))
+//                    .ifPresent(stacks -> {
+//                        stacks.addTransientModifier(attributeModifier);
+//                    });
+//        }
+//    }
 
     public static final String ITEMCategory = "Nightmare";
 }

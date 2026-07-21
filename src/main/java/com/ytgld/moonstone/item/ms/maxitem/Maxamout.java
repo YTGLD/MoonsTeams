@@ -37,7 +37,7 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
     }
 
     public static void maxamout(LivingDamageEvent.Pre event) {
-        if (event.getEntity() instanceof Player player){
+        if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.maxamout.get())) {
                 if (event.getSource().getEntity() != null) {
                     if (event.getSource().getEntity() instanceof LivingEntity living) {
@@ -54,42 +54,42 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
                 }
 
                 event.setNewDamage(event.getNewDamage() * 0.85f);
-                float s  = 1;
-                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                    s+=1;
+                float s = 1;
+                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+                    s += 1;
                 }
-                if (Mth.nextInt(RandomSource.create(),1, (int) (5/s)) == 1){
-                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 20, (int) (2+s)));
+                if (Mth.nextInt(RandomSource.create(), 1, (int) (5 / s)) == 1) {
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 20, (int) (2 + s)));
                 }
             }
         }
-        if (event.getSource().getDirectEntity() instanceof Player player){
+        if (event.getSource().getDirectEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.maxamout.get())) {
-                float w  = 1;
-                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                    w+=1;
+                float w = 1;
+                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+                    w += 1;
                 }
-                event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, (int) (0+w)));
-                float s =event.getNewDamage() / 20;
-                if (s>5){
-                    s=5;
+                event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, (int) (0 + w)));
+                float s = event.getNewDamage() / 20;
+                if (s > 5) {
+                    s = 5;
                 }
                 player.heal(s);
-                float ss  = 1;
-                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())){
-                    ss+=1;
+                float ss = 1;
+                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+                    ss += 1;
                 }
-                if (Mth.nextInt(RandomSource.create(), 1, (int) (12/ss)) == 1) {
-                    player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 60, (int) (0+ss)));
+                if (Mth.nextInt(RandomSource.create(), 1, (int) (12 / ss)) == 1) {
+                    player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 60, (int) (0 + ss)));
                 }
             }
         }
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
-            if (player.hasEffect(MobEffects.MINING_FATIGUE)){
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            if (player.hasEffect(MobEffects.MINING_FATIGUE)) {
                 player.removeEffect(MobEffects.MINING_FATIGUE);
             }
         }
@@ -98,19 +98,20 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
+        if (slotContext.entity() instanceof Player player) {
             player.getAttributes().addTransientAttributeModifiers(swim(player, stack));
         }
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
             player.getAttributes().removeAttributeModifiers(swim(player, stack));
         }
         if (slotContext.entity() instanceof Player player) {
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
@@ -122,16 +123,17 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
             tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.maxamout.tool.string.2").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("item.maxamout.tool.string.3").withStyle(ChatFormatting.GOLD));
-             tooltip.add(Component.translatable(""));
+            tooltip.add(Component.translatable(""));
             tooltip.add(Component.translatable("item.maxamout.tool.string.6").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("item.maxamout.tool.string.7").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("item.maxamout.tool.string.8").withStyle(ChatFormatting.GOLD));
-        }else {
-            tooltip.add(Component.translatable("SHIFT").withStyle(ChatFormatting.GOLD,ChatFormatting.BOLD));
+        } else {
+            tooltip.add(Component.translatable("SHIFT").withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
 
 
         }
     }
+
     public Multimap<Holder<Attribute>, AttributeModifier> swim(Player player, ItemStack stack) {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
         modifierMultimap.put(NeoForgeMod.SWIM_SPEED, new AttributeModifier(identifier(), 0.75, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));

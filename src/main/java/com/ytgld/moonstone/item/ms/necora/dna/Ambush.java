@@ -20,15 +20,16 @@ public class Ambush extends TheNecora implements CanUPLevel {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
                 player.addTag("canStandOnFluidTrue");
             }
         }
     }
+
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
                 player.removeTag("canStandOnFluidTrue");
@@ -42,7 +43,7 @@ public class Ambush extends TheNecora implements CanUPLevel {
         if (flags.hasShiftDown()) {
             tooltip.add(Component.literal(""));
             tooltip.add(Component.translatable("item.ambush.tool.string").withStyle(ChatFormatting.RED));
-        }else {
+        } else {
             tooltip.add(Component.literal(""));
             tooltip.add(Component.literal("-[SHIFT]").withStyle(ChatFormatting.DARK_RED));
         }

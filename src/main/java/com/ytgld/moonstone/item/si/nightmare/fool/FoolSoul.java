@@ -64,7 +64,7 @@ public class FoolSoul extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (SIHandler.hascurio(slotContext.entity(), this)) {
             slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
             slotContext.entity().getAttributes().addTransientAttributeModifiers(getsHEAL(slotContext));
@@ -72,8 +72,8 @@ public class FoolSoul extends NightmareSmall {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         slotContext.entity().getAttributes().removeAttributeModifiers(gets(slotContext));
         slotContext.entity().getAttributes().removeAttributeModifiers(getsHEAL(slotContext));
     }

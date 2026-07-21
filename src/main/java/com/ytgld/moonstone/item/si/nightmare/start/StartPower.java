@@ -71,8 +71,8 @@ public class StartPower extends NightmareSmall {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         if (!slotContext.entity().level().isClientSide()) {
             slotContext.entity().getAttributes().removeAttributeModifiers(gets(slotContext));
         }

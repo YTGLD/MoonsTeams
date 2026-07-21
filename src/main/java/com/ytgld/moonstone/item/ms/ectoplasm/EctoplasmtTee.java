@@ -18,7 +18,7 @@ public class EctoplasmtTee extends Ectoplasm {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity().tickCount % 20 == 0) {
             slotContext.entity().addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400, 0, false, false));
         }

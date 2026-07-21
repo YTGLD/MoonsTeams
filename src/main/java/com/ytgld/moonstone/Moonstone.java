@@ -7,15 +7,20 @@ import com.ytgld.moonstone.crafting.MoonRecipeProvider;
 import com.ytgld.moonstone.effect.Effects;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.event.AdvancementEvt;
+import com.ytgld.moonstone.event.DNAModifyHandler;
 import com.ytgld.moonstone.event.NewEvent;
 import com.ytgld.moonstone.event.TextEvt;
+import com.ytgld.moonstone.event.itemevent.ZombieHandler;
 import com.ytgld.moonstone.event.key.ClientEvent;
 import com.ytgld.moonstone.event.key.UseCuriosHandler;
 import com.ytgld.moonstone.event.loot.LootTableEvent;
 import com.ytgld.moonstone.event.loot.Loots;
 import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.other.AttReg;
+import com.ytgld.moonstone.other.AttRegClient;
 import com.ytgld.moonstone.other.DataReg;
+import com.ytgld.moonstone.item.GatherItemModel;
 import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -35,11 +40,13 @@ public class Moonstone {
     public Moonstone(IEventBus modEventBus, ModContainer modContainer) {
         DataReg.REGISTRY.register(modEventBus);
         AttReg.REGISTRY.register(modEventBus);
+        AttReg.ATTACHMENT_TYPES.register(modEventBus);
         Items.ITEMS.register(modEventBus);
         Effects.REGISTRY.register(modEventBus);
         Loots.LOOT.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
         AllCrafting.REGISTRY.register(modEventBus);
+        AttRegClient.ATTACHMENT_TYPES.register(modEventBus);
 
         Items.TabChestItem.CREATIVE_MODE_TABS.register(modEventBus);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.fc);
@@ -52,12 +59,17 @@ public class Moonstone {
         NeoForge.EVENT_BUS.register(new TextEvt());
         NeoForge.EVENT_BUS.register(new LootTableEvent());
         NeoForge.EVENT_BUS.register(new ClientEvent());
+        NeoForge.EVENT_BUS.register(new DNAModifyHandler());
 
     }
     private void registerPayloadHandler(final RegisterPayloadHandlersEvent evt) {
-        UseCuriosHandler.register(evt.registrar("1.0"));
+        Consciousness.register(evt);
+        UseCuriosHandler.register(evt.registrar("2.0"));
+        ZombieHandler.register(evt.registrar("3.0"));
+
     }
     public void gatherData(GatherDataEvent.Client event) {
         event.createProvider(MoonRecipeProvider.Runner::new);
+        event.createProvider(GatherItemModel::new);
     }
 }

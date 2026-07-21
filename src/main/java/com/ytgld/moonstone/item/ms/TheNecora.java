@@ -19,17 +19,18 @@ public class TheNecora extends ItemBase {
     @Override
     public Component getName(ItemStack itemStack) {
         Component component = super.getName(itemStack);
-        return component.copy().withStyle(Style.EMPTY.withColor(Light.ARGB.color(255,200,10,10)));
+        return component.copy().withStyle(Style.EMPTY.withColor(Light.ARGB.color(255, 200, 10, 10)));
     }
+
     public static final String ITEMCategoryTheNecora = "TheNecora";
 
-    public void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height){
-        Handler.renderBack(guiGraphics,x,y,width,height,
-                Identifier.fromNamespaceAndPath(Moonstone.MODID,"tooltip/all/frame"),
-                Identifier.fromNamespaceAndPath(Moonstone.MODID,"tooltip/all/background"),
+    public void renderBack(GuiGraphicsExtractor guiGraphics, int x, int y, int width, int height) {
+        Handler.renderBack(guiGraphics, x, y, width, height,
+                Identifier.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/frame"),
+                Identifier.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/background"),
 
-                Light.ARGB.color(255,100,5,5),
-                Light.ARGB.color(255,20,5,5)
+                Light.ARGB.color(255, 100, 5, 5),
+                Light.ARGB.color(255, 20, 5, 5)
         );
     }
 }

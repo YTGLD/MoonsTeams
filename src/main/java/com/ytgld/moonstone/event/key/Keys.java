@@ -11,6 +11,8 @@ public class Keys {
 
     public static final KeyMapping KEY_MAPPING_LAZY_R =
             (new KeyMapping("key.moonstone.r", InputConstants.KEY_R, moonstone));
+    public static final KeyMapping ZombieC =
+            (new KeyMapping("key.moonstone.zombie", InputConstants.KEY_C, moonstone));
 
 
 }

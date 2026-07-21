@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dnabush.small;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -14,22 +15,23 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
 
-public class CellBoom extends TheNecora {
+public class CellBoom extends TheNecoraDNABush {
     public static final String cb = " CellBoom";
 
     public CellBoom(Properties properties) {
         super(properties);
     }
 
-    public static void Boom(LivingDamageEvent.Pre event){
+    public static void Boom(LivingDamageEvent.Pre event) {
         if ((event.getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player, Items.cell_boom.get())){
-                if (event.getSource().is(DamageTypes.EXPLOSION)){
+            if (Handler.hascurio(player, Items.cell_boom.get())) {
+                if (event.getSource().is(DamageTypes.EXPLOSION)) {
                     event.setNewDamage(0);
                 }
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

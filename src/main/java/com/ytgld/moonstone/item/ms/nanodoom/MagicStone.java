@@ -31,17 +31,19 @@ public class MagicStone extends Doom {
 
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        super.curioTick(slotContext, stack);
-        if (slotContext.entity() instanceof Player) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
             final int damage = Mth.nextInt(RandomSource.create(), -7, 21);
             final int kok = Mth.nextInt(RandomSource.create(), -13, 36);
             final int regs = Mth.nextInt(RandomSource.create(), -3, 9);
-            if (!stack.get(DataReg.tag).getBooleanOr(magic,false)){
+
+            if (!stack.get(DataReg.tag).getBooleanOr(magic, false)) {
                 stack.get(DataReg.tag).putInt("damage", damage);
                 stack.get(DataReg.tag).putInt("kok", kok);
                 stack.get(DataReg.tag).putInt("regs", regs);
+
                 stack.get(DataReg.tag).putBoolean(magic, true);
+
             }
         }
     }
@@ -51,9 +53,9 @@ public class MagicStone extends Doom {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
         CompoundTag compoundTag = stack.get(DataReg.tag);
         if (compoundTag != null) {
-            modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(), stack.get(DataReg.tag).getIntOr("damage",0) / 100f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-            modifierMultimap.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(identifier(), stack.get(DataReg.tag).getIntOr("kok",0) / 100f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(identifier(),  stack.get(DataReg.tag).getIntOr("regs",0) / 100f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(identifier(), stack.get(DataReg.tag).getIntOr("damage", 0) / 100f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            modifierMultimap.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(identifier(), stack.get(DataReg.tag).getIntOr("kok", 0) / 100f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(identifier(), stack.get(DataReg.tag).getIntOr("regs", 0) / 100f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         }
         return modifierMultimap;
     }
@@ -61,10 +63,10 @@ public class MagicStone extends Doom {
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);
-        if (stack.get(DataReg.tag)!= null) {
-            tooltip.add(Component.translatable("attribute.name.generic.attack_damage").append(stack.get(DataReg.tag).getIntOr("damage",0) + "%").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable("attribute.name.generic.armor").append(stack.get(DataReg.tag).getIntOr("regs",0) + "%").withStyle(ChatFormatting.GOLD));
-            tooltip.add(Component.translatable("attribute.name.generic.knockback_resistance").append( stack.get(DataReg.tag).getIntOr("kok",0) + "%").withStyle(ChatFormatting.GOLD));
+        if (stack.get(DataReg.tag) != null) {
+            tooltip.add(Component.translatable("attribute.name.generic.attack_damage").append(stack.get(DataReg.tag).getIntOr("damage", 0) + "%").withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("attribute.name.generic.armor").append(stack.get(DataReg.tag).getIntOr("regs", 0) + "%").withStyle(ChatFormatting.GOLD));
+            tooltip.add(Component.translatable("attribute.name.generic.knockback_resistance").append(stack.get(DataReg.tag).getIntOr("kok", 0) + "%").withStyle(ChatFormatting.GOLD));
         }
     }
 }

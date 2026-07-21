@@ -21,17 +21,18 @@ public class BadgeOfTheDead extends CommonItem {
     }
 
     public static void badgeofthedead(LivingDamageEvent.Pre event) {
-        if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.badgeofthedead.get())){
-                if (event.getEntity()  instanceof Mob mob){
-                    if (mob.isInvertedHealAndHarm()){
-                        event.setNewDamage(event.getNewDamage()*1.25f);
+        if (event.getSource().getEntity() instanceof Player player) {
+            if (Handler.hascurio(player, Items.badgeofthedead.get())) {
+                if (event.getEntity() instanceof Mob mob) {
+                    if (mob.isInvertedHealAndHarm()) {
+                        event.setNewDamage(event.getNewDamage() * 1.25f);
                     }
                 }
             }
         }
 
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

@@ -2,7 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     "moonstone:ectoplasmprism",
-    "minecraft:golden_apple"
+
+    "moonstone:calcification",
+    "moonstone:masticatory",
+    "moonstone:polyphagia",
+    "moonstone:quadriceps",
+    "moonstone:reanimation"
   ],
   "result": {
     "count": 1,

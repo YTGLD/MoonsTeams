@@ -19,6 +19,7 @@ public class MRing extends MLS {
     public MRing(Properties properties) {
         super(properties);
     }
+
     public static void LivingExperienceDropEvent(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.mring.get())) {
@@ -26,6 +27,7 @@ public class MRing extends MLS {
             }
         }
     }
+
     public static void LivingExperienceDropEvent(LivingKnockBackEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.mring.get())) {
@@ -33,6 +35,7 @@ public class MRing extends MLS {
             }
         }
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

@@ -78,7 +78,7 @@ public class ReversalMysterious extends NightmareSmall {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             CompoundTag tag = stack.get(DataReg.tag);
             if (tag != null) {
@@ -92,8 +92,8 @@ public class ReversalMysterious extends NightmareSmall {
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
         if (slotContext.entity() instanceof Player player) {
 
             player.getAttributes().removeAttributeModifiers(this.getAttributeModifiers());

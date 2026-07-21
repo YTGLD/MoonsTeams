@@ -21,11 +21,11 @@ public class WhiteOrb extends CommonItem {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
 
         double a = 0.1;
-        if (com.ytgld.moonstone.Handler.hascurio(entity, com.ytgld.moonstone.item.Items.blackeorb.get())){
+        if (com.ytgld.moonstone.Handler.hascurio(entity, com.ytgld.moonstone.item.Items.blackeorb.get())) {
             a *= 2;
         }
 
-        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(identifier(),  a, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        modifierMultimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(identifier(), a, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
         return modifierMultimap;
     }

@@ -19,32 +19,32 @@ import java.util.List;
 
 public class Wind extends Doom {
 
-    private float abc ;
+    private float abc;
 
     public Wind(Properties properties) {
         super(properties);
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        if (slotContext.entity() instanceof Player player){
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
             player.getAttributes().addTransientAttributeModifiers(this.Head());
-            if (player.isSprinting()){
+            if (player.isSprinting()) {
                 if (abc < 0.75) {
                     abc += 0.02f;
                 }
-            }else if (abc > 0){
+            } else if (abc > 0) {
                 abc -= 0.015f;
             }
         }
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         slotContext.entity().getAttributes().removeAttributeModifiers(this.Head());
     }
 
-    private Multimap<Holder<Attribute>, AttributeModifier> Head(){
+    private Multimap<Holder<Attribute>, AttributeModifier> Head() {
         Multimap<Holder<Attribute>, AttributeModifier> multimap = HashMultimap.create();
 
 

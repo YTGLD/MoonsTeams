@@ -44,7 +44,7 @@ public class NightmareBaseStart extends NightmareBase implements AllTip {
         @Override
         public void config(ModConfigSpec.Builder builder) {
             intValue = builder.translation("moonstone.config.NightmareBaseStart")
-                    .defineInRange("NightmareBaseStart", 50, 0, Integer.MAX_VALUE);
+                    .defineInRange("NightmareBaseStart", 100, 0, Integer.MAX_VALUE);
         }
 
         @Override
@@ -95,14 +95,13 @@ public class NightmareBaseStart extends NightmareBase implements AllTip {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (Handler.hascurio(slotContext.entity(), this))
             slotContext.entity().getAttributes().addTransientAttributeModifiers(gets(slotContext));
     }
 
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        super.onUnequip(slotContext, newStack, stack);
+    public void onUnequipUse(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         slotContext.entity().getAttributes().removeAttributeModifiers(gets(slotContext));
     }
 
@@ -110,6 +109,9 @@ public class NightmareBaseStart extends NightmareBase implements AllTip {
         Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         int s = ConfigItem.intValue.getAsInt();
         float d = s / 100f;
+        if (Handler.hascurio(slotContext.entity(), Items.supreme_power.asItem())){
+            d /= 2;
+        }
 
         linkedHashMultimap.put(Attributes.ARMOR, new AttributeModifier(
                 Identifier.parse(this.descriptionId), -d, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));

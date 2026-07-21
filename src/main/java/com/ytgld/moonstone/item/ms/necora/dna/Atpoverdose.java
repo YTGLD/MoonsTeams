@@ -29,6 +29,7 @@ public class Atpoverdose extends TheNecora implements CanUPLevel {
                         , SlotTypePredicate.builder().withId("curio").build())
         ), true);
     }
+
     @Override
     public Item upLevelItem() {
         return GodAtpoverdose.asItem();

@@ -23,7 +23,7 @@ public class GodRegenerative extends GodDNA {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.getCooldowns().isOnCooldown(this.getDefaultInstance())) {
                 player.heal(1);
@@ -38,10 +38,11 @@ public class GodRegenerative extends GodDNA {
         pTooltipComponents.add(Component.translatable(""));
         pTooltipComponents.add(Component.translatable("item.god_regenerative.tool.string").withStyle(ChatFormatting.RED));
     }
+
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
 
-        Multimap<Holder<Attribute>, AttributeModifier>modifierMultimap = HashMultimap.create();
+        Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
 
 
         modifierMultimap.put(com.ytgld.moonstone.other.AttReg.heal, new AttributeModifier(identifier(), 0.17F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));

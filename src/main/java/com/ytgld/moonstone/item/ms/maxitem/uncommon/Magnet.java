@@ -21,7 +21,7 @@ public class Magnet extends UnCommonItem {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         Vec3 playerPos = slotContext.entity().position().add(0, 0.75, 0);
         float range = 8;
         List<ItemEntity> itemEntities =
@@ -32,8 +32,8 @@ public class Magnet extends UnCommonItem {
                                 playerPos.x + range,
                                 playerPos.y + range,
                                 playerPos.z + range));
-        for (ItemEntity item : itemEntities){
-            if (item.tickCount>35) {
+        for (ItemEntity item : itemEntities) {
+            if (item.tickCount > 35) {
                 Vec3 direction = playerPos.subtract(item.position());
                 direction = direction.normalize().scale(0.1);
                 item.setDeltaMovement(item.getDeltaMovement().add(direction));
