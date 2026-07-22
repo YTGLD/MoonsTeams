@@ -47,11 +47,9 @@ public class Handler {
                 }
             }
         }
-        for (ItemStack stack : stacks){
-            if (stack.getItem() instanceof ItemBase) {
-                if (ICanHasInItem.getAll(stack).contains(target)) {
-                    return true;
-                }
+        for (ItemStack stack : stacks) {
+            if (ICanHasInItem.getAll(stack).contains(target)) {
+                return true;
             }
         }
         return false;

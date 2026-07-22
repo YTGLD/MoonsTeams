@@ -1,6 +1,6 @@
 package com.ytgld.moonstone.enttiy.zombie;
 
-import com.ytgld.moonstone.enttiy.ExtendEntityLiving;
+import com.ytgld.moonstone.enttiy.ExtendZombieEntity;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.monster.zombie.ZombieModel;
 import net.minecraft.client.renderer.entity.ArmorModelSet;
@@ -11,11 +11,10 @@ import net.minecraft.client.renderer.entity.state.ZombieRenderState;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.HumanoidArm;
-import net.minecraft.world.entity.monster.zombie.Zombie;
 import net.minecraft.world.item.SwingAnimationType;
 import net.minecraft.world.item.component.SwingAnimation;
 
-public abstract class MoonAbstractZombieRenderer<T extends ExtendEntityLiving, S extends ZombieRenderState, M extends ZombieModel<S>> extends HumanoidMobRenderer<T, S, M> {
+public abstract class MoonAbstractZombieRenderer<T extends ExtendZombieEntity, S extends ZombieRenderState, M extends ZombieModel<S>> extends HumanoidMobRenderer<T, S, M> {
     private static final Identifier ZOMBIE_LOCATION = Identifier.withDefaultNamespace("textures/entity/zombie/zombie.png");
     private static final Identifier BABY_ZOMBIE_LOCATION = Identifier.withDefaultNamespace("textures/entity/zombie/zombie_baby.png");
 

@@ -8,6 +8,7 @@ import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.Light;
 import com.ytgld.moonstone.render.MRender;
+import com.ytgld.moonstone.render.RenderDNAItem;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
@@ -47,7 +48,9 @@ public abstract class GuiGraphicsExtractorMixin {
     public void renderItem(LivingEntity entity, Level level, ItemStack stack, int x, int y, int seed, CallbackInfo ci) {
         GuiGraphicsExtractor guiGraphicsExtractor = (GuiGraphicsExtractor) (Object) this;
         GodDNA.renderItem(guiGraphicsExtractor,stack,x,y);
+        RenderDNAItem.renderItem(guiGraphicsExtractor,pose,stack,x,y,seed);
     }
+
     @Inject(at = @At(value = "RETURN"), method = "tooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;Lnet/minecraft/world/item/ItemStack;)V")
     public void ytgld$ClientTooltipPositioner(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, Identifier background, ItemStack tooltipStack, CallbackInfo ci) {
         if (tooltipStack.getItem() instanceof ItemBase){

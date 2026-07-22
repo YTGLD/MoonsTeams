@@ -2223,6 +2223,14 @@
   "item.moonstone.naja_mortis.string.2": "此效果会在击中第二个目标时清除",
 
 
+  "item.moonstone.cytopathic_boost": "细胞变性促进",
+  "item.moonstone.spliced_activation": "活性化叠接",
+  "item.moonstone.thermo_necro": "热力分解抑制",
+
+  "moonstone.cytopathic_boost.modify": "僵尸获得40%召唤者的伤害，速度，护甲",
+  "moonstone.spliced_activation.modify":"僵尸的最大生命值提高50%，且快速恢复生命值",
+  "moonstone.thermo_necro.modify": "降低60%僵尸的腐烂速度",
+
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",

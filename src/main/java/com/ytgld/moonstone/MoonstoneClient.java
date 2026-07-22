@@ -5,12 +5,12 @@ import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.render.*;
 import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.Items;
-import com.ytgld.moonstone.item.ToolTipImageFormStack;
+import com.ytgld.moonstone.item.ToolTipDNAItem;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
 import com.ytgld.moonstone.render.BloodAmount;
 import com.ytgld.moonstone.render.NightmareShieldRenderHandler;
-import net.minecraft.client.Minecraft;
+import com.ytgld.moonstone.render.RenderDNAItem;
 import net.minecraft.resources.Identifier;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -40,6 +40,7 @@ public class MoonstoneClient {
     @SubscribeEvent
     public static void tick(ClientTickEvent.Pre event) {
         NightmareShieldRenderHandler.tick(event);
+        RenderDNAItem.clientTick(event);
     }
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiLayersEvent event) {
@@ -49,7 +50,7 @@ public class MoonstoneClient {
     @SubscribeEvent
     public static void RegisterClientTooltipComponentFactoriesEvent(RegisterClientTooltipComponentFactoriesEvent event) {
         event.register(ToolTip.class, Function.identity());
-        event.register(ToolTipImageFormStack.class, Function.identity());
+        event.register(ToolTipDNAItem.class, Function.identity());
     }
     @SubscribeEvent
     public static void emp(PlayerInteractEvent.LeftClickEmpty event){

@@ -2,8 +2,8 @@ package com.ytgld.moonstone;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.ytgld.moonstone.item.Items;
-import com.ytgld.moonstone.item.ToolTipImageFormStack;
+import com.ytgld.moonstone.item.IDNASequence;
+import com.ytgld.moonstone.item.ToolTipDNAItem;
 import com.ytgld.moonstone.item.ICanHasInItem;
 import com.ytgld.moonstone.event.DNAModifyHandler;
 import com.ytgld.moonstone.other.DataReg;
@@ -24,13 +24,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.NonNull;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.*;
 import java.util.function.Consumer;
 
-public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
+public class ItemBase extends Item implements ICurioItem,ICanHasInItem , IDNASequence {
     public ItemBase(Properties properties) {super(properties);}
     public int color (){
         return 5592575;
@@ -80,13 +81,26 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
                 return false;
             }
         }
+        if (self.getItem() instanceof IDNASequence idnaSequence) {
+            if (idnaSequence.canUseHowSequence().contains(other.getItem())) {
+                Set<String> set = self.get(DataReg.dna_sequence.get());
+                if (set == null){
+                    self.set(DataReg.dna_sequence.get(),new HashSet<>());
+                }
+                if (idnaSequence.addDNASequence(self, other.getItem())) {
+                    other.shrink(1);
+                    return true;
+                }
+                return false;
+            }
+        }
         return super.overrideOtherStackedOnMe(self, other, slot, clickAction, player, carriedItem);
     }
 
     @Override
-    public Optional<TooltipComponent> getTooltipImage(ItemStack itemStack) {
-        if (maxSize() > 0){
-            return Optional.of(new ToolTipImageFormStack(this, itemStack));
+    public @NonNull Optional<TooltipComponent> getTooltipImage(ItemStack itemStack) {
+        if (maxSize() > 0 || maxDNAValue() > 0){
+            return Optional.of(new ToolTipDNAItem(this, this,itemStack));
         }
         return super.getTooltipImage(itemStack);
     }
@@ -134,6 +148,9 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
                 for (Item item : canUSe()) {
                     builder.accept(Component.literal("+").append(Component.translatable(item.getDescriptionId())).withStyle(ChatFormatting.BLUE));
                 }
+                for (Item item : canUseHowSequence()) {
+                    builder.accept(Component.literal("+").append(Component.translatable(item.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+                }
             } else {
                 builder.accept(Component.translatable("key.keyboard.left.control").withStyle(ChatFormatting.GOLD));
             }
@@ -147,6 +164,16 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem {
 
     @Override
     public Set<Item> canUSe() {
+        return Set.of();
+    }
+
+    @Override
+    public int maxDNAValue() {
+        return 0;
+    }
+
+    @Override
+    public Set<Item> canUseHowSequence() {
         return Set.of();
     }
 }

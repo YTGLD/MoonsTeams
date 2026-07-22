@@ -23,7 +23,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.util.Unit;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -33,7 +32,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.behavior.warden.SonicBoom;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
-import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.equine.AbstractHorse;
@@ -69,7 +67,7 @@ import org.slf4j.Logger;
 import java.util.Collections;
 import java.util.List;
 
-public class CellGiant extends ExtendEntityLiving implements OwnableEntity {
+public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
     public static final Logger LOGGER = LogUtils.getLogger();
     public int tendrilAnimation;
     public int tendrilAnimationO;
@@ -91,9 +89,6 @@ public class CellGiant extends ExtendEntityLiving implements OwnableEntity {
         this.xpReward = 5;
         this.getNavigation().setCanFloat(true);
     }
-
-    public int time = 0;
-
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 45).add(Attributes.MOVEMENT_SPEED, 0.2).add(Attributes.KNOCKBACK_RESISTANCE, 1.0D).add(Attributes.ATTACK_KNOCKBACK, 1.5D).add(Attributes.ATTACK_DAMAGE, 10);
     }

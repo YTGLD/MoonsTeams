@@ -205,5 +205,10 @@ public class GatherItemModel extends ModelProvider {
         itemModels.generateFlatItem(Items.high_energy.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(Items.surge.asItem(), ModelTemplates.FLAT_ITEM);
 
+
+        itemModels.generateFlatItem(Items.cytopathic_boost.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.spliced_activation.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(Items.thermo_necro.asItem(), ModelTemplates.FLAT_ITEM);
+
     }
 }

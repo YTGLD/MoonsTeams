@@ -56,6 +56,20 @@ public class Necora extends TheNecora {
         return 4;
     }
 
+    @Override
+    public Set<Item> canUseHowSequence() {
+        return Set.of(
+                Items.cytopathic_boost.asItem(),
+                Items.spliced_activation.asItem(),
+                Items.thermo_necro.asItem()
+        );
+    }
+
+    @Override
+    public int maxDNAValue() {
+        return 2;
+    }
+
     public static void necora(LivingEntityUseItemEvent.Finish event) {
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.necora.asItem())) {

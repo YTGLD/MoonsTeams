@@ -291,6 +291,13 @@ public class Items {
     public static final DeferredItem<@NotNull Item> high_energy = register("high_energy", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> surge = register("surge", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
+
+    public static final DeferredItem<@NotNull Item> cytopathic_boost = register("cytopathic_boost", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> spliced_activation = register("spliced_activation", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> thermo_necro = register("thermo_necro", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+
+
+
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> dna = CREATIVE_MODE_TABS.register(Moonstone.MODID + "_dna", () -> CreativeModeTab.builder()
@@ -298,6 +305,9 @@ public class Items {
                 .icon(() -> necora.asItem().getDefaultInstance())
                 .displayItems((parameters, output) -> {
                     output.accept(necora);
+                    output.accept(cytopathic_boost);
+                    output.accept(spliced_activation);
+                    output.accept(thermo_necro);
 
                     output.accept(WarmApproachable);
                     output.accept(OceanAffinity);

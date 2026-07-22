@@ -21,6 +21,11 @@ public class DataReg {
             REGISTRY.register("set", () -> DataComponentType.<Set<String>>builder().
                     persistent(Codec.STRING.listOf()
                             .xmap(HashSet::new, ArrayList::new)).build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Set<String>>> dna_sequence =
+            REGISTRY.register("dna_sequence", () -> DataComponentType.<Set<String>>builder().
+                    persistent(Codec.STRING.listOf()
+                            .xmap(HashSet::new, ArrayList::new)).build());
 }
 
 

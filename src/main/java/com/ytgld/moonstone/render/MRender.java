@@ -5,6 +5,7 @@ import com.mojang.blaze3d.PrimitiveTopology;
 import com.mojang.blaze3d.opengl.GlStateManager;
 import com.mojang.blaze3d.pipeline.BlendFunction;
 import com.mojang.blaze3d.pipeline.ColorTargetState;
+import com.mojang.blaze3d.pipeline.DepthStencilState;
 import com.mojang.blaze3d.pipeline.RenderPipeline;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.ytgld.moonstone.Moonstone;
@@ -24,6 +25,7 @@ import static com.mojang.blaze3d.platform.BlendFactor.*;
 import static net.minecraft.client.renderer.RenderPipelines.*;
 
 public class MRender {
+    private static final ColorTargetState vColorTargetState = new ColorTargetState(new BlendFunction(SRC_ALPHA, ONE, ONE, ZERO));
     public static final OutputTarget outline2 = new OutputTarget("set_outline2", () -> {
         LevelRenderer rendertarget = Minecraft.getInstance().levelRenderer;
         if (rendertarget instanceof MFramebufferBlack framebuffer){
@@ -55,18 +57,26 @@ public class MRender {
     );
     public static final RenderType lines = RenderType.create(
             "lines",
-            RenderSetup.builder(RenderPipeline.builder(LINES_SNIPPET).withColorTargetState(new ColorTargetState(new BlendFunction(
-                            SRC_ALPHA,
-                            ONE,
-                            ONE,
-                            ZERO
-                    ))).withLocation("pipeline/lines").build())
+            RenderSetup.builder(RenderPipeline.builder(LINES_SNIPPET).withColorTargetState(vColorTargetState
+                    ).withLocation("pipeline/lines").build())
                     .setLayeringTransform(LayeringTransform.VIEW_OFFSET_Z_LAYERING)
                     .setOutputTarget(OutputTarget.ITEM_ENTITY_TARGET)
                     .createRenderSetup()
     );
 
     public static class RenderPs {
+        public static final RenderPipeline renderPipelineBlack =
+                (RenderPipeline.builder(RenderPipeline.builder(GLOBALS_SNIPPET).
+                                withBindGroupLayout(BindGroupLayouts.MATRICES_PROJECTION).
+                                withVertexShader(Identifier.fromNamespaceAndPath(Moonstone.MODID,
+                                        "core/position_tex_color_black"))
+                                .withFragmentShader(Identifier.fromNamespaceAndPath(Moonstone.MODID,
+                                        "core/position_tex_color_black"))
+                                .withBindGroupLayout(BindGroupLayouts.SAMPLER0).withColorTargetState(vColorTargetState)
+                                .withVertexBinding(0, DefaultVertexFormat.POSITION_TEX_COLOR).withPrimitiveTopology(PrimitiveTopology.QUADS).buildSnippet()).withColorTargetState(new ColorTargetState(BlendFunction.TRANSLUCENT))
+                        .withDepthStencilState(DepthStencilState.DEFAULT)
+                        .withLocation(Identifier.fromNamespaceAndPath(Moonstone.MODID,
+                                "pipeline/position_tex_color_black")).build());
 
         public static final RenderPipeline ENTITY_OUTLINE_BLIT =
                 RenderPipeline.builder(new RenderPipeline.Snippet[]{GLOBALS_SNIPPET}).withLocation("pipeline/entity_outline_blit").withVertexShader("core/screenquad").
@@ -79,12 +89,7 @@ public class MRender {
                                 ZERO
                         )), GpuFormat.RGBA8_UNORM, 7)).withPrimitiveTopology(PrimitiveTopology.TRIANGLES).build();
 
-        public static final RenderPipeline.Snippet GUI_TEXTURED_SNIPPET = RenderPipeline.builder(GLOBALS_SNIPPET).withBindGroupLayout(BindGroupLayouts.MATRICES_PROJECTION).withVertexShader("core/position_tex_color").withFragmentShader("core/position_tex_color").withBindGroupLayout(BindGroupLayouts.SAMPLER0).withColorTargetState(new ColorTargetState(new BlendFunction(
-                SRC_ALPHA,
-                ONE,
-                ONE,
-                ZERO
-        ))).withVertexBinding(0, DefaultVertexFormat.POSITION_TEX_COLOR).withPrimitiveTopology(PrimitiveTopology.QUADS).buildSnippet();
+        public static final RenderPipeline.Snippet GUI_TEXTURED_SNIPPET = RenderPipeline.builder(GLOBALS_SNIPPET).withBindGroupLayout(BindGroupLayouts.MATRICES_PROJECTION).withVertexShader("core/position_tex_color").withFragmentShader("core/position_tex_color").withBindGroupLayout(BindGroupLayouts.SAMPLER0).withColorTargetState(vColorTargetState).withVertexBinding(0, DefaultVertexFormat.POSITION_TEX_COLOR).withPrimitiveTopology(PrimitiveTopology.QUADS).buildSnippet();
         public static final RenderPipeline GUI_TEXTURED = (RenderPipeline.builder(GUI_TEXTURED_SNIPPET)
                 .withLocation("pipeline/gui_textured").build());
 

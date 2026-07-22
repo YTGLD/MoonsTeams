@@ -1,22 +1,17 @@
 package com.ytgld.moonstone.event.itemevent;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.enttiy.CellGiant;
 import com.ytgld.moonstone.enttiy.CellZombie;
 import com.ytgld.moonstone.enttiy.EntityTs;
-import com.ytgld.moonstone.enttiy.ExtendEntityLiving;
+import com.ytgld.moonstone.enttiy.ExtendZombieEntity;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.AttReg;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -145,7 +140,7 @@ public class ZombieEventHandler {
             }
         }
     }
-    private static void addSuperZombieTag(Player player, ExtendEntityLiving zombie){
+    private static void addSuperZombieTag(Player player, ExtendZombieEntity zombie){
         if (Handler.hascurio(player, Items.adrenaline.get())) {
             zombie.addTag(DamageCell);
         }
