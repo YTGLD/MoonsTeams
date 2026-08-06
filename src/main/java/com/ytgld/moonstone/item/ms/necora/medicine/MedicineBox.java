@@ -1,7 +1,6 @@
 package com.ytgld.moonstone.item.ms.necora.medicine;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.event.AllEvent;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.other.DataReg;
@@ -24,6 +23,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -45,14 +45,14 @@ public class MedicineBox extends TheNecora {
     public static final String blood_enchant = "blood_enchant";
 
     @Override
-    public Set<Item> canUSe() {
-        return Set.of(
+    public HashSet<Item> canUSe() {
+        return new HashSet<>(Set.of(
                 Items.calcification.asItem(),
                 Items.masticatory.asItem(),
                 Items.polyphagia.asItem(),
                 Items.quadriceps.asItem(),
                 Items.reanimation.asItem()
-        );
+        )) ;
     }
     @Override
     public int maxSize() {

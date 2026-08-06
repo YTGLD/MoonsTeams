@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -33,13 +34,13 @@ public abstract class GodDNA extends TheNecora {
     }
 
     @Override
-    public Set<Item> canUSe() {
-        return Set.of(
+    public HashSet<Item> canUSe() {
+        return new HashSet<>(Set.of(
                 Items.calcareous.asItem(),
                 Items.frontal_lobe.asItem(),
                 Items.high_energy.asItem(),
                 Items.surge.asItem()
-        );
+        ));
     }
 
     @Override

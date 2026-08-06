@@ -6,7 +6,6 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.TheNecora;
-import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -15,7 +14,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -24,13 +22,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import top.theillusivec4.curios.api.CurioAttributeModifiers;
 import top.theillusivec4.curios.api.SlotAttribute;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -41,15 +39,15 @@ public class Necora extends TheNecora {
     }
 
     @Override
-    public Set<Item> canUSe() {
-        return Set.of(
+    public HashSet<Item> canUSe() {
+        return new HashSet<>(Set.of(
                 Items.ambush.asItem(),
                 Items.atpoverdose.asItem(),
                 Items.autolytic.asItem(),
                 Items.fermentation.asItem(),
                 Items.putrefactive.asItem(),
                 Items.regenerative.asItem()
-        );
+        ));
     }
     @Override
     public int maxSize() {
@@ -57,12 +55,12 @@ public class Necora extends TheNecora {
     }
 
     @Override
-    public Set<Item> canUseHowSequence() {
-        return Set.of(
+    public HashSet<Item> canUseHowSequence() {
+        return new HashSet<>(Set.of(
                 Items.cytopathic_boost.asItem(),
                 Items.spliced_activation.asItem(),
                 Items.thermo_necro.asItem()
-        );
+        ));
     }
 
     @Override

@@ -20,7 +20,7 @@ import java.util.Set;
 
 public interface IDNASequence {
     int maxDNAValue();
-    Set<Item> canUseHowSequence();
+    HashSet<Item> canUseHowSequence();
     default void addSequenceAttributes(ItemStack stack,Item other,
                                  Holder<Attribute> attributeHolder,
                                  AttributeModifier modifier,

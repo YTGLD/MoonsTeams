@@ -25,25 +25,30 @@ public class StrengthenRunestone extends NightmareSmall {
         super(properties);
     }
 
-    public static void hurt (LivingDamageEvent.Pre event){
+    public static void hurt (LivingDamageEvent.Post event){
         if (event.getEntity() instanceof Player player) {
             if (!player.getCooldowns().isOnCooldown(Items.strengthen_runestone.get().getDefaultInstance())) {
                 if (event.getSource().getEntity() instanceof LivingEntity living) {
                     if (SIHandler.hascurio(player, Items.strengthen_runestone.get())) {
-                        if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
-                            living.hurt(living.damageSources().playerAttack(player), event.getNewDamage() * 0.2f);
-                            player.getCooldowns().addCooldown(Items.strengthen_runestone.get().getDefaultInstance(),30);
+                        if (Mth.nextInt(player.getRandom(), 0, 100) <= 25) {
+                            if (living.getHealth() > 10) {
+                                if (event.getHealthDamage() * 0.2f > living.getHealth()) {
+                                    living.setHealth(1);
+                                } else {
+                                    living.setHealth(living.getHealth() - event.getHealthDamage() * 0.2f);
+                                }
+                            }
+                            player.getCooldowns().addCooldown(Items.strengthen_runestone.get().getDefaultInstance(), 30);
                         }
                     }
                 }
             }
-            
         }
         if (event.getSource().getEntity() instanceof Player player) {
             if (!player.getCooldowns().isOnCooldown(Items.strengthen_runestone.get().getDefaultInstance())) {
                 if (event.getEntity() instanceof LivingEntity) {
                     if (SIHandler.hascurio(player, Items.strengthen_runestone.get())) {
-                        if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
+                        if (Mth.nextInt(player.getRandom(), 0, 100) <= 25) {
                             player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 100, 1));
                             player.getCooldowns().addCooldown(Items.strengthen_runestone.get().getDefaultInstance(),30);
                         }

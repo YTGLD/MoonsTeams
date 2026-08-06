@@ -163,8 +163,8 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem , IDNASeq
     }
 
     @Override
-    public Set<Item> canUSe() {
-        return Set.of();
+    public HashSet<Item> canUSe() {
+        return new HashSet<>();
     }
 
     @Override
@@ -173,7 +173,7 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem , IDNASeq
     }
 
     @Override
-    public Set<Item> canUseHowSequence() {
-        return Set.of();
+    public HashSet<Item> canUseHowSequence() {
+        return new HashSet<>();
     }
 }

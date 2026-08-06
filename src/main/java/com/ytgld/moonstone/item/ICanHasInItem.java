@@ -16,7 +16,7 @@ import java.util.Set;
 
 public interface ICanHasInItem {
     int maxSize();
-    Set<Item>canUSe();
+    HashSet<Item> canUSe();
     default void modifyAttribute(ItemStack stack,Item other,
                                  Holder<Attribute> attributeHolder,
                                  AttributeModifier modifier,

@@ -155,7 +155,6 @@ public class NewEvent {
         BoneOrGod.hurt(event);
         DefendAgainstRunestone.hurt(event);
         ReviveRunestone.hurt(event);
-        StrengthenRunestone.hurt(event);
         lead.hurtOfBlood(event);
         NightmareClay.hurts(event);
         TwistedAmout.hurt(event);
@@ -174,6 +173,7 @@ public class NewEvent {
     @SubscribeEvent
     public void LivingHurtEvent(LivingDamageEvent.Post event) {
         EctoplasmApple.hurt(event);
+        StrengthenRunestone.hurt(event);
 
     }
     @SubscribeEvent

@@ -9,7 +9,7 @@ import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +17,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -60,26 +61,45 @@ public class GodNajaMortis extends GodDNA {
     public static final String damageTag = "GodNajaMortiseDamage";
     public static void damageAttack(LivingDamageEvent.Pre event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.god_naja_mortis.asItem())) {
-                CompoundTag compoundTag = player.getPersistentData();
-                if (compoundTag.getIntOr(damageTag, 0) < GodNajaMortis.damage()) {
-                    compoundTag.putInt(damageTag,compoundTag.getIntOr(damageTag, 0) + 5);
+            if (event.getEntity() instanceof LivingEntity livingEntity) {
+                if (Handler.hascurio(player, Items.god_naja_mortis.asItem())) {
+                    CompoundTag compoundTag = player.getPersistentData();
+                    if (compoundTag.getIntOr(damageTag, 0) < GodNajaMortis.damage()) {
+                        compoundTag.putInt(damageTag, compoundTag.getIntOr(damageTag, 0) + 5);
+                    }
+                    float dam = 1 + (compoundTag.getIntOr(damageTag, 0) / 100f);
+                    event.setNewDamage(event.getNewDamage() * dam);
+                    return;
                 }
-                float dam = 1 + (compoundTag.getIntOr(damageTag, 0) / 100f);
-                event.setNewDamage(event.getNewDamage() * dam);
-                return;
-            }
-            if (Handler.hascurio(player, Items.naja_mortis.asItem())) {
-                CompoundTag compoundTag = player.getPersistentData();
-                if (compoundTag.getIntOr(damageTag, 0) < NajaMortis.damage()) {
-                    compoundTag.putInt(damageTag,compoundTag.getIntOr(damageTag, 0) + 5);
+                if (Handler.hascurio(player, Items.naja_mortis.asItem())) {
+                    CompoundTag compoundTag = player.getPersistentData();
+                    if (compoundTag.getIntOr(damageTag, 0) < NajaMortis.damage()) {
+                        compoundTag.putInt(damageTag, compoundTag.getIntOr(damageTag, 0) + 5);
+                    }
+                    float dam = 1 + (compoundTag.getIntOr(damageTag, 0) / 100f);
+                    event.setNewDamage(event.getNewDamage() * dam);
+                    return;
                 }
-                float dam = 1 + (compoundTag.getIntOr(damageTag, 0) / 100f);
-                event.setNewDamage(event.getNewDamage() * dam);
-                return;
             }
         }
     }
+
+    @Override
+    public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+        super.curioTickUse(slotContext, stack);
+        doUs(slotContext);
+    }
+    public static void doUs(SlotContext slotContext) {
+        if (slotContext.entity() instanceof Player player) {
+            CompoundTag compoundTag = player.getPersistentData();
+            if (player.tickCount % 20 == 1) {
+                if (compoundTag.getIntOr(damageTag, 0) > 0) {
+                    compoundTag.putInt(damageTag, compoundTag.getIntOr(damageTag, 0) - 1);
+                }
+            }
+        }
+    }
+
     @Override
     public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
@@ -90,6 +110,13 @@ public class GodNajaMortis extends GodDNA {
         public static final float damage (){
             return (float) (30 * GodNajaMortis.ConfigItem.intValue.get());
         };
+
+        @Override
+        public void curioTickUse(SlotContext slotContext, ItemStack stack) {
+            super.curioTickUse(slotContext, stack);
+            doUs(slotContext);
+        }
+
         public NajaMortis(Properties properties) {
             super(properties);
         }

@@ -2240,6 +2240,10 @@
   "moonstone.spliced_activation.modify":"僵尸的最大生命值提高50%，且快速恢复生命值",
   "moonstone.thermo_necro.modify": "降低60%僵尸的腐烂速度",
 
+  "moonstone.warm_approachable.modify": "大气亲和",
+  "moonstone.ocean_affinity.modify": "海洋亲和",
+  "moonstone.earth_affinity.modify": "土地亲和",
+
   "item.moonstone.love_charm":"朋友的礼物!",
   "attribute.name.moonstone.speed":"通用速度",
   "item.moonstone.god_regenerative": "Regenerative Vitalization",

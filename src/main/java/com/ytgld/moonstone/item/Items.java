@@ -14,6 +14,7 @@ import com.ytgld.moonstone.item.ms.maxitem.*;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.*;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.*;
 import com.ytgld.moonstone.item.ms.nanodoom.*;
+import com.ytgld.moonstone.item.ms.necora.EmbeddedDNA;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dna.*;
 import com.ytgld.moonstone.item.ms.necora.dna.god.*;
@@ -283,18 +284,18 @@ public class Items {
 
 
 
-    public static final DeferredItem<@NotNull Item> WarmApproachable = register("warm_approachable", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> OceanAffinity = register("ocean_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> EarthAffinity = register("earth_affinity", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> calcareous  = register("calcareous", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> frontal_lobe = register("frontal_lobe", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> high_energy = register("high_energy", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> surge = register("surge", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> WarmApproachable = register("warm_approachable", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> OceanAffinity = register("ocean_affinity", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> EarthAffinity = register("earth_affinity", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> calcareous  = register("calcareous", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> frontal_lobe = register("frontal_lobe", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> high_energy = register("high_energy", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> surge = register("surge", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
-    public static final DeferredItem<@NotNull Item> cytopathic_boost = register("cytopathic_boost", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> spliced_activation = register("spliced_activation", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> thermo_necro = register("thermo_necro", (identifier) -> new TheNecora(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cytopathic_boost = register("cytopathic_boost", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> spliced_activation = register("spliced_activation", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> thermo_necro = register("thermo_necro", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
 

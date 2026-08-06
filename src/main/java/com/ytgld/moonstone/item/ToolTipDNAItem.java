@@ -25,7 +25,14 @@ public class ToolTipDNAItem implements ClientTooltipComponent, TooltipComponent 
 
     @Override
     public int getHeight(Font font) {
-        return 48;
+        int a = 0;
+        if (canHasInItem.maxSize() > 0) {
+            a += 24;
+        }
+        if (sequence.maxDNAValue() > 0) {
+            a += 24;
+        }
+        return a;
     }
 
     @Override
