@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:nether_star",
+    "minecraft:dragon_head",
+    "#curios:nightmare",
+    "#curios:nightmare",
+    "#curios:nightmare",
+    "#curios:nightmare",
+    "#curios:nightmare",
+    "#curios:nightmare",
+    "#curios:nightmare"
+  ],
+  "result": {
+    "id": "moonstone:immortal",
+    "count": 1
+  }
+}

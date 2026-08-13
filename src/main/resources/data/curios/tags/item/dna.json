@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+
+    "moonstone:ambush",
+    "moonstone:atpoverdose",
+    "moonstone:autolytic",
+    "moonstone:fermentation",
+    "moonstone:putrefactive",
+    "moonstone:regenerative",
+    "moonstone:god_ambush",
+    "moonstone:god_atpoverdose",
+    "moonstone:god_autolytic",
+    "moonstone:god_fermentation",
+    "moonstone:god_putrefactive",
+    "moonstone:god_regenerative"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "entities": [
+    "player"
+  ],
+  "slots": [
+    "nightmare",
+    "curio",
+    "charm",
+    "belt",
+    "ring",
+    "dna",
+    "head",
+    "dnabush",
+    "necora",
+    "medicine"
+  ]
+}

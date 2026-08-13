@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:stone",
+    "#curios:nightmare",
+    "moonstone:nightmare_base_insight_collapse",
+    "moonstone:immortal"
+  ],
+  "result": {
+    "id": "moonstone:disintegrating_stone",
+    "count": 1
+  }
+}

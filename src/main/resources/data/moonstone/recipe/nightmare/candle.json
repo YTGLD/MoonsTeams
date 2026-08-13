@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#minecraft:candles",
+    "moonstone:nightmare_base_stone_brain",
+    "moonstone:nightmare_base_reversal_orb"
+  ],
+  "result": {
+    "id": "moonstone:candle",
+    "count": 1
+  }
+}

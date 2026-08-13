@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:stone",
+    "moonstone:ectoplasmprism",
+    "moonstone:greedcrystal"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:greedamout"
+  }
+}

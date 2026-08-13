@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+
+    "moonstone:adrenaline",
+    "moonstone:cell_blood",
+    "moonstone:cell_boom",
+    "moonstone:cell_calcification",
+    "moonstone:cell_mummy",
+    "moonstone:giant_nightmare",
+    "moonstone:bone_cell",
+    "moonstone:disgusting_cells",
+    "moonstone:mother_cell",
+    "moonstone:parasitic_cell"
+  ]
+}

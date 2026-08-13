@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "com.ytgld.moonstone.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "EntityMixin",
+    "LiquidBlockMixin",
+    "LivingEntityMixin",
+    "ModMixin",
+    "WardenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "cilent.GuiGraphicsMixin",
+    "cilent.LevelRendererMixin"
+  ]
+}

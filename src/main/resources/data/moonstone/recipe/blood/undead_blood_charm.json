@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:badgeofthedead",
+    "moonstone:ectoplasmcube",
+    "moonstone:blood_jelly"
+  ],
+  "result": {
+    "id": "moonstone:undead_blood_charm",
+    "count": 1
+  }
+}
