@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"tag": "#minecraft:candles"},
+    {"tag": "minecraft:candles"},
   {"item":"moonstone:nightmare_base_stone_brain"},
   {"item":"moonstone:nightmare_base_reversal_orb"}
   ],

@@ -3,13 +3,13 @@
   "ingredients": [
      {"item":"minecraft:nether_star"},
      {"item":"minecraft:dragon_head"},
-     {"item":"#curios:nightmare"},
-     {"item":"#curios:nightmare"},
-     {"item":"#curios:nightmare"},
-     {"item":"#curios:nightmare"},
-     {"item":"#curios:nightmare"},
-     {"item":"#curios:nightmare"},
-     {"item":"#curios:nightmare"}
+     {"tag":"curios:nightmare"},
+     {"tag":"curios:nightmare"},
+     {"tag":"curios:nightmare"},
+     {"tag":"curios:nightmare"},
+     {"tag":"curios:nightmare"},
+     {"tag":"curios:nightmare"},
+     {"tag":"curios:nightmare"}
   ],
   "result": {
     "id": "moonstone:immortal",

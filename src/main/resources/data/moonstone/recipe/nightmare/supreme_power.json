@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A":  {"item":"#curios:nightmare"},
+    "A":  {"tag":"curios:nightmare"},
     "B":{"item":"moonstone:brain"},
     "C": {"item": "minecraft:netherite_ingot"},
     "D": {"item": "minecraft:crying_obsidian"}

@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A":  {"item":"minecraft:crying_obsidian"},
-    "B":  {"item":"#curios:nightmare"},
+    "B":  {"tag":"curios:nightmare"},
     "C":  {"item":"minecraft:netherite_ingot"},
 
     "D":  {"item":"minecraft:nether_star"}

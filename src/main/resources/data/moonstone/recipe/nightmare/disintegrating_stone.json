@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {"item":"minecraft:stone"},
-    {"item":"#curios:nightmare"},
+    {"tag":"curios:nightmare"},
   {"item":"moonstone:nightmare_base_insight_collapse"},
   {"item":"moonstone:immortal"}
   ],
