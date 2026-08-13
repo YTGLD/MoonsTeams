@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-     "moonstone:ectoplasmcloub",
-     "moonstone:ectoplasmcloub",
-     "moonstone:ectoplasmcloub",
-     "moonstone:ectoplasmcloub",
-     "moonstone:ectoplasmcloub",
-     "moonstone:ectoplasmcloub",
+   {"item":"moonstone:ectoplasmcloub",
+   {"item":"moonstone:ectoplasmcloub",
+   {"item":"moonstone:ectoplasmcloub",
+   {"item":"moonstone:ectoplasmcloub",
+   {"item":"moonstone:ectoplasmcloub",
+   {"item":"moonstone:ectoplasmcloub",
 
-     "moonstone:ectoplasmcube",
-     "moonstone:ectoplasmcube",
+   {"item":"moonstone:ectoplasmcube",
+   {"item":"moonstone:ectoplasmcube",
 
      "minecraft:emerald_block"
   ],

@@ -19,8 +19,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
@@ -39,7 +39,7 @@ public class Consciousness extends BloodItem {
     }
     public static void emp(PlayerInteractEvent.LeftClickEmpty event){
         if (event.getEntity() instanceof Player player && Handler.hascurio(player,Items.consciousness.asItem())) {
-            ClientPacketDistributor.sendToServer(new UseOppression());
+            PacketDistributor.sendToServer(new UseOppression());
         }
     }
 

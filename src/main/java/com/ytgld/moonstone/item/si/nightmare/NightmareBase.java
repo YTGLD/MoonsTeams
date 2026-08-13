@@ -13,6 +13,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
@@ -68,6 +69,12 @@ public class NightmareBase extends ItemBase implements ICurioItem {
                     });
         }
     }
-
+    public static void renderBack(RenderTooltipEvent.Color event) {
+        if (event.getItemStack().getItem() instanceof NightmareBase item) {
+            event.setBackground(Light.ARGB.color(255, 20, 5, 5));
+            event.setBorderEnd(Light.ARGB.color(255, 100, 5, 5));
+            event.setBorderStart(Light.ARGB.color(255, 100, 5, 5));
+        }
+    }
     public static final String ITEMCategory = "Nightmare";
 }

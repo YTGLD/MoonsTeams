@@ -4,9 +4,10 @@ import com.ytgld.moonstone.enttiy.CellGiant;
 import com.ytgld.moonstone.item.ICanHasInItem;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.DataReg;
+import com.ytgld.moonstone.render.CIStateShardsHasBlack;
+import com.ytgld.moonstone.render.MGuiGraphics;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -55,16 +56,6 @@ public class Handler {
             }
         }
         return false;
-    }
-
-    public static void renderBack(GuiGraphics guiGraphics, int x, int y, int width, int height
-            , ResourceLocation farmer, ResourceLocation back , int colorF,int colorB) {
-        int i = x - 3 - 9;
-        int j = y - 3 - 9;
-        int k = width + 3 + 3 + 18;
-        int l = height + 3 + 3 + 18;
-        guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, farmer, i, j, k, l,colorF);
-        guiGraphics.blitSprite(MRender.RenderPs.GUI_TEXTURED, back, i, j, k, l,colorB);
     }
     public static boolean hascurio(LivingEntity entity, Item curio) {
         if (entity != null) {

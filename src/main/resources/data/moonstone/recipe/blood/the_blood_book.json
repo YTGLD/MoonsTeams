@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "moonstone:owner_blood_eye",
-    "moonstone:owner_blood_attack_eye",
-    "moonstone:owner_blood_speed_eye",
-    "moonstone:owner_blood_boom_eye",
-    "moonstone:owner_blood_effect_eye",
-    "moonstone:owner_blood_vex",
-    "moonstone:owner_blood_earth",
+  {"item":"moonstone:owner_blood_eye",
+  {"item":"moonstone:owner_blood_attack_eye",
+  {"item":"moonstone:owner_blood_speed_eye",
+  {"item":"moonstone:owner_blood_boom_eye",
+  {"item":"moonstone:owner_blood_effect_eye",
+  {"item":"moonstone:owner_blood_vex",
+  {"item":"moonstone:owner_blood_earth",
 
-    "moonstone:ectoplasmprism"
+  {"item":"moonstone:ectoplasmprism"
 
   ],
   "result": {

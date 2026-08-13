@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "moonstone:blood_jelly",
-    "moonstone:ectoplasmprism",
+  {"item":"moonstone:blood_jelly",
+  {"item":"moonstone:ectoplasmprism",
     "minecraft:gold_block"
   ],
   "result": {

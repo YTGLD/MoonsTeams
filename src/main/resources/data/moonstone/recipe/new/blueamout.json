@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
      "minecraft:stone",
-     "moonstone:ectoplasmprism",
+   {"item":"moonstone:ectoplasmprism",
      "minecraft:lapis_block"
   ],
   "result": {

@@ -3,8 +3,8 @@
   "category": "misc",
   "ingredients": [
      "minecraft:stone",
-     "moonstone:ectoplasmprism",
-     "moonstone:rage_crystal"
+   {"item":"moonstone:ectoplasmprism",
+   {"item":"moonstone:rage_crystal"
   ],
   "result": {
     "count": 1,

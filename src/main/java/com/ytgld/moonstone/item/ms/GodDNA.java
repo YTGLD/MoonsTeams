@@ -2,6 +2,8 @@ package com.ytgld.moonstone.item.ms;
 
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.other.Light;
+import com.ytgld.moonstone.render.CIStateShardsHasBlack;
+import com.ytgld.moonstone.render.MGuiGraphics;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
@@ -25,7 +27,10 @@ public abstract class GodDNA extends TheNecora {
         ResourceLocation texId = ResourceLocation.fromNamespaceAndPath(itemId.getNamespace(),
                 "textures/item/" + itemId.getPath() + ".png");
         if (stack.getItem() instanceof GodDNA) {
-            guiGraphicsExtractor.blit(MRender.RenderPs.GUI_TEXTURED, texId, x - 2, y - 2, 0, 0, 20, 20, 20, 20, Light.ARGB.color(255, 255, 255, 100));
+            new MGuiGraphics.GUI(CIStateShardsHasBlack::getHasBlock,true).blit(guiGraphicsExtractor, texId,
+                    x - 2, y - 2, 0, 0, 20,
+                    20, 20,
+                    20, Light.ARGB.color(255, 255, 255, 100));
         }
     }
     @Override

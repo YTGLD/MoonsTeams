@@ -1,11 +1,18 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "moonstone:nightmare_base_fool_soul",
-    "moonstone:nightmare_base_fool_betray",
-    "moonstone:nightmare_base_fool_bone"
+    {
+      "item": "moonstone:nightmare_base_fool_soul"
+    },
+    {
+      "item": "moonstone:nightmare_base_fool_betray"
+    },
+    {
+      "item": "moonstone:nightmare_base_fool_bone"
+    }
   ],
   "result": {
-    "id": "moonstone:nightmare_base_insight"
+    "id": "moonstone:nightmare_base_insight",
+    "count": 1
   }
 }

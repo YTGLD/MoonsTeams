@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Final;
@@ -25,16 +26,13 @@ import java.util.Optional;
 @Mixin(LiquidBlock.class)
 public abstract class LiquidBlockMixin {
     @Shadow
-    protected abstract Optional<LivingEntity> ifMobIsColliding(CollisionContext context);
-
-    @Shadow
     @Final
     public FlowingFluid fluid;
 
     @Inject(at = @At("RETURN"), method = "getCollisionShape", cancellable = true)
     public void getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
-        if (ifMobIsColliding(context).isPresent()){
-            if (ifMobIsColliding(context).get() instanceof Player player) {
+        if (context instanceof EntityCollisionContext entitycollisioncontext) {
+            if (entitycollisioncontext.getEntity() instanceof Player player) {
                 if (Handler.hascurio(player, Items.evilcandle.asItem())) {
                     if (fluid == Fluids.LAVA) {
                         cir.setReturnValue(Shapes.block());

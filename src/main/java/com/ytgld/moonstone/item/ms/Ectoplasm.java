@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 
 public class Ectoplasm extends CommonItem {
     public Ectoplasm(Properties properties) {
@@ -22,14 +23,11 @@ public class Ectoplasm extends CommonItem {
     }
 
     public static final String ITEMCategoryEctoplasm = "Ectoplasm";
-
-    public void renderBack(GuiGraphics guiGraphics, int x, int y, int width, int height) {
-        Handler.renderBack(guiGraphics, x, y, width, height,
-                ResourceLocation.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/frame"),
-                ResourceLocation.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/background"),
-
-                Light.ARGB.color(255, 100, 150, 255),
-                Light.ARGB.color(255, 19, 24, 25)
-        );
+    public static void renderBack(RenderTooltipEvent.Color event) {
+        if (event.getItemStack().getItem() instanceof Ectoplasm item) {
+            event.setBackground(Light.ARGB.color(255, 19, 24, 25));
+            event.setBorderEnd(Light.ARGB.color(255, 100, 150, 255));
+            event.setBorderStart(Light.ARGB.color(255, 100, 150, 255));
+        }
     }
 }

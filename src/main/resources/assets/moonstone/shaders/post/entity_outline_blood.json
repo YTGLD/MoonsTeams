@@ -1,0 +1,42 @@
+{
+  "targets": [
+    "swap",
+    "final"
+  ],
+  "passes": [
+    {
+      "name": "moonstone:entity_outline",
+      "intarget": "final",
+      "outtarget": "swap"
+    },
+    {
+      "name": "moonstone:entity_outline_box_blur_blood",
+      "intarget": "swap",
+      "outtarget": "final",
+      "use_linear_filter": true,
+      "uniforms": [
+        {
+          "name": "BlurDir",
+          "values": [ 3.75, 0.0 ]
+        }
+      ]
+    },
+    {
+      "name": "moonstone:entity_outline_box_blur_blood",
+      "intarget": "final",
+      "outtarget": "swap",
+      "use_linear_filter": true,
+      "uniforms": [
+        {
+          "name": "BlurDir",
+          "values": [ 0.0, 3.75 ]
+        }
+      ]
+    },
+    {
+      "name": "moonstone:blit",
+      "intarget": "swap",
+      "outtarget": "final"
+    }
+  ]
+}

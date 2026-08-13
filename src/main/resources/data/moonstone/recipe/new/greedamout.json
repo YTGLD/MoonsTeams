@@ -3,8 +3,8 @@
   "category": "misc",
   "ingredients": [
     "minecraft:stone",
-    "moonstone:ectoplasmprism",
-    "moonstone:greedcrystal"
+  {"item":"moonstone:ectoplasmprism",
+  {"item":"moonstone:greedcrystal"
   ],
   "result": {
     "count": 1,

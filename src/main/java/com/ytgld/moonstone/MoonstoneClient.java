@@ -7,13 +7,20 @@ import com.ytgld.moonstone.enttiy.render.*;
 import com.ytgld.moonstone.enttiy.render.zombie.CellZombieG;
 import com.ytgld.moonstone.enttiy.render.zombie.ZombieRenderer;
 import com.ytgld.moonstone.event.key.Keys;
+import com.ytgld.moonstone.item.GatherItemModel;
 import com.ytgld.moonstone.item.ToolTipDNAItem;
+import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
+import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
+import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
 import com.ytgld.moonstone.render.CIStateShardsHasBlack;
 import com.ytgld.moonstone.render.NightmareShieldRenderHandler;
 import com.ytgld.moonstone.render.RenderDNAItem;
 import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -24,10 +31,12 @@ import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
 @Mod(value = Moonstone.MODID, dist = Dist.CLIENT)
@@ -77,14 +86,26 @@ public class MoonstoneClient {
             exception.printStackTrace();
         }
     }
-
     @SubscribeEvent
     public static void registerBindings(RegisterKeyMappingsEvent event) {
         event.register(Keys.KEY_MAPPING_LAZY_R);
         event.register(Keys.ZombieC);
     }
+    @SubscribeEvent
+    public static void registerBindings(RenderTooltipEvent.Color event) {
+        NightmareSmall.renderBack(event);
+        NightmareSmall.renderBack(event);
+        TheNecora.renderBack(event);
+        TheNecora.renderBack(event);
+        TheNecora.renderBack(event);
+        TheNecora.renderBack(event);
+        TheNecora.renderBack(event);
+
+    }
     @SubscribeEvent // on the mod event bus
     public static void gatherData(GatherDataEvent event) {
-        event.createProvider(ModLanguageProvider::new);
+        DataGenerator gen = event.getGenerator();
+        PackOutput packOutput = gen.getPackOutput();
+        gen.addProvider(event.includeClient(),new ModLanguageProvider(packOutput));
     }
 }

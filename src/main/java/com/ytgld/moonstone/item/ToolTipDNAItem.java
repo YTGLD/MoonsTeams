@@ -1,10 +1,11 @@
 package com.ytgld.moonstone.item;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.render.CIStateShardsHasBlack;
+import com.ytgld.moonstone.render.MGuiGraphics;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
-import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
@@ -50,8 +51,8 @@ public class ToolTipDNAItem implements ClientTooltipComponent, TooltipComponent 
         int imageSize= 16;
         graphics.pose().pushPose();
         for (int j = 0; j < canHasInItem.maxSize(); j++) {
-            graphics.blit(RenderPipelines.GUI_TEXTURED, ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,
-                    "textures/gui/necora_back.png"), x + j * 16, y, 0, 0, imageSize, imageSize, imageSize, imageSize);
+            new MGuiGraphics.GUI(CIStateShardsHasBlack::getHasBlock,false).blit(graphics, ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,
+                    "textures/gui/necora_back.png"), x + j * 16, y, 0, 0, imageSize, imageSize, imageSize, imageSize,0xffffffff);
         }
         if (!getAll.isEmpty()) {
             for (int j = 0; j < getAll.size(); j++) {
@@ -63,8 +64,8 @@ public class ToolTipDNAItem implements ClientTooltipComponent, TooltipComponent 
         Set<Item> allDNA = IDNASequence.getAllDNA(stack);
         graphics.pose().pushPose();
         for (int j = 0; j < sequence.maxDNAValue(); j++) {
-            graphics.blit(RenderPipelines.GUI_TEXTURED, ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,
-                    "textures/gui/dna_back.png"), x + j * 16, y + 24, 0, 0, imageSize, imageSize, imageSize, imageSize);
+            new MGuiGraphics.GUI(CIStateShardsHasBlack::getHasBlock,false).blit(graphics, ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,
+                    "textures/gui/dna_back.png"), x + j * 16, y + 24, 0, 0, imageSize, imageSize, imageSize, imageSize,0xffffffff);
         }
         if (!allDNA.isEmpty()) {
             for (int j = 0; j < allDNA.size(); j++) {

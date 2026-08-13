@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "moonstone:ectoplasmprism",
-    "moonstone:biggreedcrystal",
-    "moonstone:biggreedcrystal",
+  {"item":"moonstone:ectoplasmprism",
+  {"item":"moonstone:biggreedcrystal",
+  {"item":"moonstone:biggreedcrystal",
     "minecraft:emerald_block"
   ],
   "result": {

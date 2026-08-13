@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "moonstone:maxamout",
-    "moonstone:ectoplasmcube",
+  {"item":"moonstone:maxamout"},
+  {"item":"moonstone:ectoplasmcube"},
     "minecraft:chest"
   ],
   "result": {

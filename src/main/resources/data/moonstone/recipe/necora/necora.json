@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "moonstone:ectoplasmprism",
+  {"item":"moonstone:ectoplasmprism",
 
-    "moonstone:calcification",
-    "moonstone:masticatory",
-    "moonstone:polyphagia",
-    "moonstone:quadriceps",
-    "moonstone:reanimation"
+  {"item":"moonstone:calcification",
+  {"item":"moonstone:masticatory",
+  {"item":"moonstone:polyphagia",
+  {"item":"moonstone:quadriceps",
+  {"item":"moonstone:reanimation"
   ],
   "result": {
     "count": 1,

@@ -3,8 +3,8 @@
   "ingredients": [
     "minecraft:stone",
     "#curios:nightmare",
-    "moonstone:nightmare_base_insight_collapse",
-    "moonstone:immortal"
+  {"item":"moonstone:nightmare_base_insight_collapse",
+  {"item":"moonstone:immortal"
   ],
   "result": {
     "id": "moonstone:disintegrating_stone",

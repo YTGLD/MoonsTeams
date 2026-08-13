@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 
 public class MLS extends ItemBase {
     public MLS(Properties properties) {
@@ -20,16 +21,12 @@ public class MLS extends ItemBase {
         Component component = super.getName(itemStack);
         return component.copy().withStyle(Style.EMPTY.withColor(Light.ARGB.color(255, 10, 255, 10)));
     }
-
-    public void renderBack(GuiGraphics guiGraphics, int x, int y, int width, int height) {
-        Handler.renderBack(guiGraphics, x, y, width, height,
-                ResourceLocation.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/frame"),
-                ResourceLocation.fromNamespaceAndPath(Moonstone.MODID, "tooltip/all/background"),
-
-                Light.ARGB.color(255, 50, 200, 50),
-                Light.ARGB.color(255, 5, 20, 5)
-        );
+    public static void renderBack(RenderTooltipEvent.Color event) {
+        if (event.getItemStack().getItem() instanceof MLS item) {
+            event.setBackground(Light.ARGB.color(255, 5, 20, 5));
+            event.setBorderEnd(Light.ARGB.color(255, 50, 200, 50));
+            event.setBorderStart(Light.ARGB.color(255, 50, 200, 50));
+        }
     }
-
     public static final String ITEMCategoryMLS = "ITEMCategoryMLS";
 }

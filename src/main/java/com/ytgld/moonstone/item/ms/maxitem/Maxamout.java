@@ -77,7 +77,7 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
                     ss += 1;
                 }
                 if (Mth.nextInt(RandomSource.create(), 1, (int) (12 / ss)) == 1) {
-                    player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 60, (int) (0 + ss)));
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, (int) (0 + ss)));
                 }
             }
         }
@@ -86,8 +86,8 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
     @Override
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            if (player.hasEffect(MobEffects.MINING_FATIGUE)) {
-                player.removeEffect(MobEffects.MINING_FATIGUE);
+            if (player.hasEffect(MobEffects.DIG_SLOWDOWN)) {
+                player.removeEffect(MobEffects.DIG_SLOWDOWN);
             }
         }
     }

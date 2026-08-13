@@ -4,19 +4,19 @@
     },
     "passes": [
         {
-            "vertex_shader": "moonstone:core/screenquad",
-            "fragment_shader": "moonstone:post/entity_warped",
+            "vertex_shader": "chest_item:core/screenquad",
+            "fragment_shader": "chest_item:post/entity_warped",
             "inputs": [
                 {
                     "sampler_name": "In",
-                    "target": "moonstone:black"
+                    "target": "chest_item:black"
                 }
             ],
             "output": "swap"
         },
         {
-            "vertex_shader": "moonstone:core/screenquad",
-            "fragment_shader": "moonstone:post/entity_outline_box_blur",
+            "vertex_shader": "chest_item:core/screenquad",
+            "fragment_shader": "chest_item:post/entity_outline_box_blur",
             "inputs": [
                 {
                     "sampler_name": "In",
@@ -24,7 +24,7 @@
                     "bilinear": true
                 }
             ],
-            "output": "moonstone:black",
+            "output": "chest_item:black",
             "uniforms": {
                 "BlurConfig": [
                     {
@@ -41,12 +41,12 @@
             }
         },
         {
-            "vertex_shader": "moonstone:core/screenquad",
-            "fragment_shader": "moonstone:post/entity_outline_box_blur",
+            "vertex_shader": "chest_item:core/screenquad",
+            "fragment_shader": "chest_item:post/entity_outline_box_blur",
             "inputs": [
                 {
                     "sampler_name": "In",
-                    "target": "moonstone:black",
+                    "target": "chest_item:black",
                     "bilinear": true
                 }
             ],
@@ -67,8 +67,8 @@
             }
         },
         {
-            "vertex_shader": "moonstone:core/screenquad",
-            "fragment_shader": "moonstone:post/blit",
+            "vertex_shader": "chest_item:core/screenquad",
+            "fragment_shader": "chest_item:post/blit",
             "inputs": [
                 {
                     "sampler_name": "In",
@@ -84,7 +84,7 @@
                     }
                 ]
             },
-            "output": "moonstone:black"
+            "output": "chest_item:black"
         }
     ]
 }

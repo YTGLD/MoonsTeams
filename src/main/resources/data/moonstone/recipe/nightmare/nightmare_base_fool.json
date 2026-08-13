@@ -1,11 +1,18 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "moonstone:nightmare_base_redemption_deception",
-    "moonstone:nightmare_base_redemption_degenerate",
-    "moonstone:nightmare_base_redemption_down_and_out"
+    {
+      "item": "moonstone:nightmare_base_redemption_deception"
+    },
+    {
+      "item": "moonstone:nightmare_base_redemption_degenerate"
+    },
+    {
+      "item": "moonstone:nightmare_base_redemption_down_and_out"
+    }
   ],
   "result": {
-    "id": "moonstone:nightmare_base_fool"
+    "id": "moonstone:nightmare_base_fool",
+    "count": 1
   }
 }

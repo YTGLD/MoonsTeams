@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A":  "#curios:nightmare",
-    "B":  "moonstone:brain",
+    "B":{"item":"moonstone:brain",
     "C":  "minecraft:netherite_ingot",
     "D":  "minecraft:crying_obsidian"
   },

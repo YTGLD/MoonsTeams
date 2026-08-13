@@ -33,13 +33,13 @@ public class MKidney extends MLS {
 
         if (event.getEntity() instanceof Player player) {
             if (Handler.hascurio(player, Items.mkidney.get())) {
-                int Kidney = player.getPersistentData().getInt("mkidney", 0);
+                int Kidney = player.getPersistentData().getInt("mkidney");
                 if (!player.getCooldowns().isOnCooldown(Items.mkidney.get())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) < Kidney) {
-                        player.getPersistentData().getInt("mkidney", Kidney / 2);
+                        player.getPersistentData().putInt("mkidney", Kidney / 2);
                         event.setNewDamage(0);
                     } else {
-                        player.getPersistentData().getInt("mkidney", 100);
+                        player.getPersistentData().putInt("mkidney", 100);
                         event.setNewDamage(event.getNewDamage() + player.getMaxHealth() / 3);
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_DEACTIVATE, SoundSource.NEUTRAL, 1, 1);
                         player.getCooldowns().addCooldown(Items.mkidney.get(), 200);

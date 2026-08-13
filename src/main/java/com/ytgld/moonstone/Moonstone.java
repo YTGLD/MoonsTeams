@@ -21,22 +21,27 @@ import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.AttRegClient;
 import com.ytgld.moonstone.other.DataReg;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import org.slf4j.Logger;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod(Moonstone.MODID)
 public class Moonstone {
     public static final String MODID = "moonstone";
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final ResourceLocation POST_BLACK = ResourceLocation.fromNamespaceAndPath(MODID,
-            "black");
+    public static final ResourceLocation POST_BLACK = ResourceLocation.fromNamespaceAndPath(MODID, "black");
     public Moonstone(IEventBus modEventBus, ModContainer modContainer) {
         DataReg.REGISTRY.register(modEventBus);
         AttReg.REGISTRY.register(modEventBus);
@@ -69,8 +74,11 @@ public class Moonstone {
 
     }
     public void gatherData(GatherDataEvent event) {
-        event.createProvider(MoonRecipeProvider::new);
-        event.createProvider((output, registries) ->
-                new GatherItemModel(output, event.getExistingFileHelper()));
+        DataGenerator gen = event.getGenerator();
+        PackOutput packOutput = gen.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        gen.addProvider(event.includeServer(),new MoonRecipeProvider(packOutput,lookupProvider));
+        gen.addProvider(event.includeServer(),new GatherItemModel(packOutput,existingFileHelper));
     }
 }
