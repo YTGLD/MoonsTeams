@@ -12,7 +12,7 @@
   {"item":"moonstone:ectoplasmcube"},
   {"item":"moonstone:ectoplasmcube"},
 
-    "minecraft:gold_block"
+    {"item": "minecraft:gold_block"}
   ],
   "result": {
     "count": 1,

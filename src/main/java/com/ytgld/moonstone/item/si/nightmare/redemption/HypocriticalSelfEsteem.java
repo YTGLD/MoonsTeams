@@ -73,7 +73,7 @@ public class HypocriticalSelfEsteem extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.HypocriticalSelfEsteem")
+            intValue = builder.translation("moonstone.config.HypocriticalSelfEsteem")
                     .define("HypocriticalSelfEsteem", new ArrayList<>(List.of("")));
         }
 

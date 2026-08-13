@@ -37,9 +37,9 @@ public class EctoplasmStar extends Ectoplasm {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.EctoplasmStar")
+            intValue = builder.translation("moonstone.config.EctoplasmStar")
                     .defineInRange("EctoplasmStar", 50f, 0, Integer.MAX_VALUE);
-            intValue2 = builder.translation("com.ytgld.moonstone.config.EctoplasmStar2")
+            intValue2 = builder.translation("moonstone.config.EctoplasmStar2")
                     .defineInRange("EctoplasmStar2", 2f, 0, Integer.MAX_VALUE);
         }
 

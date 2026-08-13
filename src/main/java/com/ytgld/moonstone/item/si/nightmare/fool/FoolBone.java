@@ -33,7 +33,7 @@ public class FoolBone extends NightmareSmall {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.FoolBone")
+            intValue = builder.translation("moonstone.config.FoolBone")
                     .defineInRange("FoolBone", 30f, 0, 1000);
 
         }

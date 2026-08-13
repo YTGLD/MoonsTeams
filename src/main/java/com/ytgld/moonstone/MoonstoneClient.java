@@ -9,7 +9,7 @@ import com.ytgld.moonstone.enttiy.render.zombie.ZombieRenderer;
 import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.GatherItemModel;
 import com.ytgld.moonstone.item.ToolTipDNAItem;
-import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.*;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
@@ -94,12 +94,12 @@ public class MoonstoneClient {
     @SubscribeEvent
     public static void registerBindings(RenderTooltipEvent.Color event) {
         NightmareSmall.renderBack(event);
-        NightmareSmall.renderBack(event);
+        BloodItem.renderBack(event);
+        Ectoplasm.renderBack(event);
+        Doom.renderBack(event);
         TheNecora.renderBack(event);
-        TheNecora.renderBack(event);
-        TheNecora.renderBack(event);
-        TheNecora.renderBack(event);
-        TheNecora.renderBack(event);
+        MLS.renderBack(event);
+        NightmareBase.renderBack(event);
 
     }
     @SubscribeEvent // on the mod event bus

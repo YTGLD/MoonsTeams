@@ -34,7 +34,7 @@ public class GodAcidicReflux extends GodDNA {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.GodAcidicReflux")
+            intValue = builder.translation("moonstone.config.GodAcidicReflux")
                     .defineInRange("GodAcidicReflux", 1f, 0, Integer.MAX_VALUE);
         }
 
@@ -88,8 +88,8 @@ public class GodAcidicReflux extends GodDNA {
     @Override
     public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-        pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.acidic_reflux.string.1").withStyle(ChatFormatting.RED));
-        pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.acidic_reflux.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.acidic_reflux.string.1").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.acidic_reflux.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
     }
     public static class AcidicReflux extends TheNecora implements CanUPLevel {
         public static final float damage (){
@@ -105,8 +105,8 @@ public class GodAcidicReflux extends GodDNA {
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
             super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-            pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.acidic_reflux.string.1").withStyle(ChatFormatting.RED));
-            pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.acidic_reflux.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.moonstone.acidic_reflux.string.1").withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.moonstone.acidic_reflux.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
         }
     }
 }

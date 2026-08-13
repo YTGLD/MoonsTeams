@@ -33,7 +33,7 @@ public class GodHypertrophy extends GodDNA {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.GodHypertrophy")
+            intValue = builder.translation("moonstone.config.GodHypertrophy")
                     .defineInRange("GodHypertrophy", 1f, 0, Integer.MAX_VALUE);
         }
 
@@ -74,7 +74,7 @@ public class GodHypertrophy extends GodDNA {
     @Override
     public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-        pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.hypertrophy.string.2",this.damage()).withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.hypertrophy.string.2",this.damage()).withStyle(ChatFormatting.RED));
     }
     public static class Hypertrophy extends TheNecora implements CanUPLevel {
         public static final float damage (){
@@ -90,7 +90,7 @@ public class GodHypertrophy extends GodDNA {
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
             super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-            pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.hypertrophy.string.2",this.damage()).withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.moonstone.hypertrophy.string.2",this.damage()).withStyle(ChatFormatting.RED));
         }
     }
 }

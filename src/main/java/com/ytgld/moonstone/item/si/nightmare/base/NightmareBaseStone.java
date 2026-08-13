@@ -47,7 +47,7 @@ public class NightmareBaseStone extends NightmareBase implements AllTip {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.NightmareBaseStone")
+            intValue = builder.translation("moonstone.config.NightmareBaseStone")
                     .defineInRange("NightmareBaseStone", 5, 0, Integer.MAX_VALUE);
         }
 

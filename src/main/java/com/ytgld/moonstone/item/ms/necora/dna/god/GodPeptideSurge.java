@@ -32,7 +32,7 @@ public class GodPeptideSurge extends GodDNA {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.GodPeptideSurge")
+            intValue = builder.translation("moonstone.config.GodPeptideSurge")
                     .defineInRange("GodPeptideSurge", 1f, 0, Integer.MAX_VALUE);
         }
 
@@ -71,8 +71,8 @@ public class GodPeptideSurge extends GodDNA {
     @Override
     public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-        pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.peptide_surge.string.1").withStyle(ChatFormatting.RED));
-        pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.peptide_surge.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.peptide_surge.string.1").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.peptide_surge.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
     }
     public static class PeptideSurge extends TheNecora implements CanUPLevel {
         public static final float damage (){
@@ -88,8 +88,8 @@ public class GodPeptideSurge extends GodDNA {
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
             super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-            pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.peptide_surge.string.1").withStyle(ChatFormatting.RED));
-            pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.peptide_surge.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.moonstone.peptide_surge.string.1").withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.moonstone.peptide_surge.string.2",this.damage() * 100f - 100).withStyle(ChatFormatting.RED));
         }
     }
 }

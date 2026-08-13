@@ -36,7 +36,7 @@ public class GodNajaMortis extends GodDNA {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.GodNajaMortis")
+            intValue = builder.translation("moonstone.config.GodNajaMortis")
                     .defineInRange("GodNajaMortis", 1f, 0, Integer.MAX_VALUE);
         }
 
@@ -103,8 +103,8 @@ public class GodNajaMortis extends GodDNA {
     @Override
     public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-        pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.naja_mortis.string.1",this.damage()).withStyle(ChatFormatting.RED));
-        pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.naja_mortis.string.2").withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.naja_mortis.string.1",this.damage()).withStyle(ChatFormatting.RED));
+        pTooltipComponents.add(Component.translatable("item.moonstone.naja_mortis.string.2").withStyle(ChatFormatting.RED));
     }
     public static class NajaMortis extends TheNecora implements CanUPLevel {
         public static final float damage (){
@@ -127,8 +127,8 @@ public class GodNajaMortis extends GodDNA {
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
             super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
-            pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.naja_mortis.string.1",this.damage()).withStyle(ChatFormatting.RED));
-            pTooltipComponents.add(Component.translatable("item.com.ytgld.moonstone.naja_mortis.string.2").withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.moonstone.naja_mortis.string.1",this.damage()).withStyle(ChatFormatting.RED));
+            pTooltipComponents.add(Component.translatable("item.moonstone.naja_mortis.string.2").withStyle(ChatFormatting.RED));
         }
     }
 }

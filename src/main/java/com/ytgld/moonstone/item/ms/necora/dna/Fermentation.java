@@ -34,9 +34,9 @@ public class Fermentation extends TheNecora implements CanUPLevel {
 
         @Override
         public void config(ModConfigSpec.Builder builder) {
-            intValue = builder.translation("com.ytgld.moonstone.config.Fermentation")
+            intValue = builder.translation("moonstone.config.Fermentation")
                     .defineInRange("Fermentation", 0.3f, 0, Integer.MAX_VALUE);
-            intValue2 = builder.translation("com.ytgld.moonstone.config.Fermentation2")
+            intValue2 = builder.translation("moonstone.config.Fermentation2")
                     .defineInRange("Fermentation2", 3f, 0, Integer.MAX_VALUE);
         }
 

@@ -21,13 +21,13 @@ public class AttReg {
     public static final DeferredRegister<Attribute> REGISTRY = DeferredRegister.create(BuiltInRegistries.ATTRIBUTE, Moonstone.MODID);
 
     public static final DeferredHolder<Attribute, ?> heal = REGISTRY.register("heal", () -> {
-        return new RangedAttribute("attribute.name.com.ytgld.moonstone.heal", 1, -1024, 1024).setSyncable(true);
+        return new RangedAttribute("attribute.name.moonstone.heal", 1, -1024, 1024).setSyncable(true);
     });
     public static final DeferredHolder<Attribute, ?> cit = REGISTRY.register("cit", () -> {
-        return new RangedAttribute("attribute.name.com.ytgld.moonstone.cit", 1, -1024, 1024).setSyncable(true);
+        return new RangedAttribute("attribute.name.moonstone.cit", 1, -1024, 1024).setSyncable(true);
     });
     public static final DeferredHolder<Attribute, ?> speed = REGISTRY.register("speed", () -> {
-        return new RangedAttribute("attribute.name.com.ytgld.moonstone.speed", 1, -1024, 1024).setSyncable(true);
+        return new RangedAttribute("attribute.name.moonstone.speed", 1, -1024, 1024).setSyncable(true);
     });
 
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, Moonstone.MODID);
@@ -41,10 +41,10 @@ public class AttReg {
                     .serialize(Codec.FLOAT.fieldOf("nightmare_shield").codec()).build()
     );
     public static final DeferredHolder<Attribute,?> nightmare_shield = REGISTRY.register("nightmare_shield",()->{
-        return new RangedAttribute("attribute.name.com.ytgld.moonstone.nightmare_shield", 0, -1024, 1024).setSyncable(true);
+        return new RangedAttribute("attribute.name.moonstone.nightmare_shield", 0, -1024, 1024).setSyncable(true);
     });
     public static final DeferredHolder<Attribute,?> nightmare_stronger = REGISTRY.register("nightmare_stronger",()->{
-        return new RangedAttribute("attribute.name.com.ytgld.moonstone.nightmare_stronger", 1, -1024, 1024).setSyncable(true);
+        return new RangedAttribute("attribute.name.moonstone.nightmare_stronger", 1, -1024, 1024).setSyncable(true);
     });
     public static final Supplier<AttachmentType<Integer>> nightmareShieldCooldownDataAttachmentType = ATTACHMENT_TYPES.register(
             "nightmare_shield_cooldown_data", () -> AttachmentType.builder(() -> 0).sync(new IntSyncHandler()).serialize(Codec.INT.

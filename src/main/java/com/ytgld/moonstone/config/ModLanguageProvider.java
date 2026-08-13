@@ -14,8 +14,8 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         for (RegisterItemConfig registerItemConfig : ConfigPluginFinder.getModPlugins()) {
             for (com.ytgld.moonstone.config.RegisterItemConfig.CIString theLanguageProvider : registerItemConfig.theLanguageProvider()) {
-                add("com.ytgld.moonstone.configuration." + theLanguageProvider.path(), theLanguageProvider.doIt());
-                add("com.ytgld.moonstone.config." + theLanguageProvider.path(), theLanguageProvider.doIt() + theLanguageProvider.doName());
+                add("moonstone.configuration." + theLanguageProvider.path(), theLanguageProvider.doIt());
+                add("moonstone.config." + theLanguageProvider.path(), theLanguageProvider.doIt() + theLanguageProvider.doName());
             }
         }
     }

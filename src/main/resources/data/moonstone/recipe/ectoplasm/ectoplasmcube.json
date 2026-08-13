@@ -11,7 +11,7 @@
   {"item":"moonstone:ectoplasmcloub"},
   {"item":"moonstone:ectoplasmcloub"},
 
-    "minecraft:diamond"
+    {"item":"minecraft:diamond"}
   ],
   "result": {
     "count": 1,

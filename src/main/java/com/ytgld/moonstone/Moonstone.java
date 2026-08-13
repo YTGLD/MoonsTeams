@@ -41,7 +41,8 @@ import java.util.concurrent.CompletableFuture;
 public class Moonstone {
     public static final String MODID = "moonstone";
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final ResourceLocation POST_BLACK = ResourceLocation.fromNamespaceAndPath(MODID, "black");
+    public static final ResourceLocation POST_Blood = ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,
+            "shaders/post/entity_outline_blood.json");
     public Moonstone(IEventBus modEventBus, ModContainer modContainer) {
         DataReg.REGISTRY.register(modEventBus);
         AttReg.REGISTRY.register(modEventBus);

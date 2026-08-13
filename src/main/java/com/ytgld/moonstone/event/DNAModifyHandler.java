@@ -97,9 +97,9 @@ public class DNAModifyHandler {
             }
         }
 
-        addDNASequenceComponent(stack,Items.cytopathic_boost.asItem(),Component.translatable("com.ytgld.moonstone.cytopathic_boost.modify"),components);
-        addDNASequenceComponent(stack,Items.spliced_activation.asItem(),Component.translatable("com.ytgld.moonstone.spliced_activation.modify"),components);
-        addDNASequenceComponent(stack,Items.thermo_necro.asItem(),Component.translatable("com.ytgld.moonstone.thermo_necro.modify"),components);
+        addDNASequenceComponent(stack,Items.cytopathic_boost.asItem(),Component.translatable("moonstone.cytopathic_boost.modify"),components);
+        addDNASequenceComponent(stack,Items.spliced_activation.asItem(),Component.translatable("moonstone.spliced_activation.modify"),components);
+        addDNASequenceComponent(stack,Items.thermo_necro.asItem(),Component.translatable("moonstone.thermo_necro.modify"),components);
 
         addModifyComponent(stack,Items.reanimation.asItem(),Component.translatable("moonstone.reanimation.modify"),components);
         addModifyComponent(stack,Items.polyphagia.asItem(),Component.translatable("moonstone.polyphagia.modify"),components);

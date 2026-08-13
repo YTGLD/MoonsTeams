@@ -27,17 +27,14 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.util.Unit;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
-import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.Turtle;
@@ -92,7 +89,6 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
         this.setPathfindingMalus(PathType.DAMAGE_FIRE, 0.0F);
         this.setPathfindingMalus(PathType.DANGER_FIRE, 0.0F);
     }
-    @org.jetbrains.annotations.Nullable
     @Override
     public LivingEntity getOwner() {
         return super.getOwner();
@@ -258,19 +254,19 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
         }
 
         super.tick();
-        if (this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).isPresent()) {
-            ResourceLocation entity = BuiltInRegistries.ENTITY_TYPE.getKey(this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).get().getType());
+        if (getTarget() instanceof LivingEntity living) {
+            ResourceLocation entity = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());
             if (entity.getNamespace().equals(Moonstone.MODID)) {
                 this.setAttackTarget(null);
             }
         }
         this.setAttackT();
 
-        if (this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).isPresent()) {
-            if (!this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).get().isAlive()) {
+        if (getTarget() instanceof LivingEntity living) {
+            if (!living.isAlive()) {
                 this.setAttackTarget(null);
             }else {
-                if (this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).get() instanceof OwnableEntity entity) {
+                if (living instanceof OwnableEntity entity) {
                     if (this.getOwner()!=null) {
                         if (entity.getOwner() != null && entity.getOwner().is(this.getOwner())) {
                             this.setAttackTarget(null);
@@ -316,7 +312,6 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
     protected void customServerAiStep() {
         ServerLevel serverlevel = (ServerLevel)this.level();
         serverlevel.getProfiler().push("nightmare_giantBrain");
-        this.getBrain().tick(serverlevel, this);
         this.level().getProfiler().pop();
         super.customServerAiStep();
 
@@ -390,14 +385,8 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
 
         super.onSyncedDataUpdated(p_219422_);
     }
-
-    public Brain<CellGiant> getBrain() {
-        return (Brain<CellGiant>)super.getBrain();
-    }
-
     protected void sendDebugPackets() {
         super.sendDebugPackets();
-        DebugPackets.sendEntityBrain(this);
     }
 
 
@@ -463,33 +452,10 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
         this.angerManagement.clearAnger(p_219429_);
     }
 
-    public void increaseAngerAt(@javax.annotation.Nullable Entity p_219442_) {
-        this.increaseAngerAt(p_219442_, 35, true);
-    }
-    @VisibleForTesting
-    public void increaseAngerAt(@javax.annotation.Nullable Entity p_219388_, int p_219389_, boolean p_219390_) {
-        if (!this.isNoAi() && this.canTargetEntity(p_219388_)) {
-            boolean flag = !(this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).orElse(null) instanceof Player);
-            int i = this.angerManagement.increaseAnger(p_219388_, p_219389_);
-            if (p_219388_ instanceof Player && flag && AngerLevel.byAnger(i).isAngry()) {
-                this.getBrain().eraseMemory(MemoryModuleType.ATTACK_TARGET);
-            }
 
-            if (p_219390_) {
-                this.playListeningSound();
-            }
-        }
-
-    }
     public Optional<LivingEntity> getEntityAngryAt() {
         return this.getAngerLevel().isAngry() ? this.angerManagement.getActiveEntity() : Optional.empty();
     }
-
-    @javax.annotation.Nullable
-    public LivingEntity getTarget() {
-        return this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).orElse(null);
-    }
-
     public boolean removeWhenFarAway(double p_219457_) {
         return false;
     }
@@ -499,7 +465,6 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
         return false;
     }
 
-    @org.jetbrains.annotations.Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
         CellGiant wolf = EntityTs.cell_giant.get().create(p_146743_);
@@ -517,8 +482,8 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
         boolean flag = super.hurt(p_219381_, p_219382_);
         if (!this.level().isClientSide && !this.isNoAi() && !this.isDiggingOrEmerging()) {
             Entity entity = p_219381_.getEntity();
-            this.increaseAngerAt(entity, AngerLevel.ANGRY.getMinimumAnger() + 20, false);
-            if (this.brain.getMemory(MemoryModuleType.ATTACK_TARGET).isEmpty() && entity instanceof LivingEntity) {
+
+            if (getTarget() == null && entity instanceof LivingEntity) {
                 LivingEntity livingentity = (LivingEntity)entity;
                 if (!p_219381_.isDirect() || this.closerThan(livingentity, 5.0D)) {
 
@@ -541,9 +506,7 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
             }
         }
         if (this.getOwner()!=null&&p_219460_!=null&&!p_219460_.is(this.getOwner())){
-            this.getBrain().eraseMemory(MemoryModuleType.ROAR_TARGET);
-            this.getBrain().setMemory(MemoryModuleType.ATTACK_TARGET, p_219460_);
-            this.getBrain().eraseMemory(MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE);
+            setTarget(p_219460_);
         }
 
     }
@@ -552,15 +515,6 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
 
     public boolean isPushable() {
         return !this.isDiggingOrEmerging() && super.isPushable();
-    }
-
-    protected void doPush(Entity p_219353_) {
-        if (!this.isNoAi() && !this.getBrain().hasMemoryValue(MemoryModuleType.TOUCH_COOLDOWN)) {
-            this.getBrain().setMemoryWithExpiry(MemoryModuleType.TOUCH_COOLDOWN, Unit.INSTANCE, 20L);
-            this.increaseAngerAt(p_219353_);
-        }
-
-        super.doPush(p_219353_);
     }
 
     @VisibleForTesting

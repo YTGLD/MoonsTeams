@@ -2,11 +2,13 @@ package com.ytgld.moonstone.render;
 
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
+import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.render.outline.MFramebufferBlack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
+import net.minecraft.resources.ResourceLocation;
 
 public class MRender extends RenderType {
 
@@ -28,8 +30,8 @@ public class MRender extends RenderType {
             DefaultVertexFormat.POSITION, VertexFormat.Mode.QUADS,
             1536, false, false,
             RenderType.CompositeState.builder().setShaderState(RENDERTYPE_END_GATEWAY_SHADER)
-                    .setTextureState(MultiTextureStateShard.builder().add(TheEndPortalRenderer.END_SKY_LOCATION,
-                            false, false).add(TheEndPortalRenderer.END_PORTAL_LOCATION, false,
+                    .setTextureState(MultiTextureStateShard.builder().add(ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"textures/necr_image.png"),
+                            false, false).add(ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"textures/necr_image.png"), false,
                             false).build()).createCompositeState(false));
 
     public static final RenderType theRenderTypeOutline = create("blood_outline",
@@ -37,7 +39,7 @@ public class MRender extends RenderType {
             1536, false, false,
             RenderType.CompositeState.builder().setShaderState(RENDERTYPE_END_GATEWAY_SHADER)
                     .setOutputState(setOutputState)
-                    .setTextureState(MultiTextureStateShard.builder().add(TheEndPortalRenderer.END_SKY_LOCATION,
-                            false, false).add(TheEndPortalRenderer.END_PORTAL_LOCATION, false,
+                    .setTextureState(MultiTextureStateShard.builder().add(ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"textures/necr_image.png"),
+                            false, false).add(ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"textures/necr_image.png"), false,
                             false).build()).createCompositeState(false));
 }

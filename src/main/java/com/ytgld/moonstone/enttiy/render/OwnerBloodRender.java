@@ -45,11 +45,11 @@ public class OwnerBloodRender extends EntityRenderer<@NotNull OwnerBlood> {
         poseStack.translate(entity.getX() - x, entity.getY() - y, entity.getZ() - z);
         setT(poseStack, entity, bufferSource.getBuffer(MRender.theRenderTypeNotOutline));
 
-        renderSphere1(poseStack, bufferSource.getBuffer(MRender.theRenderTypeNotOutline), 0, 0.1f);
+        renderSphere1(poseStack, bufferSource.getBuffer(MRender.theRenderTypeNotOutline), 0, 0.35f);
 
         setT(poseStack, entity, bufferSource.getBuffer(MRender.theRenderTypeOutline));
 
-        renderSphere1(poseStack, bufferSource.getBuffer(MRender.theRenderTypeOutline), 0, 0.1f);
+        renderSphere1(poseStack, bufferSource.getBuffer(MRender.theRenderTypeOutline), 0, 0.35f);
         poseStack.popPose();
     }
 

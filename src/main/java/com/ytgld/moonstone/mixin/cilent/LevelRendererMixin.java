@@ -45,12 +45,14 @@ public class LevelRendererMixin implements MFramebufferBlack {
             moonstone1_21_1$postChain.close();
         }
         try {
-            this.moonstone1_21_1$postChain = new PostChain(this.minecraft.getTextureManager(), this.minecraft.getResourceManager(), this.minecraft.getMainRenderTarget(), Moonstone.POST_BLACK);
+            this.moonstone1_21_1$postChain = new PostChain(this.minecraft.getTextureManager(), this.minecraft.getResourceManager(), this.minecraft.getMainRenderTarget(), Moonstone.POST_Blood);
             this.moonstone1_21_1$postChain.resize(this.minecraft.getWindow().getWidth(), this.minecraft.getWindow().getHeight());
             this.moonstone1_21_1$renderTarget = this.moonstone1_21_1$postChain.getTempTarget("final");
         } catch (IOException | JsonSyntaxException var3) {
             this.moonstone1_21_1$postChain = null;
             this.moonstone1_21_1$renderTarget = null;
+            System.out.println("moonstone1_21_1$postChain");
+            System.out.println("moonstone1_21_1$renderTarget");
         }
 
     }
@@ -93,8 +95,6 @@ public class LevelRendererMixin implements MFramebufferBlack {
             this.moonstone1_21_1$postChain.close();
         }
     }
-    @Unique
-    private float cI1_21_1$nas;
     @Inject(method = "renderLevel(Lnet/minecraft/client/DeltaTracker;ZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lorg/joml/Matrix4f;Lorg/joml/Matrix4f;)V",
             at = @At(
                     value = "INVOKE",

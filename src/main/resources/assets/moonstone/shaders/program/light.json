@@ -1,0 +1,18 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "one",
+    "dstrgb": "zero"
+  },
+  "vertex": "moonstone:light",
+  "fragment": "moonstone:light",
+  "attributes": [ "Position" ],
+  "samplers": [
+  ],
+  "uniforms": [
+    { "name": "lightPos_X", "type": "float",     "count": 1,  "values": [ 0 ] },
+    { "name": "lightPos_Y", "type": "float",     "count": 1,  "values": [ 0 ] },
+    { "name": "lightPos_Z", "type": "float",     "count": 1,  "values": [ 0 ] },
+    { "name": "lightColor", "type": "float",     "count": 3,  "values": [ 0,0,1 ] }
+  ]
+}

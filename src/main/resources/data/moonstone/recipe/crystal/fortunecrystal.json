@@ -4,7 +4,7 @@
   {"item":"moonstone:ectoplasmprism"},
   {"item":"moonstone:biggreedcrystal"},
   {"item":"moonstone:biggreedcrystal"},
-    {"item":"minecraft:emerald_block"},
+    {"item":"minecraft:emerald_block"}
   ],
   "result": {
     "id": "moonstone:fortunecrystal",

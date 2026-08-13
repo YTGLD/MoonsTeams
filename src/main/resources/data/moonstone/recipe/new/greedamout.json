@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:stone",
+    {"item":  "minecraft:stone"},
   {"item":"moonstone:ectoplasmprism"},
   {"item":"moonstone:greedcrystal"}
   ],
