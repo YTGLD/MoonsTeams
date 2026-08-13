@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A":  "#curios:nightmare",
-    "B":{"item":"moonstone:brain",
-    "C":  "minecraft:netherite_ingot",
-    "D":  "minecraft:crying_obsidian"
+    "A":  {"item":"#curios:nightmare"},
+    "B":{"item":"moonstone:brain"},
+    "C": {"item": "minecraft:netherite_ingot"},
+    "D": {"item": "minecraft:crying_obsidian"}
   },
   "pattern": [
     "DCD",

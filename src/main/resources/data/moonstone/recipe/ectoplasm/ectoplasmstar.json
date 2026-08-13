@@ -7,8 +7,8 @@
   ],
   "key":
   {
-    "A": "moonstone:ectoplasmprism",
-    "B": "minecraft:diamond"
+    "A":  {"item":"moonstone:ectoplasmprism"},
+    "B":  {"item":"minecraft:diamond"}
   },
   "result":
   {

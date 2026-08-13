@@ -4,7 +4,7 @@
   "ingredients": [
      "minecraft:stone",
    {"item":"moonstone:ectoplasmprism",
-     "minecraft:lapis_block"
+    {"item":"minecraft:lapis_block"}
   ],
   "result": {
     "count": 1,

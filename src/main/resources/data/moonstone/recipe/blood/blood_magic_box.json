@@ -4,7 +4,7 @@
   "ingredients": [
   {"item":"moonstone:maxamout"},
   {"item":"moonstone:ectoplasmcube"},
-    "minecraft:chest"
+    {"item":"minecraft:chest"}
   ],
   "result": {
     "count": 1,

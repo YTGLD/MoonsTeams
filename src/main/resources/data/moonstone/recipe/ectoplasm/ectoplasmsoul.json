@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": "moonstone:ectoplasmcube",
-    "B": "minecraft:golden_carrot"
+    "A":  {"item":"moonstone:ectoplasmcube"},
+    "B":  {"item":"minecraft:golden_carrot"}
   },
   "pattern": [
     " B ",

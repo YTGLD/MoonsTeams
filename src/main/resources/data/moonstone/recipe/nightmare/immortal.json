@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "minecraft:nether_star",
-    "minecraft:dragon_head",
-    "#curios:nightmare",
-    "#curios:nightmare",
-    "#curios:nightmare",
-    "#curios:nightmare",
-    "#curios:nightmare",
-    "#curios:nightmare",
-    "#curios:nightmare"
+     {"item":"minecraft:nether_star"},
+     {"item":"minecraft:dragon_head"},
+     {"item":"#curios:nightmare"},
+     {"item":"#curios:nightmare"},
+     {"item":"#curios:nightmare"},
+     {"item":"#curios:nightmare"},
+     {"item":"#curios:nightmare"},
+     {"item":"#curios:nightmare"},
+     {"item":"#curios:nightmare"}
   ],
   "result": {
     "id": "moonstone:immortal",

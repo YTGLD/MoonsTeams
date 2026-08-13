@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-  {"item":"moonstone:ectoplasmprism",
-    "minecraft:chest"
+  {"item":"moonstone:ectoplasmprism"},
+    {"item": "minecraft:chest"}
   ],
   "result": {
     "count": 1,

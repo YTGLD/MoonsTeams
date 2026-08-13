@@ -1,10 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "A": "moonstone:ectoplasmprism",
-    "B": "minecraft:obsidian",
-    "C": "moonstone:blood",
-    "D": "minecraft:netherite_ingot"
+    "A": {"item":"moonstone:ectoplasmprism"},
+    "B": {"item":"minecraft:obsidian"},
+    "C": {"item":"moonstone:blood"},
+    "D": {"item":"minecraft:netherite_ingot"}
   },
   "pattern": [
     "A A",

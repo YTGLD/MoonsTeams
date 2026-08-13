@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-  {"item":"moonstone:max_eye",
-  {"item":"moonstone:blood_amout"
+  {"item":"moonstone:max_eye"},
+  {"item":"moonstone:blood_amout"}
   ],
   "result": {
     "id": "moonstone:blood_snake",

@@ -7,10 +7,10 @@
   ],
   "key":
   {
-    "A": "minecraft:obsidian",
-    "B": "moonstone:ectoplasmcube",
-    "C": "minecraft:blaze_powder",
-    "D": "moonstone:ectoplasmprism"
+    "A":  {"item":"minecraft:obsidian"},
+    "B":  {"item":"moonstone:ectoplasmcube"},
+    "C":  {"item":"minecraft:blaze_powder"},
+    "D":  {"item":"moonstone:ectoplasmprism"}
 
   },
   "result":

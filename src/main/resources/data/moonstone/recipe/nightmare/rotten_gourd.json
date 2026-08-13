@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A":  "minecraft:crying_obsidian",
-    "B":  "#curios:nightmare",
-    "C":  "minecraft:netherite_ingot",
+    "A":  {"item":"minecraft:crying_obsidian"},
+    "B":  {"item":"#curios:nightmare"},
+    "C":  {"item":"minecraft:netherite_ingot"},
 
-    "D":  "minecraft:nether_star"
+    "D":  {"item":"minecraft:nether_star"}
   },
   "pattern": [
     " CD",

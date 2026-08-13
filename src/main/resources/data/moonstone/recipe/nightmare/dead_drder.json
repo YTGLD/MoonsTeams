@@ -1,18 +1,15 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "minecraft:crying_obsidian",
-    "minecraft:crying_obsidian",
-    "minecraft:crying_obsidian",
-
-    "#curios:nightmare",
-  {"item":"moonstone:ectoplasmshild",
-    "#curios:nightmare",
-
-
-    "minecraft:crying_obsidian",
-    "minecraft:crying_obsidian",
-    "minecraft:crying_obsidian"
+    {"item":"minecraft:crying_obsidian"},
+    {"item":"minecraft:crying_obsidian"},
+    {"item":"minecraft:crying_obsidian"},
+    {"item":"#curios:nightmare"},
+  {"item":"moonstone:ectoplasmshild"},
+    {"item":"#curios:nightmare"},
+    {"item":"minecraft:crying_obsidian"},
+    {"item":"minecraft:crying_obsidian"},
+    {"item":"minecraft:crying_obsidian"
   ],
   "result": {
     "id": "moonstone:dead_drder",

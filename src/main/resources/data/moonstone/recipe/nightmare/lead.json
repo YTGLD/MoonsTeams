@@ -1,21 +1,15 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    "minecraft:iron_block",
-    "#curios:nightmare",
-    "minecraft:iron_block",
-
-
-
-    "#curios:nightmare",
-  {"item":"moonstone:hidden_blade",
-    "#curios:nightmare",
-
-
-
-    "minecraft:iron_block",
-    "#curios:nightmare",
-    "minecraft:iron_block"
+   {"item":"minecraft:iron_block"},
+   {"item":"#curios:nightmare"},
+   {"item":"minecraft:iron_block"},
+   {"item":"#curios:nightmare"},
+   {"item":"moonstone:hidden_blade"},
+   {"item":"#curios:nightmare"},
+   {"item":"minecraft:iron_block"},
+   {"item":"#curios:nightmare"},
+   {"item":"minecraft:iron_block"}
   ],
   "result": {
     "id": "moonstone:lead",

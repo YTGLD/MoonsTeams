@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A":  "#curios:nightmare",
-    "B":  "minecraft:netherite_ingot",
-    "C":  "minecraft:clay_ball"
+    "A": {"item": "#curios:nightmare"},
+    "B": {"item": "minecraft:netherite_ingot"},
+    "C": {"item": "minecraft:clay_ball"}
   },
   "pattern": [
     "ABA",

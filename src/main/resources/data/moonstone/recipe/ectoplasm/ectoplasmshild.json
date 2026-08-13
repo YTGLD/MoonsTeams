@@ -2,12 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": "moonstone:ectoplasmball",
-    "B": "minecraft:shield",
-    "C": "moonstone:blueamout",
-    "D": "moonstone:ectoplasmcloub",
-    "E": "moonstone:ectoplasmcube",
-    "F": "moonstone:ectoplasmprism"
+    "A":  {"item":"moonstone:ectoplasmball"},
+    "B":  {"item":"minecraft:shield"},
+    "C":  {"item":"moonstone:blueamout"},
+    "D":  {"item":"moonstone:ectoplasmcloub"},
+    "E":  {"item":"moonstone:ectoplasmcube"},
+    "F":  {"item":"moonstone:ectoplasmprism"}
   },
   "pattern": [
     "DCD",

@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": "moonstone:ectoplasmball",
-    "B": "moonstone:battery"
+    "A":  {"item":"moonstone:ectoplasmball"},
+    "B":  {"item":"moonstone:battery"}
   },
   "pattern": [
     "AAA",

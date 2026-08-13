@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A":  "minecraft:crying_obsidian",
-    "B":  "minecraft:blaze_rod",
-    "C":  "#curios:nightmare"
+    "A":  {"item":"minecraft:crying_obsidian"},
+    "B":  {"item":"minecraft:blaze_rod"},
+    "C":  {"item":"#curios:nightmare}"
   },
   "pattern": [
     " AA",

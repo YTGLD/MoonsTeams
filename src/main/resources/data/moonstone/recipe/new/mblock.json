@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "A": "moonstone:greedcrystal",
-    "B":"moonstone:ectoplasmcube",
-    "C": "minecraft:stone"
+    "A": {"item":"moonstone:greedcrystal"},
+    "B": {"item":"moonstone:ectoplasmcube"},
+    "C": {"item":"minecraft:stone"}
   },
   "pattern": [
     " A ",
