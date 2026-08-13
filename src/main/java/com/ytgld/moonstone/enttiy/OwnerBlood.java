@@ -91,7 +91,7 @@ public class OwnerBlood extends TamableAnimal {
         }
         trailPositions.add(new Vec3(this.getX(), this.getY(), this.getZ()));
 
-        if (trailPositions.size() > 150) {
+        if (trailPositions.size() > 50) {
             trailPositions.remove(0);
         }
 

@@ -25,11 +25,6 @@ public class NightmareSmall extends ItemBase implements ICurioItem {
     public int colorEQ() {
         return Light.ARGB.color(255,200,50,100);
     }
-    @Override
-    public ICurio.@NotNull DropRule getDropRule(SlotContext slotContext, DamageSource source, boolean recentlyHit, ItemStack stack) {
-        return ICurio.DropRule.ALWAYS_KEEP;
-    }
-
 
     @Override
     public Component getName(ItemStack itemStack) {

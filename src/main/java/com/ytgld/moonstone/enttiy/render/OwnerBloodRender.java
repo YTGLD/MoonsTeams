@@ -60,8 +60,8 @@ public class OwnerBloodRender extends EntityRenderer<@NotNull OwnerBlood> {
             Vec3 adjustedPrevPos = new Vec3(prevPos.x - entity.getX(), prevPos.y - entity.getY(), prevPos.z - entity.getZ());
             Vec3 adjustedCurrPos = new Vec3(currPos.x - entity.getX(), currPos.y - entity.getY(), currPos.z - entity.getZ());
             float alpha = (float) (i) / (float) (entity.getTrailPositions().size());
-            renderBloodW(matrices, vertexConsumers, adjustedPrevPos, adjustedCurrPos, Light.ARGB.color((int) (alpha * 255), 255, 0, 0), 0.1f * alpha);
-            renderBloodW(matrices, vertexConsumers, adjustedPrevPos, adjustedCurrPos, Light.ARGB.color((int) (alpha * 255), 255, 0, 0), 0.1f * alpha);
+            renderBloodW(matrices, vertexConsumers, adjustedPrevPos, adjustedCurrPos, Light.ARGB.color((int) (alpha * 255), 255, 0, 0), 0.3f * alpha);
+            renderBloodW(matrices, vertexConsumers, adjustedPrevPos, adjustedCurrPos, Light.ARGB.color((int) (alpha * 255), 255, 0, 0), 0.3f * alpha);
         }
     }
 

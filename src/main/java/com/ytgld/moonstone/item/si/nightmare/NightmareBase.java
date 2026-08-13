@@ -47,11 +47,6 @@ public class NightmareBase extends ItemBase implements ICurioItem {
     }
 
     @Override
-    public ICurio.@NotNull DropRule getDropRule(SlotContext slotContext, DamageSource source, boolean recentlyHit, ItemStack stack) {
-        return ICurio.DropRule.ALWAYS_KEEP;
-    }
-
-    @Override
     public Component getName(ItemStack itemStack) {
         Component component = super.getName(itemStack);
         return component.copy().withStyle(Style.EMPTY.withColor(0xffff0000));
