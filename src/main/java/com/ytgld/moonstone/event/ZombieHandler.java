@@ -1,4 +1,4 @@
-package com.ytgld.moonstone.event.itemevent;
+package com.ytgld.moonstone.event;
 
 import com.ytgld.moonstone.Moonstone;
 import net.minecraft.network.RegistryFriendlyByteBuf;

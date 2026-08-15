@@ -5,7 +5,9 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
+import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.Items;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -16,7 +18,6 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
-import net.minecraft.network.protocol.game.DebugPackets;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -102,9 +103,23 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
     @Override
     public void die(@NotNull DamageSource p_21809_) {
         super.die(p_21809_);
+
+        if (this.getOwner() instanceof Player player&& Handler.hascurio(player, Items.parasitic_cell.asItem())){
+            for (int i = 0; i < 6; i++) {
+                CellZombie cell_zombie = new CellZombie(EntityTs.cell_zombie.get(),this.level());
+                cell_zombie.setPos(this.getX(),this.getY(),this.getY());
+                if (this.getOwnerUUID()!=null) {
+                    cell_zombie.setOwnerUUID(this.getOwnerUUID());
+                }
+                this.level().addFreshEntity(cell_zombie);
+            }
+        }
     }
-    private Multimap<Holder<Attribute>, AttributeModifier>  AttributeModifier(CellGiant cellGiant, LivingEntity living){
+    private Multimap<Holder<Attribute>, AttributeModifier>  AttributeModifier(LivingEntity living){
         Multimap<Holder<Attribute>, AttributeModifier>  modifierMultimap = HashMultimap.create();
+        if (Handler.hascurio(living,Items.bone_cell.asItem())){
+            modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(ResourceLocation.withDefaultNamespace("base_attack_damage"+"cell_armor"), living.getAttributeValue(Attributes.ARMOR)* 0.7, AttributeModifier.Operation.ADD_VALUE));
+        }
         return modifierMultimap;
     }
     @Override
@@ -219,7 +234,7 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
             trailPositions.removeFirst();
         }
         if (this.getOwner() instanceof Player player) {
-            this.getAttributes().addTransientAttributeModifiers(this.AttributeModifier(this,player));
+            this.getAttributes().addTransientAttributeModifiers(this.AttributeModifier(player));
         }
 
         if (this.getOwner()!= null) {

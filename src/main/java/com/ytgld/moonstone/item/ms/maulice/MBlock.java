@@ -24,13 +24,10 @@ public class MBlock extends MLS implements TextEvt.Twelve {
     public MBlock(Properties properties) {
         super(properties);
     }
-
     @Override
-    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
-        Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
+    public void addSlot(Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap) {
         CuriosApi
                 .addSlotModifier(linkedHashMultimap, "belt", ResourceLocation.withDefaultNamespace("base_attack_damage"+this.getDescriptionId()), 1, AttributeModifier.Operation.ADD_VALUE);
-        return linkedHashMultimap;
     }
 
     @Override

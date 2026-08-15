@@ -10,7 +10,7 @@ import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.event.DNAModifyHandler;
 import com.ytgld.moonstone.event.NewEvent;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.event.itemevent.ZombieHandler;
+import com.ytgld.moonstone.event.ZombieHandler;
 import com.ytgld.moonstone.event.key.ClientEvent;
 import com.ytgld.moonstone.event.key.UseCuriosHandler;
 import com.ytgld.moonstone.event.loot.LootTableEvent;

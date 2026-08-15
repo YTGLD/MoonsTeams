@@ -3,7 +3,6 @@ package com.ytgld.moonstone.event;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
-import com.ytgld.moonstone.event.itemevent.ZombieEventHandler;
 import com.ytgld.moonstone.item.IKet;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.MaxEye;

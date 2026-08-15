@@ -68,7 +68,12 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem , IDNASeq
         return attributeModifierMultimap;
     }
     public final Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation s, ItemStack stack) {
-        return HashMultimap.create();
+        Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
+        addSlot(linkedHashMultimap);
+        return linkedHashMultimap;
+    }
+    public void addSlot(Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap){
+
     }
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
     }

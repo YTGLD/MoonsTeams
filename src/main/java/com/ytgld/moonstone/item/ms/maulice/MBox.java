@@ -19,12 +19,17 @@ public class MBox extends MLS {
     }
 
     @Override
+    public void addSlot(Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap) {
+        CuriosApi
+                .addSlotModifier(linkedHashMultimap, "curio", ResourceLocation.withDefaultNamespace("base_attack_damage"+this.getDescriptionId()), 1, AttributeModifier.Operation.ADD_VALUE);
+
+    }
+
+    @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
         modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(identifier(), -0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(identifier(), 8, AttributeModifier.Operation.ADD_VALUE));
-        CuriosApi
-                .addSlotModifier(modifierMultimap, "curio", ResourceLocation.withDefaultNamespace("base_attack_damage"+this.getDescriptionId()), 1, AttributeModifier.Operation.ADD_VALUE);
         return modifierMultimap;
     }
 

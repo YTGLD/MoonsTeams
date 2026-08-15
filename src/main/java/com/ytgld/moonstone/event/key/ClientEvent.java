@@ -1,6 +1,6 @@
 package com.ytgld.moonstone.event.key;
 
-import com.ytgld.moonstone.event.itemevent.ZombieHandler;
+import com.ytgld.moonstone.event.ZombieHandler;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;

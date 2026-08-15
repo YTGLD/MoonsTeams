@@ -31,14 +31,15 @@ public class Biant extends TheNecoraDNABush implements IKet {
     public int maxSize() {
         return 2;
     }
+
     @Override
-    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
-        Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
+    public void addSlot(Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap) {
         CuriosApi
                 .addSlotModifier(linkedHashMultimap, "dnabush", ResourceLocation.withDefaultNamespace("base_attack_damage"+this.getDescriptionId()),
                         2, AttributeModifier.Operation.ADD_VALUE);
-        return linkedHashMultimap;
+
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @javax.annotation.Nullable Level level, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, level, tooltip, flags);

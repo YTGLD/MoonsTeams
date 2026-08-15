@@ -17,11 +17,10 @@ public class GodAtpoverdose extends GodDNA {
     }
 
     @Override
-    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(ItemStack stack, LivingEntity livingEntity) {
-        Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
+    public void addSlot(Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap) {
         CuriosApi
                 .addSlotModifier(linkedHashMultimap, "curio", ResourceLocation.withDefaultNamespace("base_attack_damage"+this.getDescriptionId()),
                         2, AttributeModifier.Operation.ADD_VALUE);
-        return linkedHashMultimap;
+
     }
 }
