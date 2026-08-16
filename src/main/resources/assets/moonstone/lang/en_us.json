@@ -2244,6 +2244,19 @@
   "moonstone.ocean_affinity.modify": "海洋亲和",
   "moonstone.earth_affinity.modify": "土地亲和",
 
+  "attribute.name.moonstone.owner_blood_attack_speed": "血灵攻击间隔",
+  "attribute.name.moonstone.owner_blood_attack_damage": "血灵攻击伤害",
+  "attribute.name.moonstone.owner_blood_blood_speed": "血灵血珠速度",
+
+
+  "moonstone.owner_blood_eye.modify": "增加血灵的血珠速度",
+  "moonstone.owner_blood_attack_eye.modify":"增加血灵的血珠速度",
+  "moonstone.owner_blood_speed_eye.modify": "缩短血灵的攻击间隔",
+  "moonstone.owner_blood_boom_eye.modify":"增加自身暴击伤害",
+  "moonstone.owner_blood_effect_eye.modify": "增加自身速度",
+  "moonstone.owner_blood_vex.modify":"增加自身治疗",
+  "moonstone.owner_blood_earth.modify": "增加自身击退抗性",
+
   "item.moonstone.love_charm":"朋友的礼物!",
   "attribute.name.moonstone.speed":"通用速度",
   "item.moonstone.god_regenerative": "Regenerative Vitalization",

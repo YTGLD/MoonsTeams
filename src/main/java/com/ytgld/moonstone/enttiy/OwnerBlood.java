@@ -4,6 +4,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.Items;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
+import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -153,6 +154,11 @@ public class OwnerBlood extends TamableAnimal {
             if (Handler.hascurio(player,Items.the_blood_book.get())){
                 s *= 0.5f;
             }
+            float add = (float) player.getAttributeValue(AttReg.owner_blood_attack_speed);
+            s *= add;
+        }
+        if (s < 1) {
+            s = 1;
         }
         if (this.getOwner()!= null &&this.getOwner() instanceof Player player&&this.getTarget()!=null){
             if (this.tickCount % (int) s == 0) {

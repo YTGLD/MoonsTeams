@@ -63,6 +63,15 @@ public class RenderDNAItem {
                 ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"textures/gui/ci_star.png"), x, y, seed);
         addCom(18,-timeBase * 2  + (float)Math.PI / 8  ,Light.ARGB.color(a, r, g, b), guiGraphics, pose,
                 ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"textures/gui/ci_star.png"), x, y, seed);
+
+
+        addShadow(-timeBase * 2  ,Light.ARGB.color(a, 120, 15, 15),
+                guiGraphics, pose,
+                base, x, y, 0);
+        addShadow(-timeBase * 2  ,Light.ARGB.color(a, 120, 15, 15),
+                guiGraphics, pose,
+                base, x, y, 180);
+
     }
 
     private static void addCom(int size,float time , int color,GuiGraphics guiGraphics,PoseStack pose, ResourceLocation fire, int x, int y,int seed){
@@ -70,17 +79,40 @@ public class RenderDNAItem {
         pose.translate(8,8,0);
         pose.pushPose();
         pose.translate(x, y,0);
-        pose.mulPose(Axis.XN.rotationDegrees(time));
+        pose.mulPose(Axis.ZN.rotationDegrees(time * 40 + seed));
         pose.translate(-x, -y,0);
         new MGuiGraphics.GUI(CIStateShardsHasBlack::getHasBlock,false).blit(guiGraphics, fire,
                 (int) (x - size / 2f), (int) (y - size /2f), 0, 0,
                 size, size, size, size,
                 color);
         pose.popPose();
-
         pose.popPose();
     }
+    private static void addShadow(float time , int color, GuiGraphics guiGraphics, PoseStack pose, ResourceLocation fire, int x, int y, int age){
+        float orbSize = 6;
+        pose.pushPose();
+        pose.translate(8,8,1);
+        pose.translate(x, y,1);
+        pose.mulPose(Axis.ZN.rotationDegrees(time * 40 + age));
+        pose.translate(-x, -y,1);
+        for (float theta = 0f; theta <= Math.PI; theta += (float) (Math.PI / 16)) {
+            float xMath = (float) (Math.cos(theta) * 8);
+            float yMath = (float) (Math.sin(theta) * 8);
+            int as = ((color >> 24) & 0xFF);
+            int rs = ((color >> 16) & 0xFF);
+            int gs = ((color >> 8) & 0xFF);
+            int bs = (color & 0xFF);
+            float alpha = (float) Math.pow(Math.sin(theta), 2.5) * 255;
+            int alphaColor = (int) Math.min(as,alpha);
+            int drawColor = Light.ARGB.color(alphaColor,rs,gs,bs);
 
+            new MGuiGraphics.GUI(CIStateShardsHasBlack::getHasBlock,false).blit(guiGraphics, fire,
+                    (int) (x - orbSize / 2f) + xMath, (int) (y - orbSize /2f) + yMath, 0, 0,
+                    orbSize, orbSize, orbSize, orbSize,
+                    drawColor);
+        }
+        pose.popPose();
+    }
     private static class AlphaItem {
         public int alpha;
         public boolean look;

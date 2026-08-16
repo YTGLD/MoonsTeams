@@ -12,11 +12,14 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class BloodCandle extends BloodItem implements IKet {
     public BloodCandle(Properties properties) {
@@ -65,6 +68,21 @@ public class BloodCandle extends BloodItem implements IKet {
     public KeyMapping theKeyMapping() {
         return Keys.KEY_MAPPING_LAZY_R;
     }
-
+    @Override
+    public HashSet<Item> canUSe() {
+        return new HashSet<>( Set.of(
+                Items.owner_blood_eye.asItem(),
+                Items.owner_blood_attack_eye.asItem(),
+                Items.owner_blood_speed_eye.asItem(),
+                Items.owner_blood_boom_eye.asItem(),
+                Items.owner_blood_effect_eye.asItem(),
+                Items.owner_blood_vex.asItem(),
+                Items.owner_blood_earth.asItem()
+        ));
+    }
+    @Override
+    public int maxSize() {
+        return 3;
+    }
 }
 

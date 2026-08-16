@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.enttiy;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
@@ -109,7 +110,10 @@ public class AttackBlood extends ThrowableItemProjectile {
                             if (slime) {
                                 player.heal(damages + addDamgae);
                             }
-                            entity.hurt(this.getOwner().damageSources().playerAttack(player), (float) (damages + addDamgae + player.getMaxHealth() / 10 + player.getAttributeValue(Attributes.ATTACK_DAMAGE) / 10));
+                            float damage = (float) (damages + addDamgae + player.getMaxHealth() / 10 + player.getAttributeValue(Attributes.ATTACK_DAMAGE) / 10);
+                            float add = (float) player.getAttributeValue(AttReg.owner_blood_attack_damage);
+                            damage *= add;
+                            entity.hurt(this.getOwner().damageSources().playerAttack(player),damage );
                             canSee = false;
                         }
                         canSeeClient = false;
@@ -148,33 +152,36 @@ public class AttackBlood extends ThrowableItemProjectile {
         }
 
         float s = 0.075F;
-        if (canSee) {
-            if (target != null) {
-                if (follow) {
-                    Vec3 targetPos = target.position().add(0, 0.5, 0);
-                    Vec3 currentPos = this.position();
-                    Vec3 direction = targetPos.subtract(currentPos).normalize();
-                    Vec3 currentDirection = this.getDeltaMovement().normalize();
-                    double angle = Math.acos(currentDirection.dot(direction)) * (180.0 / Math.PI);
-                    if (angle > 45) {
-                        double angleLimit = Math.toRadians(45);
-                        Vec3 limitedDirection = currentDirection.scale(Math.cos(angleLimit))
-                                .add(direction.normalize().scale(Math.sin(angleLimit)));
-                        this.setDeltaMovement(limitedDirection.x * (0.125f + s), limitedDirection.y * (0.125f + s), limitedDirection.z * (0.125f + s));
-                    } else {
-                        this.setDeltaMovement(direction.x * (0.125f + s), direction.y * (0.125f + s), direction.z * (0.125f + s));
-                    }
-                } else {
-                    if (this.tickCount == 2) {
+        if (this.getOwner() instanceof Player player) {
+            float add = (float) player.getAttributeValue(AttReg.owner_blood_blood_speed);
+            if (canSee) {
+                if (target != null) {
+                    if (follow) {
                         Vec3 targetPos = target.position().add(0, 0.5, 0);
                         Vec3 currentPos = this.position();
                         Vec3 direction = targetPos.subtract(currentPos).normalize();
-                        this.setDeltaMovement(direction.x * (2 + s), direction.y * (2 + s), direction.z * (2 + s));
+                        Vec3 currentDirection = this.getDeltaMovement().normalize();
+                        double angle = Math.acos(currentDirection.dot(direction)) * (180.0 / Math.PI);
+                        if (angle > 45) {
+                            double angleLimit = Math.toRadians(45);
+                            Vec3 limitedDirection = currentDirection.scale(Math.cos(angleLimit))
+                                    .add(direction.normalize().scale(Math.sin(angleLimit)));
+                            this.setDeltaMovement(limitedDirection.x * (0.125f + s), limitedDirection.y * (0.125f + s), limitedDirection.z * (0.125f + s));
+                        } else {
+                            this.setDeltaMovement(direction.x * (0.125f + s) * add, direction.y * (0.125f + s)* add, direction.z * (0.125f + s)* add);
+                        }
+                    } else {
+                        if (this.tickCount == 2) {
+                            Vec3 targetPos = target.position().add(0, 0.5, 0);
+                            Vec3 currentPos = this.position();
+                            Vec3 direction = targetPos.subtract(currentPos).normalize();
+                            this.setDeltaMovement(direction.x * (2 + s)* add, direction.y * (2 + s)* add, direction.z * (2 + s)* add);
+                        }
                     }
                 }
+            }else {
+                this.setDeltaMovement(0,0,0);
             }
-        }else {
-            this.setDeltaMovement(0,0,0);
         }
         if (canSee) {
             trailPositions.add(new Vec3(this.getX(), this.getY(), this.getZ()));

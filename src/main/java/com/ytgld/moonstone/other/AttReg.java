@@ -29,6 +29,17 @@ public class AttReg {
     public static final DeferredHolder<Attribute, ?> speed = REGISTRY.register("speed", () -> {
         return new RangedAttribute("attribute.name.moonstone.speed", 1, -1024, 1024).setSyncable(true);
     });
+    public static final DeferredHolder<Attribute, ?> owner_blood_attack_speed = REGISTRY.register("owner_blood_attack_speed", () -> {
+        return new RangedAttribute("attribute.name.moonstone.owner_blood_attack_speed", 1, 0, 3).setSyncable(true);
+    });
+    public static final DeferredHolder<Attribute, ?> owner_blood_attack_damage = REGISTRY.register("owner_blood_attack_damage", () -> {
+        return new RangedAttribute("attribute.name.moonstone.owner_blood_attack_damage", 1, 0, 3).setSyncable(true);
+    });
+    public static final DeferredHolder<Attribute, ?> owner_blood_blood_speed = REGISTRY.register("owner_blood_blood_speed", () -> {
+        return new RangedAttribute("attribute.name.moonstone.owner_blood_blood_speed", 1, 0, 3).setSyncable(true);
+    });
+
+
 
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, Moonstone.MODID);
 
@@ -58,6 +69,10 @@ public class AttReg {
         event.add(EntityType.PLAYER, AttReg.speed, 1);
         event.add(EntityType.PLAYER, AttReg.nightmare_shield, 0);
         event.add(EntityType.PLAYER, AttReg.nightmare_stronger, 1);
+
+        event.add(EntityType.PLAYER, AttReg.owner_blood_attack_damage, 1);
+        event.add(EntityType.PLAYER, AttReg.owner_blood_attack_speed, 1);
+        event.add(EntityType.PLAYER, AttReg.owner_blood_blood_speed, 1);
 
     }
 }

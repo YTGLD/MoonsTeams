@@ -2236,6 +2236,9 @@
   "moonstone.earth_affinity.modify": "增加击退抗性",
 
 
+  "attribute.name.moonstone.owner_blood_attack_speed": "血灵攻击间隔",
+  "attribute.name.moonstone.owner_blood_attack_damage": "血灵攻击伤害",
+  "attribute.name.moonstone.owner_blood_blood_speed": "血灵血珠速度",
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",
