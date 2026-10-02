@@ -139,9 +139,11 @@ public class PrisonOfSin extends BloodItem {
         }
         Set<String> blacklist = new HashSet<>();
         for (String aaa : ConfigItem.intValue4.get()) {
-            String[] parts = aaa.split(":");
-            if (parts.length > 0) {
-                blacklist.add(parts[0] + ":" + parts[1]);
+            if (aaa.contains(":")) {
+                String[] parts = aaa.split(":");
+                if (parts.length > 0) {
+                    blacklist.add(parts[0] + ":" + parts[1]);
+                }
             }
         }
         s -= 100f;
