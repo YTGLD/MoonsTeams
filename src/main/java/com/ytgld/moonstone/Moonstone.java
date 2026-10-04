@@ -15,7 +15,8 @@ import com.ytgld.moonstone.event.key.ClientEvent;
 import com.ytgld.moonstone.event.key.UseCuriosHandler;
 import com.ytgld.moonstone.event.loot.LootTableEvent;
 import com.ytgld.moonstone.event.loot.Loots;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.Book;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.AttRegClient;
@@ -41,14 +42,14 @@ public class Moonstone {
         DataReg.REGISTRY.register(modEventBus);
         AttReg.REGISTRY.register(modEventBus);
         AttReg.ATTACHMENT_TYPES.register(modEventBus);
-        Items.ITEMS.register(modEventBus);
+        InitItems.ITEMS.register(modEventBus);
         Effects.REGISTRY.register(modEventBus);
         Loots.LOOT.register(modEventBus);
         EntityTs.REGISTRY.register(modEventBus);
         AllCrafting.REGISTRY.register(modEventBus);
         AttRegClient.ATTACHMENT_TYPES.register(modEventBus);
 
-        Items.TabChestItem.CREATIVE_MODE_TABS.register(modEventBus);
+        InitItems.TabChestItem.CREATIVE_MODE_TABS.register(modEventBus);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.fc);
 
         modEventBus.addListener(this::gatherData);
@@ -66,6 +67,7 @@ public class Moonstone {
         Consciousness.register(evt);
         UseCuriosHandler.register(evt.registrar("2.0"));
         ZombieHandler.register(evt.registrar("3.0"));
+        Book.register(evt);
 
     }
     public void gatherData(GatherDataEvent.Client event) {

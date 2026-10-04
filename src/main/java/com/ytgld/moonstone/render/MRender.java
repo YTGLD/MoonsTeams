@@ -3,10 +3,8 @@ package com.ytgld.moonstone.render;
 import com.mojang.blaze3d.GpuFormat;
 import com.mojang.blaze3d.PrimitiveTopology;
 import com.mojang.blaze3d.opengl.GlStateManager;
-import com.mojang.blaze3d.pipeline.BlendFunction;
-import com.mojang.blaze3d.pipeline.ColorTargetState;
-import com.mojang.blaze3d.pipeline.DepthStencilState;
-import com.mojang.blaze3d.pipeline.RenderPipeline;
+import com.mojang.blaze3d.pipeline.*;
+import com.mojang.blaze3d.shaders.UniformType;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.render.outline.MFramebufferBlack;
@@ -94,4 +92,31 @@ public class MRender {
                 .withLocation("pipeline/gui_textured").build());
 
     }
+
+    private static final RenderPipeline.Snippet GUI_TEXTURED_SNIPPET =
+            RenderPipeline.builder(GLOBALS_SNIPPET)
+                    .withBindGroupLayout(BindGroupLayouts.MATRICES_PROJECTION)
+                    .withVertexShader(Identifier.fromNamespaceAndPath(
+                            Moonstone.MODID, "core/vows"))
+                    .withFragmentShader(Identifier.fromNamespaceAndPath(
+                            Moonstone.MODID, "core/vows"))
+                    .withBindGroupLayout(BindGroupLayouts.SAMPLER0)
+                    .withBindGroupLayout(BindGroupLayout.builder().withUniform(
+                            "MoonstoneTimeVowsGlobals", UniformType.UNIFORM_BUFFER).build())
+                    .withVertexBinding(0, DefaultVertexFormat.POSITION_TEX_COLOR)
+                    .withPrimitiveTopology(PrimitiveTopology.QUADS)
+                    .buildSnippet();
+    public static final RenderPipeline VowGlow =
+            (RenderPipeline.builder(GUI_TEXTURED_SNIPPET).withColorTargetState(new ColorTargetState(new BlendFunction(
+                            SRC_ALPHA,
+                            ONE,
+                            ONE,
+                            ZERO))).
+                    withLocation(Identifier.fromNamespaceAndPath(Moonstone.MODID,"pipeline/vows_glow")).build());
+
+    public static final RenderPipeline Vow =
+            (RenderPipeline.builder(GUI_TEXTURED_SNIPPET)
+                    .withColorTargetState(new ColorTargetState(BlendFunction.TRANSLUCENT)).
+                    withLocation(Identifier.fromNamespaceAndPath(Moonstone.MODID,"pipeline/vows")).build());
+
 }

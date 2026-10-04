@@ -26,7 +26,7 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 import java.util.List;
 import java.util.Map;
 
-import static com.ytgld.moonstone.item.Items.doomswoud;
+import static com.ytgld.moonstone.item.InitItems.doomswoud;
 
 public class RineSword extends Doom {
     public static String canFlySword = "canFlySword";

@@ -6,7 +6,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.AllTip;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
@@ -65,23 +65,23 @@ public class NightmareBaseStone extends NightmareBase implements AllTip {
 
     public static void LivingHurtEvent(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.candle.asItem())) {
+            if (Handler.hascurio(player, InitItems.candle.asItem())) {
                 return;
             }
-            if (Handler.hascurio(player, Items.nightmare_base_stone.get())) {
+            if (Handler.hascurio(player, InitItems.nightmare_base_stone.get())) {
 
                 if (player.getHealth() >= player.getMaxHealth()) {
                     double d = ConfigItem.intValue.getAsInt();
-                    if (SIHandler.hascurio(player, Items.nightmare_clay.get())) {
+                    if (SIHandler.hascurio(player, InitItems.nightmare_clay.get())) {
                         d /= 100f;
                     }
                     event.setNewDamage((float) (event.getNewDamage() * (d + 1)));
 
-                    if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_stone.get().getDefaultInstance())) {
+                    if (!player.getCooldowns().isOnCooldown(InitItems.nightmare_base_stone.get().getDefaultInstance())) {
                         if (event.getNewDamage() > player.getHealth()) {
                             event.setNewDamage(0);
                             player.setHealth(1);
-                            player.getCooldowns().addCooldown(Items.nightmare_base_stone.get().getDefaultInstance(), 200);
+                            player.getCooldowns().addCooldown(InitItems.nightmare_base_stone.get().getDefaultInstance(), 200);
                         }
                     }
                 }

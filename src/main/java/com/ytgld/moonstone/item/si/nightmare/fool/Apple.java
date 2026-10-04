@@ -4,7 +4,7 @@ import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
 import com.ytgld.moonstone.effect.Effects;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -60,12 +60,12 @@ public class Apple extends NightmareSmall {
 
     public static void damage(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.apple.get())) {
+            if (SIHandler.hascurio(player, InitItems.apple.get())) {
                 event.setNewDamage(ConfigItem.intValue3.get().floatValue());
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.apple.get())) {
+            if (SIHandler.hascurio(player, InitItems.apple.get())) {
                 event.setNewDamage(ConfigItem.intValue2.get().floatValue());
             }
         }

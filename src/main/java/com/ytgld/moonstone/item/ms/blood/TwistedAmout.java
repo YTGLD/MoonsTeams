@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.blood;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -35,7 +35,7 @@ public class TwistedAmout extends BloodItem {
     }
     public static void hurt(LivingDamageEvent.Pre event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.twistedamout.get())){
+            if (Handler.hascurio(player, InitItems.twistedamout.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -44,7 +44,7 @@ public class TwistedAmout extends BloodItem {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (!stack.isEmpty()){
-                                if (stack.is(Items.twistedamout.get())){
+                                if (stack.is(InitItems.twistedamout.get())){
                                     if (stack.get(DataReg.tag)!=null){
                                         float dam = (float) stack.get(DataReg.tag).getIntOr(MaxSword,0) /20;
                                         event.setNewDamage(event.getNewDamage()*(1+dam));
@@ -71,7 +71,7 @@ public class TwistedAmout extends BloodItem {
     }
     public static void die(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.twistedamout.get())){
+            if (Handler.hascurio(player, InitItems.twistedamout.get())){
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -80,7 +80,7 @@ public class TwistedAmout extends BloodItem {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
                             if (!stack.isEmpty()){
-                                if (stack.is(Items.twistedamout.get())){
+                                if (stack.is(InitItems.twistedamout.get())){
                                     if (stack.get(DataReg.tag)!=null){
                                         if (stack.get(DataReg.tag).getIntOr(MaxSword,0)<9) {
                                             stack.get(DataReg.tag).putInt(MaxSword, stack.get(DataReg.tag).getIntOr(MaxSword,0) + Mth.nextInt(RandomSource.create(),1,3));

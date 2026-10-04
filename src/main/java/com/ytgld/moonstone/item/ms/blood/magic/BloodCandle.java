@@ -5,7 +5,7 @@ import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
 import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.IKet;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
@@ -27,12 +27,12 @@ public class BloodCandle extends BloodItem implements IKet {
     public static final String hasOwnerBlood = "hasOwnerBlood";
 
     public static void event(Player player) {
-        if (Handler.hascurio(player, Items.blood_candle.asItem())) {
+        if (Handler.hascurio(player, InitItems.blood_candle.asItem())) {
             if (player.level().isClientSide()) {
                 return;
             }
             CompoundTag compoundTag = player.getPersistentData();
-            if (!player.getCooldowns().isOnCooldown(Items.blood_candle.asItem().getDefaultInstance())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.blood_candle.asItem().getDefaultInstance())) {
                 if (!compoundTag.getBooleanOr(hasOwnerBlood, false)) {
                     OwnerBlood EndComing = new OwnerBlood(EntityTs.owner_blood_.get(), player.level());
                     EndComing.setPos(player.position());
@@ -40,10 +40,10 @@ public class BloodCandle extends BloodItem implements IKet {
                     EndComing.tame(player);
                     player.level().addFreshEntity(EndComing);
                     compoundTag.putBoolean(hasOwnerBlood, true);
-                    player.getCooldowns().addCooldown(Items.blood_candle.asItem().getDefaultInstance(), 10);
+                    player.getCooldowns().addCooldown(InitItems.blood_candle.asItem().getDefaultInstance(), 10);
                 } else {
                     compoundTag.putBoolean(hasOwnerBlood, false);
-                    player.getCooldowns().addCooldown(Items.blood_candle.asItem().getDefaultInstance(), 10);
+                    player.getCooldowns().addCooldown(InitItems.blood_candle.asItem().getDefaultInstance(), 10);
                 }
             }
         }

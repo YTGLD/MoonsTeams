@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -67,7 +67,7 @@ public class lead  extends NightmareSmall {
     public static void hurtOfBlood(LivingDamageEvent.Pre event){
         if (!event.getSource().is(DamageTypes.GENERIC_KILL)) {
             if (event.getEntity() instanceof Player player) {
-                if (SIHandler.hascurio(player, Items.lead.get())) {
+                if (SIHandler.hascurio(player, InitItems.lead.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -75,7 +75,7 @@ public class lead  extends NightmareSmall {
                             IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                             for (int i = 0; i < stacksHandler.getSlots(); i++) {
                                 ItemStack stack = stackHandler.getStackInSlot(i);
-                                if (stack.is(Items.lead.get())) {
+                                if (stack.is(InitItems.lead.get())) {
                                     CompoundTag compoundTag = stack.get(DataReg.tag);
                                     if (compoundTag != null) {
 

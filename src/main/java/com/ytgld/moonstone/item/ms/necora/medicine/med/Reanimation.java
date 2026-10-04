@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.medicine.med;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -13,7 +13,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
@@ -26,8 +25,8 @@ public class Reanimation extends TheNecora {
 
     public static   void reanimation(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.reanimation.get())){
-                if (!player.getCooldowns().isOnCooldown(Items.reanimation.get().getDefaultInstance())) {
+            if (Handler.hascurio(player, InitItems.reanimation.get())){
+                if (!player.getCooldowns().isOnCooldown(InitItems.reanimation.get().getDefaultInstance())) {
                     if (event.getNewDamage() > player.getHealth()) {
                         player.heal(player.getMaxHealth() / 2);
                         player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 4));
@@ -35,7 +34,7 @@ public class Reanimation extends TheNecora {
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 1));
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_DEATH, SoundSource.NEUTRAL, 0.8F, 0.8F);
 
-                        player.getCooldowns().addCooldown(Items.reanimation.get().getDefaultInstance(), 3000);
+                        player.getCooldowns().addCooldown(InitItems.reanimation.get().getDefaultInstance(), 3000);
                     }
                 }
             }

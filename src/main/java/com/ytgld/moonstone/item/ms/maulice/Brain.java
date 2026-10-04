@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.maulice;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -53,7 +53,7 @@ public class Brain extends MLS {
 
     public static void brainLHurt(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.brain.get())) {
+            if (Handler.hascurio(player, InitItems.brain.get())) {
                 String name = event.getEntity().getName().getString();
                 player.getPersistentData().putInt(name, player.getPersistentData().getIntOr(name, 0) + 1);
                 if (player.getPersistentData().getIntOr(name, 0) >= ConfigItem.intValue.get().intValue()) {

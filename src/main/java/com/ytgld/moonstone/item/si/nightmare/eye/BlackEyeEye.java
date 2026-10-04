@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.si.nightmare.eye;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -66,7 +66,7 @@ public class BlackEyeEye extends NightmareSmall {
 
     public static void attLook(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_eye.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_black_eye_eye.get())) {
                 Entity entity = getPlayerLookTarget(player.level(), player);
                 if (entity instanceof LivingEntity living0) {
                     if (living0.is(event.getEntity())) {

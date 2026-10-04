@@ -3,7 +3,6 @@ package com.ytgld.moonstone.item;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.item.ms.CommonItem;
-import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.blood.*;
 import com.ytgld.moonstone.item.ms.blood.magic.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.*;
@@ -62,7 +61,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-public class Items {
+public class InitItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Moonstone.MODID);
     public static final DeferredItem<@NotNull Item> NightmareBaseItem_ = register("nightmare_base", (Identifier) -> new NightmareBaseItem(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
     public static final DeferredItem<@NotNull Item> nightmare_base_black_eye = register("nightmare_base_black_eye", (Identifier) -> new NightmareBaseBlackEye(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, Identifier))));
@@ -297,6 +296,7 @@ public class Items {
     public static final DeferredItem<@NotNull Item> spliced_activation = register("spliced_activation", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> thermo_necro = register("thermo_necro", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
+    public static final DeferredItem<@NotNull Item> Book_ = register("book", (identifier) -> new Book(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
 
     public static class TabChestItem {

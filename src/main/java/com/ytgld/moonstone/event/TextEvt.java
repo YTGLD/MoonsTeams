@@ -4,7 +4,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.enttiy.AtSword;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.SwordOfTwelve;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
@@ -27,40 +27,40 @@ public class TextEvt {
     public void ItemTooltipEvent(ItemTooltipEvent event){
         ItemStack stack = event.getItemStack();
         if (stack.getItem() instanceof Twelve){
-            if (stack.is(Items.as_amout.get())||stack.is(Items.million.get())){
+            if (stack.is(InitItems.as_amout.get())||stack.is(InitItems.million.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.1").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.ectoplasmshild.get())){
+            if (stack.is(InitItems.ectoplasmshild.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.2").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.redamout.get())){
+            if (stack.is(InitItems.redamout.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.3").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.magiceye.get())){
+            if (stack.is(InitItems.magiceye.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.4").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.mblock.get())){
+            if (stack.is(InitItems.mblock.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.5").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.obsidianring.get())){
+            if (stack.is(InitItems.obsidianring.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.6").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.maxamout.get())){
+            if (stack.is(InitItems.maxamout.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.7").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.fortunecrystal.get())){
+            if (stack.is(InitItems.fortunecrystal.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.8").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
 //            if (stack.is(Items.dna.get())){
 //                event.getToolTip().add(1,Component.translatable("moonstone.twelve.9").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
 //            }
-            if (stack.is(Items.bigwarcrystal.get())){
+            if (stack.is(InitItems.bigwarcrystal.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.10").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.evilcandle.get())){
+            if (stack.is(InitItems.evilcandle.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.11").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
-            if (stack.is(Items.killer.get())){
+            if (stack.is(InitItems.killer.get())){
                 event.getToolTip().add(1,Component.translatable("moonstone.twelve.12").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB0E2FF))));
             }
         }
@@ -70,8 +70,8 @@ public class TextEvt {
     @SubscribeEvent
     public void LivingDeathEvent(LivingDeathEvent event){
         if (event.getSource().getDirectEntity() instanceof Player player) {
-            if (Handler.hascurio(player,Items.twelve_sword.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.twelve_sword.get().getDefaultInstance())) {
+            if (Handler.hascurio(player, InitItems.twelve_sword.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.twelve_sword.get().getDefaultInstance())) {
                     List<Integer> integers = new ArrayList<>();
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
@@ -118,7 +118,7 @@ public class TextEvt {
                         swordOfTwelve.entityTags().add("SwordOfTwelveOFDamage");
                         player.level().addFreshEntity(swordOfTwelve);
                     }
-                    player.getCooldowns().addCooldown(Items.twelve_sword.get().getDefaultInstance(),1200);
+                    player.getCooldowns().addCooldown(InitItems.twelve_sword.get().getDefaultInstance(),1200);
                 }
             }
         }

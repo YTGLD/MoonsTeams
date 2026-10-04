@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.effect.Effects;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -33,7 +33,7 @@ public class Immortal extends NightmareSmall {
         if (event.getSource().getEntity() instanceof LivingEntity living){
             if (event.getEntity() instanceof Player player){
                 int lvl = Mth.nextInt(RandomSource.create(),1,100);
-                if (SIHandler.hascurio(player, Items.immortal.get())){
+                if (SIHandler.hascurio(player, InitItems.immortal.get())){
                     if (lvl<=80){
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_HIT_PLAYER, SoundSource.NEUTRAL, 1F, 1F);
                         if (living.getHealth()<=living.getMaxHealth()*0.7f){
@@ -52,7 +52,7 @@ public class Immortal extends NightmareSmall {
     public static void livDead(LivingDeathEvent event){
         if (event.getSource().getEntity() instanceof LivingEntity living){
             if (event.getEntity() instanceof Player player){
-                if (SIHandler.hascurio(player, Items.immortal.get())){
+                if (SIHandler.hascurio(player, InitItems.immortal.get())){
                     living.hurt(living.damageSources().dryOut(),living.getHealth()*0.2f);
                     living.addEffect(new MobEffectInstance(Effects.dead,200,9));
                 }

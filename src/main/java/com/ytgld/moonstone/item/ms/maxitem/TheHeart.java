@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maxitem;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -41,7 +41,7 @@ public class TheHeart extends BundleItem {
 
     public static void the_heart(LivingDropsEvent event) {
         if ((event.getSource().getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player, Items.the_heart.get())) {
+            if (Handler.hascurio(player, InitItems.the_heart.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

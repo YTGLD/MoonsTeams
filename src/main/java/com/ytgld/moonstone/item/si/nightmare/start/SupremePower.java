@@ -1,16 +1,13 @@
 package com.ytgld.moonstone.item.si.nightmare.start;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.HandlerNames;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.neoforge.event.entity.player.CanContinueSleepingEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
 
 import java.util.List;
@@ -31,7 +28,7 @@ public class SupremePower extends NightmareSmall {
     }
     public static void sleep(CanPlayerSleepEvent event){
         Player player = (Player) event.getEntity();
-        if (Handler.hascurio(player, Items.supreme_power.asItem())) {
+        if (Handler.hascurio(player, InitItems.supreme_power.asItem())) {
             event.setProblem(Player.BedSleepingProblem.NOT_SAFE);
         }
     }

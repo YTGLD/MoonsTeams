@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dna.god;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.GodDNA;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
@@ -32,7 +32,7 @@ public class GodPutrefactive extends GodDNA {
 
     public static void eat(LivingEntityUseItemEvent.Finish event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.GodPutrefactive.get())) {
+            if (Handler.hascurio(player, InitItems.GodPutrefactive.get())) {
                 if (event.getItem().getUseAnimation() == ItemUseAnimation.EAT) {
                     player.addEffect(new MobEffectInstance(MobEffects.HASTE, 600, 1));
                     player.addEffect(new MobEffectInstance(MobEffects.SPEED, 600, 1));

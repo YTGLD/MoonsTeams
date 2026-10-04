@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.ytgld.moonstone.enttiy.SwordOfTwelve;
 import com.ytgld.moonstone.enttiy.state.SwordOfTwelveState;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -42,7 +42,7 @@ public class SwordOfTwelveRender extends EntityRenderer<@NotNull SwordOfTwelve, 
         super.extractRenderState(entity, reusedState, partialTick);
         reusedState.entity = entity;
         reusedState.partialTick = partialTick;
-        this.itemModelResolver.updateForNonLiving(reusedState.item, Items.sword.asItem().getDefaultInstance(), ItemDisplayContext.FIXED, entity);
+        this.itemModelResolver.updateForNonLiving(reusedState.item, InitItems.sword.asItem().getDefaultInstance(), ItemDisplayContext.FIXED, entity);
     }
     @Override
     public SwordOfTwelveState createRenderState() {

@@ -4,11 +4,8 @@ package com.ytgld.moonstone.enttiy.render;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.ytgld.moonstone.enttiy.AtSword;
-import com.ytgld.moonstone.enttiy.AttackBlood;
-import com.ytgld.moonstone.enttiy.FlySword;
 import com.ytgld.moonstone.enttiy.state.AtSwordState;
-import com.ytgld.moonstone.enttiy.state.AttackBloodsState;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -52,7 +49,7 @@ public class AtSwordRender extends EntityRenderer<@NotNull AtSword, AtSwordState
         super.extractRenderState(entity, reusedState, partialTick);
         reusedState.entity = entity;
         reusedState.partialTick = partialTick;
-        this.itemModelResolver.updateForNonLiving(reusedState.item, Items.god_sword_.asItem().getDefaultInstance(), ItemDisplayContext.FIXED, entity);
+        this.itemModelResolver.updateForNonLiving(reusedState.item, InitItems.god_sword_.asItem().getDefaultInstance(), ItemDisplayContext.FIXED, entity);
     }
     @Override
     public AtSwordState createRenderState() {

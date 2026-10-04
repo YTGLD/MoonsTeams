@@ -2244,6 +2244,16 @@
   "moonstone.ocean_affinity.modify": "海洋亲和",
   "moonstone.earth_affinity.modify": "土地亲和",
 
+  "moonstone.book.not": "右键关闭详细界面",
+  "moonstone.book.mouse": "点击查看详情",
+  "moonstone.book.test.main": "坠入梦乡",
+  "moonstone.book.test.1": "作者：亚特格拉德（YTGLD）",
+  "moonstone.book.test.2": "贡献者：秋季",
+  "moonstone.book.chaos": "噩梦",
+
+  "moonstone.book.nightmare_base.main": "噩梦基座",
+  "moonstone.book.nightmare_base.1": "恶念的起始，光明的另一面\n\n佩戴获取一些罪孽：窥眸，死兆，颠倒，救赎\n愚者，洞悉，起始\n基座一旦与你建立联系，将无法取下",
+
   "item.moonstone.love_charm":"朋友的礼物!",
   "attribute.name.moonstone.speed":"通用速度",
   "item.moonstone.god_regenerative": "Regenerative Vitalization",

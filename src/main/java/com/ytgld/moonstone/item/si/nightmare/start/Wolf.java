@@ -5,7 +5,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -61,7 +61,7 @@ public class Wolf extends NightmareSmall {
 
     public static void kill(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.wolf.get())) {
+            if (SIHandler.hascurio(player, InitItems.wolf.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -69,7 +69,7 @@ public class Wolf extends NightmareSmall {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.wolf.get())) {
+                            if (stack.is(InitItems.wolf.get())) {
                                 CompoundTag compoundTag = stack.get(DataReg.tag);
                                 if (compoundTag != null) {
                                     String string = BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString();
@@ -89,7 +89,7 @@ public class Wolf extends NightmareSmall {
 
     public static void attack(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.wolf.get())) {
+            if (SIHandler.hascurio(player, InitItems.wolf.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -97,7 +97,7 @@ public class Wolf extends NightmareSmall {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.wolf.get())) {
+                            if (stack.is(InitItems.wolf.get())) {
                                 CompoundTag compoundTag = stack.get(DataReg.tag);
                                 if (compoundTag != null) {
                                     String string = BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString();
@@ -114,7 +114,7 @@ public class Wolf extends NightmareSmall {
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.wolf.get())) {
+            if (SIHandler.hascurio(player, InitItems.wolf.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -122,10 +122,10 @@ public class Wolf extends NightmareSmall {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.wolf.get())) {
+                            if (stack.is(InitItems.wolf.get())) {
                                 CompoundTag compoundTag = stack.get(DataReg.tag);
                                 if (compoundTag != null) {
-                                    if (!player.getCooldowns().isOnCooldown(Items.wolf.get().getDefaultInstance())) {
+                                    if (!player.getCooldowns().isOnCooldown(InitItems.wolf.get().getDefaultInstance())) {
                                         Vec3 playerPos = player.position();
                                         float range = 10;
                                         List<LivingEntity> entities =
@@ -143,7 +143,7 @@ public class Wolf extends NightmareSmall {
                                                     living.hurt(living.damageSources().dryOut(), event.getNewDamage());
 
                                                     if (living.isDeadOrDying()) {
-                                                        player.getCooldowns().addCooldown(Items.wolf.get().getDefaultInstance(), 100);
+                                                        player.getCooldowns().addCooldown(InitItems.wolf.get().getDefaultInstance(), 100);
                                                     }
 
                                                     event.setNewDamage(0);

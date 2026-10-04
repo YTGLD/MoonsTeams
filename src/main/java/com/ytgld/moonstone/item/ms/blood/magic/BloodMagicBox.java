@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.blood.magic;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -25,9 +25,9 @@ public class BloodMagicBox extends BloodItem {
 
     public static void Did(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.blood_magic_box.get())) {
+            if (Handler.hascurio(player, InitItems.blood_magic_box.get())) {
 
-                ItemEntity blood = new ItemEntity(player.level(), player.getX(), player.getY(), player.getZ(), Items.blood.get().asItem().getDefaultInstance());
+                ItemEntity blood = new ItemEntity(player.level(), player.getX(), player.getY(), player.getZ(), InitItems.blood.get().asItem().getDefaultInstance());
                 blood.setDeltaMovement(Mth.nextDouble(RandomSource.create(), 0.1, 0.11), Mth.nextDouble(RandomSource.create(), 0.095, 0.1), Mth.nextDouble(RandomSource.create(), 0.099, 0.1));
                 blood.setPos(event.getEntity().getX(), event.getEntity().getY() + 1.5f, event.getEntity().getZ());
 

@@ -4,7 +4,7 @@ package com.ytgld.moonstone.item.ms.necora.dna;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.necora.NecoraHandler;
 import com.ytgld.moonstone.item.ms.necora.dna.god.CanUPLevel;
@@ -20,7 +20,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
 
-import static com.ytgld.moonstone.item.Items.GodFermentation;
+import static com.ytgld.moonstone.item.InitItems.GodFermentation;
 
 public class Fermentation extends TheNecora implements CanUPLevel {
     public Fermentation(Properties properties) {
@@ -56,12 +56,12 @@ public class Fermentation extends TheNecora implements CanUPLevel {
 
     public static void fermentation(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (NecoraHandler.has(player, Items.fermentation.get()) || Handler.hascurio(player, GodFermentation.asItem())) {
-                if (player.getCooldowns().isOnCooldown(Items.fermentation.get().getDefaultInstance())) {
+            if (NecoraHandler.has(player, InitItems.fermentation.get()) || Handler.hascurio(player, GodFermentation.asItem())) {
+                if (player.getCooldowns().isOnCooldown(InitItems.fermentation.get().getDefaultInstance())) {
                     event.setNewDamage(event.getNewDamage() * ConfigItem.intValue.get().floatValue());
                 } else {
                     event.setNewDamage((float) (event.getNewDamage() * ConfigItem.intValue2.get()));
-                    player.getCooldowns().addCooldown(Items.fermentation.get().getDefaultInstance(), 100);
+                    player.getCooldowns().addCooldown(InitItems.fermentation.get().getDefaultInstance(), 100);
                 }
             }
         }

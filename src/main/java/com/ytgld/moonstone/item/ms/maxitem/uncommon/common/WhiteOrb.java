@@ -2,6 +2,7 @@ package com.ytgld.moonstone.item.ms.maxitem.uncommon.common;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.CommonItem;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +22,7 @@ public class WhiteOrb extends CommonItem {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
 
         double a = 0.1;
-        if (com.ytgld.moonstone.Handler.hascurio(entity, com.ytgld.moonstone.item.Items.blackeorb.get())) {
+        if (com.ytgld.moonstone.Handler.hascurio(entity, InitItems.blackeorb.get())) {
             a *= 2;
         }
 

@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -27,18 +27,18 @@ public class ReviveRunestone extends NightmareSmall {
 
     public static void hurt (LivingDamageEvent.Pre event){
         if (event.getEntity() instanceof Player player) {
-            if (!player.getCooldowns().isOnCooldown(Items.revive_runestone.get().getDefaultInstance())) {
-                if (SIHandler.hascurio(player, Items.revive_runestone.get())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.revive_runestone.get().getDefaultInstance())) {
+                if (SIHandler.hascurio(player, InitItems.revive_runestone.get())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
                         player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
-                        player.getCooldowns().addCooldown(Items.revive_runestone.get().getDefaultInstance(), 10);
+                        player.getCooldowns().addCooldown(InitItems.revive_runestone.get().getDefaultInstance(), 10);
                     }
                 }
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
             if (event.getEntity() instanceof LivingEntity) {
-                if (SIHandler.hascurio(player, Items.revive_runestone.get())) {
+                if (SIHandler.hascurio(player, InitItems.revive_runestone.get())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
                         player.heal(2);
                     }

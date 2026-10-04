@@ -13,7 +13,7 @@ import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
-import static com.ytgld.moonstone.item.Items.GodAtpoverdose;
+import static com.ytgld.moonstone.item.InitItems.GodAtpoverdose;
 
 public class Atpoverdose extends TheNecora implements CanUPLevel {
     public Atpoverdose(Properties properties) {

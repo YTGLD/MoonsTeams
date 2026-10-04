@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.ms.maxitem.uncommon;
 
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.UnCommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -31,7 +31,7 @@ public class EvilCandle extends UnCommonItem implements TextEvt.Twelve {
 
     public static void fire(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.evilcandle.asItem())) {
+            if (Handler.hascurio(player, InitItems.evilcandle.asItem())) {
                 if (event.getSource().is(DamageTypes.ON_FIRE)
                         || event.getSource().is(DamageTypes.ON_FIRE)
                         || event.getSource().is(DamageTypes.LAVA)) {

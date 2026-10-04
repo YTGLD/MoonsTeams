@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
@@ -66,7 +66,7 @@ public class BloodGod extends NightmareSmall {
     public static void hurtOfBlood(LivingEntityUseItemEvent.Start event){
         if (event.getItem().getUseAnimation() == ItemUseAnimation.DRINK) {
             if (event.getEntity() instanceof Player player) {
-                if (SIHandler.hascurio(player, Items.blood_god.get())) {
+                if (SIHandler.hascurio(player, InitItems.blood_god.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -74,16 +74,16 @@ public class BloodGod extends NightmareSmall {
                             IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                             for (int i = 0; i < stacksHandler.getSlots(); i++) {
                                 ItemStack stack = stackHandler.getStackInSlot(i);
-                                if (stack.is(Items.blood_god.get())) {
+                                if (stack.is(InitItems.blood_god.get())) {
                                     CompoundTag compoundTag = stack.get(DataReg.tag);
                                     if (compoundTag != null) {
                                         event.setDuration((int) (event.getDuration() * 0.7f));
-                                        if (!player.getCooldowns().isOnCooldown(Items.blood_god.get().getDefaultInstance())) {
+                                        if (!player.getCooldowns().isOnCooldown(InitItems.blood_god.get().getDefaultInstance())) {
                                             if (compoundTag.getFloatOr(bloodDamage,0) > 0) {
                                                 if (event.getItem().getItem() instanceof PotionItem potionItem) {
                                                     compoundTag.putFloat(bloodDamage, compoundTag.getFloatOr(bloodDamage,0) * 0.75F);
 
-                                                    player.getCooldowns().addCooldown(Items.blood_god.get().getDefaultInstance(), 600);
+                                                    player.getCooldowns().addCooldown(InitItems.blood_god.get().getDefaultInstance(), 600);
                                                 }
                                             }
                                         }
@@ -99,7 +99,7 @@ public class BloodGod extends NightmareSmall {
     public static void hurtOfBlood(LivingDamageEvent.Pre event){
         if (!event.getSource().is(DamageTypes.GENERIC_KILL)) {
             if (event.getEntity() instanceof Player player){
-                if (SIHandler.hascurio(player,Items.blood_god.get())) {
+                if (SIHandler.hascurio(player, InitItems.blood_god.get())) {
                     CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                         Map<String, ICurioStacksHandler> curios = handler.getCurios();
                         for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -107,7 +107,7 @@ public class BloodGod extends NightmareSmall {
                             IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                             for (int i = 0; i < stacksHandler.getSlots(); i++) {
                                 ItemStack stack = stackHandler.getStackInSlot(i);
-                                if (stack.is(Items.blood_god.get())) {
+                                if (stack.is(InitItems.blood_god.get())) {
                                     CompoundTag compoundTag = stack.get(DataReg.tag);
                                     if (compoundTag != null) {
                                         float s = event.getNewDamage() - 5;

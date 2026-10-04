@@ -4,13 +4,14 @@ import com.ytgld.moonstone.config.ModLanguageProvider;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.render.*;
 import com.ytgld.moonstone.event.key.Keys;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ToolTipDNAItem;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
 import com.ytgld.moonstone.render.BloodAmount;
 import com.ytgld.moonstone.render.NightmareShieldRenderHandler;
 import com.ytgld.moonstone.render.RenderDNAItem;
+import com.ytgld.moonstone.render.gui_particles.BlackParticlesAdd;
 import net.minecraft.resources.Identifier;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -35,12 +36,13 @@ public class MoonstoneClient {
     }
     @SubscribeEvent
     public static void EntityRenderersEvent(EntityRenderersEvent.RegisterLayerDefinitions  event){
-        ICurioRenderer.register(Items.twistedamout.asItem(), BloodAmount::new);
+        ICurioRenderer.register(InitItems.twistedamout.asItem(), BloodAmount::new);
     }
     @SubscribeEvent
     public static void tick(ClientTickEvent.Pre event) {
         NightmareShieldRenderHandler.tick(event);
         RenderDNAItem.clientTick(event);
+        BlackParticlesAdd.tick();
     }
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiLayersEvent event) {

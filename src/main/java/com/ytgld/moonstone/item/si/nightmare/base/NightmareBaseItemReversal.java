@@ -7,7 +7,7 @@ import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
 import com.ytgld.moonstone.event.AdvancementEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.AllTip;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
@@ -97,10 +97,10 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
 
     public static void LivingDeathEvent(LivingDeathEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.rotten_gourd.asItem())) {
+            if (Handler.hascurio(player, InitItems.rotten_gourd.asItem())) {
                 return;
             }
-            if (Handler.hascurio(player, Items.nightmare_base_reversal.asItem())) {
+            if (Handler.hascurio(player, InitItems.nightmare_base_reversal.asItem())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -108,7 +108,7 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.nightmare_base_reversal.get())) {
+                            if (stack.is(InitItems.nightmare_base_reversal.get())) {
                                 if (stack.get(DataReg.tag) != null) {
                                     float s = 100 - ConfigItem.intValue2.get();
                                     stack.get(DataReg.tag).putInt(att, (int) s);
@@ -136,7 +136,7 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
                 if (stack.get(DataReg.tag) != null) {
                     if (!stack.get(DataReg.tag).getBooleanOr(AdvancementEvt.nightmare_base_reversal_orb, false)) {
                         if (slotContext.entity() instanceof Player player) {
-                            AdvancementEvt.giveItem(player, new ItemStack(Items.nightmare_base_reversal_orb.get()));
+                            AdvancementEvt.giveItem(player, new ItemStack(InitItems.nightmare_base_reversal_orb.get()));
                         }
                         stack.get(DataReg.tag).putBoolean(AdvancementEvt.nightmare_base_reversal_orb, true);
                     }
@@ -145,7 +145,7 @@ public class NightmareBaseItemReversal extends NightmareBase implements AllTip {
             }
         }
         if (stack.get(DataReg.tag) != null) {
-            if (!SIHandler.hascurio(slotContext.entity(), Items.nightmare_base_reversal_card.get())) {
+            if (!SIHandler.hascurio(slotContext.entity(), InitItems.nightmare_base_reversal_card.get())) {
                 if (stack.get(DataReg.tag).getIntOr(att, 0) >= 4) {
                     if (slotContext.entity() instanceof Player player && !player.getCooldowns().isOnCooldown(stack.getItem().getDefaultInstance())) {
                         stack.get(DataReg.tag).putInt(att, stack.get(DataReg.tag).getIntOr(att, 0) - 4);

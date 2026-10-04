@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dna.god;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.GodDNA;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
@@ -56,12 +56,12 @@ public class GodPeptideSurge extends GodDNA {
     }
     public static void damageAttack(LivingDamageEvent.Pre event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.god_peptide_surge.asItem())) {
+            if (Handler.hascurio(player, InitItems.god_peptide_surge.asItem())) {
                 player.causeFoodExhaustion(0.35f);
                 event.setNewDamage(event.getNewDamage() * GodPeptideSurge.damage());
                 return;
             }
-            if (Handler.hascurio(player, Items.peptide_surge.asItem())) {
+            if (Handler.hascurio(player, InitItems.peptide_surge.asItem())) {
                 player.causeFoodExhaustion(0.35f);
                 event.setNewDamage(event.getNewDamage() * PeptideSurge.damage());
                 return;
@@ -83,7 +83,7 @@ public class GodPeptideSurge extends GodDNA {
         }
         @Override
         public Item upLevelItem() {
-            return Items.god_peptide_surge.asItem();
+            return InitItems.god_peptide_surge.asItem();
         }
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {

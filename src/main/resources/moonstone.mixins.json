@@ -4,9 +4,9 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "EntityMixin",
+    "LiquidBlockMixin",
     "LivingEntityMixin",
     "ModMixin",
-    "LiquidBlockMixin",
     "WardenMixin"
   ],
   "injectors": {
@@ -16,7 +16,10 @@
     "requireAnnotations": true
   },
   "client": [
+    "cilent.GameRendererMixin",
     "cilent.GuiGraphicsExtractorMixin",
-    "cilent.LevelRendererMixin"
+    "cilent.LevelRendererMixin",
+    "cilent.RenderSystemMixin",
+    "cilent.guiparticles.ScreenMixin"
   ]
 }

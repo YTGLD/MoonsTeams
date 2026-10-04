@@ -5,7 +5,7 @@ import com.ytgld.moonstone.enttiy.CellGiant;
 import com.ytgld.moonstone.enttiy.CellZombie;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.ExtendZombieEntity;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -29,8 +29,8 @@ import static com.ytgld.moonstone.event.AllEvent.cb_blood;
 
 public class ZombieEventHandler {
     public static void useKey(Player player){
-        if (Handler.hascurio(player, Items.cell.asItem())) {
-            if (!player.getCooldowns().isOnCooldown(Items.cell.asItem().getDefaultInstance())) {
+        if (Handler.hascurio(player, InitItems.cell.asItem())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.cell.asItem().getDefaultInstance())) {
                 for (int i = 0; i < 8; i++) {
                     CellZombie cell_zombie = new CellZombie(EntityTs.cell_zombie.get(), player.level());
                     cell_zombie.setOwner(player);
@@ -40,7 +40,7 @@ public class ZombieEventHandler {
                 }
                 player.level().playSound(null,player.blockPosition(),SoundEvents.SLIME_BLOCK_BREAK,SoundSource.BLOCKS,1,1);
                 player.setData(AttReg.cooldownZombie,20);
-                player.getCooldowns().addCooldown(Items.cell.asItem().getDefaultInstance(),600);
+                player.getCooldowns().addCooldown(InitItems.cell.asItem().getDefaultInstance(),600);
             }else if (player.getData(AttReg.cooldownZombie.get()) <= 0){
                 Vec3 playerPos = player.position().add(0, 0.75, 0);
                 int range = 10;
@@ -56,8 +56,8 @@ public class ZombieEventHandler {
                 }
             }
         }
-        if (Handler.hascurio(player, Items.giant.asItem())) {
-            if (!player.getCooldowns().isOnCooldown(Items.giant.asItem().getDefaultInstance())) {
+        if (Handler.hascurio(player, InitItems.giant.asItem())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.giant.asItem().getDefaultInstance())) {
                 for (int i = 0; i < 3; i++) {
                     CellGiant cellGiant = new CellGiant(EntityTs.cell_giant.get(), player.level());
                     cellGiant.setOwner(player);
@@ -67,7 +67,7 @@ public class ZombieEventHandler {
                 }
                 player.level().playSound(null,player.blockPosition(),SoundEvents.SLIME_BLOCK_BREAK,SoundSource.BLOCKS,1,1);
                 player.level().playSound(null,player.blockPosition(),SoundEvents.WARDEN_EMERGE,SoundSource.BLOCKS,1,1);
-                player.getCooldowns().addCooldown(Items.giant.asItem().getDefaultInstance(),600);
+                player.getCooldowns().addCooldown(InitItems.giant.asItem().getDefaultInstance(),600);
                 player.setData(AttReg.cooldownZombie,20);
             }else if (player.getData(AttReg.cooldownZombie.get()) <= 0){
                 Vec3 playerPos = player.position().add(0, 0.75, 0);
@@ -93,16 +93,16 @@ public class ZombieEventHandler {
     public static void theCellZombieGiant(LivingDeathEvent event) {
         theCellZombie(event);
         if ((event.getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player, Items.cell_boom.get())) {
+            if (Handler.hascurio(player, InitItems.cell_boom.get())) {
                 player.level().explode(null, player.getX(), player.getY(), player.getZ(), 5.5f, true, Level.ExplosionInteraction.MOB);
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.giant.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.giant.get().getDefaultInstance())) {
+            if (Handler.hascurio(player, InitItems.giant.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.giant.get().getDefaultInstance())) {
                     if (player.level() instanceof ServerLevel) {
                         if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
-                            if (Handler.hascurio(player, Items.mother_cell.get())) {
+                            if (Handler.hascurio(player, InitItems.mother_cell.get())) {
                                 if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
                                     Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
                                 }
@@ -115,7 +115,7 @@ public class ZombieEventHandler {
                             }
                             Handler.trySpawnMob(player, EntityTs.cell_giant.get(), event.getEntity().position());
                             player.level().playSound(null, player.blockPosition(), SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 1.0F);
-                            player.getCooldowns().addCooldown(Items.giant.get().getDefaultInstance(), 600);
+                            player.getCooldowns().addCooldown(InitItems.giant.get().getDefaultInstance(), 600);
                         }
                     }
                 }
@@ -125,8 +125,8 @@ public class ZombieEventHandler {
 
     public static void theCellZombie(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.cell.get())) {
-                if (player.getCooldowns().isOnCooldown(Items.cell.get().getDefaultInstance())) {
+            if (Handler.hascurio(player, InitItems.cell.get())) {
+                if (player.getCooldowns().isOnCooldown(InitItems.cell.get().getDefaultInstance())) {
                     return;
                 }
                 if (Mth.nextInt(RandomSource.create(), 1, 5) == 1) {
@@ -135,25 +135,25 @@ public class ZombieEventHandler {
                     z.setOwner(player);
                     addSuperZombieTag(player,z);
                     player.level().addFreshEntity(z);
-                    player.getCooldowns().addCooldown(Items.cell.get().getDefaultInstance(), 100);
+                    player.getCooldowns().addCooldown(InitItems.cell.get().getDefaultInstance(), 100);
                 }
             }
         }
     }
     private static void addSuperZombieTag(Player player, ExtendZombieEntity zombie){
-        if (Handler.hascurio(player, Items.adrenaline.get())) {
+        if (Handler.hascurio(player, InitItems.adrenaline.get())) {
             zombie.addTag(DamageCell);
         }
-        if (Handler.hascurio(player, Items.cell_mummy.get())) {
+        if (Handler.hascurio(player, InitItems.cell_mummy.get())) {
             zombie.addTag(muMMY);
         }
-        if (Handler.hascurio(player, Items.cell_boom.get())) {
+        if (Handler.hascurio(player, InitItems.cell_boom.get())) {
             zombie.addTag(boom);
         }
-        if (Handler.hascurio(player, Items.cell_calcification.get())) {
+        if (Handler.hascurio(player, InitItems.cell_calcification.get())) {
             zombie.addTag(calcification);
         }
-        if (Handler.hascurio(player, Items.cell_blood.get())) {
+        if (Handler.hascurio(player, InitItems.cell_blood.get())) {
             zombie.addTag(cb_blood);
         }
     }

@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.ms.nanodoom;
 
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.Doom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -25,7 +25,7 @@ public class MagicEye extends Doom implements TextEvt.Twelve {
 
     public static void damage(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.magiceye.get())) {
+            if (Handler.hascurio(player, InitItems.magiceye.get())) {
                 Vec3 playerPos = event.getEntity().position().add(0, 0.75, 0);
                 int range = 4;
                 List<LivingEntity> entities = event.getEntity().level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));

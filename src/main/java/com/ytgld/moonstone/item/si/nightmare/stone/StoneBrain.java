@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.stone;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -20,7 +20,7 @@ public class StoneBrain extends NightmareSmall {
 
     public static void hurts(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_stone_brain.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_stone_brain.get())) {
                 if (player.getHealth() >= player.getMaxHealth()) {
                     event.setNewDamage(0);
                 } else {
@@ -29,7 +29,7 @@ public class StoneBrain extends NightmareSmall {
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_stone_brain.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_stone_brain.get())) {
                 if (!(player.getHealth() >= player.getMaxHealth())) {
                     event.setNewDamage(event.getNewDamage() * 0.75f);
                 }

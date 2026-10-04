@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.si.nightmare.reversal;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -51,8 +51,8 @@ public class Candle extends NightmareSmall {
 
     public static void hurt(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.candle.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.candle.get().getDefaultInstance())) {
+            if (SIHandler.hascurio(player, InitItems.candle.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.candle.get().getDefaultInstance())) {
 
                     if (player.getHealth() >= player.getMaxHealth()) {
 
@@ -69,13 +69,13 @@ public class Candle extends NightmareSmall {
                         player.invulnerableTime += s;
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.RAVAGER_ROAR, SoundSource.NEUTRAL, 0.5f, 0.5f);
 
-                        player.getCooldowns().addCooldown(Items.candle.get().getDefaultInstance(), 150);
+                        player.getCooldowns().addCooldown(InitItems.candle.get().getDefaultInstance(), 150);
                     }
                 }
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.candle.get())) {
+            if (SIHandler.hascurio(player, InitItems.candle.get())) {
                 float v = ConfigItem.intValue.getAsInt();
                 v /= 100;
                 if (player.invulnerableTime > 0) {
@@ -87,7 +87,7 @@ public class Candle extends NightmareSmall {
 
     public static void heal(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.candle.get())) {
+            if (SIHandler.hascurio(player, InitItems.candle.get())) {
                 if (player.invulnerableTime > 0) {
                     event.setAmount(event.getAmount() * 2);
                 }

@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.medicine.med;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -21,7 +21,7 @@ public class Calcification extends TheNecora {
 
     public static void calcification(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.calcification.get())){
+            if (Handler.hascurio(player, InitItems.calcification.get())){
                 event.setNewDamage(event.getNewDamage() * 0.89f);
             }
         }

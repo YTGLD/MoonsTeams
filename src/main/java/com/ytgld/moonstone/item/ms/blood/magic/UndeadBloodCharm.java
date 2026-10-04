@@ -1,10 +1,9 @@
 package com.ytgld.moonstone.item.ms.blood.magic;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Targeting;
@@ -12,8 +11,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
@@ -30,12 +27,12 @@ public class UndeadBloodCharm extends BloodItem {
 
     public static void LivingIncomingDamageEvent(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.undead_blood_charm.get())) {
+            if (Handler.hascurio(player, InitItems.undead_blood_charm.get())) {
                 event.setNewDamage(event.getNewDamage() * 1.4f);
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.undead_blood_charm.get())) {
+            if (Handler.hascurio(player, InitItems.undead_blood_charm.get())) {
                 if (event.getEntity().isInvertedHealAndHarm()) {
                     event.setNewDamage(event.getNewDamage() * 1.5f);
                 }
@@ -45,7 +42,7 @@ public class UndeadBloodCharm extends BloodItem {
 
     public static void LivingHealEvent(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.undead_blood_charm.get())) {
+            if (Handler.hascurio(player, InitItems.undead_blood_charm.get())) {
                 if (event.getAmount() > 0) {
                     event.setAmount(event.getAmount() * 1.5f);
 

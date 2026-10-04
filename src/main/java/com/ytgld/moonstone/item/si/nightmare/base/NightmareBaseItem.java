@@ -5,10 +5,11 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.redemption.RedemptionDownAndOut;
 import com.ytgld.moonstone.other.DataReg;
+import com.ytgld.moonstone.other.Light;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
@@ -82,13 +83,13 @@ public class NightmareBaseItem extends NightmareBase {
             if (!compoundTag.getBooleanOr("canDo", false)) {
                 Random random = new Random();
                 ArrayList<Item> items = new ArrayList<>(List.of(
-                        Items.nightmare_base_stone.get(),
-                        Items.nightmare_base_reversal.get(),
-                        Items.nightmare_base_black_eye.get(),
-                        Items.nightmare_base_redemption.get(),
-                        Items.nightmare_base_fool.get(),
-                        Items.nightmare_base_insight.get(),
-                        Items.nightmare_base_start.get()
+                        InitItems.nightmare_base_stone.get(),
+                        InitItems.nightmare_base_reversal.get(),
+                        InitItems.nightmare_base_black_eye.get(),
+                        InitItems.nightmare_base_redemption.get(),
+                        InitItems.nightmare_base_fool.get(),
+                        InitItems.nightmare_base_insight.get(),
+                        InitItems.nightmare_base_start.get()
                 ));
                 for (int i = 0; i < ConfigItem.intValue.getAsInt(); i++) {
                     if (!items.isEmpty()) {
@@ -105,10 +106,10 @@ public class NightmareBaseItem extends NightmareBase {
     public Multimap<Holder<Attribute>, AttributeModifier> gets(SlotContext slotContext) {
         Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         float s = -0.3f;
-        if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_redemption_down_and_out.asItem())) {
+        if (Handler.hascurio(slotContext.entity(), InitItems.nightmare_base_redemption_down_and_out.asItem())) {
             s += (float) (RedemptionDownAndOut.ConfigItem.intValue.getAsDouble() / 100F);
         }
-        if (Handler.hascurio(slotContext.entity(), Items.nightmare_base_reversal_mysterious.asItem())) {
+        if (Handler.hascurio(slotContext.entity(), InitItems.nightmare_base_reversal_mysterious.asItem())) {
             s = 0;
         }
         linkedHashMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(Identifier.parse(this.descriptionId), s, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
@@ -125,6 +126,11 @@ public class NightmareBaseItem extends NightmareBase {
                 player.addItem(itemList.getDefaultInstance());
             }
         }
+    }
+
+    @Override
+    public int color() {
+        return Light.ARGB.color(255,255,50,100);
     }
 }
 

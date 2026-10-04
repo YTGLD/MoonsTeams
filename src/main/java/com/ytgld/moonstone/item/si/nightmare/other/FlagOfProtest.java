@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.si.nightmare.other;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
@@ -11,19 +11,15 @@ import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
@@ -61,7 +57,7 @@ public class FlagOfProtest extends NightmareSmall {
     }
     public static void PlayerRespawnEvent(PlayerEvent.PlayerRespawnEvent event){
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.flag_of_protest.get())) {
+            if (SIHandler.hascurio(player, InitItems.flag_of_protest.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -69,10 +65,10 @@ public class FlagOfProtest extends NightmareSmall {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.flag_of_protest.asItem())) {
+                            if (stack.is(InitItems.flag_of_protest.asItem())) {
                                 CompoundTag compoundTag = stack.get(DataReg.tag);
                                 if (compoundTag != null) {
-                                    if (!player.getCooldowns().isOnCooldown(Items.flag_of_protest.asItem().getDefaultInstance())) {
+                                    if (!player.getCooldowns().isOnCooldown(InitItems.flag_of_protest.asItem().getDefaultInstance())) {
                                         updateTga(stack);
                                         if (player.level() instanceof ServerLevel level) {
                                             if (compoundTag.getBooleanOr(canUse, false)) {

@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.event.NewEvent;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
 import com.ytgld.moonstone.other.Light;
@@ -17,10 +17,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -33,13 +30,8 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.neoforged.neoforge.event.entity.living.LivingExperienceDropEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
-import top.theillusivec4.curios.api.CurioAttributeModifiers;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotAttribute;
 import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class DivineFallRing extends FallItem {
@@ -52,7 +44,7 @@ public class DivineFallRing extends FallItem {
 
     public static void exp(MobEffectEvent.Applicable event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.the_divine_fall_ring.get())) {
+            if (SIHandler.hascurio(player, InitItems.the_divine_fall_ring.get())) {
                 if (event.getEffectInstance().getEffect().is(MobEffects.BLINDNESS) ||
                         event.getEffectInstance().getEffect().is(MobEffects.DARKNESS)) {
                     event.setResult(MobEffectEvent.Applicable.Result.DO_NOT_APPLY);
@@ -63,7 +55,7 @@ public class DivineFallRing extends FallItem {
 
     public static void exp(LivingExperienceDropEvent event) {
         if (event.getAttackingPlayer() instanceof Player) {
-            if (SIHandler.hascurio(event.getAttackingPlayer(), Items.the_divine_fall_ring.get())) {
+            if (SIHandler.hascurio(event.getAttackingPlayer(), InitItems.the_divine_fall_ring.get())) {
                 event.setDroppedExperience(event.getDroppedExperience() * 2);
             }
         }

@@ -4,10 +4,9 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.UnCommonItem;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -23,8 +22,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import top.theillusivec4.curios.api.SlotContext;
@@ -38,12 +35,12 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
 
     public static void maxamout(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.maxamout.get())) {
+            if (Handler.hascurio(player, InitItems.maxamout.get())) {
                 if (event.getSource().getEntity() != null) {
                     if (event.getSource().getEntity() instanceof LivingEntity living) {
                         if (event.getSource().getEntity() != null) {
                             float s = 0.2f;
-                            if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+                            if (Handler.hascurio(player, InitItems.nightmare_base_stone_meet.get())) {
                                 s *= 5f;
                             }
 
@@ -55,7 +52,7 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
 
                 event.setNewDamage(event.getNewDamage() * 0.85f);
                 float s = 1;
-                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+                if (Handler.hascurio(player, InitItems.nightmare_base_stone_meet.get())) {
                     s += 1;
                 }
                 if (Mth.nextInt(RandomSource.create(), 1, (int) (5 / s)) == 1) {
@@ -64,9 +61,9 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
             }
         }
         if (event.getSource().getDirectEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.maxamout.get())) {
+            if (Handler.hascurio(player, InitItems.maxamout.get())) {
                 float w = 1;
-                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+                if (Handler.hascurio(player, InitItems.nightmare_base_stone_meet.get())) {
                     w += 1;
                 }
                 event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, (int) (0 + w)));
@@ -76,7 +73,7 @@ public class Maxamout extends UnCommonItem implements TextEvt.Twelve {
                 }
                 player.heal(s);
                 float ss = 1;
-                if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+                if (Handler.hascurio(player, InitItems.nightmare_base_stone_meet.get())) {
                     ss += 1;
                 }
                 if (Mth.nextInt(RandomSource.create(), 1, (int) (12 / ss)) == 1) {

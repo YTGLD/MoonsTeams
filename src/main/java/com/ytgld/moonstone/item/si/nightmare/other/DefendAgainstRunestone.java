@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -35,23 +35,23 @@ public class DefendAgainstRunestone extends NightmareSmall {
 
     public static void hurt (LivingDamageEvent.Pre event){
         if (event.getEntity() instanceof Player player) {
-            if (!player.getCooldowns().isOnCooldown(Items.defend_against_runestone.get().getDefaultInstance())) {
-                if (SIHandler.hascurio(player, Items.defend_against_runestone.get())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.defend_against_runestone.get().getDefaultInstance())) {
+                if (SIHandler.hascurio(player, InitItems.defend_against_runestone.get())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
                         player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 100, 1));
-                        player.getCooldowns().addCooldown(Items.defend_against_runestone.get().getDefaultInstance(),30);
+                        player.getCooldowns().addCooldown(InitItems.defend_against_runestone.get().getDefaultInstance(),30);
                     }
                 }
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
             if (event.getEntity() instanceof LivingEntity) {
-                if (!player.getCooldowns().isOnCooldown(Items.defend_against_runestone.get().getDefaultInstance())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.defend_against_runestone.get().getDefaultInstance())) {
 
-                    if (SIHandler.hascurio(player, Items.defend_against_runestone.get())) {
+                    if (SIHandler.hascurio(player, InitItems.defend_against_runestone.get())) {
                         if (Mth.nextInt(RandomSource.create(), 0, 100) <= 25) {
                             event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
-                            player.getCooldowns().addCooldown(Items.defend_against_runestone.get().getDefaultInstance(),30);
+                            player.getCooldowns().addCooldown(InitItems.defend_against_runestone.get().getDefaultInstance(),30);
                         }
                     }
                 }

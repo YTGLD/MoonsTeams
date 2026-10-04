@@ -5,7 +5,7 @@ import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.enttiy.AttackBlood;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -39,14 +39,14 @@ public class Consciousness extends BloodItem {
         pTooltipComponents.add(Component.translatable("item.consciousness.tool.string.2").withStyle(ChatFormatting.RED));
     }
     public static void emp(PlayerInteractEvent.LeftClickEmpty event){
-        if (event.getEntity() instanceof Player player && Handler.hascurio(player,Items.consciousness.asItem())) {
+        if (event.getEntity() instanceof Player player && Handler.hascurio(player, InitItems.consciousness.asItem())) {
             ClientPacketDistributor.sendToServer(new UseOppression());
         }
     }
 
     public static void cooldown(Player player){
-        if (Handler.hascurio(player, Items.consciousness.asItem())) {
-            if (!player.getCooldowns().isOnCooldown(Items.consciousness.asItem().getDefaultInstance())) {
+        if (Handler.hascurio(player, InitItems.consciousness.asItem())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.consciousness.asItem().getDefaultInstance())) {
                 Vec3 playerPos = player.position();
                 int range = 5;
                 Vec3 min = playerPos.subtract(range, range, range);
@@ -70,7 +70,7 @@ public class Consciousness extends BloodItem {
                         Vec3 velocity = lookVec.add(offsetX, offsetY, offsetZ).normalize().scale(2.5);
                         spirit.setDeltaMovement(velocity);
                         player.level().addFreshEntity(spirit);
-                        player.getCooldowns().addCooldown(Items.consciousness.asItem().getDefaultInstance(),30);
+                        player.getCooldowns().addCooldown(InitItems.consciousness.asItem().getDefaultInstance(),30);
                     }
                 });
             }

@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.start;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -19,7 +19,7 @@ public class StartPod extends NightmareSmall {
 
     public static void damage(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_start_pod.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_start_pod.get())) {
                 event.setNewDamage(event.getNewDamage() * 0.8f);
             }
         }

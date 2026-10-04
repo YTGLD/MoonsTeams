@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.si.nightmare.insight;
 
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.effect.Effects;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 
 import net.minecraft.ChatFormatting;
@@ -42,25 +42,25 @@ public class HiddenBlade extends NightmareSmall {
 
     public static void hurt_cit(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.hidden_blade.get())) {
+            if (SIHandler.hascurio(player, InitItems.hidden_blade.get())) {
                 if (event.getSource().getEntity() instanceof LivingEntity living) {
-                    if (SIHandler.hascurio(living, Items.hidden_blade.get())) {
+                    if (SIHandler.hascurio(living, InitItems.hidden_blade.get())) {
                         return;
                     }
                 }
-                if (!player.getCooldowns().isOnCooldown(Items.hidden_blade.get().getDefaultInstance())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.hidden_blade.get().getDefaultInstance())) {
                     if (event.getSource().getEntity() instanceof LivingEntity livingEntity) {
                         livingEntity.hurt(livingEntity.damageSources().magic(), (float) (player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 3));
-                        player.getCooldowns().addCooldown(Items.hidden_blade.get().getDefaultInstance(), 60);
+                        player.getCooldowns().addCooldown(InitItems.hidden_blade.get().getDefaultInstance(), 60);
                     }
                 }
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.hidden_blade.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.hidden_blade.get().getDefaultInstance())) {
+            if (SIHandler.hascurio(player, InitItems.hidden_blade.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.hidden_blade.get().getDefaultInstance())) {
                     if (event.getEntity() instanceof LivingEntity) {
-                        if (SIHandler.hascurio(event.getEntity(), Items.hidden_blade.get())) {
+                        if (SIHandler.hascurio(event.getEntity(), InitItems.hidden_blade.get())) {
                             return;
                         }
                     }
@@ -80,13 +80,13 @@ public class HiddenBlade extends NightmareSmall {
 
     public static void cit(CriticalHitEvent event) {
         if (event.getEntity() instanceof Player) {
-            if (SIHandler.hascurio(event.getEntity(), Items.hidden_blade.get())) {
+            if (SIHandler.hascurio(event.getEntity(), InitItems.hidden_blade.get())) {
                 if (event.getTarget() instanceof LivingEntity living) {
-                    if (SIHandler.hascurio(living, Items.hidden_blade.get())) {
+                    if (SIHandler.hascurio(living, InitItems.hidden_blade.get())) {
                         return;
                     }
                 }
-                if (event.getEntity().getCooldowns().isOnCooldown(Items.hidden_blade.get().getDefaultInstance())) {
+                if (event.getEntity().getCooldowns().isOnCooldown(InitItems.hidden_blade.get().getDefaultInstance())) {
 
                     event.setDamageMultiplier(event.getDamageMultiplier() * 2f);
 

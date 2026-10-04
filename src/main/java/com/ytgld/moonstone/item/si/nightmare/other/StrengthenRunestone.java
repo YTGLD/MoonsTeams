@@ -1,12 +1,11 @@
 package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,9 +26,9 @@ public class StrengthenRunestone extends NightmareSmall {
 
     public static void hurt (LivingDamageEvent.Post event){
         if (event.getEntity() instanceof Player player) {
-            if (!player.getCooldowns().isOnCooldown(Items.strengthen_runestone.get().getDefaultInstance())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.strengthen_runestone.get().getDefaultInstance())) {
                 if (event.getSource().getEntity() instanceof LivingEntity living) {
-                    if (SIHandler.hascurio(player, Items.strengthen_runestone.get())) {
+                    if (SIHandler.hascurio(player, InitItems.strengthen_runestone.get())) {
                         if (Mth.nextInt(player.getRandom(), 0, 100) <= 25) {
                             if (living.getHealth() > 10) {
                                 if (event.getHealthDamage() * 0.2f > living.getHealth()) {
@@ -38,19 +37,19 @@ public class StrengthenRunestone extends NightmareSmall {
                                     living.setHealth(living.getHealth() - event.getHealthDamage() * 0.2f);
                                 }
                             }
-                            player.getCooldowns().addCooldown(Items.strengthen_runestone.get().getDefaultInstance(), 30);
+                            player.getCooldowns().addCooldown(InitItems.strengthen_runestone.get().getDefaultInstance(), 30);
                         }
                     }
                 }
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (!player.getCooldowns().isOnCooldown(Items.strengthen_runestone.get().getDefaultInstance())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.strengthen_runestone.get().getDefaultInstance())) {
                 if (event.getEntity() instanceof LivingEntity) {
-                    if (SIHandler.hascurio(player, Items.strengthen_runestone.get())) {
+                    if (SIHandler.hascurio(player, InitItems.strengthen_runestone.get())) {
                         if (Mth.nextInt(player.getRandom(), 0, 100) <= 25) {
                             player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 100, 1));
-                            player.getCooldowns().addCooldown(Items.strengthen_runestone.get().getDefaultInstance(),30);
+                            player.getCooldowns().addCooldown(InitItems.strengthen_runestone.get().getDefaultInstance(),30);
                         }
                     }
                 }

@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dna.god;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.GodDNA;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
@@ -58,7 +58,7 @@ public class GodAcidicReflux extends GodDNA {
     }
     public static void damageAttack(LivingDamageEvent.Pre event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.god_acidic_reflux.asItem())) {
+            if (Handler.hascurio(player, InitItems.god_acidic_reflux.asItem())) {
                 int value = (int) (GodAcidicReflux.damage() * 10);
                 hurtArmor(event.getEntity(),EquipmentSlot.HEAD,value);
                 hurtArmor(event.getEntity(),EquipmentSlot.CHEST,value);
@@ -69,7 +69,7 @@ public class GodAcidicReflux extends GodDNA {
                 }
                 return;
             }
-            if (Handler.hascurio(player, Items.acidic_reflux.asItem())) {
+            if (Handler.hascurio(player, InitItems.acidic_reflux.asItem())) {
                 int value = (int) (AcidicReflux.damage() * 10);
                 hurtArmor(event.getEntity(),EquipmentSlot.HEAD,value);
                 hurtArmor(event.getEntity(),EquipmentSlot.CHEST,value);
@@ -100,7 +100,7 @@ public class GodAcidicReflux extends GodDNA {
         }
         @Override
         public Item upLevelItem() {
-            return Items.god_acidic_reflux.asItem();
+            return InitItems.god_acidic_reflux.asItem();
         }
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {

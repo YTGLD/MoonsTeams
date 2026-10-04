@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.ectoplasm;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.Ectoplasm;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -37,12 +37,12 @@ public class EctoplasmHorseshoe extends Ectoplasm {
 
     public static void hurt(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.ectoplasmhorseshoe.get())) {
+            if (Handler.hascurio(player, InitItems.ectoplasmhorseshoe.get())) {
                 if (event.getSource().is(DamageTypes.FALL)) {
                     event.setNewDamage(event.getNewDamage() / 10);
                 }
             }
-            if (Handler.hascurio(player, Items.ectoplasmshild.get())) {
+            if (Handler.hascurio(player, InitItems.ectoplasmshild.get())) {
                 if (event.getSource().is(DamageTypes.EXPLOSION)) {
                     event.setNewDamage(event.getNewDamage() * 0.7F);
                 }

@@ -1,6 +1,6 @@
 package com.ytgld.moonstone.item.ms;
 
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.Light;
 import com.ytgld.moonstone.render.MRender;
 import net.minecraft.ChatFormatting;
@@ -36,10 +36,10 @@ public abstract class GodDNA extends TheNecora {
     @Override
     public HashSet<Item> canUSe() {
         return new HashSet<>(Set.of(
-                Items.calcareous.asItem(),
-                Items.frontal_lobe.asItem(),
-                Items.high_energy.asItem(),
-                Items.surge.asItem()
+                InitItems.calcareous.asItem(),
+                InitItems.frontal_lobe.asItem(),
+                InitItems.high_energy.asItem(),
+                InitItems.surge.asItem()
         ));
     }
 

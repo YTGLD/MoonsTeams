@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.event.AllEvent;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -84,7 +84,7 @@ public class CellZombie extends ExtendZombieEntity {
     }
     private Multimap<Holder<Attribute>, AttributeModifier> calcificationMultimap(LivingEntity livingEntity){
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
-        if (Handler.hascurio(livingEntity, Items.cell.get())&& Handler.hascurio(livingEntity, Items.cell_calcification.get())) {
+        if (Handler.hascurio(livingEntity, InitItems.cell.get())&& Handler.hascurio(livingEntity, InitItems.cell_calcification.get())) {
             modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID,this.stringUUID),  livingEntity.getAttributeValue(Attributes.ARMOR) / 2, AttributeModifier.Operation.ADD_VALUE));
             modifierMultimap.put(Attributes.MAX_HEALTH, new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID,this.stringUUID),  livingEntity.getAttributeValue(Attributes.MAX_HEALTH) / 2, AttributeModifier.Operation.ADD_VALUE));
         }
@@ -92,7 +92,7 @@ public class CellZombie extends ExtendZombieEntity {
     }
     private Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap(LivingEntity livingEntity){
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
-        if (Handler.hascurio(livingEntity, Items.cell.get())&&Handler.hascurio(livingEntity, Items.adrenaline.get())) {
+        if (Handler.hascurio(livingEntity, InitItems.cell.get())&&Handler.hascurio(livingEntity, InitItems.adrenaline.get())) {
             modifierMultimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID,this.stringUUID),  livingEntity.getAttributeValue(Attributes.ATTACK_DAMAGE), AttributeModifier.Operation.ADD_VALUE));
             modifierMultimap.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID,this.stringUUID),  livingEntity.getAttributeValue(Attributes.MOVEMENT_SPEED), AttributeModifier.Operation.ADD_VALUE));
         }
@@ -179,7 +179,7 @@ public class CellZombie extends ExtendZombieEntity {
             }
 
             if (entity instanceof  LivingEntity livingEntity){
-                if (!Handler.hascurio(livingEntity,Items.necora.get())) {
+                if (!Handler.hascurio(livingEntity, InitItems.necora.get())) {
                     this.setTarget(livingEntity);
                 }
             }

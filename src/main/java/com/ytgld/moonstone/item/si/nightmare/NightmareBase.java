@@ -2,31 +2,17 @@ package com.ytgld.moonstone.item.si.nightmare;
 
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.ItemBase;
-import com.ytgld.moonstone.Moonstone;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.Light;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.Identifier;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.NonNull;
-import org.jspecify.annotations.Nullable;
-import top.theillusivec4.curios.api.CurioAttributeModifiers;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotAttribute;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.common.DropRule;
-import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
-import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
-
-import java.util.List;
 
 public class NightmareBase extends ItemBase implements ICurioItem {
     public NightmareBase(Properties properties) {
@@ -46,7 +32,7 @@ public class NightmareBase extends ItemBase implements ICurioItem {
     @Override
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.the_divine_fall_ring.asItem())) {
+            if (Handler.hascurio(player, InitItems.the_divine_fall_ring.asItem())) {
                 return true;
             }
             return player.isCreative();

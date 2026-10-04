@@ -1,13 +1,11 @@
 package com.ytgld.moonstone.item.si.nightmare.stone;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -31,7 +29,7 @@ public class NightmareClay extends NightmareSmall {
     }
     public static void hurts(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_clay.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_clay.get())) {
                 if (event.getSource().is(DamageTypes.ON_FIRE) ||
                         event.getSource().is(DamageTypes.IN_FIRE) ||
                         event.getSource().is(DamageTypes.LAVA)) {

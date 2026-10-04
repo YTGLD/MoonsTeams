@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maulice;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -26,7 +26,7 @@ public class MHead extends MLS {
 
     public static void target(LivingChangeTargetEvent event) {
         if (event.getNewAboutToBeSetTarget() instanceof Player player) {
-            if (Handler.hascurio(player, Items.mhead.asItem())) {
+            if (Handler.hascurio(player, InitItems.mhead.asItem())) {
                 if (player.getLastHurtMob() != null) {
                     if (player.getLastHurtMob().is(event.getEntity())) {
                         return;
