@@ -4,7 +4,7 @@ package com.ytgld.moonstone.item.si.nightmare.redemption;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -55,14 +55,14 @@ public class RedemptionDeception extends NightmareSmall {
 
     public static void LivingHurtEvent(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_redemption_deception.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_redemption_deception.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_redemption_deception.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.nightmare_base_redemption_deception.get())) {
                     if (event.getNewDamage() > player.getHealth()) {
 
                         player.heal(player.getMaxHealth() * (ConfigItem.intValue.get().floatValue() / 100f));
 
 
-                        player.getCooldowns().addCooldown(Items.nightmare_base_redemption_deception.get(), 1200);
+                        player.getCooldowns().addCooldown(InitItems.nightmare_base_redemption_deception.get(), 1200);
                         player.invulnerableTime += 100;
                         Vec3 playerPos = player.position().add(0, 0.75, 0);
                         float range = 10;

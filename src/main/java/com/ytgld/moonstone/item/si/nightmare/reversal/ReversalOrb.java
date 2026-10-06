@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.reversal;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -20,7 +20,7 @@ public class ReversalOrb extends NightmareSmall {
 
     public static void LivingHealEvent(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_reversal_orb.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_reversal_orb.get())) {
                 if (player.getHealth() > 10) {
                     if (event.getAmount() > player.getHealth()) {
                         player.setHealth(1);

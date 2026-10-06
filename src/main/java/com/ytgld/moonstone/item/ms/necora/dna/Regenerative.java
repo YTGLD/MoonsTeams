@@ -14,7 +14,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-import static com.ytgld.moonstone.item.Items.GodRegenerative;
+import static com.ytgld.moonstone.item.InitItems.GodRegenerative;
 
 public class Regenerative extends TheNecora implements CanUPLevel {
     public Regenerative(Properties properties) {

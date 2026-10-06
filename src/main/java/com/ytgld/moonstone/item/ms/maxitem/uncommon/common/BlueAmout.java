@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maxitem.uncommon.common;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -26,14 +26,14 @@ public class BlueAmout extends CommonItem {
 
     public static void blueamout(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.blueamout.get()) || Handler.hascurio(player, Items.maxamout.asItem())) {
+            if (Handler.hascurio(player, InitItems.blueamout.get()) || Handler.hascurio(player, InitItems.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
                 }
             }
         }
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.blueamout.get()) || Handler.hascurio(player, Items.maxamout.asItem())) {
+            if (Handler.hascurio(player, InitItems.blueamout.get()) || Handler.hascurio(player, InitItems.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     event.getEntity().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1));
                 }

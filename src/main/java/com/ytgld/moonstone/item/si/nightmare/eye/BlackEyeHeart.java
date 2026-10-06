@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.si.nightmare.eye;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -60,7 +60,7 @@ public class BlackEyeHeart extends NightmareSmall {
                                 playerPos.z + range));
         for (Player player : entities) {
             if (!event.getEntity().is(player) && !(event.getEntity() instanceof Player)) {
-                if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_heart.get())) {
+                if (SIHandler.hascurio(player, InitItems.nightmare_base_black_eye_heart.get())) {
                     player.heal(event.getAmount());
                     event.setAmount(0);
                 }
@@ -81,7 +81,7 @@ public class BlackEyeHeart extends NightmareSmall {
                                 playerPos.z + range));
         for (Player player : entities) {
             if (!event.getEntity().is(player) && !(event.getEntity() instanceof Player)) {
-                if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_heart.get())) {
+                if (SIHandler.hascurio(player, InitItems.nightmare_base_black_eye_heart.get())) {
                     float v = ConfigItem.intValue.get().floatValue();
                     v /= 100f;
                     event.setNewDamage(event.getNewDamage() * v);

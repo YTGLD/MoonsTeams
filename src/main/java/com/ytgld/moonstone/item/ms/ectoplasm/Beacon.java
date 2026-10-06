@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.ectoplasm;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.Ectoplasm;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -25,7 +25,7 @@ public class Beacon extends Ectoplasm {
 
     public static void beacon(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.beacon.get())) {
+            if (Handler.hascurio(player, InitItems.beacon.get())) {
                 Collection<MobEffectInstance> collection = player.getActiveEffects();
                 if (!collection.isEmpty()) {
                     if (event.getSource().getEntity() != null) {

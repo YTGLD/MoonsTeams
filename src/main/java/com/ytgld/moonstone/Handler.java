@@ -2,14 +2,9 @@ package com.ytgld.moonstone;
 
 import com.ytgld.moonstone.enttiy.CellGiant;
 import com.ytgld.moonstone.item.ICanHasInItem;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.DataReg;
-import com.ytgld.moonstone.render.CIStateShardsHasBlack;
-import com.ytgld.moonstone.render.MGuiGraphics;
-import com.ytgld.moonstone.render.MRender;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Pose;
@@ -86,22 +81,22 @@ public class Handler {
         cellGiant.setOwnerUUID(player.getUUID());
         cellGiant.setPos(player.position());
         cellGiant.setPose(Pose.EMERGING);
-        if (Handler.hascurio(player, Items.bone_cell.get())) {
+        if (Handler.hascurio(player, InitItems.bone_cell.get())) {
             cellGiant.addTag(Bone_Giant);
         }
-        if (Handler.hascurio(player, Items.parasitic_cell.get())) {
+        if (Handler.hascurio(player, InitItems.parasitic_cell.get())) {
             cellGiant.addTag(Parasitic_cell_Giant);
         }
-        if (Handler.hascurio(player, Items.disgusting_cells.get())) {
+        if (Handler.hascurio(player, InitItems.disgusting_cells.get())) {
             cellGiant.addTag(Disgusting__cell_Giant);
         }
-        if (Handler.hascurio(player, Items.bone_cell.get())) {
+        if (Handler.hascurio(player, InitItems.bone_cell.get())) {
             cellGiant.addTag(Bone_Giant);
         }
-        if (Handler.hascurio(player, Items.parasitic_cell.get())) {
+        if (Handler.hascurio(player, InitItems.parasitic_cell.get())) {
             cellGiant.addTag(Parasitic_cell_Giant);
         }
-        if (Handler.hascurio(player, Items.disgusting_cells.get())) {
+        if (Handler.hascurio(player, InitItems.disgusting_cells.get())) {
             cellGiant.addTag(Disgusting__cell_Giant);
         }
         player.level().addFreshEntity(cellGiant);

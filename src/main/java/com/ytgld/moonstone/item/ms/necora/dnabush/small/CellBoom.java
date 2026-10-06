@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.dnabush.small;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -23,7 +23,7 @@ public class CellBoom extends TheNecoraDNABush {
 
     public static void Boom(LivingDamageEvent.Pre event) {
         if ((event.getEntity() instanceof Player player)) {
-            if (Handler.hascurio(player, Items.cell_boom.get())) {
+            if (Handler.hascurio(player, InitItems.cell_boom.get())) {
                 if (event.getSource().is(DamageTypes.EXPLOSION)) {
                     event.setNewDamage(0);
                 }

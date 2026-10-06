@@ -1,6 +1,6 @@
 package com.ytgld.moonstone.item.ms.necora.dna;
 
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.necora.dna.god.CanUPLevel;
 import net.minecraft.ChatFormatting;
@@ -51,7 +51,7 @@ public class Ambush extends TheNecora implements CanUPLevel {
 
     @Override
     public Item upLevelItem() {
-        return Items.GodAmbush.asItem();
+        return InitItems.GodAmbush.asItem();
     }
 }
 

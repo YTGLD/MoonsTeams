@@ -4,7 +4,7 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ICanHasInItem;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -21,31 +21,31 @@ import java.util.List;
 public class OtherItemModifyHandler {
     public static void doOtherModifiers(ItemBase itemBase, ItemStack stack, LivingEntity livingEntity,
                                     Multimap<Holder<Attribute>, AttributeModifier> attributeModifierMultimap) {
-        itemBase.modifyAttribute(stack, Items.owner_blood_eye.asItem(), AttReg.owner_blood_blood_speed,new AttributeModifier(
+        itemBase.modifyAttribute(stack, InitItems.owner_blood_eye.asItem(), AttReg.owner_blood_blood_speed,new AttributeModifier(
                 itemBase.id(stack),0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         ),attributeModifierMultimap);
 
-        itemBase.modifyAttribute(stack, Items.owner_blood_attack_eye.asItem(), AttReg.owner_blood_blood_speed,new AttributeModifier(
+        itemBase.modifyAttribute(stack, InitItems.owner_blood_attack_eye.asItem(), AttReg.owner_blood_blood_speed,new AttributeModifier(
                 itemBase.id(stack),0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         ),attributeModifierMultimap);
 
-        itemBase.modifyAttribute(stack, Items.owner_blood_speed_eye.asItem(), AttReg.owner_blood_attack_speed,new AttributeModifier(
+        itemBase.modifyAttribute(stack, InitItems.owner_blood_speed_eye.asItem(), AttReg.owner_blood_attack_speed,new AttributeModifier(
                 itemBase.id(stack),-0.15f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         ),attributeModifierMultimap);
 
-        itemBase.modifyAttribute(stack, Items.owner_blood_boom_eye.asItem(), AttReg.cit,new AttributeModifier(
+        itemBase.modifyAttribute(stack, InitItems.owner_blood_boom_eye.asItem(), AttReg.cit,new AttributeModifier(
                 itemBase.id(stack),0.2f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         ),attributeModifierMultimap);
 
-        itemBase.modifyAttribute(stack, Items.owner_blood_effect_eye.asItem(), AttReg.speed,new AttributeModifier(
+        itemBase.modifyAttribute(stack, InitItems.owner_blood_effect_eye.asItem(), AttReg.speed,new AttributeModifier(
                 itemBase.id(stack),0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         ),attributeModifierMultimap);
 
-        itemBase.modifyAttribute(stack, Items.owner_blood_vex.asItem(), AttReg.heal,new AttributeModifier(
+        itemBase.modifyAttribute(stack, InitItems.owner_blood_vex.asItem(), AttReg.heal,new AttributeModifier(
                 itemBase.id(stack),0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         ),attributeModifierMultimap);
 
-        itemBase.modifyAttribute(stack, Items.owner_blood_earth.asItem(), Attributes.KNOCKBACK_RESISTANCE,new AttributeModifier(
+        itemBase.modifyAttribute(stack, InitItems.owner_blood_earth.asItem(), Attributes.KNOCKBACK_RESISTANCE,new AttributeModifier(
                 itemBase.id(stack),0.5, AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         ),attributeModifierMultimap);
     }

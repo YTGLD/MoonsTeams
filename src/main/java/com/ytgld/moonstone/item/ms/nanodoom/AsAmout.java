@@ -4,7 +4,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.SmallSword;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.Doom;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -45,11 +45,11 @@ public class AsAmout extends Doom implements TextEvt.Twelve {
                     IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
-                        if (stack.is(Items.as_amout.get())) {
+                        if (stack.is(InitItems.as_amout.get())) {
                             if (stack.get(DataReg.tag) != null) {
                                 if (!stack.get(DataReg.tag).getBoolean(canFlySword)) {
-                                    if (Handler.hascurio(player, Items.as_amout.get())) {
-                                        if (!player.getCooldowns().isOnCooldown(Items.as_amout.get())) {
+                                    if (Handler.hascurio(player, InitItems.as_amout.get())) {
+                                        if (!player.getCooldowns().isOnCooldown(InitItems.as_amout.get())) {
                                             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.AMBIENT, 2, 2);
 
                                             LivingEntity target = event.getEntity();
@@ -68,7 +68,7 @@ public class AsAmout extends Doom implements TextEvt.Twelve {
                                                 player.level().addFreshEntity(as_sword);
                                                 as_sword.target =  target;
 
-                                                player.getCooldowns().addCooldown(Items.as_amout.get(), 100);
+                                                player.getCooldowns().addCooldown(InitItems.as_amout.get(), 100);
                                             }
 
                                         }

@@ -1,6 +1,6 @@
 package com.ytgld.moonstone.item.ms.necora;
 
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.world.item.Item;
 
@@ -16,9 +16,9 @@ public class TheNecoraDNABush extends TheNecora {
     public HashSet<Item> canUSe() {
 
         return new HashSet<>( Set.of(
-                Items.WarmApproachable.asItem(),
-                Items.OceanAffinity.asItem(),
-                Items.EarthAffinity.asItem()
+                InitItems.WarmApproachable.asItem(),
+                InitItems.OceanAffinity.asItem(),
+                InitItems.EarthAffinity.asItem()
         ));
     }
     @Override

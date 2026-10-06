@@ -17,6 +17,8 @@
   },
   "client": [
     "cilent.GuiGraphicsMixin",
-    "cilent.LevelRendererMixin"
+    "cilent.GUIMixin",
+    "cilent.LevelRendererMixin",
+    "cilent.ScreenMixin"
   ]
 }

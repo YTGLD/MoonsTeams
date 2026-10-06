@@ -4,7 +4,7 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.ItemBase;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.IKet;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.blood.MaxEye;
 import com.ytgld.moonstone.item.ms.blood.PrisonOfSin;
 import com.ytgld.moonstone.item.ms.blood.TwistedAmout;
@@ -96,7 +96,7 @@ public class NewEvent {
     public  void PlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
         Player player = event.getEntity();
         if (!player.getTags().contains(Moonstone.MODID+"nightmare")) {
-            player.addItem(Items.NightmareBaseItem_.get().getDefaultInstance());
+            player.addItem(InitItems.NightmareBaseItem_.get().getDefaultInstance());
             player.addTag(Moonstone.MODID+"nightmare");
         }
     }

@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maulice;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -21,12 +21,12 @@ public class MShell extends MLS {
 
     public static void LivingHurtEvent(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.mshell.get())) {
+            if (Handler.hascurio(player, InitItems.mshell.get())) {
                 event.setNewDamage(event.getNewDamage() * 0.9f);
             }
         }
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.mshell.get())) {
+            if (Handler.hascurio(player, InitItems.mshell.get())) {
                 if (event.getSource().getEntity() instanceof Mob mob) {
                     if (mob.isInvertedHealAndHarm()) {
                         event.setNewDamage(event.getNewDamage() * 0.75f);

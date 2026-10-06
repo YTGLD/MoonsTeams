@@ -7,7 +7,7 @@ import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -68,7 +68,7 @@ public class BlackEyeRed extends NightmareSmall {
 
     public static void kill(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_black_eye_red.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_black_eye_red.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -76,7 +76,7 @@ public class BlackEyeRed extends NightmareSmall {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.nightmare_base_black_eye_red.get())) {
+                            if (stack.is(InitItems.nightmare_base_black_eye_red.get())) {
                                 if (stack.get(DataReg.tag) != null) {
                                     float s = ConfigItem.intValue.get().floatValue();
                                     if (stack.get(DataReg.tag).getInt(aty) < s) {

@@ -6,7 +6,7 @@ import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
@@ -64,7 +64,7 @@ public class StoneVirus extends NightmareSmall {
 
     public static void h(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_stone_virus.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_stone_virus.get())) {
                 player.setHealth((float) (player.getHealth() - player.getMaxHealth() * (ConfigItem.intValue2.get().doubleValue() / 100f)));
             }
         }

@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maulice;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -22,7 +22,7 @@ public class MRing extends MLS {
 
     public static void LivingExperienceDropEvent(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.mring.get())) {
+            if (Handler.hascurio(player, InitItems.mring.get())) {
                 event.setAmount(event.getAmount() * 1.4f);
             }
         }
@@ -30,7 +30,7 @@ public class MRing extends MLS {
 
     public static void LivingExperienceDropEvent(LivingKnockBackEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.mring.get())) {
+            if (Handler.hascurio(player, InitItems.mring.get())) {
                 event.setStrength(event.getStrength() * 2);
             }
         }

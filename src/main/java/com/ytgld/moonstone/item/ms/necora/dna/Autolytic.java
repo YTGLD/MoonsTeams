@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-import static com.ytgld.moonstone.item.Items.GodAutolytic;
+import static com.ytgld.moonstone.item.InitItems.GodAutolytic;
 
 public class Autolytic extends TheNecora implements CanUPLevel {
     public Autolytic(Properties properties) {

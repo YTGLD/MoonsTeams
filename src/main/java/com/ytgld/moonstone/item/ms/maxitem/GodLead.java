@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maxitem;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.CommonItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -36,9 +36,9 @@ public class GodLead extends CommonItem {
     public static void hurtS(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
             if (!event.getSource().is(DamageTypes.DRY_OUT)) {
-                if (Handler.hascurio(player, Items.god_lead.get())) {
+                if (Handler.hascurio(player, InitItems.god_lead.get())) {
                     if (!event.getSource().is(DamageTypes.DRY_OUT)) {
-                        if (!player.getCooldowns().isOnCooldown(Items.god_lead.get())) {
+                        if (!player.getCooldowns().isOnCooldown(InitItems.god_lead.get())) {
                             event.setNewDamage(event.getNewDamage() * 2.5f);
                             if (event.getNewDamage() > player.getHealth()) {
                                 Vec3 playerPos = player.position().add(0, 0.75, 0);
@@ -49,7 +49,7 @@ public class GodLead extends CommonItem {
                                         living.hurt(living.damageSources().dryOut(), event.getNewDamage());
                                         living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0));
                                         if (!living.isDeadOrDying()) {
-                                            player.getCooldowns().addCooldown(Items.god_lead.get(), 200);
+                                            player.getCooldowns().addCooldown(InitItems.god_lead.get(), 200);
                                         }
                                         break;
                                     }

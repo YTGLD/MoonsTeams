@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.maxitem;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.UnCommonItem;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
@@ -51,7 +51,7 @@ public class MaliceDie extends UnCommonItem {
 
     public static void att(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.malice_die.get())) {
+            if (Handler.hascurio(player, InitItems.malice_die.get())) {
                 Vec3 playerPos = player.position().add(0, 0.75, 0);
                 int range = 24;
                 List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(playerPos.x - range, playerPos.y - range, playerPos.z - range, playerPos.x + range, playerPos.y + range, playerPos.z + range));
@@ -69,7 +69,7 @@ public class MaliceDie extends UnCommonItem {
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
-                if (Handler.hascurio(player, Items.malice_die.get())) {
+                if (Handler.hascurio(player, InitItems.malice_die.get())) {
                     int size = 0;
                     Vec3 playerPos = player.position().add(0, 0.75, 0);
                     int range = 24;

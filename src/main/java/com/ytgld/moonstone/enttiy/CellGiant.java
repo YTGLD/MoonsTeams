@@ -7,7 +7,7 @@ import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Dynamic;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -104,7 +104,7 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
     public void die(@NotNull DamageSource p_21809_) {
         super.die(p_21809_);
 
-        if (this.getOwner() instanceof Player player&& Handler.hascurio(player, Items.parasitic_cell.asItem())){
+        if (this.getOwner() instanceof Player player&& Handler.hascurio(player, InitItems.parasitic_cell.asItem())){
             for (int i = 0; i < 6; i++) {
                 CellZombie cell_zombie = new CellZombie(EntityTs.cell_zombie.get(),this.level());
                 cell_zombie.setPos(this.getX(),this.getY(),this.getY());
@@ -117,7 +117,7 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
     }
     private Multimap<Holder<Attribute>, AttributeModifier>  AttributeModifier(LivingEntity living){
         Multimap<Holder<Attribute>, AttributeModifier>  modifierMultimap = HashMultimap.create();
-        if (Handler.hascurio(living,Items.bone_cell.asItem())){
+        if (Handler.hascurio(living, InitItems.bone_cell.asItem())){
             modifierMultimap.put(Attributes.ARMOR, new AttributeModifier(ResourceLocation.withDefaultNamespace("base_attack_damage"+"cell_armor"), living.getAttributeValue(Attributes.ARMOR)* 0.7, AttributeModifier.Operation.ADD_VALUE));
         }
         return modifierMultimap;

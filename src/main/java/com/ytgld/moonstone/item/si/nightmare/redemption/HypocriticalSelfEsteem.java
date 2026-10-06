@@ -6,7 +6,7 @@ import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
@@ -94,7 +94,7 @@ public class HypocriticalSelfEsteem extends NightmareSmall {
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity() instanceof Player player) {
             if (!player.level().isClientSide()) {
-                if (SIHandler.hascurio(player, Items.hypocritical_self_esteem.get())) {
+                if (SIHandler.hascurio(player, InitItems.hypocritical_self_esteem.get())) {
 
                     player.getAttributes().addTransientAttributeModifiers(this.Head(stack));
                     int size = 0;
@@ -113,7 +113,7 @@ public class HypocriticalSelfEsteem extends NightmareSmall {
                     for (LivingEntity living : entities) {
                         size = entities.size();
 
-                        if (SIHandler.hascurio(player, Items.nightmare_base_black_eye.get())) {
+                        if (SIHandler.hascurio(player, InitItems.nightmare_base_black_eye.get())) {
                             if (!living.is(player) && living.isAlive()) {
                                 if (living.tickCount % 10 == 0) {
                                     ResourceLocation name = BuiltInRegistries.ENTITY_TYPE.getKey(living.getType());

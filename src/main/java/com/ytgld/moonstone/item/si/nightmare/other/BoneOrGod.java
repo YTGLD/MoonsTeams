@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.other;
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -43,14 +43,14 @@ public class BoneOrGod extends NightmareSmall {
     public static void hurt(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof OwnableEntity ownableEntity) {
             if (ownableEntity.getOwner() instanceof Player player) {
-                if (SIHandler.hascurio(player, Items.bone_or_god.get())) {
+                if (SIHandler.hascurio(player, InitItems.bone_or_god.get())) {
                     event.setNewDamage((float) (event.getNewDamage() * 2 + (player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.1F)));
                 }
             }
         }
         if (event.getEntity() instanceof OwnableEntity ownableEntity) {
             if (ownableEntity.getOwner() instanceof Player player) {
-                if (SIHandler.hascurio(player, Items.bone_or_god.get())) {
+                if (SIHandler.hascurio(player, InitItems.bone_or_god.get())) {
                     event.setNewDamage(event.getNewDamage() * 0.5F);
                 }
             }

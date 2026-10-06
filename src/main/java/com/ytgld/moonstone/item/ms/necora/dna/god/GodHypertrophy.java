@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dna.god;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.GodDNA;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
@@ -57,13 +57,13 @@ public class GodHypertrophy extends GodDNA {
     }
     public static void damageAttack(LivingDamageEvent.Pre event){
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.god_hypertrophy.asItem())) {
+            if (Handler.hascurio(player, InitItems.god_hypertrophy.asItem())) {
                 if (Mth.nextInt(player.getRandom(), 0, 100) <= GodHypertrophy.damage()) {
                     event.setNewDamage(event.getNewDamage() * 2);
                 }
                 return;
             }
-            if (Handler.hascurio(player, Items.hypertrophy.asItem())) {
+            if (Handler.hascurio(player, InitItems.hypertrophy.asItem())) {
                 if (Mth.nextInt(player.getRandom(), 0, 100) <= Hypertrophy.damage()) {
                     event.setNewDamage(event.getNewDamage() * 2);
                 }
@@ -85,7 +85,7 @@ public class GodHypertrophy extends GodDNA {
         }
         @Override
         public Item upLevelItem() {
-            return Items.god_hypertrophy.asItem();
+            return InitItems.god_hypertrophy.asItem();
         }
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {

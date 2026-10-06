@@ -6,7 +6,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.SmallSword;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.Doom;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -93,7 +93,7 @@ public class Million extends Doom implements TextEvt.Twelve {
 
     public static void hurt(LivingDamageEvent.Pre event) {
         if (event.getSource().getDirectEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.million.get())) {
+            if (Handler.hascurio(player, InitItems.million.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -101,7 +101,7 @@ public class Million extends Doom implements TextEvt.Twelve {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.million.get()) && !player.getCooldowns().isOnCooldown(Items.million.get())) {
+                            if (stack.is(InitItems.million.get()) && !player.getCooldowns().isOnCooldown(InitItems.million.get())) {
                                 Handler.stackCreateTag(stack);
                                 if (!stack.get(DataReg.tag).getBoolean(canFlySword)) {
                                     if (player.getAttackStrengthScale(1) >= 1) {
@@ -131,7 +131,7 @@ public class Million extends Doom implements TextEvt.Twelve {
                                                     if (stack.get(DataReg.tag).getInt(sizeLvl) > 0) {
                                                         stack.get(DataReg.tag).putInt(sizeLvl, stack.get(DataReg.tag).getInt(sizeLvl) - 1);
                                                     }
-                                                    player.getCooldowns().addCooldown(Items.million.get(), 50);
+                                                    player.getCooldowns().addCooldown(InitItems.million.get(), 50);
 
 
                                                 }

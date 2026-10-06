@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.si.nightmare.fool;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -53,15 +53,15 @@ public class FoolBone extends NightmareSmall {
 
     public static void attLook(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_fool_bone.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_fool_bone.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_fool_bone.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.nightmare_base_fool_bone.get())) {
                     if (event.getEntity() instanceof Mob mob) {
                         if (mob.getTarget() != null && mob.getTarget().is(player)) {
                             if (Mth.nextInt(RandomSource.create(), 1, 100) <= 30) {
                                 mob.invulnerableTime = 0;
                             }
                             event.setNewDamage(event.getNewDamage() * (1 + (ConfigItem.intValue.get().floatValue() / 100f)));
-                            player.getCooldowns().addCooldown(Items.nightmare_base_fool_bone.get(), 20);
+                            player.getCooldowns().addCooldown(InitItems.nightmare_base_fool_bone.get(), 20);
                         }
                     }
                 }

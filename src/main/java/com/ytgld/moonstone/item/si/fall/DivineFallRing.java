@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.event.NewEvent;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
 import com.ytgld.moonstone.other.Light;
@@ -44,7 +44,7 @@ public class DivineFallRing extends FallItem {
 
     public static void exp(MobEffectEvent.Applicable event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.the_divine_fall_ring.get())) {
+            if (SIHandler.hascurio(player, InitItems.the_divine_fall_ring.get())) {
                 if (event.getEffectInstance().getEffect().is(MobEffects.BLINDNESS) ||
                         event.getEffectInstance().getEffect().is(MobEffects.DARKNESS)) {
                     event.setResult(MobEffectEvent.Applicable.Result.DO_NOT_APPLY);
@@ -55,7 +55,7 @@ public class DivineFallRing extends FallItem {
 
     public static void exp(LivingExperienceDropEvent event) {
         if (event.getAttackingPlayer() instanceof Player) {
-            if (SIHandler.hascurio(event.getAttackingPlayer(), Items.the_divine_fall_ring.get())) {
+            if (SIHandler.hascurio(event.getAttackingPlayer(), InitItems.the_divine_fall_ring.get())) {
                 event.setDroppedExperience(event.getDroppedExperience() * 2);
             }
         }

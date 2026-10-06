@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maulice;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -21,7 +21,7 @@ public class MOrb extends MLS {
 
     public static void LivingExperienceDropEvent(LivingExperienceDropEvent event) {
         Player player = event.getAttackingPlayer();
-        if (Handler.hascurio(player, Items.morb.get())) {
+        if (Handler.hascurio(player, InitItems.morb.get())) {
             event.setDroppedExperience(((int) ((event.getDroppedExperience() * 1.5))) + 1);
         }
     }

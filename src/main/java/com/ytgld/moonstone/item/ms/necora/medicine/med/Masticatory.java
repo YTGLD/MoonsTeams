@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.medicine.med;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -22,7 +22,7 @@ public class Masticatory extends TheNecora {
 
     public  static void masticatory(LivingEntityUseItemEvent.Start event) {
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.masticatory.get())){
+            if (Handler.hascurio(player, InitItems.masticatory.get())){
                 if (event.getItem().getUseAnimation() == UseAnim.EAT){
                     event.setDuration(event.getDuration() / 2);
                 }

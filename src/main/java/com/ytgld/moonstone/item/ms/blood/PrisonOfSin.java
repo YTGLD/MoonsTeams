@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -79,7 +79,7 @@ public class PrisonOfSin extends BloodItem {
 
     public static void LivingDeathEvent(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.the_prison_of_sin.get())) {
+            if (Handler.hascurio(player, InitItems.the_prison_of_sin.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -88,7 +88,7 @@ public class PrisonOfSin extends BloodItem {
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
 
-                            if (stack.is(Items.the_prison_of_sin.get())) {
+                            if (stack.is(InitItems.the_prison_of_sin.get())) {
                                 if (stack.get(DataReg.tag) != null
                                         && event.getEntity().getEncodeId() != null) {
                                     String name = event.getEntity().getEncodeId();

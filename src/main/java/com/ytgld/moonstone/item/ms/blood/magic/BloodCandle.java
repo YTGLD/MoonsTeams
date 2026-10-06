@@ -5,7 +5,7 @@ import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
 import com.ytgld.moonstone.event.key.Keys;
 import com.ytgld.moonstone.item.IKet;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
@@ -29,12 +29,12 @@ public class BloodCandle extends BloodItem implements IKet {
     public static final String hasOwnerBlood = "hasOwnerBlood";
 
     public static void event(Player player) {
-        if (Handler.hascurio(player, Items.blood_candle.asItem())) {
+        if (Handler.hascurio(player, InitItems.blood_candle.asItem())) {
             if (player.level().isClientSide()) {
                 return;
             }
             CompoundTag compoundTag = player.getPersistentData();
-            if (!player.getCooldowns().isOnCooldown(Items.blood_candle.asItem())) {
+            if (!player.getCooldowns().isOnCooldown(InitItems.blood_candle.asItem())) {
                 if (!compoundTag.getBoolean(hasOwnerBlood)) {
                     OwnerBlood EndComing = new OwnerBlood(EntityTs.owner_blood_.get(), player.level());
                     EndComing.setPos(player.position());
@@ -42,10 +42,10 @@ public class BloodCandle extends BloodItem implements IKet {
                     EndComing.tame(player);
                     player.level().addFreshEntity(EndComing);
                     compoundTag.putBoolean(hasOwnerBlood, true);
-                    player.getCooldowns().addCooldown(Items.blood_candle.asItem(), 10);
+                    player.getCooldowns().addCooldown(InitItems.blood_candle.asItem(), 10);
                 } else {
                     compoundTag.putBoolean(hasOwnerBlood, false);
-                    player.getCooldowns().addCooldown(Items.blood_candle.asItem(), 10);
+                    player.getCooldowns().addCooldown(InitItems.blood_candle.asItem(), 10);
                 }
             }
         }
@@ -71,13 +71,13 @@ public class BloodCandle extends BloodItem implements IKet {
     @Override
     public HashSet<Item> canUSe() {
         return new HashSet<>( Set.of(
-                Items.owner_blood_eye.asItem(),
-                Items.owner_blood_attack_eye.asItem(),
-                Items.owner_blood_speed_eye.asItem(),
-                Items.owner_blood_boom_eye.asItem(),
-                Items.owner_blood_effect_eye.asItem(),
-                Items.owner_blood_vex.asItem(),
-                Items.owner_blood_earth.asItem()
+                InitItems.owner_blood_eye.asItem(),
+                InitItems.owner_blood_attack_eye.asItem(),
+                InitItems.owner_blood_speed_eye.asItem(),
+                InitItems.owner_blood_boom_eye.asItem(),
+                InitItems.owner_blood_effect_eye.asItem(),
+                InitItems.owner_blood_vex.asItem(),
+                InitItems.owner_blood_earth.asItem()
         ));
     }
     @Override

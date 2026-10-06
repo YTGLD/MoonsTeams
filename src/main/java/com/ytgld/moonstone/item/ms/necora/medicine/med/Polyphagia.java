@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.medicine.med;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -23,15 +23,15 @@ public class Polyphagia extends TheNecora  {
 
     public  static void necora(LivingEntityUseItemEvent.Finish event) {
         if (event.getEntity() instanceof Player player){
-            if (Handler.hascurio(player, Items.polyphagia.get())){
+            if (Handler.hascurio(player, InitItems.polyphagia.get())){
                 if (event.getItem().getUseAnimation() == UseAnim.EAT){
                     player.heal(player.getMaxHealth() / 15);
                 }
             }
 
-            if (Handler.hascurio(player, Items.necora.get())) {
+            if (Handler.hascurio(player, InitItems.necora.get())) {
                 if (event.getItem().is(net.minecraft.world.item.Items.ROTTEN_FLESH)){
-                    if (!Handler.hascurio(player, Items.putrefactive.get())) {
+                    if (!Handler.hascurio(player, InitItems.putrefactive.get())) {
                         player.heal(player.getMaxHealth() / 20);
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0));
                         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0));

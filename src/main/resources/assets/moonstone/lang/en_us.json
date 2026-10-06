@@ -2262,6 +2262,67 @@
   "item.moonstone.god_regenerative": "Regenerative Vitalization",
   "item.god_regenerative.tool.string": "Restores 1 health point every 0.75 seconds",
   "effect.moonstone.blade": "edge",
-  "effect.moonstone.hidden": "hidden"
+  "effect.moonstone.hidden": "hidden",
+
+
+
+  "moonstone.book.not": "右键关闭详细界面",
+  "moonstone.book.mouse": "点击查看详情",
+  "moonstone.book.test.main": "坠入梦乡",
+  "moonstone.book.test.1": "作者：亚特格拉德（YTGLD）",
+  "moonstone.book.test.2": "贡献者：秋季",
+  "moonstone.book.chaos": "噩梦",
+
+  "item.moonstone.love_charm":"朋友的礼物!",
+  "attribute.name.moonstone.speed":"通用速度",
+  "item.moonstone.god_regenerative": "Regenerative Vitalization",
+  "item.god_regenerative.tool.string": "Restores 1 health point every 0.75 seconds",
+  "effect.moonstone.blade": "edge",
+  "effect.moonstone.hidden": "hidden",
+
+  "moonstone.book.ectoplasmball.1": "灵质球发现在地牢等战利品箱子里",
+  "moonstone.book.ectoplasmball.2": "是模组里的重要材料",
+
+  "moonstone.book.ectoplasmcloub.1": "这个物品是合成更高阶物品的材料",
+  "moonstone.book.ectoplasmcloub.2": "可以通过灵质球合成获取",
+
+
+  "moonstone.book.ectoplasmcube.1": "合成顶级物品的材料之一",
+  "moonstone.book.ectoplasmcube.2": "可以通过灵质球/云以及钻石合成获取",
+
+  "moonstone.book.ectoplasmprism.1": "合成极限物品的材料之一",
+  "moonstone.book.ectoplasmprism.2": "可以通过灵质立方以及钻石合成获取",
+
+  "moonstone.book.beacon.1": "一个可以反射药水效果的饰品",
+  "moonstone.book.beacon.2": "在某些情况下可能会有大用处",
+
+  "moonstone.book.ectoplasmapple.1": "受到伤害后对周围生物造成伤害",
+  "moonstone.book.ectoplasmapple.2": "但是伤害存在一定的上限",
+
+  "moonstone.book.ectoplasmbattery.1": "提供大量的生命值",
+  "moonstone.book.ectoplasmbattery.2": "是电池的孪生兄弟",
+
+  "moonstone.book.ectoplasmhorseshoe.1": "提供生命值加成",
+  "moonstone.book.ectoplasmhorseshoe.2": "并且减少衰落伤害",
+
+  "moonstone.book.ectoplasmshild.1": "没受到一定次数的伤害",
+  "moonstone.book.ectoplasmshild.2": "下一次受到攻击即可免疫",
+
+  "moonstone.book.ectoplasmstar.1": "提供幸运值",
+  "moonstone.book.ectoplasmstar.2": "幸运值可提供伤害功速加成",
+
+  "moonstone.book.ectoplasmtree.1": "免疫火焰伤害（Buff）",
+  "moonstone.book.ectoplasmtree.2": "前期探索地狱的不二选择",
+
+
+
+  "moonstone.book.ectoplasm.main": "食用后恢复少量饥饿值",
+  "moonstone.book.loot.not": "目前无法从身上怪物上掉落",
+  "moonstone.book.loot.craft": "只能合成获取",
+  "moonstone.book.loot.not.1":"无法获取",
+  "moonstone.book.loot.dungeon": "发现在地牢",
+  "moonstone.book.loot.clear": "右键关闭界面",
+  "moonstone.book.nightmare_base.main": "噩梦基座",
+  "moonstone.book.nightmare_base.1": "恶念的起始，光明的另一面\n\n佩戴获取一些罪孽：窥眸，死兆，颠倒，救赎\n愚者，洞悉，起始\n基座一旦与你建立联系，将无法取下"
 }
 

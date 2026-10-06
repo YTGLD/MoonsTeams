@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-import static com.ytgld.moonstone.item.Items.GodPutrefactive;
+import static com.ytgld.moonstone.item.InitItems.GodPutrefactive;
 
 public class Putrefactive extends TheNecora implements CanUPLevel {
     public Putrefactive(Properties properties) {

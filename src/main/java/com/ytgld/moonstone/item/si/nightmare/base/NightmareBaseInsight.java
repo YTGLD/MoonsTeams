@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.si.nightmare.base;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.AllTip;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
@@ -33,7 +33,7 @@ public class NightmareBaseInsight extends NightmareBase implements AllTip {
     }
 
     public static void exp(LivingExperienceDropEvent event) {
-        if (Handler.hascurio(event.getAttackingPlayer(), Items.nightmare_base_insight.get())) {
+        if (Handler.hascurio(event.getAttackingPlayer(), InitItems.nightmare_base_insight.get())) {
             event.setDroppedExperience(event.getDroppedExperience() * 2);
         }
     }

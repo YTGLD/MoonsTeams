@@ -1,9 +1,8 @@
 package com.ytgld.moonstone.mixin;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -21,8 +20,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Optional;
-
 @Mixin(LiquidBlock.class)
 public abstract class LiquidBlockMixin {
     @Shadow
@@ -33,12 +30,12 @@ public abstract class LiquidBlockMixin {
     public void getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
         if (context instanceof EntityCollisionContext entitycollisioncontext) {
             if (entitycollisioncontext.getEntity() instanceof Player player) {
-                if (Handler.hascurio(player, Items.evilcandle.asItem())) {
+                if (Handler.hascurio(player, InitItems.evilcandle.asItem())) {
                     if (fluid == Fluids.LAVA) {
                         cir.setReturnValue(Shapes.block());
                     }
                 }
-                if (Handler.hascurio(player, Items.GodAmbush.asItem()) || Handler.hascurio(player, Items.ambush.asItem())) {
+                if (Handler.hascurio(player, InitItems.GodAmbush.asItem()) || Handler.hascurio(player, InitItems.ambush.asItem())) {
                     cir.setReturnValue(Shapes.block());
                 }
             }

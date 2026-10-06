@@ -6,7 +6,7 @@ import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.SIHandler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -57,7 +57,7 @@ public class EndBone extends NightmareSmall {
 
     public static void hurts(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.end_bone.get())) {
+            if (SIHandler.hascurio(player, InitItems.end_bone.get())) {
                 if (player.getHealth() >= player.getMaxHealth()) {
                     if (event.getSource().getEntity() instanceof LivingEntity living) {
                         float s = (float) ConfigItem.intValue.get().doubleValue();

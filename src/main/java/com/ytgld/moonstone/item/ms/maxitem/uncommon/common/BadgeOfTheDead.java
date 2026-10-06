@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maxitem.uncommon.common;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -22,7 +22,7 @@ public class BadgeOfTheDead extends CommonItem {
 
     public static void badgeofthedead(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.badgeofthedead.get())) {
+            if (Handler.hascurio(player, InitItems.badgeofthedead.get())) {
                 if (event.getEntity() instanceof Mob mob) {
                     if (mob.isInvertedHealAndHarm()) {
                         event.setNewDamage(event.getNewDamage() * 1.25f);

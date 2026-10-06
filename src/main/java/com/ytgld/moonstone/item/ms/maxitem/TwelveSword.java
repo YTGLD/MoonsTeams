@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.ms.maxitem;
 
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.enttiy.SwordOfTwelve;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.UnCommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -26,7 +26,7 @@ public class TwelveSword extends UnCommonItem {
 
     public static void att(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.twelve_sword.get())) {
+            if (Handler.hascurio(player, InitItems.twelve_sword.get())) {
                 Vec3 playerPos = player.position();
                 float range = 10;
                 List<SwordOfTwelve> entities =

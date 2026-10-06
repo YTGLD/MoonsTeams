@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.si.nightmare.base;
 
 
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.AllTip;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
@@ -28,7 +28,7 @@ public class NightmareBaseBlackEye extends NightmareBase implements AllTip {
 
     public static void exp(MobEffectEvent.Applicable event) {
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.nightmare_base_black_eye.get())) {
+            if (SIHandler.hascurio(player, InitItems.nightmare_base_black_eye.get())) {
                 if (event.getEffectInstance().getEffect().is(MobEffects.BLINDNESS) ||
                         event.getEffectInstance().getEffect().is(MobEffects.DARKNESS)) {
                     event.setResult(MobEffectEvent.Applicable.Result.DO_NOT_APPLY);

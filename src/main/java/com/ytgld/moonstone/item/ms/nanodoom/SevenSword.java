@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.ytgld.moonstone.event.AllEvent.FlySword;
-import static com.ytgld.moonstone.item.Items.doomeye;
+import static com.ytgld.moonstone.item.InitItems.doomeye;
 
 public class SevenSword extends Doom {
     public static String canFlySword = "canFlySword";

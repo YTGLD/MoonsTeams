@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.blood;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -29,7 +29,7 @@ public class MaxEye extends BloodItem {
 
     public static void Die(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.max_eye.get())) {
+            if (Handler.hascurio(player, InitItems.max_eye.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -51,7 +51,7 @@ public class MaxEye extends BloodItem {
 
     public static void A(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.max_eye.get())) {
+            if (Handler.hascurio(player, InitItems.max_eye.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {

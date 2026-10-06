@@ -6,7 +6,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.Ectoplasm;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
@@ -77,7 +77,7 @@ public class EctoplasmStar extends Ectoplasm {
     public Multimap<Holder<Attribute>, AttributeModifier> att(Player player) {
         Multimap<Holder<Attribute>, AttributeModifier> modifierMultimap = HashMultimap.create();
         int s = 20;
-        if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+        if (Handler.hascurio(player, InitItems.nightmare_base_stone_meet.get())) {
             modifierMultimap.put(Attributes.LUCK, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Moonstone.MODID, this.getDescriptionId() + "nightmare_base_stone_meet"),
                     20, AttributeModifier.Operation.ADD_VALUE));
         }
@@ -93,7 +93,7 @@ public class EctoplasmStar extends Ectoplasm {
             s = max;
         }
         s /= 100;
-        if (Handler.hascurio(player, Items.nightmare_base_stone_meet.get())) {
+        if (Handler.hascurio(player, InitItems.nightmare_base_stone_meet.get())) {
             modifierMultimap.put(AttReg.heal, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Moonstone.MODID, this.getDescriptionId() + "nightmare_base_stone_meet"),
                     s * ConfigItem.intValue2.get(), AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         }

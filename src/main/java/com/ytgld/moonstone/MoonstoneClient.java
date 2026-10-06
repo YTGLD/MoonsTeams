@@ -15,8 +15,10 @@ import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
 import com.ytgld.moonstone.render.CIStateShardsHasBlack;
+import com.ytgld.moonstone.render.MRender;
 import com.ytgld.moonstone.render.NightmareShieldRenderHandler;
 import com.ytgld.moonstone.render.RenderDNAItem;
+import com.ytgld.moonstone.render.gui_particles.BlackParticlesAdd;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -49,6 +51,7 @@ public class MoonstoneClient {
     public static void tick(ClientTickEvent.Pre event) {
         NightmareShieldRenderHandler.tick(event);
         RenderDNAItem.clientTick(event);
+        BlackParticlesAdd.tick();
     }
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiLayersEvent event) {
@@ -82,6 +85,10 @@ public class MoonstoneClient {
             event.registerShader(new ShaderInstance(event.getResourceProvider(),
                     ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"position_tex_color_black"),
                     DefaultVertexFormat.POSITION_TEX_COLOR), CIStateShardsHasBlack::setHasBlock);
+
+            event.registerShader(new ShaderInstance(event.getResourceProvider(),
+                    ResourceLocation.fromNamespaceAndPath(Moonstone.MODID,"vows"),
+                    DefaultVertexFormat.POSITION_TEX_COLOR), MRender::setVows);
         }catch (IOException exception){
             exception.printStackTrace();
         }

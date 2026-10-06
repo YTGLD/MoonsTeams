@@ -8,7 +8,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.event.EquippedEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.DataReg;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.nbt.CompoundTag;
@@ -52,54 +52,54 @@ public class ChestLoot extends LootModifier {
                 AdvancementEvt.nightmare_base_start_pod(objectArrayList, entity);
                 AdvancementEvt.tricky_puppets(objectArrayList, entity);
 
-                addLoot(objectArrayList, lootContext.getRandom(), Items.blood_candle.get(), entity, List.of(
-                        Items.owner_blood_eye.get(),
-                        Items.owner_blood_attack_eye.get(),
-                        Items.owner_blood_speed_eye.get(),
-                        Items.owner_blood_effect_eye.get(),
-                        Items.owner_blood_boom_eye.get(),
-                        Items.owner_blood_vex.get(),
-                        Items.owner_blood_earth.get()
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.blood_candle.get(), entity, List.of(
+                        InitItems.owner_blood_eye.get(),
+                        InitItems.owner_blood_attack_eye.get(),
+                        InitItems.owner_blood_speed_eye.get(),
+                        InitItems.owner_blood_effect_eye.get(),
+                        InitItems.owner_blood_boom_eye.get(),
+                        InitItems.owner_blood_vex.get(),
+                        InitItems.owner_blood_earth.get()
                 ), 12,lootContext);
 
-                addLoot(objectArrayList, lootContext.getRandom(), Items.NightmareBaseItem_.get(), entity, List.of(
-                        Items.defend_against_runestone.get(),
-                        Items.revive_runestone.get(),
-                        Items.strengthen_runestone.get()
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.NightmareBaseItem_.get(), entity, List.of(
+                        InitItems.defend_against_runestone.get(),
+                        InitItems.revive_runestone.get(),
+                        InitItems.strengthen_runestone.get()
                 ), 10,lootContext);
 
 
-                addLoot(objectArrayList, lootContext.getRandom(), Items.medicinebox.get(), entity, List.of(
-                        Items.WarmApproachable.get(),
-                        Items.OceanAffinity.get(),
-                        Items.EarthAffinity.get(),
-                        Items.calcareous.get(),
-                        Items.frontal_lobe.get(),
-                        Items.high_energy.get(),
-                        Items.surge.get()
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.medicinebox.get(), entity, List.of(
+                        InitItems.WarmApproachable.get(),
+                        InitItems.OceanAffinity.get(),
+                        InitItems.EarthAffinity.get(),
+                        InitItems.calcareous.get(),
+                        InitItems.frontal_lobe.get(),
+                        InitItems.high_energy.get(),
+                        InitItems.surge.get()
                 ), 18,lootContext);
 
 
-                addLoot(objectArrayList, lootContext.getRandom(), Items.necora.get(), entity, List.of(
-                        Items.ambush.get(),
-                        Items.atpoverdose.get(),
-                        Items.autolytic.get(),
-                        Items.fermentation.get(),
-                        Items.putrefactive.get(),
-                        Items.regenerative.get(),
-                        Items.adrenaline.get(),
-                        Items.cell_mummy.get(),
-                        Items.cell_boom.get(),
-                        Items.cell_calcification.get(),
-                        Items.cell_blood.get(),
-                        Items.bone_cell.get(),
-                        Items.parasitic_cell.get(),
-                        Items.mother_cell.get(),
-                        Items.disgusting_cells.get(),
-                        Items.peptide_surge.get(),
-                        Items.acidic_reflux.get(),
-                        Items.hypertrophy.get(),
-                        Items.naja_mortis.get()
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.necora.get(), entity, List.of(
+                        InitItems.ambush.get(),
+                        InitItems.atpoverdose.get(),
+                        InitItems.autolytic.get(),
+                        InitItems.fermentation.get(),
+                        InitItems.putrefactive.get(),
+                        InitItems.regenerative.get(),
+                        InitItems.adrenaline.get(),
+                        InitItems.cell_mummy.get(),
+                        InitItems.cell_boom.get(),
+                        InitItems.cell_calcification.get(),
+                        InitItems.cell_blood.get(),
+                        InitItems.bone_cell.get(),
+                        InitItems.parasitic_cell.get(),
+                        InitItems.mother_cell.get(),
+                        InitItems.disgusting_cells.get(),
+                        InitItems.peptide_surge.get(),
+                        InitItems.acidic_reflux.get(),
+                        InitItems.hypertrophy.get(),
+                        InitItems.naja_mortis.get()
 
 
                 ), 20,lootContext);

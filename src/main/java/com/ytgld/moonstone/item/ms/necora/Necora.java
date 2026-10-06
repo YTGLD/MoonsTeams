@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.necora;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -13,7 +13,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -39,12 +38,12 @@ public class Necora extends TheNecora {
     @Override
     public HashSet<Item> canUSe() {
         return new HashSet<>(Set.of(
-                Items.ambush.asItem(),
-                Items.atpoverdose.asItem(),
-                Items.autolytic.asItem(),
-                Items.fermentation.asItem(),
-                Items.putrefactive.asItem(),
-                Items.regenerative.asItem()
+                InitItems.ambush.asItem(),
+                InitItems.atpoverdose.asItem(),
+                InitItems.autolytic.asItem(),
+                InitItems.fermentation.asItem(),
+                InitItems.putrefactive.asItem(),
+                InitItems.regenerative.asItem()
         ));
     }
     @Override
@@ -55,9 +54,9 @@ public class Necora extends TheNecora {
     @Override
     public HashSet<Item> canUseHowSequence() {
         return new HashSet<>(Set.of(
-                Items.cytopathic_boost.asItem(),
-                Items.spliced_activation.asItem(),
-                Items.thermo_necro.asItem()
+                InitItems.cytopathic_boost.asItem(),
+                InitItems.spliced_activation.asItem(),
+                InitItems.thermo_necro.asItem()
         ));
     }
 
@@ -68,10 +67,10 @@ public class Necora extends TheNecora {
 
     public static void necora(LivingEntityUseItemEvent.Finish event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.necora.asItem())) {
-                if (NecoraHandler.has(player, Items.putrefactive.asItem())) {
+            if (Handler.hascurio(player, InitItems.necora.asItem())) {
+                if (NecoraHandler.has(player, InitItems.putrefactive.asItem())) {
                     if (event.getItem().is(net.minecraft.world.item.Items.ROTTEN_FLESH)) {
-                        if (!Handler.hascurio(player, Items.putrefactive.get())) {
+                        if (!Handler.hascurio(player, InitItems.putrefactive.get())) {
                             player.heal(player.getMaxHealth() / 20);
                             player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0));
                             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0));
@@ -89,7 +88,7 @@ public class Necora extends TheNecora {
     private Multimap<Holder<Attribute>, AttributeModifier> Head(Player player, ItemStack stack) {
         Multimap<Holder<Attribute>, AttributeModifier> multimap = HashMultimap.create();
         double acc = 0.8;
-        if (NecoraHandler.has(player, Items.autolytic.get())) {
+        if (NecoraHandler.has(player, InitItems.autolytic.get())) {
             acc = 0;
         }
         multimap.put(Attributes.WATER_MOVEMENT_EFFICIENCY, new AttributeModifier(

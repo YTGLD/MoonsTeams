@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.ms.necora.dna.god;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.GodDNA;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
@@ -62,7 +62,7 @@ public class GodNajaMortis extends GodDNA {
     public static void damageAttack(LivingDamageEvent.Pre event){
         if (event.getSource().getEntity() instanceof Player player) {
             if (event.getEntity() instanceof LivingEntity livingEntity) {
-                if (Handler.hascurio(player, Items.god_naja_mortis.asItem())) {
+                if (Handler.hascurio(player, InitItems.god_naja_mortis.asItem())) {
                     CompoundTag compoundTag = player.getPersistentData();
                     if (compoundTag.getInt(damageTag) < GodNajaMortis.damage()) {
                         compoundTag.putInt(damageTag, compoundTag.getInt(damageTag) + 5);
@@ -71,7 +71,7 @@ public class GodNajaMortis extends GodDNA {
                     event.setNewDamage(event.getNewDamage() * dam);
                     return;
                 }
-                if (Handler.hascurio(player, Items.naja_mortis.asItem())) {
+                if (Handler.hascurio(player, InitItems.naja_mortis.asItem())) {
                     CompoundTag compoundTag = player.getPersistentData();
                     if (compoundTag.getInt(damageTag) < NajaMortis.damage()) {
                         compoundTag.putInt(damageTag, compoundTag.getInt(damageTag) + 5);
@@ -122,7 +122,7 @@ public class GodNajaMortis extends GodDNA {
         }
         @Override
         public Item upLevelItem() {
-            return Items.god_naja_mortis.asItem();
+            return InitItems.god_naja_mortis.asItem();
         }
         @Override
         public void appendHoverText(ItemStack stack, Level context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {

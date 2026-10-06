@@ -4,7 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.event.AdvancementEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.AllTip;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
@@ -65,7 +65,7 @@ public class NightmareBaseRedemption extends NightmareBase implements AllTip {
             if (player.level() instanceof ServerLevel serverLevel) {
                 if (serverLevel.getRaidAt(player.blockPosition()) != null && serverLevel.getRaidAt(player.blockPosition()).isLoss()) {
                     if (stack.get(DataReg.tag) != null && !stack.get(DataReg.tag).getBoolean(AdvancementEvt.nightmare_base_redemption_down_and_out)) {
-                        giveItem(player, new ItemStack(Items.nightmare_base_redemption_down_and_out.get()));
+                        giveItem(player, new ItemStack(InitItems.nightmare_base_redemption_down_and_out.get()));
                         stack.get(DataReg.tag).putBoolean(AdvancementEvt.nightmare_base_redemption_down_and_out, true);
                     }
                 }

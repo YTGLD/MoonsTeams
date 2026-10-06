@@ -1,5 +1,6 @@
 package com.ytgld.moonstone.item;
 
+import com.ytgld.moonstone.Book;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.item.ms.CommonItem;
@@ -49,7 +50,6 @@ import com.ytgld.moonstone.item.si.nightmare.start.*;
 import com.ytgld.moonstone.item.si.nightmare.stone.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -60,7 +60,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-public class Items {
+public class InitItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Moonstone.MODID);
     public static final DeferredItem<@NotNull Item> NightmareBaseItem_ = register("nightmare_base", (ResourceLocation) -> new NightmareBaseItem(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<@NotNull Item> nightmare_base_black_eye = register("nightmare_base_black_eye", (ResourceLocation) -> new NightmareBaseBlackEye(new Item.Properties().stacksTo(1)));
@@ -295,6 +295,8 @@ public class Items {
     public static final DeferredItem<@NotNull Item> spliced_activation = register("spliced_activation", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64)));
     public static final DeferredItem<@NotNull Item> thermo_necro = register("thermo_necro", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64)));
 
+    public static final DeferredItem<@NotNull Item> Book_ = register("book", (identifier) ->
+            new Book(new Item.Properties().stacksTo(1)));
 
 
     public static class TabChestItem {
@@ -371,6 +373,7 @@ public class Items {
                 .title(Component.translatable("itemGroup.tabmoonstone"))
                 .icon(() -> ectoplasmball.asItem().getDefaultInstance())
                 .displayItems((parameters, output) -> {
+                    output.accept(Book_);
                     output.accept(soulbattery);
                     output.accept(soulcube);
                     output.accept(beacon);

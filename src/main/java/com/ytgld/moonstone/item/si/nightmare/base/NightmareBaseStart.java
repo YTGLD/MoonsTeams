@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.config.ConfigPlugin;
 import com.ytgld.moonstone.config.RegisterItemConfig;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.AllTip;
 import com.ytgld.moonstone.item.si.nightmare.NightmareBase;
 import com.ytgld.moonstone.item.si.nightmare.ToolTip;
@@ -82,11 +82,11 @@ public class NightmareBaseStart extends NightmareBase implements AllTip {
 
     public static void damage(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.nightmare_base_start.get())) {
-                if (!player.getCooldowns().isOnCooldown(Items.nightmare_base_start.get())) {
+            if (Handler.hascurio(player, InitItems.nightmare_base_start.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.nightmare_base_start.get())) {
                     if (player.getHealth() > 10) {
                         player.setHealth(player.getHealth() - 1);
-                        player.getCooldowns().addCooldown(Items.nightmare_base_start.get(), 10);
+                        player.getCooldowns().addCooldown(InitItems.nightmare_base_start.get(), 10);
                     }
                 }
 
@@ -109,7 +109,7 @@ public class NightmareBaseStart extends NightmareBase implements AllTip {
         Multimap<Holder<Attribute>, AttributeModifier> linkedHashMultimap = HashMultimap.create();
         int s = ConfigItem.intValue.getAsInt();
         float d = s / 100f;
-        if (Handler.hascurio(slotContext.entity(), Items.supreme_power.asItem())){
+        if (Handler.hascurio(slotContext.entity(), InitItems.supreme_power.asItem())){
             d /= 2;
         }
 

@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.medicine;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -47,11 +47,11 @@ public class MedicineBox extends TheNecora {
     @Override
     public HashSet<Item> canUSe() {
         return new HashSet<>(Set.of(
-                Items.calcification.asItem(),
-                Items.masticatory.asItem(),
-                Items.polyphagia.asItem(),
-                Items.quadriceps.asItem(),
-                Items.reanimation.asItem()
+                InitItems.calcification.asItem(),
+                InitItems.masticatory.asItem(),
+                InitItems.polyphagia.asItem(),
+                InitItems.quadriceps.asItem(),
+                InitItems.reanimation.asItem()
         )) ;
     }
     @Override
@@ -71,7 +71,7 @@ public class MedicineBox extends TheNecora {
 
     public  static void die(PlayerEvent.PlayerRespawnEvent event) {
         Player player = event.getEntity();
-        if (!Handler.hascurio(player, Items.medicinebox.get())) {
+        if (!Handler.hascurio(player, InitItems.medicinebox.get())) {
             return;
         }
 
@@ -83,10 +83,10 @@ public class MedicineBox extends TheNecora {
                 for (int i = 0; i < stacksHandler.getSlots(); i++) {
                     ItemStack stack = stackHandler.getStackInSlot(i);
                     if (!stack.isEmpty()) {
-                        if (stack.is(Items.medicinebox.get())) {
+                        if (stack.is(InitItems.medicinebox.get())) {
                             if (stack.get(DataReg.tag) != null && !stack.get(DataReg.tag).getBoolean(spawn)) {
-                                if (Handler.hascurio(player, Items.medicinebox.get())) {
-                                    giveItem(player,new ItemStack(Items.reanimation.get()));
+                                if (Handler.hascurio(player, InitItems.medicinebox.get())) {
+                                    giveItem(player,new ItemStack(InitItems.reanimation.get()));
                                     stack.get(DataReg.tag).putBoolean(spawn, true);
                                     stack.get(DataReg.tag).putBoolean(blood_spawn, true);
                                 }
@@ -100,7 +100,7 @@ public class MedicineBox extends TheNecora {
     public  static void apple(LivingEntityUseItemEvent.Finish event) {
         LivingEntity livingEntity = event.getEntity();
         if (livingEntity instanceof Player player){
-            if (!Handler.hascurio(player, Items.medicinebox.get())) {
+            if (!Handler.hascurio(player, InitItems.medicinebox.get())) {
                 return;
             }
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
@@ -111,7 +111,7 @@ public class MedicineBox extends TheNecora {
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
                         if (!stack.isEmpty()) {
-                            if (stack.is(Items.medicinebox.get())) {
+                            if (stack.is(InitItems.medicinebox.get())) {
                                 ItemStack a = event.getItem();
                                 if (a.is(net.minecraft.world.item.Items.GOLDEN_APPLE)){
 
@@ -119,7 +119,7 @@ public class MedicineBox extends TheNecora {
                                         stack.get(DataReg.tag).putInt(apple,stack.get(DataReg.tag).getInt(apple)+1);
                                     }
                                     if (stack.get(DataReg.tag)!= null&&stack.get(DataReg.tag).getInt(apple)== 8){
-                                        giveItem(player,new ItemStack(Items.masticatory.get()));
+                                        giveItem(player,new ItemStack(InitItems.masticatory.get()));
                                         stack.get(DataReg.tag).putBoolean(blood_eat, true);
                                     }
 
@@ -135,7 +135,7 @@ public class MedicineBox extends TheNecora {
     public  static void LivingDamageEvent(LivingDamageEvent.Pre event) {
         LivingEntity livingEntity = event.getEntity();
         if (livingEntity instanceof Player player){
-            if (!Handler.hascurio(player, Items.medicinebox.get())) {
+            if (!Handler.hascurio(player, InitItems.medicinebox.get())) {
                 return;
             }
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
@@ -146,12 +146,12 @@ public class MedicineBox extends TheNecora {
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
                         if (!stack.isEmpty()) {
-                            if (stack.is(Items.medicinebox.get())) {
+                            if (stack.is(InitItems.medicinebox.get())) {
                                 if (stack.get(DataReg.tag)!= null&&stack.get(DataReg.tag).getInt(hurt_size)< 351){
                                     stack.get(DataReg.tag).putInt(hurt_size,stack.get(DataReg.tag).getInt(hurt_size)+1);
                                 }
                                 if (stack.get(DataReg.tag)!= null&&stack.get(DataReg.tag).getInt(hurt_size)== 350){
-                                    giveItem(player,new ItemStack(Items.calcification.get()));
+                                    giveItem(player,new ItemStack(InitItems.calcification.get()));
                                     stack.get(DataReg.tag).putBoolean(blood_hurt, true);
                                 }
                             }
@@ -166,7 +166,7 @@ public class MedicineBox extends TheNecora {
 
         LivingEntity livingEntity = event.getEntity();
         if (livingEntity instanceof Player player){
-            if (!Handler.hascurio(player, Items.medicinebox.get())) {
+            if (!Handler.hascurio(player, InitItems.medicinebox.get())) {
                 return;
             }
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
@@ -177,14 +177,14 @@ public class MedicineBox extends TheNecora {
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
                         if (!stack.isEmpty()) {
-                            if (stack.is(Items.medicinebox.get())) {
+                            if (stack.is(InitItems.medicinebox.get())) {
 
                                 if (stack.get(DataReg.tag)!= null&&stack.get(DataReg.tag).getInt(jump_size)< 501){
                                     stack.get(DataReg.tag).putInt(jump_size,stack.get(DataReg.tag).getInt(jump_size)+1);
 
                                 }
                                 if (stack.get(DataReg.tag)!= null&&stack.get(DataReg.tag).getInt(jump_size)== 500){
-                                    giveItem(player,new ItemStack(Items.quadriceps.get()));
+                                    giveItem(player,new ItemStack(InitItems.quadriceps.get()));
                                     stack.get(DataReg.tag).putBoolean(blood_jump, true);
 
                                 }
@@ -199,7 +199,7 @@ public class MedicineBox extends TheNecora {
 
         LivingEntity livingEntity = event.getEntity();
         if (livingEntity instanceof Player player){
-            if (!Handler.hascurio(player, Items.medicinebox.get())) {
+            if (!Handler.hascurio(player, InitItems.medicinebox.get())) {
                 return;
             }
             CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
@@ -210,12 +210,12 @@ public class MedicineBox extends TheNecora {
                     for (int i = 0; i < stacksHandler.getSlots(); i++) {
                         ItemStack stack = stackHandler.getStackInSlot(i);
                         if (!stack.isEmpty()) {
-                            if (stack.is(Items.medicinebox.get())) {
+                            if (stack.is(InitItems.medicinebox.get())) {
                                 ItemStack a = event.getItem();
                                 if (a.is(net.minecraft.world.item.Items.ENCHANTED_GOLDEN_APPLE)) {
 
                                     if (stack.get(DataReg.tag) != null && !stack.get(DataReg.tag).getBoolean(enchant)) {
-                                        giveItem(player,new ItemStack(Items.polyphagia.get()));
+                                        giveItem(player,new ItemStack(InitItems.polyphagia.get()));
                                         stack.get(DataReg.tag).putBoolean(enchant, true);
                                         stack.get(DataReg.tag).putBoolean(blood_enchant, true);
 

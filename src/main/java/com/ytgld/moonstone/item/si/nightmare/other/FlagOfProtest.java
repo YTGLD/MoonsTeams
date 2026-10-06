@@ -3,7 +3,7 @@ package com.ytgld.moonstone.item.si.nightmare.other;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.SIHandler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.DataReg;
@@ -57,7 +57,7 @@ public class FlagOfProtest extends NightmareSmall {
     }
     public static void PlayerRespawnEvent(PlayerEvent.PlayerRespawnEvent event){
         if (event.getEntity() instanceof Player player) {
-            if (SIHandler.hascurio(player, Items.flag_of_protest.get())) {
+            if (SIHandler.hascurio(player, InitItems.flag_of_protest.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();
                     for (Map.Entry<String, ICurioStacksHandler> entry : curios.entrySet()) {
@@ -65,10 +65,10 @@ public class FlagOfProtest extends NightmareSmall {
                         IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                         for (int i = 0; i < stacksHandler.getSlots(); i++) {
                             ItemStack stack = stackHandler.getStackInSlot(i);
-                            if (stack.is(Items.flag_of_protest.asItem())) {
+                            if (stack.is(InitItems.flag_of_protest.asItem())) {
                                 CompoundTag compoundTag = stack.get(DataReg.tag);
                                 if (compoundTag != null) {
-                                    if (!player.getCooldowns().isOnCooldown(Items.flag_of_protest.asItem())) {
+                                    if (!player.getCooldowns().isOnCooldown(InitItems.flag_of_protest.asItem())) {
                                         updateTga(stack);
                                         if (player.level() instanceof ServerLevel level) {
                                             if (compoundTag.getBoolean(canUse)) {

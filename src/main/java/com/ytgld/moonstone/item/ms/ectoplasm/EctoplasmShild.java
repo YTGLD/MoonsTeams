@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.ms.ectoplasm;
 
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.Ectoplasm;
 import com.ytgld.moonstone.other.DataReg;
 import net.minecraft.ChatFormatting;
@@ -36,7 +36,7 @@ public class EctoplasmShild extends Ectoplasm implements TextEvt.Twelve {
 
     public static void hurt(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.ectoplasmshild.get())) {
+            if (Handler.hascurio(player, InitItems.ectoplasmshild.get())) {
                 if (event.getSource().is(DamageTypes.EXPLOSION)) {
                     event.setNewDamage(event.getNewDamage() * 0.7F);
                 }

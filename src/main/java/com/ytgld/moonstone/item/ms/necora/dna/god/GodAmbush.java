@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.necora.dna.god;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.GodDNA;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -21,7 +21,7 @@ public class GodAmbush extends GodDNA {
 
     public static void LivingIncomingDamageEvent(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.GodAmbush.get())) {
+            if (Handler.hascurio(player, InitItems.GodAmbush.get())) {
                 event.setNewDamage(event.getNewDamage() * 0.9f);
             }
         }

@@ -2,7 +2,7 @@ package com.ytgld.moonstone.item.ms.maxitem.uncommon.common;
 
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.TextEvt;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.CommonItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -27,7 +27,7 @@ public class RedAmout extends CommonItem implements TextEvt.Twelve {
 
     public static void redamout(LivingDamageEvent.Pre event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.redamout.get()) || Handler.hascurio(player, Items.maxamout.asItem())) {
+            if (Handler.hascurio(player, InitItems.redamout.get()) || Handler.hascurio(player, InitItems.maxamout.asItem())) {
                 if (Mth.nextInt(RandomSource.create(), 1, 8) == 1) {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 1));
                 }

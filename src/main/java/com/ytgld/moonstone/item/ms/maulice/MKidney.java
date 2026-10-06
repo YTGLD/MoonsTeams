@@ -1,7 +1,7 @@
 package com.ytgld.moonstone.item.ms.maulice;
 
 import com.ytgld.moonstone.Handler;
-import com.ytgld.moonstone.item.Items;
+import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.MLS;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -32,9 +32,9 @@ public class MKidney extends MLS {
     public static void brainLHurt(LivingDamageEvent.Pre event) {
 
         if (event.getEntity() instanceof Player player) {
-            if (Handler.hascurio(player, Items.mkidney.get())) {
+            if (Handler.hascurio(player, InitItems.mkidney.get())) {
                 int Kidney = player.getPersistentData().getInt("mkidney");
-                if (!player.getCooldowns().isOnCooldown(Items.mkidney.get())) {
+                if (!player.getCooldowns().isOnCooldown(InitItems.mkidney.get())) {
                     if (Mth.nextInt(RandomSource.create(), 0, 100) < Kidney) {
                         player.getPersistentData().putInt("mkidney", Kidney / 2);
                         event.setNewDamage(0);
@@ -42,7 +42,7 @@ public class MKidney extends MLS {
                         player.getPersistentData().putInt("mkidney", 100);
                         event.setNewDamage(event.getNewDamage() + player.getMaxHealth() / 3);
                         player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_DEACTIVATE, SoundSource.NEUTRAL, 1, 1);
-                        player.getCooldowns().addCooldown(Items.mkidney.get(), 200);
+                        player.getCooldowns().addCooldown(InitItems.mkidney.get(), 200);
                     }
                 }
             }

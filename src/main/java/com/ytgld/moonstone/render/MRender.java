@@ -1,5 +1,6 @@
 package com.ytgld.moonstone.render;
 
+import com.mojang.blaze3d.shaders.Uniform;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import com.ytgld.moonstone.Moonstone;
@@ -7,6 +8,7 @@ import com.ytgld.moonstone.render.outline.MFramebufferBlack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
 import net.minecraft.resources.ResourceLocation;
 
@@ -25,7 +27,21 @@ public class MRender extends RenderType {
     public MRender(String name, VertexFormat format, VertexFormat.Mode mode, int bufferSize, boolean affectsCrumbling, boolean sortOnUpload, Runnable setupState, Runnable clearState) {
         super(name, format, mode, bufferSize, affectsCrumbling, sortOnUpload, setupState, clearState);
     }
+    public static ShaderInstance vows;
+    private static final long START_TIME = System.nanoTime();
+    public static void setVows(ShaderInstance vows) {
+        MRender.vows = vows;
+    }
 
+    public static ShaderInstance getVows() {
+        ShaderInstance shaderInstance = vows ;
+        float time = (System.nanoTime() - START_TIME) / 1_000_000_000.0F;
+        Uniform uniform = shaderInstance.getUniform("Time");
+        if (uniform != null) {
+            uniform.set(time);
+        }
+        return shaderInstance;
+    }
     public static final RenderType theRenderTypeNotOutline = create("blood",
             DefaultVertexFormat.POSITION, VertexFormat.Mode.QUADS,
             1536, false, false,
