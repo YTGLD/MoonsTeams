@@ -432,8 +432,8 @@ public class InitItems {
                     output.accept(blackeorb);
                     output.accept(blueamout);
                     output.accept(greedamout);
-                    output.accept(greedcrystal);
                     output.accept(redamout);
+                    output.accept(greedcrystal);
                     output.accept(warcrystal);
                     output.accept(whiteorb);
                     output.accept(evilcandle);

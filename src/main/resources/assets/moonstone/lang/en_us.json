@@ -2315,12 +2315,102 @@
   "moonstone.book.ectoplasmtree.2": "前期探索地狱的不二选择",
 
 
+  "moonstone.book.redamout.1": "造成伤害会有概率获得力量效果",
+  "moonstone.book.redamout.2": "可以合成获取，也可以出现在战利品箱子里",
 
+  "moonstone.book.greedamout.1": "造成伤害有可能恢复生命值",
+  "moonstone.book.greedamout.2": "受到伤害有可能吸收伤害",
+
+  "moonstone.book.blueamout.1": "造成伤害有可能虚弱目标",
+  "moonstone.book.blueamout.2": "受到伤害有可能获得抗性",
+
+
+  "moonstone.book.greedcrystal.1": "提供些许时运效果",
+  "moonstone.book.greedcrystal.2": "可以合成",
+
+  "moonstone.book.biggreedcrystal.1": "提供时运效果",
+  "moonstone.book.biggreedcrystal.2": "可以由贪婪水晶合成",
+
+  "moonstone.book.fortunecrystal.1": "提供大量时运效果",
+  "moonstone.book.fortunecrystal.2": "可以由大贪婪水晶合成",
+
+
+  "moonstone.book.warcrystal.1": "提供些许伤害",
+  "moonstone.book.warcrystal.2": "可以合成",
+
+  "moonstone.book.bigwarcrystal.1": "提供近战伤害",
+  "moonstone.book.bigwarcrystal.2": "可以由战争水晶合成",
+
+  "moonstone.book.mayhemcrystal.1": "提供大量的伤害",
+  "moonstone.book.mayhemcrystal.2": "可以由大战争水晶合成",
+
+  "moonstone.book.rage_crystal.1": "提供些许伤害和生命值",
+  "moonstone.book.rage_crystal.2": "可以合成",
+
+  "moonstone.book.rage_crystal_big.1": "提供近战伤害和生命值",
+  "moonstone.book.rage_crystal_big.2": "可以由血怒水晶合成",
+
+  "moonstone.book.rage_crystal_max.1": "提供大量的伤害和生命值",
+  "moonstone.book.rage_crystal_max.2": "可以由大血怒水晶合成",
+
+  "moonstone.book.maxamout.1": "三种符石的融合版本",
+  "moonstone.book.maxamout.2": "聚集了三色符石的所有能力",
+  "moonstone.book.loot.blood": "发现在远古城市里，需要佩戴封魔烛台才能获取",
+
+  "moonstone.book.owner_blood_eye.1": "减少20%血灵增生体的攻击间隔",
+
+  "moonstone.book.owner_blood_attack_eye.1":"增加10%血灵增生体的攻击间隔",
+  "moonstone.book.owner_blood_attack_eye.2":"增加20%血灵伤害",
+
+  "moonstone.book.owner_blood_speed_eye.1": "减少50%血灵增生体的攻击间隔",
+  "moonstone.book.owner_blood_speed_eye.2": "增加300%血珠速度",
+  "moonstone.book.owner_blood_speed_eye.3": "但是发射的血珠不再会追踪生物",
+
+  "moonstone.book.owner_blood_boom_eye.1":"血球会在击中时爆炸",
+  "moonstone.book.owner_blood_boom_eye.2":"减少20%血珠速度",
+  "moonstone.book.owner_blood_boom_eye.3":"增加200%血灵增生体的攻击间隔",
+
+  "moonstone.book.owner_blood_effect_eye.1": "血球会在击中时附加大量的负面效果",
+
+  "moonstone.book.owner_blood_earth.1":"血灵增生体不会再攻击",
+  "moonstone.book.owner_blood_earth.2":"吸引生物和掉落物（变成磁铁）",
+
+  "moonstone.book.owner_blood_vex.1": "血珠击中后会恢复主人的生命值",
+  "moonstone.book.owner_blood_vex.2": "其数值取决于血灵增生体的伤害",
+  "moonstone.book.owner_blood_vex.3": "血灵增生体的伤害降低3点",
+
+  "moonstone.book.the_blood_book.1": "融合所有血之书籍的所有能力",
+
+  "moonstone.book.blood_candle.1": "佩戴按下绑定键召唤血灵增生体",
+  "moonstone.book.blood_candle.2": "血灵增生体会自动攻击附近的生物",
+  "moonstone.book.blood_candle.3": "可以使用一些物品来增强它的攻击或能力",
+
+  "moonstone.book.necora.1": "需要佩戴它才开始基因类型物品的获取",
+
+  "moonstone.book.cytopathic_boost.1": "僵尸获得40%召唤者的伤害，速度，护甲",
+  "moonstone.book.spliced_activation.1": "僵尸的最大生命值提高50%，且快速恢复生命值",
+  "moonstone.book.thermo_necro.1": "降低60%僵尸的腐烂速度",
+
+  "moonstone.book.warm_approachable.1": "增加移速",
+  "moonstone.book.ocean_affinity.1": "增加游泳速度",
+  "moonstone.book.earth_affinity.1": "增加击退抗性",
+
+
+  "moonstone.book.calcareous.1": "僵尸/宠物单位增加8点护甲",
+  "moonstone.book.frontal_lobe.1": "僵尸/宠物单位增加30%速度",
+  "moonstone.book.high_energy.1": "僵尸/宠物单位增加10点生命值且自然恢复",
+  "moonstone.book.surge.1": "僵尸/宠物单位造成的伤害提高20%",
+
+  "moonstone.book.loot.has.2": "需要佩戴Necora物品才能获取",
+  "moonstone.book.loot.has.3": "发现在多数战利品箱子里",
+  "moonstone.book.nda.main": "需要右键植入到相关物品内使用",
+  "moonstone.book.loot.necora": "发现在多数箱子里（需佩戴Necora病毒）",
+  "moonstone.book.loot.has.1": "需要佩戴一些物品才能获取",
   "moonstone.book.ectoplasm.main": "食用后恢复少量饥饿值",
   "moonstone.book.loot.not": "目前无法从身上怪物上掉落",
   "moonstone.book.loot.craft": "只能合成获取",
   "moonstone.book.loot.not.1":"无法获取",
-  "moonstone.book.loot.dungeon": "发现在地牢",
+  "moonstone.book.loot.dungeon": "发现在地牢矿井之类的战利品箱子里",
   "moonstone.book.loot.clear": "右键关闭界面",
   "moonstone.book.nightmare_base.main": "噩梦基座",
   "moonstone.book.nightmare_base.1": "恶念的起始，光明的另一面\n\n佩戴获取一些罪孽：窥眸，死兆，颠倒，救赎\n愚者，洞悉，起始\n基座一旦与你建立联系，将无法取下"

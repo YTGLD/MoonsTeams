@@ -36,6 +36,12 @@ public interface RegisterBookPage {
                 Component.translatable("moonstone.book.loot.clear")
         );
     }
+    default List<Component> hasEqBoolean(){
+        return List.of(
+                Component.translatable("moonstone.book.loot.has.1"),
+                Component.translatable("moonstone.book.loot.clear")
+        );
+    }
     default List<Component> listCraft(){
         return List.of(
                 Component.translatable("moonstone.book.loot.craft"),
