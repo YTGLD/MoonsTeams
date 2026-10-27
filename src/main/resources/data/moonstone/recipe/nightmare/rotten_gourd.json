@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A":  "minecraft:crying_obsidian",
+    "B":  "#curios:nightmare",
+    "C":  "minecraft:netherite_ingot",
+
+    "D":  "minecraft:nether_star"
+  },
+  "pattern": [
+    " CD",
+    "ABC",
+    "AA "
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:rotten_gourd"
+  }
+}

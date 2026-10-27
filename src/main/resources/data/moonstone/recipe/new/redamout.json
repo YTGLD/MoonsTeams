@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+     "minecraft:stone",
+     "moonstone:ectoplasmprism",
+     "moonstone:rage_crystal"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:redamout"
+  }
+}

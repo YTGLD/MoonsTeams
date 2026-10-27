@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:ectoplasmprism",
+    "moonstone:biggreedcrystal",
+    "moonstone:biggreedcrystal",
+    "minecraft:emerald_block"
+  ],
+  "result": {
+    "id": "moonstone:fortunecrystal",
+    "count": 1
+  }
+}

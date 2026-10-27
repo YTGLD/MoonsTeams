@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+     "minecraft:stone",
+     "moonstone:ectoplasmprism",
+     "minecraft:lapis_block"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:blueamout"
+  }
+}

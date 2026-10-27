@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:iron_sword",
+    "minecraft:iron_sword",
+    "minecraft:iron_sword",
+    "minecraft:nether_star",
+    "minecraft:iron_sword",
+    "#curios:nightmare",
+    "minecraft:iron_sword",
+    "minecraft:iron_sword",
+    "minecraft:iron_sword"
+  ],
+  "result": {
+    "id": "moonstone:hidden_blade",
+    "count": 1
+  }
+}

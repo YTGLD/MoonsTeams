@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "moonstone:ectoplasmcube",
+    "moonstone:blood_jelly",
+    "moonstone:blood_jelly",
+    "moonstone:blood_jelly",
+    "moonstone:ectoplasmprism"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:consciousness"
+  }
+}

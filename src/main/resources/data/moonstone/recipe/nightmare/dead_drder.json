@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:crying_obsidian",
+    "minecraft:crying_obsidian",
+    "minecraft:crying_obsidian",
+
+    "#curios:nightmare",
+    "moonstone:ectoplasmshild",
+    "#curios:nightmare",
+
+
+    "minecraft:crying_obsidian",
+    "minecraft:crying_obsidian",
+    "minecraft:crying_obsidian"
+  ],
+  "result": {
+    "id": "moonstone:dead_drder",
+    "count": 1
+  }
+}

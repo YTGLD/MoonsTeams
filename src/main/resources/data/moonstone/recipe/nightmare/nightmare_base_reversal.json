@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:nightmare_base_stone_meet",
+    "moonstone:nightmare_base_stone_virus",
+    "moonstone:nightmare_base_stone_brain"
+  ],
+  "result": {
+    "id": "moonstone:nightmare_base_reversal"
+  }
+}

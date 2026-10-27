@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "package": "com.ytgld.moonstone.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "EntityMixin",
+    "LiquidBlockMixin",
+    "LivingEntityMixin",
+    "ModMixin",
+    "WardenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "cilent.GameRendererMixin",
+    "cilent.GuiGraphicsExtractorMixin",
+    "cilent.RenderSystemMixin",
+    "cilent.glow.PreparedFrameMixin",
+    "cilent.glow.SubmitNodeCollectionMixin",
+    "cilent.glow.SubmitNodeStorageMixin",
+    "cilent.guiparticles.ScreenMixin",
+    "cilent.update.LevelRendererMixin",
+    "cilent.util.LevelRendererMixin"
+  ]
+}

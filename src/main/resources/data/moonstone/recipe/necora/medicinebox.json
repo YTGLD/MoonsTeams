@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:ectoplasmprism",
+    "minecraft:chest"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:medicinebox"
+  }
+}

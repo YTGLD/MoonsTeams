@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "moonstone:owner_blood_eye",
+    "moonstone:owner_blood_attack_eye",
+    "moonstone:owner_blood_speed_eye",
+    "moonstone:owner_blood_boom_eye",
+    "moonstone:owner_blood_effect_eye",
+    "moonstone:owner_blood_vex",
+    "moonstone:owner_blood_earth",
+    "moonstone:blood_magic_box",
+
+    "moonstone:necora",
+    "moonstone:immortal",
+
+    "moonstone:badgeofthedead",
+    "moonstone:blackeorb",
+
+    "moonstone:blueamout",
+    "moonstone:greedamout",
+    "moonstone:redamout",
+    "moonstone:whiteorb",
+    "moonstone:magnet",
+    "moonstone:obsidianring",
+    "moonstone:maxamout",
+
+    "moonstone:twelve_sword",
+    "moonstone:consciousness"
+
+
+  ]
+}

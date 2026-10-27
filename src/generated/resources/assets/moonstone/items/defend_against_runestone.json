@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "moonstone:item/defend_against_runestone"
+  }
+}

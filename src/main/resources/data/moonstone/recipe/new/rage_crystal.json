@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+     "moonstone:ectoplasmcloub",
+     "moonstone:ectoplasmcloub",
+     "moonstone:ectoplasmcloub",
+     "moonstone:ectoplasmcloub",
+     "moonstone:ectoplasmcloub",
+     "moonstone:ectoplasmcloub",
+
+     "moonstone:ectoplasmcube",
+     "moonstone:ectoplasmcube",
+
+     "minecraft:redstone_block"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:rage_crystal"
+  }
+}

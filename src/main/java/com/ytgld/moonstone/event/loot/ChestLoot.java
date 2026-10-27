@@ -1,0 +1,161 @@
+package com.ytgld.moonstone.event.loot;
+
+
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.event.AdvancementEvt;
+import com.ytgld.moonstone.event.EquippedEvt;
+import com.ytgld.moonstone.item.InitItems;
+import com.ytgld.moonstone.other.DataReg;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.Holder;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
+import net.neoforged.neoforge.common.loot.LootModifier;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.Optional;
+
+public class ChestLoot extends LootModifier {
+    public static final Supplier<MapCodec<ChestLoot>> CODEC = Suppliers.memoize(() ->
+            RecordCodecBuilder.mapCodec(inst -> codecStart(inst).apply(inst,
+                    ChestLoot::new)));
+
+    protected ChestLoot(Optional<Holder<LootItemCondition>> condition, int priority) {
+        super(condition, priority);
+    }
+
+
+    @Override
+    protected @NotNull ObjectArrayList<ItemStack> doApply(@NotNull ObjectArrayList<ItemStack> objectArrayList, LootContext lootContext) {
+        @Nullable Entity entity = lootContext.getOptional(LootContextParams.THIS_ENTITY);
+        Identifier s = lootContext.getQueriedLootTableId();
+        String idSting = String.valueOf(s);
+        if (idSting.contains("chests/")) {
+            if (entity != null) {
+                AdvancementEvt.addLoot(objectArrayList, entity, 20);
+                AdvancementEvt.nightmare_base_reversal_mysteriousLOOT(objectArrayList, entity);
+                AdvancementEvt.nightmare_base_start_pod(objectArrayList, entity);
+                AdvancementEvt.tricky_puppets(objectArrayList, entity);
+
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.blood_candle.get(), entity, List.of(
+                        InitItems.owner_blood_eye.get(),
+                        InitItems.owner_blood_attack_eye.get(),
+                        InitItems.owner_blood_speed_eye.get(),
+                        InitItems.owner_blood_effect_eye.get(),
+                        InitItems.owner_blood_boom_eye.get(),
+                        InitItems.owner_blood_vex.get(),
+                        InitItems.owner_blood_earth.get()
+                ), 12,lootContext);
+
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.NightmareBaseItem_.get(), entity, List.of(
+                        InitItems.defend_against_runestone.get(),
+                        InitItems.revive_runestone.get(),
+                        InitItems.strengthen_runestone.get()
+                ), 10,lootContext);
+
+
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.medicinebox.get(), entity, List.of(
+                        InitItems.WarmApproachable.get(),
+                        InitItems.OceanAffinity.get(),
+                        InitItems.EarthAffinity.get(),
+                        InitItems.calcareous.get(),
+                        InitItems.frontal_lobe.get(),
+                        InitItems.high_energy.get(),
+                        InitItems.surge.get()
+                ), 18,lootContext);
+
+
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.necora.get(), entity, List.of(
+                        InitItems.ambush.get(),
+                        InitItems.atpoverdose.get(),
+                        InitItems.autolytic.get(),
+                        InitItems.fermentation.get(),
+                        InitItems.putrefactive.get(),
+                        InitItems.regenerative.get(),
+                        InitItems.adrenaline.get(),
+                        InitItems.cell_mummy.get(),
+                        InitItems.cell_boom.get(),
+                        InitItems.cell_calcification.get(),
+                        InitItems.cell_blood.get(),
+                        InitItems.bone_cell.get(),
+                        InitItems.parasitic_cell.get(),
+                        InitItems.mother_cell.get(),
+                        InitItems.disgusting_cells.get(),
+                        InitItems.peptide_surge.get(),
+                        InitItems.acidic_reflux.get(),
+                        InitItems.hypertrophy.get(),
+                        InitItems.naja_mortis.get()
+
+
+                ), 20,lootContext);
+
+
+            }
+        }
+        return objectArrayList;
+    }
+    private void addLoot(ObjectArrayList<ItemStack> generatedLoot,
+                         RandomSource random ,
+                         Item mustHas ,
+                         Entity entity ,
+                         List<Item> itemList,
+                         int gLvl,LootContext lootContext){
+        ServerLevel serverLevel= lootContext.getLevel();
+        if (entity instanceof Player player ){
+            if (Handler.hascurio(player,mustHas)){
+                int i = random.nextInt(itemList.size());
+                if (gLvl >= 100){
+                    gLvl = 100;
+                }
+                ItemStack stack = new ItemStack(itemList.get(i));
+                CompoundTag compoundTag = new CompoundTag();
+                if (serverLevel.getDifficulty()==(Difficulty.PEACEFUL)) {
+                    compoundTag.putBoolean(Difficulty.PEACEFUL.getSerializedName(), true);
+                }
+                if (serverLevel.getDifficulty()==(Difficulty.EASY)) {
+                    compoundTag.putBoolean(Difficulty.EASY.getSerializedName(), true);
+                }
+                if (serverLevel.getDifficulty()==(Difficulty.NORMAL)) {
+                    compoundTag.putBoolean(Difficulty.NORMAL.getSerializedName(), true);
+                }
+                if (serverLevel.getDifficulty()==(Difficulty.HARD)) {
+                    int lv = Mth.nextInt(RandomSource.create(),1,2);
+
+                    if (lv == 1) {
+                        compoundTag.putBoolean(Difficulty.HARD.getSerializedName(), true);
+                    } else if (lv == 2){
+                        compoundTag.putBoolean(EquippedEvt.lootTable, true);
+                    }
+                }
+                stack.set(DataReg.tag,compoundTag);
+                if (Mth.nextInt(random, 1, 100) <= gLvl) {
+                    generatedLoot.add(stack);
+                }
+            }
+        }
+    }
+    @Override
+    public @NotNull MapCodec<? extends IGlobalLootModifier> codec() {
+        return CODEC.get();
+    }
+
+
+}

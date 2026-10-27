@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:blood_jelly",
+    "#curios:nightmare",
+    "moonstone:blood_jelly",
+    "#curios:nightmare",
+    "moonstone:blood_snake",
+    "#curios:nightmare",
+    "moonstone:blood_jelly",
+    "#curios:nightmare",
+    "moonstone:blood_jelly"
+  ],
+  "result": {
+    "id": "moonstone:blood_god",
+    "count": 1
+  }
+}

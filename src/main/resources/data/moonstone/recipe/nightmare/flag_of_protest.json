@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A":  "minecraft:crying_obsidian",
+    "B":  "minecraft:blaze_rod",
+    "C":  "#curios:nightmare"
+  },
+  "pattern": [
+    " AA",
+    "CAA",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:flag_of_protest"
+  }
+}

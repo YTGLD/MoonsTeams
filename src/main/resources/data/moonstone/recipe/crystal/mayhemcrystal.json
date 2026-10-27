@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:ectoplasmprism",
+    "moonstone:bigwarcrystal",
+    "moonstone:bigwarcrystal",
+    "minecraft:netherite_sword"
+  ],
+  "result": {
+    "id": "moonstone:mayhemcrystal",
+    "count": 1
+  }
+}
