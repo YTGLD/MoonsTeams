@@ -1,6 +1,10 @@
 package com.ytgld.moonstone.render.gui_particles;
 
+import org.joml.Vector2f;
+
 public class BlackState {
+    public float rotation;
+
     public int alpha;
     public int lifeTime = 0;
     public int lastSeenTick;
@@ -10,6 +14,7 @@ public class BlackState {
     public final int screenY;
     public final BlackKey.ImageColorAndRenderPipeline imageColorAndRenderPipeline;
     public final int downAlpha;
+    public Vector2f previousPosition = new Vector2f();
 
 
     public BlackState(int alpha, int lastSeenTick, int x, int y, BlackKey.ImageColorAndRenderPipeline imageColorAndRenderPipeline) {

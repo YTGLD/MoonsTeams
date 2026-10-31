@@ -26,8 +26,8 @@ public class BloodAmount  implements ICurioRenderer {
     public <S extends LivingEntityRenderState, M extends EntityModel<? super S>> void render(ItemStack stack, SlotContext slotContext, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int packedLight, S renderState, RenderLayerParent<S, M> renderLayerParent, EntityRendererProvider.Context context, float yRotation, float xRotation) {
         if (stack.get(DataReg.tag)!=null) {
             stack.get(DataReg.tag).getInt(MaxSword).ifPresent((a)->{
-                render(a,poseStack,submitNodeCollector, MRender.colorOutline);
-                render(a,poseStack,submitNodeCollector, MRender.colorOutline);
+                render(a,poseStack,submitNodeCollector, MRender.renderType);
+                render(a,poseStack,submitNodeCollector, MRender.renderType);
             });
         }
     }

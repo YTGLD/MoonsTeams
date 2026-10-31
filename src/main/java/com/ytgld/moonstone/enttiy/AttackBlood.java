@@ -23,7 +23,7 @@ import java.util.List;
 
 public class AttackBlood extends Entity {
     private LivingEntity target;
-    private final List<Vec3> trailPositions = new ArrayList<>();
+    public final List<Vec3> trailPositions = new ArrayList<>();
 
     public float damages = 4;
     public float addDamgae = 0;
@@ -32,7 +32,7 @@ public class AttackBlood extends Entity {
     public boolean boom = false;
     public boolean effect = false;
     public boolean isPlayer = false;
-    public float speeds = 0.5f;
+    public float speeds = 1;
     public float maxTime = 200;
     public AttackBlood(EntityType<? extends AttackBlood> entityType, Level level) {
         super(entityType, level);
@@ -61,10 +61,6 @@ public class AttackBlood extends Entity {
         this.target = target;
     }
 
-    public List<Vec3> getTrailPositions() {
-        return trailPositions;
-    }
-
     @Override
     public float getXRot() {
         return 0;
@@ -76,7 +72,7 @@ public class AttackBlood extends Entity {
     }
     public int live = 50;
 
-    private boolean canSee = true;
+    public boolean canSee = true;
     public boolean canSeeClient = true;
 
     @Override
@@ -110,6 +106,7 @@ public class AttackBlood extends Entity {
                     if (!entitys.getNamespace().equals(Moonstone.MODID)) {
                         if (entity.isAlive()) {
                             entity.setInvulnerableTime(0);
+                            entity.damageCooldownTime = 0;
                             if (boom) {
                                 this.level().explode(this.getOwner(), this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
                             }
@@ -136,13 +133,11 @@ public class AttackBlood extends Entity {
     public void tick() {
         tickCount ++;
         this.noPhysics = true;
-        this.move(
-                MoverType.SELF,
-                this.getDeltaMovement()
+        this.setPos(
+                this.getX() + this.getDeltaMovement().x,
+                this.getY() + this.getDeltaMovement().y,
+                this.getZ() + this.getDeltaMovement().z
         );
-
-
-
         if (canSee) {
             if (boom && tickCount >= maxTime) {
                 this.level().explode(this.getOwner(), this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.NONE);
@@ -161,7 +156,7 @@ public class AttackBlood extends Entity {
             }
         }
 
-        float s = 0.075F;
+        float s = 0.5f;
         if (canSee) {
             if (target != null) {
                 if (follow) {

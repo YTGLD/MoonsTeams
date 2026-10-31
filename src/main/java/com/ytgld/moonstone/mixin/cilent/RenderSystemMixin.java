@@ -15,7 +15,7 @@ public class RenderSystemMixin {
     private static void render(RenderPass renderPass, CallbackInfo ci) {
         GpuBuffer globalUniform = MoonstoneTimeVowsGlobals.getGpuBuffer();
         if (globalUniform != null) {
-            renderPass.setUniform("MoonstoneTimeVowsGlobals", globalUniform);
+            renderPass.setUniform("MoonstoneVowsGlobals", globalUniform);
         }
     }
 }

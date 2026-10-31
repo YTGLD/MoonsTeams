@@ -71,6 +71,6 @@ color *= vertexColor * ColorModulator;
 #ifdef OIT_ALPHA_ONLY
     executeAlphaOnlyPhase(gl_FragCoord.z, color.a);
 #else
-    fragColor = calculateFinalColor(color);
+    fragColor = mix(calculateFinalColor(color),calculateFinalColor(color)*ColorModulator,0.5);
 #endif
 }

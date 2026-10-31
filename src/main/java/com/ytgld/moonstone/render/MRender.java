@@ -1,19 +1,13 @@
 package com.ytgld.moonstone.render;
 
-import com.mojang.blaze3d.pipeline.*;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.renderpearl.api.GpuFormat;
 import com.mojang.renderpearl.api.pipeline.*;
-import com.mojang.renderpearl.backend.opengl.GlStateManager;
 import com.ytgld.moonstone.Moonstone;
-import com.ytgld.moonstone.render.outline.MFramebufferBlack;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BindGroupLayouts;
-import net.minecraft.client.renderer.LevelRenderer;
-import net.minecraft.client.renderer.rendertype.LayeringTransform;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.rendertype.RenderSetup;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.Identifier;
 
 import java.util.Optional;
@@ -35,7 +29,7 @@ public class MRender {
                             ONE,
                             ONE,
                             ZERO))).withBindGroupLayout(BindGroupLayouts.DYNAMIC_TRANSFORMS) .withBindGroupLayout(BindGroupLayout.builder().withUniform(
-                            "ChestVowsGlobals", UniformType.UNIFORM_BUFFER).build())
+                            "MoonstoneVowsGlobals", UniformType.UNIFORM_BUFFER).build())
                     .withVertexBinding(0, DefaultVertexFormat.POSITION_TEX_COLOR).withPrimitiveTopology(PrimitiveTopology.QUADS).buildSnippet();
 
     public static final RenderPipeline VowGlow =
@@ -47,16 +41,21 @@ public class MRender {
                     withLocation(Identifier.fromNamespaceAndPath(Moonstone.MODID,"pipeline/vows_glow")).build());
 
 
+    public static RenderType renderType = RenderType.create("end_gateway",
+            RenderSetup.builder(RenderPipelines.END_GATEWAY).withTexture(
+                    "Sampler0", Identifier.fromNamespaceAndPath(Moonstone.MODID,
+                            "textures/necr_image.png")).withTexture("Sampler1", Identifier.fromNamespaceAndPath(Moonstone.MODID,
+                    "textures/necr_image.png")).setOutline(RenderSetup.OutlineProperty.AFFECTS_OUTLINE).createRenderSetup());
+
     public static RenderType colorOutline = RenderType.create(
             "lightning", RenderSetup.builder(RenderPipeline.builder(MATRICES_FOG_SNIPPET).withLocation("pipeline/lightning")
                             .withVertexShader("core/rendertype_lightning").withFragmentShader("core/rendertype_lightning")
                             .withColorTargetState(new ColorTargetState(BlendFunction.LIGHTNING))
                             .withPrimitiveTopology(PrimitiveTopology.QUADS)
+                            .withCull(false).withDepthStencilState(DepthStencilState.DEFAULT)
                             .withVertexBinding(0, DefaultVertexFormat.POSITION_COLOR).withCull(false).build())
                     .sortOnUpload().createRenderSetup()
     );
-
-
     public static class RenderPs {
         public static final RenderPipeline.Snippet  GUI_TEXTURED_SNIPPET = RenderPipeline.builder(GLOBALS_SNIPPET).
                 withBindGroupLayout(BindGroupLayouts.PROJECTION).

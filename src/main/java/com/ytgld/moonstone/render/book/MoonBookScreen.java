@@ -336,7 +336,7 @@ public class MoonBookScreen extends Screen {
         pose.translate(-sss / 2f, -sss / 2f);
         int alpha = Mth.clamp((int) (size * 400 - 400), 0, 255);
         if (ciBookGuiAdd.item == InitItems.NightmareBaseItem_.asItem()) {
-            BlackKey.ColorImage colorImage = new BlackKey.ColorImage(80, 100,50,255);
+            BlackKey.ColorImage colorImage = new BlackKey.ColorImage( Math.max(0,(255 -smallAlpha) / 4), 100,50,255);
             float cs = 10f;
             int sizeS = 16;
             BlackParticlesAdd.markSeen((int) (centerX + Math.cos(time / cs) * 12), (int) (centerY+ Math.sin(time / cs) * 12),

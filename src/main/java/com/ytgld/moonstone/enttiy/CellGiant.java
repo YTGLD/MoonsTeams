@@ -90,7 +90,9 @@ public class CellGiant extends ExtendZombieEntity implements OwnableEntity {
         this.getNavigation().setCanFloat(true);
     }
     public static AttributeSupplier.Builder createAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 45).add(Attributes.MOVEMENT_SPEED, 0.2).add(Attributes.KNOCKBACK_RESISTANCE, 1.0D).add(Attributes.ATTACK_KNOCKBACK, 1.5D).add(Attributes.ATTACK_DAMAGE, 10);
+        return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 45)
+                .add(Attributes.MOVEMENT_SPEED, 0.2).add(Attributes.KNOCKBACK_RESISTANCE,
+                        1.0D).add(Attributes.ATTACK_KNOCKBACK, 1.5D).add(Attributes.ATTACK_DAMAGE, 10);
     }
     @Nullable
     @Override

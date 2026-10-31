@@ -49,7 +49,7 @@ public class EntityTs {
     @SubscribeEvent
     public static void  EntityAttributeCreationEvent(EntityAttributeCreationEvent event){
         event.put(owner_blood_.get(), Zombie.createAttributes().build());
-        event.put(cell_zombie.get(), CellGiant.createAttributes().build());
+        event.put(cell_zombie.get(), Zombie.createAttributes().build());
         event.put(cell_giant.get(), CellGiant.createAttributes().build());
         event.put(sword.get(), CellGiant.createAttributes().build());
     }

@@ -2,8 +2,10 @@ package com.ytgld.moonstone.render.gui_particles;
 
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.other.Light;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Mth;
 import org.joml.Matrix3x2fStack;
 import org.joml.Vector2f;
 
@@ -42,20 +44,38 @@ public class BlackParticlesRenderer {
             boolean downSize,
             boolean canRotate
     ) {
+
+        float partialTick =
+                Minecraft.getInstance()
+                        .getDeltaTracker()
+                        .getGameTimeDeltaPartialTick(false);
+
+        Vector2f position =
+                state.imageColorAndRenderPipeline.position();
+
+        Vector2f previous =
+                state.previousPosition;
+
+        float px = x + Mth.lerp(
+                partialTick,
+                previous.x,
+                position.x
+        );
+
+        float py = y + Mth.lerp(
+                partialTick,
+                previous.y,
+                position.y
+        );
+
+
+
+
         BlackKey.ColorImage color = state.imageColorAndRenderPipeline.color();
 
         if (downSize) {
             size = (int) (size * alpha / 255f);
         }
-
-        Vector2f position = state.imageColorAndRenderPipeline.position();
-        Vector2f velocity = state.imageColorAndRenderPipeline.velocity();
-        Vector2f acceleration = state.imageColorAndRenderPipeline.acceleration();
-
-        velocity.fma(deltaTime, acceleration);
-        position.fma(deltaTime, velocity);
-        float px = x + position.x;
-        float py = y + position.y;
 
         pose.pushMatrix();
 

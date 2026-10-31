@@ -66,6 +66,7 @@ public class FlySword extends Entity {
                             if (this.tickCount > 20) {
                                 if (player.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
                                     entity.setInvulnerableTime(0);
+                                    entity.damageCooldownTime = 0;
                                     entity.hurt(entity.damageSources().magic(),
                                             (float) (0.3f + player.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * 0.07f));
                                     canSee = false;
@@ -88,12 +89,6 @@ public class FlySword extends Entity {
         if (coll > 0) {
             coll --;
         }
-        this.move(
-                MoverType.SELF,
-                this.getDeltaMovement()
-        );
-
-
         // =========================
         // 你的原追踪逻辑放这里
         // =========================

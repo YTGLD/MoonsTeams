@@ -3,7 +3,7 @@
 
 
 
-layout(std140) uniform ChestVowsGlobals {
+layout(std140) uniform MoonstoneVowsGlobals {
     float Time;
 };
 

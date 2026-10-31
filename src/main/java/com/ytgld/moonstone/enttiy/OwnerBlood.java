@@ -42,7 +42,7 @@ public class OwnerBlood extends TamableAnimal {
     protected boolean isAffectedByBlocks() {
         return !this.isRemoved();
     }
-    private final List<Vec3> trailPositions = new ArrayList<>();
+    public final List<Vec3> trailPositions = new ArrayList<>();
     public List<Vec3> getTrailPositions() {
         return trailPositions;
     }
@@ -71,16 +71,23 @@ public class OwnerBlood extends TamableAnimal {
         LivingEntity target = getTarget(); // 获取目标
         Vec3 currentPos = this.position();
 
-        if (owner != null){
-            double desiredDistance = 2; // 设置想要保持的距离
-            Vec3 targetPos = owner.position().add(0, 3, 1); // 获取玩家位置并抬高
+        if (owner != null) {
+            if (owner.isDeadOrDying()) {
+                this.discard();
+            }
+            float speed = (float) (0.25f - (8 - owner.position().distanceTo(currentPos)) / 10f);
+            if (speed < 0) {
+                speed = 0;
+            }
+            double desiredDistance = 2;
+            Vec3 targetPos = owner.position().add(0, 3, 1);
 
-            Vec3 forward = owner.getLookAngle(); // 获取玩家的朝向向量
-            Vec3 direction = forward.scale(-1).normalize(); // 计算背后的方向（逆向）
+            Vec3 forward = owner.getLookAngle();
+            Vec3 direction = forward.scale(-1).normalize();
 
-            Vec3 newTargetPos = targetPos.add(direction.scale(desiredDistance)); // 计算新的目标位置
+            Vec3 newTargetPos = targetPos.add(direction.scale(desiredDistance));
 
-            this.teleportTo(newTargetPos.x, newTargetPos.y, newTargetPos.z);
+            this.setDeltaMovement(newTargetPos.subtract(currentPos).normalize().scale(speed));
         }
 
         if (this.getOwner() != null) {
@@ -297,21 +304,6 @@ public class OwnerBlood extends TamableAnimal {
     protected void doPush(Entity p_27415_) {
     }
     protected void pushEntities() {
-    }
-
-    @Override
-    protected void registerGoals() {
-        this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
-        this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, true));
-        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F));
-        this.goalSelector.addGoal(7, new BreedGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
-        this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
-
-        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, Monster.class, false));
     }
 
     @Nullable
