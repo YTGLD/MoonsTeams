@@ -59,7 +59,7 @@ public class OwnerBloodRender extends EntityRenderer<@NotNull OwnerBlood, OwnerB
             addTrail(pose, entity,entity, bufferSource,1,0,0,0.3f);
         });
         collector.submitCustomGeometry(poseStack, MRender.renderType, (pose, bufferSource) -> {
-            renderSphere1(pose, bufferSource, 0, 0.33f);
+            renderSphere1(pose, bufferSource, 0, 0.5f);
         });
         poseStack.popPose();
     }

@@ -94,7 +94,10 @@ public class NewEvent {
     public  void PlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
         Player player = event.getEntity();
         if (!player.entityTags().contains(Moonstone.MODID+"nightmare")) {
+
             player.addItem(InitItems.NightmareBaseItem_.get().getDefaultInstance());
+            player.addItem(InitItems.Book_.get().getDefaultInstance());
+
             player.addTag(Moonstone.MODID+"nightmare");
         }
     }

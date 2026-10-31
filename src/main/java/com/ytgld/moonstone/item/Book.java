@@ -29,13 +29,6 @@ public class Book extends Item {
     public Book(Properties properties) {
         super(properties);
     }
-
-    @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
-        super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
-        builder.accept(Component.translatable("item.chest_item.mysterious_metal.string.1").withStyle(ChatFormatting.GOLD));
-    }
-
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
@@ -43,7 +36,6 @@ public class Book extends Item {
         }
         return InteractionResult.SUCCESS;
     }
-
     public record OpenBookPayload() implements CustomPacketPayload {
         public static final Type<OpenBookPayload> TYPE =
                 new Type<>(Identifier.fromNamespaceAndPath(Moonstone.MODID, "open_book"));

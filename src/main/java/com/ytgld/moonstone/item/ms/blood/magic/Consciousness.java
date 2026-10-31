@@ -48,7 +48,7 @@ public class Consciousness extends BloodItem {
         if (Handler.hascurio(player, InitItems.consciousness.asItem())) {
             if (!player.getCooldowns().isOnCooldown(InitItems.consciousness.asItem().getDefaultInstance())) {
                 Vec3 playerPos = player.position();
-                int range = 5;
+                int range = 15;
                 Vec3 min = playerPos.subtract(range, range, range);
                 Vec3 max = playerPos.add(range, range, range);
                 AABB box = new AABB(min, max);

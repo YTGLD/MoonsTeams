@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "moonstone:ectoplasmball",
+    "minecraft:book"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:book"
+  }
+}

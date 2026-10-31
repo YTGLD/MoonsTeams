@@ -127,30 +127,25 @@ public class NightmareBookScreen extends Screen {
                     Light.ARGB.color(textAlpha / 3, 255, 255, 255));
 
 
-
-            if (lastGuiAdd.item instanceof ItemBase itemBase) {
-                int color = itemBase.color();
-                int as = (color >> 24) & 0xFF;
-                int rs = (int) (((color >> 16) & 0xFF) / 1.25f);
-                int gs = (int) (((color >> 8) & 0xFF) / 1.25f);
-                int bs = (int) ((color & 0xFF) / 1.25f);
-                float speed = 80f;
-                int sizeParticle = 8;
-                BlackKey.ColorImage colorImage = new BlackKey.ColorImage(textAlpha, rs, gs, bs);
-                for (int i = 0; i < 3; i++) {
-                    BlackParticlesAdd.markSeen(
-                            (int) -Mth.nextFloat(randomSource,-graphics.guiWidth(),sizeParticle),
-                            (int) (graphics.guiHeight() + sizeParticle / 2),
-                            new BlackKey.ImageColorAndRenderPipeline(8,
-                                    colorImage,
-                                    Identifier.fromNamespaceAndPath(Moonstone.MODID, "textures/item_glowing/cube.png"),
-                                    MRender.RenderPs.GUI_TEXTURED,
-                                    new Vector2f(),
-                                    new Vector2f(0,-0.02f),
-                                    new Vector2f(), true), 5, textAlpha);
-                }
-
+            int color = lastGuiAdd.lightColor;
+            int rs = (int) (((color >> 16) & 0xFF) / 1.25f);
+            int gs = (int) (((color >> 8) & 0xFF) / 1.25f);
+            int bs = (int) ((color & 0xFF) / 1.25f);
+            int sizeParticle = 8;
+            BlackKey.ColorImage colorImage = new BlackKey.ColorImage(textAlpha, rs, gs, bs);
+            for (int i = 0; i < 3; i++) {
+                BlackParticlesAdd.markSeen(
+                        (int) -Mth.nextFloat(randomSource,-graphics.guiWidth(),sizeParticle),
+                        (int) (graphics.guiHeight() + sizeParticle / 2),
+                        new BlackKey.ImageColorAndRenderPipeline(8,
+                                colorImage,
+                                Identifier.fromNamespaceAndPath(Moonstone.MODID, "textures/item_glowing/cube.png"),
+                                MRender.RenderPs.GUI_TEXTURED,
+                                new Vector2f(),
+                                new Vector2f(0,-0.02f),
+                                new Vector2f(), true), 5, textAlpha);
             }
+
         }
         graphics.pose().pushMatrix();
         addText(lastGuiAdd, graphics, xo, yo, mouseX,mouseY);
