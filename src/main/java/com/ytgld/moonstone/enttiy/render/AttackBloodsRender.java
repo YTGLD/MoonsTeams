@@ -35,9 +35,7 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
 
     @Override
     public void submit(AttackBloodsState renderState, PoseStack modelView , SubmitNodeCollector collector, CameraRenderState camera) {
-        AttackBlood entity = renderState.entity;
         HandlerClient.setShowRenderLight(true);
-
         submitOther(renderState, modelView, collector, camera);
     }
     public void submitOther(AttackBloodsState renderState, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
@@ -53,7 +51,7 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
         collector.submitCustomGeometry(poseStack, MRender.colorOutline, (pose, bufferSource) -> {
             addTrail(pose, entity, bufferSource,1,0,0,0.1f);
         });
-        if (entity.canSeeClient || entity.canSee) {
+        if (entity.posPre.distanceTo(entity.posPost) > 0.01f) {
             LightRenders.addLight(
                     entity.position().x,entity.position().y,entity.position().z,
                     8,
@@ -155,6 +153,7 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
         super.extractRenderState(entity, reusedState, partialTick);
         reusedState.entity = entity;
         reusedState.partialTick = partialTick;
+        reusedState.canLook = entity.canSee;
     }
 }
 

@@ -300,7 +300,7 @@ public class NewEvent {
         List<Component> attributesTooltip = new ArrayList<>();
         Player player = context.player();
         if (player != null) {
-            if (stack.getItem() instanceof ItemBase itemBase) {
+            if (stack.getItem() instanceof ItemBase itemBase && itemBase.showAttribute()) {
                 Multimap<Holder<Attribute>, AttributeModifier> attributes = itemBase.getAttributeModifiers(stack, player);
                 Multimap<Holder<Attribute>, AttributeModifier> modify = itemBase.doStrongerDNAModifiers(stack, player);
                 attributes.putAll(modify);

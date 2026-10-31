@@ -33,7 +33,12 @@ public class AttackBlood extends Entity {
     public boolean effect = false;
     public boolean isPlayer = false;
     public float speeds = 1;
-    public float maxTime = 200;
+    public int maxTime = 200;
+
+    public Vec3 posPre = Vec3.ZERO;
+    public Vec3 posPost = Vec3.ZERO;
+
+
     public AttackBlood(EntityType<? extends AttackBlood> entityType, Level level) {
         super(entityType, level);
         this.setNoGravity(true);
@@ -121,9 +126,9 @@ public class AttackBlood extends Entity {
                                 player.heal(damages + addDamgae);
                             }
                             entity.hurt(this.getOwner().damageSources().playerAttack(player), (float) (damages + addDamgae + player.getMaxHealth() / 10 + player.getAttributeValue(Attributes.ATTACK_DAMAGE) / 10));
-                            canSee = false;
                         }
-                        canSeeClient = false;
+                        this.tickCount = maxTime;
+                        this.canSee = false;
                     }
                 }
             }
@@ -131,7 +136,12 @@ public class AttackBlood extends Entity {
     }
     @Override
     public void tick() {
-        tickCount ++;
+        super.tick();
+
+        posPre = posPost;
+        posPost = this.position();
+
+
         this.noPhysics = true;
         this.setPos(
                 this.getX() + this.getDeltaMovement().x,
@@ -183,7 +193,7 @@ public class AttackBlood extends Entity {
                 }
             }
         }else {
-            this.setDeltaMovement(0,0,0);
+            this.setDeltaMovement(Vec3.ZERO);
         }
         if (canSee) {
             trailPositions.add(new Vec3(this.getX(), this.getY(), this.getZ()));
@@ -204,10 +214,12 @@ public class AttackBlood extends Entity {
         this.setYRot(0);
         this.setXRot(0);
 
+        if (this.tickCount > maxTime * 1.5f){
+            discard();
+        }
         if (canSee) {
             attack();
         }
-        super.tick();
     }
 
     public Entity owner;
@@ -248,7 +260,7 @@ public class AttackBlood extends Entity {
     }
 
     public void setMaxTime(float maxTime) {
-        this.maxTime = maxTime;
+        this.maxTime = (int) maxTime;
     }
 
     public void setBoom(boolean boom) {

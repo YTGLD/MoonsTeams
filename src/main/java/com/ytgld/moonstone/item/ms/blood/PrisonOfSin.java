@@ -128,6 +128,11 @@ public class PrisonOfSin extends BloodItem {
     }
 
     @Override
+    public boolean showAttribute() {
+        return false;
+    }
+
+    @Override
     public void curioTickUse(SlotContext slotContext, ItemStack stack) {
         Handler.stackCreateTag(stack);
     }

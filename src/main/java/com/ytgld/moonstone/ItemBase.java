@@ -183,4 +183,8 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem , IDNASeq
     public HashSet<Item> canUseHowSequence() {
         return new HashSet<>();
     }
+
+    public boolean showAttribute() {
+        return true;
+    }
 }

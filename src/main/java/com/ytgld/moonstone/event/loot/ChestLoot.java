@@ -80,7 +80,7 @@ public class ChestLoot extends LootModifier {
                         InitItems.frontal_lobe.get(),
                         InitItems.high_energy.get(),
                         InitItems.surge.get()
-                ), 18,lootContext);
+                ), 8,lootContext);
 
 
                 addLoot(objectArrayList, lootContext.getRandom(), InitItems.necora.get(), entity, List.of(
@@ -103,9 +103,7 @@ public class ChestLoot extends LootModifier {
                         InitItems.acidic_reflux.get(),
                         InitItems.hypertrophy.get(),
                         InitItems.naja_mortis.get()
-
-
-                ), 20,lootContext);
+                ), 10,lootContext);
 
 
             }

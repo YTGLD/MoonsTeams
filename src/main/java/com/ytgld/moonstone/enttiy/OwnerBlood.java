@@ -163,7 +163,7 @@ public class OwnerBlood extends TamableAnimal {
             }
         }
         if (this.getOwner()!= null &&this.getOwner() instanceof Player player&&this.getTarget()!=null){
-            if (this.tickCount % (int) s == 0) {
+            if (this.tickCount % (int) (Math.max(1,s)) == 0 && this.position().distanceTo(this.getTarget().position()) < 40) {
                 if (!Handler.hascurio(player, InitItems.consciousness.asItem())){
                     if (!Handler.hascurio(player, InitItems.owner_blood_earth.get())) {
                         AttackBlood attackBlood = new AttackBlood(EntityTs.attack_blood_.get(), this.level());
@@ -241,7 +241,7 @@ public class OwnerBlood extends TamableAnimal {
         }
         if (Handler.hascurio(player, InitItems.the_blood_book.get())) {
             attackBlood.setSpeed(attackBlood.getSpeeds()*2f);
-            attackBlood.maxTime = attackBlood.maxTime * 0.25f;
+            attackBlood.maxTime = (int) (attackBlood.maxTime * 0.25f);
             attackBlood.setDamage(attackBlood.getDamages()*3f);
             attackBlood.isPlayer = true;
         }

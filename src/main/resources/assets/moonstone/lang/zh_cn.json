@@ -1645,7 +1645,7 @@
 
   "item.moonstone.nightmare_base": "噩梦基座",
   "item.nightmare_base.tool.string": "攻击伤害,生命值,护甲减少30%",
-  "item.nightmare_base.tool.string.1": "邪念体，血虐之铅，恶意之殇无效化",
+  "item.nightmare_base.tool.string.1": "",
 
 
   "item.moonstone.nightmare_base_stone": "死兆方尖碑",
@@ -1738,7 +1738,7 @@
   "effect.moonstone.life": "锁血",
 
   "effect.moonstone.life_apple": "锁血",
-  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发不死图腾获取：中毒,凋零,缓慢并且着火",
+  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发\n不死图腾获取：中毒,凋零,缓慢并且着火",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_eye": "杀死坚守者",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_red": "发现在古城，概率在5%左右",
 
@@ -1747,7 +1747,7 @@
   "moonstone.jei.item.moonstone.nightmare_base_stone_virus": "被凋零攻击触发不死图腾",
 
   "moonstone.jei.item.moonstone.nightmare_base_reversal_card": "杀死末影龙",
-  "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious": "在佩戴反转球体的情况下开古城的箱子，概率100%，但是只能获得一个",
+  "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious": "在佩戴反转球体的情况下开古城的箱子\n概率100%\n但是只能获得一个",
   "moonstone.jei.item.moonstone.nightmare_base_reversal_orb": "使用颠倒之物的中毒扣血杀死自己",
 
   "item.moonstone.nightmare_base_redemption":"“救赎”",
@@ -1863,7 +1863,7 @@
   "item.immortal.tool.string.2": "每隔5秒对周围生物施加一层枯朽Buff，最多达到5级",
   "item.immortal.tool.string.3": "被施加的生物每级减少20%抗性,护甲,治疗和5%的伤害,移速,攻速",
   "item.immortal.tool.string.4": "若你被杀死，则对攻击者造成20%当前生命值的穿透伤害并附加10级枯朽（10秒）",
-  "item.immortal.tool.string.5": "深渊和噩梦物品无效化",
+  "item.immortal.tool.string.5": "",
   "item.immortal.tool.string.6": "传闻掌握生死轮回之力的人...",
   "item.immortal.tool.string.7": "即可规避因果的反噬...",
   "item.immortal.tool.string.8": "但...代价是什么？",
@@ -1879,7 +1879,7 @@
 
   "advancements.tooltip.ring.text": "获得这个物品",
   "advancements.tooltip.ring.hand": "一寸光阴一寸金",
-  "moonstone.jei.item.moonstone.ring": "获得超过10种负面BUFF的情况下触发不死图腾，一个玩家只能获得一个",
+  "moonstone.jei.item.moonstone.ring": "获得超过10种负面BUFF的情况下\n触发不死图腾\n一个玩家只能获得一个",
 
 
 
@@ -2012,7 +2012,7 @@
   "item.hypocritical_self_esteem.tool.string.4": "   每次撕咬都会吸取生命值并对目标造成削弱",
   "advancements.tooltip.hypocritical_self_esteem.text": "获得这个物品",
   "advancements.tooltip.hypocritical_self_esteem.hand": "不要摧毁弱者的自尊",
-  "moonstone.jei.item.moonstone.hypocritical_self_esteem": "在存在凋零状态的情况下，使用空手给末影龙最后一击，一个玩家只能获得一个",
+  "moonstone.jei.item.moonstone.hypocritical_self_esteem": "在存在凋零状态的情况下\n使用空手给末影龙最后一击\n一个玩家只能获得一个",
 
   "advancements.tooltip.nightmare_base_stone.text": "获得死兆方尖碑",
   "advancements.tooltip.nightmare_base_stone.hand": "噩梦的方尖碑",
@@ -2045,7 +2045,7 @@
 
   "item.moonstone.disintegrating_stone":"裂天石",
   "item.disintegrating_stone.tool.string": "此物品的属性会随着你安装模组的数量的增加而增加",
-  "item.disintegrating_stone.tool.string.1": "来自任何模组的饰品都可能无效化",
+  "item.disintegrating_stone.tool.string.1": "",
   "item.disintegrating_stone.tool.string.2": "上限为1800%",
 
 

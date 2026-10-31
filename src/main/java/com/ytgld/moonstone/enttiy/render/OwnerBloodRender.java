@@ -119,8 +119,8 @@ public class OwnerBloodRender extends EntityRenderer<@NotNull OwnerBlood, OwnerB
 
     public void renderSphere1(@NotNull PoseStack.Pose matrices, @NotNull VertexConsumer vertexConsumer, int light, float s ) {
 
-        int stacks = 10; // 垂直方向的分割数
-        int slices = 10; // 水平方向的分割数
+        int stacks = 30; // 垂直方向的分割数
+        int slices = 30; // 水平方向的分割数
         for (int i = 0; i < stacks; ++i) {
             float phi0 = (float) Math.PI * ((i + 0) / (float) stacks);
             float phi1 = (float) Math.PI * ((i + 1) / (float) stacks);
