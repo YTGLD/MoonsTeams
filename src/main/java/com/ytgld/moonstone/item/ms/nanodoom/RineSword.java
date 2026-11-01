@@ -51,7 +51,7 @@ public class RineSword extends Doom {
     }
 
     public static void suddenrainLLivingHurtEvent(LivingDamageEvent.Pre event) {
-        if (event.getSource().getEntity() instanceof Player player) {
+        if (event.getSource().getDirectEntity() instanceof Player player) {
             if (Handler.hascurio(player, doomswoud.get())) {
                 CuriosApi.getCuriosInventory(player).ifPresent(handler -> {
                     Map<String, ICurioStacksHandler> curios = handler.getCurios();

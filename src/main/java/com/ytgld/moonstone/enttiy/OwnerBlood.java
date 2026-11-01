@@ -4,6 +4,7 @@ import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
+import com.ytgld.moonstone.other.ITrail;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
@@ -30,10 +31,15 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OwnerBlood extends TamableAnimal {
+public class OwnerBlood extends TamableAnimal implements ITrail {
     public OwnerBlood(EntityType<? extends OwnerBlood> p_21803_, Level p_21804_) {
         super(p_21803_, p_21804_);
         this.setNoGravity(true);
+    }
+
+    @Override
+    public List<Vec3> trailPositions() {
+        return trailPositions;
     }
     @Override
     public void die(@NotNull DamageSource p_21809_) {

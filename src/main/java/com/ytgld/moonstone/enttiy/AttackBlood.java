@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.enttiy;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.other.ITrail;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.Identifier;
@@ -21,7 +22,7 @@ import org.jspecify.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AttackBlood extends Entity {
+public class AttackBlood extends Entity implements ITrail {
     private LivingEntity target;
     public final List<Vec3> trailPositions = new ArrayList<>();
 
@@ -295,6 +296,11 @@ public class AttackBlood extends Entity {
 
     public void setCannotFollow(boolean t) {
         follow = t;
+    }
+
+    @Override
+    public List<Vec3> trailPositions() {
+        return trailPositions;
     }
 }
 

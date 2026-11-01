@@ -79,7 +79,7 @@ public class SevenSword extends Doom {
                                                     item.setTarget(livingEntity);
                                                     item.addTag(FlySword);
                                                     player.level().addFreshEntity(item);
-                                                    player.getCooldowns().addCooldown(doomeye.get().getDefaultInstance(), 40);
+                                                    player.getCooldowns().addCooldown(doomeye.get().getDefaultInstance(), 80);
                                                 }
                                             }
                                         }
