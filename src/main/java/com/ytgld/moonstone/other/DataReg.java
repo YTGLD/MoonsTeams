@@ -5,6 +5,7 @@ import com.ytgld.moonstone.Moonstone;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.item.component.BundleContents;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -21,6 +22,9 @@ public class DataReg {
             REGISTRY.register("set", () -> DataComponentType.<Set<String>>builder().
                     persistent(Codec.STRING.listOf()
                             .xmap(HashSet::new, ArrayList::new)).build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<MoonBundleContents>> BUNDLE_CONTENTS =
+            REGISTRY.register("bundle",()-> DataComponentType.<MoonBundleContents>builder().persistent(MoonBundleContents.CODEC).build());
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Set<String>>> dna_sequence =
             REGISTRY.register("dna_sequence", () -> DataComponentType.<Set<String>>builder().

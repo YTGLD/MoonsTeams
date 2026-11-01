@@ -25,15 +25,6 @@
     "moonstone:the_blood_book",
     "moonstone:undead_blood_charm",
 
-    "moonstone:warcrystal",
-    "moonstone:greedcrystal",
-
-    "moonstone:mayhemcrystal",
-    "moonstone:rage_crystal",
-    "moonstone:rage_crystal_big",
-    "moonstone:biggreedcrystal",
-    "moonstone:bigwarcrystal",
-    "moonstone:fortunecrystal",
     "moonstone:as_amout",
     "moonstone:doomeye",
     "moonstone:doomswoud",
@@ -44,9 +35,6 @@
     "moonstone:nanocube",
     "moonstone:nanorobot",
     "moonstone:sword_amout",
-    "moonstone:thedoomstone",
-    "moonstone:wind",
-    "moonstone:rage_crystal_max"
-
+    "moonstone:thedoomstone"
   ]
 }

@@ -13,6 +13,8 @@ import com.ytgld.moonstone.item.ms.maxitem.*;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.*;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.*;
 import com.ytgld.moonstone.item.ms.nanodoom.*;
+import com.ytgld.moonstone.item.ms.necora.DNAPush;
+import com.ytgld.moonstone.item.ms.necora.DnaBox;
 import com.ytgld.moonstone.item.ms.necora.EmbeddedDNA;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dna.*;
@@ -54,6 +56,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -298,6 +301,8 @@ public class InitItems {
 
     public static final DeferredItem<@NotNull Item> Book_ = register("book", (identifier) -> new Book(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
+    public static final DeferredItem<@NotNull Item> dna = register("dna", (identifier) -> new DNAPush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> dna_box = register("dna_box", (identifier) -> new DnaBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);
@@ -378,6 +383,36 @@ public class InitItems {
                     output.accept(reanimation);
                     output.accept(medicinebox);
 
+                    output.accept(InitItems.dna);
+                    output.accept(InitItems.dna_box);
+                    output.accept(DNAItems.atp_height.get());
+                    output.accept(DNAItems.cell_big_boom.get());
+                    output.accept(DNAItems.speed_metabolism.get());
+                    output.accept(DNAItems.cell_disorder.get());
+                    output.accept(DNAItems.cell_off_on.get());
+                    output.accept(DNAItems.cell_darwin.get());
+                    output.accept(DNAItems.cell_god.get());
+                    output.accept(DNAItems.cell_inheritance.get());
+                    output.accept(DNAItems.cell_oxygen.get());
+                    output.accept(DNAItems.cell_break_down_water.get());
+                    output.accept(DNAItems.cell_ground.get());
+                    output.accept(DNAItems.cell_in_water.get());
+                    output.accept(DNAItems.cell_in_air.get());
+                    output.accept(DNAItems.cell_necrosis.get());
+                    output.accept(DNAItems.cell_digestion.get());
+                    output.accept(DNAItems.cell_acid.get());
+                    output.accept(DNAItems.cell_eyes.get());
+                    output.accept(DNAItems.cell_bone_add.get());
+                    output.accept(DNAItems.cell_sense.get());
+                    output.accept(DNAItems.cell_cranial.get());
+                    output.accept(DNAItems.cell_dna_suppression.get());
+                    output.accept(DNAItems.cell_putrefactive.get());
+                    output.accept(DNAItems.cell_synthesis.get());
+                    output.accept(DNAItems.cell_compress.get());
+                    output.accept(DNAItems.cell_preferential.get());
+                    output.accept(DNAItems.cell_flu.get());
+                    output.accept(DNAItems.cell_constant.get());
+                    output.accept(DNAItems.cell_chromosome.get());
 
 
                 }).build());

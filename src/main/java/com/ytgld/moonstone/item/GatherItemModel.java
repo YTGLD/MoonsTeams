@@ -228,6 +228,36 @@ public class GatherItemModel extends ModelProvider {
         itemModels.generateFlatItem(DNAItems.bone_fibers.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(DNAItems.blood_reconstruction.asItem(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(DNAItems.atp_height.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_big_boom.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.speed_metabolism.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_disorder.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_off_on.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_darwin.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_god.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_inheritance.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_oxygen.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_break_down_water.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_ground.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_in_water.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_in_air.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_necrosis.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_digestion.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_acid.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_eyes.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_bone_add.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_sense.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_cranial.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_dna_suppression.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_putrefactive.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_synthesis.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_compress.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_preferential.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_flu.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_constant.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cell_chromosome.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(InitItems.dna.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(InitItems.dna_box.asItem(), ModelTemplates.FLAT_ITEM);
 
     }
 }

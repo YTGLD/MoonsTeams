@@ -25,6 +25,7 @@ import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BlueAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.GreedAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.RedAmout;
 import com.ytgld.moonstone.item.ms.nanodoom.*;
+import com.ytgld.moonstone.item.ms.necora.DNAPush;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dna.god.*;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBoom;
@@ -182,6 +183,7 @@ public class NewEvent {
     public  void LivingDamageEvent(LivingEntityUseItemEvent.Start event) {
         Masticatory.masticatory(event);
         BloodGod.hurtOfBlood(event);
+        DNAPush.event(event);
     }
     @SubscribeEvent
     public  void LivingJumpEvent(LivingEvent.LivingJumpEvent event){
@@ -194,6 +196,7 @@ public class NewEvent {
         MedicineBox.apple(event);
         MedicineBox.LivingDamageEvent(event);
         Polyphagia.necora(event);
+        DNAPush.event(event);
     }
     @SubscribeEvent
     public void target(LivingChangeTargetEvent event){
@@ -215,6 +218,7 @@ public class NewEvent {
 
         ZombieEventHandler.theCellZombieGiant(event);
         PrisonOfSin.LivingDeathEvent(event);
+        DNAPush.event(event);
     }
 
     @SubscribeEvent
@@ -275,7 +279,10 @@ public class NewEvent {
         MRing.LivingExperienceDropEvent(event);
         UndeadBloodCharm.LivingHealEvent(event);
     }
-
+    @SubscribeEvent
+    public void exp(LivingIncomingDamageEvent event) {
+        DNAPush.event(event);
+    }
     @SubscribeEvent
     public void exp(CriticalHitEvent event) {
         if (event.getEntity() instanceof Player player) {

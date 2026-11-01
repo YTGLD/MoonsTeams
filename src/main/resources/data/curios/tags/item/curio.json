@@ -25,8 +25,20 @@
     "moonstone:maxamout",
 
     "moonstone:twelve_sword",
-    "moonstone:consciousness"
+    "moonstone:consciousness",
 
 
+    "moonstone:rage_crystal_max",
+
+    "moonstone:warcrystal",
+    "moonstone:greedcrystal",
+
+    "moonstone:mayhemcrystal",
+    "moonstone:rage_crystal",
+    "moonstone:rage_crystal_big",
+    "moonstone:biggreedcrystal",
+    "moonstone:bigwarcrystal",
+    "moonstone:fortunecrystal",
+    "moonstone:wind"
   ]
 }
