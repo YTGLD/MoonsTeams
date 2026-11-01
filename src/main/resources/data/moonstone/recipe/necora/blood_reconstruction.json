@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "moonstone:blood_jelly",
+    "B": "moonstone:ectoplasmcloub",
+    "C": "minecraft:rotten_flesh",
+    "D": "#curios:dna",
+    "E": "moonstone:ectoplasmprism"
+  },
+  "pattern": [
+    "CBC",
+    "ADA",
+    "CEC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:blood_reconstruction"
+  }
+}

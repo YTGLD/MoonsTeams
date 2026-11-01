@@ -8,6 +8,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.event.EquippedEvt;
+import com.ytgld.moonstone.item.DNAItems;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.DataReg;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -102,7 +103,12 @@ public class ChestLoot extends LootModifier {
                         InitItems.peptide_surge.get(),
                         InitItems.acidic_reflux.get(),
                         InitItems.hypertrophy.get(),
-                        InitItems.naja_mortis.get()
+                        InitItems.naja_mortis.get(),
+                        DNAItems.muscle_manipulation.get(),
+                        DNAItems.biological_enzyme_synthesis.get(),
+                        DNAItems.lactic_acid_accumulation.get(),
+                        DNAItems.necrotizing_cyst.get(),
+                        DNAItems.compound_dispersion.get()
                 ), 10,lootContext);
 
 

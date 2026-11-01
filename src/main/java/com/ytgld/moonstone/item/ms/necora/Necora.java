@@ -32,7 +32,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Necora extends TheNecora {
+public class Necora extends DNASequence {
 
     public Necora(Properties properties) {
         super(properties);

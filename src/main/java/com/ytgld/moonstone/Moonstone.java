@@ -6,16 +6,14 @@ import com.ytgld.moonstone.crafting.AllCrafting;
 import com.ytgld.moonstone.crafting.MoonRecipeProvider;
 import com.ytgld.moonstone.effect.Effects;
 import com.ytgld.moonstone.enttiy.EntityTs;
-import com.ytgld.moonstone.event.AdvancementEvt;
-import com.ytgld.moonstone.event.DNAModifyHandler;
-import com.ytgld.moonstone.event.NewEvent;
-import com.ytgld.moonstone.event.TextEvt;
+import com.ytgld.moonstone.event.*;
 import com.ytgld.moonstone.event.itemevent.ZombieHandler;
 import com.ytgld.moonstone.event.key.ClientEvent;
 import com.ytgld.moonstone.event.key.UseCuriosHandler;
 import com.ytgld.moonstone.event.loot.LootTableEvent;
 import com.ytgld.moonstone.event.loot.Loots;
 import com.ytgld.moonstone.item.Book;
+import com.ytgld.moonstone.item.DNAItems;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.other.AttReg;
@@ -53,6 +51,7 @@ public class Moonstone {
         EntityTs.REGISTRY.register(modEventBus);
         AllCrafting.REGISTRY.register(modEventBus);
         AttRegClient.ATTACHMENT_TYPES.register(modEventBus);
+        DNAItems.ITEMS.register(modEventBus);
 
         InitItems.TabChestItem.CREATIVE_MODE_TABS.register(modEventBus);
         modContainer.registerConfig(ModConfig.Type.LOCAL, Config.fc);
@@ -66,6 +65,7 @@ public class Moonstone {
         NeoForge.EVENT_BUS.register(new LootTableEvent());
         NeoForge.EVENT_BUS.register(new ClientEvent());
         NeoForge.EVENT_BUS.register(new DNAModifyHandler());
+        NeoForge.EVENT_BUS.register(new MainDNAEvent());
 
     }
     private void registerPayloadHandler(final RegisterPayloadHandlersEvent evt) {

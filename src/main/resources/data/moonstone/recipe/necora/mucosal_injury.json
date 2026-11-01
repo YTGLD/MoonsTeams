@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "moonstone:ectoplasmcube",
+    "C": "minecraft:rotten_flesh",
+    "D": "moonstone:masticatory"
+  },
+  "pattern": [
+    "CCC",
+    "ADA",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:mucosal_injury"
+  }
+}

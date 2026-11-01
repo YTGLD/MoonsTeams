@@ -7,7 +7,14 @@
     "LiquidBlockMixin",
     "LivingEntityMixin",
     "ModMixin",
-    "WardenMixin"
+    "WardenMixin",
+    "dna.DNAModifyHandlerMixin",
+    "dna.ExtendZombieEntityMixin",
+    "dna.FoodDataMixin",
+    "dna.HandlerUseMixin",
+    "dna.MobEffectInstanceMixin",
+    "dna.NecoraMixin",
+    "dna.TheNecoraDNABushMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "moonstone:ectoplasmprism",
+    "B": "minecraft:prismarine_shard",
+    "C": "minecraft:rotten_flesh",
+    "D": "moonstone:calcification",
+    "E": "minecraft:prismarine_crystals"
+  },
+  "pattern": [
+    "CBC",
+    "ADA",
+    "CEC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:spike_protrusion"
+  }
+}

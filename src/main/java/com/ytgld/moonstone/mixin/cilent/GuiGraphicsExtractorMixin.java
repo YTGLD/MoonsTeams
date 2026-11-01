@@ -47,7 +47,6 @@ public abstract class GuiGraphicsExtractorMixin {
     @Inject(at = @At(value = "HEAD"),method = "item(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;III)V")
     public void renderItem(LivingEntity entity, Level level, ItemStack stack, int x, int y, int seed, CallbackInfo ci) {
         GuiGraphicsExtractor guiGraphicsExtractor = (GuiGraphicsExtractor) (Object) this;
-        GodDNA.renderItem(guiGraphicsExtractor,stack,x,y);
         RenderDNAItem.renderItem(guiGraphicsExtractor,pose,stack,x,y,seed);
     }
 

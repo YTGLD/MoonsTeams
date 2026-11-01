@@ -2245,7 +2245,71 @@
   "advancements.tooltip.hidden_blade.hand": "未知的刀锋",
   "advancements.tooltip.wolf.text": "获得这个物品",
   "advancements.tooltip.wolf.hand": "一叶孤舟",
-  "moonstone.jei.item.moonstone.wolf": "让你的狼杀死监守者"
+  "moonstone.jei.item.moonstone.wolf": "让你的狼杀死监守者",
+
+
+  "tab.moonstone": "月之石：基因重组",
+  "moonstone.sequence_base": "基因序列",
+  "moonstone.base.todo": "获得：",
+  "moonstone.base.todo.not": "但是：",
+  "moonstone.configuration.TheNecora.tooltip": "僵尸：基因",
+  "moonstone.configuration.TheNecora.button": "僵尸：基因",
+  "moonstone.configuration.TheNecora": "僵尸：基因",
+
+  "item.moonstone.muscle_manipulation": "肌肉操控",
+  "item.moonstone.biological_enzyme_synthesis": "生物酶合成",
+  "item.moonstone.lactic_acid_accumulation": "乳酸堆积",
+  "item.moonstone.necrotizing_cyst": "坏死性囊肿",
+  "item.moonstone.compound_dispersion": "合成物逸散",
+
+
+
+
+  "moonstone.muscle_manipulation.modify": "僵尸在死亡时会为召唤者恢复生命值和提供力量效果",
+  "moonstone.biological_enzyme_synthesis.modify": "增加5%最大生命值",
+  "moonstone.lactic_acid_accumulation.modify": "奔跑状态下获得击退抗性",
+  "moonstone.necrotizing_cyst.modify": "杀死生物留下有中毒效果的毒气，并且自身免疫中毒",
+  "moonstone.compound_dispersion.modify": "自身死亡后对攻击者造成100%自身最大生命值的伤害",
+
+  "item.moonstone.epidermal_digestion": "表皮消化",
+  "item.moonstone.epidermal_digestion.string.1": "攻击满血生物恢复大量饥饿值和些许生命值",
+  "item.moonstone.epidermal_digestion.string.2": "在疾跑状态下饥饿值更容易被消耗",
+
+  "item.moonstone.activation_enzyme": "活化酶堆积",
+  "item.moonstone.activation_enzyme.string.1": "未受到伤害时治疗速度逐渐增加，最多增加额外的%d%%",
+  "item.moonstone.activation_enzyme.string.2": "受到伤害后的%d秒内无法受到治疗",
+
+  "item.moonstone.mucosal_injury": "粘膜损伤",
+  "item.moonstone.mucosal_injury.string.1": "将%d%%吃下食物的饥饿值直接转换为生命值",
+  "item.moonstone.mucosal_injury.string.2": "吃下食物会获得饥饿效果",
+
+  "item.moonstone.fat_accumulation": "脂肪堆积",
+  "item.moonstone.fat_accumulation.string.1": "免疫弹射物伤害",
+  "item.moonstone.fat_accumulation.string.2": "在水中，你会不受控制的上浮",
+
+
+  "item.moonstone.bone_fibers": "骨纤维异常增生",
+  "item.moonstone.bone_fibers.string.1": "增加%d%%抗性",
+  "item.moonstone.bone_fibers.string.2": "生命值低于一半时额外增加%d%%抗性",
+  "item.moonstone.bone_fibers.string.3": "连续奔跑时，你的速度会越来越慢",
+
+  "item.moonstone.blood_reconstruction": "血运重构",
+  "item.moonstone.blood_reconstruction.string.1": "负面效果的维持时间降低%d%%",
+  "item.moonstone.blood_reconstruction.string.2": "饥饿值转换为生命值的速度提高%d%%",
+  "item.moonstone.blood_reconstruction.string.3": "受到治疗效果降低%d%%",
+
+
+  "item.moonstone.spike_protrusion": "刺状物突出",
+  "item.moonstone.spike_protrusion.string.1": "获得%d%%的反伤能力",
+  "item.moonstone.spike_protrusion.string.2": "并且反伤时附加%d%%自身攻击力的伤害",
+  "item.moonstone.spike_protrusion.string.3": "增加%d%%抗性",
+  "item.moonstone.spike_protrusion.string.4": "每穿着一件护甲都会增加%d%%的受到伤害",
+
+
+  "item.moonstone.methane_synthesis": "甲烷合成",
+  "item.moonstone.methane_synthesis.string.1": "按下技能键引爆自身体内的甲烷",
+  "item.moonstone.methane_synthesis.string.2": "受到的火焰类型伤害增加%d%%",
+  "item.moonstone.methane_synthesis.string.3": "着火时被杀死会产生附带火焰效果的爆炸"
 }
 
 

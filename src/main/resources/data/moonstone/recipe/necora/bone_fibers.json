@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:bone",
+    "B": "moonstone:calcification",
+    "C": "moonstone:ectoplasmcloub"
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:bone_fibers"
+  }
+}

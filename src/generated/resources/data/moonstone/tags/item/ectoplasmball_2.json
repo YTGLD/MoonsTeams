@@ -1,5 +1,20 @@
 {
   "values": [
+    "moonstone:air",
+    "moonstone:motor",
+    "moonstone:watergen",
+    "moonstone:adrenaline",
+    "moonstone:cell",
+    "moonstone:cell_blood",
+    "moonstone:cell_boom",
+    "moonstone:cell_calcification",
+    "moonstone:cell_mummy",
+    "moonstone:giant",
+    "moonstone:giant_nightmare",
+    "moonstone:bone_cell",
+    "moonstone:disgusting_cells",
+    "moonstone:mother_cell",
+    "moonstone:parasitic_cell",
     "moonstone:necora",
     "moonstone:ambush",
     "moonstone:atpoverdose",
@@ -51,6 +66,17 @@
     "moonstone:surge",
     "moonstone:cytopathic_boost",
     "moonstone:spliced_activation",
-    "moonstone:thermo_necro"
+    "moonstone:thermo_necro",
+    "moonstone:necora",
+    "moonstone:god_ambush",
+    "moonstone:god_atpoverdose",
+    "moonstone:god_autolytic",
+    "moonstone:god_fermentation",
+    "moonstone:god_putrefactive",
+    "moonstone:god_regenerative",
+    "moonstone:god_peptide_surge",
+    "moonstone:god_acidic_reflux",
+    "moonstone:god_hypertrophy",
+    "moonstone:god_naja_mortis"
   ]
 }

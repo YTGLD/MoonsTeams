@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "moonstone:item/activation_enzyme"
+  }
+}

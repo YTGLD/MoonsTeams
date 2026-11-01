@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "moonstone:ectoplasmcube",
+    "B": "#minecraft:meat",
+    "C": "minecraft:rotten_flesh",
+    "D": "moonstone:ambush"
+  },
+  "pattern": [
+    "CBC",
+    "ADA",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:fat_accumulation"
+  }
+}

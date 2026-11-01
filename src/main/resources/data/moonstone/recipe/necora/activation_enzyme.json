@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "moonstone:ectoplasmcube",
+    "B": "moonstone:ectoplasmcloub",
+    "C": "minecraft:rotten_flesh",
+    "D": "moonstone:regenerative"
+  },
+  "pattern": [
+    "CBC",
+    "ADA",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:activation_enzyme"
+  }
+}

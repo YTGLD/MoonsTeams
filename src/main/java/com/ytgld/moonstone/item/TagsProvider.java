@@ -3,6 +3,8 @@ package com.ytgld.moonstone.item;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.Doom;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.DNASequence;
+import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import com.ytgld.moonstone.item.si.nightmare.NightmareSmall;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -28,7 +30,9 @@ public class TagsProvider extends ItemTagsProvider {
         TagAppender<Item> toEctoplasmcube = createTag("ectoplasmcube");
         TagAppender<Item> toEctoplasmprism = createTag("ectoplasmprism");
 
+        addItemsByClass(toEctoplasmball2, TheNecoraDNABush.class);
         addItemsByClass(toEctoplasmball2,TheNecora.class);
+        addItemsByClass(toEctoplasmball2, DNASequence.class);
         addItemsByClass(toEctoplasmball4,Doom.class);
         addItemsByClass(toEctoplasmprism2,NightmareSmall.class);
 

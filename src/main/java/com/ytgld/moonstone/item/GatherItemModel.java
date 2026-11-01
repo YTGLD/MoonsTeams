@@ -211,5 +211,23 @@ public class GatherItemModel extends ModelProvider {
         itemModels.generateFlatItem(InitItems.thermo_necro.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(InitItems.Book_.asItem(), ModelTemplates.FLAT_ITEM);
 
+
+        itemModels.generateFlatItem(DNAItems.muscle_manipulation.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.biological_enzyme_synthesis.asItem(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(DNAItems.lactic_acid_accumulation.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.necrotizing_cyst.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.compound_dispersion.asItem(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(DNAItems.methane_synthesis.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.spike_protrusion.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.epidermal_digestion.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.activation_enzyme.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.mucosal_injury.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.fat_accumulation.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.bone_fibers.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.blood_reconstruction.asItem(), ModelTemplates.FLAT_ITEM);
+
+
     }
 }

@@ -1,7 +1,9 @@
 package com.ytgld.moonstone.render;
 
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.ms.GodDNA;
 import com.ytgld.moonstone.item.ms.necora.DNASequence;
+import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.other.Light;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.resources.Identifier;
@@ -47,9 +49,19 @@ public class RenderDNAItem {
 
     private static void  addBlackLight(GuiGraphicsExtractor guiGraphics,Matrix3x2fStack pose, DNASequence dna,int x, int y,int seed){
         int a = (int) (itemStackIntegerHashMap.get(dna).alpha / 1.5f);
-        int r = 20;
-        int g = 0;
-        int b = 10;
+        int r = 60;
+        int g = 10;
+        int b = 30;
+        if (dna instanceof Necora) {
+            r = 120;
+            g = 20;
+            b = 60;
+        }
+        if (dna instanceof GodDNA) {
+            r = 100;
+            g = 0;
+            b = 0;
+        }
         Identifier base = Identifier.fromNamespaceAndPath(Moonstone.MODID,"textures/gui/all.png");
         float timeBase = time / 75F;
         addCom(32,timeBase, Light.ARGB.color(Math.min(255,a), r, g, b), guiGraphics, pose, base, x, y, seed);
