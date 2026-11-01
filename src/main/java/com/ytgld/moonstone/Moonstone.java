@@ -17,6 +17,7 @@ import com.ytgld.moonstone.event.loot.LootTableEvent;
 import com.ytgld.moonstone.event.loot.Loots;
 import com.ytgld.moonstone.item.GatherItemModel;
 import com.ytgld.moonstone.item.InitItems;
+import com.ytgld.moonstone.item.TagsProvider;
 import com.ytgld.moonstone.item.ms.blood.magic.Consciousness;
 import com.ytgld.moonstone.other.AttReg;
 import com.ytgld.moonstone.other.AttRegClient;
@@ -73,14 +74,17 @@ public class Moonstone {
         UseCuriosHandler.register(evt.registrar("2.0"));
         ZombieHandler.register(evt.registrar("3.0"));
         Book.register(evt);
-
     }
+
     public void gatherData(GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
         PackOutput packOutput = gen.getPackOutput();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        TagsProvider.BlockTagsProviderCO blockTags = new TagsProvider.BlockTagsProviderCO(packOutput, lookupProvider, existingFileHelper);
         gen.addProvider(event.includeServer(),new MoonRecipeProvider(packOutput,lookupProvider));
+        gen.addProvider(event.includeServer(), blockTags);
+        gen.addProvider(event.includeServer(), new TagsProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
         gen.addProvider(event.includeServer(),new GatherItemModel(packOutput,existingFileHelper));
     }
 }
