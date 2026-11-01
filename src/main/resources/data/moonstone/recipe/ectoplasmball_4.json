@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.0,
+  "ingredient": "#moonstone:ectoplasmball_4",
+  "result": {
+    "id": "moonstone:ectoplasmball",
+    "count": 4
+  }
+}

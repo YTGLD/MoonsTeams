@@ -28,6 +28,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class NightmareBaseItem extends NightmareBase {
 
@@ -73,33 +74,34 @@ public class NightmareBaseItem extends NightmareBase {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (!(slotContext.entity() instanceof Player player)) {
+            return;
+        }
         if (stack.get(DataReg.tag) == null) {
             slotContext.entity().level().playSound(null, slotContext.entity().getX(), slotContext.entity().getY(), slotContext.entity().getZ(), SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.NEUTRAL, 1, 1);
             stack.set(DataReg.tag, new CompoundTag());
         }
 
-        CompoundTag compoundTag = stack.get(DataReg.tag);
-        if (compoundTag != null) {
-            if (!compoundTag.getBooleanOr("canDo", false)) {
-                Random random = new Random();
-                ArrayList<Item> items = new ArrayList<>(List.of(
-                        InitItems.nightmare_base_stone.get(),
-                        InitItems.nightmare_base_reversal.get(),
-                        InitItems.nightmare_base_black_eye.get(),
-                        InitItems.nightmare_base_redemption.get(),
-                        InitItems.nightmare_base_fool.get(),
-                        InitItems.nightmare_base_insight.get(),
-                        InitItems.nightmare_base_start.get()
-                ));
-                for (int i = 0; i < ConfigItem.intValue.getAsInt(); i++) {
-                    if (!items.isEmpty()) {
-                        int index = random.nextInt(items.size());
-                        Item selectedItem = items.remove(index);
-                        addLoot(slotContext.entity(), selectedItem, stack);
-                    }
+        Set<String > stringSet = player.entityTags();
+        if (!stringSet.contains("canDoNightmareBase")) {
+            Random random = new Random();
+            ArrayList<Item> items = new ArrayList<>(List.of(
+                    InitItems.nightmare_base_stone.get(),
+                    InitItems.nightmare_base_reversal.get(),
+                    InitItems.nightmare_base_black_eye.get(),
+                    InitItems.nightmare_base_redemption.get(),
+                    InitItems.nightmare_base_fool.get(),
+                    InitItems.nightmare_base_insight.get(),
+                    InitItems.nightmare_base_start.get()
+            ));
+            for (int i = 0; i < ConfigItem.intValue.getAsInt(); i++) {
+                if (!items.isEmpty()) {
+                    int index = random.nextInt(items.size());
+                    Item selectedItem = items.remove(index);
+                    addLoot(slotContext.entity(), selectedItem, stack);
                 }
-                compoundTag.putBoolean("canDo", true);
             }
+            stringSet.add("canDoNightmareBase");
         }
     }
 
