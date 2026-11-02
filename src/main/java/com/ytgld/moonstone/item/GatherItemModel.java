@@ -259,5 +259,17 @@ public class GatherItemModel extends ModelProvider {
         itemModels.generateFlatItem(InitItems.dna.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(InitItems.dna_box.asItem(), ModelTemplates.FLAT_ITEM);
 
+
+
+
+        itemModels.generateFlatItem(DNAItems.cell_swelling.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.organizational_calcification.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.muscle_contraction.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.lactate_accumulation.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.retinal_reconstruction.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.metabolic_load.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.cerebral_cortex_decay.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DNAItems.airborne_transmission.asItem(), ModelTemplates.FLAT_ITEM);
+
     }
 }

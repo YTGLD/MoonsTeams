@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.Moonstone;
+import com.ytgld.moonstone.item.DNAItems;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
@@ -60,7 +61,11 @@ public class Necora extends DNASequence {
         return new HashSet<>(Set.of(
                 InitItems.cytopathic_boost.asItem(),
                 InitItems.spliced_activation.asItem(),
-                InitItems.thermo_necro.asItem()
+                InitItems.thermo_necro.asItem(),
+                DNAItems.muscle_manipulation.asItem(),
+                DNAItems.lactic_acid_accumulation.asItem(),
+                DNAItems.necrotizing_cyst.asItem(),
+                DNAItems.compound_dispersion.asItem()
         ));
     }
 

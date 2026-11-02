@@ -384,6 +384,15 @@ public class InitItems {
 
                     output.accept(InitItems.dna);
                     output.accept(InitItems.dna_box);
+
+                    output.accept(DNAItems.cell_swelling.get());
+                    output.accept(DNAItems.organizational_calcification.get());
+                    output.accept(DNAItems.muscle_contraction.get());
+                    output.accept(DNAItems.lactate_accumulation.get());
+                    output.accept(DNAItems.retinal_reconstruction.get());
+                    output.accept(DNAItems.metabolic_load.get());
+                    output.accept(DNAItems.cerebral_cortex_decay.get());
+                    output.accept(DNAItems.airborne_transmission.get());
                     output.accept(DNAItems.atp_height.get());
                     output.accept(DNAItems.cell_big_boom.get());
                     output.accept(DNAItems.speed_metabolism.get());

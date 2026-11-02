@@ -168,7 +168,7 @@ public class AtSword extends Arrow {
                 findNewTarget();
             }
             if (target != null) {
-                if (tickCount%5==0) {
+                if (tickCount % 2 == 0) {
                     AtSword atSword = new AtSword(EntityTs.at_sword_entity.get(), this.level());
                     atSword.setPos(target.position().add(Mth.nextFloat(RandomSource.create(), -3, 3), Mth.nextFloat(RandomSource.create(), 6, 10), Mth.nextFloat(RandomSource.create(), -2.9f, 2.9f)));
                     if (this.getOwner()!=null) {

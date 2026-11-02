@@ -15,14 +15,4 @@ public class BloodAmout extends BloodItem {
         super(properties);
     }
 
-    @Override
-    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> pTooltipComponents, TooltipFlag p_41424_) {
-        if (p_41424_.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("item.blood_amout.tool.string").withStyle(ChatFormatting.RED));
-        } else {
-            pTooltipComponents.add(Component.literal("Shift").withStyle(ChatFormatting.DARK_RED));
-        }
-    }
-
-
 }

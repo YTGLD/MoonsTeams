@@ -318,6 +318,7 @@ public class DNAPush extends TheNecora {
                                                 float s = itemStack.getCount();//64
                                                 s /= 100f;//0.64
                                                 player.setInvulnerableTime(player.getInvulnerableTime() + ((int) (player.getInvulnerableTime() * s)));
+                                                player.damageCooldownTime = (player.damageCooldownTime + ((int) (player.damageCooldownTime * s)));
                                                 player.getCooldowns().addCooldown(DNAItems.cell_constant.get().getDefaultInstance(), player.getInvulnerableTime());
                                             }
                                         }

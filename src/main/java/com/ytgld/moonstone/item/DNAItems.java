@@ -8,8 +8,10 @@ import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -86,7 +88,27 @@ public class DNAItems {
         public void text(ItemStack itemStack, Consumer<Component> builder, TooltipFlag tooltipFlag) {
             super.text(itemStack, builder, tooltipFlag);
             builder.accept(Component.translatable("item.moonstone.dnas.tool.1").withStyle(ChatFormatting.RED));
-
+            if (attModify != null) {
+                builder.accept(Component.translatable("item.moonstone.dna_push.tool.3").setStyle(Style.EMPTY.withColor(0xffff0000)));
+                for (AttModify modify : attModify){
+                    if (modify != null && modify.holder !=null) {
+                        Attribute attribute = BuiltInRegistries.ATTRIBUTE.getValue(modify.holder.getKey());
+                        if (attribute != null) {
+                            String string = "";
+                            int it = 1;
+                            if (modify.attributeModifier.operation() != AttributeModifier.Operation.ADD_VALUE) {
+                                string = "%";
+                                it = 100;
+                            }
+                            builder.accept(Component.translatable(attribute.getDescriptionId())
+                                    .append(Component.literal("："))
+                                    .append(String.valueOf((float)(modify.attributeModifier.amount() * it))).append(string).setStyle(Style.EMPTY.withColor(0xffff0000)));
+                        }
+                    }else {
+                        builder.accept(Component.translatable( this.descriptionId + ".tool.string").setStyle(Style.EMPTY.withColor(0xffff0000)));
+                    }
+                }
+            }
         }
 
         public AttModify[] getAttModify() {
@@ -96,22 +118,9 @@ public class DNAItems {
         public record AttModify(Holder<Attribute> holder , AttributeModifier attributeModifier ){}
     }
 
-    public static final DeferredItem<@NotNull Item> atp_height =register("atp_height",(identifier)-> new DNAS(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
-            Attributes.MAX_HEALTH,new AttributeModifier(
-            identifier,
-            0.25f,
-            AttributeModifier.Operation.ADD_VALUE)
-    )));
     public static final DeferredItem<@NotNull Item> cell_big_boom =register("cell_big_boom",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)), (DNAS.AttModify) null));
     public static final DeferredItem<@NotNull Item> speed_metabolism =register("speed_metabolism",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)), (DNAS.AttModify) null));
     public static final DeferredItem<@NotNull Item> cell_disorder =register("cell_disorder",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)), (DNAS.AttModify) null));
-    public static final DeferredItem<@NotNull Item> cell_off_on =register("cell_off_on",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
-            Attributes.ATTACK_DAMAGE,new AttributeModifier(
-            identifier,
-            0.01f,
-            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-    )));
-
     public static final DeferredItem<@NotNull Item> cell_darwin =register("cell_darwin",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)), (DNAS.AttModify) null));
     public static final DeferredItem<@NotNull Item> cell_god =register("cell_god",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)), (DNAS.AttModify) null));
     public static final DeferredItem<@NotNull Item> cell_inheritance =register("cell_inheritance",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)), (DNAS.AttModify) null));
@@ -124,6 +133,18 @@ public class DNAItems {
     public static final DeferredItem<@NotNull Item> cell_cranial =register("cell_cranial",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)), (DNAS.AttModify) null));
 
 
+    public static final DeferredItem<@NotNull Item> atp_height =register("atp_height",(identifier)-> new DNAS(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.MAX_HEALTH,new AttributeModifier(
+            identifier,
+            0.25f,
+            AttributeModifier.Operation.ADD_VALUE)
+    )));
+    public static final DeferredItem<@NotNull Item> cell_off_on =register("cell_off_on",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.ATTACK_DAMAGE,new AttributeModifier(
+            identifier,
+            0.01f,
+            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+    )));
 
     public static final DeferredItem<@NotNull Item> cell_oxygen =register("cell_oxygen",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
             Attributes.MOVEMENT_SPEED,new AttributeModifier(
@@ -187,7 +208,7 @@ public class DNAItems {
     public static final DeferredItem<@NotNull Item> cell_putrefactive =register("cell_putrefactive",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
             Attributes.BURNING_TIME,new AttributeModifier(
             identifier,
-            0.01f,
+            -0.01f,
             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
     )));
     public static final DeferredItem<@NotNull Item> cell_synthesis =register("cell_synthesis",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
@@ -211,6 +232,56 @@ public class DNAItems {
             Attributes.SAFE_FALL_DISTANCE,new AttributeModifier(
             identifier,
             0.1,
+            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+    )));
+
+
+    public static final DeferredItem<@NotNull Item> organizational_calcification =register("organizational_calcification",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.ARMOR_TOUGHNESS,new AttributeModifier(
+            identifier,
+            0.2,
+            AttributeModifier.Operation.ADD_VALUE)
+    )));
+    public static final DeferredItem<@NotNull Item> cell_swelling =register("cell_swelling",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            AttReg.speed,new AttributeModifier(
+            identifier,
+            0.005f,
+            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+    )));
+    public static final DeferredItem<@NotNull Item> muscle_contraction =register("muscle_contraction",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.ATTACK_KNOCKBACK,new AttributeModifier(
+            identifier,
+            0.03,
+            AttributeModifier.Operation.ADD_VALUE)
+    )));
+    public static final DeferredItem<@NotNull Item> lactate_accumulation =register("lactate_accumulation",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.BOUNCINESS,new AttributeModifier(
+            identifier,
+            0.01,
+            AttributeModifier.Operation.ADD_VALUE)
+    )));
+    public static final DeferredItem<@NotNull Item> retinal_reconstruction =register("retinal_reconstruction",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.CAMERA_DISTANCE,new AttributeModifier(
+            identifier,
+            0.01F,
+            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+    )));
+    public static final DeferredItem<@NotNull Item> metabolic_load =register("metabolic_load",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.EXPLOSION_KNOCKBACK_RESISTANCE,new AttributeModifier(
+            identifier,
+            0.05,
+            AttributeModifier.Operation.ADD_VALUE)
+    )));
+    public static final DeferredItem<@NotNull Item> cerebral_cortex_decay =register("cerebral_cortex_decay",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.LUCK,new AttributeModifier(
+            identifier,
+            0.005,
+            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+    )));
+    public static final DeferredItem<@NotNull Item> airborne_transmission =register("airborne_transmission",(identifier)-> new  DNAS (new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier)),new DNAS.AttModify(
+            Attributes.AIR_DRAG_MODIFIER,new AttributeModifier(
+            identifier,
+            -0.01F,
             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
     )));
 }
