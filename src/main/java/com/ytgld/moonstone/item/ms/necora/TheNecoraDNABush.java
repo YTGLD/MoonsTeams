@@ -14,7 +14,6 @@ public class TheNecoraDNABush extends TheNecora {
 
     @Override
     public HashSet<Item> canUSe() {
-
         return new HashSet<>( Set.of(
                 InitItems.WarmApproachable.asItem(),
                 InitItems.OceanAffinity.asItem(),

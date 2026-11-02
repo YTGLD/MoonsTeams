@@ -19,10 +19,10 @@ public class GodAtpoverdose extends GodDNA {
     @Override
     public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
         return new CurioAttributeModifiers(List.of(
-                new CurioAttributeModifiers.Entry(SlotAttribute.getOrCreate("curio"),
+                new CurioAttributeModifiers.Entry(SlotAttribute.getOrCreate("dna"),
                         new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID, this.descriptionId),
-                                2, AttributeModifier.Operation.ADD_VALUE)
-                        , SlotTypePredicate.builder().withId("curio").build())
+                                3, AttributeModifier.Operation.ADD_VALUE)
+                        , SlotTypePredicate.builder().withId("dna").build())
         ), true);
     }
 

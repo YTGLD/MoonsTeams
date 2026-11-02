@@ -431,7 +431,8 @@ public class DNAPush extends TheNecora {
     @Override
     public void text(ItemStack pStack, Consumer<Component> builder, TooltipFlag tooltipFlag) {
         super.text(pStack, builder, tooltipFlag);
-
+        builder.accept(Component.translatable("item.moonstone.dna_push.tool.1").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB22222))));
+        builder.accept(Component.translatable("item.moonstone.dna_push.tool.2").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(0XFFB22222))));
         if (tooltipFlag.hasShiftDown()) {
             MoonBundleContents bundlecontents = pStack.get(DataReg.BUNDLE_CONTENTS);
             if (bundlecontents != null) {

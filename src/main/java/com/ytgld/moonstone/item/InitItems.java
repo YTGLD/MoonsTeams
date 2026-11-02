@@ -56,7 +56,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.neoforged.neoforge.client.event.ScreenEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -191,8 +190,8 @@ public class InitItems {
     public static final DeferredItem<@NotNull Item> cell = register("cell", (identifier) -> new Cell(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> cell_blood = register("cell_blood", (identifier) -> new CellBlood(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> cell_boom = register("cell_boom", (identifier) -> new CellBoom(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> cell_calcification = register("cell_calcification", (identifier) -> new cell_calcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
-    public static final DeferredItem<@NotNull Item> cell_mummy = register("cell_mummy", (identifier) -> new cell_mummy(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cell_calcification = register("cell_calcification", (identifier) -> new CellCalcification(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> cell_mummy = register("cell_mummy", (identifier) -> new CellMummy(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> giant = register("giant", (identifier) -> new Biant(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> giant_nightmare = register("giant_nightmare", (identifier) -> new GianNnightmare(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 

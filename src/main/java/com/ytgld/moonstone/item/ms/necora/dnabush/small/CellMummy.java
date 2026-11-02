@@ -1,6 +1,5 @@
 package com.ytgld.moonstone.item.ms.necora.dnabush.small;
 
-import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.necora.TheNecoraDNABush;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -10,10 +9,10 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class cell_mummy extends TheNecoraDNABush {
+public class CellMummy extends TheNecoraDNABush {
     public static final String Mummy = " CellMummy";
 
-    public cell_mummy(Properties properties) {
+    public CellMummy(Properties properties) {
         super(properties);
     }
 

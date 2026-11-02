@@ -2,8 +2,8 @@ package com.ytgld.moonstone.event;
 
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBlood;
 import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellBoom;
-import com.ytgld.moonstone.item.ms.necora.dnabush.small.cell_calcification;
-import com.ytgld.moonstone.item.ms.necora.dnabush.small.cell_mummy;
+import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellCalcification;
+import com.ytgld.moonstone.item.ms.necora.dnabush.small.CellMummy;
 
 public class AllEvent {
     public static final String cod = "cod";
@@ -33,9 +33,9 @@ public class AllEvent {
     public static  final String blood_enchant = "blood_enchant";
 
     public static final String DamageCell = "DamageCell";
-    public static final  String muMMY = cell_mummy.Mummy;
+    public static final  String muMMY = CellMummy.Mummy;
     public static final  String boom = CellBoom.cb;
-    public static final  String calcification = cell_calcification.cc;
+    public static final  String calcification = CellCalcification.cc;
     public static final  String cb_blood = CellBlood.c_blood;
     public static final String Giant_Time ="Giant_Time";
     public static final String Giant_Boom ="Giant_Boom";

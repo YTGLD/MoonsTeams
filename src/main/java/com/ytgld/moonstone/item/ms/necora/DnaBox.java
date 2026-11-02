@@ -51,34 +51,33 @@ public class DnaBox extends TheNecora {
         CompoundTag tag = me.get(DataReg.tag);
         if (tag == null) {
             me.set(DataReg.tag,new CompoundTag());
+            return true;
         }
         if (p_150745_ == ClickAction.SECONDARY && p_150744_.allowModification(p_150746_)) {
             if (Other.getItem() instanceof TheNecora) {
                 if (me.getItem() instanceof DnaBox) {
-                    if (tag != null){
-                        int s = 1;
-                        CompoundTag compoundTag =Other.get(DataReg.tag);
-                        if (compoundTag != null) {
-                            if (compoundTag.getBooleanOr(Difficulty.PEACEFUL.getSerializedName(),false)){
-                                s = 2;
-                            }
-                            if (compoundTag.getBooleanOr(Difficulty.EASY.getSerializedName(),false)){
-                                s = 3;
-                            }
-                            if (compoundTag.getBooleanOr(Difficulty.NORMAL.getSerializedName(),false)){
-                                s = 4;
-                            }
-                            if (compoundTag.getBooleanOr(Difficulty.HARD.getSerializedName(),false)){
-                                s = 5;
-                            }
-                            if (compoundTag.getBooleanOr(EquippedEvt.lootTable,false)){
-                                s = 6;
-                            }
+                    int s = 1;
+                    CompoundTag compoundTag =Other.get(DataReg.tag);
+                    if (compoundTag != null) {
+                        if (compoundTag.getBooleanOr(Difficulty.PEACEFUL.getSerializedName(),false)){
+                            s = 2;
                         }
-                        tag.putInt(theDnaBoxNumber,tag.getIntOr(theDnaBoxNumber,0) + s);
-                        Other.shrink(1);
-                        return true;
+                        if (compoundTag.getBooleanOr(Difficulty.EASY.getSerializedName(),false)){
+                            s = 3;
+                        }
+                        if (compoundTag.getBooleanOr(Difficulty.NORMAL.getSerializedName(),false)){
+                            s = 4;
+                        }
+                        if (compoundTag.getBooleanOr(Difficulty.HARD.getSerializedName(),false)){
+                            s = 5;
+                        }
+                        if (compoundTag.getBooleanOr(EquippedEvt.lootTable,false)){
+                            s = 6;
+                        }
                     }
+                    tag.putInt(theDnaBoxNumber,tag.getIntOr(theDnaBoxNumber,0) + s);
+                    Other.shrink(1);
+                    return true;
                 }
             }
         }

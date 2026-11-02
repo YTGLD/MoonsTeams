@@ -1166,7 +1166,7 @@
   "item.moonstone.medicinebox.tool": "用于粉碎药物或任意基因物品",
   "item.moonstone.dna_box": "药物回收盒",
 
-  "item.moonstone.medicinebox.tool.2": "你需要右键这个物品来存入，然后长按右键咀嚼，直到下方的红色字体消失",
+  "item.moonstone.medicinebox.tool.2": "你需要右键这个物品来存入，然后长按右键咀嚼",
   "item.moonstone.cell_disorder.tool": "每隔（数量）清除所有BUFF",
   "item.moonstone.cell_god.tool": "杀死生物回复（数量）生命值",
   "item.moonstone.cell_inheritance.tool": "加（数量）伤害抗性",
@@ -2305,7 +2305,9 @@
   "item.moonstone.spike_protrusion.string.3": "增加%d%%抗性",
   "item.moonstone.spike_protrusion.string.4": "每穿着一件护甲都会增加%d%%的受到伤害",
 
-
+  "item.moonstone.dna_push.tool.1": "右键可以存入一些基因片段",
+  "item.moonstone.dna_push.tool.2": "基因片段可以通过药物粉碎盒获取",
+  "item.moonstone.dnas.tool.1": "使用药物粉碎盒粉碎获取",
   "item.moonstone.methane_synthesis": "甲烷合成",
   "item.moonstone.methane_synthesis.string.1": "按下技能键引爆自身体内的甲烷",
   "item.moonstone.methane_synthesis.string.2": "受到的火焰类型伤害增加%d%%",

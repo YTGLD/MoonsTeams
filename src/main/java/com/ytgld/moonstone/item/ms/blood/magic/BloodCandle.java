@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.item.ms.blood.magic;
 
 import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.enttiy.EntityTs;
 import com.ytgld.moonstone.enttiy.OwnerBlood;
 import com.ytgld.moonstone.event.key.Keys;
@@ -11,11 +12,16 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CurioAttributeModifiers;
+import top.theillusivec4.curios.api.SlotAttribute;
+import top.theillusivec4.curios.api.common.slot.SlotTypePredicate;
 
 import java.util.List;
 
@@ -61,6 +67,16 @@ public class BloodCandle extends BloodItem implements IKet {
         } else {
             pTooltipComponents.add(Component.literal("Shift").withStyle(ChatFormatting.DARK_RED));
         }
+    }
+    @Override
+    public CurioAttributeModifiers getDefaultCurioAttributeModifiers(ItemStack stack) {
+        return new CurioAttributeModifiers(List.of(
+                new CurioAttributeModifiers.Entry(SlotAttribute.getOrCreate("charm"),
+                        new AttributeModifier(Identifier.fromNamespaceAndPath(Moonstone.MODID, this.descriptionId),
+                                2, AttributeModifier.Operation.ADD_VALUE)
+                        , SlotTypePredicate.builder().withId("charm").build())
+
+        ), true);
     }
     @Override
     public KeyMapping theKeyMapping() {

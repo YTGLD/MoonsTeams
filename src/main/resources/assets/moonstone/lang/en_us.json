@@ -2494,6 +2494,9 @@
   "item.moonstone.spike_protrusion.string.2": "Reflecting damage also deals additional damage equal to %d%% of your attack damage",
   "item.moonstone.spike_protrusion.string.3": "Increase resistance by %d%%",
   "item.moonstone.spike_protrusion.string.4": "Each piece of equipped armor increases damage taken by %d%%",
+  "item.moonstone.dna_push.tool.1": "右键可以存入一些基因片段",
+  "item.moonstone.dna_push.tool.2": "基因片段可以通过药物粉碎盒获取",
+  "item.moonstone.dnas.tool.1": "使用药物粉碎盒粉碎获取",
 
   "item.moonstone.methane_synthesis": "Methane Synthesis",
   "item.moonstone.methane_synthesis.string.1": "Press the skill key to ignite methane stored inside your body",

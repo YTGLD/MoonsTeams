@@ -5,7 +5,9 @@ import com.ytgld.moonstone.item.ms.TheNecora;
 import com.ytgld.moonstone.item.ms.necora.EmbeddedDNA;
 import com.ytgld.moonstone.item.ms.necora.sequence.*;
 import com.ytgld.moonstone.other.AttReg;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -15,6 +17,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.Compostable;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -22,6 +28,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class DNAItems {
@@ -71,8 +78,15 @@ public class DNAItems {
     public static class DNAS extends TheNecora{
         private final AttModify[] attModify;
         public DNAS(Properties properties, @Nullable AttModify... attModify) {
-            super(properties);
+            super(properties.component(DataComponents.COMPOSTABLE,new Compostable(ContextIntProviders.COMPOSTABLE_LOW)));
             this.attModify = attModify;
+        }
+
+        @Override
+        public void text(ItemStack itemStack, Consumer<Component> builder, TooltipFlag tooltipFlag) {
+            super.text(itemStack, builder, tooltipFlag);
+            builder.accept(Component.translatable("item.moonstone.dnas.tool.1").withStyle(ChatFormatting.RED));
+
         }
 
         public AttModify[] getAttModify() {
