@@ -103,6 +103,11 @@ public abstract class GuiGraphicsExtractorMixin {
                     item.renderBack((GuiGraphicsExtractor) (Object) this, l, i1, i, j);
                     this.pose.popMatrix();
                 }
+                if (tooltipStack.getItem() instanceof LoveCharm loveCharm) {
+                    this.pose.pushMatrix();
+                    loveCharm.renderBack((GuiGraphicsExtractor) (Object) this, l, i1, i, j);
+                    this.pose.popMatrix();
+                }
             }
         }
     }

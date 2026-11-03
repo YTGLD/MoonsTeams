@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.BloodItem;
 import com.ytgld.moonstone.item.ms.CommonItem;
+import com.ytgld.moonstone.item.ms.LoveCharm;
 import com.ytgld.moonstone.item.ms.blood.*;
 import com.ytgld.moonstone.item.ms.blood.magic.*;
 import com.ytgld.moonstone.item.ms.ectoplasm.*;
@@ -302,6 +303,7 @@ public class InitItems {
 
     public static final DeferredItem<@NotNull Item> dna = register("dna", (identifier) -> new DNAPush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> dna_box = register("dna_box", (identifier) -> new DnaBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> love_charm = register("love_charm", (identifier) -> new LoveCharm(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static class TabChestItem {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Moonstone.MODID);

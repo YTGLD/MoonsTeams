@@ -92,14 +92,6 @@ public class ChestLoot extends LootModifier {
                         InitItems.putrefactive.get(),
                         InitItems.regenerative.get(),
                         InitItems.adrenaline.get(),
-                        InitItems.cell_mummy.get(),
-                        InitItems.cell_boom.get(),
-                        InitItems.cell_calcification.get(),
-                        InitItems.cell_blood.get(),
-                        InitItems.bone_cell.get(),
-                        InitItems.parasitic_cell.get(),
-                        InitItems.mother_cell.get(),
-                        InitItems.disgusting_cells.get(),
                         InitItems.peptide_surge.get(),
                         InitItems.acidic_reflux.get(),
                         InitItems.hypertrophy.get(),
@@ -110,8 +102,22 @@ public class ChestLoot extends LootModifier {
                         DNAItems.necrotizing_cyst.get(),
                         DNAItems.compound_dispersion.get()
                 ), 10,lootContext);
-
-
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.giant.get(), entity, List.of(
+                        InitItems.bone_cell.get(),
+                        InitItems.parasitic_cell.get(),
+                        InitItems.mother_cell.get(),
+                        InitItems.disgusting_cells.get()
+                ), 20,lootContext);
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.cell.get(), entity, List.of(
+                        InitItems.cell_mummy.get(),
+                        InitItems.cell_boom.get(),
+                        InitItems.cell_calcification.get(),
+                        InitItems.cell_blood.get()
+                ), 20,lootContext);
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.necora.get(), entity, List.of(
+                        InitItems.cell.get(),
+                        InitItems.giant.get()
+                ), 20,lootContext);
             }
         }
         return objectArrayList;

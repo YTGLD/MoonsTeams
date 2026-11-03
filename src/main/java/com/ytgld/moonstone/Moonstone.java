@@ -66,6 +66,7 @@ public class Moonstone {
         NeoForge.EVENT_BUS.register(new ClientEvent());
         NeoForge.EVENT_BUS.register(new DNAModifyHandler());
         NeoForge.EVENT_BUS.register(new MainDNAEvent());
+        NeoForge.EVENT_BUS.register(new AllEvent());
 
     }
     private void registerPayloadHandler(final RegisterPayloadHandlersEvent evt) {

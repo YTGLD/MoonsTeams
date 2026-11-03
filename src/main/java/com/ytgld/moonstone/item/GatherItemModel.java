@@ -271,5 +271,6 @@ public class GatherItemModel extends ModelProvider {
         itemModels.generateFlatItem(DNAItems.cerebral_cortex_decay.asItem(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(DNAItems.airborne_transmission.asItem(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(InitItems.love_charm.asItem(), ModelTemplates.FLAT_ITEM);
     }
 }

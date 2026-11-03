@@ -110,7 +110,7 @@ public class DnaBox extends TheNecora {
                 for (int i = 0; i < value; i++) {
                     Item item = list.get(new Random().nextInt(list.size()));
                     player.addItem( new ItemStack(item,
-                            Mth.nextInt(RandomSource.create(),0,value)));
+                            Mth.nextInt(RandomSource.create(),0,2)));
                 }
             }
             tag.putInt(theDnaBoxNumber,0);
