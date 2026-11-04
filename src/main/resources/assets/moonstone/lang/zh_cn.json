@@ -1166,7 +1166,7 @@
   "item.moonstone.medicinebox.tool": "用于粉碎药物或任意基因物品",
   "item.moonstone.dna_box": "药物回收盒",
 
-  "item.moonstone.medicinebox.tool.2": "你需要右键这个物品来存入，然后长按右键咀嚼，直到下方的红色字体消失",
+  "item.moonstone.medicinebox.tool.2": "你需要右键这个物品来存入，然后长按右键咀嚼",
   "item.moonstone.cell_disorder.tool": "每隔（数量）清除所有BUFF",
   "item.moonstone.cell_god.tool": "杀死生物回复（数量）生命值",
   "item.moonstone.cell_inheritance.tool": "加（数量）伤害抗性",
@@ -1437,10 +1437,11 @@
 
   "item.moonstone.twelve_sword":"诸神剑阵",
 
-  "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵",
-  "item.twelve_sword.tool.string.2": "在剑阵附近获得10%~120%的伤害加成",
-  "item.twelve_sword.tool.string.3": "剑阵内的生物会被死界剑坠落攻击",
-  "item.twelve_sword.tool.string.4": "数量取决于你生肖物品的数量",
+  "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵或墓碑",
+  "item.twelve_sword.tool.string.2": "在剑阵或墓碑附近获得大量伤害加成",
+  "item.twelve_sword.tool.string.3": "若为剑阵，则内部生物会被死界剑坠落攻击",
+  "item.twelve_sword.tool.string.4": "若为墓碑，则内部生物会被极大削弱",
+  "item.twelve_sword.tool.string.5": "墓碑由噩梦基座腐蚀的诸神剑阵产生",
 
   "moonstone.twelve.1": "生肖：子",
   "moonstone.twelve.2": "生肖：丑",
@@ -1645,7 +1646,7 @@
 
   "item.moonstone.nightmare_base": "噩梦基座",
   "item.nightmare_base.tool.string": "攻击伤害,生命值,护甲减少30%",
-  "item.nightmare_base.tool.string.1": "邪念体，血虐之铅，恶意之殇无效化",
+  "item.nightmare_base.tool.string.1": "",
 
 
   "item.moonstone.nightmare_base_stone": "死兆方尖碑",
@@ -1738,7 +1739,7 @@
   "effect.moonstone.life": "锁血",
 
   "effect.moonstone.life_apple": "锁血",
-  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发不死图腾获取：中毒,凋零,缓慢并且着火",
+  "moonstone.jei.item.moonstone.nightmare_base_black_eye_heart": "在同时满足下列条件时触发\n不死图腾获取：中毒,凋零,缓慢并且着火",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_eye": "杀死坚守者",
   "moonstone.jei.item.moonstone.nightmare_base_black_eye_red": "发现在古城，概率在5%左右",
 
@@ -1747,7 +1748,7 @@
   "moonstone.jei.item.moonstone.nightmare_base_stone_virus": "被凋零攻击触发不死图腾",
 
   "moonstone.jei.item.moonstone.nightmare_base_reversal_card": "杀死末影龙",
-  "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious": "在佩戴反转球体的情况下开古城的箱子，概率100%，但是只能获得一个",
+  "moonstone.jei.item.moonstone.nightmare_base_reversal_mysterious": "在佩戴反转球体的情况下开古城的箱子\n概率100%\n但是只能获得一个",
   "moonstone.jei.item.moonstone.nightmare_base_reversal_orb": "使用颠倒之物的中毒扣血杀死自己",
 
   "item.moonstone.nightmare_base_redemption":"“救赎”",
@@ -1863,7 +1864,7 @@
   "item.immortal.tool.string.2": "每隔5秒对周围生物施加一层枯朽Buff，最多达到5级",
   "item.immortal.tool.string.3": "被施加的生物每级减少20%抗性,护甲,治疗和5%的伤害,移速,攻速",
   "item.immortal.tool.string.4": "若你被杀死，则对攻击者造成20%当前生命值的穿透伤害并附加10级枯朽（10秒）",
-  "item.immortal.tool.string.5": "深渊和噩梦物品无效化",
+  "item.immortal.tool.string.5": "",
   "item.immortal.tool.string.6": "传闻掌握生死轮回之力的人...",
   "item.immortal.tool.string.7": "即可规避因果的反噬...",
   "item.immortal.tool.string.8": "但...代价是什么？",
@@ -1879,7 +1880,7 @@
 
   "advancements.tooltip.ring.text": "获得这个物品",
   "advancements.tooltip.ring.hand": "一寸光阴一寸金",
-  "moonstone.jei.item.moonstone.ring": "获得超过10种负面BUFF的情况下触发不死图腾，一个玩家只能获得一个",
+  "moonstone.jei.item.moonstone.ring": "获得超过10种负面BUFF的情况下\n触发不死图腾\n一个玩家只能获得一个",
 
 
 
@@ -2012,7 +2013,7 @@
   "item.hypocritical_self_esteem.tool.string.4": "   每次撕咬都会吸取生命值并对目标造成削弱",
   "advancements.tooltip.hypocritical_self_esteem.text": "获得这个物品",
   "advancements.tooltip.hypocritical_self_esteem.hand": "不要摧毁弱者的自尊",
-  "moonstone.jei.item.moonstone.hypocritical_self_esteem": "在存在凋零状态的情况下，使用空手给末影龙最后一击，一个玩家只能获得一个",
+  "moonstone.jei.item.moonstone.hypocritical_self_esteem": "在存在凋零状态的情况下\n使用空手给末影龙最后一击\n一个玩家只能获得一个",
 
   "advancements.tooltip.nightmare_base_stone.text": "获得死兆方尖碑",
   "advancements.tooltip.nightmare_base_stone.hand": "噩梦的方尖碑",
@@ -2045,7 +2046,7 @@
 
   "item.moonstone.disintegrating_stone":"裂天石",
   "item.disintegrating_stone.tool.string": "此物品的属性会随着你安装模组的数量的增加而增加",
-  "item.disintegrating_stone.tool.string.1": "来自任何模组的饰品都可能无效化",
+  "item.disintegrating_stone.tool.string.1": "",
   "item.disintegrating_stone.tool.string.2": "上限为1800%",
 
 
@@ -2235,10 +2236,8 @@
   "moonstone.ocean_affinity.modify": "增加游泳速度",
   "moonstone.earth_affinity.modify": "增加击退抗性",
 
+  "item.moonstone.book": "灵魂指南书",
 
-  "attribute.name.moonstone.owner_blood_attack_speed": "血灵攻击间隔",
-  "attribute.name.moonstone.owner_blood_attack_damage": "血灵攻击伤害",
-  "attribute.name.moonstone.owner_blood_blood_speed": "血灵血珠速度",
   "item.moonstone.soul_apple": "灵魂之果",
   "item.soul_apple.tool.string.1": "食用后永久+1通用饰品栏",
   "attribute.name.moonstone.speed":"通用速度",
@@ -2247,7 +2246,82 @@
   "advancements.tooltip.hidden_blade.hand": "未知的刀锋",
   "advancements.tooltip.wolf.text": "获得这个物品",
   "advancements.tooltip.wolf.hand": "一叶孤舟",
-  "moonstone.jei.item.moonstone.wolf": "让你的狼杀死监守者"
+  "moonstone.jei.item.moonstone.wolf": "让你的狼杀死监守者",
+
+
+  "tab.moonstone": "月之石：基因重组",
+  "moonstone.sequence_base": "基因序列",
+  "moonstone.base.todo": "获得：",
+  "moonstone.base.todo.not": "但是：",
+  "moonstone.configuration.TheNecora.tooltip": "僵尸：基因",
+  "moonstone.configuration.TheNecora.button": "僵尸：基因",
+  "moonstone.configuration.TheNecora": "僵尸：基因",
+
+  "item.moonstone.muscle_manipulation": "肌肉操控",
+  "item.moonstone.biological_enzyme_synthesis": "生物酶合成",
+  "item.moonstone.lactic_acid_accumulation": "乳酸堆积",
+  "item.moonstone.necrotizing_cyst": "坏死性囊肿",
+  "item.moonstone.compound_dispersion": "合成物逸散",
+
+
+
+
+  "moonstone.muscle_manipulation.modify": "僵尸在死亡时会为召唤者恢复生命值和提供力量效果",
+  "moonstone.biological_enzyme_synthesis.modify": "增加5%最大生命值",
+  "moonstone.lactic_acid_accumulation.modify": "奔跑状态下获得击退抗性",
+  "moonstone.necrotizing_cyst.modify": "杀死生物留下有中毒效果的毒气，并且自身免疫中毒",
+  "moonstone.compound_dispersion.modify": "自身死亡后对攻击者造成100%自身最大生命值的伤害",
+
+  "item.moonstone.epidermal_digestion": "表皮消化",
+  "item.moonstone.epidermal_digestion.string.1": "攻击满血生物恢复大量饥饿值和些许生命值",
+  "item.moonstone.epidermal_digestion.string.2": "在疾跑状态下饥饿值更容易被消耗",
+
+  "item.moonstone.activation_enzyme": "活化酶堆积",
+  "item.moonstone.activation_enzyme.string.1": "未受到伤害时治疗速度逐渐增加，最多增加额外的%d%%",
+  "item.moonstone.activation_enzyme.string.2": "受到伤害后的%d秒内无法受到治疗",
+
+  "item.moonstone.mucosal_injury": "粘膜损伤",
+  "item.moonstone.mucosal_injury.string.1": "将%d%%吃下食物的饥饿值直接转换为生命值",
+  "item.moonstone.mucosal_injury.string.2": "吃下食物会获得饥饿效果",
+
+  "item.moonstone.fat_accumulation": "脂肪堆积",
+  "item.moonstone.fat_accumulation.string.1": "免疫弹射物伤害",
+  "item.moonstone.fat_accumulation.string.2": "在水中，你会不受控制的上浮",
+
+
+  "item.moonstone.bone_fibers": "骨纤维异常增生",
+  "item.moonstone.bone_fibers.string.1": "增加%d%%抗性",
+  "item.moonstone.bone_fibers.string.2": "生命值低于一半时额外增加%d%%抗性",
+  "item.moonstone.bone_fibers.string.3": "连续奔跑时，你的速度会越来越慢",
+
+  "item.moonstone.blood_reconstruction": "血运重构",
+  "item.moonstone.blood_reconstruction.string.1": "负面效果的维持时间降低%d%%",
+  "item.moonstone.blood_reconstruction.string.2": "饥饿值转换为生命值的速度提高%d%%",
+  "item.moonstone.blood_reconstruction.string.3": "受到治疗效果降低%d%%",
+
+
+  "item.moonstone.spike_protrusion": "刺状物突出",
+  "item.moonstone.spike_protrusion.string.1": "获得%d%%的反伤能力",
+  "item.moonstone.spike_protrusion.string.2": "并且反伤时附加%d%%自身攻击力的伤害",
+  "item.moonstone.spike_protrusion.string.3": "增加%d%%抗性",
+  "item.moonstone.spike_protrusion.string.4": "每穿着一件护甲都会增加%d%%的受到伤害",
+
+  "item.moonstone.cell_swelling": "组织钙化",
+  "item.moonstone.organizational_calcification": "细胞膨胀",
+  "item.moonstone.muscle_contraction": "肌肉收缩",
+  "item.moonstone.lactate_accumulation": "乳酸堆积",
+  "item.moonstone.retinal_reconstruction": "视网膜重构",
+  "item.moonstone.metabolic_load": "新陈代谢负荷",
+  "item.moonstone.cerebral_cortex_decay": "脑皮层衰变",
+  "item.moonstone.airborne_transmission": "空气传播",
+  "item.moonstone.dna_push.tool.1": "右键可以存入一些基因片段",
+  "item.moonstone.dna_push.tool.2": "基因片段可以通过药物粉碎盒获取",
+  "item.moonstone.dna_push.tool.3": "放入培养皿中，每个基因片段给予：",
+  "item.moonstone.dnas.tool.1": "使用药物粉碎盒粉碎获取",
+  "item.moonstone.methane_synthesis": "甲烷合成",
+  "item.moonstone.methane_synthesis.string.1": "按下技能键引爆自身体内的甲烷",
+  "item.moonstone.methane_synthesis.string.2": "受到的火焰类型伤害增加%d%%",
+  "item.moonstone.methane_synthesis.string.3": "着火时被杀死会产生附带火焰效果的爆炸"
 }
 
 

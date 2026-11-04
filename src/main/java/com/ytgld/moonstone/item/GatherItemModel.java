@@ -210,6 +210,49 @@ public class GatherItemModel extends ItemModelProvider {
         basicItem(InitItems.cytopathic_boost.asItem());
         basicItem(InitItems.spliced_activation.asItem());
         basicItem(InitItems.thermo_necro.asItem());
+        basicItem(InitItems.love_charm.asItem());
+        basicItem(InitItems.Book_.asItem());
+
+        basicItem(DNAItems.atp_height.asItem());
+        basicItem(DNAItems.cell_big_boom.asItem());
+        basicItem(DNAItems.speed_metabolism.asItem());
+        basicItem(DNAItems.cell_disorder.asItem());
+        basicItem(DNAItems.cell_off_on.asItem());
+        basicItem(DNAItems.cell_darwin.asItem());
+        basicItem(DNAItems.cell_god.asItem());
+        basicItem(DNAItems.cell_inheritance.asItem());
+        basicItem(DNAItems.cell_oxygen.asItem());
+        basicItem(DNAItems.cell_break_down_water.asItem());
+        basicItem(DNAItems.cell_ground.asItem());
+        basicItem(DNAItems.cell_in_water.asItem());
+        basicItem(DNAItems.cell_in_air.asItem());
+        basicItem(DNAItems.cell_necrosis.asItem());
+        basicItem(DNAItems.cell_digestion.asItem());
+        basicItem(DNAItems.cell_acid.asItem());
+        basicItem(DNAItems.cell_eyes.asItem());
+        basicItem(DNAItems.cell_bone_add.asItem());
+        basicItem(DNAItems.cell_sense.asItem());
+        basicItem(DNAItems.cell_cranial.asItem());
+        basicItem(DNAItems.cell_dna_suppression.asItem());
+        basicItem(DNAItems.cell_putrefactive.asItem());
+        basicItem(DNAItems.cell_synthesis.asItem());
+        basicItem(DNAItems.cell_compress.asItem());
+        basicItem(DNAItems.cell_preferential.asItem());
+        basicItem(DNAItems.cell_flu.asItem());
+        basicItem(DNAItems.cell_constant.asItem());
+        basicItem(DNAItems.cell_chromosome.asItem());
+        basicItem(InitItems.dna.asItem());
+        basicItem(InitItems.dna_box.asItem());
+
+        basicItem(DNAItems.cell_swelling.asItem());
+        basicItem(DNAItems.organizational_calcification.asItem());
+        basicItem(DNAItems.muscle_contraction.asItem());
+        basicItem(DNAItems.lactate_accumulation.asItem());
+        basicItem(DNAItems.retinal_reconstruction.asItem());
+        basicItem(DNAItems.metabolic_load.asItem());
+        basicItem(DNAItems.cerebral_cortex_decay.asItem());
+        basicItem(DNAItems.airborne_transmission.asItem());
+
 
     }
 }

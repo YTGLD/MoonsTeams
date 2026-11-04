@@ -107,6 +107,7 @@ public class MoonstoneClient {
         TheNecora.renderBack(event);
         MLS.renderBack(event);
         NightmareBase.renderBack(event);
+        LoveCharm.renderBack(event);
 
     }
     @SubscribeEvent // on the mod event bus

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+     {"item":"minecraft:chest"},
+     {"item":"moonstone:ectoplasmball"},
+     {"item":"moonstone:ectoplasmcloub"},
+     {"item":"moonstone:ectoplasmcube"}
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:dna_box"
+  }
+}

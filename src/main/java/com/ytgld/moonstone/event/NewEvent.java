@@ -24,6 +24,7 @@ import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.BlueAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.GreedAmout;
 import com.ytgld.moonstone.item.ms.maxitem.uncommon.common.RedAmout;
 import com.ytgld.moonstone.item.ms.nanodoom.*;
+import com.ytgld.moonstone.item.ms.necora.DNAPush;
 import com.ytgld.moonstone.item.ms.necora.Necora;
 import com.ytgld.moonstone.item.ms.necora.dna.Fermentation;
 import com.ytgld.moonstone.item.ms.necora.dna.god.*;
@@ -97,6 +98,7 @@ public class NewEvent {
         Player player = event.getEntity();
         if (!player.getTags().contains(Moonstone.MODID+"nightmare")) {
             player.addItem(InitItems.NightmareBaseItem_.get().getDefaultInstance());
+            player.addItem(InitItems.Book_.get().getDefaultInstance());
             player.addTag(Moonstone.MODID+"nightmare");
         }
     }
@@ -156,7 +158,6 @@ public class NewEvent {
         BoneOrGod.hurt(event);
         DefendAgainstRunestone.hurt(event);
         ReviveRunestone.hurt(event);
-        StrengthenRunestone.hurt(event);
         lead.hurtOfBlood(event);
         NightmareClay.hurts(event);
         TwistedAmout.hurt(event);
@@ -171,16 +172,17 @@ public class NewEvent {
         BloodGod.hurtOfBlood(event);
         Immortal.hEvt(event);
         Apple.damage(event);
+        StrengthenRunestone.hurt(event);
     }
     @SubscribeEvent
     public void LivingHurtEvent(LivingDamageEvent.Post event) {
         EctoplasmApple.hurt(event);
-
     }
     @SubscribeEvent
     public  void LivingDamageEvent(LivingEntityUseItemEvent.Start event) {
         Masticatory.masticatory(event);
         BloodGod.hurtOfBlood(event);
+        DNAPush.event(event);
     }
     @SubscribeEvent
     public  void LivingJumpEvent(LivingEvent.LivingJumpEvent event){
@@ -193,6 +195,7 @@ public class NewEvent {
         MedicineBox.apple(event);
         MedicineBox.LivingDamageEvent(event);
         Polyphagia.necora(event);
+        DNAPush.event(event);
     }
     @SubscribeEvent
     public void target(LivingChangeTargetEvent event){
@@ -214,6 +217,7 @@ public class NewEvent {
 
         ZombieEventHandler.theCellZombieGiant(event);
         PrisonOfSin.LivingDeathEvent(event);
+        DNAPush.event(event);
     }
 
     @SubscribeEvent
@@ -274,7 +278,10 @@ public class NewEvent {
         MRing.LivingExperienceDropEvent(event);
         UndeadBloodCharm.LivingHealEvent(event);
     }
-
+    @SubscribeEvent
+    public void exp(LivingIncomingDamageEvent event) {
+        DNAPush.event(event);
+    }
     @SubscribeEvent
     public void exp(CriticalHitEvent event) {
         if (event.getEntity() instanceof Player player) {

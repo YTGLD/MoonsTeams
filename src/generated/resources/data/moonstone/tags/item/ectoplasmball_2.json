@@ -66,6 +66,8 @@
     "moonstone:surge",
     "moonstone:cytopathic_boost",
     "moonstone:spliced_activation",
-    "moonstone:thermo_necro"
+    "moonstone:thermo_necro",
+    "moonstone:dna",
+    "moonstone:dna_box"
   ]
 }

@@ -19,7 +19,7 @@ public class NightmareSmall extends ItemBase implements ICurioItem {
     }
     @Override
     public int color() {
-        return 0xffff0000;
+        return Light.ARGB.color(255,240,20,20);
     }
     @Override
     public int colorEQ() {
