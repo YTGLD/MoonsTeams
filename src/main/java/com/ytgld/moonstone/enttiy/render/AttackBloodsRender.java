@@ -41,9 +41,6 @@ public class AttackBloodsRender extends EntityRenderer<@NotNull AttackBlood, Att
         submitOther(renderState, modelView, collector, camera);
     }
     public void submitOther(AttackBloodsState renderState, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
-        HandlerClient.showOutline = true;
-        HandlerClient.doPass = true;
-
         AttackBlood entity = renderState.entity;
         double x = Mth.lerp(renderState.partialTick, entity.xOld, entity.getX());
         double y = Mth.lerp(renderState.partialTick, entity.yOld, entity.getY());

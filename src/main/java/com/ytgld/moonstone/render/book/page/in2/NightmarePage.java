@@ -93,29 +93,36 @@ public class NightmarePage implements RegisterBookPage {
 
     }
     private static void  addNightmareList(List<MoonBookScreen.CIBookGuiAdd> list,
-                          Item item,
-                          Vec2 pos,
-                          List<Component> give
+                                          Item item,
+                                          Vec2 pos,
+                                          List<Component> give
     ){
         String name = BuiltInRegistries.ITEM.getKey(item).getPath();
+        List<Component> components = new ArrayList<>(give);
+        components.add(Component.literal(""));
+        components.add(Component.translatable("moonstone.book.back"));
         list.add(new MoonBookScreen.CIBookGuiAdd(item, pos.scale(32),
                 Component.translatable("item.moonstone." +  name),
-                give,
+                components,
                 color,
                 color,
                 MoonBookScreen.ThePage.BLACK,
                 theCColor(item),List.of(),true,true));
     }
     private static void  addNightmare(List<MoonBookScreen.CIBookGuiAdd> list,
-                                          Item item,
-                                          Vec2 pos
+                                      Item item,
+                                      Vec2 pos
     ){
         String name = BuiltInRegistries.ITEM.getKey(item).getPath();
+        List<Component> translatable = List.of(Component.translatable(
+                "moonstone.jei.item.moonstone."  + name
+        ));
+        List<Component> components = new ArrayList<>(translatable);
+        components.add(Component.literal(""));
+        components.add(Component.translatable("moonstone.book.back"));
         list.add(new MoonBookScreen.CIBookGuiAdd(item, pos.scale(32),
                 Component.translatable("item.moonstone." +  name),
-                List.of(Component.translatable(
-                        "moonstone.jei.item.moonstone."  + name
-                )),
+                components,
                 color,
                 color,
                 MoonBookScreen.ThePage.BLACK,

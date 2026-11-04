@@ -299,7 +299,7 @@ public class InitItems {
     public static final DeferredItem<@NotNull Item> spliced_activation = register("spliced_activation", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> thermo_necro = register("thermo_necro", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
-    public static final DeferredItem<@NotNull Item> Book_ = register("book", (identifier) -> new Book(new Item.Properties().stacksTo(64).setId(ResourceKey.create(Registries.ITEM, identifier))));
+    public static final DeferredItem<@NotNull Item> Book_ = register("book", (identifier) -> new Book(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
 
     public static final DeferredItem<@NotNull Item> dna = register("dna", (identifier) -> new DNAPush(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
     public static final DeferredItem<@NotNull Item> dna_box = register("dna_box", (identifier) -> new DnaBox(new Item.Properties().stacksTo(1).setId(ResourceKey.create(Registries.ITEM, identifier))));
@@ -311,6 +311,7 @@ public class InitItems {
                 .title(Component.translatable("itemGroup.tabmoonstone.necora"))
                 .icon(() -> necora.asItem().getDefaultInstance())
                 .displayItems((parameters, output) -> {
+                    output.accept(Book_);
                     output.accept(necora);
                     output.accept(DNAItems.methane_synthesis.asItem());
                     output.accept(DNAItems.spike_protrusion.asItem());
@@ -431,6 +432,7 @@ public class InitItems {
                 .title(Component.translatable("itemGroup.tabmoonstone"))
                 .icon(() -> ectoplasmball.asItem().getDefaultInstance())
                 .displayItems((parameters, output) -> {
+                    output.accept(Book_);
                     output.accept(soulbattery);
                     output.accept(soulcube);
                     output.accept(beacon);
@@ -531,6 +533,7 @@ public class InitItems {
                 .title(Component.translatable("itemGroup.moonstone"))
                 .icon(() -> NightmareBaseItem_.asItem().getDefaultInstance())
                 .displayItems((parameters, output) -> {
+                    output.accept(Book_);
                     output.accept(NightmareBaseItem_);
                     output.accept(nightmare_base_black_eye);
                     output.accept(nightmare_base_fool);

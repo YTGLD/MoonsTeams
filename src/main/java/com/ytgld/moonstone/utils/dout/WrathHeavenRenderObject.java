@@ -54,62 +54,23 @@ public class WrathHeavenRenderObject extends WorldRenderObject {
                 position.z - cameraPos.z
         );
         doRender(poseStack, collector, partialTick);
-        rednerStar(poseStack, collector, partialTick);
-
         doRender(poseStack, collector, partialTick);
-        rednerStar(poseStack, collector, partialTick);
-
         poseStack.popPose();
     }
     private void doRender(PoseStack poseStack, SubmitNodeCollector collector, float partialTick){
 
         poseStack.pushPose();
-        poseStack.rotate(Axis.YP.rotationDegrees((age + partialTick) / 2f));
+        poseStack.rotate(Axis.YP.rotationDegrees((age + partialTick) / 5f));
         renderAll(poseStack, collector,Identifier.fromNamespaceAndPath(Moonstone.MODID,"textures/render_object/wrath_heaven_2.png"));
 
         poseStack.popPose();
 
 
         poseStack.pushPose();
-        poseStack.rotate(Axis.YP.rotationDegrees(-(age + partialTick) / 3f));
+        poseStack.rotate(Axis.YP.rotationDegrees(-(age + partialTick) / 5f));
         renderAll(poseStack, collector,Identifier.fromNamespaceAndPath(Moonstone.MODID,"textures/render_object/wrath_heaven_1.png"));
         poseStack.popPose();
     }
-    private void rednerStar(PoseStack poseStack, SubmitNodeCollector collector, float partialTick){
-        int as = (color >> 24) & 0xFF;
-        int rs = (color >> 16) & 0xFF;
-        int gs = (color >> 8) & 0xFF;
-        int bs = color & 0xFF;
-
-        float speed = 20;
-
-        poseStack.pushPose();
-        Quaternionf quaternionf = new Quaternionf();
-        quaternionf.transform(new Vector3d(0,1,0));
-        quaternionf.rotateX(-(float)Math.PI / 2);
-        poseStack.rotate(quaternionf);
-
-        render(poseStack,collector,size,
-                RenderObjects.renderTypeFunctionLive.apply(
-                        Identifier.fromNamespaceAndPath(Moonstone.MODID,"textures/render_object/star_1.png")
-                ),
-                Light.ARGB.color((int) (newAlpha * Math.abs(Math.sin(age / speed))),rs,gs,bs));
-
-        render(poseStack,collector,size,
-                RenderObjects.renderTypeFunctionLive.apply(
-                        Identifier.fromNamespaceAndPath(Moonstone.MODID,"textures/render_object/star_2.png")
-                ),
-                Light.ARGB.color((int) (newAlpha / 2f * Math.abs(Math.sin(age / (speed * 2)))),rs,gs,bs));
-
-        render(poseStack,collector,size,
-                RenderObjects.renderTypeFunctionLive.apply(
-                        Identifier.fromNamespaceAndPath(Moonstone.MODID,"textures/render_object/star_3.png")
-                ),
-                Light.ARGB.color((int) (newAlpha / 3f * Math.abs(Math.sin(age / (speed * 3)))),rs,gs,bs));
-
-        poseStack.popPose();
-    }
-
     private void renderAll(PoseStack poseStack, SubmitNodeCollector collector, Identifier identifier){
         int as = (color >> 24) & 0xFF;
         int rs = (color >> 16) & 0xFF;

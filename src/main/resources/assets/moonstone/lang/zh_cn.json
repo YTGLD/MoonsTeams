@@ -1437,10 +1437,11 @@
 
   "item.moonstone.twelve_sword":"诸神剑阵",
 
-  "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵",
-  "item.twelve_sword.tool.string.2": "在剑阵附近获得10%~120%的伤害加成",
-  "item.twelve_sword.tool.string.3": "剑阵内的生物会被死界剑坠落攻击",
-  "item.twelve_sword.tool.string.4": "数量取决于你生肖物品的数量",
+  "item.twelve_sword.tool.string.1": "杀死生物召唤剑阵或墓碑",
+  "item.twelve_sword.tool.string.2": "在剑阵或墓碑附近获得大量伤害加成",
+  "item.twelve_sword.tool.string.3": "若为剑阵，则内部生物会被死界剑坠落攻击",
+  "item.twelve_sword.tool.string.4": "若为墓碑，则内部生物会被极大削弱",
+  "item.twelve_sword.tool.string.5": "墓碑由噩梦基座腐蚀的诸神剑阵产生",
 
   "moonstone.twelve.1": "生肖：子",
   "moonstone.twelve.2": "生肖：丑",

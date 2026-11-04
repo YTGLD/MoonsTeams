@@ -98,7 +98,7 @@ public class MethaneSynthesis extends SequenceBase implements IKet {
             if (!player.getCooldowns().isOnCooldown(DNAItems.methane_synthesis.asItem().getDefaultInstance())) {
                 float stronger = ConfigItem.intValue.get().floatValue();
                 player.level().explode(player,player.getX(),player.getY(),player.getZ(),stronger,false, Level.ExplosionInteraction.NONE);
-                player.getCooldowns().addCooldown(DNAItems.methane_synthesis.asItem().getDefaultInstance(),1200);
+                player.getCooldowns().addCooldown(DNAItems.methane_synthesis.asItem().getDefaultInstance(),200);
             }
         }
     }

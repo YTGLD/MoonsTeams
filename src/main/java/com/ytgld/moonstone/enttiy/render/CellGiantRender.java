@@ -1,16 +1,21 @@
 package com.ytgld.moonstone.enttiy.render;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.ytgld.moonstone.HandlerClient;
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.enttiy.CellGiant;
 import com.ytgld.moonstone.enttiy.state.CellGiantStart;
 import com.ytgld.moonstone.enttiy.zombie.CellGiantModel;
 import com.ytgld.moonstone.render.MRender;
+import com.ytgld.moonstone.render.light.LightRenders;
 import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.LivingEntityEmissiveLayer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
@@ -56,7 +61,8 @@ public class CellGiantRender  extends MobRenderer<CellGiant, CellGiantStart, Cel
         );
         this.addLayer(
                 new LivingEntityEmissiveLayer<>(
-                        this, renderState -> HEART_TEXTURE, (warden, ageInTicks) -> warden.heartAnimation, heartModel,RenderTypes::entityTranslucentEmissive, false
+                        this, renderState -> HEART_TEXTURE, (warden, ageInTicks) ->
+                        warden.heartAnimation, heartModel,RenderTypes::entityTranslucentEmissive, false
                 )
         );
     }
@@ -67,6 +73,28 @@ public class CellGiantRender  extends MobRenderer<CellGiant, CellGiantStart, Cel
 
     public CellGiantStart createRenderState() {
         return new CellGiantStart();
+    }
+
+    @Override
+    public boolean shouldRender(CellGiant entity, Frustum culler, double camX, double camY, double camZ, float partialTicks) {
+        return true;
+    }
+
+    @Override
+    public void submit(CellGiantStart state, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, CameraRenderState camera) {
+        super.submit(state, poseStack, submitNodeCollector, camera);
+        HandlerClient.setShowRenderLight(true);
+        float light = state.heartAnimation;
+        float red = light * 1;
+        if (red <= 0) {
+            return;
+        }
+        LightRenders.addLight(
+                state.x,state.y,state.z,
+                12,
+                red,0,0,
+                1);
+
     }
 
     public void extractRenderState(CellGiant entity, CellGiantStart state, float partialTicks) {

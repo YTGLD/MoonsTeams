@@ -79,24 +79,24 @@ public class HiddenBlade extends NightmareSmall {
     }
 
     public static void cit(CriticalHitEvent event) {
-        if (event.getEntity() instanceof Player) {
-            if (SIHandler.hascurio(event.getEntity(), InitItems.hidden_blade.get())) {
+        if (event.getEntity() instanceof Player player) {
+            if (SIHandler.hascurio(player, InitItems.hidden_blade.get())) {
                 if (event.getTarget() instanceof LivingEntity living) {
                     if (SIHandler.hascurio(living, InitItems.hidden_blade.get())) {
                         return;
                     }
                 }
-                if (event.getEntity().getCooldowns().isOnCooldown(InitItems.hidden_blade.get().getDefaultInstance())) {
-
+                if (player.getCooldowns().isOnCooldown(InitItems.hidden_blade.get().getDefaultInstance())) {
                     event.setDamageMultiplier(event.getDamageMultiplier() * 2f);
-
-                    event.getEntity().addEffect(new MobEffectInstance(Effects.blade, 120, 0));
-                    MobEffectInstance instance = event.getEntity().getEffect(Effects.blade);
+                }
+                if (event.isCriticalHit()) {
+                    player.addEffect(new MobEffectInstance(Effects.blade, 120, 0));
+                    MobEffectInstance instance = player.getEffect(Effects.blade);
                     if (instance != null) {
                         if (instance.getAmplifier() < 9) {
-                            event.getEntity().addEffect(new MobEffectInstance(Effects.blade, 120, instance.getAmplifier() + 1));
+                            player.addEffect(new MobEffectInstance(Effects.blade, 120, instance.getAmplifier() + 1));
                         } else {
-                            event.getEntity().addEffect(new MobEffectInstance(Effects.blade, 120, 9));
+                            player.addEffect(new MobEffectInstance(Effects.blade, 120, 9));
                         }
                     }
                 }

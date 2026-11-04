@@ -43,6 +43,7 @@ public class EctoplasmShild extends Ectoplasm implements TextEvt.Twelve {
 
                 player.getPersistentData().getIntOr("EctoplasmShild", player.getPersistentData().getIntOr("EctoplasmShild", 0) + 1);
                 if (player.getPersistentData().getIntOr("EctoplasmShild", 0) >= 5) {
+                    event.setNewDamage(0);
                     player.getPersistentData().putInt("EctoplasmShild", 0);
                 }
             }

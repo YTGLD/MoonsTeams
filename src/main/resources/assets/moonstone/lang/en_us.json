@@ -1522,6 +1522,7 @@
   "item.twelve_sword.tool.string.2": "Gain 0-120% damage increase near the sword array",
   "item.twelve_sword.tool.string.3": "Creatures within the sword array will be attacked by falling obsidian spikes",
   "item.twelve_sword.tool.string.4": "The number depends on the number of zodiac items you have",
+  "item.twelve_sword.tool.string.5": "墓碑将由被噩梦基座腐蚀的诸神剑阵产生",
 
   "item.moonstone.belt": "belt",
 
@@ -2421,13 +2422,13 @@
   "item.moonstone.nightmare_clay.book": "高强度的粘土覆盖四肢\n使你几乎完全免疫死兆的诅咒\n\n这种粘土极易点燃且燃烧温度极高\n可能会对你造成一些影响",
   "item.moonstone.flag_of_protest.book": "死亡的枷锁不会完全禁锢你的灵魂\n此物品通媒介使你回到死亡前的世界\n并继承之前的力量和愤怒\n\n需要手动触发此物品后才能调用“媒介”",
   "item.moonstone.dead_drder.book":"三角形的铅块像天道一样坚固\n在安全的情况下缓慢恢复和强化自身\n吸收伤害的同时使持有者不受因果的影响\n\n此效果由灵质盾演变而来",
-  "item.moonstone.defend_against_runestone.book": "这些9符石就像被侵蚀前时一样\n但侵蚀后的符石更加强大与邪恶",
-  "item.moonstone.revive_runestone.book":"这些9符石就像被侵蚀前时一样\n但侵蚀后的符石更加强大与邪恶",
-  "item.moonstone.strengthen_runestone.book": "这些9符石就像被侵蚀前时一样\n但侵蚀后的符石更加强大与邪恶",
+  "item.moonstone.defend_against_runestone.book": "这些符石就像被侵蚀前时一样\n但侵蚀后的符石更加强大与邪恶",
+  "item.moonstone.revive_runestone.book":"这些符石就像被侵蚀前时一样\n但侵蚀后的符石更加强大与邪恶",
+  "item.moonstone.strengthen_runestone.book": "这些符石就像被侵蚀前时一样\n但侵蚀后的符石更加强大与邪恶",
   "item.moonstone.blood_god.book":"允许受到的伤害寄存在因果之内\n在未来的时间缓慢返回\n并极大强化自身的生命值和治疗\n在饮用药水的同时减少因果返回的伤害",
   "item.moonstone.bone_or_god.book": "将自身所承受的力量施加到宠物上\n同时宠物的因果与你同步施加\n它们能够缓慢的恢复生命值\n且力量也与你同步",
   "item.moonstone.lead.book":"死亡之令的削弱版本\n或者说各有特点\n此物在原先物品的情况下进行了改革\n吸收伤害的同时对攻击者造成巨大伤害\n此方法引入了传说的“仙气”与“罡气”",
-  "item.moonstone.immortal.book": "跳出因果的循后\n在多数情况下无法被死亡所锁定\n甚至不被他人的伤害所影响\n\n因果的诅咒会错误的施加到附近的生物上\n\n但它不具备任何的杀伤手段\n这是它唯一的败笔",
+  "item.moonstone.immortal.book": "跳出因果的循环后\n在多数情况下无法被死亡所锁定\n甚至不被他人的伤害所影响\n\n因果的诅咒会错误的施加到附近的生物上\n\n但它不具备任何的杀伤手段\n这是它唯一的败笔",
   "moonstone.book.loot.has.2": "需要佩戴Necora物品才能获取",
   "moonstone.book.loot.has.3": "发现在多数战利品箱子里",
   "moonstone.book.nda.main": "需要右键植入到相关物品内使用",
@@ -2441,6 +2442,7 @@
   "moonstone.book.loot.clear": "右键关闭界面",
   "moonstone.book.nightmare_base.main": "噩梦基座",
   "moonstone.book.nightmare_base.1": "恶念的起始，光明的另一面\n\n佩戴获取一些罪孽：窥眸，死兆，颠倒，救赎\n愚者，洞悉，起始\n基座一旦与你建立联系，将无法取下",
+  "moonstone.book.back": "右键返回界面",
 
   "tab.moonstone": "Moonstone: Gene Recombination",
   "moonstone.sequence_base": "Gene Sequence",
@@ -2521,6 +2523,9 @@
   "item.moonstone.cell_flu.tool.string": "削弱半径范围内的生物，数量越多效果越好",
   "item.moonstone.cell_constant.tool.string": "增加无敌帧时间，数量越多效果越好",
   "item.moonstone.cell_cranial.tool.string": "降低来自上方方块的坠落伤害，数量越多效果越好",
+
+  "sound.moonstone.bass" : "沉重的回响",
+  "sound.moonstone.tombstone" : "墓碑：嗡鸣",
 
   "item.moonstone.methane_synthesis": "Methane Synthesis",
   "item.moonstone.methane_synthesis.string.1": "Press the skill key to ignite methane stored inside your body",
