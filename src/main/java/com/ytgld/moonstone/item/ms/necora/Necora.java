@@ -3,6 +3,7 @@ package com.ytgld.moonstone.item.ms.necora;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.ytgld.moonstone.Handler;
+import com.ytgld.moonstone.item.DNAItems;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.item.ms.TheNecora;
 import net.minecraft.ChatFormatting;
@@ -29,7 +30,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Necora extends TheNecora {
+public class Necora extends DNASequence {
 
     public Necora(Properties properties) {
         super(properties);
@@ -56,7 +57,11 @@ public class Necora extends TheNecora {
         return new HashSet<>(Set.of(
                 InitItems.cytopathic_boost.asItem(),
                 InitItems.spliced_activation.asItem(),
-                InitItems.thermo_necro.asItem()
+                InitItems.thermo_necro.asItem(),
+                DNAItems.muscle_manipulation.asItem(),
+                DNAItems.lactic_acid_accumulation.asItem(),
+                DNAItems.necrotizing_cyst.asItem(),
+                DNAItems.compound_dispersion.asItem()
         ));
     }
 
@@ -123,6 +128,17 @@ public class Necora extends TheNecora {
         if (slotContext.entity() instanceof Player player) {
             player.getAttributes().removeAttributeModifiers(Head(player, stack));
         }
+    }
+
+    @Override
+    public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
+        if (slotContext.entity() instanceof Player player) {
+            if (Handler.hascurio(player, InitItems.the_divine_fall_ring.asItem())) {
+                return true;
+            }
+            return player.isCreative();
+        }
+        return false;
     }
 
     @Override

@@ -313,6 +313,19 @@ public class InitItems {
                 .displayItems((parameters, output) -> {
                     output.accept(Book_);
                     output.accept(necora);
+                    output.accept(DNAItems.methane_synthesis.asItem());
+                    output.accept(DNAItems.spike_protrusion.asItem());
+                    output.accept(DNAItems.epidermal_digestion.asItem());
+                    output.accept(DNAItems.activation_enzyme.asItem());
+                    output.accept(DNAItems.mucosal_injury.asItem());
+                    output.accept(DNAItems.fat_accumulation.asItem());
+                    output.accept(DNAItems.bone_fibers.asItem());
+                    output.accept(DNAItems.blood_reconstruction.asItem());
+                    output.accept(DNAItems.biological_enzyme_synthesis.asItem());
+                    output.accept(DNAItems.lactic_acid_accumulation.asItem());
+                    output.accept(DNAItems.necrotizing_cyst.asItem());
+                    output.accept(DNAItems.compound_dispersion.asItem());
+                    output.accept(DNAItems.muscle_manipulation.asItem());
                     output.accept(cytopathic_boost);
                     output.accept(spliced_activation);
                     output.accept(thermo_necro);

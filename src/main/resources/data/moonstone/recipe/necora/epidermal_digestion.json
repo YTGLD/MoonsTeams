@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {"item":"moonstone:ectoplasmcube"},
+    "B": {"item":"moonstone:ectoplasmprism"},
+    "C": {"item":"minecraft:golden_apple"},
+    "D": {"item":"moonstone:polyphagia"}
+  },
+  "pattern": [
+    "CBC",
+    "ADA",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:epidermal_digestion"
+  }
+}

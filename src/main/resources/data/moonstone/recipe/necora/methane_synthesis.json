@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {"item":"moonstone:ectoplasmcube"},
+    "B": {"item":"moonstone:ectoplasmprism"},
+    "C": {"item":"minecraft:rotten_flesh"},
+    "D": {"item":"moonstone:god_autolytic"}
+  },
+  "pattern": [
+    "CBC",
+    "ADA",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "moonstone:methane_synthesis"
+  }
+}

@@ -8,6 +8,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.ytgld.moonstone.Handler;
 import com.ytgld.moonstone.event.AdvancementEvt;
 import com.ytgld.moonstone.event.EquippedEvt;
+import com.ytgld.moonstone.item.DNAItems;
 import com.ytgld.moonstone.item.InitItems;
 import com.ytgld.moonstone.other.DataReg;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -77,7 +78,7 @@ public class ChestLoot extends LootModifier {
                         InitItems.frontal_lobe.get(),
                         InitItems.high_energy.get(),
                         InitItems.surge.get()
-                ), 18,lootContext);
+                ), 8,lootContext);
 
 
                 addLoot(objectArrayList, lootContext.getRandom(), InitItems.necora.get(), entity, List.of(
@@ -88,23 +89,32 @@ public class ChestLoot extends LootModifier {
                         InitItems.putrefactive.get(),
                         InitItems.regenerative.get(),
                         InitItems.adrenaline.get(),
-                        InitItems.cell_mummy.get(),
-                        InitItems.cell_boom.get(),
-                        InitItems.cell_calcification.get(),
-                        InitItems.cell_blood.get(),
-                        InitItems.bone_cell.get(),
-                        InitItems.parasitic_cell.get(),
-                        InitItems.mother_cell.get(),
-                        InitItems.disgusting_cells.get(),
                         InitItems.peptide_surge.get(),
                         InitItems.acidic_reflux.get(),
                         InitItems.hypertrophy.get(),
-                        InitItems.naja_mortis.get()
-
-
+                        InitItems.naja_mortis.get(),
+                        DNAItems.muscle_manipulation.get(),
+                        DNAItems.biological_enzyme_synthesis.get(),
+                        DNAItems.lactic_acid_accumulation.get(),
+                        DNAItems.necrotizing_cyst.get(),
+                        DNAItems.compound_dispersion.get()
+                ), 10,lootContext);
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.giant.get(), entity, List.of(
+                        InitItems.bone_cell.get(),
+                        InitItems.parasitic_cell.get(),
+                        InitItems.mother_cell.get(),
+                        InitItems.disgusting_cells.get()
                 ), 20,lootContext);
-
-
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.cell.get(), entity, List.of(
+                        InitItems.cell_mummy.get(),
+                        InitItems.cell_boom.get(),
+                        InitItems.cell_calcification.get(),
+                        InitItems.cell_blood.get()
+                ), 20,lootContext);
+                addLoot(objectArrayList, lootContext.getRandom(), InitItems.necora.get(), entity, List.of(
+                        InitItems.cell.get(),
+                        InitItems.giant.get()
+                ), 20,lootContext);
             }
         }
         return objectArrayList;

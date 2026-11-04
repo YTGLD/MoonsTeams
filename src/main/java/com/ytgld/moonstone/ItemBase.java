@@ -53,6 +53,10 @@ public class ItemBase extends Item implements ICurioItem,ICanHasInItem , IDNASeq
 
     }
 
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        return !Handler.hascurio(slotContext.entity(), stack.getItem());
+    }
 
     @Override
     public @NotNull ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, boolean recentlyHit, ItemStack stack) {

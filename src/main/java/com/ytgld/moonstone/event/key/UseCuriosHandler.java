@@ -2,6 +2,7 @@ package com.ytgld.moonstone.event.key;
 
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.blood.magic.BloodCandle;
+import com.ytgld.moonstone.item.ms.necora.sequence.MethaneSynthesis;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -24,6 +25,7 @@ public class UseCuriosHandler {
             ctx.enqueueWork(() -> {
                 Player player = ctx.player();
                 BloodCandle.event(player);
+                MethaneSynthesis.keyUSe(player);
             });
         }
     }

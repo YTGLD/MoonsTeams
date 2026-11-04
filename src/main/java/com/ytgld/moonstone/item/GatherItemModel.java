@@ -254,5 +254,21 @@ public class GatherItemModel extends ItemModelProvider {
         basicItem(DNAItems.airborne_transmission.asItem());
 
 
+        basicItem(DNAItems.muscle_manipulation.asItem());
+        basicItem(DNAItems.biological_enzyme_synthesis.asItem());
+
+        basicItem(DNAItems.lactic_acid_accumulation.asItem());
+        basicItem(DNAItems.necrotizing_cyst.asItem());
+        basicItem(DNAItems.compound_dispersion.asItem());
+
+        basicItem(DNAItems.methane_synthesis.asItem());
+        basicItem(DNAItems.spike_protrusion.asItem());
+        basicItem(DNAItems.epidermal_digestion.asItem());
+        basicItem(DNAItems.activation_enzyme.asItem());
+        basicItem(DNAItems.mucosal_injury.asItem());
+        basicItem(DNAItems.fat_accumulation.asItem());
+        basicItem(DNAItems.bone_fibers.asItem());
+        basicItem(DNAItems.blood_reconstruction.asItem());
+
     }
 }

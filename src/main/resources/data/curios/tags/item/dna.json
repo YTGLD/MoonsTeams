@@ -22,7 +22,16 @@
     "moonstone:god_hypertrophy",
     "moonstone:hypertrophy",
     "moonstone:god_naja_mortis",
-    "moonstone:naja_mortis"
+    "moonstone:naja_mortis",
+
+    "moonstone:methane_synthesis",
+    "moonstone:spike_protrusion",
+    "moonstone:epidermal_digestion",
+    "moonstone:activation_enzyme",
+    "moonstone:mucosal_injury",
+    "moonstone:fat_accumulation",
+    "moonstone:bone_fibers",
+    "moonstone:blood_reconstruction"
 
   ]
 }

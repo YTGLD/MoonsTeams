@@ -2428,7 +2428,7 @@
   "item.moonstone.blood_god.book":"允许受到的伤害寄存在因果之内\n在未来的时间缓慢返回\n并极大强化自身的生命值和治疗\n在饮用药水的同时减少因果返回的伤害",
   "item.moonstone.bone_or_god.book": "将自身所承受的力量施加到宠物上\n同时宠物的因果与你同步施加\n它们能够缓慢的恢复生命值\n且力量也与你同步",
   "item.moonstone.lead.book":"死亡之令的削弱版本\n或者说各有特点\n此物在原先物品的情况下进行了改革\n吸收伤害的同时对攻击者造成巨大伤害\n此方法引入了传说的“仙气”与“罡气”",
-  "item.moonstone.immortal.book": "跳出因果的循后\n在多数情况下无法被死亡所锁定\n甚至不被他人的伤害所影响\n\n因果的诅咒会错误的施加到附近的生物上\n\n但它不具备任何的杀伤手段\n这是它唯一的败笔",
+  "item.moonstone.immortal.book": "跳出因果的循环后\n在多数情况下无法被死亡所锁定\n甚至不被他人的伤害所影响\n\n因果的诅咒会错误的施加到附近的生物上\n\n但它不具备任何的杀伤手段\n这是它唯一的败笔",
   "moonstone.book.loot.has.2": "需要佩戴Necora物品才能获取",
   "moonstone.book.loot.has.3": "发现在多数战利品箱子里",
   "moonstone.book.nda.main": "需要右键植入到相关物品内使用",

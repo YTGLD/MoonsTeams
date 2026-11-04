@@ -2,12 +2,16 @@ package com.ytgld.moonstone.item;
 
 import com.ytgld.moonstone.Moonstone;
 import com.ytgld.moonstone.item.ms.TheNecora;
+import com.ytgld.moonstone.item.ms.necora.EmbeddedDNA;
+import com.ytgld.moonstone.item.ms.necora.sequence.*;
 import com.ytgld.moonstone.other.AttReg;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -26,6 +30,45 @@ import java.util.function.Function;
 
 public class DNAItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Moonstone.MODID);
+    //肌肉操控
+    //僵尸在死亡时会为召唤者恢复生命值和提供力量效果
+    public static final DeferredItem<@NotNull Item> muscle_manipulation = register("muscle_manipulation", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64)));
+
+    //生物酶合成
+    //提供10%最大生命值
+    public static final DeferredItem<@NotNull Item> biological_enzyme_synthesis = register("biological_enzyme_synthesis", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64)));
+
+    //乳酸堆积
+    //奔跑状态下获得击退抗性
+    public static final DeferredItem<@NotNull Item> lactic_acid_accumulation = register("lactic_acid_accumulation", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64)));
+
+    //坏死性囊肿
+    //杀死生物留下有中毒效果的毒气，并且自身免疫中毒
+    public static final DeferredItem<@NotNull Item> necrotizing_cyst = register("necrotizing_cyst", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64)));
+
+    //合成物逸散
+    //自身死亡后对攻击者造成100%自身最大生命值的伤害
+    public static final DeferredItem<@NotNull Item> compound_dispersion = register("compound_dispersion", (identifier) -> new EmbeddedDNA(new Item.Properties().stacksTo(64)));
+
+
+    public static final DeferredItem<@NotNull Item> methane_synthesis = register("methane_synthesis", (identifier) ->
+            new MethaneSynthesis(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<@NotNull Item> spike_protrusion = register("spike_protrusion", (identifier) ->
+            new SpikeProtrusion(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<@NotNull Item> epidermal_digestion = register("epidermal_digestion", (identifier) ->
+            new EpidermalDigestion(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<@NotNull Item> activation_enzyme = register("activation_enzyme", (identifier) ->
+            new ActivationEnzyme(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<@NotNull Item> mucosal_injury = register("mucosal_injury", (identifier) ->
+            new MucosalInjury(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<@NotNull Item> fat_accumulation = register("fat_accumulation", (identifier) ->
+            new FatAccumulation(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<@NotNull Item> bone_fibers = register("bone_fibers", (identifier) ->
+            new BoneFibers(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<@NotNull Item> blood_reconstruction = register("blood_reconstruction", (identifier) ->
+            new BloodReconstruction(new Item.Properties().stacksTo(1)));
+
+
     public static DeferredItem<@NotNull Item> register(String name, Function<ResourceLocation, ? extends Item> func) {
         return ITEMS.register(name, func);
     }

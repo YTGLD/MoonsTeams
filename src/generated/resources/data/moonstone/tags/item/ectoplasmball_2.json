@@ -68,6 +68,17 @@
     "moonstone:spliced_activation",
     "moonstone:thermo_necro",
     "moonstone:dna",
-    "moonstone:dna_box"
+    "moonstone:dna_box",
+    "moonstone:necora",
+    "moonstone:god_ambush",
+    "moonstone:god_atpoverdose",
+    "moonstone:god_autolytic",
+    "moonstone:god_fermentation",
+    "moonstone:god_putrefactive",
+    "moonstone:god_regenerative",
+    "moonstone:god_peptide_surge",
+    "moonstone:god_acidic_reflux",
+    "moonstone:god_hypertrophy",
+    "moonstone:god_naja_mortis"
   ]
 }

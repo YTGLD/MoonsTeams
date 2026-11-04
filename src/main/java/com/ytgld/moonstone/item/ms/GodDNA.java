@@ -1,6 +1,7 @@
 package com.ytgld.moonstone.item.ms;
 
 import com.ytgld.moonstone.item.InitItems;
+import com.ytgld.moonstone.item.ms.necora.DNASequence;
 import com.ytgld.moonstone.other.Light;
 import com.ytgld.moonstone.render.CIStateShardsHasBlack;
 import com.ytgld.moonstone.render.MGuiGraphics;
@@ -17,7 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Consumer;
 
-public abstract class GodDNA extends TheNecora {
+public abstract class GodDNA extends DNASequence {
     public GodDNA(Properties properties) {
         super(properties);
     }

@@ -38,7 +38,7 @@ public class DNAModifyHandler {
                                               Multimap<Holder<Attribute>, AttributeModifier> attributeModifierMultimap) {
         doModifiers(itemBase, stack, livingEntity, attributeModifierMultimap);
         doDNAAttributes(itemBase, stack, livingEntity, attributeModifierMultimap);
-        OtherItemModifyHandler.doOtherModifiers(itemBase, stack, livingEntity, attributeModifierMultimap);
+        DNAHandler.addModifyAttribute(itemBase, stack, livingEntity, attributeModifierMultimap);
     }
     private static void doModifiers(ItemBase itemBase, ItemStack stack, LivingEntity livingEntity,
                                     Multimap<Holder<Attribute>, AttributeModifier> attributeModifierMultimap){
@@ -97,7 +97,6 @@ public class DNAModifyHandler {
                 components.add(Component.translatable("item.modifiers.any").withStyle(ChatFormatting.GOLD));
             }
         }
-        OtherItemModifyHandler.modifyOtherComponent(components, stack);
 
         addDNASequenceComponent(stack, InitItems.cytopathic_boost.asItem(),Component.translatable("moonstone.cytopathic_boost.modify"),components);
         addDNASequenceComponent(stack, InitItems.spliced_activation.asItem(),Component.translatable("moonstone.spliced_activation.modify"),components);
@@ -112,6 +111,7 @@ public class DNAModifyHandler {
         addModifyComponent(stack, InitItems.frontal_lobe.asItem(),Component.translatable("moonstone.frontal_lobe.modify"),components);
         addModifyComponent(stack, InitItems.high_energy.asItem(),Component.translatable("moonstone.high_energy.modify"),components);
         addModifyComponent(stack, InitItems.surge.asItem(),Component.translatable("moonstone.surge.modify"),components);
+        DNAHandler.addModifyText(components,stack);
 
     }
 
